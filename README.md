@@ -71,8 +71,8 @@ The interface includes 30+ specialized applications:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Dave-Meloncelli/Daves_NewTest.git
-   cd Daves_NewTest
+   git clone https://github.com/TSDQuest/RPG-Reliquary-UI-Interface.git
+   cd RPG-Reliquary-UI-Interface
    ```
 
 2. **Install dependencies**
