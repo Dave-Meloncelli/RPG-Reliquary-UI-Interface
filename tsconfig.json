@@ -21,10 +21,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-
-    "paths": {
-      "@/*" :  ["./*"]
-    }
+    "noUncheckedSideEffectImports": true
   }
 }
