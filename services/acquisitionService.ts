@@ -4,10 +4,10 @@ import { taskQueueService } from './taskQueueService';
 import type { AcquisitionProgress, AcquisitionStep, AcquiredBookData, BookDimensions } from '../types';
 import { acquiredBookDataSchema } from "../schemas/acquisitionSchema";
 
-if (!process.env.API_KEY) {
-    throw new Error("API_KEY environment variable not set");
+if (!process.env.GEMINI_API_KEY) {
+    throw new Error("GEMINI_API_KEY environment variable not set");
 }
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 const ACQUISITION_PLAYBOOK: Omit<AcquisitionStep, 'status' | 'result'>[] = [
     { name: 'Simulated OCR & Dimension Extraction', agentId: 'agent-az86' },
