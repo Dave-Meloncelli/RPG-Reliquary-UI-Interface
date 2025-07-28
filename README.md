@@ -63,7 +63,7 @@ The interface includes 30+ specialized applications:
 ## 🛠️ Installation
 
 ### Prerequisites
-- Node.js 18+ and npm
+- Node.js 18+ and npm (see `.nvmrc` or `package.json` `engines` for required version)
 - Python 3.8+ (for backend)
 - Git
 
