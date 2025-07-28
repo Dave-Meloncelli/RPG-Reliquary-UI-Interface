@@ -1,14 +1,23 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
+from typing import List
+from sqlalchemy.orm import Session
 from pydantic import BaseModel
-from typing import List, Optional
-import os
 from dotenv import load_dotenv
+
+from .database import get_db, init_db
+from . import crud, schemas
 
 # Load environment variables
 load_dotenv()
 
 app = FastAPI(title="AZ Interface API", version="1.0.0")
+
+
+@app.on_event("startup")
+def on_startup():
+    """Initialize database tables."""
+    init_db()
 
 # Configure CORS
 app.add_middleware(
@@ -24,37 +33,29 @@ class HealthResponse(BaseModel):
     status: str
     message: str
 
-class TaskItem(BaseModel):
-    id: str
-    title: str
-    description: str
-    status: str
 
 # Health check endpoint
 @app.get("/health", response_model=HealthResponse)
 async def health_check():
     return HealthResponse(status="healthy", message="AZ Interface API is running")
 
-# Example task endpoints
-@app.get("/tasks", response_model=List[TaskItem])
-async def get_tasks():
-    # Mock data - replace with actual database queries
-    return [
-        TaskItem(id="1", title="System Check", description="Run diagnostics", status="pending"),
-        TaskItem(id="2", title="Backup", description="Create system backup", status="completed")
-    ]
+# Task endpoints backed by the database
+@app.get("/tasks", response_model=List[schemas.Task])
+def get_tasks(db: Session = Depends(get_db)):
+    return crud.get_tasks(db)
 
-@app.post("/tasks", response_model=TaskItem)
-async def create_task(task: TaskItem):
-    # Mock implementation - replace with actual database operations
-    return task
 
-@app.get("/tasks/{task_id}", response_model=TaskItem)
-async def get_task(task_id: str):
-    # Mock implementation
-    if task_id == "1":
-        return TaskItem(id="1", title="System Check", description="Run diagnostics", status="pending")
-    raise HTTPException(status_code=404, detail="Task not found")
+@app.post("/tasks", response_model=schemas.Task)
+def create_task(task: schemas.TaskCreate, db: Session = Depends(get_db)):
+    return crud.create_task(db, task)
+
+
+@app.get("/tasks/{task_id}", response_model=schemas.Task)
+def get_task(task_id: int, db: Session = Depends(get_db)):
+    db_task = crud.get_task(db, task_id)
+    if not db_task:
+        raise HTTPException(status_code=404, detail="Task not found")
+    return db_task
 
 if __name__ == "__main__":
     import uvicorn
