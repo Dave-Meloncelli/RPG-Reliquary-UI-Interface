@@ -91,6 +91,7 @@ The interface includes 30+ specialized applications:
    # Create environment file
    cp .env.example .env.local
    # Edit .env.local and add your GEMINI_API_KEY
+   # (update BACKEND_URL if you run the backend elsewhere)
    ```
 
 4. **Start development servers**
