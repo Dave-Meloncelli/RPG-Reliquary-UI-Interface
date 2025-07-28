@@ -1,13 +1,9 @@
-import { GoogleGenAI, Type } from "@google/genai";
+import { Type } from "@google/genai";
 import { getPersonaProfile } from './personaService';
 import { taskQueueService } from './taskQueueService';
 import type { AcquisitionProgress, AcquisitionStep, AcquiredBookData, BookDimensions } from '../types';
 import { acquiredBookDataSchema } from "../schemas/acquisitionSchema";
-
-if (!process.env.GEMINI_API_KEY) {
-    throw new Error("GEMINI_API_KEY environment variable not set");
-}
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+import { generateText } from './geminiClient';
 
 const ACQUISITION_PLAYBOOK: Omit<AcquisitionStep, 'status' | 'result'>[] = [
     { name: 'Simulated OCR & Dimension Extraction', agentId: 'agent-az86' },
@@ -64,14 +60,11 @@ export async function* runAcquisitionPipeline(frontImageDataUrl: string, backIma
         try {
             let result = '';
             if (step.name === 'Simulated OCR & Dimension Extraction') {
-                const response = await ai.models.generateContent({
-                    model: 'gemini-2.5-flash',
-                    contents: { parts: [
+                result = await generateText({ parts: [
                         { text: 'Analyze the front and back cover of this book. Simulate OCR to extract text data. Also, estimate the physical dimensions as if you were a professional scanner. Provide all information in the specified JSON format.' },
                         getPart(frontImageDataUrl),
                         getPart(backImageDataUrl),
-                    ]},
-                    config: {
+                    ]}, {
                         responseMimeType: "application/json",
                         responseSchema: {
                             type: Type.OBJECT,
@@ -94,9 +87,7 @@ export async function* runAcquisitionPipeline(frontImageDataUrl: string, backIma
                             required: ['title', 'authors', 'dimensions']
                         },
                         systemInstruction,
-                    }
-                });
-                result = response.text;
+                    });
                 
                 // --- ArkType Validation ---
                 const parsedJson = JSON.parse(result);
@@ -127,22 +118,12 @@ export async function* runAcquisitionPipeline(frontImageDataUrl: string, backIma
                 DATA:
                 ${JSON.stringify({ ...acquiredData, marketValue: `$${marketValue.toFixed(2)}` }, null, 2)}`;
 
-                const response = await ai.models.generateContent({
-                    model: 'gemini-2.5-flash',
-                    contents: prompt,
-                    config: { systemInstruction }
-                });
-                result = response.text;
+                result = await generateText(prompt, { systemInstruction });
                 progress.shopifyDescription = result;
             } else {
                 const textPart = { text: PROMPTS[step.name] };
                 const contents = { parts: [textPart, getPart(frontImageDataUrl), getPart(backImageDataUrl)] };
-                 const response = await ai.models.generateContent({
-                    model: 'gemini-2.5-flash',
-                    contents,
-                    config: { systemInstruction }
-                });
-                result = response.text;
+                 result = await generateText(contents, { systemInstruction });
                 if (step.name === 'Market Intelligence') {
                     const valueMatch = result.match(/(\d+\.?\d*)/);
                     if (valueMatch) marketValue = parseFloat(valueMatch[1]);
