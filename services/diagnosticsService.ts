@@ -1,0 +1,143 @@
+import type { DiagnosticTest, DiagnosticLogEntry } from '../types';
+import { getInitialAgentData } from './agentData';
+import { orchestratorConfig } from './orchestratorService';
+
+let logIdCounter = 0;
+
+export const diagnosticTests: DiagnosticTest[] = [
+    {
+        id: 'agent-comm-test',
+        name: 'Agent Communication Test',
+        description: 'Simulates a direct communication ping between two agents.',
+        params: [
+            { id: 'agent1', label: 'Source Agent', type: 'agent' },
+            { id: 'agent2', label: 'Target Agent', type: 'agent' },
+        ],
+    },
+    {
+        id: 'orchestrator-fallback-test',
+        name: 'Orchestrator Fallback Test',
+        description: 'Simulates a failure of the primary LLM provider to verify fallback logic.',
+    },
+    {
+        id: 'ingestion-dry-run',
+        name: 'Ingestion Pipeline Dry Run',
+        description: 'Verifies the integrity of an ingestion channel\'s operation chain.',
+        params: [
+            { id: 'channel', label: 'Ingestion Channel', type: 'channel' },
+        ],
+    },
+];
+
+const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
+
+function* createLogEntry(status: DiagnosticLogEntry['status'], message: string): Generator<DiagnosticLogEntry> {
+    yield {
+        id: ++logIdCounter,
+        timestamp: new Date().toLocaleTimeString(),
+        status,
+        message,
+    };
+}
+
+export async function* runDiagnostic(testId: string, params: Record<string, string>): AsyncGenerator<DiagnosticLogEntry> {
+    const allAgents = getInitialAgentData();
+
+    switch (testId) {
+        case 'agent-comm-test': {
+            const agent1 = allAgents.find(a => a.id === params.agent1);
+            const agent2 = allAgents.find(a => a.id === params.agent2);
+
+            if (!agent1 || !agent2) {
+                yield* createLogEntry('error', 'Invalid agent selection.');
+                return;
+            }
+            if (agent1.id === agent2.id) {
+                yield* createLogEntry('error', 'Source and Target agents cannot be the same.');
+                return;
+            }
+
+            yield* createLogEntry('info', `Initiating communication test from ${agent1.name} to ${agent2.name}...`);
+            await delay(500);
+            yield* createLogEntry('running', `Checking status of ${agent2.name}...`);
+            await delay(1000);
+
+            if (agent2.status.activityState === 'Dormant') {
+                yield* createLogEntry('error', `Test failed: Target agent ${agent2.name} is DORMANT.`);
+            } else {
+                yield* createLogEntry('success', `Target agent ${agent2.name} is ${agent2.status.activityState}. Status check passed.`);
+                await delay(500);
+                yield* createLogEntry('running', `Simulating message dispatch from ${agent1.name}...`);
+                await delay(1000);
+                yield* createLogEntry('running', `Awaiting acknowledgment from ${agent2.name}...`);
+                await delay(1500);
+                yield* createLogEntry('success', 'Acknowledgment received. Communication channel is nominal.');
+            }
+            break;
+        }
+
+        case 'orchestrator-fallback-test': {
+            yield* createLogEntry('info', 'Initiating orchestrator fallback test...');
+            await delay(500);
+            
+            const primaryProviderName = orchestratorConfig.priority[0];
+            const primaryProvider = orchestratorConfig.providers[primaryProviderName];
+            
+            yield* createLogEntry('running', `Simulating request to primary provider: ${primaryProvider.name}...`);
+            await delay(1500);
+            yield* createLogEntry('error', `Simulated failure: ${primaryProvider.name} is unresponsive.`);
+            
+            if (orchestratorConfig.fallbackStrategy.enableFallback) {
+                const fallbackProviderName = orchestratorConfig.priority[1];
+                const fallbackProvider = orchestratorConfig.providers[fallbackProviderName];
+                yield* createLogEntry('info', 'Fallback strategy is enabled. Attempting to route to secondary provider...');
+                await delay(1000);
+                yield* createLogEntry('running', `Rerouting request to fallback provider: ${fallbackProvider.name}...`);
+                await delay(1500);
+                yield* createLogEntry('success', `Request successfully handled by ${fallbackProvider.name}.`);
+                yield* createLogEntry('success', 'Orchestrator fallback test passed.');
+            } else {
+                yield* createLogEntry('error', 'Test failed: Fallback strategy is disabled in configuration.');
+            }
+            break;
+        }
+
+        case 'ingestion-dry-run': {
+            const channel = params.channel;
+            yield* createLogEntry('info', `Starting dry run for ingestion channel: ${channel}...`);
+            await delay(500);
+
+            const operations = {
+                'library-archives': ['agent-az86', 'agent-az85', 'agent-az82'],
+                'vault-doctrines': ['agent-erdu', 'agent-codex', 'agent-architect'],
+                'general-counsel': ['agent-jordan', 'agent-sophia']
+            }[channel as 'library-archives' | 'vault-doctrines' | 'general-counsel'];
+
+            if (!operations) {
+                yield* createLogEntry('error', `Invalid channel selected: ${channel}`);
+                return;
+            }
+
+            yield* createLogEntry('info', `Found ${operations.length} steps in the operation chain.`);
+            await delay(500);
+
+            for (const agentId of operations) {
+                const agent = allAgents.find(a => a.id === agentId);
+                yield* createLogEntry('running', `Verifying handler agent: ${agent?.name || agentId}...`);
+                await delay(750);
+                if (agent) {
+                    yield* createLogEntry('success', `Agent ${agent.name} is available and configured.`);
+                } else {
+                    yield* createLogEntry('error', `Verification failed: Agent ${agentId} not found in network.`);
+                    yield* createLogEntry('error', 'Dry run aborted.');
+                    return;
+                }
+            }
+            yield* createLogEntry('success', 'Ingestion pipeline dry run completed successfully.');
+            break;
+        }
+
+        default:
+            yield* createLogEntry('error', 'Unknown diagnostic test selected.');
+    }
+}
