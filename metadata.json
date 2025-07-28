@@ -1,0 +1,8 @@
+{
+  "name": "Gemini Desktop UI",
+  "description": "A simulated desktop environment with interactive, AI-powered applications built using React and the Gemini API.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "prompt": ""
+}
