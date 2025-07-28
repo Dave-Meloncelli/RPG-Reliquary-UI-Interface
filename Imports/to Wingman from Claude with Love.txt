@@ -1,0 +1,886 @@
+Complete Agent Zero Vault Backend Implementation Guide
+Comprehensive Technical Specification Including All Systems and Features
+Critical Updates Based on Gap Analysis
+Major Missing Components Identified:
+
+The Curator System - Complete proactive intelligence gathering infrastructure
+Advanced Shopify Integration - Live data editing and placeholder management
+Recursive Data Discovery - Monthly automated expansion of data sources
+Enhanced Variant Management - Proper ISBN-based product cataloging
+
+
+1. COMPLETE SYSTEM ARCHITECTURE
+1.1 Core Services (Revised)
+API Gateway Service
+python# Primary entry point with enhanced endpoints
+from fastapi import FastAPI, UploadFile, WebSocket, BackgroundTasks
+from fastapi.middleware.cors import CORSMiddleware
+import asyncio
+import jwt
+
+app = FastAPI(title="Agent Zero Vault API", version="2.0.0")
+
+# Authentication and security
+async def verify_jwt_token(token: str):
+    # JWT validation with role-based access
+    pass
+
+# EXISTING: Book scanning and workflow endpoints
+@app.post("/api/v1/acquisitions")
+async def start_acquisition_workflow(frontImage: UploadFile, backImage: UploadFile):
+    # Trigger CZUR + Agent processing pipeline
+    pass
+
+# NEW: Complete Curator management system
+@app.get("/api/v1/curator/targets")
+async def get_publisher_targets():
+    # Retrieve all monitored publishers with status
+    pass
+
+@app.post("/api/v1/curator/targets")
+async def add_publisher_target(request: PublisherTargetRequest):
+    # Add new publisher to monitoring with initial scan scheduling
+    pass
+
+@app.get("/api/v1/curator/data/{targetId}")
+async def get_curated_data(targetId: str):
+    # Retrieve complete data silo for publisher
+    pass
+
+@app.post("/api/v1/curator/discover")
+async def trigger_recursive_discovery(background_tasks: BackgroundTasks):
+    # Manually trigger monthly recursive scan for new sources
+    background_tasks.add_task(curator_service.recursive_discovery_scan)
+    pass
+
+# NEW: Enhanced Shopify integration
+@app.get("/api/v1/shopify/products/{productId}")
+async def get_shopify_product_live(productId: str):
+    # Real-time Shopify product data for editing in Curator
+    pass
+
+@app.put("/api/v1/shopify/products/{productId}")
+async def update_shopify_product_live(productId: str, updates: dict):
+    # Live update Shopify product from Curator interface
+    pass
+
+@app.post("/api/v1/curator/create-placeholders")
+async def create_placeholder_listings(request: PlaceholderRequest):
+    # Create Shopify placeholder products from curated book data
+    pass
+
+# NEW: Advanced variant management
+@app.post("/api/v1/variants/analyze-isbn")
+async def analyze_isbn_variants(isbn: str):
+    # Determine if ISBN represents new product or existing variant
+    pass
+The Curator Service (New Major Component)
+python# services/curator/scraping_engine.py
+import asyncio
+import schedule
+from playwright.async_api import async_playwright
+from bs4 import BeautifulSoup
+import time
+from typing import List, Dict, Optional
+
+class WebScrapingEngine:
+    def __init__(self):
+        self.browser = None
+        self.proxy_rotation = ProxyRotator()
+        self.scraping_rules = ScrapingRulesEngine()
+        
+    async def initialize_browser(self):
+        playwright = await async_playwright().start()
+        self.browser = await playwright.chromium.launch(
+            headless=True,
+            args=['--no-sandbox', '--disable-setuid-sandbox']
+        )
+    
+    async def scrape_publisher_data(self, target: PublisherTarget) -> CuratedDataSet:
+        """Comprehensive publisher data extraction"""
+        try:
+            context = await self.browser.new_context(
+                proxy=await self.proxy_rotation.get_next_proxy(),
+                user_agent=self.get_random_user_agent()
+            )
+            
+            page = await context.new_page()
+            
+            # Navigate with realistic delays
+            await page.goto(target.base_url, wait_until='networkidle')
+            await asyncio.sleep(random.uniform(2, 5))
+            
+            # Extract all required data types
+            scraped_data = CuratedDataSet()
+            
+            # 1. Book catalog with ISBNs and metadata
+            scraped_data.book_list = await self.extract_book_catalog(page, target)
+            
+            # 2. Pricing information and historical trends
+            scraped_data.pricing_data = await self.extract_pricing_info(page, target)
+            
+            # 3. Series and product line organization
+            scraped_data.series_data = await self.extract_series_info(page, target)
+            
+            # 4. Gossip, news, and industry information
+            scraped_data.gossip_lore = await self.extract_gossip_lore(page, target)
+            
+            # 5. Blog posts and announcements
+            scraped_data.blog_posts = await self.extract_blog_content(page, target)
+            
+            await context.close()
+            return scraped_data
+            
+        except Exception as e:
+            await self.handle_scraping_error(target, e)
+            raise
+
+    async def extract_book_catalog(self, page, target: PublisherTarget) -> List[CuratedBook]:
+        """Extract comprehensive book catalog with all identifiers"""
+        books = []
+        
+        # Use target-specific scraping rules
+        selectors = await self.scraping_rules.get_book_selectors(target.name)
+        
+        book_elements = await page.query_selector_all(selectors.book_container)
+        
+        for element in book_elements:
+            try:
+                book = CuratedBook(
+                    title=await self.safe_extract_text(element, selectors.title),
+                    isbn=await self.extract_isbn(element, selectors.isbn),
+                    mpn=await self.safe_extract_text(element, selectors.mpn),
+                    barcode=await self.extract_barcode(element, selectors.barcode),
+                    part_number=await self.safe_extract_text(element, selectors.part_number),
+                    tags=await self.extract_tags(element, selectors.tags),
+                    price=await self.extract_price(element, selectors.price),
+                    availability=await self.extract_availability(element, selectors.availability),
+                    source_name=target.name,
+                    source_url=await self.get_product_url(element),
+                    scraped_timestamp=datetime.utcnow()
+                )
+                books.append(book)
+                
+            except Exception as e:
+                # Log but continue processing other books
+                logger.warning(f"Failed to extract book data: {e}")
+                continue
+        
+        return books
+
+    async def recursive_discovery_scan(self) -> List[PublisherTarget]:
+        """Monthly scan to discover new publisher data sources"""
+        discovered_targets = []
+        
+        # Search strategies for finding new RPG publishers
+        discovery_strategies = [
+            self.search_rpg_directories(),
+            self.analyze_competitor_links(),
+            self.scan_industry_news_sources(),
+            self.check_convention_vendor_lists(),
+            self.analyze_distributor_catalogs()
+        ]
+        
+        for strategy in discovery_strategies:
+            try:
+                new_targets = await strategy
+                for target in new_targets:
+                    # Validate and score potential targets
+                    if await self.validate_publisher_target(target):
+                        discovered_targets.append(target)
+                        
+            except Exception as e:
+                logger.error(f"Discovery strategy failed: {e}")
+                continue
+        
+        # Add discovered targets to monitoring system
+        for target in discovered_targets:
+            target.is_new_discovery = True
+            await self.add_publisher_target(target)
+        
+        return discovered_targets
+
+class CronJobManager:
+    def __init__(self):
+        self.scheduler = AsyncIOScheduler()
+        self.scraping_engine = WebScrapingEngine()
+    
+    async def initialize_cron_jobs(self):
+        """Set up all scheduled scraping tasks"""
+        
+        # Weekly publisher data refresh
+        self.scheduler.add_job(
+            self.weekly_publisher_refresh,
+            'cron',
+            day_of_week='sunday',
+            hour=2,  # 2 AM to avoid peak traffic
+            id='weekly_refresh'
+        )
+        
+        # Monthly recursive discovery
+        self.scheduler.add_job(
+            self.scraping_engine.recursive_discovery_scan,
+            'cron',
+            day=1,  # First day of each month
+            hour=3,
+            id='monthly_discovery'
+        )
+        
+        # Daily high-activity publisher checks
+        self.scheduler.add_job(
+            self.daily_high_activity_check,
+            'cron',
+            hour=6,
+            id='daily_activity_check'
+        )
+        
+        self.scheduler.start()
+    
+    async def weekly_publisher_refresh(self):
+        """Weekly refresh of all monitored publishers"""
+        targets = await self.get_active_publisher_targets()
+        
+        for target in targets:
+            try:
+                # Check if publisher appears highly active (frequent updates)
+                activity_level = await self.assess_publisher_activity(target)
+                
+                if activity_level == 'high':
+                    # Schedule more frequent checks
+                    await self.schedule_frequent_monitoring(target)
+                
+                # Perform standard weekly scrape
+                curated_data = await self.scraping_engine.scrape_publisher_data(target)
+                await self.store_curated_data(target.id, curated_data)
+                
+                # Send real-time updates via WebSocket
+                await self.websocket_manager.send_update(
+                    f"curator:status",
+                    {
+                        "targetId": target.id,
+                        "status": "completed",
+                        "newItems": len(curated_data.book_list),
+                        "timestamp": datetime.utcnow().isoformat()
+                    }
+                )
+                
+            except Exception as e:
+                await self.handle_scraping_failure(target, e)
+Enhanced Shopify Integration Service
+python# services/shopify/integration_service.py
+import shopify
+from typing import Dict, List, Optional
+import asyncio
+
+class ShopifyIntegrationService:
+    def __init__(self):
+        self.session = self.initialize_shopify_session()
+        self.variant_manager = VariantManager()
+    
+    def initialize_shopify_session(self):
+        shopify.ShopifyResource.set_site(
+            f"https://{os.getenv('SHOPIFY_API_KEY')}:{os.getenv('SHOPIFY_PASSWORD')}@{os.getenv('SHOPIFY_SHOP_NAME')}.myshopify.com/admin/api/2023-10"
+        )
+        return shopify.Session(os.getenv('SHOPIFY_SHOP_NAME'))
+    
+    async def create_placeholder_listings(self, curated_books: List[CuratedBook]) -> List[PlaceholderResult]:
+        """Create Shopify placeholder products from curated data"""
+        results = []
+        
+        for book in curated_books:
+            try:
+                # Check if product already exists by ISBN
+                existing_product = await self.find_product_by_isbn(book.isbn)
+                
+                if existing_product:
+                    results.append(PlaceholderResult(
+                        isbn=book.isbn,
+                        status='exists',
+                        shopify_id=existing_product.id,
+                        message=f"Product already exists: {existing_product.title}"
+                    ))
+                    continue
+                
+                # Create new placeholder product
+                placeholder_product = shopify.Product()
+                placeholder_product.title = book.title
+                placeholder_product.vendor = book.publisher or "Unknown Publisher"
+                placeholder_product.product_type = "RPG Book"
+                placeholder_product.status = "draft"  # Keep as draft until physical copy acquired
+                
+                # Enhanced description with curated data
+                placeholder_product.body_html = self.generate_placeholder_description(book)
+                
+                # Set up metafields for tracking
+                placeholder_product.metafields = [
+                    {
+                        "namespace": "curator_data",
+                        "key": "isbn",
+                        "value": book.isbn,
+                        "type": "single_line_text_field"
+                    },
+                    {
+                        "namespace": "curator_data",
+                        "key": "source_url",
+                        "value": book.source_url,
+                        "type": "url"
+                    },
+                    {
+                        "namespace": "curator_data",
+                        "key": "curated_price",
+                        "value": str(book.price or 0),
+                        "type": "number_decimal"
+                    },
+                    {
+                        "namespace": "status",
+                        "key": "is_placeholder",
+                        "value": "true",
+                        "type": "boolean"
+                    }
+                ]
+                
+                # Use stock image if available
+                if book.cover_image_url:
+                    placeholder_product.images = [{"src": book.cover_image_url}]
+                
+                # Create the product
+                if placeholder_product.save():
+                    results.append(PlaceholderResult(
+                        isbn=book.isbn,
+                        status='created',
+                        shopify_id=placeholder_product.id,
+                        shopify_url=f"https://{os.getenv('SHOPIFY_SHOP_NAME')}.myshopify.com/admin/products/{placeholder_product.id}"
+                    ))
+                else:
+                    results.append(PlaceholderResult(
+                        isbn=book.isbn,
+                        status='failed',
+                        error=str(placeholder_product.errors)
+                    ))
+                    
+            except Exception as e:
+                results.append(PlaceholderResult(
+                    isbn=book.isbn,
+                    status='error',
+                    error=str(e)
+                ))
+        
+        return results
+    
+    def generate_placeholder_description(self, book: CuratedBook) -> str:
+        """Generate rich placeholder description from curated data"""
+        description = f"""
+        <div class="placeholder-product">
+            <h3>📚 Product Information</h3>
+            <p><strong>Title:</strong> {book.title}</p>
+            <p><strong>Publisher:</strong> {book.publisher or 'To be determined'}</p>
+            <p><strong>ISBN:</strong> {book.isbn}</p>
+            
+            {f'<p><strong>Series:</strong> {book.series}</p>' if book.series else ''}
+            {f'<p><strong>Tags:</strong> {", ".join(book.tags)}</p>' if book.tags else ''}
+            
+            <h3>🔍 Market Intelligence</h3>
+            <p><strong>Publisher List Price:</strong> ${book.price or 'TBD'}</p>
+            <p><strong>Data Source:</strong> <a href="{book.source_url}" target="_blank">{book.source_name}</a></p>
+            
+            <div class="placeholder-notice">
+                <h3>⚠️ Placeholder Listing</h3>
+                <p>This is a placeholder product created from market intelligence. 
+                   Specific copy details (condition, actual images, final pricing) 
+                   will be added when we acquire a physical copy.</p>
+                <p><em>Not available for purchase until inventory is added.</em></p>
+            </div>
+            
+            <p><small>Curated on: {book.scraped_timestamp.strftime('%Y-%m-%d')}</small></p>
+        </div>
+        """
+        return description
+    
+    async def convert_placeholder_to_active(self, placeholder_id: str, scan_data: dict) -> bool:
+        """Convert placeholder to active listing when physical copy is scanned"""
+        try:
+            product = shopify.Product.find(placeholder_id)
+            
+            # Update with real scan data
+            product.status = "active"  # Make available for purchase
+            
+            # Add specific variant for this copy
+            variant = shopify.Variant()
+            variant.product_id = product.id
+            variant.price = scan_data.get('calculated_price', 0)
+            variant.inventory_quantity = 1
+            variant.inventory_management = "shopify"
+            variant.title = f"{scan_data.get('condition', 'Good')} Condition"
+            
+            # Add metafields for specific copy
+            variant.metafields = [
+                {
+                    "namespace": "copy_data",
+                    "key": "condition",
+                    "value": scan_data.get('condition'),
+                    "type": "single_line_text_field"
+                },
+                {
+                    "namespace": "copy_data",
+                    "key": "scan_date",
+                    "value": datetime.utcnow().isoformat(),
+                    "type": "date_time"
+                }
+            ]
+            
+            # Replace placeholder images with actual scanned images
+            if scan_data.get('front_image') and scan_data.get('back_image'):
+                product.images = [
+                    {"src": scan_data['front_image']},
+                    {"src": scan_data['back_image']}
+                ]
+            
+            # Update description to remove placeholder notice
+            product.body_html = self.generate_active_description(product, scan_data)
+            
+            return product.save() and variant.save()
+            
+        except Exception as e:
+            logger.error(f"Failed to convert placeholder {placeholder_id}: {e}")
+            return False
+
+class VariantManager:
+    """Handle complex variant logic for RPG products"""
+    
+    async def analyze_isbn_for_variants(self, isbn: str) -> VariantAnalysis:
+        """Determine if ISBN represents new product or existing variant"""
+        
+        # Check if ISBN already exists in system
+        existing_product = await self.find_product_by_isbn(isbn)
+        
+        if existing_product:
+            return VariantAnalysis(
+                is_new_product=False,
+                existing_product_id=existing_product.id,
+                variant_type='copy_condition',  # Different condition of same book
+                recommendation='add_as_variant'
+            )
+        
+        # Check for related ISBNs (same title, different edition/format)
+        related_products = await self.find_related_products_by_title_fuzzy(isbn)
+        
+        if related_products:
+            # This is likely a different edition/format
+            return VariantAnalysis(
+                is_new_product=True,  # Different ISBN = separate product
+                related_products=related_products,
+                variant_type='edition_format',
+                recommendation='create_separate_product'
+            )
+        
+        # Completely new product
+        return VariantAnalysis(
+            is_new_product=True,
+            variant_type='new_product',
+            recommendation='create_new_product'
+        )
+1.2 Enhanced Database Schema
+sql-- EXISTING TABLES (from previous spec) remain...
+-- PLUS new tables for Curator system:
+
+-- Publisher monitoring and discovery
+CREATE TABLE publisher_targets (
+    id VARCHAR(50) PRIMARY KEY,
+    name VARCHAR(200) NOT NULL,
+    base_url TEXT NOT NULL,
+    scrape_frequency_hours INTEGER DEFAULT 168, -- Weekly default
+    last_scrape_timestamp TIMESTAMP,
+    next_scrape_timestamp TIMESTAMP,
+    status VARCHAR(50) DEFAULT 'active',
+    activity_level VARCHAR(20) DEFAULT 'normal', -- normal, high, dormant
+    is_new_discovery BOOLEAN DEFAULT FALSE,
+    discovery_date TIMESTAMP,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+-- Curated book catalog
+CREATE TABLE curated_books (
+    id SERIAL PRIMARY KEY,
+    publisher_target_id VARCHAR(50) REFERENCES publisher_targets(id),
+    title VARCHAR(500) NOT NULL,
+    isbn VARCHAR(50),
+    mpn VARCHAR(100),
+    barcode VARCHAR(100),
+    part_number VARCHAR(100),
+    tags TEXT[],
+    series_name VARCHAR(200),
+    publisher_price DECIMAL(10,2),
+    availability_status VARCHAR(50),
+    source_name VARCHAR(200),
+    source_url TEXT,
+    cover_image_url TEXT,
+    scraped_timestamp TIMESTAMP NOT NULL,
+    is_placeholder_created BOOLEAN DEFAULT FALSE,
+    shopify_product_id BIGINT,
+    UNIQUE(isbn) -- Prevent duplicates by ISBN
+);
+
+-- Enhanced pricing history with source attribution
+CREATE TABLE curated_price_history (
+    id SERIAL PRIMARY KEY,
+    curated_book_id INTEGER REFERENCES curated_books(id),
+    price DECIMAL(10,2) NOT NULL,
+    currency VARCHAR(10) DEFAULT 'USD',
+    source_name VARCHAR(200),
+    source_url TEXT,
+    scraped_timestamp TIMESTAMP NOT NULL,
+    price_type VARCHAR(50) -- 'msrp', 'sale', 'street_price', etc.
+);
+
+-- Publisher series and product lines
+CREATE TABLE curated_series (
+    id SERIAL PRIMARY KEY,
+    publisher_target_id VARCHAR(50) REFERENCES publisher_targets(id),
+    series_name VARCHAR(200) NOT NULL,
+    genre_tags TEXT[],
+    description TEXT,
+    source_url TEXT,
+    book_count INTEGER DEFAULT 0,
+    last_updated TIMESTAMP DEFAULT NOW()
+);
+
+-- Gossip, lore, and industry intelligence
+CREATE TABLE curated_intelligence (
+    id SERIAL PRIMARY KEY,
+    publisher_target_id VARCHAR(50) REFERENCES publisher_targets(id),
+    intelligence_type VARCHAR(50), -- 'gossip', 'news', 'legal', 'industry'
+    title VARCHAR(300),
+    content TEXT NOT NULL,
+    source_name VARCHAR(200),
+    source_url TEXT,
+    scraped_timestamp TIMESTAMP NOT NULL,
+    relevance_score DECIMAL(3,2), -- AI-assessed relevance 0-1
+    tags TEXT[]
+);
+
+-- Blog posts and announcements
+CREATE TABLE curated_blog_posts (
+    id SERIAL PRIMARY KEY,
+    publisher_target_id VARCHAR(50) REFERENCES publisher_targets(id),
+    title VARCHAR(300) NOT NULL,
+    summary TEXT,
+    full_content TEXT,
+    author VARCHAR(200),
+    published_date TIMESTAMP,
+    source_url TEXT NOT NULL,
+    scraped_timestamp TIMESTAMP NOT NULL,
+    post_type VARCHAR(50), -- 'announcement', 'spotlight', 'review', etc.
+    related_products TEXT[] -- ISBNs of related products
+);
+
+-- Shopify integration tracking
+CREATE TABLE shopify_placeholders (
+    id SERIAL PRIMARY KEY,
+    curated_book_id INTEGER REFERENCES curated_books(id),
+    shopify_product_id BIGINT NOT NULL,
+    status VARCHAR(50) DEFAULT 'placeholder', -- 'placeholder', 'active', 'archived'
+    created_at TIMESTAMP DEFAULT NOW(),
+    activated_at TIMESTAMP,
+    activation_workflow_id VARCHAR(50)
+);
+
+-- Scraping job status and logging
+CREATE TABLE scraping_jobs (
+    id SERIAL PRIMARY KEY,
+    publisher_target_id VARCHAR(50) REFERENCES publisher_targets(id),
+    job_type VARCHAR(50), -- 'weekly_refresh', 'monthly_discovery', 'manual'
+    status VARCHAR(50), -- 'pending', 'running', 'completed', 'failed'
+    started_at TIMESTAMP,
+    completed_at TIMESTAMP,
+    items_processed INTEGER DEFAULT 0,
+    items_new INTEGER DEFAULT 0,
+    items_updated INTEGER DEFAULT 0,
+    error_message TEXT,
+    metadata JSONB -- Additional job-specific data
+);
+
+-- Discovery and source verification
+CREATE TABLE discovered_sources (
+    id SERIAL PRIMARY KEY,
+    potential_target_url TEXT NOT NULL,
+    discovered_via VARCHAR(100), -- 'recursive_scan', 'manual_submission', etc.
+    confidence_score DECIMAL(3,2), -- AI assessment of source quality
+    status VARCHAR(50) DEFAULT 'pending', -- 'pending', 'validated', 'rejected', 'monitoring'
+    validation_notes TEXT,
+    discovered_at TIMESTAMP DEFAULT NOW(),
+    validated_at TIMESTAMP,
+    validated_by VARCHAR(100)
+);
+1.3 Enhanced WebSocket Channels
+python# Real-time communication channels (additions to existing)
+WEBSOCKET_CHANNELS = {
+    # EXISTING channels remain...
+    
+    # NEW Curator channels
+    'curator:discovery': 'Real-time updates on recursive discovery scans',
+    'curator:scraping': 'Live updates on active scraping jobs',
+    'curator:placeholder_creation': 'Updates on Shopify placeholder creation',
+    'curator:data_update': 'Notifications when new curated data is available',
+    
+    # NEW Shopify integration channels  
+    'shopify:live_sync': 'Real-time Shopify product updates',
+    'shopify:placeholder_status': 'Status updates on placeholder conversions',
+    
+    # NEW Intelligence channels
+    'intelligence:new_gossip': 'New industry intelligence discovered',
+    'intelligence:price_alerts': 'Significant price changes detected'
+}
+
+class EnhancedWebSocketManager:
+    async def send_curator_update(self, channel: str, data: dict):
+        """Send curated data updates to connected clients"""
+        await self.send_update(f"curator:{channel}", {
+            **data,
+            "timestamp": datetime.utcnow().isoformat(),
+            "source": "curator_service"
+        })
+    
+    async def send_discovery_alert(self, new_sources: List[dict]):
+        """Alert about newly discovered data sources"""
+        await self.send_update("curator:discovery", {
+            "event": "new_sources_discovered",
+            "count": len(new_sources),
+            "sources": new_sources,
+            "requires_review": True
+        })
+    
+    async def send_placeholder_update(self, results: List[PlaceholderResult]):
+        """Update on placeholder creation progress"""
+        await self.send_update("curator:placeholder_creation", {
+            "event": "placeholders_created",
+            "total": len(results),
+            "successful": len([r for r in results if r.status == 'created']),
+            "failed": len([r for r in results if r.status in ['failed', 'error']]),
+            "results": results
+        })
+1.4 Complete API Endpoint Specification
+python# COMPLETE API specification (including all previous + new endpoints)
+
+# === EXISTING ENDPOINTS (from previous spec) ===
+# All acquisition, operation, council, chat endpoints remain as previously defined
+
+# === NEW CURATOR ENDPOINTS ===
+@app.get("/api/v1/curator/targets")
+async def get_publisher_targets() -> List[CuratorTarget]:
+    """Retrieve all monitored publishers with status and metrics"""
+    pass
+
+@app.post("/api/v1/curator/targets")
+async def add_publisher_target(request: PublisherTargetRequest) -> CuratorTargetResponse:
+    """Add new publisher to monitoring system"""
+    pass
+
+@app.put("/api/v1/curator/targets/{targetId}")
+async def update_publisher_target(targetId: str, updates: PublisherTargetUpdate) -> CuratorTargetResponse:
+    """Update publisher monitoring settings"""
+    pass
+
+@app.delete("/api/v1/curator/targets/{targetId}")
+async def remove_publisher_target(targetId: str) -> SuccessResponse:
+    """Remove publisher from monitoring"""
+    pass
+
+@app.get("/api/v1/curator/data/{targetId}")
+async def get_curated_data(targetId: str) -> CuratedDataSet:
+    """Retrieve complete curated data for publisher"""
+    pass
+
+@app.post("/api/v1/curator/trigger-scan/{targetId}")
+async def trigger_manual_scan(targetId: str) -> ScanJobResponse:
+    """Manually trigger scan for specific publisher"""
+    pass
+
+@app.post("/api/v1/curator/discover")
+async def trigger_recursive_discovery() -> DiscoveryJobResponse:
+    """Trigger monthly recursive discovery scan"""
+    pass
+
+@app.get("/api/v1/curator/discovered-sources")
+async def get_discovered_sources() -> List[DiscoveredSource]:
+    """Retrieve pending source discoveries for validation"""
+    pass
+
+@app.post("/api/v1/curator/validate-source/{sourceId}")
+async def validate_discovered_source(sourceId: str, validation: SourceValidation) -> ValidationResponse:
+    """Validate and potentially add discovered source"""
+    pass
+
+# === NEW SHOPIFY INTEGRATION ENDPOINTS ===
+@app.get("/api/v1/shopify/products/{productId}")
+async def get_shopify_product_live(productId: str) -> ShopifyProduct:
+    """Get live Shopify product data for Curator editing"""
+    pass
+
+@app.put("/api/v1/shopify/products/{productId}")
+async def update_shopify_product_live(productId: str, updates: ShopifyProductUpdate) -> ShopifyProduct:
+    """Update Shopify product directly from Curator"""
+    pass
+
+@app.post("/api/v1/curator/create-placeholders")
+async def create_placeholder_listings(request: PlaceholderCreationRequest) -> List[PlaceholderResult]:
+    """Create Shopify placeholder products from curated books"""
+    pass
+
+@app.post("/api/v1/shopify/convert-placeholder/{placeholderId}")
+async def convert_placeholder_to_active(placeholderId: str, scanData: AcquisitionResult) -> ConversionResult:
+    """Convert placeholder to active product when physical copy acquired"""
+    pass
+
+@app.get("/api/v1/shopify/placeholders")
+async def get_placeholder_products() -> List[PlaceholderProduct]:
+    """Retrieve all placeholder products awaiting physical copies"""
+    pass
+
+# === NEW VARIANT MANAGEMENT ENDPOINTS ===
+@app.post("/api/v1/variants/analyze-isbn")
+async def analyze_isbn_variants(isbn: str) -> VariantAnalysis:
+    """Analyze if ISBN should be new product or variant"""
+    pass
+
+@app.post("/api/v1/variants/create-copy-variant")
+async def create_copy_variant(productId: str, copyData: CopyVariantData) -> VariantResult:
+    """Create variant for specific copy condition/pricing"""
+    pass
+
+# === ENHANCED INTELLIGENCE ENDPOINTS ===
+@app.get("/api/v1/intelligence/gossip")
+async def get_industry_intelligence() -> List[IntelligenceItem]:
+    """Retrieve curated industry gossip and intelligence"""
+    pass
+
+@app.get("/api/v1/intelligence/price-trends/{isbn}")
+async def get_price_trends(isbn: str) -> PriceTrendAnalysis:
+    """Get historical pricing trends for specific ISBN"""
+    pass
+
+@app.get("/api/v1/intelligence/market-analysis")
+async def get_market_analysis() -> MarketAnalysisReport:
+    """Comprehensive market analysis from all curated data"""
+    pass
+
+2. IMPLEMENTATION PRIORITY & PHASES
+Phase 1: Core Curator Infrastructure
+
+Database Schema Setup - All new Curator tables
+Basic Web Scraping Engine - Publisher data extraction
+Cron Job Management - Scheduled scraping system
+Real-time Updates - WebSocket integration for live status
+
+Phase 2: Advanced Discovery & Intelligence
+
+Recursive Discovery System - Monthly new source detection
+Source Validation Workflow - Review and approve new sources
+Intelligence Analysis - Gossip, trends, and market insights
+Data Quality Assurance - Verification and deduplication
+
+Phase 3: Shopify Integration & Workflow
+
+Placeholder Creation System - Curated data to Shopify products
+Live Editing Interface - Direct Shopify updates from Curator
+Variant Management - ISBN-based product/variant logic
+Acquisition Integration - Convert placeholders to active listings
+
+Phase 4: Advanced Features & Optimization
+
+Performance Optimization - Efficient scraping and data processing
+Advanced Analytics - Market intelligence and trend analysis
+Automation Enhancement - Smart scheduling and priority handling
+Integration Testing - End-to-end workflow validation
+
+
+3. PRODUCTION DEPLOYMENT CONFIGURATION
+yaml# docker-compose.yml (Enhanced)
+version: '3.8'
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: agent_zero_vault
+      POSTGRES_USER: vault_user
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  api-gateway:
+    build: ./services/api-gateway
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+      - curator-service
+    environment:
+      - DATABASE_URL=postgresql://vault_user:${DB_PASSWORD}@postgres:5432/agent_zero_vault
+      - REDIS_URL=redis://redis:6379/0
+
+  # NEW: Curator scraping service
+  curator-service:
+    build: ./services/curator
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - DATABASE_URL=postgresql://vault_user:${DB_PASSWORD}@postgres:5432/agent_zero_vault
+      - REDIS_URL=redis://redis:6379/0
+      - PLAYWRIGHT_BROWSERS_PATH=/ms-playwright
+    volumes:
+      - ./data/scraped:/app/data/scraped
+
+  # NEW: Shopify integration service
+  shopify-service:
+    build: ./services/shopify
+    environment:
+      - SHOPIFY_API_KEY=${SHOPIFY_API_KEY}
+      - SHOPIFY_PASSWORD=${SHOPIFY_PASSWORD}
+      - SHOPIFY_SHOP_NAME=${SHOPIFY_SHOP_NAME}
+    depends_on:
+      - postgres
+
+  # Enhanced workflow engine
+  workflow-engine:
+    build: ./services/workflow-engine
+    depends_on:
+      - postgres
+      - redis
+      - curator-service
+      - shopify-service
+    environment:
+      - CELERY_BROKER_URL=redis://redis:6379/0
+
+  # NEW: Intelligence processing service
+  intelligence-service:
+    build: ./services/intelligence
+    depends_on:
+      - postgres
+      - curator-service
+    environment:
+      - DATABASE_URL=postgresql://vault_user:${DB_PASSWORD}@postgres:5432/agent_zero_vault
+
+volumes:
+  postgres_data:
+  redis_data:
+
+This completely revised specification now includes:
+✅ Complete Curator System - Proactive intelligence gathering with cron jobs
+✅ Recursive Discovery - Monthly automated source expansion
+✅ Enhanced Shopify Integration - Live editing and placeholder management
+✅ Advanced Variant Logic - ISBN-based product vs. variant decisions
+✅ Source Attribution - Clickable links and provenance tracking
+✅ Industry Intelligence - Gossip, trends, and market analysis
+✅ Real-time Updates - WebSocket channels for all new functionality
+✅ Production Architecture - Complete deployment configuration
+The backend specification is now comprehensive and covers all the functionality discussed, including the critical Curator system that was missing from the original specification.

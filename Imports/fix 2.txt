@@ -1,0 +1,247 @@
+Agent Zero Vault – Implementation Guide for Google AI Studio
+This document summarises the new code additions and modifications designed to bring the Agent Zero Vault up to date with the backlog items. You can pass these instructions directly into Google AI Studio or your codebase to implement the changes.
+
+1. Create a FastAPI backend (AZV‑020)
+Files to create or replace
+backend/app/main.py – the entrypoint for the API:
+
+python
+Copy
+Edit
+"""
+Agent Zero Vault API
+====================
+
+This FastAPI application provides the backend for the Agent Zero Vault system.  It implements core services such as health checks and a simple in‑memory Task queue used by the Task & Review Hub.  In a production deployment this module would connect to a real database and incorporate authentication and data persistence.  For the purposes of the initial implementation, tasks are stored in a process‑local list.
+
+Endpoints
+---------
+
+* `GET /api/v1/health` – return basic health status of the API
+* `GET /api/v1/tasks` – list all tasks ordered newest first
+* `POST /api/v1/tasks` – create a new task
+* `PUT /api/v1/tasks/{task_id}/resolve` – mark a task as resolved
+
+Run the application with: `uvicorn app.main:app --reload`
+"""
+
+from __future__ import annotations
+
+import uuid
+from datetime import datetime
+from fastapi import FastAPI, HTTPException, status
+from pydantic import BaseModel, Field
+
+app = FastAPI(title="Agent Zero Vault API", version="0.1.0")
+
+class TaskCreateRequest(BaseModel):
+    source: str = Field(..., description="Source app creating the task")
+    sourceId: str = Field(..., description="Unique identifier for the source event")
+    title: str = Field(..., description="Brief summary of the task")
+    description: str = Field(..., description="Detailed description of the task")
+    priority: str = Field(..., description="Task priority: Low, Medium, High, Critical")
+    appId: str = Field(..., description="Identifier of the app to open for resolving the task")
+
+class TaskItem(BaseModel):
+    id: str
+    source: str
+    sourceId: str
+    title: str
+    description: str
+    priority: str
+    status: str
+    timestamp: str
+    appId: str
+
+# In‑memory task list.  Replace with a database for production.
+_tasks: list[TaskItem] = []
+
+@app.get("/api/v1/health")
+async def health_check() -> dict[str, str]:
+    return {"status": "ok"}
+
+@app.get("/api/v1/tasks", response_model=list[TaskItem])
+async def list_tasks() -> list[TaskItem]:
+    return sorted(_tasks, key=lambda t: t.timestamp, reverse=True)
+
+@app.post("/api/v1/tasks", response_model=TaskItem, status_code=status.HTTP_201_CREATED)
+async def create_task(task: TaskCreateRequest) -> TaskItem:
+    # Prevent duplicate pending tasks by sourceId
+    for existing in _tasks:
+        if existing.sourceId == task.sourceId and existing.status == "Pending":
+            raise HTTPException(status_code=409, detail="Duplicate task for this sourceId")
+    new_task = TaskItem(
+        id=str(uuid.uuid4()),
+        source=task.source,
+        sourceId=task.sourceId,
+        title=task.title,
+        description=task.description,
+        priority=task.priority,
+        status="Pending",
+        timestamp=datetime.utcnow().isoformat(),
+        appId=task.appId,
+    )
+    _tasks.append(new_task)
+    return new_task
+
+@app.put("/api/v1/tasks/{task_id}/resolve", response_model=TaskItem)
+async def resolve_task(task_id: str) -> TaskItem:
+    for idx, t in enumerate(_tasks):
+        if t.id == task_id:
+            if t.status == "Resolved":
+                raise HTTPException(status_code=400, detail="Task already resolved")
+            updated = t.copy(update={"status": "Resolved"})
+            _tasks[idx] = updated
+            return updated
+    raise HTTPException(status_code=404, detail="Task not found")
+backend/Dockerfile – containerises the API:
+
+dockerfile
+Copy
+Edit
+FROM python:3.11-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Install Python dependencies
+COPY backend/requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir -r /tmp/requirements.txt
+
+# Copy application code
+COPY backend/app /app/app
+
+EXPOSE 8000
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+docker-compose.yml – orchestrates the API and a PostgreSQL database:
+
+yaml
+Copy
+Edit
+auto_version: 3.8
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    env_file:
+      - .env.local
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app/backend
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: azv
+      POSTGRES_USER: azv_user
+      POSTGRES_PASSWORD: azv_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
+    driver: local
+You can run the backend locally via docker-compose up --build and it will be available on http://localhost:8000.
+
+2. Add a Global Event Bus (AZV‑021)
+2.1 Define the Event Map
+In types.ts, below the existing TaskItem definition, add a typed map of events and payloads:
+
+ts
+Copy
+Edit
+export interface EventMap {
+  /** Emitted whenever a new task is created via `taskQueueService.addTask`. */
+  'task.created': TaskItem;
+  /** Emitted when a task is resolved. */
+  'task.resolved': { id: string };
+  /** General system alert payload. */
+  'system.alert': { level: LogLevel; message: string };
+  // Extend this map with further events as needed.
+}
+2.2 Implement the Event Bus
+Create services/eventBus.ts containing a strongly typed publish–subscribe service:
+
+ts
+Copy
+Edit
+import type { EventMap } from '../types';
+
+// Generic callback based on event name and payload
+type EventCallback<E extends keyof EventMap> = (payload: EventMap[E]) => void;
+
+class EventBus {
+  private subscribers: { [K in keyof EventMap]?: Set<EventCallback<K>> } = {};
+
+  publish<E extends keyof EventMap>(event: E, payload: EventMap[E]): void {
+    const handlers = this.subscribers[event];
+    if (!handlers) return;
+    [...handlers].forEach(callback => {
+      try {
+        callback(payload);
+      } catch (err) {
+        console.error(`Error in handler for ${String(event)}:`, err);
+      }
+    });
+  }
+
+  subscribe<E extends keyof EventMap>(event: E, callback: EventCallback<E>): () => void {
+    if (!this.subscribers[event]) {
+      this.subscribers[event] = new Set();
+    }
+    (this.subscribers[event] as Set<EventCallback<E>>).add(callback);
+    return () => {
+      (this.subscribers[event] as Set<EventCallback<E>>)?.delete(callback);
+    };
+  }
+}
+
+// Export a singleton instance of the bus
+export const eventBus = new EventBus();
+2.3 Wire the bus into the Task Queue service
+In services/taskQueueService.ts, import and publish events whenever tasks are created or resolved:
+
+ts
+Copy
+Edit
+import { eventBus } from './eventBus';
+
+// After successfully posting a new task
+const created: TaskItem = await response.json();
+eventBus.publish('task.created', created);
+
+// When resolving a task
+eventBus.publish('task.resolved', { id: taskId });
+These events can be subscribed to from any component or service, decoupling inter‑app communication.
+
+3. Running the System
+Ensure the .env.local file contains a GEMINI_API_KEY (the modifications in services/geminiClient.ts now look for either API_KEY or GEMINI_API_KEY).
+
+Use docker-compose up --build to start the backend and database.
+
+Run the frontend with npm install && npm run dev from the project root. The Task & Review Hub will now call the FastAPI endpoints, and events will be published via the new event bus.
+
+4. Next Steps
+These changes lay the foundation for future backlog items:
+
+Persist tasks to PostgreSQL or another database using SQLAlchemy or an ORM.
+
+Refactor existing services (e.g. controlPanelService, loomService) to publish and subscribe to events via the bus.
+
+Add more events to the EventMap as new features (e.g. notifications, ingestion progress) are implemented.
+
+Implement LLM request batching (AZV‑033) and component rendering optimizations (AZV‑034).
+
+Feel free to integrate these code snippets into your project or pass this document to Google AI Studio for automated implementation.
