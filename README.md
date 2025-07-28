@@ -112,6 +112,8 @@ Create a `.env.local` file in the root directory:
 ```env
 # Required for AI features
 GEMINI_API_KEY=your_gemini_api_key_here
+# The application looks for this variable specifically
+# Older `API_KEY` references have been removed
 
 # Optional: Backend configuration
 BACKEND_URL=http://localhost:8000
