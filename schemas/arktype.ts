@@ -1,0 +1,1 @@
+export { ark } from 'arktype';
