@@ -1,7 +1,7 @@
 import { GoogleGenAI, GenerateContentResponse, Type, GenerateContentParameters } from "@google/genai";
 import { RpgBookAnalysis } from "../types";
 
-const apiKey = process.env.API_KEY ?? process.env.GEMINI_API_KEY;
+const apiKey = process.env.GEMINI_API_KEY;
 
 // Initialize AI client only if API key is available
 let ai: GoogleGenAI | null = null;
@@ -9,7 +9,7 @@ let ai: GoogleGenAI | null = null;
 if (apiKey) {
   ai = new GoogleGenAI({ apiKey });
 } else {
-  console.warn("API_KEY or GEMINI_API_KEY environment variable not set. Some features may not work.");
+  console.warn("GEMINI_API_KEY environment variable not set. Some features may not work.");
 }
 
 // --- Request Queue Implementation ---

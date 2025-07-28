@@ -8,12 +8,12 @@ class ChatService {
     private chatHistories: Map<string, ChatMessage[]> = new Map();
 
     constructor() {
-        if (!process.env.API_KEY) {
-            console.error("API_KEY environment variable not set for ChatService.");
-            this.ai = null; 
+        if (!process.env.GEMINI_API_KEY) {
+            console.error("GEMINI_API_KEY environment variable not set for ChatService.");
+            this.ai = null;
             return;
         }
-        this.ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        this.ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
     }
 
     private async initializeChat(agentId: string): Promise<Chat | null> {
@@ -44,7 +44,7 @@ class ChatService {
 
     public async *sendMessageStream(agentId: string, message: string): AsyncGenerator<string, void, unknown> {
         if (!this.ai) {
-            yield "Error: Chat service is not initialized. Please configure your API_KEY.";
+            yield "Error: Chat service is not initialized. Please configure your GEMINI_API_KEY.";
             return;
         }
         
