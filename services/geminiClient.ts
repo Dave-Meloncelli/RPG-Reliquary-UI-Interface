@@ -19,20 +19,49 @@ interface QueuedRequest<T> {
   reject: (reason?: any) => void;
 }
 
-const MAX_CONCURRENT_REQUESTS = 2;
+const MAX_CONCURRENT_REQUESTS = parseInt(process.env.AGENT_MAX_CONCURRENT ?? '2', 10);
+const REQUEST_TIMEOUT_MS = parseInt(process.env.AGENT_TIMEOUT_MS ?? '0', 10);
+const DEBUG = (process.env.AGENT_DEBUG === 'true');
 let activeRequests = 0;
 const pendingQueue: QueuedRequest<any>[] = [];
+
+if (DEBUG) {
+  console.log('GeminiClient debug enabled');
+  console.log(`MAX_CONCURRENT_REQUESTS=${MAX_CONCURRENT_REQUESTS}, REQUEST_TIMEOUT_MS=${REQUEST_TIMEOUT_MS}`);
+}
+
+function withTimeout<T>(promise: Promise<T>, timeout: number): Promise<T> {
+  if (timeout <= 0) return promise;
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => {
+      if (DEBUG) console.warn('GeminiClient request timed out');
+      reject(new Error('Request timed out'));
+    }, timeout);
+    promise.then(
+      (value) => {
+        clearTimeout(timer);
+        resolve(value);
+      },
+      (err) => {
+        clearTimeout(timer);
+        reject(err);
+      }
+    );
+  });
+}
 
 async function dequeueAndRun() {
   if (activeRequests >= MAX_CONCURRENT_REQUESTS || pendingQueue.length === 0) return;
   const { fn, resolve, reject } = pendingQueue.shift()!;
   activeRequests++;
+  if (DEBUG) console.log(`GeminiClient starting request. Active: ${activeRequests}`);
   try {
-    resolve(await fn());
+    resolve(await withTimeout(fn(), REQUEST_TIMEOUT_MS));
   } catch (err) {
     reject(err);
   } finally {
     activeRequests--;
+    if (DEBUG) console.log('GeminiClient request finished');
     setTimeout(dequeueAndRun, 0);
   }
 }
@@ -40,6 +69,7 @@ async function dequeueAndRun() {
 function enqueueRequest<T>(fn: () => Promise<T>): Promise<T> {
   return new Promise((resolve, reject) => {
     pendingQueue.push({ fn, resolve, reject });
+    if (DEBUG) console.log(`GeminiClient enqueued request. Queue length: ${pendingQueue.length}`);
     dequeueAndRun();
   });
 }
@@ -58,11 +88,14 @@ export const generateText = async (
         try {
             const formattedContents = typeof contents === 'string' ? contents : contents;
 
-            const response: GenerateContentResponse = await ai.models.generateContent({
-                model: "gemini-2.5-flash",
-                contents: formattedContents,
-                config,
-            });
+            const response: GenerateContentResponse = await withTimeout(
+                ai.models.generateContent({
+                    model: "gemini-2.5-flash",
+                    contents: formattedContents,
+                    config,
+                }),
+                REQUEST_TIMEOUT_MS
+            );
             
             if (response.text) {
                 return response.text;
@@ -91,15 +124,18 @@ export const generateImageFromPrompt = async (prompt: string): Promise<string> =
         }
         
         try {
-            const response = await ai.models.generateImages({
-                model: 'imagen-3.0-generate-002',
-                prompt: prompt,
-                config: {
-                  numberOfImages: 1,
-                  outputMimeType: 'image/jpeg',
-                  aspectRatio: '1:1',
-                },
-            });
+            const response = await withTimeout(
+                ai.models.generateImages({
+                    model: 'imagen-3.0-generate-002',
+                    prompt: prompt,
+                    config: {
+                      numberOfImages: 1,
+                      outputMimeType: 'image/jpeg',
+                      aspectRatio: '1:1',
+                    },
+                }),
+                REQUEST_TIMEOUT_MS
+            );
 
             if (response.generatedImages && response.generatedImages.length > 0) {
                 const base64ImageBytes: string = response.generatedImages[0].image.imageBytes;
@@ -116,7 +152,7 @@ export const generateImageFromPrompt = async (prompt: string): Promise<string> =
 
 // --- Standardized JSON Generation (Vision) ---
 const imageUrlToBase64 = async (url: string): Promise<{ mimeType: string, data: string }> => {
-    const response = await fetch(url);
+    const response = await withTimeout(fetch(url), REQUEST_TIMEOUT_MS);
     if (!response.ok) {
         throw new Error(`Failed to fetch image: ${response.statusText}`);
     }
@@ -160,12 +196,13 @@ export const analyzeRpgBookCoverWithVision = async (imageUrl: string): Promise<R
         Return the information in the specified JSON format.`
     };
 
-    const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
-        contents: { parts: [textPart, imagePart] },
-        config: {
-            responseMimeType: "application/json",
-            responseSchema: {
+    const response = await withTimeout(
+        ai.models.generateContent({
+            model: 'gemini-2.5-flash',
+            contents: { parts: [textPart, imagePart] },
+            config: {
+                responseMimeType: "application/json",
+                responseSchema: {
                 type: Type.OBJECT,
                 properties: {
                     title: { type: Type.STRING, description: "The main title of the book." },
@@ -176,8 +213,9 @@ export const analyzeRpgBookCoverWithVision = async (imageUrl: string): Promise<R
                 },
                 required: ['title', 'authors']
             }
-        },
-    });
+        }),
+        REQUEST_TIMEOUT_MS
+    );
 
     return JSON.parse(response.text) as RpgBookAnalysis;
 };
