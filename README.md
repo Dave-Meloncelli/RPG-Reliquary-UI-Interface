@@ -117,6 +117,11 @@ GEMINI_API_KEY=your_gemini_api_key_here
 
 # Optional: Backend configuration
 BACKEND_URL=http://localhost:8000
+AGENT_MAX_CONCURRENT=2
+AGENT_TIMEOUT_MS=30000
+AGENT_RETRY_ATTEMPTS=3
+AGENT_ZERO_API_URL=http://localhost:3000
+AGENT_DEBUG=false
 ```
 
 ### API Keys
