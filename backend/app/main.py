@@ -39,6 +39,7 @@ class HealthResponse(BaseModel):
 async def health_check():
     return HealthResponse(status="healthy", message="AZ Interface API is running")
 
+
 # Task endpoints backed by the database
 @app.get("/tasks", response_model=List[schemas.Task])
 def get_tasks(db: Session = Depends(get_db)):
@@ -56,6 +57,7 @@ def get_task(task_id: int, db: Session = Depends(get_db)):
     if not db_task:
         raise HTTPException(status_code=404, detail="Task not found")
     return db_task
+
 
 if __name__ == "__main__":
     import uvicorn

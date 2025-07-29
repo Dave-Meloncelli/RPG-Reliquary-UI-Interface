@@ -12,4 +12,3 @@ class Task(Base):
     title = Column(String, nullable=False)
     description = Column(String, nullable=True)
     status = Column(String, default="pending", nullable=False)
-
