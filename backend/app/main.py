@@ -19,16 +19,22 @@ def on_startup():
     """Initialize database tables."""
     init_db()
 
+
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],  # Vite dev server
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:3000",
+    ],  # Vite dev server
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+
 # Pydantic models
+
 class HealthResponse(BaseModel):
     status: str
     message: str
@@ -37,7 +43,11 @@ class HealthResponse(BaseModel):
 # Health check endpoint
 @app.get("/health", response_model=HealthResponse)
 async def health_check():
-    return HealthResponse(status="healthy", message="AZ Interface API is running")
+    return HealthResponse(
+        status="healthy",
+        message="AZ Interface API is running",
+    )
+
 
 # Task endpoints backed by the database
 @app.get("/tasks", response_model=List[schemas.Task])
@@ -56,6 +66,7 @@ def get_task(task_id: int, db: Session = Depends(get_db)):
     if not db_task:
         raise HTTPException(status_code=404, detail="Task not found")
     return db_task
+
 
 if __name__ == "__main__":
     import uvicorn

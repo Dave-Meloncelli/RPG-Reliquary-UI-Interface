@@ -17,6 +17,7 @@ npm install
 # Backend dependencies
 cd backend
 pip install -r requirements.txt
+pip install -r requirements-dev.txt  # install testing tools
 cd ..
 ```
 
