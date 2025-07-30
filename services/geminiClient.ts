@@ -19,7 +19,9 @@ interface QueuedRequest<T> {
   reject: (reason?: any) => void;
 }
 
-const MAX_CONCURRENT_REQUESTS = 2;
+const MAX_CONCURRENT_REQUESTS = parseInt(process.env.AGENT_MAX_CONCURRENT || '2', 10);
+const REQUEST_TIMEOUT_MS = parseInt(process.env.AGENT_TIMEOUT_MS || '60000', 10);
+const RETRY_ATTEMPTS = parseInt(process.env.AGENT_RETRY_ATTEMPTS || '0', 10);
 let activeRequests = 0;
 const pendingQueue: QueuedRequest<any>[] = [];
 
@@ -37,9 +39,35 @@ async function dequeueAndRun() {
   }
 }
 
+function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => reject(new Error('Request timed out')), ms);
+    promise.then((v) => {
+      clearTimeout(timer);
+      resolve(v);
+    }, (err) => {
+      clearTimeout(timer);
+      reject(err);
+    });
+  });
+}
+
+async function runWithRetry<T>(fn: () => Promise<T>, attempts: number): Promise<T> {
+  let lastErr: any;
+  for (let i = 0; i <= attempts; i++) {
+    try {
+      return await fn();
+    } catch (err) {
+      lastErr = err;
+    }
+  }
+  throw lastErr;
+}
+
 function enqueueRequest<T>(fn: () => Promise<T>): Promise<T> {
   return new Promise((resolve, reject) => {
-    pendingQueue.push({ fn, resolve, reject });
+    const wrapped = () => runWithRetry(() => withTimeout(fn(), REQUEST_TIMEOUT_MS), RETRY_ATTEMPTS);
+    pendingQueue.push({ fn: wrapped, resolve, reject });
     dequeueAndRun();
   });
 }
@@ -160,24 +188,28 @@ export const analyzeRpgBookCoverWithVision = async (imageUrl: string): Promise<R
         Return the information in the specified JSON format.`
     };
 
-    const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
-        contents: { parts: [textPart, imagePart] },
-        config: {
-            responseMimeType: "application/json",
-            responseSchema: {
-                type: Type.OBJECT,
-                properties: {
-                    title: { type: Type.STRING, description: "The main title of the book." },
-                    authors: { type: Type.ARRAY, items: { type: Type.STRING }, description: "List of authors on the cover." },
-                    edition: { type: Type.STRING, description: "The game system or edition." },
-                    publisher: { type: Type.STRING, description: "The publisher's name." },
-                    series: { type: Type.STRING, description: "The name of the series, if any." },
-                },
-                required: ['title', 'authors']
-            }
-        },
-    });
+    const doRequest = async () => {
+        const response = await ai.models.generateContent({
+            model: 'gemini-2.5-flash',
+            contents: { parts: [textPart, imagePart] },
+            config: {
+                responseMimeType: "application/json",
+                responseSchema: {
+                    type: Type.OBJECT,
+                    properties: {
+                        title: { type: Type.STRING, description: "The main title of the book." },
+                        authors: { type: Type.ARRAY, items: { type: Type.STRING }, description: "List of authors on the cover." },
+                        edition: { type: Type.STRING, description: "The game system or edition." },
+                        publisher: { type: Type.STRING, description: "The publisher's name." },
+                        series: { type: Type.STRING, description: "The name of the series, if any." },
+                    },
+                    required: ['title', 'authors']
+                }
+            },
+        });
+        return response;
+    };
+    const response = await enqueueRequest(doRequest);
 
     return JSON.parse(response.text) as RpgBookAnalysis;
 };

@@ -50,6 +50,10 @@ From `internal/schemas.md`:
    ```bash
    cp .env.example .env.local
    # edit .env.local and add GEMINI_API_KEY
+   # optional tuning knobs for agent execution
+   # AGENT_MAX_CONCURRENT controls how many requests run in parallel
+   # AGENT_TIMEOUT_MS sets a timeout for each agent request
+   # AGENT_RETRY_ATTEMPTS sets how many times a request is retried on failure
    ```
 3. Start the servers
    ```bash
