@@ -36,8 +36,7 @@ GEMINI_API_KEY=your_gemini_api_key_here
 npm run dev
 
 # Terminal 2: Start backend
-cd backend
-python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+npm run backend
 ```
 
 ## Common Issues & Fixes

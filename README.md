@@ -53,8 +53,8 @@ From `internal/schemas.md`:
    ```
 3. Start the servers
    ```bash
-   npm run dev          # frontend
-   cd backend && python -m uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+   npm run dev      # frontend
+   npm run backend  # backend
    ```
 
 ## First Interaction
