@@ -1,0 +1,180 @@
+version: '3.9'
+
+services:
+  # Core Backend for Agent Zero
+  agent-zero-api:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+      - milvus
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - MILVUS_HOST=milvus
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - shared_data:/app/shared
+
+  # Frontend (optional if separate)
+  agent-zero-ui:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - agent-zero-api
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - shared_data:/app/shared:ro
+
+  # Crew.AI Manager
+  crewai:
+    build:
+      context: ./crewai
+    volumes:
+      - ./crewai:/app
+      - shared_data:/app/shared
+    command: python main.py
+    depends_on:
+      - redis
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8500/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # A2A Agent-to-Agent Communication Module
+  a2a:
+    build:
+      context: ./a2a
+    ports:
+      - "5001:5001"
+    depends_on:
+      - redis
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - shared_data:/app/shared
+
+  # n8n Workflows with PostgreSQL
+  n8n:
+    image: n8nio/n8n
+    ports:
+      - "5678:5678"
+    environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=n8n
+      - DB_POSTGRESDB_USER=n8n
+      - DB_POSTGRESDB_PASSWORD=n8npass
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=admin
+    depends_on:
+      - postgres
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - shared_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5678"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # PostgreSQL for n8n
+  postgres:
+    image: postgres:14
+    environment:
+      - POSTGRES_USER=n8n
+      - POSTGRES_PASSWORD=n8npass
+      - POSTGRES_DB=n8n
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "n8n"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Redis for event bus & pub/sub
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # Milvus Vector DB
+  milvus:
+    image: milvusdb/milvus:v2.4.0
+    ports:
+      - "19530:19530"
+      - "9091:9091"
+    environment:
+      - MILVUS_DB_PATH=/var/lib/milvus
+    volumes:
+      - milvus_data:/var/lib/milvus
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Ollama LLM Runtime with GPU support
+  ollama:
+    image: ollama/ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+      - shared_data:/ollama/shared
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["gpu"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # WebSocket Gateway
+  websocket:
+    build:
+      context: ./websocket
+    ports:
+      - "9000:9000"
+    depends_on:
+      - redis
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - shared_data:/websocket/shared
+
+volumes:
+  n8n_data:
+  milvus_data:
+  ollama_data:
+  shared_data:
+  postgres_data:

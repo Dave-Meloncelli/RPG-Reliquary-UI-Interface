@@ -1,0 +1,735 @@
+version: '3.9'
+
+services:
+  # ===== AGENT ZERO CORE SERVICES =====
+  
+  # Agent Zero API (FastAPI Backend)
+  agent-zero-api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+      target: production
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+      - milvus
+      - elasticsearch
+    environment:
+      - DATABASE_URL=postgresql://az_user:${POSTGRES_PASSWORD}@postgres:5432/az_interface
+      - REDIS_URL=redis://:${REDIS_PASSWORD}@redis:6379
+      - MILVUS_HOST=milvus
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - SECRET_KEY=${SECRET_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - NODE_ENV=${NODE_ENV:-production}
+    volumes:
+      - agent_zero_data:/app/data
+      - agent_zero_logs:/app/logs
+      - shared_models:/app/models
+    networks:
+      - agent_zero_network
+      - monitoring_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1.0'
+        reservations:
+          memory: 1G
+          cpus: '0.5'
+
+  # Agent Zero Frontend (React)
+  agent-zero-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+      target: production
+    ports:
+      - "3000:3000"
+    depends_on:
+      - agent-zero-api
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - BACKEND_URL=http://agent-zero-api:8000
+      - REACT_APP_API_URL=http://agent-zero-api:8000
+    volumes:
+      - agent_zero_ui_data:/app/dist
+      - shared_models:/app/models:ro
+    networks:
+      - agent_zero_network
+      - monitoring_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '0.5'
+
+  # ===== CREWAI MULTI-AGENT FRAMEWORK =====
+  
+  # CrewAI Core Service
+  crewai-core:
+    build:
+      context: ./crewai
+      dockerfile: Dockerfile
+    ports:
+      - "8500:8500"  # Streamlit UI
+      - "8501:8501"  # CrewAI API
+    depends_on:
+      - postgres
+      - redis
+      - ollama
+      - agent-zero-api
+    environment:
+      - DATABASE_URL=postgresql://az_user:${POSTGRES_PASSWORD}@postgres:5432/az_interface
+      - REDIS_URL=redis://:${REDIS_PASSWORD}@redis:6379
+      - OLLAMA_HOST=http://ollama:11434
+      - AGENT_ZERO_API_URL=http://agent-zero-api:8000
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - CREWAI_LOG_LEVEL=${LOG_LEVEL:-INFO}
+    volumes:
+      - crewai_data:/app/data
+      - crewai_workspace:/app/workspace
+      - shared_models:/app/models
+      - ./crewai/agents:/app/agents
+      - ./crewai/tasks:/app/tasks
+    networks:
+      - agent_zero_network
+      - crewai_network
+      - monitoring_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8500/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2.0'
+        reservations:
+          memory: 2G
+          cpus: '1.0'
+
+  # CrewAI Agent Workers (Scalable)
+  crewai-worker:
+    build:
+      context: ./crewai
+      dockerfile: Dockerfile.worker
+    depends_on:
+      - crewai-core
+      - redis
+      - ollama
+    environment:
+      - REDIS_URL=redis://:${REDIS_PASSWORD}@redis:6379
+      - OLLAMA_HOST=http://ollama:11434
+      - CREWAI_CORE_URL=http://crewai-core:8501
+      - WORKER_ID=${WORKER_ID:-worker-1}
+      - MAX_CONCURRENT_TASKS=${MAX_CONCURRENT_TASKS:-5}
+    volumes:
+      - crewai_workspace:/app/workspace
+      - shared_models:/app/models
+    networks:
+      - crewai_network
+      - monitoring_network
+    restart: unless-stopped
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1.0'
+        reservations:
+          memory: 1G
+          cpus: '0.5'
+
+  # ===== A2A PROTOCOL SERVICES =====
+  
+  # A2A Protocol Gateway
+  a2a-gateway:
+    build:
+      context: ./a2a
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+      - "5002:5002"  # A2A Inspector
+    depends_on:
+      - redis
+      - postgres
+      - agent-zero-api
+    environment:
+      - REDIS_URL=redis://:${REDIS_PASSWORD}@redis:6379
+      - DATABASE_URL=postgresql://az_user:${POSTGRES_PASSWORD}@postgres:5432/az_interface
+      - AGENT_ZERO_API_URL=http://agent-zero-api:8000
+      - A2A_LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - A2A_NODE_ID=${A2A_NODE_ID:-a2a-gateway-1}
+    volumes:
+      - a2a_data:/app/data
+      - a2a_certificates:/app/certificates
+      - shared_models:/app/models
+    networks:
+      - agent_zero_network
+      - a2a_network
+      - monitoring_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '0.5'
+
+  # A2A Agent Registry
+  a2a-registry:
+    build:
+      context: ./a2a/registry
+      dockerfile: Dockerfile
+    ports:
+      - "5003:5003"
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - DATABASE_URL=postgresql://az_user:${POSTGRES_PASSWORD}@postgres:5432/az_interface
+      - REDIS_URL=redis://:${REDIS_PASSWORD}@redis:6379
+      - REGISTRY_LOG_LEVEL=${LOG_LEVEL:-INFO}
+    volumes:
+      - a2a_registry_data:/app/data
+    networks:
+      - a2a_network
+      - monitoring_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5003/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # ===== N8N WORKFLOW AUTOMATION =====
+  
+  # n8n Core Service
+  n8n:
+    image: n8nio/n8n:latest
+    ports:
+      - "5678:5678"
+    depends_on:
+      - postgres
+      - redis
+      - agent-zero-api
+      - crewai-core
+      - a2a-gateway
+    environment:
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=n8n
+      - DB_POSTGRESDB_USER=n8n_user
+      - DB_POSTGRESDB_PASSWORD=${N8N_PASSWORD}
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_USER}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD}
+      - N8N_HOST=0.0.0.0
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - N8N_LOG_LEVEL=${LOG_LEVEL:-info}
+      - AGENT_ZERO_API_URL=http://agent-zero-api:8000
+      - CREWAI_API_URL=http://crewai-core:8501
+      - A2A_GATEWAY_URL=http://a2a-gateway:5001
+      - WEBHOOK_URL=http://n8n:5678
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - n8n_workflows:/home/node/.n8n/workflows
+      - shared_models:/home/node/.n8n/shared:ro
+    networks:
+      - agent_zero_network
+      - n8n_network
+      - monitoring_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5678/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1.0'
+        reservations:
+          memory: 1G
+          cpus: '0.5'
+
+  # ===== AI & ML SERVICES =====
+  
+  # Ollama Local LLM
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+      - shared_models:/root/.ollama/models
+    networks:
+      - agent_zero_network
+      - crewai_network
+      - monitoring_network
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Milvus Vector Database
+  milvus:
+    image: milvusdb/milvus:v2.4.0
+    ports:
+      - "19530:19530"
+      - "9091:9091"
+    environment:
+      - MILVUS_DB_PATH=/var/lib/milvus
+      - MILVUS_LOG_LEVEL=${LOG_LEVEL:-info}
+    volumes:
+      - milvus_data:/var/lib/milvus
+    networks:
+      - agent_zero_network
+      - monitoring_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2.0'
+        reservations:
+          memory: 2G
+          cpus: '1.0'
+
+  # ===== DATABASE & STORAGE =====
+  
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=az_interface
+      - POSTGRES_USER=az_user
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_INITDB_ARGS=--encoding=UTF-8 --lc-collate=C --lc-ctype=C
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql
+    networks:
+      - agent_zero_network
+      - monitoring_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U az_user -d az_interface"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1.0'
+        reservations:
+          memory: 1G
+          cpus: '0.5'
+
+  # Redis Cache & Message Broker
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
+    volumes:
+      - redis_data:/data
+    networks:
+      - agent_zero_network
+      - monitoring_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+          cpus: '0.5'
+
+  # ===== MONITORING & OBSERVABILITY =====
+  
+  # Prometheus Metrics Collection
+  prometheus:
+    image: prom/prometheus:v2.48.0
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--storage.tsdb.retention.time=200h'
+      - '--web.enable-lifecycle'
+    networks:
+      - monitoring_network
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:9090/-/healthy"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Grafana Dashboards
+  grafana:
+    image: grafana/grafana:10.2.0
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+      - ./monitoring/grafana/dashboards:/var/lib/grafana/dashboards
+    depends_on:
+      - prometheus
+    networks:
+      - monitoring_network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:3000/api/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Jaeger Distributed Tracing
+  jaeger:
+    image: jaegertracing/all-in-one:1.48
+    ports:
+      - "16686:16686"
+      - "14268:14268"
+    environment:
+      - COLLECTOR_OTLP_ENABLED=true
+    volumes:
+      - jaeger_data:/tmp
+    networks:
+      - monitoring_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:16686/api/services"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Elasticsearch for Log Aggregation
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.11.0
+    ports:
+      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - elasticsearch_data:/usr/share/elasticsearch/data
+    networks:
+      - monitoring_network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:9200/_cluster/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '1.0'
+
+  # Kibana for Log Visualization
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.11.0
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+    networks:
+      - monitoring_network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5601/api/status || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # ===== EMAIL & NOTIFICATIONS =====
+  
+  # MailHog for Email Testing
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "1025:1025"  # SMTP
+      - "8025:8025"  # Web UI
+    networks:
+      - agent_zero_network
+      - monitoring_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8025"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # ===== BACKUP & RECOVERY =====
+  
+  # Backup Service
+  backup:
+    build:
+      context: ./scripts
+      dockerfile: Dockerfile.backup
+    volumes:
+      - agent_zero_data:/data
+      - postgres_data:/var/lib/postgresql/data
+      - backup_data:/backups
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - BACKUP_SCHEDULE=0 2 * * *  # Daily at 2 AM
+      - RETENTION_DAYS=30
+      - S3_BUCKET=${BACKUP_S3_BUCKET}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+    depends_on:
+      - postgres
+    networks:
+      - agent_zero_network
+    restart: unless-stopped
+
+  # ===== DEVELOPMENT TOOLS =====
+  
+  # Portainer for Container Management
+  portainer:
+    image: portainer/portainer-ce:latest
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    networks:
+      - monitoring_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/api/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # Adminer for Database Management
+  adminer:
+    image: adminer:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    networks:
+      - agent_zero_network
+    restart: unless-stopped
+
+  # Redis Commander for Redis Management
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    ports:
+      - "8081:8081"
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    depends_on:
+      - redis
+    networks:
+      - agent_zero_network
+    restart: unless-stopped
+
+  # ===== SECURITY & NETWORKING =====
+  
+  # Traefik Reverse Proxy
+  traefik:
+    image: traefik:v3.0
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8082:8080"  # Dashboard
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./monitoring/traefik.yml:/etc/traefik/traefik.yml
+      - ./monitoring/traefik:/etc/traefik/dynamic
+    command:
+      - --api.dashboard=true
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+    networks:
+      - agent_zero_network
+      - monitoring_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # ===== TESTING & QUALITY =====
+  
+  # SonarQube for Code Quality
+  sonarqube:
+    image: sonarqube:community
+    ports:
+      - "9001:9000"
+    environment:
+      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+    volumes:
+      - sonarqube_data:/opt/sonarqube/data
+      - sonarqube_extensions:/opt/sonarqube/extensions
+      - sonarqube_logs:/opt/sonarqube/logs
+    networks:
+      - monitoring_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/api/system/status"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  # Agent Zero Data
+  agent_zero_data:
+  agent_zero_ui_data:
+  agent_zero_logs:
+  
+  # CrewAI Data
+  crewai_data:
+  crewai_workspace:
+  
+  # A2A Protocol Data
+  a2a_data:
+  a2a_certificates:
+  a2a_registry_data:
+  
+  # n8n Data
+  n8n_data:
+  n8n_workflows:
+  
+  # AI & ML Data
+  ollama_data:
+  milvus_data:
+  shared_models:
+  
+  # Database & Storage
+  postgres_data:
+  redis_data:
+  
+  # Monitoring & Observability
+  prometheus_data:
+  grafana_data:
+  jaeger_data:
+  elasticsearch_data:
+  
+  # Backup & Recovery
+  backup_data:
+  
+  # Development Tools
+  portainer_data:
+  
+  # Quality Assurance
+  sonarqube_data:
+  sonarqube_extensions:
+  sonarqube_logs:
+
+networks:
+  # Agent Zero Network (Core Services)
+  agent_zero_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+    labels:
+      - "agent-zero.core=true"
+  
+  # CrewAI Network (Multi-Agent Communication)
+  crewai_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16
+    labels:
+      - "crewai.agents=true"
+  
+  # A2A Network (Agent-to-Agent Protocol)
+  a2a_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.22.0.0/16
+    labels:
+      - "a2a.protocol=true"
+  
+  # n8n Network (Workflow Automation)
+  n8n_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.23.0.0/16
+    labels:
+      - "n8n.workflows=true"
+  
+  # Monitoring Network (Observability Stack)
+  monitoring_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.24.0.0/16
+    labels:
+      - "monitoring.stack=true"
