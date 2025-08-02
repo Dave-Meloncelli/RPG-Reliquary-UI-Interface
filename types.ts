@@ -549,6 +549,8 @@ export interface EventMap {
   'auth.logout': {};
   'auth.register': { user: { id: number; username: string; email: string; is_active: boolean; is_admin: boolean } };
   'auth.error': { error: string };
+  /** OCR scan completion event */
+  'ocr.scan.complete': { result: any };
   // Extend this map with further events as needed.
 }
 
