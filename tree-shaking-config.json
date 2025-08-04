@@ -1,0 +1,8 @@
+{
+  "treeShaking": {
+    "enabled": true,
+    "sideEffects": false,
+    "usedExports": true,
+    "minimize": true
+  }
+}

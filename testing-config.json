@@ -1,0 +1,20 @@
+{
+  "testing": {
+    "framework": "vitest",
+    "coverage": {
+      "enabled": true,
+      "threshold": 80,
+      "reporter": [
+        "text",
+        "html",
+        "lcov"
+      ]
+    },
+    "types": [
+      "unit",
+      "integration",
+      "e2e"
+    ],
+    "automation": true
+  }
+}

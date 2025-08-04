@@ -1,0 +1,11 @@
+{
+  "general": {
+    "buildStrategy": "balanced",
+    "qualityChecks": [
+      "general-quality"
+    ],
+    "optimizations": [
+      "standard-optimizations"
+    ]
+  }
+}

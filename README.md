@@ -17,6 +17,11 @@ AZ Interface is a comprehensive enterprise-grade AI agent platform that integrat
 - **👥 CrewAI**: Multi-agent collaboration and task orchestration
 - **🔗 A2A Protocol**: Agent-to-agent communication and interoperability
 - **⚡ n8n**: Workflow automation and integration hub
+- **🧠 Ashraka Autonomy**: Persistent memory and AI autonomy system
+- **🔧 API Build Agent**: Automated build and deployment management
+- **🤖 Google AI Studio**: Advanced AI model integration (Gemini, Imagen, Code Gecko)
+- **💻 OpenAI Codex**: Intelligent code generation and analysis
+- **🔬 Google Vertex AI**: Custom model training and A/B testing
 - **📊 Monitoring**: Complete observability stack (Prometheus, Grafana, Jaeger)
 - **🛡️ Security**: Enterprise-grade security and authentication
 - **💾 Database**: PostgreSQL with comprehensive schema
@@ -36,31 +41,123 @@ AZ Interface is a comprehensive enterprise-grade AI agent platform that integrat
 └─────────────────────────────────────────────────────────────┘
 ```
 
+## 📁 **Project Structure**
+
+```
+AZ Interface/
+├── src/                          # Main source code
+│   ├── components/               # React UI components
+│   ├── services/                 # Business logic services
+│   ├── apps/                     # Application components
+│   ├── context/                  # React context providers
+│   ├── types/                    # TypeScript type definitions
+│   ├── constants/                # Application constants
+│   ├── data/                     # Data files
+│   ├── styles/                   # CSS files
+│   ├── hooks/                    # React hooks
+│   └── utils/                    # Utility functions
+├── public/                       # Static assets
+├── backend/                      # FastAPI backend
+├── crewai/                       # CrewAI services
+├── a2a/                         # A2A protocol services
+├── docs/                         # Documentation
+├── internal/                     # Internal documentation
+├── tests/                        # Test files
+└── docker-compose.yml           # Docker orchestration
+```
+
 ## 🚀 **Quick Start**
 
 ### Prerequisites
 
+- **Node.js** (v18.0.0+) - [Download](https://nodejs.org/)
+- **Python** (3.13.2+) - [Download](https://python.org/)
 - **Docker & Docker Compose** (v2.0+)
 - **Git** (latest version)
 - **8GB+ RAM** (16GB recommended)
 - **50GB+ disk space**
 - **NVIDIA GPU** (optional, for Ollama acceleration)
 
+### Version Control & Security
+
+This project uses a comprehensive version control and security system:
+
+- **🔄 Automated Changelog**: Conventional commits with automatic categorization
+- **💾 Backup System**: Automated backups with rollback capabilities
+- **🛡️ Security Handshake**: 7-icon persona security system
+- **📊 Audit Pipeline**: Pre-commit and post-commit validation
+- **🎯 Icon System**: 19 personas with 90 security handshake icons
+
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/your-username/az-interface.git
+git clone https://github.com/davem/az-interface.git
 cd az-interface
 ```
 
-### 2. Environment Setup
+### 2. Frontend Setup
+
+```bash
+# Install Node.js dependencies
+npm install
+
+# Start development server (includes installation wizard)
+npm run dev
+
+# Build for production
+npm run build
+```
+
+### 3. Installation Wizard
+
+The installation wizard will automatically open in your browser and guide you through:
+
+- **API Key Configuration**: Set up Google AI Studio, OpenAI Codex, and Vertex AI
+- **Shared Folders**: Configure required directories and data storage
+- **Ashraka Autonomy**: Set up persistent memory system
+- **System Validation**: Test all integrations and verify setup
+
+**Supported Integrations:**
+- **Google AI Studio**: Gemini Pro, Imagen 2, Code Gecko models
+- **OpenAI Codex**: GPT-4, GPT-3.5 Turbo, Code Davinci 002
+- **Google Vertex AI**: Custom model training and A/B/C/D testing
+- **Ashraka Autonomy**: Persistent memory and drift detection
+- **API Build Agent**: Automated build and deployment management
+
+### 4. Environment Setup
 
 ```bash
 # Copy environment template
-cp env.example .env
+cp env.example .env.local
 
 # Edit environment variables
-nano .env
+nano .env.local
+```
+
+### 5. Version Control Setup
+
+```bash
+# Initialize version control system
+npm run version:control
+
+# Create initial backup
+npm run backup:create "Initial setup backup"
+
+# Update changelog
+npm run changelog:update
+```
+
+### 6. Security & Audit
+
+```bash
+# Run comprehensive audit
+npm run audit:all
+
+# Generate central index
+npm run generate:index
+
+# Validate system integrity
+npm run validate:system
 ```
 
 **Required Environment Variables:**
@@ -83,7 +180,23 @@ N8N_USER=admin
 N8N_PASSWORD=your_n8n_password_here
 ```
 
-### 3. Start the Platform
+### 7. Backend Setup
+
+```bash
+# Navigate to backend directory
+cd backend
+
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Run database migrations
+alembic upgrade head
+
+# Start backend server
+uvicorn app.main:app --reload
+```
+
+### 8. Start All Services (Docker)
 
 ```bash
 # Start all services
@@ -96,7 +209,7 @@ docker-compose ps
 docker-compose logs -f
 ```
 
-### 4. Access Services
+### 9. Access Services
 
 | Service | URL | Default Credentials |
 |---------|-----|-------------------|
@@ -109,7 +222,115 @@ docker-compose logs -f
 | **MailHog** | http://localhost:8025 | - |
 | **Adminer** | http://localhost:8080 | - |
 
+## 🔧 **Development Setup**
+
+### **Version Control & Security**
+
+This project includes a comprehensive version control and security system:
+
+#### **Available Commands**
+```bash
+# Version Control
+npm run changelog:update    # Update changelog with recent commits
+npm run changelog:release   # Create new release with version bump
+npm run backup:create       # Create system backup
+npm run backup:list         # List available backups
+npm run backup:rollback     # Rollback to backup or commit
+npm run backup:validate     # Validate backup integrity
+npm run version:control     # Run full version control workflow
+
+# Security & Audit
+npm run audit:all           # Run comprehensive audit
+npm run audit:docs          # Audit documentation
+npm run audit:technical     # Technical codebase audit
+npm run audit:config        # Configuration audit
+npm run audit:backlog       # Backlog and TODO audit
+
+# System Management
+npm run generate:index      # Generate central index
+npm run validate:system     # Validate system integrity
+npm run optimize:all        # Run build optimization
+```
+
+#### **Icon System**
+- **19 Persona Character Icons**: Public-facing identification
+- **90 Security Handshake Icons**: Backend security validation
+- **Enhanced XP System**: 15 levels (🌱 to 🌠)
+- **Hover Tooltips**: Detailed information on hover
+- **Synergy Patterns**: Cross-category fusion opportunities
+
+#### **Security Features**
+- **7-Icon Security Handshake**: Authority, Health, Drift, Activity, Standing, XP
+- **Persona Validation**: Deterministic handshake generation
+- **Tamper Detection**: Suspicious pattern identification
+- **Audit Integration**: Complete operation logging
+- **Permission System**: Role-based access control
+
+### **Frontend Development**
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Run type checking
+npm run type-check
+
+# Run linting
+npm run lint
+
+# Run tests
+npm test
+
+# Build for production
+npm run build
+```
+
+### **Backend Development**
+
+```bash
+# Navigate to backend
+cd backend
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run migrations
+alembic upgrade head
+
+# Start development server
+uvicorn app.main:app --reload --port 8000
+
+# Run tests
+pytest
+```
+
+### **Docker Development**
+
+```bash
+# Start all services
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop services
+docker-compose down
+
+# Rebuild services
+docker-compose up -d --build
+```
+
 ## 🔧 **Service Architecture**
+
+### **Core AI Integrations**
+- **🧠 Ashraka Autonomy**: Persistent memory and drift detection system
+- **🔧 API Build Agent**: Automated build, deployment, and API management
+- **🤖 Google AI Studio**: Multi-model AI generation (text, image, code)
+- **💻 OpenAI Codex**: Advanced code generation, editing, and analysis
+- **🔬 Google Vertex AI**: Custom model training and A/B/C/D testing
 
 ### **Agent Zero Core Services**
 - **agent-zero-api**: FastAPI backend with authentication, task management
@@ -271,6 +492,19 @@ docker-compose up -d --scale agent-zero-api=3
 
 ### **Common Issues**
 
+**Frontend Build Issues**
+```bash
+# Clear node_modules and reinstall
+rm -rf node_modules package-lock.json
+npm install
+
+# Check for version conflicts
+npm ls
+
+# Run type checking
+npm run type-check
+```
+
 **Service Won't Start**
 ```bash
 # Check logs
@@ -308,6 +542,13 @@ docker stats
 2. **Database Tuning**: Optimize PostgreSQL configuration
 3. **Caching**: Configure Redis for optimal performance
 4. **Monitoring**: Use Grafana dashboards to identify bottlenecks
+
+## 📋 **Documentation**
+
+- **[Tech Stack Registry](TECH_STACK_REGISTRY.md)**: Complete technology documentation
+- **[Comprehensive Analysis](COMPREHENSIVE_ANALYSIS_SUMMARY.md)**: Project analysis and status
+- **[Agent Handoff Context](AGENT_HANDOFF_CONTEXT.md)**: Context for development handoffs
+- **[Known Faults & Fixes](internal/Known-faults-fixes.md)**: Historical issues and solutions
 
 ## 🤝 **Contributing**
 

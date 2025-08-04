@@ -1,13 +1,13 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import React from 'react';
-import App from '../../App';
-import { authService } from '../../services/authService';
-import { eventBus } from '../../services/eventBus';
+import App from '../../src/components/App';
+import { authService } from '../../src/services/authService';
+import { eventBus } from '../../src/services/eventBus';
 
 // Mock the services
-vi.mock('../../services/authService');
-vi.mock('../../services/eventBus');
+vi.mock('../../src/services/authService');
+vi.mock('../../src/services/eventBus');
 
 // Mock localStorage
 const localStorageMock = {

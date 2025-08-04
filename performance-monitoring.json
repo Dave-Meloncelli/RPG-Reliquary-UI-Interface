@@ -1,0 +1,17 @@
+{
+  "performance": {
+    "metrics": [
+      "build-time",
+      "bundle-size",
+      "load-time"
+    ],
+    "tools": [
+      "webpack-bundle-analyzer",
+      "lighthouse"
+    ],
+    "alerts": {
+      "buildTimeThreshold": 30000,
+      "bundleSizeThreshold": 500000
+    }
+  }
+}
