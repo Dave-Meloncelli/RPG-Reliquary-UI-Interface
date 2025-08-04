@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Desktop from './components/Desktop';
-import Dock from './components/Dock';
-import ErrorBoundary from './components/ErrorBoundary';
-import { LoginModal } from './components/LoginModal';
-import { APPS } from './constants';
-import { WindowProvider } from './context/WindowContext';
-import { authService } from './services/authService';
-import { eventBus } from './services/eventBus';
+import Desktop from '../components/Desktop';
+import Dock from '../components/Dock';
+import ErrorBoundary from '../components/ErrorBoundary';
+import { LoginModal } from '../components/LoginModal';
+import { APPS } from '../constants';
+import { WindowProvider } from '../context/WindowContext';
+import { authService } from '../services/authService';
+import { eventBus } from '../services/eventBus';
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

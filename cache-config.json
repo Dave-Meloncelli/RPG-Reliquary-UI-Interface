@@ -1,0 +1,9 @@
+{
+  "strategy": "dependency-based",
+  "cacheKey": "content-hash",
+  "invalidation": "smart",
+  "compression": "gzip",
+  "maxAge": "1 year",
+  "components": 51,
+  "services": 37
+}

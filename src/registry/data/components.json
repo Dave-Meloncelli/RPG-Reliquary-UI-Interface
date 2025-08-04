@@ -1,0 +1,1756 @@
+{
+  "App": {
+    "name": "App",
+    "path": "src\\components\\App.tsx",
+    "dependencies": [
+      "../components/Desktop",
+      "../components/Dock",
+      "../components/ErrorBoundary",
+      "../components/LoginModal",
+      "../constants",
+      "../context/WindowContext",
+      "../services/authService",
+      "../services/eventBus"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "handleLoginSuccess",
+      "handleLogout",
+      "onClick",
+      "onClick",
+      "onClose",
+      "onLoginSuccess"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.374Z",
+    "status": "active"
+  },
+  "ErduIncidentList": {
+    "name": "ErduIncidentList",
+    "path": "src\\components\\ErduIncidentList.tsx",
+    "dependencies": [
+      "../types",
+      "../components/icons"
+    ],
+    "props": [
+      {
+        "name": "incidents",
+        "type": "ErduIncident[]",
+        "required": true
+      },
+      {
+        "name": "onResolve",
+        "type": "(incidentId: string) => void",
+        "required": true
+      },
+      {
+        "name": "onInvestigate",
+        "type": "(incident: ErduIncident) => void",
+        "required": true
+      }
+    ],
+    "hooks": [
+      "useState",
+      "useState"
+    ],
+    "eventHandlers": [
+      "onClick",
+      "onClick",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.374Z",
+    "status": "active"
+  },
+  "Desktop": {
+    "name": "Desktop",
+    "path": "src\\components\\Desktop.tsx",
+    "dependencies": [
+      "react",
+      "./Window",
+      "../context/WindowContext"
+    ],
+    "props": [],
+    "hooks": [
+      "useWindows",
+      "useWindows"
+    ],
+    "eventHandlers": [
+      "onClose",
+      "onMinimize",
+      "onMaximize",
+      "onFocus",
+      "onPositionChange"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.375Z",
+    "status": "active"
+  },
+  "Dock": {
+    "name": "Dock",
+    "path": "src\\components\\Dock.tsx",
+    "dependencies": [
+      "react",
+      "../constants",
+      "../context/WindowContext"
+    ],
+    "props": [
+      {
+        "name": "apps",
+        "type": "AppDefinition[]",
+        "required": true
+      }
+    ],
+    "hooks": [
+      "useWindows",
+      "useWindows"
+    ],
+    "eventHandlers": [
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.375Z",
+    "status": "active"
+  },
+  "Window": {
+    "name": "Window",
+    "path": "src\\components\\Window.tsx",
+    "dependencies": [
+      "./ErrorBoundary"
+    ],
+    "props": [
+      {
+        "name": "id",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true
+      },
+      {
+        "name": "initialPosition",
+        "type": "{ x: number",
+        "required": true
+      }
+    ],
+    "hooks": [
+      "useState",
+      "useRef",
+      "useEffect",
+      "useState",
+      "useRef",
+      "useRef",
+      "useDown",
+      "useEvent",
+      "useEffect",
+      "useMove",
+      "useEvent",
+      "useUp",
+      "useMove",
+      "useUp",
+      "useMove",
+      "useUp",
+      "useEffect",
+      "useDown",
+      "useDown",
+      "useDown"
+    ],
+    "eventHandlers": [
+      "handleMouseDown",
+      "handleMouseMove",
+      "handleMouseUp",
+      "onMouseDown",
+      "onMouseDown",
+      "onClick",
+      "onClick",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.375Z",
+    "status": "active"
+  },
+  "TerminalIcon": {
+    "name": "TerminalIcon",
+    "path": "src\\components\\icons.tsx",
+    "dependencies": [],
+    "props": [],
+    "hooks": [],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.375Z",
+    "status": "active"
+  },
+  "PersonaViewerApp": {
+    "name": "PersonaViewerApp",
+    "path": "src\\apps\\PersonaViewerApp.tsx",
+    "dependencies": [
+      "../services/personaService",
+      "../components/persona/PersonaList",
+      "../components/persona/PersonaDetail"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "handleSelectAgent",
+      "onSelect"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.401Z",
+    "status": "active"
+  },
+  "ErrorBoundary": {
+    "name": "ErrorBoundary",
+    "path": "src\\components\\ErrorBoundary.tsx",
+    "dependencies": [],
+    "props": [],
+    "hooks": [],
+    "eventHandlers": [
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.375Z",
+    "status": "active"
+  },
+  "LoginModal": {
+    "name": "LoginModal",
+    "path": "src\\components\\LoginModal.tsx",
+    "dependencies": [
+      "../services/authService",
+      "../services/eventBus"
+    ],
+    "props": [
+      {
+        "name": "isOpen",
+        "type": "boolean",
+        "required": true
+      },
+      {
+        "name": "onClose",
+        "type": "() => void",
+        "required": true
+      },
+      {
+        "name": "onLoginSuccess",
+        "type": "() => void",
+        "required": true
+      }
+    ],
+    "hooks": [
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState"
+    ],
+    "eventHandlers": [
+      "handleLogin",
+      "handleRegister",
+      "onClick",
+      "onSubmit",
+      "onChange",
+      "onChange",
+      "onSubmit",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.376Z",
+    "status": "active"
+  },
+  "PasswordResetModal": {
+    "name": "PasswordResetModal",
+    "path": "src\\components\\PasswordResetModal.tsx",
+    "dependencies": [],
+    "props": [
+      {
+        "name": "isOpen",
+        "type": "boolean",
+        "required": true
+      },
+      {
+        "name": "onClose",
+        "type": "() => void",
+        "required": true
+      },
+      {
+        "name": "onResetSuccess",
+        "type": "() => void",
+        "required": true
+      }
+    ],
+    "hooks": [
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState"
+    ],
+    "eventHandlers": [
+      "handleRequestReset",
+      "handleConfirmReset",
+      "onClick",
+      "onSubmit",
+      "onChange",
+      "onSubmit",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onClick"
+    ],
+    "apiCalls": [
+      "fetch",
+      "fetch"
+    ],
+    "lastUpdated": "2025-08-04T00:10:15.376Z",
+    "status": "active"
+  },
+  "PersonaDetail": {
+    "name": "PersonaDetail",
+    "path": "Personas\\PersonaDetail.tsx",
+    "dependencies": [
+      "react",
+      "../../types"
+    ],
+    "props": [
+      {
+        "name": "agent",
+        "type": "AgentProfile | null",
+        "required": true
+      }
+    ],
+    "hooks": [],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.422Z",
+    "status": "active"
+  },
+  "PersonaList": {
+    "name": "PersonaList",
+    "path": "Personas\\PersonaList.tsx",
+    "dependencies": [
+      "react",
+      "../../types"
+    ],
+    "props": [
+      {
+        "name": "agents",
+        "type": "AgentProfile[]",
+        "required": true
+      },
+      {
+        "name": "selectedAgentId",
+        "type": "string | null",
+        "required": true
+      },
+      {
+        "name": "onSelectAgent",
+        "type": "(agent: AgentProfile) => void",
+        "required": true
+      }
+    ],
+    "hooks": [],
+    "eventHandlers": [
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.422Z",
+    "status": "active"
+  },
+  "WidgetWrapper": {
+    "name": "WidgetWrapper",
+    "path": "src\\components\\dashboard\\WidgetWrapper.tsx",
+    "dependencies": [],
+    "props": [
+      {
+        "name": "title",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "gridArea",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "required": true
+      }
+    ],
+    "hooks": [],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.377Z",
+    "status": "active"
+  },
+  "WidgetFactory": {
+    "name": "WidgetFactory",
+    "path": "src\\components\\dashboard\\WidgetFactory.tsx",
+    "dependencies": [
+      "./SystemStatusWidget",
+      "./KeyMetricsWidget",
+      "./AgentStatusSummaryWidget"
+    ],
+    "props": [
+      {
+        "name": "type",
+        "type": "WidgetType",
+        "required": true
+      }
+    ],
+    "hooks": [],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.377Z",
+    "status": "active"
+  },
+  "SystemStatusWidget": {
+    "name": "SystemStatusWidget",
+    "path": "src\\components\\dashboard\\SystemStatusWidget.tsx",
+    "dependencies": [
+      "../../services/erduService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.377Z",
+    "status": "active"
+  },
+  "KeyMetricsWidget": {
+    "name": "KeyMetricsWidget",
+    "path": "src\\components\\dashboard\\KeyMetricsWidget.tsx",
+    "dependencies": [
+      "../../services/observatoryService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.377Z",
+    "status": "active"
+  },
+  "AgentStatusSummaryWidget": {
+    "name": "AgentStatusSummaryWidget",
+    "path": "src\\components\\dashboard\\AgentStatusSummaryWidget.tsx",
+    "dependencies": [
+      "../../services/controlPanelService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.377Z",
+    "status": "active"
+  },
+  "FileExplorer": {
+    "name": "FileExplorer",
+    "path": "src\\components\\editor\\FileExplorer.tsx",
+    "dependencies": [],
+    "props": [
+      {
+        "name": "node",
+        "type": "FileSystemNode",
+        "required": true
+      },
+      {
+        "name": "onFileSelect",
+        "type": "(path: string, name: string) => void",
+        "required": true
+      },
+      {
+        "name": "basePath",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "hooks": [
+      "useState",
+      "useState"
+    ],
+    "eventHandlers": [
+      "handleToggle",
+      "onClick",
+      "onFileSelect",
+      "onFileSelect"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.378Z",
+    "status": "active"
+  },
+  "EditorPane": {
+    "name": "EditorPane",
+    "path": "src\\components\\editor\\EditorPane.tsx",
+    "dependencies": [
+      "react",
+      "./MonacoWrapper"
+    ],
+    "props": [
+      {
+        "name": "openFiles",
+        "type": "OpenFile[]",
+        "required": true
+      },
+      {
+        "name": "activeFilePath",
+        "type": "string | null",
+        "required": true
+      },
+      {
+        "name": "onSelectTab",
+        "type": "(path: string) => void",
+        "required": true
+      },
+      {
+        "name": "onCloseTab",
+        "type": "(path: string) => void",
+        "required": true
+      },
+      {
+        "name": "path",
+        "type": "string, value: string) => void",
+        "required": false
+      },
+      {
+        "name": "path",
+        "type": "string) => void",
+        "required": false
+      },
+      {
+        "name": "activeFile",
+        "type": "OpenFile | null",
+        "required": true
+      }
+    ],
+    "hooks": [],
+    "eventHandlers": [
+      "onClick",
+      "onClick",
+      "onClick",
+      "onChange"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.378Z",
+    "status": "active"
+  },
+  "MonacoWrapper": {
+    "name": "MonacoWrapper",
+    "path": "src\\components\\editor\\MonacoWrapper.tsx",
+    "dependencies": [
+      "monaco-editor"
+    ],
+    "props": [
+      {
+        "name": "path",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "defaultValue",
+        "type": "string",
+        "required": true
+      },
+      {
+        "name": "value",
+        "type": "string) => void",
+        "required": false
+      }
+    ],
+    "hooks": [
+      "useRef",
+      "useEffect",
+      "useRef",
+      "useRef",
+      "useEffect"
+    ],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.378Z",
+    "status": "active"
+  },
+  "PersonaCharacterIcons": {
+    "name": "PersonaCharacterIcons",
+    "path": "src\\components\\personaIcons.tsx",
+    "dependencies": [],
+    "props": [
+      {
+        "name": "personaId",
+        "type": "string",
+        "required": true
+      }
+    ],
+    "hooks": [],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.378Z",
+    "status": "active"
+  },
+  "InstallationWizard": {
+    "name": "InstallationWizard",
+    "path": "src\\components\\InstallationWizard.tsx",
+    "dependencies": [],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "onStatus",
+      "onConfig",
+      "handleNext",
+      "onClick",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onClick",
+      "onClick",
+      "onClick",
+      "onClick"
+    ],
+    "apiCalls": [
+      "fetch",
+      "fetch"
+    ],
+    "lastUpdated": "2025-08-04T00:10:15.379Z",
+    "status": "active"
+  },
+  "APPS": {
+    "name": "APPS",
+    "path": "src\\constants\\constants.tsx",
+    "dependencies": [
+      "../apps/TerminalApp",
+      "../apps/ImageGeneratorApp",
+      "../apps/NotepadApp",
+      "../apps/CouncilChamberApp",
+      "../apps/AcquisitionsApp",
+      "../apps/AgentNetworkApp",
+      "../apps/IngestionPipelineApp",
+      "../apps/OrchestratorApp",
+      "../apps/SymposiumApp",
+      "../apps/ErduMonitorApp",
+      "../apps/ObservatoryApp",
+      "../apps/DiagnosticsApp",
+      "../apps/PlaybookApp",
+      "../apps/InfrastructureApp",
+      "../apps/CodebaseApp",
+      "../apps/BackupApp",
+      "../apps/ControlPanelApp",
+      "../apps/CodexApp",
+      "../apps/HierarchyApp",
+      "../apps/PersonaViewerApp",
+      "../apps/CompanionChatApp",
+      "../apps/LoomApp",
+      "../apps/OperationsConsoleApp",
+      "../apps/VaultExplorerApp",
+      "../apps/AegisDashboardApp",
+      "../apps/CuratorApp",
+      "../apps/TechnomancerApp",
+      "../apps/BatchIngesterApp",
+      "../apps/ForensicsApp",
+      "../apps/AutomationHubApp",
+      "../apps/SystemEditorApp",
+      "../apps/TaskReviewHubApp",
+      "../components/icons"
+    ],
+    "props": [],
+    "hooks": [],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.397Z",
+    "status": "active"
+  },
+  "index": {
+    "name": "index",
+    "path": "src\\index.tsx",
+    "dependencies": [
+      "react",
+      "react-dom/client",
+      "./components/App",
+      "./components/ErrorBoundary",
+      "./utils/env-validation"
+    ],
+    "props": [],
+    "hooks": [],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.398Z",
+    "status": "active"
+  },
+  "TerminalApp": {
+    "name": "TerminalApp",
+    "path": "src\\apps\\TerminalApp.tsx",
+    "dependencies": [
+      "../services/geminiService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useRef",
+      "useEffect",
+      "useCallback",
+      "useState",
+      "useState",
+      "useState",
+      "useRef",
+      "useRef",
+      "useCallback",
+      "useEffect",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "handleInputChange",
+      "handleFormSubmit",
+      "handleClick",
+      "onClick",
+      "onSubmit",
+      "onChange"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.399Z",
+    "status": "active"
+  },
+  "CouncilChamberApp": {
+    "name": "CouncilChamberApp",
+    "path": "src\\apps\\CouncilChamberApp.tsx",
+    "dependencies": [
+      "../services/councilService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useRef",
+      "useEffect",
+      "useCallback",
+      "useState",
+      "useState",
+      "useState",
+      "useRef",
+      "useEffect",
+      "useCallback"
+    ],
+    "eventHandlers": [
+      "handleFormSubmit",
+      "onGenerator",
+      "onSubmit",
+      "onChange"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.399Z",
+    "status": "active"
+  },
+  "ImageGeneratorApp": {
+    "name": "ImageGeneratorApp",
+    "path": "src\\apps\\ImageGeneratorApp.tsx",
+    "dependencies": [
+      "../services/geminiService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useCallback",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useCallback"
+    ],
+    "eventHandlers": [
+      "handleGenerate",
+      "handleFormSubmit",
+      "onSubmit",
+      "onChange"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.399Z",
+    "status": "active"
+  },
+  "NotepadApp": {
+    "name": "NotepadApp",
+    "path": "src\\apps\\NotepadApp.tsx",
+    "dependencies": [],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useState"
+    ],
+    "eventHandlers": [
+      "onChange"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.399Z",
+    "status": "active"
+  },
+  "AcquisitionsApp": {
+    "name": "AcquisitionsApp",
+    "path": "src\\apps\\AcquisitionsApp.tsx",
+    "dependencies": [
+      "../services/acquisitionService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useCallback",
+      "useRef",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useRef",
+      "useRef",
+      "useCallback",
+      "useEffect",
+      "useCallback"
+    ],
+    "eventHandlers": [
+      "handleCapture",
+      "handleStartAcquisition",
+      "handleReset",
+      "onClick",
+      "onClick",
+      "onClick",
+      "onClick",
+      "onClick",
+      "onChange"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.399Z",
+    "status": "active"
+  },
+  "AgentNetworkApp": {
+    "name": "AgentNetworkApp",
+    "path": "src\\apps\\AgentNetworkApp.tsx",
+    "dependencies": [
+      "../services/agentNetworkService",
+      "../services/agentData",
+      "../services/controlPanelService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.399Z",
+    "status": "active"
+  },
+  "IngestionPipelineApp": {
+    "name": "IngestionPipelineApp",
+    "path": "src\\apps\\IngestionPipelineApp.tsx",
+    "dependencies": [
+      "../services/ingestionService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useCallback",
+      "useState",
+      "useState",
+      "useState",
+      "useCallback"
+    ],
+    "eventHandlers": [
+      "onChange",
+      "handleStartIngestion",
+      "onChange",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.399Z",
+    "status": "active"
+  },
+  "OrchestratorApp": {
+    "name": "OrchestratorApp",
+    "path": "src\\apps\\OrchestratorApp.tsx",
+    "dependencies": [
+      "../services/orchestratorService",
+      "../services/controlPanelService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.400Z",
+    "status": "active"
+  },
+  "SymposiumApp": {
+    "name": "SymposiumApp",
+    "path": "src\\apps\\SymposiumApp.tsx",
+    "dependencies": [
+      "../services/agentData",
+      "../services/symposiumService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useCallback",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useRef",
+      "useEffect",
+      "useEffect",
+      "useEffect",
+      "useCallback"
+    ],
+    "eventHandlers": [
+      "onChange",
+      "handleAgentSelection",
+      "onGenerator",
+      "onChange",
+      "onChange",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.400Z",
+    "status": "active"
+  },
+  "ErduMonitorApp": {
+    "name": "ErduMonitorApp",
+    "path": "src\\apps\\ErduMonitorApp.tsx",
+    "dependencies": [
+      "../services/erduService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useCallback",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect",
+      "useCallback"
+    ],
+    "eventHandlers": [
+      "handleIncidentResponse",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.400Z",
+    "status": "active"
+  },
+  "ObservatoryApp": {
+    "name": "ObservatoryApp",
+    "path": "src\\apps\\ObservatoryApp.tsx",
+    "dependencies": [
+      "../services/observatoryService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.400Z",
+    "status": "active"
+  },
+  "DiagnosticsApp": {
+    "name": "DiagnosticsApp",
+    "path": "src\\apps\\DiagnosticsApp.tsx",
+    "dependencies": [
+      "../services/diagnosticsService",
+      "../services/agentData"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useCallback",
+      "useRef",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect",
+      "useEffect",
+      "useCallback"
+    ],
+    "eventHandlers": [
+      "handleParamChange",
+      "handleRunTest",
+      "onChange",
+      "onChange",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.400Z",
+    "status": "active"
+  },
+  "PlaybookApp": {
+    "name": "PlaybookApp",
+    "path": "src\\apps\\PlaybookApp.tsx",
+    "dependencies": [
+      "../services/playbookService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "onClick",
+      "onSelect"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.400Z",
+    "status": "active"
+  },
+  "InfrastructureApp": {
+    "name": "InfrastructureApp",
+    "path": "src\\apps\\InfrastructureApp.tsx",
+    "dependencies": [
+      "../services/infrastructureService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.400Z",
+    "status": "active"
+  },
+  "CodebaseApp": {
+    "name": "CodebaseApp",
+    "path": "src\\apps\\CodebaseApp.tsx",
+    "dependencies": [
+      "../services/codebaseService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.400Z",
+    "status": "active"
+  },
+  "BackupApp": {
+    "name": "BackupApp",
+    "path": "src\\apps\\BackupApp.tsx",
+    "dependencies": [
+      "../services/backupService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useCallback",
+      "useEffect",
+      "useRef",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useCallback"
+    ],
+    "eventHandlers": [
+      "handleRunBackup",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.401Z",
+    "status": "active"
+  },
+  "ControlPanelApp": {
+    "name": "ControlPanelApp",
+    "path": "src\\apps\\ControlPanelApp.tsx",
+    "dependencies": [
+      "../services/controlPanelService",
+      "../services/agentData"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "handleAgentStatusToggle",
+      "handleBudgetChange",
+      "handleProviderToggle",
+      "onClick",
+      "onClick",
+      "onChange",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.401Z",
+    "status": "active"
+  },
+  "CodexApp": {
+    "name": "CodexApp",
+    "path": "src\\apps\\CodexApp.tsx",
+    "dependencies": [
+      "../services/codexService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useMemo",
+      "useEffect",
+      "useState",
+      "useState",
+      "useEffect",
+      "useEffect",
+      "useMemo"
+    ],
+    "eventHandlers": [
+      "onClick",
+      "onSelect"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.401Z",
+    "status": "active"
+  },
+  "HierarchyApp": {
+    "name": "HierarchyApp",
+    "path": "src\\apps\\HierarchyApp.tsx",
+    "dependencies": [
+      "../services/hierarchyService"
+    ],
+    "props": [],
+    "hooks": [],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.401Z",
+    "status": "active"
+  },
+  "CompanionChatApp": {
+    "name": "CompanionChatApp",
+    "path": "src\\apps\\CompanionChatApp.tsx",
+    "dependencies": [
+      "../services/personaService",
+      "../services/chatService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useCallback",
+      "useRef",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useRef",
+      "useEffect",
+      "useEffect",
+      "useEffect",
+      "useCallback"
+    ],
+    "eventHandlers": [
+      "onClick",
+      "handleSelectAgent",
+      "handleSendMessage",
+      "onSelect",
+      "onSubmit",
+      "onChange"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.401Z",
+    "status": "active"
+  },
+  "LoomApp": {
+    "name": "LoomApp",
+    "path": "src\\apps\\LoomApp.tsx",
+    "dependencies": [
+      "../services/loomService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect",
+      "useEffect",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "onClick",
+      "onClick",
+      "onClick",
+      "onClick",
+      "handleUpdate",
+      "handleSelectScroll",
+      "handleCreateScroll",
+      "handleSave",
+      "handleDelete",
+      "onClass",
+      "onSelect",
+      "onSelect",
+      "onCreate",
+      "onChange",
+      "onClick",
+      "onClick",
+      "onChange"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.402Z",
+    "status": "active"
+  },
+  "OperationsConsoleApp": {
+    "name": "OperationsConsoleApp",
+    "path": "src\\apps\\OperationsConsoleApp.tsx",
+    "dependencies": [
+      "../services/playbookService",
+      "../services/operationService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useCallback",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect",
+      "useCallback"
+    ],
+    "eventHandlers": [
+      "handleExecute",
+      "onClick",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.402Z",
+    "status": "active"
+  },
+  "VaultExplorerApp": {
+    "name": "VaultExplorerApp",
+    "path": "src\\apps\\VaultExplorerApp.tsx",
+    "dependencies": [
+      "../services/searchService",
+      "../components/icons"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "onChange"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.402Z",
+    "status": "active"
+  },
+  "AegisDashboardApp": {
+    "name": "AegisDashboardApp",
+    "path": "src\\apps\\AegisDashboardApp.tsx",
+    "dependencies": [
+      "../services/dashboardService",
+      "../components/dashboard/WidgetWrapper",
+      "../components/dashboard/WidgetFactory"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.402Z",
+    "status": "active"
+  },
+  "CuratorApp": {
+    "name": "CuratorApp",
+    "path": "src\\apps\\CuratorApp.tsx",
+    "dependencies": [
+      "../services/curatorService",
+      "../services/n8nService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "handleSelect",
+      "onChange",
+      "handleAddTarget",
+      "handleCreatePlaceholders",
+      "onSubmit",
+      "onChange",
+      "onClick",
+      "onClick",
+      "onClick",
+      "onClick",
+      "onClick",
+      "onSelectionChange"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.402Z",
+    "status": "active"
+  },
+  "TechnomancerApp": {
+    "name": "TechnomancerApp",
+    "path": "src\\apps\\TechnomancerApp.tsx",
+    "dependencies": [
+      "../services/technomancerService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.402Z",
+    "status": "active"
+  },
+  "AutomationHubApp": {
+    "name": "AutomationHubApp",
+    "path": "src\\apps\\AutomationHubApp.tsx",
+    "dependencies": [
+      "../services/n8nService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useCallback",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect",
+      "useCallback"
+    ],
+    "eventHandlers": [
+      "handleRunWorkflow",
+      "onClick",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.402Z",
+    "status": "active"
+  },
+  "SystemEditorApp": {
+    "name": "SystemEditorApp",
+    "path": "src\\apps\\SystemEditorApp.tsx",
+    "dependencies": [
+      "../services/fileSystemService",
+      "../components/editor/FileExplorer",
+      "../components/editor/EditorPane"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useCallback",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useCallback",
+      "useCallback",
+      "useCallback",
+      "useCallback",
+      "useCallback"
+    ],
+    "eventHandlers": [
+      "handleOpenFile",
+      "handleCloseFile",
+      "handleContentChange",
+      "handleSaveActiveFile",
+      "handleDeploy",
+      "onFileSelect",
+      "onSelectTab",
+      "onCloseTab",
+      "onContentChange",
+      "onSave",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.403Z",
+    "status": "active"
+  },
+  "TaskReviewHubApp": {
+    "name": "TaskReviewHubApp",
+    "path": "src\\apps\\TaskReviewHubApp.tsx",
+    "dependencies": [
+      "../services/taskQueueService",
+      "../context/WindowContext",
+      "../constants"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useWindows",
+      "useState",
+      "useWindows",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "onClick",
+      "onClick",
+      "handleResolveTask",
+      "handleOpenApp",
+      "onResolve",
+      "onOpen",
+      "onResolve",
+      "onOpen"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.403Z",
+    "status": "active"
+  },
+  "BatchIngesterApp": {
+    "name": "BatchIngesterApp",
+    "path": "src\\apps\\BatchIngesterApp.tsx",
+    "dependencies": [
+      "../services/acquisitionService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useCallback",
+      "useRef",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useRef",
+      "useEffect",
+      "useCallback",
+      "useCallback",
+      "useCallback",
+      "useCallback"
+    ],
+    "eventHandlers": [
+      "handleFileUpload",
+      "onChange",
+      "onClick",
+      "onClick",
+      "onClick",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.403Z",
+    "status": "active"
+  },
+  "ForensicsApp": {
+    "name": "ForensicsApp",
+    "path": "src\\apps\\ForensicsApp.tsx",
+    "dependencies": [
+      "react"
+    ],
+    "props": [],
+    "hooks": [],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.403Z",
+    "status": "active"
+  },
+  "BookSalesApp": {
+    "name": "BookSalesApp",
+    "path": "src\\apps\\BookSalesApp.tsx",
+    "dependencies": [
+      "../services/eventBus",
+      "../services/seoOptimizationService",
+      "../services/contentIngestionService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "onRate",
+      "onClick",
+      "onClick",
+      "onClick",
+      "onClick",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.403Z",
+    "status": "active"
+  },
+  "TradeInPortalApp": {
+    "name": "TradeInPortalApp",
+    "path": "src\\apps\\TradeInPortalApp.tsx",
+    "dependencies": [],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useCallback",
+      "useRef",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useRef",
+      "useCallback",
+      "useCallback"
+    ],
+    "eventHandlers": [
+      "handleFileUpload",
+      "onClick",
+      "onChange",
+      "onClick",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.403Z",
+    "status": "active"
+  },
+  "RPGCommunityHubApp": {
+    "name": "RPGCommunityHubApp",
+    "path": "src\\apps\\RPGCommunityHubApp.tsx",
+    "dependencies": [],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "onClick",
+      "onChange",
+      "onClick",
+      "onClick",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.404Z",
+    "status": "active"
+  },
+  "SocialMediaHubApp": {
+    "name": "SocialMediaHubApp",
+    "path": "src\\apps\\SocialMediaHubApp.tsx",
+    "dependencies": [],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "onClick",
+      "onClick",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.404Z",
+    "status": "active"
+  },
+  "WindowProvider": {
+    "name": "WindowProvider",
+    "path": "src\\context\\WindowContext.tsx",
+    "dependencies": [
+      "../constants",
+      "../types"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useCallback",
+      "useContext",
+      "useState",
+      "useState",
+      "useState",
+      "useCallback",
+      "useCallback",
+      "useCallback",
+      "useCallback",
+      "useCallback",
+      "useCallback",
+      "useWindows",
+      "useContext",
+      "useWindows"
+    ],
+    "eventHandlers": [],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.404Z",
+    "status": "active"
+  },
+  "PersonaFusionChamber": {
+    "name": "PersonaFusionChamber",
+    "path": "Personas\\PersonaFusionChamber.tsx",
+    "dependencies": [
+      "../components/icons"
+    ],
+    "props": [
+      {
+        "name": "agents",
+        "type": "AgentProfile[]",
+        "required": true
+      },
+      {
+        "name": "onFuse",
+        "type": "(agentIdA: string, agentIdB: string) => void",
+        "required": true
+      }
+    ],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "handleFuse",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-04T00:10:15.424Z",
+    "status": "active"
+  }
+}

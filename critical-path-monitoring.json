@@ -1,0 +1,9 @@
+{
+  "criticalPath": [],
+  "monitoring": {
+    "buildTime": true,
+    "bundleSize": true,
+    "performance": true,
+    "alerts": true
+  }
+}

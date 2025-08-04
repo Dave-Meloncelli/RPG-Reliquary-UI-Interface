@@ -1,0 +1,8 @@
+{
+  "lazyLoading": {
+    "components": true,
+    "routes": true,
+    "services": true,
+    "strategy": "intersection-observer"
+  }
+}

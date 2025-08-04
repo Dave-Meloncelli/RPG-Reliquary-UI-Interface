@@ -1,0 +1,8 @@
+{
+  "compression": {
+    "gzip": true,
+    "brotli": true,
+    "minification": true,
+    "optimization": true
+  }
+}

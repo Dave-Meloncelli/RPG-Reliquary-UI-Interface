@@ -1,0 +1,15 @@
+{
+  "splitting": {
+    "vendor": [
+      "react",
+      "react-dom"
+    ],
+    "utils": [
+      "lodash",
+      "moment",
+      "axios"
+    ],
+    "components": "dynamic",
+    "services": "dynamic"
+  }
+}

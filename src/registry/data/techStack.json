@@ -1,0 +1,587 @@
+{
+  "fastapi": {
+    "name": "fastapi",
+    "category": "backend",
+    "version": "==0.104.1",
+    "description": "Python package: fastapi",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "uvicorn[standard]": {
+    "name": "uvicorn[standard]",
+    "category": "backend",
+    "version": "==0.24.0",
+    "description": "Python package: uvicorn[standard]",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "sqlalchemy": {
+    "name": "sqlalchemy",
+    "category": "backend",
+    "version": "==2.0.23",
+    "description": "Python package: sqlalchemy",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "psycopg2-binary": {
+    "name": "psycopg2-binary",
+    "category": "backend",
+    "version": "==2.9.9",
+    "description": "Python package: psycopg2-binary",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "pydantic": {
+    "name": "pydantic",
+    "category": "backend",
+    "version": "==2.5.0",
+    "description": "Python package: pydantic",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "pydantic[email]": {
+    "name": "pydantic[email]",
+    "category": "backend",
+    "version": "==2.5.0",
+    "description": "Python package: pydantic[email]",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.409Z"
+  },
+  "python-dotenv": {
+    "name": "python-dotenv",
+    "category": "backend",
+    "version": "==1.0.0",
+    "description": "Python package: python-dotenv",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "python-jose[cryptography]": {
+    "name": "python-jose[cryptography]",
+    "category": "backend",
+    "version": "==3.3.0",
+    "description": "Python package: python-jose[cryptography]",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "passlib[bcrypt]": {
+    "name": "passlib[bcrypt]",
+    "category": "backend",
+    "version": "==1.7.4",
+    "description": "Python package: passlib[bcrypt]",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "bcrypt": {
+    "name": "bcrypt",
+    "category": "backend",
+    "version": "==4.1.2",
+    "description": "Python package: bcrypt",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.409Z"
+  },
+  "redis": {
+    "name": "redis",
+    "category": "backend",
+    "version": "==5.0.1",
+    "description": "Python package: redis",
+    "status": "active",
+    "priority": "high",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "python-multipart": {
+    "name": "python-multipart",
+    "category": "backend",
+    "version": "==0.0.6",
+    "description": "Python package: python-multipart",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "alembic": {
+    "name": "alembic",
+    "category": "backend",
+    "version": "==1.13.1",
+    "description": "Python package: alembic",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.409Z"
+  },
+  "pytest": {
+    "name": "pytest",
+    "category": "backend",
+    "version": "==7.4.3",
+    "description": "Python package: pytest",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "pytest-asyncio": {
+    "name": "pytest-asyncio",
+    "category": "backend",
+    "version": "==0.21.1",
+    "description": "Python package: pytest-asyncio",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "httpx": {
+    "name": "httpx",
+    "category": "backend",
+    "version": "==0.25.2",
+    "description": "Python package: httpx",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "email-validator": {
+    "name": "email-validator",
+    "category": "backend",
+    "version": "==2.1.0",
+    "description": "Python package: email-validator",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.409Z"
+  },
+  "cryptography": {
+    "name": "cryptography",
+    "category": "backend",
+    "version": "==41.0.8",
+    "description": "Python package: cryptography",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "crewai": {
+    "name": "crewai",
+    "category": "backend",
+    "version": "==0.28.0",
+    "description": "Python package: crewai",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "langchain": {
+    "name": "langchain",
+    "category": "backend",
+    "version": "==0.0.350",
+    "description": "Python package: langchain",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "langchain-openai": {
+    "name": "langchain-openai",
+    "category": "backend",
+    "version": "==0.0.2",
+    "description": "Python package: langchain-openai",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "langchain-anthropic": {
+    "name": "langchain-anthropic",
+    "category": "backend",
+    "version": "==0.0.5",
+    "description": "Python package: langchain-anthropic",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "langchain-google-genai": {
+    "name": "langchain-google-genai",
+    "category": "backend",
+    "version": "==0.0.3",
+    "description": "Python package: langchain-google-genai",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "langchain-community": {
+    "name": "langchain-community",
+    "category": "backend",
+    "version": "==0.0.10",
+    "description": "Python package: langchain-community",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "streamlit": {
+    "name": "streamlit",
+    "category": "backend",
+    "version": "==1.29.0",
+    "description": "Python package: streamlit",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "streamlit-option-menu": {
+    "name": "streamlit-option-menu",
+    "category": "backend",
+    "version": "==0.3.6",
+    "description": "Python package: streamlit-option-menu",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "pandas": {
+    "name": "pandas",
+    "category": "backend",
+    "version": "==2.1.4",
+    "description": "Python package: pandas",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "numpy": {
+    "name": "numpy",
+    "category": "backend",
+    "version": "==1.24.3",
+    "description": "Python package: numpy",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "requests": {
+    "name": "requests",
+    "category": "backend",
+    "version": "==2.31.0",
+    "description": "Python package: requests",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "asyncio-mqtt": {
+    "name": "asyncio-mqtt",
+    "category": "backend",
+    "version": "==0.16.1",
+    "description": "Python package: asyncio-mqtt",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "aiohttp": {
+    "name": "aiohttp",
+    "category": "backend",
+    "version": "==3.9.1",
+    "description": "Python package: aiohttp",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "prometheus-client": {
+    "name": "prometheus-client",
+    "category": "backend",
+    "version": "==0.19.0",
+    "description": "Python package: prometheus-client",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "structlog": {
+    "name": "structlog",
+    "category": "backend",
+    "version": "==23.2.0",
+    "description": "Python package: structlog",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "black": {
+    "name": "black",
+    "category": "backend",
+    "version": "==23.12.0",
+    "description": "Python package: black",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "isort": {
+    "name": "isort",
+    "category": "backend",
+    "version": "==5.13.2",
+    "description": "Python package: isort",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "flake8": {
+    "name": "flake8",
+    "category": "backend",
+    "version": "==6.1.0",
+    "description": "Python package: flake8",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "pydantic-settings": {
+    "name": "pydantic-settings",
+    "category": "backend",
+    "version": "==2.1.0",
+    "description": "Python package: pydantic-settings",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "chromadb": {
+    "name": "chromadb",
+    "category": "backend",
+    "version": "==0.4.22",
+    "description": "Python package: chromadb",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "sentence-transformers": {
+    "name": "sentence-transformers",
+    "category": "backend",
+    "version": "==2.2.2",
+    "description": "Python package: sentence-transformers",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "aiofiles": {
+    "name": "aiofiles",
+    "category": "backend",
+    "version": "==23.2.1",
+    "description": "Python package: aiofiles",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "python-dateutil": {
+    "name": "python-dateutil",
+    "category": "backend",
+    "version": "==2.8.2",
+    "description": "Python package: python-dateutil",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "pytz": {
+    "name": "pytz",
+    "category": "backend",
+    "version": "==2023.3",
+    "description": "Python package: pytz",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "pyyaml": {
+    "name": "pyyaml",
+    "category": "backend",
+    "version": "==6.0.1",
+    "description": "Python package: pyyaml",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "orjson": {
+    "name": "orjson",
+    "category": "backend",
+    "version": "==3.9.10",
+    "description": "Python package: orjson",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "beautifulsoup4": {
+    "name": "beautifulsoup4",
+    "category": "backend",
+    "version": "==4.12.2",
+    "description": "Python package: beautifulsoup4",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "selenium": {
+    "name": "selenium",
+    "category": "backend",
+    "version": "==4.15.2",
+    "description": "Python package: selenium",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "playwright": {
+    "name": "playwright",
+    "category": "backend",
+    "version": "==1.40.0",
+    "description": "Python package: playwright",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "pillow": {
+    "name": "pillow",
+    "category": "backend",
+    "version": "==10.1.0",
+    "description": "Python package: pillow",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "opencv-python": {
+    "name": "opencv-python",
+    "category": "backend",
+    "version": "==4.8.1.78",
+    "description": "Python package: opencv-python",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "scikit-learn": {
+    "name": "scikit-learn",
+    "category": "backend",
+    "version": "==1.3.2",
+    "description": "Python package: scikit-learn",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "transformers": {
+    "name": "transformers",
+    "category": "backend",
+    "version": "==4.36.2",
+    "description": "Python package: transformers",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "torch": {
+    "name": "torch",
+    "category": "backend",
+    "version": "==2.1.2",
+    "description": "Python package: torch",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "celery": {
+    "name": "celery",
+    "category": "backend",
+    "version": "==5.3.4",
+    "description": "Python package: celery",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "flower": {
+    "name": "flower",
+    "category": "backend",
+    "version": "==2.0.1",
+    "description": "Python package: flower",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "websockets": {
+    "name": "websockets",
+    "category": "backend",
+    "version": "==12.0",
+    "description": "Python package: websockets",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "networkx": {
+    "name": "networkx",
+    "category": "backend",
+    "version": "==3.2.1",
+    "description": "Python package: networkx",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "matplotlib": {
+    "name": "matplotlib",
+    "category": "backend",
+    "version": "==3.8.2",
+    "description": "Python package: matplotlib",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "seaborn": {
+    "name": "seaborn",
+    "category": "backend",
+    "version": "==0.13.0",
+    "description": "Python package: seaborn",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.411Z"
+  },
+  "mkdocs": {
+    "name": "mkdocs",
+    "category": "backend",
+    "version": "==1.5.3",
+    "description": "Python package: mkdocs",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "mkdocs-material": {
+    "name": "mkdocs-material",
+    "category": "backend",
+    "version": "==9.4.8",
+    "description": "Python package: mkdocs-material",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "python-socketio": {
+    "name": "python-socketio",
+    "category": "backend",
+    "version": "==5.10.0",
+    "description": "Python package: python-socketio",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "pyjwt": {
+    "name": "pyjwt",
+    "category": "backend",
+    "version": "==2.8.0",
+    "description": "Python package: pyjwt",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "pyopenssl": {
+    "name": "pyopenssl",
+    "category": "backend",
+    "version": "==23.3.0",
+    "description": "Python package: pyopenssl",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "certifi": {
+    "name": "certifi",
+    "category": "backend",
+    "version": "==2023.11.17",
+    "description": "Python package: certifi",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  },
+  "celery[redis]": {
+    "name": "celery[redis]",
+    "category": "backend",
+    "version": "==5.3.4",
+    "description": "Python package: celery[redis]",
+    "status": "active",
+    "priority": "medium",
+    "lastUpdated": "2025-08-04T00:10:15.413Z"
+  }
+}

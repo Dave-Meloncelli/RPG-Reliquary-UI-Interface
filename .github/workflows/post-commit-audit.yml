@@ -1,0 +1,89 @@
+name: Post-Commit Audit
+on: [push, pull_request]
+
+jobs:
+  post-commit-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      # Documentation Audit
+      - name: Documentation Update Verification
+        run: |
+          npm run audit:docs
+          npm run verify:internal-links
+          npm run check:broken-refs
+          
+      # Technical Audit
+      - name: Technical Verification
+        run: |
+          npm run type-check
+          npm run lint
+          npm run test
+          npm run verify:import-paths
+          
+      # Configuration Audit
+      - name: Configuration Verification
+        run: |
+          npm run audit:config
+          npm run check:permissions
+          npm run validate:access-controls
+          
+      # Dependencies Audit
+      - name: Dependencies Verification
+        run: |
+          npm run verify:dependencies
+          npm run check:circular-deps
+          
+      # Backlog Update
+      - name: Backlog Update Verification
+        run: |
+          npm run audit:backlog
+          npm run verify:backlog-links
+          
+      # Report Generation
+      - name: Generate Audit Report
+        run: npm run generate:audit-report
+        
+      # Upload Audit Report
+      - name: Upload Audit Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: audit-report
+          path: audit-report.md
+          
+      # Comment on PR (only for pull requests)
+      - name: Comment Audit Results
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const reportPath = 'audit-report.md';
+            
+            if (fs.existsSync(reportPath)) {
+              const report = fs.readFileSync(reportPath, 'utf8');
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: report
+              });
+            } else {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: '## 🔍 Post-Commit Audit\n\n❌ Audit report not generated. Please check the workflow logs for details.'
+              });
+            } 

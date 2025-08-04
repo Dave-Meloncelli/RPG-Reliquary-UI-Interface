@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-08-04T00:10:15.434Z",
+  "statistics": {
+    "components": 61,
+    "services": 57,
+    "personas": 19,
+    "techStack": 65,
+    "integrations": 0,
+    "hooks": 0,
+    "accessPoints": 0
+  }
+}

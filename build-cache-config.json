@@ -1,0 +1,13 @@
+{
+  "buildCache": {
+    "enabled": true,
+    "directory": ".vite-cache",
+    "maxAge": "7 days",
+    "compression": true
+  },
+  "dependencyCache": {
+    "enabled": true,
+    "directory": "node_modules/.cache",
+    "maxAge": "30 days"
+  }
+}
