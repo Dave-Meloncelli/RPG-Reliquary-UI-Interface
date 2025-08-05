@@ -1,4 +1,4 @@
-import type { AgentProfile, SymbolicStatus } from '../types';
+import type { AgentProfile, SymbolicStatus } from "../types/types";
 import { controlPanelService } from './controlPanelService';
 
 
@@ -7,7 +7,6 @@ const activityStates: SymbolicStatus['activityState'][] = ['Idle', 'Busy', 'Onli
 const healthStates: SymbolicStatus['health'][] = ['Optimal', 'Stable', 'Fluctuating', 'Critical'];
 const alignmentStates: SymbolicStatus['alignment'][] = ['Aligned', 'Weaving', 'Drifting', 'Fractured'];
 
-const getRandomItem = <T>(arr: T[]): T => arr[Math.floor(Math.random() * arr.length)];
 
 export const simulateAgentUpdates = (agents: AgentProfile[]): AgentProfile[] => {
     const { agentMasterStatus } = controlPanelService.getState();
@@ -22,9 +21,7 @@ export const simulateAgentUpdates = (agents: AgentProfile[]): AgentProfile[] => 
 
         // 20% chance to change activity state
         if (Math.random() < 0.2) {
-            const currentActivity = agent.status.activityState;
             const availableStates = activityStates.filter(s => s !== 'Dormant'); // don't randomly go dormant
-            let newActivity = getRandomItem(availableStates);
             // Bias towards going back to Idle/Online
             if (currentActivity === 'Busy' && Math.random() < 0.7) {
                 newActivity = Math.random() < 0.5 ? 'Idle' : 'Online';
@@ -34,13 +31,11 @@ export const simulateAgentUpdates = (agents: AgentProfile[]): AgentProfile[] => 
 
         // 10% chance to change health
         if (Math.random() < 0.1) {
-            const newHealth = getRandomItem(healthStates);
             newStatus.health = newHealth;
         }
         
         // 5% chance to change alignment
         if (Math.random() < 0.05) {
-            const newAlignment = getRandomItem(alignmentStates);
             newStatus.alignment = newAlignment;
         }
 

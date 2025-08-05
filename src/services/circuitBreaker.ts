@@ -49,7 +49,6 @@ class CircuitBreaker {
     }
 
     try {
-      const result = await operation();
       this.onSuccess();
       return result;
     } catch (error) {
@@ -87,7 +86,6 @@ class CircuitBreaker {
   }
 
   private monitor(): void {
-    const now = Date.now();
     
     // Check if we should attempt to close the circuit
     if (this.state.status === 'OPEN' && now >= this.state.nextAttemptTime) {
@@ -122,7 +120,6 @@ class CircuitBreakerManager {
   private breakers: Map<string, CircuitBreaker> = new Map();
 
   createBreaker(name: string, config?: Partial<CircuitBreakerConfig>): CircuitBreaker {
-    const breaker = new CircuitBreaker(name, config);
     this.breakers.set(name, breaker);
     return breaker;
   }
@@ -206,7 +203,6 @@ export async function executeWithCircuitBreaker<T>(
   operation: () => Promise<T>,
   fallback?: () => Promise<T>
 ): Promise<T> {
-  const breaker = circuitBreakerManager.getBreaker(breakerName);
   
   if (!breaker) {
     // If no circuit breaker exists, execute directly
@@ -230,7 +226,6 @@ export async function executeWithCircuitBreaker<T>(
 // Decorator for automatic circuit breaker integration
 export function withCircuitBreaker(breakerName: string, fallback?: () => Promise<any>) {
   return function (target: any, propertyName: string, descriptor: PropertyDescriptor) {
-    const method = descriptor.value;
 
     descriptor.value = async function (...args: any[]) {
       return executeWithCircuitBreaker(breakerName, () => method.apply(this, args), fallback);

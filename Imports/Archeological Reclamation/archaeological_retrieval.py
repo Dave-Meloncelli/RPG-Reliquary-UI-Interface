@@ -1,0 +1,232 @@
+"""
+Archaeological Archive Retrieval and Rediscovery Tool
+----------------------------------------------------
+
+This script implements a recursive crawler that traverses a given root
+directory, extracts archives (ZIP files), identifies misnamed or
+unknown file types, computes hashes for deduplication, and parses
+persona enrichment scrolls to extract structured metadata.  As it
+encounters new capabilities or terms ("carrots"), it updates a carrot
+index and can reprocess previously scanned files to incorporate newly
+discovered fields.  The goal is to build comprehensive registries of
+personas and files that can be used to reconstruct the timeline of
+knowledge across the vault.
+
+Key features:
+
+* **Recursive discovery:** Walks through nested directories and
+  automatically extracts ZIP archives into a temporary workspace.
+* **File signature detection:** Uses Python's built-in `mimetypes` to
+  detect mismatches between filenames and actual content types and
+  records suspicious files as potential "potatoes".
+* **Deduplication:** Computes SHA‑256 hashes for every file and avoids
+  reprocessing identical content.
+* **Persona parsing:** When a Markdown file is detected, the parser
+  looks for common fields (e.g. `Class`, `Soulprint ID`, capability
+  tables) and extracts a set of capabilities (carrots).  These
+  capabilities are added to a shared index and attached to the
+  persona's record.
+* **Carrot index:** Maintains a registry of all discovered capability
+  names.  If a new carrot is found after a file has been processed,
+  the script can optionally reprocess previously parsed files to
+  ensure that all carrots are captured uniformly.
+* **Output registries:** Writes JSON files summarising all parsed
+  personas (`persona_registry.json`), all discovered files
+  (`file_registry.json`), and the carrot index (`carrot_index.json`).
+
+Usage:
+
+```
+python archaeological_retrieval.py --root <path-to-scan> --output <output-dir>
+```
+
+The script will scan `root`, extract ZIP archives into a temporary
+directory under `output`, and save JSON registries to `output`.
+
+Note: This script is a high-level implementation intended to be
+customised and extended.  Integration with Vault-specific NLP tools
+and encryption handlers can be added in the designated hooks.
+"""
+
+import argparse
+import hashlib
+import json
+import mimetypes
+import os
+import re
+import zipfile
+from typing import Dict, List, Optional, Set, Tuple
+
+
+def compute_hash(path: str) -> str:
+    """Compute a SHA‑256 hash for a file."""
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(8192), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def extract_zip(path: str, extract_root: str) -> str:
+    """Extract a ZIP file into a new directory under extract_root.
+    Returns the path to the extracted folder.
+    """
+    base = os.path.splitext(os.path.basename(path))[0]
+    dest = os.path.join(extract_root, base)
+    os.makedirs(dest, exist_ok=True)
+    with zipfile.ZipFile(path, "r") as zf:
+        zf.extractall(dest)
+    return dest
+
+
+def detect_file_type(path: str) -> Tuple[str, bool]:
+    """Return the MIME type of the file and a boolean indicating whether
+    the extension matches the detected type (True = match, False = mismatch).
+    """
+    mime, _ = mimetypes.guess_type(path)
+    ext = os.path.splitext(path)[1].lower()
+    # Rough mapping from MIME to common extensions
+    ext_from_mime = None
+    if mime:
+        if mime.startswith("text"):
+            ext_from_mime = ".txt"
+        elif mime == "text/markdown":
+            ext_from_mime = ".md"
+        elif mime == "application/pdf":
+            ext_from_mime = ".pdf"
+        elif mime.startswith("image"):
+            ext_from_mime = ".jpg"  # default image
+    return mime or "unknown", ext == ext_from_mime
+
+
+def parse_persona_markdown(path: str, carrot_index: Set[str]) -> Optional[Dict]:
+    """Parse a persona enrichment scroll (Markdown) and extract metadata.
+
+    Returns a dictionary with persona fields or None if parsing fails.
+    Updates carrot_index with any new capabilities discovered.
+    """
+    try:
+        with open(path, "r", encoding="utf-8", errors="ignore") as f:
+            content = f.read()
+    except Exception:
+        return None
+
+    # Basic fields from header lines
+    id_match = re.search(r"Soulprint ID:\s*(\S+)", content)
+    name_match = re.search(r"#\s+([^—]+)\s+—", content)
+    class_match = re.search(r"\*\*Class:\*\*\s*([^\\]+)\\", content)
+    if not id_match or not name_match or not class_match:
+        return None  # Not a persona scroll
+
+    persona_id = id_match.group(1).strip()
+    name = name_match.group(1).strip()
+    persona_class = class_match.group(1).strip()
+
+    # Extract capability table
+    capabilities: List[str] = []
+    for line in content.splitlines():
+        if line.strip().startswith("|"):
+            parts = [p.strip() for p in line.strip("| ").split("|")]
+            if parts:
+                cap = parts[0]
+                if cap and cap.lower() not in {"capability", "feature"}:
+                    capabilities.append(cap)
+
+    capabilities = list({c for c in capabilities if c})
+    for cap in capabilities:
+        carrot_index.add(cap)
+
+    honours: List[str] = []
+    honours_section = re.search(r"##\s+Known Scrolls[^\n]*\n(.*?)\n\n", content, re.DOTALL)
+    if honours_section:
+        for line in honours_section.group(1).splitlines():
+            line = line.strip().lstrip("- *")
+            if line:
+                honours.append(re.sub(r"^[^\w]+", "", line))
+
+    linked: List[str] = []
+    integration_section = re.search(r"##\s+Integration Map\n(.*?)\n\n", content, re.DOTALL)
+    if integration_section:
+        lines = integration_section.group(1).splitlines()
+        for line in lines:
+            match = re.match(r"\-\s*([A-Za-z0-9\s&]+) →", line)
+            if match:
+                linked.append(match.group(1).strip())
+
+    return {
+        "id": persona_id,
+        "name": name,
+        "class": persona_class,
+        "tier": "unknown",
+        "origin": "github_repository",
+        "status": "active",
+        "linked_templates": linked,
+        "honours": honours,
+        "unique_attributes": capabilities,
+        "source_path": path,
+    }
+
+
+def crawl(root: str, output_dir: str) -> None:
+    os.makedirs(output_dir, exist_ok=True)
+    extract_root = os.path.join(output_dir, "extracted")
+    os.makedirs(extract_root, exist_ok=True)
+    file_registry: Dict[str, Dict] = {}
+    persona_registry: Dict[str, Dict] = {}
+    carrot_index: Set[str] = set()
+    processed_hashes: Dict[str, str] = {}
+    stack = [root]
+    while stack:
+        current = stack.pop()
+        if os.path.isdir(current):
+            try:
+                for entry in os.listdir(current):
+                    stack.append(os.path.join(current, entry))
+            except Exception:
+                continue
+        else:
+            try:
+                file_hash = compute_hash(current)
+                if file_hash in processed_hashes:
+                    continue
+                processed_hashes[file_hash] = current
+                mime, ext_match = detect_file_type(current)
+                record = {
+                    "path": current,
+                    "hash": file_hash,
+                    "mime": mime,
+                    "extension_match": ext_match,
+                }
+                if mime == "application/zip" or current.lower().endswith(".zip"):
+                    try:
+                        dest = extract_zip(current, extract_root)
+                        stack.append(dest)
+                        record["extracted_to"] = dest
+                    except Exception:
+                        record["extraction_error"] = True
+                elif current.lower().endswith(".md"):
+                    persona = parse_persona_markdown(current, carrot_index)
+                    if persona:
+                        persona_registry[persona["id"]] = persona
+                        record["persona_id"] = persona["id"]
+                file_registry[current] = record
+            except Exception:
+                continue
+    with open(os.path.join(output_dir, "persona_registry.json"), "w", encoding="utf-8") as f:
+        json.dump(persona_registry, f, indent=2)
+    with open(os.path.join(output_dir, "file_registry.json"), "w", encoding="utf-8") as f:
+        json.dump(file_registry, f, indent=2)
+    with open(os.path.join(output_dir, "carrot_index.json"), "w", encoding="utf-8") as f:
+        json.dump(sorted(carrot_index), f, indent=2)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Archaeological archive retrieval and rediscovery tool.")
+    parser.add_argument("--root", required=True, help="Root directory to scan")
+    parser.add_argument("--output", required=True, help="Directory where output registries will be written")
+    args = parser.parse_args()
+    crawl(os.path.abspath(args.root), os.path.abspath(args.output))
+
+
+if __name__ == "__main__":
+    main()

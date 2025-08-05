@@ -24,9 +24,7 @@ class DashboardService {
 
     private loadLayout(): DashboardLayout {
         try {
-            const storedLayout = localStorage.getItem(this.localStorageKey);
             if (storedLayout) {
-                const parsed = JSON.parse(storedLayout);
                 if (parsed.gridTemplateAreas && Array.isArray(parsed.widgets)) {
                     return parsed;
                 }

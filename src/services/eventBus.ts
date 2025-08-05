@@ -1,4 +1,4 @@
-import type { EventMap } from '../types';
+import type { EventMap } from "../types/types";
 
 // Generic callback based on event name and payload
 type EventCallback<E extends keyof EventMap> = (payload: EventMap[E]) => void;
@@ -9,11 +9,9 @@ class EventBus {
   publish<E extends keyof EventMap>(event: E, payload: EventMap[E]): void {
     // The cast here is important to ensure type safety inside the forEach loop.
     // It correctly correlates the event key with the callback and payload types.
-    const handlers = this.subscribers[event] as Set<EventCallback<E>> | undefined;
     if (!handlers) return;
     
     // Create a copy of handlers to avoid issues if handlers are modified during iteration
-    const handlersCopy = Array.from(handlers);
     handlersCopy.forEach(callback => {
       try {
         callback(payload);
@@ -31,7 +29,6 @@ class EventBus {
       // an indexed property on a generic type. This is a safe and localized cast.
       this.subscribers[event] = new Set() as any;
     }
-    const handlers = this.subscribers[event] as Set<EventCallback<E>>;
     handlers.add(callback);
     
     return () => {

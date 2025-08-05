@@ -1,4 +1,4 @@
-import type { ControlPanelState } from '../types';
+import type { ControlPanelState } from "../types/types";
 import { orchestratorConfig } from './orchestratorService';
 import { getInitialAgentData } from './agentData';
 
@@ -13,8 +13,6 @@ class ControlPanelService {
     }
 
     private initializeState(): ControlPanelState {
-        const agents = getInitialAgentData();
-        const providers = orchestratorConfig.providers;
 
         const agentMasterStatus = agents.reduce((acc, agent) => {
             acc[agent.id] = 'Online';

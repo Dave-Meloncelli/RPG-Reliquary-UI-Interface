@@ -48,7 +48,6 @@ export class ComponentRegistry {
   }
   
   getDependencies(name: string): string[] {
-    const component = this.get(name);
     return component ? component.dependencies : [];
   }
   
@@ -59,12 +58,10 @@ export class ComponentRegistry {
   }
   
   getIntegrationPoints(name: string): string[] {
-    const component = this.get(name);
     return component ? component.integrationPoints : [];
   }
   
   updateStatus(name: string, status: ComponentEntry['status']): void {
-    const component = this.get(name);
     if (component) {
       component.status = status;
       component.lastUpdated = new Date();
@@ -84,8 +81,6 @@ export class ComponentRegistry {
     const warnings: string[] = [];
     
     // Check for duplicate names
-    const names = this.getAll().map(c => c.name);
-    const duplicates = names.filter((name, index) => names.indexOf(name) !== index);
     if (duplicates.length > 0) {
       errors.push(`Duplicate component names found: ${duplicates.join(', ')}`);
     }
@@ -102,7 +97,6 @@ export class ComponentRegistry {
     // Check for deprecated components with dependents
     for (const component of this.getAll()) {
       if (component.status === 'deprecated') {
-        const dependents = this.getDependents(component.name);
         if (dependents.length > 0) {
           warnings.push(`Deprecated component ${component.name} has dependents: ${dependents.join(', ')}`);
         }
@@ -118,7 +112,6 @@ export class ComponentRegistry {
   
   private isExternalDependency(dep: string): boolean {
     // Check if dependency is external (not a local component)
-    const externalPrefixes = ['react', '@', 'lodash', 'axios', 'date-fns'];
     return externalPrefixes.some(prefix => dep.startsWith(prefix));
   }
   

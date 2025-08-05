@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "npm run type-check",
+      "node scripts/validate-imports.js",
+      "node scripts/validate-architecture.js",
+      "node scripts/validate-app-registry.js",
+      "git add"
+    ],
+    "*.md": [
+      "node scripts/validate-doc-links.js"
+    ],
+    "package.json": [
+      "node scripts/validate-dependencies.js"
+    ]
+  }
+}

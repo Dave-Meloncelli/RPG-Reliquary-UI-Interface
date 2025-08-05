@@ -39,6 +39,10 @@
     "create:service": "node scripts/create-service.js",
     "define:integration": "node scripts/define-integration.js",
     "validate:system": "npm run validate:index && npm run type-check && npm run lint",
+    "validate:imports": "node scripts/validate-imports.cjs",
+    "validate:architecture": "node scripts/validate-architecture.cjs",
+    "validate:app-registry": "node scripts/validate-app-registry.cjs",
+    "validate:all": "npm run validate:imports && npm run validate:architecture && npm run validate:app-registry",
     "audit:index": "npm run generate:index && npm run validate:index",
     "optimize:build": "node scripts/build-optimizer.cjs",
     "optimize:implement": "node scripts/implement-optimizations.cjs",
@@ -56,7 +60,10 @@
       "eslint --fix",
       "prettier --write",
       "npm run type-check",
-      "npm run validate:index"
+      "npm run validate:index",
+      "npm run validate:imports",
+      "npm run validate:architecture",
+      "npm run validate:app-registry"
     ],
     "*.{js,jsx,json,md}": [
       "prettier --write"
@@ -72,9 +79,13 @@
     ]
   },
   "dependencies": {
+    "@google/genai": "^1.12.0",
+    "arktype": "^2.1.20",
+    "lucide-react": "^0.263.1",
+    "monaco-editor": "^0.52.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "lucide-react": "^0.263.1"
+    "zod": "^4.0.14"
   },
   "devDependencies": {
     "@types/node": "^20.0.0",
@@ -84,13 +95,13 @@
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",
     "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.0",
     "prettier": "^3.0.0",

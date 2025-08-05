@@ -1,5 +1,5 @@
 
-import { type AgentProfile } from '../types';
+import { type AgentProfile } from "../types/types";
 import { personaData } from './agentData';
 
 

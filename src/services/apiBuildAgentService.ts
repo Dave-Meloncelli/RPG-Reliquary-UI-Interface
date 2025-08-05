@@ -1,4 +1,4 @@
-import { EventBus } from './eventBus';
+import { eventBus } from './eventBus';
 
 export interface BuildConfig {
   id: string;
@@ -78,7 +78,7 @@ export interface APISpec {
 }
 
 export class APIBuildAgentService {
-  private eventBus: EventBus;
+  private eventBus: any;
   private buildConfigs: Map<string, BuildConfig> = new Map();
   private buildResults: Map<string, BuildResult> = new Map();
   private deploymentResults: Map<string, DeploymentResult> = new Map();
@@ -87,7 +87,7 @@ export class APIBuildAgentService {
   private buildQueue: string[] = [];
   private currentBuild?: string;
 
-  constructor(eventBus: EventBus) {
+  constructor(eventBus: any) {
     this.eventBus = eventBus;
     this.initializeEventListeners();
   }
@@ -113,8 +113,6 @@ export class APIBuildAgentService {
    * Register a new build configuration
    */
   async registerBuildConfig(config: Omit<BuildConfig, 'id' | 'createdAt' | 'updatedAt'>): Promise<string> {
-    const id = `build_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    const now = new Date().toISOString();
     
     const buildConfig: BuildConfig = {
       ...config,
@@ -138,7 +136,6 @@ export class APIBuildAgentService {
    * Update an existing build configuration
    */
   async updateBuildConfig(id: string, updates: Partial<BuildConfig>): Promise<boolean> {
-    const config = this.buildConfigs.get(id);
     if (!config) {
       throw new Error(`Build configuration ${id} not found`);
     }
@@ -166,13 +163,10 @@ export class APIBuildAgentService {
    * Queue a build for execution
    */
   async queueBuild(configId: string): Promise<string> {
-    const config = this.buildConfigs.get(configId);
     if (!config) {
       throw new Error(`Build configuration ${configId} not found`);
     }
 
-    const buildId = `build_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    const now = new Date().toISOString();
 
     const buildResult: BuildResult = {
       id: buildId,
@@ -219,7 +213,6 @@ export class APIBuildAgentService {
     this.isRunning = true;
 
     while (this.buildQueue.length > 0) {
-      const buildId = this.buildQueue.shift()!;
       this.currentBuild = buildId;
       
       try {
@@ -238,12 +231,10 @@ export class APIBuildAgentService {
    * Execute a specific build
    */
   private async executeBuild(buildId: string): Promise<void> {
-    const buildResult = this.buildResults.get(buildId);
     if (!buildResult) {
       throw new Error(`Build result ${buildId} not found`);
     }
 
-    const config = this.buildConfigs.get(buildResult.buildConfigId);
     if (!config) {
       throw new Error(`Build configuration ${buildResult.buildConfigId} not found`);
     }
@@ -251,14 +242,11 @@ export class APIBuildAgentService {
     // Update status to building
     await this.updateBuildStatus(buildId, 'building');
     
-    const startTime = Date.now();
 
     try {
       // Simulate build process
       await this.simulateBuildProcess(buildId, config);
       
-      const endTime = Date.now();
-      const duration = endTime - startTime;
 
       // Update build result
       const updatedResult: BuildResult = {
@@ -281,8 +269,6 @@ export class APIBuildAgentService {
       });
 
     } catch (error) {
-      const endTime = Date.now();
-      const duration = endTime - startTime;
 
       await this.updateBuildStatus(buildId, 'failed', [error instanceof Error ? error.message : 'Unknown error'], duration);
       throw error;
@@ -293,7 +279,6 @@ export class APIBuildAgentService {
    * Simulate the build process (replace with actual build logic)
    */
   private async simulateBuildProcess(buildId: string, config: BuildConfig): Promise<void> {
-    const buildResult = this.buildResults.get(buildId)!;
     
     // Simulate build steps
     const steps = [
@@ -332,7 +317,6 @@ export class APIBuildAgentService {
     errors: string[] = [], 
     duration?: number
   ): Promise<void> {
-    const buildResult = this.buildResults.get(buildId);
     if (!buildResult) {
       throw new Error(`Build result ${buildId} not found`);
     }
@@ -359,13 +343,10 @@ export class APIBuildAgentService {
    * Add log entry to build
    */
   private async addBuildLog(buildId: string, message: string): Promise<void> {
-    const buildResult = this.buildResults.get(buildId);
     if (!buildResult) {
       throw new Error(`Build result ${buildId} not found`);
     }
 
-    const timestamp = new Date().toISOString();
-    const logEntry = `[${timestamp}] ${message}`;
     
     buildResult.logs.push(logEntry);
     this.buildResults.set(buildId, buildResult);
@@ -381,7 +362,6 @@ export class APIBuildAgentService {
    * Deploy a successful build
    */
   async deployBuild(buildResultId: string): Promise<string> {
-    const buildResult = this.buildResults.get(buildResultId);
     if (!buildResult) {
       throw new Error(`Build result ${buildResultId} not found`);
     }
@@ -390,13 +370,10 @@ export class APIBuildAgentService {
       throw new Error(`Cannot deploy build with status: ${buildResult.status}`);
     }
 
-    const config = this.buildConfigs.get(buildResult.buildConfigId);
     if (!config) {
       throw new Error(`Build configuration ${buildResult.buildConfigId} not found`);
     }
 
-    const deploymentId = `deploy_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    const now = new Date().toISOString();
 
     const deploymentResult: DeploymentResult = {
       id: deploymentId,
@@ -427,7 +404,6 @@ export class APIBuildAgentService {
    * Execute deployment
    */
   private async executeDeployment(deploymentId: string, config: BuildConfig): Promise<void> {
-    const deploymentResult = this.deploymentResults.get(deploymentId)!;
     
     try {
       // Update status to deploying
@@ -450,8 +426,6 @@ export class APIBuildAgentService {
       }
 
       // Update deployment result
-      const endTime = new Date().toISOString();
-      const duration = new Date(endTime).getTime() - new Date(deploymentResult.startTime).getTime();
 
       deploymentResult.status = 'success';
       deploymentResult.endTime = endTime;
@@ -467,8 +441,6 @@ export class APIBuildAgentService {
       });
 
     } catch (error) {
-      const endTime = new Date().toISOString();
-      const duration = new Date(endTime).getTime() - new Date(deploymentResult.startTime).getTime();
 
       deploymentResult.status = 'failed';
       deploymentResult.endTime = endTime;
@@ -489,7 +461,6 @@ export class APIBuildAgentService {
    * Register API specification
    */
   async registerAPISpec(spec: Omit<APISpec, 'id'>): Promise<string> {
-    const id = `api_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     
     const apiSpec: APISpec = {
       ...spec,
@@ -511,7 +482,6 @@ export class APIBuildAgentService {
    * Update API specification
    */
   async updateAPISpec(specId: string): Promise<boolean> {
-    const spec = this.apiSpecs.get(specId);
     if (!spec) {
       throw new Error(`API specification ${specId} not found`);
     }

@@ -1,4 +1,4 @@
-import { EventBus } from './eventBus';
+import { eventBus } from './eventBus';
 
 export interface ContentIngestionRequest {
   id: string;
@@ -90,19 +90,18 @@ export interface WorkflowStep {
 }
 
 export class ContentIngestionService {
-  private eventBus: EventBus;
+  private eventBus: any;
   private requests: Map<string, ContentIngestionRequest> = new Map();
   private outlines: Map<string, ContentOutline> = new Map();
   private generations: Map<string, ContentGeneration> = new Map();
   private optimizations: Map<string, ContentOptimization> = new Map();
   private workflows: Map<string, ContentWorkflow> = new Map();
 
-  constructor(eventBus: EventBus) {
+  constructor(eventBus: any) {
     this.eventBus = eventBus;
   }
 
   async createContentRequest(request: Omit<ContentIngestionRequest, 'id'>): Promise<string> {
-    const requestId = `request_${Date.now()}`;
     const fullRequest: ContentIngestionRequest = {
       ...request,
       id: requestId,
@@ -119,10 +118,8 @@ export class ContentIngestionService {
   }
 
   private async startContentWorkflow(requestId: string): Promise<void> {
-    const request = this.requests.get(requestId);
     if (!request) return;
 
-    const workflowId = `workflow_${Date.now()}`;
     const steps: WorkflowStep[] = [
       {
         id: 'step_1',
@@ -188,17 +185,12 @@ export class ContentIngestionService {
   }
 
   private calculateEstimatedCompletion(steps: WorkflowStep[]): string {
-    const totalMinutes = steps.reduce((sum, step) => sum + step.estimatedDuration, 0);
-    const completionDate = new Date(Date.now() + totalMinutes * 60 * 1000);
     return completionDate.toISOString();
   }
 
   private async executeWorkflowStep(workflowId: string, stepIndex: number): Promise<void> {
-    const workflow = this.workflows.get(workflowId);
     if (!workflow || stepIndex >= workflow.steps.length) return;
 
-    const step = workflow.steps[stepIndex];
-    const request = this.requests.get(workflow.requestId);
     if (!request) return;
 
     // Mark step as in progress
@@ -257,8 +249,6 @@ export class ContentIngestionService {
 
   private async executeOutlineGeneration(workflow: ContentWorkflow, step: WorkflowStep, request: ContentIngestionRequest): Promise<void> {
     // Generate content outline
-    const outline = await this.generateContentOutline(request);
-    const outlineId = `outline_${Date.now()}`;
     
     outline.id = outlineId;
     outline.requestId = request.id;
@@ -270,14 +260,11 @@ export class ContentIngestionService {
   }
 
   private async executeContentGeneration(workflow: ContentWorkflow, step: WorkflowStep, request: ContentIngestionRequest): Promise<void> {
-    const outline = Array.from(this.outlines.values()).find(o => o.requestId === request.id);
     if (!outline) return;
 
     const generations: ContentGeneration[] = [];
 
     for (const chapter of outline.chapters) {
-      const generation = await this.generateChapterContent(chapter, request);
-      const generationId = `generation_${Date.now()}_${chapter.id}`;
       
       generation.id = generationId;
       generation.outlineId = outline.id;
@@ -293,15 +280,12 @@ export class ContentIngestionService {
 
   private async executeContentOptimization(workflow: ContentWorkflow, step: WorkflowStep, request: ContentIngestionRequest): Promise<void> {
     const generations = Array.from(this.generations.values()).filter(g => {
-      const outline = Array.from(this.outlines.values()).find(o => o.requestId === request.id);
       return outline && g.outlineId === outline.id;
     });
 
     const optimizations: ContentOptimization[] = [];
 
     for (const generation of generations) {
-      const optimization = await this.optimizeContent(generation, request);
-      const optimizationId = `optimization_${Date.now()}_${generation.id}`;
       
       optimization.id = optimizationId;
       optimization.contentId = generation.id;
@@ -366,9 +350,6 @@ export class ContentIngestionService {
   }
 
   private calculateRevenuePotential(request: ContentIngestionRequest): number {
-    const baseRevenue = request.estimatedLength * 100;
-    const categoryMultiplier = request.category.includes('Technology') ? 1.5 : 1.2;
-    const audienceMultiplier = request.targetAudience.length * 0.3;
     
     return Math.floor(baseRevenue * categoryMultiplier * (1 + audienceMultiplier));
   }
@@ -439,8 +420,6 @@ export class ContentIngestionService {
   }
 
   private generateChapterKeywords(request: ContentIngestionRequest, chapterNumber: number): string[] {
-    const baseKeywords = request.keyTopics;
-    const chapterKeywords = ['consciousness', 'evolution', 'AI', 'symbiosis', 'technology'];
     return [...new Set([...baseKeywords, ...chapterKeywords])].slice(0, 8);
   }
 
@@ -465,8 +444,6 @@ export class ContentIngestionService {
   }
 
   private generateSEOKeywords(request: ContentIngestionRequest): string[] {
-    const baseKeywords = request.keyTopics;
-    const categoryKeywords = ['consciousness', 'evolution', 'AI', 'technology', 'philosophy'];
     const audienceKeywords = request.targetAudience.flatMap(audience => 
       audience.toLowerCase().split(' ').filter(word => word.length > 3)
     );
@@ -490,7 +467,6 @@ export class ContentIngestionService {
 
   private async generateChapterContent(chapter: Chapter, request: ContentIngestionRequest): Promise<ContentGeneration> {
     // Simulate AI content generation
-    const generatedContent = this.generateContentText(chapter, request);
     
     const generation: ContentGeneration = {
       id: '',
@@ -543,20 +519,13 @@ We've covered the essential aspects of ${chapter.title.toLowerCase()}. Remember 
   }
 
   private calculateReadabilityScore(text: string): number {
-    const sentences = text.split(/[.!?]+/).length;
-    const words = text.split(/\s+/).length;
-    const avgWordsPerSentence = words / sentences;
     
-    const score = Math.max(0, 100 - (avgWordsPerSentence - 12) * 2);
     return Math.min(100, score);
   }
 
   private calculateSEOScore(text: string, keywords: string[]): number {
-    let score = 0;
-    const textLower = text.toLowerCase();
     
     keywords.forEach(keyword => {
-      const count = (textLower.match(new RegExp(keyword.toLowerCase(), 'g')) || []).length;
       if (count > 0) score += Math.min(20, count * 5);
     });
     
@@ -564,15 +533,11 @@ We've covered the essential aspects of ${chapter.title.toLowerCase()}. Remember 
   }
 
   private calculateQualityScore(text: string): number {
-    const readabilityScore = this.calculateReadabilityScore(text);
-    const structureScore = text.includes('#') ? 20 : 0;
-    const lengthScore = text.length > 1000 ? 20 : text.length / 50;
     
     return Math.min(100, readabilityScore + structureScore + lengthScore);
   }
 
   private generateContentSuggestions(content: string, chapter: Chapter): string[] {
-    const suggestions = [];
     
     if (content.length < 1000) {
       suggestions.push('Expand content with more detailed explanations');
@@ -590,7 +555,6 @@ We've covered the essential aspects of ${chapter.title.toLowerCase()}. Remember 
   }
 
   private async optimizeContent(generation: ContentGeneration, request: ContentIngestionRequest): Promise<ContentOptimization> {
-    const optimizedContent = this.optimizeContentText(generation.generatedContent, request);
     
     const optimization: ContentOptimization = {
       id: '',
@@ -614,7 +578,6 @@ We've covered the essential aspects of ${chapter.title.toLowerCase()}. Remember 
 
   private optimizeContentText(content: string, request: ContentIngestionRequest): string {
     // Add SEO enhancements
-    let optimized = content;
     
     // Add keyword-rich headings
     optimized = optimized.replace(/# (.+)/g, (match, title) => {
@@ -680,13 +643,11 @@ Ready to implement these concepts? Start with our practical exercises and join o
 
   private calculateOverallQuality(requestId: string): number {
     const generations = Array.from(this.generations.values()).filter(g => {
-      const outline = Array.from(this.outlines.values()).find(o => o.requestId === requestId);
       return outline && g.outlineId === outline.id;
     });
 
     if (generations.length === 0) return 0;
 
-    const totalQuality = generations.reduce((sum, gen) => sum + gen.qualityScore, 0);
     return Math.round(totalQuality / generations.length);
   }
 

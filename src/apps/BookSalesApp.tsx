@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { EventBus } from '../services/eventBus';
+import { eventBus } from '../services/eventBus';
 import { SEOOptimizationService } from '../services/seoOptimizationService';
 import { ContentIngestionService } from '../services/contentIngestionService';
 
@@ -47,8 +47,8 @@ export const BookSalesApp: React.FC = () => {
   const [currentProgress, setCurrentProgress] = useState(0);
   
   // SEO and Content Services
-  const [seoService] = useState(() => new SEOOptimizationService(new EventBus()));
-  const [contentService] = useState(() => new ContentIngestionService(new EventBus()));
+  const [seoService] = useState(() => new SEOOptimizationService(eventBus));
+  const [contentService] = useState(() => new ContentIngestionService(eventBus));
   
   // SEO Analysis State
   const [seoAnalyses, setSeoAnalyses] = useState<any[]>([]);

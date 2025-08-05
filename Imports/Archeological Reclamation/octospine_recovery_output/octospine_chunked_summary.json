@@ -1,0 +1,8 @@
+{
+  "generated_on": "2025-08-05T10:19:40.933830",
+  "total_files_processed": 44,
+  "files_with_octospine": 44,
+  "total_octospine_mentions": 320,
+  "processing_method": "chunked",
+  "chunk_size": 30000
+}

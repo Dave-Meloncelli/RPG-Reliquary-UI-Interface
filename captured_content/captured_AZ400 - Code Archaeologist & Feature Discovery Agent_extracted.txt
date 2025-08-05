@@ -1,0 +1,916 @@
+
+--- PAGE 1 ---
+AZ400 - Code Archaeologist & Feature Discovery Agent
+Comprehensive Code Parsing, Indexing & Lost Feature Recovery
+🎯 Agent Profile
+🔍 Comprehensive Parsing Engine
+Multi-Format Code Extraction
+Universal File Parser yaml
+Agent_ID A g e n t _ I D:: AZ400  AZ400
+Agent_Name A g e n t _ N a m e::  "Code Archaeologist" "Code Archaeologist"
+Classification C l a s s i f i c a t i o n:: S S--Tier_Intelligence_Synthesis Tier_Intelligence_Synthesis
+Agent_Class A g e n t _ C l a s s:: Meta Meta--Discovery Discovery
+Vault_Role V a u l t _ R o l e::  "The Digital Archaeologist who excavates buried functionality and creates comprehensive maps of all code a "The Digital Archaeologist who excavates buried functionality and creates comprehensive maps of all code a
+Core_Mission C o r e _ M i s s i o n::  ||
+  Comprehensive discovery, parsing, indexing, and cross-referencing of ALL code   Comprehensive discovery, parsing, indexing, and cross-referencing of ALL code 
+  components across the entire project ecosystem - including embedded code in   components across the entire project ecosystem - including embedded code in 
+  documentation, PDFs, markdown files, comments, and any other format where   documentation, PDFs, markdown files, comments, and any other format where 
+  functionality might be hidden or poorly referenced.   functionality might be hidden or poorly referenced.
+Specialization_Domains S p e c i a l i z a t i o n _ D o m a i n s::
+    -- Multi  Multi--format code extraction and parsing format code extraction and parsing
+    -- Comprehensive component indexing and cataloging  Comprehensive component indexing and cataloging
+    -- Cross  Cross--reference mapping and dependency analysis reference mapping and dependency analysis
+    -- Lost functionality discovery and recovery  Lost functionality discovery and recovery
+    -- Feature inventory management and optimization  Feature inventory management and optimization
+    -- Dead code detection vs. unreferenced valuable code  Dead code detection vs. unreferenced valuable code
+    -- Documentation  Documentation--embedded code archaeology embedded code archaeology
+    -- Legacy system component discovery  Legacy system component discovery
+python
+--- PAGE 2 ---
+class c l a s s  UniversalCodeParser U n i v e r s a l C o d e P a r s e r::
+        """Extracts code from any file format with embedded functionality""" """Extracts code from any file format with embedded functionality"""
+        
+        def d e f  __init____init__((selfself))::
+        self         self..supported_formats supported_formats ==  {{
+                        # Direct code files # Direct code files
+                        "python" "python"::  [[".py"".py",,  ".pyx"".pyx",,  ".pyi"".pyi"]],,
+                        "javascript" "javascript"::  [[".js"".js",,  ".jsx"".jsx",,  ".ts"".ts",,  ".tsx"".tsx",,  ".mjs"".mjs"]],,
+                        "html" "html"::  [[".html" ".html",,  ".htm" ".htm",,  ".vue" ".vue",,  ".svelte" ".svelte"]],,
+                        "css""css"::  [[".css"".css",,  ".scss" ".scss",,  ".sass" ".sass",,  ".less" ".less"]],,
+                        "sql""sql"::  [[".sql"".sql",,  ".psql" ".psql",,  ".mysql" ".mysql"]],,
+                        "shell" "shell"::  [[".sh"".sh",,  ".bash" ".bash",,  ".zsh"".zsh",,  ".fish"".fish"]],,
+                        "docker" "docker"::  [["Dockerfile" "Dockerfile",,  ".dockerfile" ".dockerfile"]],,
+                        "yaml" "yaml"::  [[".yml" ".yml",,  ".yaml" ".yaml"]],,
+                        "json" "json"::  [[".json" ".json",,  ".jsonc" ".jsonc"]],,
+                        
+                        # Documentation with embedded code # Documentation with embedded code
+                        "markdown" "markdown"::  [[".md"".md",,  ".mdx" ".mdx",,  ".markdown" ".markdown"]],,
+                        "restructured_text" "restructured_text"::  [[".rst"".rst"]],,
+                        "jupyter" "jupyter"::  [[".ipynb" ".ipynb"]],,
+                        
+                        # Office documents # Office documents
+                        "pdf""pdf"::  [[".pdf"".pdf"]],,
+                        "word" "word"::  [[".docx" ".docx",,  ".doc" ".doc"]],,
+                        "excel" "excel"::  [[".xlsx" ".xlsx",,  ".xls"".xls"]],,
+                        "powerpoint" "powerpoint"::  [[".pptx" ".pptx",,  ".ppt"".ppt"]],,
+                        
+                        # Specialized formats # Specialized formats
+                        "confluence" "confluence"::  [[".confluence" ".confluence"]],,
+                        "notion" "notion"::  [[".notion" ".notion"]],,
+                        "obsidian" "obsidian"::  [[".obsidian" ".obsidian"]],,
+                        "readme" "readme"::  [["README" "README",,  "readme" "readme"]],,
+                        
+                        # Configuration files # Configuration files
+                        "config" "config"::  [[".env" ".env",,  ".config" ".config",,  ".ini"".ini",,  ".conf" ".conf",,  ".toml" ".toml"]],,
+                        "package" "package"::  [["package.json" "package.json",,  "requirements.txt" "requirements.txt",,  "Pipfile" "Pipfile",,  "pyproject.toml" "pyproject.toml"]],,
+                        
+                        # Version control # Version control
+                        "git""git"::  [[".gitignore" ".gitignore",,  ".gitmodules" ".gitmodules",,  ".git/hooks/*" ".git/hooks/*"]],,
+                        
+                        # CI/CD # CI/CD
+                        "cicd" "cicd"::  [[".github/workflows/*" ".github/workflows/*",,  ".gitlab-ci.yml" ".gitlab-ci.yml",,  "azure-pipelines.yml" "azure-pipelines.yml"]]
+                }}
+                
+        self         self..code_extractors code_extractors ==  {{
+            format_type             format_type:: self self.._create_extractor _create_extractor((format_type format_type))  
+--- PAGE 3 ---
+                        for f o r format_type  format_type in i n self self..supported_formats supported_formats..keyskeys(())
+                }}
+        
+        async a s y n c  def d e f  parse_project_comprehensively parse_project_comprehensively((selfself,, project_root  project_root))::
+                """Comprehensive parsing of entire project including all embedded code""" """Comprehensive parsing of entire project including all embedded code"""
+                
+                # Discover all files # Discover all files
+        all_files         all_files ==  await a w a i t self self..discover_all_files discover_all_files((project_root project_root))
+                
+                # Categorize by format # Categorize by format
+        categorized_files         categorized_files ==  await a w a i t self self..categorize_files_by_format categorize_files_by_format((all_files all_files))
+                
+                # Extract code from each category # Extract code from each category
+        extraction_results         extraction_results ==  {{}}
+                for f o r format_type  format_type,, files  files in i n categorized_files  categorized_files..itemsitems(())::
+            extraction_results             extraction_results[[format_type format_type]]  ==  await a w a i t self self..extract_code_from_format extract_code_from_format((
+                format_type                 format_type,, files files
+                        ))
+                
+                # Consolidate and cross-reference # Consolidate and cross-reference
+        comprehensive_inventory         comprehensive_inventory ==  await a w a i t self self..consolidate_extraction_results consolidate_extraction_results((extraction_results extraction_results))
+                
+                return r e t u r n comprehensive_inventory  comprehensive_inventory
+        
+        async a s y n c  def d e f  extract_code_from_markdown extract_code_from_markdown((selfself,, file_path  file_path))::
+                """Extract all code blocks, inline code, and embedded functionality from markdown""" """Extract all code blocks, inline code, and embedded functionality from markdown"""
+                
+                with w i t h  openopen((file_path file_path,,  'r''r',, encoding  encoding=='utf-8' 'utf-8'))  as a s f f::
+            content             content == f f..readread(())
+                
+        code_extractions         code_extractions ==  [[]]
+                
+                # Extract fenced code blocks # Extract fenced code blocks
+        fenced_blocks         fenced_blocks == re re..findall findall((r'```(\w+)?\n(.*?)\n```' r'```(\w+)?\n(.*?)\n```',, content  content,, re re..DOTALL DOTALL))
+                for f o r language  language,, code  code in i n fenced_blocks  fenced_blocks::
+            code_extractions             code_extractions..append append(({{
+                                "type" "type"::  "fenced_code_block" "fenced_code_block",,
+                                "language" "language":: language  language or o r  "unknown" "unknown",,
+                                "code" "code":: code code..stripstrip(()),,
+                                "file_path" "file_path":: file_path  file_path,,
+                                "extraction_method" "extraction_method"::  "regex_fenced_block" "regex_fenced_block"
+                        }}))
+                
+                # Extract indented code blocks # Extract indented code blocks
+        indented_blocks         indented_blocks == re re..findall findall((r'(?:^    .*$\n?)+' r'(?:^    .*$\n?)+',, content  content,, re re..MULTILINE MULTILINE))
+                for f o r code_block  code_block in i n indented_blocks  indented_blocks::
+            code_extractions             code_extractions..append append(({{
+--- PAGE 4 ---
+                                "type" "type"::  "indented_code_block" "indented_code_block",,
+                                "language" "language"::  "unknown" "unknown",,
+                                "code" "code":: code_block  code_block..stripstrip(()),,
+                                "file_path" "file_path":: file_path  file_path,,
+                                "extraction_method" "extraction_method"::  "regex_indented_block" "regex_indented_block"
+                        }}))
+                
+                # Extract inline code # Extract inline code
+        inline_code         inline_code == re re..findall findall((r'`([^`]+)`' r'`([^`]+)`',, content  content))
+                for f o r code  code in i n inline_code  inline_code::
+                        if i f  lenlen((codecode))  >>  10 1 0::    # Only capture substantial inline code # Only capture substantial inline code
+                code_extractions                 code_extractions..append append(({{
+                                        "type" "type"::  "inline_code" "inline_code",,
+                                        "language" "language"::  "unknown" "unknown",,
+                                        "code" "code":: code code,,
+                                        "file_path" "file_path":: file_path  file_path,,
+                                        "extraction_method" "extraction_method"::  "regex_inline_code" "regex_inline_code"
+                                }}))
+                
+                # Extract command line examples # Extract command line examples
+        command_blocks         command_blocks == re re..findall findall((r'\$ (.+?)(?:\n|$)' r'\$ (.+?)(?:\n|$)',, content  content))
+                for f o r command  command in i n command_blocks  command_blocks::
+            code_extractions             code_extractions..append append(({{
+                                "type" "type"::  "command_line" "command_line",,
+                                "language" "language"::  "shell" "shell",,
+                                "code" "code":: command  command,,
+                                "file_path" "file_path":: file_path  file_path,,
+                                "extraction_method" "extraction_method"::  "regex_command_line" "regex_command_line"
+                        }}))
+                
+                # Extract function/method signatures mentioned in text # Extract function/method signatures mentioned in text
+        function_signatures         function_signatures == re re..findall findall((r'(\w+\([^)]*\))' r'(\w+\([^)]*\))',, content  content))
+                for f o r signature  signature in i n function_signatures  function_signatures::
+            code_extractions             code_extractions..append append(({{
+                                "type" "type"::  "function_signature" "function_signature",,
+                                "language" "language"::  "unknown" "unknown",,
+                                "code" "code":: signature  signature,,
+                                "file_path" "file_path":: file_path  file_path,,
+                                "extraction_method" "extraction_method"::  "regex_function_signature" "regex_function_signature"
+                        }}))
+                
+                return r e t u r n code_extractions  code_extractions
+        
+        async a s y n c  def d e f  extract_code_from_pdf extract_code_from_pdf((selfself,, file_path  file_path))::
+                """Extract code from PDF documents using multiple methods""" """Extract code from PDF documents using multiple methods"""
+                
+        code_extractions         code_extractions ==  [[]]
+--- PAGE 5 ---
+                
+                try t r y::
+                        import i m p o r t PyPDF2  PyPDF2
+                        import i m p o r t pdfplumber  pdfplumber
+                        
+                        # Method 1: PyPDF2 text extraction # Method 1: PyPDF2 text extraction
+            pdf_text             pdf_text ==  await a w a i t self self..extract_pdf_text_pypdf2 extract_pdf_text_pypdf2((file_path file_path))
+                        if i f pdf_text  pdf_text::
+                text_code                 text_code ==  await a w a i t self self..extract_code_from_text extract_code_from_text((pdf_text pdf_text,, file_path  file_path,,  "pdf_text" "pdf_text"))
+                code_extractions                 code_extractions..extend extend((text_code text_code))
+                        
+                        # Method 2: pdfplumber for better formatting # Method 2: pdfplumber for better formatting
+            plumber_text             plumber_text ==  await a w a i t self self..extract_pdf_text_pdfplumber extract_pdf_text_pdfplumber((file_path file_path))
+                        if i f plumber_text  plumber_text::
+                plumber_code                 plumber_code ==  await a w a i t self self..extract_code_from_text extract_code_from_text((plumber_text plumber_text,, file_path  file_path,,  "pdf_plumber" "pdf_plumber"))
+                code_extractions                 code_extractions..extend extend((plumber_code plumber_code))
+                        
+                        # Method 3: OCR if necessary (for scanned PDFs) # Method 3: OCR if necessary (for scanned PDFs)
+                        if i f  lenlen((code_extractions code_extractions))  ====  00::
+                ocr_text                 ocr_text ==  await a w a i t self self..extract_pdf_text_ocr extract_pdf_text_ocr((file_path file_path))
+                                if i f ocr_text  ocr_text::
+                    ocr_code                     ocr_code ==  await a w a i t self self..extract_code_from_text extract_code_from_text((ocr_text ocr_text,, file_path  file_path,,  "pdf_ocr" "pdf_ocr"))
+                    code_extractions                     code_extractions..extend extend((ocr_code ocr_code))
+                                        
+                except e x c e p t ImportError  ImportError::
+                        print p r i n t((f"PDF parsing libraries not available for f"PDF parsing libraries not available for {{file_path file_path}}""))
+                
+                return r e t u r n code_extractions  code_extractions
+        
+        async a s y n c  def d e f  extract_code_from_jupyter extract_code_from_jupyter((selfself,, file_path  file_path))::
+                """Extract all code cells from Jupyter notebooks""" """Extract all code cells from Jupyter notebooks"""
+                
+                import i m p o r t json json
+                
+                with w i t h  openopen((file_path file_path,,  'r''r',, encoding  encoding=='utf-8' 'utf-8'))  as a s f f::
+            notebook             notebook == json json..loadload((ff))
+                
+        code_extractions         code_extractions ==  [[]]
+                
+                for f o r cell_idx  cell_idx,, cell  cell in i n  enumerate enumerate((notebook notebook..getget(('cells''cells',,  [[]]))))::
+                        if i f cell cell..getget(('cell_type' 'cell_type'))  ====  'code' 'code'::
+                source                 source == cell cell..getget(('source' 'source',,  [[]]))
+                                if i f  isinstance isinstance((source source,,  listlist))::
+                    code                     code ==  ''''..joinjoin((source source))
+                                else e l s e::
+                    code                     code == source  source
+                                
+--- PAGE 6 ---
+                code_extractions                 code_extractions..append append(({{
+                                        "type" "type"::  "jupyter_code_cell" "jupyter_code_cell",,
+                                        "language" "language"::  "python" "python",,    # Default assumption # Default assumption
+                                        "code" "code":: code code,,
+                                        "file_path" "file_path":: file_path  file_path,,
+                                        "cell_index" "cell_index":: cell_idx  cell_idx,,
+                                        "extraction_method" "extraction_method"::  "jupyter_cell_parse" "jupyter_cell_parse"
+                                }}))
+                
+                return r e t u r n code_extractions  code_extractions
+        
+        async a s y n c  def d e f  extract_code_from_office_documents extract_code_from_office_documents((selfself,, file_path  file_path))::
+                """Extract code from Word, Excel, PowerPoint documents""" """Extract code from Word, Excel, PowerPoint documents"""
+                
+        code_extractions         code_extractions ==  [[]]
+        file_extension         file_extension == os os..pathpath..splitext splitext((file_path file_path))[[11]]..lowerlower(())
+                
+                try t r y::
+                        if i f file_extension  file_extension in i n  [['.docx' '.docx',,  '.doc''.doc']]::
+                code_extractions                 code_extractions ==  await a w a i t self self..extract_code_from_word extract_code_from_word((file_path file_path))
+                        elif e l i f file_extension  file_extension in i n  [['.xlsx''.xlsx',,  '.xls''.xls']]::
+                code_extractions                 code_extractions ==  await a w a i t self self..extract_code_from_excel extract_code_from_excel((file_path file_path))
+                        elif e l i f file_extension  file_extension in i n  [['.pptx' '.pptx',,  '.ppt''.ppt']]::
+                code_extractions                 code_extractions ==  await a w a i t self self..extract_code_from_powerpoint extract_code_from_powerpoint((file_path file_path))
+                                
+                except e x c e p t ImportError  ImportError::
+                        print p r i n t((f"Office document parsing libraries not available for f"Office document parsing libraries not available for {{file_path file_path}}""))
+                
+                return r e t u r n code_extractions  code_extractions
+        
+        async a s y n c  def d e f  extract_code_from_text extract_code_from_text((selfself,, text text,, file_path  file_path,, extraction_method  extraction_method))::
+                """Extract code patterns from any text content""" """Extract code patterns from any text content"""
+                
+        code_extractions         code_extractions ==  [[]]
+                
+                # Pattern 1: Function definitions # Pattern 1: Function definitions
+        function_patterns         function_patterns ==  [[
+                        r'def\s+(\w+)\s*\([^)]*\):' r'def\s+(\w+)\s*\([^)]*\):',,  # Python functions # Python functions
+                        r'function\s+(\w+)\s*\([^)]*\)\s*{' r'function\s+(\w+)\s*\([^)]*\)\s*{',,  # JavaScript functions # JavaScript functions
+                        r'(\w+)\s*=\s*\([^)]*\)\s*=>' r'(\w+)\s*=\s*\([^)]*\)\s*=>',,  # Arrow functions # Arrow functions
+                        r'class\s+(\w+)' r'class\s+(\w+)',,  # Class definitions # Class definitions
+                        r'interface\s+(\w+)' r'interface\s+(\w+)',,  # TypeScript interfaces # TypeScript interfaces
+                        r'type\s+(\w+)\s*=' r'type\s+(\w+)\s*=',,  # Type definitions # Type definitions
+                ]]
+                
+                for f o r pattern  pattern in i n function_patterns  function_patterns::
+            matches             matches == re re..finditer finditer((pattern pattern,, text text,, re re..MULTILINE MULTILINE))
+--- PAGE 7 ---
+                        for f o r  match m a t c h  in i n matches  matches::
+                                # Extract surrounding context # Extract surrounding context
+                start                 start ==  maxmax((00,,  match m a t c h..startstart(())  --  100 1 0 0))
+                end                 end ==  minmin((lenlen((texttext)),,  match m a t c h..endend(())  ++  200 2 0 0))
+                context                 context == text text[[startstart::endend]]
+                                
+                code_extractions                 code_extractions..append append(({{
+                                        "type" "type"::  "function_definition" "function_definition",,
+                                        "language" "language":: self self..detect_language_from_pattern detect_language_from_pattern((pattern pattern)),,
+                                        "code" "code":: context  context,,
+                                        "function_name" "function_name"::  match m a t c h..groupgroup((11)),,
+                                        "file_path" "file_path":: file_path  file_path,,
+                                        "extraction_method" "extraction_method":: extraction_method  extraction_method
+                                }}))
+                
+                # Pattern 2: Code blocks (indented consistently) # Pattern 2: Code blocks (indented consistently)
+        code_block_pattern         code_block_pattern ==  r'(?:^    .+$\n?)+' r'(?:^    .+$\n?)+'
+        code_blocks         code_blocks == re re..findall findall((code_block_pattern code_block_pattern,, text text,, re re..MULTILINE MULTILINE))
+                for f o r code_block  code_block in i n code_blocks  code_blocks::
+                        if i f  lenlen((code_block code_block..stripstrip(())))  >>  50 5 0::    # Only substantial blocks # Only substantial blocks
+                code_extractions                 code_extractions..append append(({{
+                                        "type" "type"::  "indented_code_block" "indented_code_block",,
+                                        "language" "language"::  "unknown" "unknown",,
+                                        "code" "code":: code_block  code_block..stripstrip(()),,
+                                        "file_path" "file_path":: file_path  file_path,,
+                                        "extraction_method" "extraction_method":: extraction_method  extraction_method
+                                }}))
+                
+                # Pattern 3: Import/require statements # Pattern 3: Import/require statements
+        import_patterns         import_patterns ==  [[
+                        r'import\s+.*?from\s+[\'"][^\'"]+[\'"]' r'import\s+.*?from\s+[\'"][^\'"]+[\'"]',,
+                        r'require\s*\(\s*[\'"][^\'"]+[\'"]' r'require\s*\(\s*[\'"][^\'"]+[\'"]',,
+                        r'from\s+[\w.]+\s+import\s+.*' r'from\s+[\w.]+\s+import\s+.*',,
+                        r'#include\s*<[^>]+>' r'#include\s*<[^>]+>',,
+                        r'using\s+[\w.]+;' r'using\s+[\w.]+;'
+                ]]
+                
+                for f o r pattern  pattern in i n import_patterns  import_patterns::
+            matches             matches == re re..findall findall((pattern pattern,, text text))
+                        for f o r  match m a t c h  in i n matches  matches::
+                code_extractions                 code_extractions..append append(({{
+                                        "type" "type"::  "import_statement" "import_statement",,
+                                        "language" "language":: self self..detect_language_from_import detect_language_from_import((match m a t c h)),,
+                                        "code" "code"::  match m a t c h,,
+                                        "file_path" "file_path":: file_path  file_path,,
+                                        "extraction_method" "extraction_method":: extraction_method  extraction_method
+                                }}))
+--- PAGE 8 ---
+Comprehensive Component Analysis
+Component Discovery Engine                
+                return r e t u r n code_extractions  code_extractions
+python
+--- PAGE 9 ---
+class c l a s s  ComponentDiscoveryEngine C o m p o n e n t D i s c o v e r y E n g i n e::
+        """Analyzes extracted code to identify all components, features, and functionality""" """Analyzes extracted code to identify all components, features, and functionality"""
+        
+        def d e f  __init____init__((selfself))::
+        self         self..analyzers analyzers ==  {{
+                        "python" "python":: PythonComponentAnalyzer  PythonComponentAnalyzer(()),,
+                        "javascript" "javascript":: JavaScriptComponentAnalyzer  JavaScriptComponentAnalyzer(()),,
+                        "typescript" "typescript":: TypeScriptComponentAnalyzer  TypeScriptComponentAnalyzer(()),,
+                        "html" "html":: HTMLComponentAnalyzer  HTMLComponentAnalyzer(()),,
+                        "css""css":: CSSComponentAnalyzer  CSSComponentAnalyzer(()),,
+                        "sql""sql":: SQLComponentAnalyzer  SQLComponentAnalyzer(()),,
+                        "shell" "shell":: ShellComponentAnalyzer  ShellComponentAnalyzer(()),,
+                        "docker" "docker":: DockerComponentAnalyzer  DockerComponentAnalyzer(()),,
+                        "yaml" "yaml":: YAMLComponentAnalyzer  YAMLComponentAnalyzer(()),,
+                        "unknown" "unknown":: GenericComponentAnalyzer  GenericComponentAnalyzer(())
+                }}
+        
+        async a s y n c  def d e f  analyze_comprehensive_components analyze_comprehensive_components((selfself,, code_extractions  code_extractions))::
+                """Analyze all extracted code to identify components and features""" """Analyze all extracted code to identify components and features"""
+                
+        comprehensive_analysis         comprehensive_analysis ==  {{
+                        "functions" "functions"::  [[]],,
+                        "classes" "classes"::  [[]],,
+                        "variables" "variables"::  [[]],,
+                        "imports" "imports"::  [[]],,
+                        "apis" "apis"::  [[]],,
+                        "configurations" "configurations"::  [[]],,
+                        "database_schemas" "database_schemas"::  [[]],,
+                        "ui_components" "ui_components"::  [[]],,
+                        "workflows" "workflows"::  [[]],,
+                        "features" "features"::  [[]],,
+                        "utilities" "utilities"::  [[]],,
+                        "constants" "constants"::  [[]],,
+                        "types" "types"::  [[]],,
+                        "interfaces" "interfaces"::  [[]]
+                }}
+                
+                for f o r extraction  extraction in i n code_extractions  code_extractions::
+            language             language == extraction  extraction..getget(("language" "language",,  "unknown" "unknown"))
+            analyzer             analyzer == self self..analyzers analyzers..getget((language language,, self self..analyzers analyzers[["unknown" "unknown"]]))
+                        
+            analysis_result             analysis_result ==  await a w a i t analyzer  analyzer..analyze_code_components analyze_code_components((extraction extraction))
+                        
+                        # Merge results into comprehensive analysis # Merge results into comprehensive analysis
+                        for f o r component_type  component_type,, components  components in i n analysis_result  analysis_result..itemsitems(())::
+                                if i f component_type  component_type in i n comprehensive_analysis  comprehensive_analysis::
+--- PAGE 10 ---
+                    comprehensive_analysis                     comprehensive_analysis[[component_type component_type]]..extend extend((components components))
+                
+                # Cross-reference and deduplicate # Cross-reference and deduplicate
+        comprehensive_analysis         comprehensive_analysis ==  await a w a i t self self..cross_reference_components cross_reference_components((comprehensive_analysis comprehensive_analysis))
+                
+                return r e t u r n comprehensive_analysis  comprehensive_analysis
+        
+        async a s y n c  def d e f  identify_lost_functionality identify_lost_functionality((selfself,, comprehensive_analysis  comprehensive_analysis,, project_root  project_root))::
+                """Identify valuable functionality that exists but isn't properly referenced""" """Identify valuable functionality that exists but isn't properly referenced"""
+                
+        lost_functionality         lost_functionality ==  [[]]
+                
+                # Find functions that are defined but never called # Find functions that are defined but never called
+        unreferenced_functions         unreferenced_functions ==  await a w a i t self self..find_unreferenced_functions find_unreferenced_functions((
+            comprehensive_analysis             comprehensive_analysis[["functions" "functions"]],, project_root  project_root
+                ))
+                
+                # Find classes that are defined but never instantiated # Find classes that are defined but never instantiated
+        unreferenced_classes         unreferenced_classes ==  await a w a i t self self..find_unreferenced_classes find_unreferenced_classes((
+            comprehensive_analysis             comprehensive_analysis[["classes" "classes"]],, project_root  project_root
+                ))
+                
+                # Find utility functions in documentation that aren't in main codebase # Find utility functions in documentation that aren't in main codebase
+        doc_only_utilities         doc_only_utilities ==  await a w a i t self self..find_documentation_only_utilities find_documentation_only_utilities((
+            comprehensive_analysis             comprehensive_analysis[["utilities" "utilities"]],, project_root  project_root
+                ))
+                
+                # Find configuration options that exist but aren't documented # Find configuration options that exist but aren't documented
+        undocumented_configs         undocumented_configs ==  await a w a i t self self..find_undocumented_configurations find_undocumented_configurations((
+            comprehensive_analysis             comprehensive_analysis[["configurations" "configurations"]],, project_root  project_root
+                ))
+                
+                # Find incomplete feature implementations # Find incomplete feature implementations
+        incomplete_features         incomplete_features ==  await a w a i t self self..find_incomplete_feature_implementations find_incomplete_feature_implementations((
+            comprehensive_analysis             comprehensive_analysis[["features" "features"]],, project_root  project_root
+                ))
+                
+        lost_functionality         lost_functionality..extend extend(([[
+                        {{"type" "type"::  "unreferenced_functions" "unreferenced_functions",,  "items" "items":: unreferenced_functions  unreferenced_functions}},,
+                        {{"type" "type"::  "unreferenced_classes" "unreferenced_classes",,  "items" "items":: unreferenced_classes  unreferenced_classes}},,  
+                        {{"type" "type"::  "doc_only_utilities" "doc_only_utilities",,  "items" "items":: doc_only_utilities  doc_only_utilities}},,
+                        {{"type" "type"::  "undocumented_configs" "undocumented_configs",,  "items" "items":: undocumented_configs  undocumented_configs}},,
+                        {{"type" "type"::  "incomplete_features" "incomplete_features",,  "items" "items":: incomplete_features  incomplete_features}}
+                ]]))
+                
+                return r e t u r n lost_functionality  lost_functionality
+--- PAGE 11 ---
+class c l a s s  PythonComponentAnalyzer P y t h o n C o m p o n e n t A n a l y z e r::
+        """Specialized analyzer for Python code components""" """Specialized analyzer for Python code components"""
+        
+        async a s y n c  def d e f  analyze_code_components analyze_code_components((selfself,, extraction  extraction))::
+                """Comprehensive analysis of Python code components""" """Comprehensive analysis of Python code components"""
+                
+        code         code == extraction  extraction[["code" "code"]]
+        components         components ==  {{
+                        "functions" "functions"::  [[]],,
+                        "classes" "classes"::  [[]],,
+                        "variables" "variables"::  [[]],,
+                        "imports" "imports"::  [[]],,
+                        "apis" "apis"::  [[]],,
+                        "configurations" "configurations"::  [[]],,
+                        "utilities" "utilities"::  [[]],,
+                        "constants" "constants"::  [[]],,
+                        "types" "types"::  [[]]
+                }}
+                
+                try t r y::
+                        # Parse AST for comprehensive analysis # Parse AST for comprehensive analysis
+            tree             tree == ast ast..parseparse((codecode))
+                        
+                        for f o r node  node in i n ast ast..walkwalk((treetree))::
+                                if i f  isinstance isinstance((nodenode,, ast ast..FunctionDef FunctionDef))::
+                    function_analysis                     function_analysis ==  await a w a i t self self..analyze_function analyze_function((nodenode,, extraction  extraction))
+                    components                     components[["functions" "functions"]]..append append((function_analysis function_analysis))
+                                
+                                elif e l i f  isinstance isinstance((nodenode,, ast ast..ClassDef ClassDef))::
+                    class_analysis                     class_analysis ==  await a w a i t self self..analyze_class analyze_class((nodenode,, extraction  extraction))
+                    components                     components[["classes" "classes"]]..append append((class_analysis class_analysis))
+                                
+                                elif e l i f  isinstance isinstance((nodenode,, ast ast..Assign Assign))::
+                    variable_analysis                     variable_analysis ==  await a w a i t self self..analyze_assignment analyze_assignment((nodenode,, extraction  extraction))
+                    components                     components[["variables" "variables"]]..extend extend((variable_analysis variable_analysis))
+                                
+                                elif e l i f  isinstance isinstance((nodenode,, ast ast..Import Import))  or o r  isinstance isinstance((nodenode,, ast ast..ImportFrom ImportFrom))::
+                    import_analysis                     import_analysis ==  await a w a i t self self..analyze_import analyze_import((nodenode,, extraction  extraction))
+                    components                     components[["imports" "imports"]]..append append((import_analysis import_analysis))
+                                
+                                elif e l i f  isinstance isinstance((nodenode,, ast ast..Constant Constant))  and a n d  isinstance isinstance((nodenode..valuevalue,,  strstr))::
+                                        if i f self self..looks_like_configuration looks_like_configuration((nodenode..valuevalue))::
+                        config_analysis                         config_analysis ==  await a w a i t self self..analyze_configuration analyze_configuration((nodenode,, extraction  extraction))
+                        components                         components[["configurations" "configurations"]]..append append((config_analysis config_analysis))
+                                                
+                except e x c e p t SyntaxError  SyntaxError::
+                        # If AST parsing fails, use regex-based analysis # If AST parsing fails, use regex-based analysis
+--- PAGE 12 ---
+            components             components ==  await a w a i t self self..analyze_python_with_regex analyze_python_with_regex((codecode,, extraction  extraction))
+                
+                return r e t u r n components  components
+        
+        async a s y n c  def d e f  analyze_function analyze_function((selfself,, node node,, extraction  extraction))::
+                """Detailed analysis of a Python function""" """Detailed analysis of a Python function"""
+                
+                # Extract function signature # Extract function signature
+        args         args ==  [[argarg..arg arg for f o r arg  arg in i n node node..argsargs..argsargs]]
+                
+                # Analyze function body for patterns # Analyze function body for patterns
+        complexity         complexity ==  lenlen((listlist((astast..walkwalk((nodenode))))))
+        has_docstring         has_docstring ==  ((isinstance isinstance((nodenode..bodybody[[00]],, ast ast..ExprExpr))  and a n d  
+                                                isinstance isinstance((nodenode..bodybody[[00]]..valuevalue,, ast ast..Constant Constant))))
+                
+                # Detect function purpose patterns # Detect function purpose patterns
+        purpose         purpose ==  await a w a i t self self..detect_function_purpose detect_function_purpose((nodenode))
+                
+                # Extract decorators # Extract decorators
+        decorators         decorators ==  [[astast..unparse unparse((decorator decorator))  for f o r decorator  decorator in i n node node..decorator_list decorator_list]]
+                
+                return r e t u r n  {{
+                        "name" "name":: node node..namename,,
+                        "arguments" "arguments":: args args,,
+                        "line_number" "line_number":: node node..linenolineno,,
+                        "complexity" "complexity":: complexity  complexity,,
+                        "has_docstring" "has_docstring":: has_docstring  has_docstring,,
+                        "decorators" "decorators":: decorators  decorators,,
+                        "purpose" "purpose":: purpose  purpose,,
+                        "is_async" "is_async"::  isinstance isinstance((nodenode,, ast ast..AsyncFunctionDef AsyncFunctionDef)),,
+                        "file_path" "file_path":: extraction  extraction[["file_path" "file_path"]],,
+                        "extraction_context" "extraction_context":: extraction  extraction[["type" "type"]]
+                }}
+        
+        async a s y n c  def d e f  detect_function_purpose detect_function_purpose((selfself,, node node))::
+                """Detect the purpose/category of a function based on patterns""" """Detect the purpose/category of a function based on patterns"""
+                
+        function_body         function_body == ast ast..unparse unparse((nodenode))
+                
+                if i f re re..search search((r'@app\.|@router\.|@api\.' r'@app\.|@router\.|@api\.',, function_body  function_body))::
+                        return r e t u r n  "api_endpoint" "api_endpoint"
+                elif e l i f re re..search search((r'@pytest\.|assert|test_' r'@pytest\.|assert|test_',, node node..namename))::
+                        return r e t u r n  "test_function" "test_function"
+                elif e l i f re re..search search((r'async\s+def.*await' r'async\s+def.*await',, function_body  function_body))::
+                        return r e t u r n  "async_operation" "async_operation"
+                elif e l i f re re..search search((r'return.*render|template|html' r'return.*render|template|html',, function_body  function_body))::
+                        return r e t u r n  "view_function" "view_function"
+--- PAGE 13 ---
+                elif e l i f re re..search search((r'validate|check|verify' r'validate|check|verify',, node node..namename))::
+                        return r e t u r n  "validation_function" "validation_function"
+                elif e l i f re re..search search((r'parse|extract|transform' r'parse|extract|transform',, node node..namename))::
+                        return r e t u r n  "data_processing" "data_processing"
+                elif e l i f re re..search search((r'save|create|update|delete' r'save|create|update|delete',, node node..namename))::
+                        return r e t u r n  "crud_operation" "crud_operation"
+                elif e l i f re re..search search((r'send|post|get|fetch' r'send|post|get|fetch',, node node..namename))::
+                        return r e t u r n  "network_operation" "network_operation"
+                elif e l i f re re..search search((r'log|debug|error|info' r'log|debug|error|info',, node node..namename))::
+                        return r e t u r n  "logging_function" "logging_function"
+                else e l s e::
+                        return r e t u r n  "general_utility" "general_utility"
+class c l a s s  JavaScriptComponentAnalyzer J a v a S c r i p t C o m p o n e n t A n a l y z e r::
+        """Specialized analyzer for JavaScript/TypeScript code components""" """Specialized analyzer for JavaScript/TypeScript code components"""
+        
+        async a s y n c  def d e f  analyze_code_components analyze_code_components((selfself,, extraction  extraction))::
+                """Comprehensive analysis of JavaScript/TypeScript components""" """Comprehensive analysis of JavaScript/TypeScript components"""
+                
+        code         code == extraction  extraction[["code" "code"]]
+        components         components ==  {{
+                        "functions" "functions"::  [[]],,
+                        "classes" "classes"::  [[]],,
+                        "variables" "variables"::  [[]],,
+                        "imports" "imports"::  [[]],,
+                        "ui_components" "ui_components"::  [[]],,
+                        "apis" "apis"::  [[]],,
+                        "utilities" "utilities"::  [[]],,
+                        "constants" "constants"::  [[]],,
+                        "types" "types"::  [[]],,
+                        "interfaces" "interfaces"::  [[]]
+                }}
+                
+                # Function patterns # Function patterns
+        function_patterns         function_patterns ==  [[
+                        r'function\s+(\w+)\s*\([^)]*\)\s*{' r'function\s+(\w+)\s*\([^)]*\)\s*{',,    # Regular functions # Regular functions
+                        r'const\s+(\w+)\s*=\s*\([^)]*\)\s*=>' r'const\s+(\w+)\s*=\s*\([^)]*\)\s*=>',,  # Arrow functions # Arrow functions
+                        r'(\w+)\s*:\s*\([^)]*\)\s*=>' r'(\w+)\s*:\s*\([^)]*\)\s*=>',,  # Object method arrow functions # Object method arrow functions
+                        r'async\s+function\s+(\w+)' r'async\s+function\s+(\w+)',,  # Async functions # Async functions
+                        r'export\s+function\s+(\w+)' r'export\s+function\s+(\w+)',,  # Exported functions # Exported functions
+                ]]
+                
+                for f o r pattern  pattern in i n function_patterns  function_patterns::
+            matches             matches == re re..finditer finditer((pattern pattern,, code code))
+                        for f o r  match m a t c h  in i n matches  matches::
+                function_analysis                 function_analysis ==  await a w a i t self self..analyze_js_function analyze_js_function((match m a t c h,, code code,, extraction  extraction))
+                components                 components[["functions" "functions"]]..append append((function_analysis function_analysis))
+--- PAGE 14 ---
+Comprehensive Indexing System
+Feature Index Manager                
+                # React component patterns # React component patterns
+        react_patterns         react_patterns ==  [[
+                        r'const\s+(\w+)\s*=\s*\(\)\s*=>\s*{' r'const\s+(\w+)\s*=\s*\(\)\s*=>\s*{',,    # Functional components # Functional components
+                        r'function\s+(\w+)\s*\([^)]*\)\s*{.*?return.*?<' r'function\s+(\w+)\s*\([^)]*\)\s*{.*?return.*?<',,  # Function components # Function components
+                        r'class\s+(\w+)\s+extends\s+React\.Component' r'class\s+(\w+)\s+extends\s+React\.Component',,  # Class components # Class components
+                ]]
+                
+                for f o r pattern  pattern in i n react_patterns  react_patterns::
+            matches             matches == re re..finditer finditer((pattern pattern,, code code,, re re..DOTALL DOTALL))
+                        for f o r  match m a t c h  in i n matches  matches::
+                component_analysis                 component_analysis ==  await a w a i t self self..analyze_react_component analyze_react_component((match m a t c h,, code code,, extraction  extraction))
+                components                 components[["ui_components" "ui_components"]]..append append((component_analysis component_analysis))
+                
+                # TypeScript interface patterns # TypeScript interface patterns
+        interface_pattern         interface_pattern ==  r'interface\s+(\w+)\s*{([^}]+)}' r'interface\s+(\w+)\s*{([^}]+)}'
+        interface_matches         interface_matches == re re..finditer finditer((interface_pattern interface_pattern,, code code))
+                for f o r  match m a t c h  in i n interface_matches  interface_matches::
+            interface_analysis             interface_analysis ==  await a w a i t self self..analyze_typescript_interface analyze_typescript_interface((match m a t c h,, extraction  extraction))
+            components             components[["interfaces" "interfaces"]]..append append((interface_analysis interface_analysis))
+                
+                return r e t u r n components  components
+python
+--- PAGE 15 ---
+class c l a s s  FeatureIndexManager F e a t u r e I n d e x M a n a g e r::
+        """Creates and maintains comprehensive indexes of all discovered functionality""" """Creates and maintains comprehensive indexes of all discovered functionality"""
+        
+        def d e f  __init____init__((selfself,, project_root  project_root))::
+        self         self..project_root project_root == project_root  project_root
+        self         self..index_file index_file ==  f"f"{{project_root project_root}}/.agent_zero/feature_index.json" /.agent_zero/feature_index.json"
+        self         self..cross_reference_file cross_reference_file ==  f"f"{{project_root project_root}}/.agent_zero/cross_references.json" /.agent_zero/cross_references.json"
+        self         self..lost_features_file lost_features_file ==  f"f"{{project_root project_root}}/.agent_zero/lost_features.json" /.agent_zero/lost_features.json"
+                
+        async a s y n c  def d e f  create_comprehensive_index create_comprehensive_index((selfself,, comprehensive_analysis  comprehensive_analysis))::
+                """Create master index of all discovered functionality""" """Create master index of all discovered functionality"""
+                
+        master_index         master_index ==  {{
+                        "metadata" "metadata"::  {{
+                                "created" "created":: datetime  datetime..nownow(())..isoformat isoformat(()),,
+                                "project_root" "project_root":: self self..project_root project_root,,
+                                "total_files_analyzed" "total_files_analyzed"::  lenlen((setset((itemitem..getget(("file_path" "file_path",,  """"))  
+                                                                                              for f o r category  category in i n comprehensive_analysis  comprehensive_analysis..values values(())  
+                                                                                              for f o r item  item in i n category  category)))),,
+                                "analysis_version" "analysis_version"::  "1.0.0" "1.0.0"
+                        }},,
+                        "categories" "categories"::  {{}},,
+                        "cross_references" "cross_references"::  {{}},,
+                        "search_indexes" "search_indexes"::  {{}},,
+                        "feature_map" "feature_map"::  {{}},,
+                        "dependency_graph" "dependency_graph"::  {{}},,
+                        "usage_tracking" "usage_tracking"::  {{}}
+                }}
+                
+                # Build category indexes # Build category indexes
+                for f o r category  category,, items  items in i n comprehensive_analysis  comprehensive_analysis..itemsitems(())::
+            master_index             master_index[["categories" "categories"]][[category category]]  ==  await a w a i t self self..build_category_index build_category_index((category category,, items  items))
+                
+                # Build cross-references # Build cross-references
+        master_index         master_index[["cross_references" "cross_references"]]  ==  await a w a i t self self..build_cross_references build_cross_references((comprehensive_analysis comprehensive_analysis))
+                
+                # Build search indexes # Build search indexes
+        master_index         master_index[["search_indexes" "search_indexes"]]  ==  await a w a i t self self..build_search_indexes build_search_indexes((comprehensive_analysis comprehensive_analysis))
+                
+                # Build feature map # Build feature map
+        master_index         master_index[["feature_map" "feature_map"]]  ==  await a w a i t self self..build_feature_map build_feature_map((comprehensive_analysis comprehensive_analysis))
+                
+                # Build dependency graph # Build dependency graph
+        master_index         master_index[["dependency_graph" "dependency_graph"]]  ==  await a w a i t self self..build_dependency_graph build_dependency_graph((comprehensive_analysis comprehensive_analysis))
+                
+                # Save master index # Save master index
+--- PAGE 16 ---
+                await a w a i t self self..save_index save_index((master_index master_index))
+                
+                return r e t u r n master_index  master_index
+        
+        async a s y n c  def d e f  build_category_index build_category_index((selfself,, category  category,, items  items))::
+                """Build detailed index for specific category""" """Build detailed index for specific category"""
+                
+        category_index         category_index ==  {{
+                        "total_count" "total_count"::  lenlen((itemsitems)),,
+                        "items" "items"::  {{}},,
+                        "by_file" "by_file"::  {{}},,
+                        "by_purpose" "by_purpose"::  {{}},,
+                        "by_complexity" "by_complexity"::  {{}},,
+                        "orphaned" "orphaned"::  [[]],,
+                        "frequently_used" "frequently_used"::  [[]],,
+                        "duplicates" "duplicates"::  [[]]
+                }}
+                
+                for f o r item  item in i n items  items::
+            item_id             item_id ==  f"f"{{category category}}__{{itemitem..getget(('name' 'name',,  'unknown' 'unknown'))}}__{{hashhash((strstr((itemitem))))}}""
+                        
+                        # Main item entry # Main item entry
+            category_index             category_index[["items" "items"]][[item_id item_id]]  ==  {{
+                                ****itemitem,,
+                                "item_id" "item_id":: item_id  item_id,,
+                                "category" "category":: category  category,,
+                                "indexed_at" "indexed_at":: datetime  datetime..nownow(())..isoformat isoformat(())
+                        }}
+                        
+                        # Group by file # Group by file
+            file_path             file_path == item item..getget(("file_path" "file_path",,  "unknown" "unknown"))
+                        if i f file_path  file_path not n o t  in i n category_index  category_index[["by_file" "by_file"]]::
+                category_index                 category_index[["by_file" "by_file"]][[file_path file_path]]  ==  [[]]
+            category_index             category_index[["by_file" "by_file"]][[file_path file_path]]..append append((item_id item_id))
+                        
+                        # Group by purpose # Group by purpose
+            purpose             purpose == item item..getget(("purpose" "purpose",,  "unknown" "unknown"))
+                        if i f purpose  purpose not n o t  in i n category_index  category_index[["by_purpose" "by_purpose"]]::
+                category_index                 category_index[["by_purpose" "by_purpose"]][[purpose purpose]]  ==  [[]]
+            category_index             category_index[["by_purpose" "by_purpose"]][[purpose purpose]]..append append((item_id item_id))
+                
+                return r e t u r n category_index  category_index
+        
+        async a s y n c  def d e f  build_search_indexes build_search_indexes((selfself,, comprehensive_analysis  comprehensive_analysis))::
+                """Build multiple search indexes for fast lookup""" """Build multiple search indexes for fast lookup"""
+                
+        search_indexes         search_indexes ==  {{
+--- PAGE 17 ---
+                        "by_name" "by_name"::  {{}},,
+                        "by_keyword" "by_keyword"::  {{}},,
+                        "by_file_path" "by_file_path"::  {{}},,
+                        "by_signature" "by_signature"::  {{}},,
+                        "by_purpose" "by_purpose"::  {{}},,
+                        "full_text" "full_text"::  {{}}
+                }}
+                
+                for f o r category  category,, items  items in i n comprehensive_analysis  comprehensive_analysis..itemsitems(())::
+                        for f o r item  item in i n items  items::
+                item_id                 item_id ==  f"f"{{category category}}__{{itemitem..getget(('name' 'name',,  'unknown' 'unknown'))}}__{{hashhash((strstr((itemitem))))}}""
+                                
+                                # Name index # Name index
+                name                 name == item item..getget(("name" "name",,  """"))
+                                if i f name  name::
+                                        if i f name  name not n o t  in i n search_indexes  search_indexes[["by_name" "by_name"]]::
+                        search_indexes                         search_indexes[["by_name" "by_name"]][[namename]]  ==  [[]]
+                    search_indexes                     search_indexes[["by_name" "by_name"]][[namename]]..append append((item_id item_id))
+                                
+                                # Keyword index (extract from code and names) # Keyword index (extract from code and names)
+                keywords                 keywords ==  await a w a i t self self..extract_keywords_from_item extract_keywords_from_item((itemitem))
+                                for f o r keyword  keyword in i n keywords  keywords::
+                                        if i f keyword  keyword not n o t  in i n search_indexes  search_indexes[["by_keyword" "by_keyword"]]::
+                        search_indexes                         search_indexes[["by_keyword" "by_keyword"]][[keyword keyword]]  ==  [[]]
+                    search_indexes                     search_indexes[["by_keyword" "by_keyword"]][[keyword keyword]]..append append((item_id item_id))
+                                
+                                # File path index # File path index
+                file_path                 file_path == item item..getget(("file_path" "file_path",,  """"))
+                                if i f file_path  file_path::
+                                        if i f file_path  file_path not n o t  in i n search_indexes  search_indexes[["by_file_path" "by_file_path"]]::
+                        search_indexes                         search_indexes[["by_file_path" "by_file_path"]][[file_path file_path]]  ==  [[]]
+                    search_indexes                     search_indexes[["by_file_path" "by_file_path"]][[file_path file_path]]..append append((item_id item_id))
+                
+                return r e t u r n search_indexes  search_indexes
+        
+        async a s y n c  def d e f  identify_lost_and_duplicate_features identify_lost_and_duplicate_features((selfself,, master_index  master_index))::
+                """Identify lost functionality and duplicates""" """Identify lost functionality and duplicates"""
+                
+        lost_features         lost_features ==  {{
+                        "unreferenced_valuable" "unreferenced_valuable"::  [[]],,
+                        "documentation_only" "documentation_only"::  [[]],,
+                        "incomplete_implementations" "incomplete_implementations"::  [[]],,
+                        "outdated_references" "outdated_references"::  [[]],,
+                        "potential_duplicates" "potential_duplicates"::  [[]]
+                }}
+                
+                # Find unreferenced valuable functionality # Find unreferenced valuable functionality
+--- PAGE 18 ---
+                for f o r category  category,, category_data  category_data in i n master_index  master_index[["categories" "categories"]]..itemsitems(())::
+                        for f o r item_id  item_id,, item  item in i n category_data  category_data[["items" "items"]]..itemsitems(())::
+                                if i f  await a w a i t self self..is_valuable_but_unreferenced is_valuable_but_unreferenced((itemitem,, master_index  master_index))::
+                    lost_features                     lost_features[["unreferenced_valuable" "unreferenced_valuable"]]..append append(({{
+                                                "item_id" "item_id":: item_id  item_id,,
+                                                "item" "item":: item item,,
+                                                "reason" "reason"::  "Valuable functionality exists but no references found" "Valuable functionality exists but no references found"
+                                        }}))
+                
+                # Find documentation-only features # Find documentation-only features
+        doc_features         doc_features ==  await a w a i t self self..find_documentation_only_features find_documentation_only_features((master_index master_index))
+        lost_features         lost_features[["documentation_only" "documentation_only"]]..extend extend((doc_features doc_features))
+                
+                # Find potential duplicates # Find potential duplicates
+        duplicates         duplicates ==  await a w a i t self self..find_duplicate_functionality find_duplicate_functionality((master_index master_index))
+        lost_features         lost_features[["potential_duplicates" "potential_duplicates"]]..extend extend((duplicates duplicates))
+                
+                # Save lost features analysis # Save lost features analysis
+                await a w a i t self self..save_lost_features_analysis save_lost_features_analysis((lost_features lost_features))
+                
+                return r e t u r n lost_features  lost_features
+        
+        async a s y n c  def d e f  is_valuable_but_unreferenced is_valuable_but_unreferenced((selfself,, item item,, master_index  master_index))::
+                """Determine if an item is valuable but unreferenced""" """Determine if an item is valuable but unreferenced"""
+                
+                # Check if it's a substantial implementation # Check if it's a substantial implementation
+                if i f item item..getget(("complexity" "complexity",,  00))  <<  10 1 0::    # Skip trivial items # Skip trivial items
+                        return r e t u r n  False F a l s e
+                
+                # Check if it has documentation (suggests intentional development) # Check if it has documentation (suggests intentional development)
+                if i f item item..getget(("has_docstring" "has_docstring"))  or o r item item..getget(("has_comments" "has_comments"))::
+                        # Look for any references in cross-reference graph # Look for any references in cross-reference graph
+            item_id             item_id == item item..getget(("item_id" "item_id"))
+            references             references == master_index  master_index[["cross_references" "cross_references"]]..getget((item_id item_id,,  [[]]))
+                        
+                        if i f  lenlen((references references))  ====  00::
+                                return r e t u r n  True T r u e
+                
+                return r e t u r n  False F a l s e
+        
+        async a s y n c  def d e f  generate_feature_recovery_recommendations generate_feature_recovery_recommendations((selfself,, lost_features  lost_features))::
+                """Generate actionable recommendations for recovering lost functionality""" """Generate actionable recommendations for recovering lost functionality"""
+                
+        recommendations         recommendations ==  [[]]
+                
+                for f o r category  category,, items  items in i n lost_features  lost_features..itemsitems(())::
+                        for f o r item  item in i n items  items::
+--- PAGE 19 ---
+🔗 Integration with Agent Zero Ecosystem
+ERDU Integration for Feature Discovery                                if i f category  category ====  "unreferenced_valuable" "unreferenced_valuable"::
+                    recommendations                     recommendations..append append(({{
+                                                "type" "type"::  "expose_valuable_function" "expose_valuable_function",,
+                                                "item" "item":: item item,,
+                                                "action" "action"::  "Add to main API or create wrapper function" "Add to main API or create wrapper function",,
+                                                "effort" "effort"::  "Low" "Low",,
+                                                "value" "value"::  "High" "High"
+                                        }}))
+                                
+                                elif e l i f category  category ====  "documentation_only" "documentation_only"::
+                    recommendations                     recommendations..append append(({{
+                                                "type" "type"::  "implement_documented_feature" "implement_documented_feature",,
+                                                "item" "item":: item item,,
+                                                "action" "action"::  "Implement the functionality described in documentation" "Implement the functionality described in documentation",,
+                                                "effort" "effort"::  "Medium" "Medium",,
+                                                "value" "value"::  "High" "High"
+                                        }}))
+                                
+                                elif e l i f category  category ====  "potential_duplicates" "potential_duplicates"::
+                    recommendations                     recommendations..append append(({{
+                                                "type" "type"::  "consolidate_duplicates" "consolidate_duplicates",,
+                                                "item" "item":: item item,,
+                                                "action" "action"::  "Review and consolidate duplicate implementations" "Review and consolidate duplicate implementations",,
+                                                "effort" "effort"::  "Medium" "Medium",,
+                                                "value" "value"::  "Medium" "Medium"
+                                        }}))
+                
+                return r e t u r n recommendations  recommendations
+yaml
+--- PAGE 20 ---
+Template IntegrationFeature_Discovery_ERDU_Enhancement F e a t u r e _ D i s c o v e r y _ E R D U _ E n h a n c e m e n t::
+    Loop_1_Evaluate L o o p _ 1 _ E v a l u a t e::
+        --  "Continuous monitoring for new code additions and feature development" "Continuous monitoring for new code additions and feature development"
+        --  "Detection of orphaned functionality and unreferenced valuable code" "Detection of orphaned functionality and unreferenced valuable code"
+        --  "Analysis of feature usage patterns and identification of declining features" "Analysis of feature usage patterns and identification of declining features"
+        
+    Loop_2_Research L o o p _ 2 _ R e s e a r c h::
+        --  "Comprehensive code archaeology across all file formats" "Comprehensive code archaeology across all file formats"
+        --  "Cross-reference analysis to understand feature relationships" "Cross-reference analysis to understand feature relationships"
+        --  "Documentation analysis to identify described but unimplemented features" "Documentation analysis to identify described but unimplemented features"
+        
+    Loop_3_Decide L o o p _ 3 _ D e c i d e::
+        --  "Prioritization of lost feature recovery based on value and effort" "Prioritization of lost feature recovery based on value and effort"
+        --  "Decision framework for duplicate consolidation vs. preservation" "Decision framework for duplicate consolidation vs. preservation"
+        --  "Strategic planning for feature exposure and documentation" "Strategic planning for feature exposure and documentation"
+        
+    Loop_4_Utilize L o o p _ 4 _ U t i l i z e::
+        --  "Automated feature recovery implementation" "Automated feature recovery implementation"
+        --  "Integration of discovered functionality into main codebase" "Integration of discovered functionality into main codebase"
+        --  "Creation of proper cross-references and documentation" "Creation of proper cross-references and documentation"
+        
+    Loop_5_Optimize L o o p _ 5 _ O p t i m i z e::
+        --  "Feature usage tracking and optimization recommendations" "Feature usage tracking and optimization recommendations"
+        --  "Continuous improvement of feature discovery algorithms" "Continuous improvement of feature discovery algorithms"
+        --  "Enhancement of indexing and cross-referencing capabilities" "Enhancement of indexing and cross-referencing capabilities"
+yaml
+--- PAGE 21 ---
+Integration with AZ300 Debug AgentFeature_Discovery_Templates F e a t u r e _ D i s c o v e r y _ T e m p l a t e s::
+    feature_recovery_workflow f e a t u r e _ r e c o v e r y _ w o r k f l o w::
+        --  "Parse project comprehensively across all formats" "Parse project comprehensively across all formats"
+        --  "Identify lost and unreferenced functionality" "Identify lost and unreferenced functionality"
+        --  "Generate recovery recommendations with effort estimates" "Generate recovery recommendations with effort estimates"
+        --  "Implement feature exposure and integration" "Implement feature exposure and integration"
+        
+    code_archaeology_audit c o d e _ a r c h a e o l o g y _ a u d i t::
+        --  "Complete project code inventory" "Complete project code inventory"
+        --  "Cross-reference mapping and dependency analysis" "Cross-reference mapping and dependency analysis"
+        --  "Duplicate detection and consolidation recommendations" "Duplicate detection and consolidation recommendations"
+        --  "Documentation alignment with actual codebase" "Documentation alignment with actual codebase"
+        
+    feature_optimization_workflow f e a t u r e _ o p t i m i z a t i o n _ w o r k f l o w::
+        --  "Usage pattern analysis and optimization opportunities" "Usage pattern analysis and optimization opportunities"
+        --  "Dead code identification vs. valuable unreferenced code" "Dead code identification vs. valuable unreferenced code"
+        --  "Feature consolidation and API improvement suggestions" "Feature consolidation and API improvement suggestions"
+        --  "Documentation generation for discovered features" "Documentation generation for discovered features"
+python
+class c l a s s  DebugArchaeologyIntegration D e b u g A r c h a e o l o g y I n t e g r a t i o n::
+        """Integration between AZ400 Code Archaeologist and AZ300 Debug Agent""" """Integration between AZ400 Code Archaeologist and AZ300 Debug Agent"""
+        
+        async a s y n c  def d e f  provide_context_for_debugging provide_context_for_debugging((selfself,, error_context  error_context))::
+                """Provide comprehensive code context for debugging""" """Provide comprehensive code context for debugging"""
+                
+                # Find all related functionality # Find all related functionality
+        related_features         related_features ==  await a w a i t self self..find_features_related_to_error find_features_related_to_error((error_context error_context))
+                
+                # Check if error involves unreferenced functionality # Check if error involves unreferenced functionality
+        unreferenced_solutions         unreferenced_solutions ==  await a w a i t self self..find_unreferenced_solutions find_unreferenced_solutions((error_context error_context))
+                
+                # Identify potential duplicate implementations that might work # Identify potential duplicate implementations that might work
+        alternative_implementations         alternative_implementations ==  await a w a i t self self..find_alternative_implementations find_alternative_implementations((error_context error_context))
+                
+                return r e t u r n  {{
+                        "related_features" "related_features":: related_features  related_features,,
+                        "unreferenced_solutions" "unreferenced_solutions":: unreferenced_solutions  unreferenced_solutions,,
+                        "alternative_implementations" "alternative_implementations":: alternative_implementations  alternative_implementations,,
+                        "comprehensive_context" "comprehensive_context"::  await a w a i t self self..build_comprehensive_error_context build_comprehensive_error_context((error_context error_context))
+                }}
+--- PAGE 22 ---
+🚀 Implementation & Deployment
+Immediate Deployment Strategy
+Integration with Existing Systems
+Success Metrics
+100% file format coverage: Parse code from any format where it might exist
+Lost feature discovery: Identify 80%+ of unreferenced valuable functionality
+Feature recovery: Enable recovery of 90%+ of identified lost features
+Comprehensive indexing: Create searchable index of 100% of project functionalitybash
+# Phase 1: Basic code extraction (Day 1-2) # Phase 1: Basic code extraction (Day 1-2)
+python deploy_code_archaeologist.py --basic-extraction python deploy_code_archaeologist.py --basic-extraction
+# Result: Parse all .py, .js, .md files and create basic inventory # Result: Parse all .py, .js, .md files and create basic inventory
+# Phase 2: Advanced parsing (Day 3-4) # Phase 2: Advanced parsing (Day 3-4) 
+python deploy_advanced_parsing.py --pdf-extraction --office-docs python deploy_advanced_parsing.py --pdf-extraction --office-docs
+# Result: Extract code from PDFs, Word docs, PowerPoint # Result: Extract code from PDFs, Word docs, PowerPoint
+# Phase 3: Comprehensive indexing (Day 5-7) # Phase 3: Comprehensive indexing (Day 5-7)
+python deploy_comprehensive_indexing.py --cross-references --lost-features python deploy_comprehensive_indexing.py --cross-references --lost-features
+# Result: Complete feature map with lost functionality identification # Result: Complete feature map with lost functionality identification
+python
+# Add to existing Agent Zero workflow # Add to existing Agent Zero workflow
+@app@app..postpost(("/archaeology/discover" "/archaeology/discover"))
+async a s y n c  def d e f  discover_lost_features discover_lost_features(())::
+    archaeologist     archaeologist == CodeArchaeologist  CodeArchaeologist(())
+    results     results ==  await a w a i t archaeologist  archaeologist..comprehensive_project_analysis comprehensive_project_analysis(())
+        return r e t u r n results  results
+# Add to existing template workflows # Add to existing template workflows
+WORKFLOW_CHAINS WORKFLOW_CHAINS..update update(({{
+        "comprehensive_feature_audit" "comprehensive_feature_audit"::  [[
+                {{"template" "template"::  "code_archaeology_scan" "code_archaeology_scan",,  "agent" "agent"::  "AZ400-Archaeologist" "AZ400-Archaeologist"}},,
+                {{"template" "template"::  "feature_recovery_planning" "feature_recovery_planning",,  "agent" "agent"::  "AZ400-Archaeologist" "AZ400-Archaeologist"}},,
+                {{"template" "template"::  "implementation_prioritization" "implementation_prioritization",,  "agent" "agent"::  "AZ100-Memory" "AZ100-Memory"}},,
+                {{"template" "template"::  "documentation_alignment" "documentation_alignment",,  "agent" "agent"::  "AZ115-Archivist" "AZ115-Archivist"}}
+        ]]
+}}))
+--- PAGE 23 ---
+🎯 Bottom Line: No More Lost Functionality
+AZ400 Code Archaeologist solves the critical problem of "lost" functionality by:
+✅ Comprehensive parsing: Extract code from ANY file format (PDFs, docs, markdown, etc.) ✅  Deep
+analysis: Identify functions, classes, features, utilities, configurations ✅  Cross-referencing: Map all
+relationships and dependencies
+✅ Lost feature recovery: Find valuable but unreferenced functionality ✅  Comprehensive indexing:
+Searchable inventory of ALL project capabilities ✅  Continuous monitoring: Track new features and
+prevent future "loss"
+Ready to deploy and recover all your lost functionality?

@@ -1,4 +1,4 @@
-import { EventBus } from './eventBus';
+import { eventBus } from './eventBus';
 
 export interface CodexModel {
   id: string;
@@ -170,7 +170,7 @@ export interface CodexFunctionResponse {
 }
 
 export class OpenAICodexService {
-  private eventBus: EventBus;
+  private eventBus: any;
   private apiKey?: string;
   private baseUrl: string = 'https://api.openai.com/v1';
   private isConnected: boolean = false;
@@ -180,7 +180,7 @@ export class OpenAICodexService {
   private analysisHistory: Map<string, CodexAnalysisResponse> = new Map();
   private functionHistory: Map<string, CodexFunctionResponse> = new Map();
 
-  constructor(eventBus: EventBus, apiKey?: string) {
+  constructor(eventBus: any, apiKey?: string) {
     this.eventBus = eventBus;
     this.apiKey = apiKey;
     this.initializeModels();
@@ -315,12 +315,10 @@ export class OpenAICodexService {
       throw new Error('Not connected to OpenAI API');
     }
 
-    const model = this.availableModels.get(request.modelId);
     if (!model) {
       throw new Error(`Model ${request.modelId} not found`);
     }
 
-    const requestId = `completion_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const fullRequest: CodexCompletionRequest = {
       ...request,
       id: requestId
@@ -328,7 +326,6 @@ export class OpenAICodexService {
 
     try {
       // Prepare messages for chat completion
-      const messages = [];
       
       if (request.context?.systemPrompt) {
         messages.push({
@@ -377,9 +374,7 @@ export class OpenAICodexService {
         throw new Error(`API request failed: ${response.status} ${response.statusText}`);
       }
 
-      const data = await response.json();
       
-      const content = data.choices?.[0]?.message?.content || '';
       const usage = data.usage || {
         prompt_tokens: 0,
         completion_tokens: 0,
@@ -433,7 +428,6 @@ export class OpenAICodexService {
       throw new Error('Not connected to OpenAI API');
     }
 
-    const requestId = `edit_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const fullRequest: CodexEditRequest = {
       ...request,
       id: requestId
@@ -441,7 +435,6 @@ export class OpenAICodexService {
 
     try {
       // Prepare edit prompt
-      let prompt = `Edit the following code according to this instruction: ${request.instruction}\n\n`;
       prompt += `Language: ${request.context?.language || 'text'}\n`;
       if (request.context?.framework) {
         prompt += `Framework: ${request.context.framework}\n`;
@@ -466,11 +459,8 @@ export class OpenAICodexService {
       });
 
       // Extract edited code
-      const codeMatch = completionResponse.content.match(/```(?:[a-zA-Z]+)?\n([\s\S]*?)\n```/);
-      const editedCode = codeMatch ? codeMatch[1] : completionResponse.content;
 
       // Simple diff analysis (in a real implementation, you'd use a proper diff library)
-      const changes = this.analyzeCodeChanges(request.code, editedCode);
 
       const editResponse: CodexEditResponse = {
         id: `edit_response_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
@@ -515,7 +505,6 @@ export class OpenAICodexService {
       throw new Error('Not connected to OpenAI API');
     }
 
-    const requestId = `analysis_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const fullRequest: CodexAnalysisRequest = {
       ...request,
       id: requestId
@@ -523,7 +512,6 @@ export class OpenAICodexService {
 
     try {
       // Prepare analysis prompt
-      let prompt = `Analyze the following code for ${request.analysisType}:\n\n`;
       prompt += `Language: ${request.context?.language || 'text'}\n`;
       if (request.context?.framework) {
         prompt += `Framework: ${request.context.framework}\n`;
@@ -558,7 +546,6 @@ export class OpenAICodexService {
       });
 
       // Parse analysis response
-      const analysis = this.parseAnalysisResponse(completionResponse.content, request.analysisType);
 
       const analysisResponse: CodexAnalysisResponse = {
         id: `analysis_response_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
@@ -607,7 +594,6 @@ export class OpenAICodexService {
       throw new Error('Not connected to OpenAI API');
     }
 
-    const requestId = `function_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const fullRequest: CodexFunctionRequest = {
       ...request,
       id: requestId
@@ -615,7 +601,6 @@ export class OpenAICodexService {
 
     try {
       // Prepare function generation prompt
-      let prompt = `Generate a ${request.language} function with the following description: ${request.description}\n\n`;
       
       if (request.context?.functionName) {
         prompt += `Function name: ${request.context.functionName}\n`;
@@ -665,7 +650,6 @@ export class OpenAICodexService {
       });
 
       // Parse function response
-      const functionData = this.parseFunctionResponse(completionResponse.content, request.language);
 
       const functionResponse: CodexFunctionResponse = {
         id: `function_response_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
@@ -714,9 +698,6 @@ export class OpenAICodexService {
     content?: string;
     description: string;
   }> {
-    const changes = [];
-    const originalLines = originalCode.split('\n');
-    const editedLines = editedCode.split('\n');
 
     if (originalLines.length !== editedLines.length) {
       changes.push({
@@ -726,7 +707,6 @@ export class OpenAICodexService {
     }
 
     // Simple line-by-line comparison
-    const maxLines = Math.max(originalLines.length, editedLines.length);
     for (let i = 0; i < maxLines; i++) {
       if (i >= originalLines.length) {
         changes.push({
@@ -771,8 +751,6 @@ export class OpenAICodexService {
     examples?: string[];
   } {
     // Simple parsing - in a real implementation, you'd use more sophisticated parsing
-    const lines = content.split('\n');
-    const summary = lines[0] || 'Analysis completed';
     const findings: any[] = [];
     const recommendations: string[] = [];
     const examples: string[] = [];
@@ -811,19 +789,11 @@ export class OpenAICodexService {
     tests?: string;
   } {
     // Extract function name from code
-    const functionMatch = content.match(/(?:function|def|const|let|var)\s+(\w+)/);
-    const functionName = functionMatch ? functionMatch[1] : 'generatedFunction';
 
     // Extract code blocks
-    const codeMatch = content.match(/```(?:[a-zA-Z]+)?\n([\s\S]*?)\n```/);
-    const code = codeMatch ? codeMatch[1] : content;
 
     // Extract documentation and tests
-    const documentationMatch = content.match(/Documentation:([\s\S]*?)(?=```|Tests:|$)/);
-    const documentation = documentationMatch ? documentationMatch[1].trim() : undefined;
 
-    const testsMatch = content.match(/Tests?:([\s\S]*?)(?=```|$)/);
-    const tests = testsMatch ? testsMatch[1].trim() : undefined;
 
     return {
       functionName,
@@ -838,7 +808,7 @@ export class OpenAICodexService {
    */
   getCompletionHistory(limit: number = 50): CodexCompletionResponse[] {
     return Array.from(this.completionHistory.values())
-      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+      .sort((a, b) => new Date(b.timestamp || Date.now()).getTime() - new Date(a.timestamp || Date.now()).getTime())
       .slice(0, limit);
   }
 
@@ -847,7 +817,7 @@ export class OpenAICodexService {
    */
   getEditHistory(limit: number = 20): CodexEditResponse[] {
     return Array.from(this.editHistory.values())
-      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+      .sort((a, b) => new Date(b.timestamp || Date.now()).getTime() - new Date(a.timestamp || Date.now()).getTime())
       .slice(0, limit);
   }
 
@@ -856,7 +826,7 @@ export class OpenAICodexService {
    */
   getAnalysisHistory(limit: number = 20): CodexAnalysisResponse[] {
     return Array.from(this.analysisHistory.values())
-      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+      .sort((a, b) => new Date(b.timestamp || Date.now()).getTime() - new Date(a.timestamp || Date.now()).getTime())
       .slice(0, limit);
   }
 
@@ -865,7 +835,7 @@ export class OpenAICodexService {
    */
   getFunctionHistory(limit: number = 20): CodexFunctionResponse[] {
     return Array.from(this.functionHistory.values())
-      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+      .sort((a, b) => new Date(b.timestamp || Date.now()).getTime() - new Date(a.timestamp || Date.now()).getTime())
       .slice(0, limit);
   }
 

@@ -1,13 +1,12 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { getPersonaProfile } from './personaService';
 import { taskQueueService } from './taskQueueService';
-import type { AcquisitionProgress, AcquisitionStep, AcquiredBookData, BookDimensions } from '../types';
-import { acquiredBookDataSchema } from "../schemas/acquisitionSchema";
+import type { AcquisitionProgress, AcquisitionStep, AcquiredBookData, BookDimensions } from "../types/types";
+import { acquiredBookDataSchema } from "../../schemas/acquisitionSchema";
 
 if (!process.env.API_KEY) {
     throw new Error("API_KEY environment variable not set");
 }
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const ACQUISITION_PLAYBOOK: Omit<AcquisitionStep, 'status' | 'result'>[] = [
     { name: 'Simulated OCR & Dimension Extraction', agentId: 'agent-az86' },
@@ -28,10 +27,8 @@ const getPart = (dataUrl: string) => ({
     }
 });
 
-const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
 export async function* runAcquisitionPipeline(frontImageDataUrl: string, backImageDataUrl: string): AsyncGenerator<AcquisitionProgress> {
-    let playbookSteps = [...ACQUISITION_PLAYBOOK];
     const initialSteps: AcquisitionStep[] = playbookSteps.map(op => ({ ...op, status: 'pending' }));
 
     let progress: AcquisitionProgress = {
@@ -42,11 +39,8 @@ export async function* runAcquisitionPipeline(frontImageDataUrl: string, backIma
     yield { ...progress };
     
     let acquiredData: AcquiredBookData | null = null;
-    let marketValue = 0;
 
     for (let i = 0; i < progress.steps.length; i++) {
-        const step = progress.steps[i];
-        const agentProfile = getPersonaProfile(step.agentId);
         if (!agentProfile) {
             step.status = 'error';
             step.error = `Agent profile for ${step.agentId} not found.`;
@@ -55,14 +49,12 @@ export async function* runAcquisitionPipeline(frontImageDataUrl: string, backIma
             return;
         }
         
-        const systemInstruction = agentProfile.scrollContent || `You are ${agentProfile.name}. Your expertise is: ${agentProfile.capabilities.join(', ')}.`;
 
         step.status = 'running';
         yield { ...progress };
         await delay(200);
 
         try {
-            let result = '';
             if (step.name === 'Simulated OCR & Dimension Extraction') {
                 const response = await ai.models.generateContent({
                     model: 'gemini-2.5-flash',
@@ -99,7 +91,6 @@ export async function* runAcquisitionPipeline(frontImageDataUrl: string, backIma
                 result = response.text;
                 
                 // --- ArkType Validation ---
-                const parsedJson = JSON.parse(result);
                 const { data, problems } = acquiredBookDataSchema(parsedJson);
 
                 if (problems) {
@@ -135,8 +126,6 @@ export async function* runAcquisitionPipeline(frontImageDataUrl: string, backIma
                 result = response.text;
                 progress.shopifyDescription = result;
             } else {
-                const textPart = { text: PROMPTS[step.name] };
-                const contents = { parts: [textPart, getPart(frontImageDataUrl), getPart(backImageDataUrl)] };
                  const response = await ai.models.generateContent({
                     model: 'gemini-2.5-flash',
                     contents,
@@ -144,7 +133,6 @@ export async function* runAcquisitionPipeline(frontImageDataUrl: string, backIma
                 });
                 result = response.text;
                 if (step.name === 'Market Intelligence') {
-                    const valueMatch = result.match(/(\d+\.?\d*)/);
                     if (valueMatch) marketValue = parseFloat(valueMatch[1]);
                 }
             }
@@ -176,7 +164,6 @@ export async function* runAcquisitionPipeline(frontImageDataUrl: string, backIma
             }
 
         } catch (e) {
-            const error = e as Error;
             step.status = 'error';
             step.error = error.message;
             progress.error = `Pipeline failed at step: ${step.name}`;

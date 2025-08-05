@@ -79,7 +79,6 @@ export class PersonaRegistry {
   }
   
   getConnectedPersonas(personaName: string): PersonaEntry[] {
-    const persona = this.get(personaName);
     if (!persona) return [];
     
     return this.getAll().filter(p => 
@@ -89,7 +88,6 @@ export class PersonaRegistry {
   }
   
   getDependencies(name: string): string[] {
-    const persona = this.get(name);
     return persona ? persona.dependencies : [];
   }
   
@@ -100,12 +98,10 @@ export class PersonaRegistry {
   }
   
   getIntegrations(name: string): PersonaIntegration[] {
-    const persona = this.get(name);
     return persona ? persona.integrations : [];
   }
   
   updateStatus(name: string, status: PersonaEntry['status']): void {
-    const persona = this.get(name);
     if (persona) {
       persona.status = status;
       persona.lastUpdated = new Date();
@@ -113,7 +109,6 @@ export class PersonaRegistry {
   }
   
   addCapability(name: string, capability: PersonaCapability): void {
-    const persona = this.get(name);
     if (persona) {
       persona.capabilities.push(capability);
       persona.lastUpdated = new Date();
@@ -121,7 +116,6 @@ export class PersonaRegistry {
   }
   
   addIntegration(name: string, integration: PersonaIntegration): void {
-    const persona = this.get(name);
     if (persona) {
       persona.integrations.push(integration);
       persona.lastUpdated = new Date();
@@ -141,8 +135,6 @@ export class PersonaRegistry {
     const warnings: string[] = [];
     
     // Check for duplicate names
-    const names = this.getAll().map(p => p.name);
-    const duplicates = names.filter((name, index) => names.indexOf(name) !== index);
     if (duplicates.length > 0) {
       errors.push(`Duplicate persona names found: ${duplicates.join(', ')}`);
     }
@@ -159,7 +151,6 @@ export class PersonaRegistry {
     // Check for deprecated personas with dependents
     for (const persona of this.getAll()) {
       if (persona.status === 'deprecated') {
-        const dependents = this.getDependents(persona.name);
         if (dependents.length > 0) {
           warnings.push(`Deprecated persona ${persona.name} has dependents: ${dependents.join(', ')}`);
         }

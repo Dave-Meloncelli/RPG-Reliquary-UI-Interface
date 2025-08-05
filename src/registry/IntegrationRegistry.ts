@@ -97,7 +97,6 @@ export class IntegrationRegistry {
   }
   
   updateStatus(name: string, status: IntegrationEntry['status']): void {
-    const integration = this.get(name);
     if (integration) {
       integration.status = status;
       integration.lastUpdated = new Date();
@@ -105,7 +104,6 @@ export class IntegrationRegistry {
   }
   
   updatePerformance(name: string, metrics: PerformanceMetrics): void {
-    const integration = this.get(name);
     if (integration) {
       integration.performance = metrics;
       integration.lastUpdated = new Date();
@@ -125,14 +123,11 @@ export class IntegrationRegistry {
     const warnings: string[] = [];
     
     // Check for duplicate names
-    const names = this.getAll().map(i => i.name);
-    const duplicates = names.filter((name, index) => names.indexOf(name) !== index);
     if (duplicates.length > 0) {
       errors.push(`Duplicate integration names found: ${duplicates.join(', ')}`);
     }
     
     // Check for circular dependencies
-    const circular = this.detectCircularDependencies();
     if (circular.length > 0) {
       errors.push(`Circular dependencies detected: ${circular.join(', ')}`);
     }
@@ -164,13 +159,10 @@ export class IntegrationRegistry {
   }
   
   private detectCircularDependencies(): string[] {
-    const visited = new Set<string>();
-    const recursionStack = new Set<string>();
     const circular: string[] = [];
     
     const dfs = (integrationName: string, path: string[] = []): boolean => {
       if (recursionStack.has(integrationName)) {
-        const cycle = [...path.slice(path.indexOf(integrationName)), integrationName];
         circular.push(cycle.join(' -> '));
         return true;
       }
@@ -182,9 +174,7 @@ export class IntegrationRegistry {
       visited.add(integrationName);
       recursionStack.add(integrationName);
       
-      const integration = this.get(integrationName);
       if (integration) {
-        const dependents = this.getByTarget(integration.source);
         for (const dependent of dependents) {
           if (dfs(dependent.name, [...path, integrationName])) {
             return true;

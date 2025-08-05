@@ -1,5 +1,5 @@
 
-import type { OrchestratorConfig } from '../types';
+import type { OrchestratorConfig } from "../types/types";
 
 export const orchestratorConfig: OrchestratorConfig = {
   // Provider priority order - determines fallback sequence

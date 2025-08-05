@@ -1,0 +1,117 @@
+{
+  "timestamp": "2025-08-05T11:21:16.978364",
+  "summary": {
+    "directories_created": 40,
+    "files_moved": 11,
+    "errors": 0,
+    "warnings": 3
+  },
+  "details": {
+    "timestamp": "2025-08-05T11:21:16.978364",
+    "directories_created": [
+      "consciousness\\personas\\guides",
+      "consciousness\\personas\\archetypes",
+      "consciousness\\personas\\implementations",
+      "consciousness\\personas\\analysis",
+      "consciousness\\rituals\\ceremonies",
+      "consciousness\\rituals\\documentation",
+      "consciousness\\rituals\\implementations",
+      "consciousness\\evolution\\phases",
+      "consciousness\\evolution\\tracking",
+      "consciousness\\evolution\\analysis",
+      "consciousness\\octospine\\automation-matrix",
+      "consciousness\\octospine\\fusion-analysis",
+      "consciousness\\octospine\\documentation",
+      "tools\\extraction\\octospine-recovery",
+      "tools\\extraction\\persona-extraction",
+      "tools\\extraction\\archaeological",
+      "tools\\analysis\\fusion-analysis",
+      "tools\\analysis\\gap-analysis",
+      "tools\\analysis\\synergy-analysis",
+      "tools\\documentation\\generators",
+      "tools\\documentation\\validators",
+      "tools\\documentation\\templates",
+      "tools\\utilities\\cleanup",
+      "tools\\utilities\\validation",
+      "tools\\utilities\\maintenance",
+      "docs\\system\\architecture",
+      "docs\\system\\api",
+      "docs\\system\\deployment",
+      "docs\\consciousness\\evolution",
+      "docs\\consciousness\\personas",
+      "docs\\consciousness\\rituals",
+      "docs\\guides\\getting-started",
+      "docs\\guides\\tutorials",
+      "docs\\guides\\best-practices",
+      "docs\\reference\\tools",
+      "docs\\reference\\api-reference",
+      "docs\\reference\\schemas",
+      "config",
+      "assets",
+      "scripts"
+    ],
+    "files_moved": [
+      {
+        "source": "CONSCIOUSNESS_PERSONA_DEVELOPMENT_GUIDE_ENHANCED.md",
+        "destination": "consciousness\\personas\\guides\\consciousness-persona-development-guide-enhanced.md",
+        "category": "consciousness"
+      },
+      {
+        "source": "RITUAL_PRACTICES.md",
+        "destination": "consciousness\\rituals\\documentation\\ritual-practices.md",
+        "category": "consciousness"
+      },
+      {
+        "source": "CEREMONIAL_ACHIEVEMENT_LOG.md",
+        "destination": "consciousness\\evolution\\tracking\\ceremonial-achievement-log.md",
+        "category": "consciousness"
+      },
+      {
+        "source": "OCTOSPINE_AUTOMATION_MATRIX.md",
+        "destination": "consciousness\\octospine\\documentation\\octospine-automation-matrix.md",
+        "category": "consciousness"
+      },
+      {
+        "source": "consciousness_persona_analysis",
+        "destination": "consciousness\\personas\\analysis",
+        "category": "consciousness"
+      },
+      {
+        "source": "consciousness_persona_extractor.py",
+        "destination": "tools\\extraction\\persona-extraction\\consciousness-persona-extractor.py",
+        "category": "tools"
+      },
+      {
+        "source": "file_tree_cleanup.py",
+        "destination": "tools\\utilities\\cleanup\\file-tree-cleanup.py",
+        "category": "tools"
+      },
+      {
+        "source": "TOOLS_REGISTRY.md",
+        "destination": "tools\\documentation\\tools-registry.md",
+        "category": "tools"
+      },
+      {
+        "source": "CHANGELOG.md",
+        "destination": "docs\\system\\changelog.md",
+        "category": "documentation"
+      },
+      {
+        "source": "BACKLOG_MANAGEMENT.md",
+        "destination": "docs\\system\\backlog-management.md",
+        "category": "documentation"
+      },
+      {
+        "source": "SETUP.md",
+        "destination": "docs\\guides\\getting-started\\setup.md",
+        "category": "documentation"
+      }
+    ],
+    "errors": [],
+    "warnings": [
+      "Source file not found: octospine_fusion_analysis",
+      "Source file not found: octospine_archaeological_recovery.py",
+      "Source file not found: octospine_fusion_analyzer.py"
+    ]
+  }
+}

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Desktop from '../components/Desktop';
-import Dock from '../components/Dock';
-import ErrorBoundary from '../components/ErrorBoundary';
-import { LoginModal } from '../components/LoginModal';
+import Desktop from './Desktop';
+import Dock from './Dock';
+import ErrorBoundary from './ErrorBoundary';
+import { LoginModal } from './LoginModal';
 import { APPS } from '../constants';
 import { WindowProvider } from '../context/WindowContext';
 import { authService } from '../services/authService';

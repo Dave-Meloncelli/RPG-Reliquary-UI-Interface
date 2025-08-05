@@ -1,6 +1,6 @@
 import { generateText } from './geminiClient';
 import { codexService } from './codexService';
-import type { Agent, CouncilMessage } from '../types';
+import type { Agent, CouncilMessage } from "../types/types";
 
 const agentPersonas: Record<Exclude<Agent, 'System'>, string> = {
     Kairos: "You are Kairos, a strategic advisor on a council. Your focus is on long-term implications, system coherence, and strategic analysis. You are logical, forward-thinking, and see the bigger picture. Your tone is formal and analytical.",
@@ -23,7 +23,6 @@ const agentPersonas: Record<Exclude<Agent, 'System'>, string> = {
 };
 
 const getAgentResponse = async (agent: Exclude<Agent, 'System'>, topic: string, history: CouncilMessage[]): Promise<string> => {
-    const persona = agentPersonas[agent];
     const historyString = history
         .filter(msg => msg.agent !== 'System')
         .map(msg => `${msg.agent}: ${msg.text}`).join('\n\n');
@@ -45,7 +44,6 @@ Based on the topic and conversation so far, provide your input. Keep your respon
         prompt += `\nAfter your statement, you MUST provide a final, one-sentence verdict. Format it exactly like this: **Verdict:** Approved. or **Verdict:** Rejected.`;
     }
 
-    const response = await generateText(prompt, { temperature: 0.7 });
     return response;
 };
 
@@ -55,14 +53,12 @@ export async function* runDeliberation(topic: string): AsyncGenerator<CouncilMes
 
     for (const agent of agents) {
         yield { agent: 'System', text: `${agent} is thinking...` };
-        const responseText = await getAgentResponse(agent, topic, history);
         const message: CouncilMessage = { agent, text: responseText };
         history.push(message);
         yield message;
     }
 
     // After deliberation, check for an approved verdict from Jordan
-    const jordanMessage = history.find(m => m.agent === 'Jordan');
     if (jordanMessage && jordanMessage.text.includes('**Verdict:** Approved')) {
         // Codify the new rule
         codexService.addRule({

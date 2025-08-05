@@ -1,4 +1,4 @@
-import type { N8nWorkflow, WorkflowRun, WorkflowInput } from '../types';
+import type { N8nWorkflow, WorkflowRun, WorkflowInput } from "../types/types";
 
 interface N8nState {
     workflows: N8nWorkflow[];
@@ -34,7 +34,6 @@ class N8nService {
     }
 
     private setWorkflowStatus(workflowId: string, status: 'Idle' | 'Running') {
-        const workflow = this.state.workflows.find(w => w.id === workflowId);
         if (workflow) {
             workflow.status = status;
             this.notify();
@@ -54,7 +53,6 @@ class N8nService {
     }
 
     runWorkflowWithInput(workflowId: string, input: WorkflowInput | undefined) {
-        const workflow = this.state.workflows.find(w => w.id === workflowId);
         if (!workflow || workflow.status === 'Running') return;
 
         this.setWorkflowStatus(workflowId, 'Running');
@@ -62,18 +60,16 @@ class N8nService {
         const run: WorkflowRun = {
             id: `run-${this.runIdCounter++}`,
             timestamp: new Date().toLocaleString(),
-            status: 'Running',
+            status: 'running',
             durationMs: 0,
             input,
         };
         this.addRunHistory(workflowId, run);
         
-        const startTime = Date.now();
         
         // Simulate async work
         setTimeout(() => {
             const success = Math.random() > 0.1; // 90% success rate
-            const endTime = Date.now();
 
             run.status = success ? 'Success' : 'Failed';
             run.durationMs = endTime - startTime;

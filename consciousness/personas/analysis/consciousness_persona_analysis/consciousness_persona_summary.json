@@ -1,0 +1,10 @@
+{
+  "generated_on": "2025-08-05T10:42:37.831576",
+  "total_files_processed": 113,
+  "files_with_consciousness_content": 63,
+  "total_consciousness_mentions": 1093,
+  "emotional_categories": 1,
+  "cultural_categories": 7,
+  "processing_method": "chunked",
+  "chunk_size": 50000
+}

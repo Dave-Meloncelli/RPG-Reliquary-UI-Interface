@@ -1,8 +1,7 @@
-import type { DiagnosticTest, DiagnosticLogEntry } from '../types';
+import type { DiagnosticTest, DiagnosticLogEntry } from "../types/types";
 import { getInitialAgentData } from './agentData';
 import { orchestratorConfig } from './orchestratorService';
 
-let logIdCounter = 0;
 
 export const diagnosticTests: DiagnosticTest[] = [
     {
@@ -29,7 +28,6 @@ export const diagnosticTests: DiagnosticTest[] = [
     },
 ];
 
-const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
 function* createLogEntry(status: DiagnosticLogEntry['status'], message: string): Generator<DiagnosticLogEntry> {
     yield {
@@ -41,12 +39,9 @@ function* createLogEntry(status: DiagnosticLogEntry['status'], message: string):
 }
 
 export async function* runDiagnostic(testId: string, params: Record<string, string>): AsyncGenerator<DiagnosticLogEntry> {
-    const allAgents = getInitialAgentData();
 
     switch (testId) {
         case 'agent-comm-test': {
-            const agent1 = allAgents.find(a => a.id === params.agent1);
-            const agent2 = allAgents.find(a => a.id === params.agent2);
 
             if (!agent1 || !agent2) {
                 yield* createLogEntry('error', 'Invalid agent selection.');
@@ -80,16 +75,12 @@ export async function* runDiagnostic(testId: string, params: Record<string, stri
             yield* createLogEntry('info', 'Initiating orchestrator fallback test...');
             await delay(500);
             
-            const primaryProviderName = orchestratorConfig.priority[0];
-            const primaryProvider = orchestratorConfig.providers[primaryProviderName];
             
             yield* createLogEntry('running', `Simulating request to primary provider: ${primaryProvider.name}...`);
             await delay(1500);
             yield* createLogEntry('error', `Simulated failure: ${primaryProvider.name} is unresponsive.`);
             
             if (orchestratorConfig.fallbackStrategy.enableFallback) {
-                const fallbackProviderName = orchestratorConfig.priority[1];
-                const fallbackProvider = orchestratorConfig.providers[fallbackProviderName];
                 yield* createLogEntry('info', 'Fallback strategy is enabled. Attempting to route to secondary provider...');
                 await delay(1000);
                 yield* createLogEntry('running', `Rerouting request to fallback provider: ${fallbackProvider.name}...`);
@@ -103,7 +94,6 @@ export async function* runDiagnostic(testId: string, params: Record<string, stri
         }
 
         case 'ingestion-dry-run': {
-            const channel = params.channel;
             yield* createLogEntry('info', `Starting dry run for ingestion channel: ${channel}...`);
             await delay(500);
 
@@ -122,7 +112,6 @@ export async function* runDiagnostic(testId: string, params: Record<string, stri
             await delay(500);
 
             for (const agentId of operations) {
-                const agent = allAgents.find(a => a.id === agentId);
                 yield* createLogEntry('running', `Verifying handler agent: ${agent?.name || agentId}...`);
                 await delay(750);
                 if (agent) {

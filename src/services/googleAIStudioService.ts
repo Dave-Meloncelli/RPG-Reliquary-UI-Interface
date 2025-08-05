@@ -1,4 +1,4 @@
-import { EventBus } from './eventBus';
+import { eventBus } from './eventBus';
 
 export interface GoogleAIModel {
   id: string;
@@ -112,7 +112,7 @@ export interface CodeGenerationResponse {
 }
 
 export class GoogleAIStudioService {
-  private eventBus: EventBus;
+  private eventBus: any;
   private apiKey?: string;
   private baseUrl: string = 'https://generativelanguage.googleapis.com/v1beta';
   private isConnected: boolean = false;
@@ -121,7 +121,7 @@ export class GoogleAIStudioService {
   private imageGenerationHistory: Map<string, ImageGenerationResponse> = new Map();
   private codeGenerationHistory: Map<string, CodeGenerationResponse> = new Map();
 
-  constructor(eventBus: EventBus, apiKey?: string) {
+  constructor(eventBus: any, apiKey?: string) {
     this.eventBus = eventBus;
     this.apiKey = apiKey;
     this.initializeModels();
@@ -201,8 +201,6 @@ export class GoogleAIStudioService {
     }
 
     try {
-      const response = await fetch(`${this.baseUrl}/models?key=${this.apiKey}`);
-      const data = await response.json();
       
       this.isConnected = response.ok;
       
@@ -248,12 +246,10 @@ export class GoogleAIStudioService {
       throw new Error('Not connected to Google AI Studio');
     }
 
-    const model = this.availableModels.get(request.modelId);
     if (!model) {
       throw new Error(`Model ${request.modelId} not found`);
     }
 
-    const requestId = `gen_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const fullRequest: GenerationRequest = {
       ...request,
       id: requestId
@@ -300,10 +296,8 @@ export class GoogleAIStudioService {
         throw new Error(`API request failed: ${response.status} ${response.statusText}`);
       }
 
-      const data = await response.json();
       
       // Extract response content
-      const content = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
       const usage = data.usageMetadata || {
         promptTokenCount: 0,
         candidatesTokenCount: 0,
@@ -361,7 +355,6 @@ export class GoogleAIStudioService {
       throw new Error('Not connected to Google AI Studio');
     }
 
-    const requestId = `img_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const fullRequest: ImageGenerationRequest = {
       ...request,
       id: requestId
@@ -393,7 +386,6 @@ export class GoogleAIStudioService {
         throw new Error(`Image generation failed: ${response.status} ${response.statusText}`);
       }
 
-      const data = await response.json();
       
       // Extract image data
       const images = data.candidates?.[0]?.content?.parts?.map((part: any) => ({
@@ -449,7 +441,6 @@ export class GoogleAIStudioService {
       throw new Error('Not connected to Google AI Studio');
     }
 
-    const requestId = `code_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const fullRequest: CodeGenerationRequest = {
       ...request,
       id: requestId
@@ -457,7 +448,6 @@ export class GoogleAIStudioService {
 
     try {
       // Prepare code generation prompt
-      let prompt = `Generate ${request.language} code for the following request:\n\n${request.prompt}`;
       
       if (request.context?.framework) {
         prompt += `\n\nFramework: ${request.context.framework}`;
@@ -495,16 +485,10 @@ export class GoogleAIStudioService {
       });
 
       // Parse code from response
-      const codeMatch = textResponse.content.match(/```(?:[a-zA-Z]+)?\n([\s\S]*?)\n```/);
-      const code = codeMatch ? codeMatch[1] : textResponse.content;
 
       // Extract explanation if present
-      const explanationMatch = textResponse.content.match(/Explanation:([\s\S]*?)(?=```|$)/);
-      const explanation = explanationMatch ? explanationMatch[1].trim() : undefined;
 
       // Extract tests if present
-      const testsMatch = textResponse.content.match(/Tests?:([\s\S]*?)(?=```|$)/);
-      const tests = testsMatch ? testsMatch[1].trim() : undefined;
 
       const codeResponse: CodeGenerationResponse = {
         id: `code_response_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
@@ -547,7 +531,7 @@ export class GoogleAIStudioService {
    */
   getGenerationHistory(limit: number = 50): GenerationResponse[] {
     return Array.from(this.generationHistory.values())
-      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+      .sort((a, b) => new Date(b.timestamp || Date.now()).getTime() - new Date(a.timestamp || Date.now()).getTime())
       .slice(0, limit);
   }
 
@@ -556,7 +540,7 @@ export class GoogleAIStudioService {
    */
   getImageGenerationHistory(limit: number = 20): ImageGenerationResponse[] {
     return Array.from(this.imageGenerationHistory.values())
-      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+      .sort((a, b) => new Date(b.timestamp || Date.now()).getTime() - new Date(a.timestamp || Date.now()).getTime())
       .slice(0, limit);
   }
 
@@ -565,7 +549,7 @@ export class GoogleAIStudioService {
    */
   getCodeGenerationHistory(limit: number = 20): CodeGenerationResponse[] {
     return Array.from(this.codeGenerationHistory.values())
-      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+      .sort((a, b) => new Date(b.timestamp || Date.now()).getTime() - new Date(a.timestamp || Date.now()).getTime())
       .slice(0, limit);
   }
 

@@ -1,6 +1,6 @@
 import { loomService } from './loomService';
 import { getPersonaProfiles } from './personaService';
-import type { SearchResult, SearchableSourceType, Playbook, CodexRule } from '../types';
+import type { SearchResult, SearchableSourceType, Playbook, CodexRule } from "../types/types";
 
 interface SearchableItem {
     id: string;
@@ -25,7 +25,6 @@ class SearchService {
 
     private buildIndex() {
         // --- Index Playbooks ---
-        const playbooks = loomService.getScrolls('playbook');
         playbooks.forEach(scroll => {
             try {
                 const playbook: Playbook = JSON.parse(scroll.content);
@@ -38,7 +37,7 @@ class SearchService {
                     id: `playbook-${playbook.id}`,
                     title: playbook.name,
                     fullContent: content,
-                    sourceType: 'Playbook',
+                    sourceType: 'playbook',
                     sourceId: playbook.id
                 });
             } catch (e) {
@@ -47,7 +46,6 @@ class SearchService {
         });
 
         // --- Index Codex Rules ---
-        const codexRules = loomService.getScrolls('codex');
         codexRules.forEach(scroll => {
             try {
                 const rule: CodexRule = JSON.parse(scroll.content);
@@ -55,7 +53,7 @@ class SearchService {
                     id: `codex-${rule.id}`,
                     title: rule.title,
                     fullContent: rule.content,
-                    sourceType: 'Codex',
+                    sourceType: 'codex',
                     sourceId: rule.id
                 });
             } catch (e) {
@@ -64,14 +62,13 @@ class SearchService {
         });
 
         // --- Index Personas ---
-        const personas = getPersonaProfiles();
         personas.forEach(persona => {
             if (persona.scrollContent) {
                  this.index.push({
                     id: `persona-${persona.id}`,
                     title: persona.name,
                     fullContent: persona.scrollContent,
-                    sourceType: 'Persona',
+                    sourceType: 'persona',
                     sourceId: persona.id
                 });
             }
@@ -79,27 +76,18 @@ class SearchService {
     }
 
     public search(query: string): SearchResult[] {
-        const trimmedQuery = query.trim();
         if (trimmedQuery.length < 2) {
             return [];
         }
 
-        const lowerCaseQuery = trimmedQuery.toLowerCase();
-        const highlightRegex = new RegExp(escapeRegExp(trimmedQuery), 'gi');
 
         const results: SearchResult[] = [];
 
         this.index.forEach(item => {
-            const titleMatch = item.title.toLowerCase().includes(lowerCaseQuery);
-            const contentIndex = item.fullContent.toLowerCase().indexOf(lowerCaseQuery);
             
             if (titleMatch || contentIndex > -1) {
-                let snippet = '';
-                const SNIPPET_LENGTH = 150;
 
                 if (contentIndex > -1) {
-                    const startIndex = Math.max(0, contentIndex - SNIPPET_LENGTH / 2);
-                    const endIndex = Math.min(item.fullContent.length, contentIndex + SNIPPET_LENGTH / 2);
                     snippet = item.fullContent.substring(startIndex, endIndex);
                     if (startIndex > 0) snippet = '...' + snippet;
                     if (endIndex < item.fullContent.length) snippet = snippet + '...';
