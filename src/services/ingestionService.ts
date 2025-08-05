@@ -1,5 +1,5 @@
 import { generateText } from './geminiClient';
-import type { OperationStep, IngestionReport, IngestionProgress } from '../types';
+import type { OperationStep, IngestionReport, IngestionProgress } from "../types/types";
 
 const MOCK_FILE_CONTENT = {
     'library-archives': "A mysterious tome bound in black leather, titled 'The Whispering Shadows'. It contains chapters on forgotten spells, ancient rituals, and descriptions of creatures from the abyss. The table of contents lists sections like 'Summoning Minor Horrors' and 'The Language of the Void'.",
@@ -42,18 +42,14 @@ const PROMPTS: Record<string, (content: string) => string> = {
 };
 
 const getStepResult = async (stepName: string, content: string): Promise<string> => {
-    const prompt = PROMPTS[stepName](content);
-    const response = await generateText(prompt);
     if(response.startsWith('Error:')) {
         throw new Error(`AI processing failed for step: ${stepName}.`);
     }
     return response.trim();
 };
 
-const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
 export async function* runIngestionPipeline(channel: Channel): AsyncGenerator<IngestionProgress> {
-    const operationSteps = OPERATIONS[channel];
     const initialSteps: OperationStep[] = operationSteps.map(op => ({ ...op, status: 'pending' }));
     
     let progress: IngestionProgress = {
@@ -62,7 +58,6 @@ export async function* runIngestionPipeline(channel: Channel): AsyncGenerator<In
     };
     yield { ...progress };
 
-    const fileContent = MOCK_FILE_CONTENT[channel];
     const finalReport: IngestionReport = { summary: '', details: {} };
 
     for (let i = 0; i < progress.steps.length; i++) {
@@ -72,7 +67,6 @@ export async function* runIngestionPipeline(channel: Channel): AsyncGenerator<In
         await delay(500); // UI update delay
 
         try {
-            const result = await getStepResult(progress.steps[i].name, fileContent);
             await delay(1000 + Math.random() * 1500); // Simulate work
 
             progress.steps[i].status = 'complete';
@@ -80,7 +74,6 @@ export async function* runIngestionPipeline(channel: Channel): AsyncGenerator<In
             finalReport.details[progress.steps[i].name] = result;
 
         } catch (e) {
-            const error = e as Error;
             progress.steps[i].status = 'error';
             progress.steps[i].error = error.message;
             progress.error = `Pipeline failed at step: ${progress.steps[i].name}`;
@@ -92,8 +85,6 @@ export async function* runIngestionPipeline(channel: Channel): AsyncGenerator<In
     }
     
     // --- Generate final summary ---
-    const summaryPrompt = `Based on the following analysis steps, write a 2-3 sentence overall summary of the ingested document. Analysis: ${JSON.stringify(finalReport.details)}`;
-    const summary = await getStepResult('Generate Summary', summaryPrompt);
     finalReport.summary = summary;
 
     progress.isComplete = true;

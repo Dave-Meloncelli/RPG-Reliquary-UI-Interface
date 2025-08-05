@@ -1,4 +1,4 @@
-import type { CuratorTarget, CuratedData } from '../types';
+import type { CuratorTarget, CuratedData } from "../types/types";
 import { taskQueueService } from './taskQueueService';
 
 interface CuratorState {
@@ -60,12 +60,9 @@ class CuratorService {
         if(this.updateInterval) clearInterval(this.updateInterval);
         
         this.updateInterval = window.setInterval(() => {
-            const hasDiscovery = this.state.targets.some(t => t.isNewDiscovery);
 
             // Simulate a random scrape
             if (Math.random() > 0.3 && this.state.targets.length > 0) {
-                const targetIndex = Math.floor(Math.random() * this.state.targets.length);
-                const target = this.state.targets[targetIndex];
                 if (!target.isNewDiscovery) { // Don't scrape unvalidated targets
                     target.lastScraped = new Date().toLocaleString();
                     target.nextScrape = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toLocaleDateString();
@@ -74,7 +71,6 @@ class CuratorService {
 
             // Simulate discovery of a new source
             if (!hasDiscovery && Math.random() < 0.1) {
-                const newId = `pub-${Date.now()}`;
                 const newTarget: CuratorTarget = {
                     id: newId,
                     name: 'Pelgrane Press',
@@ -118,9 +114,6 @@ class CuratorService {
     
     addTarget = (url: string) => {
         try {
-            const hostname = new URL(url).hostname;
-            const name = hostname.replace('www.','').split('.')[0];
-            const newId = `pub-${Date.now()}`;
             const newTarget: CuratorTarget = {
                 id: newId,
                 name: name.charAt(0).toUpperCase() + name.slice(1),
@@ -151,7 +144,6 @@ class CuratorService {
     }
 
     validateTarget = (targetId: string) => {
-        const target = this.state.targets.find(t => t.id === targetId);
         if (target) {
             target.isNewDiscovery = false;
             target.nextScrape = 'Soon';

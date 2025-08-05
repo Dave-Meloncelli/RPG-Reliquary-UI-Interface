@@ -1,4 +1,4 @@
-import type { InfrastructureStatus, DockerService, Pm2Process } from '../types';
+import type { InfrastructureStatus, DockerService, Pm2Process } from "../types/types";
 
 const initialStatus: InfrastructureStatus = {
     docker: [
@@ -16,7 +16,6 @@ const initialStatus: InfrastructureStatus = {
     ]
 };
 
-const getRandomItem = <T>(arr: T[]): T => arr[Math.floor(Math.random() * arr.length)];
 
 // Function to simulate updates
 export const simulateInfrastructureUpdates = (current: InfrastructureStatus): InfrastructureStatus => {
@@ -28,10 +27,7 @@ export const simulateInfrastructureUpdates = (current: InfrastructureStatus): In
     // Simulate Docker status changes (low probability)
     updated.docker = updated.docker.map(service => {
         if (Math.random() < 0.02 && service.status !== 'error') { // 2% chance to flicker
-            const originalStatus = service.status;
-            const newService = { ...service, status: 'restarting' as DockerService['status'] };
             setTimeout(() => {
-                const s = initialStatus.docker.find(s => s.id === service.id);
                 if (s) s.status = originalStatus;
             }, 3000); // return to normal after 3s
             return newService;
@@ -42,10 +38,6 @@ export const simulateInfrastructureUpdates = (current: InfrastructureStatus): In
     // Simulate PM2 resource usage
     updated.pm2 = updated.pm2.map(proc => {
         if (proc.status === 'online') {
-            const cpuFluctuation = (Math.random() - 0.5) * 5;
-            const memFluctuation = (Math.random() - 0.5) * 10;
-            const newCpu = Math.max(0, Math.min(95, (proc.cpu || 20) + cpuFluctuation));
-            const newMem = Math.max(50, Math.min(500, (proc.memory || 150) + memFluctuation));
             return { ...proc, cpu: newCpu, memory: newMem };
         }
         if (proc.status === 'launching' && Math.random() < 0.3) {

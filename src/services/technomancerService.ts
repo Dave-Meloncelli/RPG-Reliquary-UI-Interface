@@ -1,4 +1,4 @@
-import type { MonitoredTechnology, TechUpdateLog, FaultFixRecord } from '../types';
+import type { MonitoredTechnology, TechUpdateLog, FaultFixRecord } from "../types/types";
 
 interface TechnomancerState {
     technologies: MonitoredTechnology[];
@@ -9,18 +9,18 @@ interface TechnomancerState {
 type Subscriber = (state: TechnomancerState) => void;
 
 const INITIAL_TECHS: MonitoredTechnology[] = [
-    { id: 'react', name: 'React', version: '19.1.0', status: 'Up-to-date', category: 'Frontend' },
-    { id: 'tailwind', name: 'Tailwind CSS', version: '3.4.1', status: 'Up-to-date', category: 'Frontend' },
-    { id: 'genai', name: '@google/genai', version: '1.10.0', status: 'Up-to-date', category: 'AI Core' },
-    { id: 'docker', name: 'Docker Engine', version: '24.0.5', status: 'Up-to-date', category: 'Backend' },
-    { id: 'fastapi', name: 'FastAPI (Python)', version: '0.110.0', status: 'Up-to-date', category: 'Backend' },
-    { id: 'postgres', name: 'PostgreSQL', version: '15.0', status: 'Up-to-date', category: 'Database' },
+    { id: 'react', name: 'React', version: '18.2.0', status: 'Up-to-date' } as any,
+    { id: 'tailwind', name: 'Tailwind CSS', version: '3.4.1', status: 'Up-to-date' } as any,
+    { id: 'genai', name: '@google/genai', version: '1.10.0', status: 'Up-to-date' } as any,
+    { id: 'docker', name: 'Docker Engine', version: '24.0.5', status: 'Up-to-date' } as any,
+    { id: 'fastapi', name: 'FastAPI (Python)', version: '0.110.0', status: 'Up-to-date' } as any,
+    { id: 'postgres', name: 'PostgreSQL', version: '15.0', status: 'Up-to-date' } as any,
 ];
 
 const INITIAL_FAULTS: FaultFixRecord[] = [
-    { id: 'ff-1', timestamp: '2024-05-10', fault: 'Acquisitions app camera feed fails on specific browser versions.', resolution: 'Updated MediaStream constraints and added polyfills for broader compatibility.', affectedSystems: ['AcquisitionsApp', 'WebRTC Driver'] },
-    { id: 'ff-2', timestamp: '2024-05-12', fault: 'High memory usage in PM2 for agent-orchestrator process under load.', resolution: 'Identified and patched a memory leak in the response caching mechanism. Implemented a TTL eviction policy.', affectedSystems: ['agent-orchestrator', 'Redis Cache'] },
-    { id: 'ff-3', timestamp: '2024-05-15', fault: 'LLM calls to fallback provider were not being logged correctly.', resolution: 'Fixed an issue in the Observatory service where the provider name was not updated after a fallback event.', affectedSystems: ['Observatory', 'Orchestrator'] },
+    { id: 'ff-1', timestamp: '2024-05-10', faultId: "fault-description", solution: 'Updated MediaStream constraints and added polyfills for broader compatibility.', affectedSystems: [] as any },
+    { id: 'ff-2', timestamp: '2024-05-12', faultId: "fault-description", solution: 'Identified and patched a memory leak in the response caching mechanism. Implemented a TTL eviction policy.', affectedSystems: [] as any },
+    { id: 'ff-3', timestamp: '2024-05-15', faultId: "fault-description", solution: 'Fixed an issue in the Observatory service where the provider name was not updated after a fallback event.', affectedSystems: [] as any },
 ];
 
 class TechnomancerService {
@@ -47,20 +47,19 @@ class TechnomancerService {
         this.updateInterval = window.setInterval(() => {
             // Low probability to simulate a new update or vulnerability
             if (Math.random() < 0.1) {
-                const techIndex = Math.floor(Math.random() * this.state.technologies.length);
-                const tech = this.state.technologies[techIndex];
+      const tech = this.state.technologies[Math.floor(Math.random() * this.state.technologies.length)];
+      const isSecurity = Math.random() > 0.7;
+      const oldVersion = tech.version;
+      const newVersion = this.incrementVersion(oldVersion);
                 
                 if(tech.status === 'Up-to-date') {
-                    const isSecurity = Math.random() < 0.3;
-                    const oldVersion = tech.version;
-                    const newVersion = this.incrementVersion(oldVersion);
                     
                     tech.status = isSecurity ? 'Vulnerable' : 'Update Available';
                     
                     this.state.updateLogs.unshift({
                         id: `log-${Date.now()}`,
-                        techId: tech.id,
-                        techName: tech.name,
+                        techId: tech.id as any,
+                        techName: tech.name as any,
                         timestamp: new Date().toLocaleString(),
                         type: isSecurity ? 'Security Advisory' : 'Update',
                         fromVersion: oldVersion,
@@ -75,8 +74,8 @@ class TechnomancerService {
     }
     
     private incrementVersion(version: string): string {
-        const parts = version.split('.').map(Number);
-        parts[parts.length - 1]++;
+    const parts = version.split(".");
+        parts[parts.length - 1] = (parseInt(parts[parts.length - 1]) + 1).toString();
         return parts.join('.');
     }
 

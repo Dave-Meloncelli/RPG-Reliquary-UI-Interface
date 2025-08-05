@@ -1,4 +1,4 @@
-import { generateSecurityHandshake, SecurityHandshakeIcons } from '../components/personaIcons';
+import { generateSecurityHandshake, SecurityHandshakeIcons } from "../components/personaIcons";
 
 // ===== SECURITY HANDSHAKE TYPES =====
 
@@ -91,8 +91,6 @@ class PersonaSecurityService {
     ];
 
     knownPersonas.forEach(personaId => {
-      const handshake = generateSecurityHandshake(personaId);
-      const securityLevel = this.calculateSecurityLevel(handshake);
       
       this.securityProfiles.set(personaId, {
         personaId,
@@ -108,14 +106,7 @@ class PersonaSecurityService {
   }
 
   private calculateSecurityLevel(handshake: SecurityHandshake): PersonaSecurityProfile['securityLevel'] {
-    const authorityScore = AUTHORITY_WEIGHTS[handshake.authority] * 10;
-    const healthScore = HEALTH_WEIGHTS[handshake.health] * 5;
-    const driftScore = this.calculateDriftScore(handshake.drift);
-    const activityScore = this.calculateActivityScore(handshake.activity);
-    const standingScore = this.calculateStandingScore(handshake.standing);
-    const xpScore = this.calculateXPScore(handshake.xp);
 
-    const totalScore = authorityScore + healthScore + driftScore + activityScore + standingScore + xpScore;
 
     // Determine security level based on total score
     for (const [level, range] of Object.entries(SECURITY_LEVELS)) {
@@ -184,7 +175,6 @@ class PersonaSecurityService {
   }
 
   public validateSecurityHandshake(personaId: string, providedHandshake: SecurityHandshake): SecurityValidationResult {
-    const profile = this.getSecurityProfile(personaId);
     if (!profile) {
       return {
         isValid: false,
@@ -195,14 +185,11 @@ class PersonaSecurityService {
       };
     }
 
-    const expectedHandshake = profile.handshake;
     const warnings: string[] = [];
     const errors: string[] = [];
-    let score = 0;
 
     // Validate each handshake component
     Object.entries(providedHandshake).forEach(([key, value]) => {
-      const expectedValue = expectedHandshake[key as keyof SecurityHandshake];
       
       if (value === expectedValue) {
         score += 16.67; // Perfect match (100/6 components)
@@ -238,7 +225,6 @@ class PersonaSecurityService {
 
   private detectSuspiciousPattern(handshake: SecurityHandshake): boolean {
     // Check for patterns that might indicate tampering
-    const values = Object.values(handshake);
     
     // All same values
     if (values.every(v => v === values[0])) {
@@ -246,8 +232,6 @@ class PersonaSecurityService {
     }
 
     // Sequential values
-    const authorityTier = parseInt(handshake.authority.replace('tier', ''));
-    const xpLevel = parseInt(handshake.xp.replace('level', ''));
     if (authorityTier === xpLevel) {
       return true;
     }
@@ -289,7 +273,6 @@ class PersonaSecurityService {
       this.validationHistory.set(personaId, []);
     }
     
-    const history = this.validationHistory.get(personaId)!;
     history.push(result);
     
     // Keep only last 10 validation results
@@ -303,14 +286,12 @@ class PersonaSecurityService {
   }
 
   public hasPermission(personaId: string, permission: string): boolean {
-    const profile = this.getSecurityProfile(personaId);
     if (!profile) return false;
 
     return profile.permissions.includes('*') || profile.permissions.includes(permission);
   }
 
   public updatePersonaActivity(personaId: string, activity: keyof typeof SecurityHandshakeIcons.activity) {
-    const profile = this.getSecurityProfile(personaId);
     if (profile) {
       profile.handshake.activity = activity;
       profile.lastActivity = new Date();
@@ -328,7 +309,6 @@ class PersonaSecurityService {
     recentValidations: number;
     averageScore: number;
   } {
-    const profiles = Array.from(this.securityProfiles.values());
     const securityLevels: Record<string, number> = {};
     
     profiles.forEach(profile => {
@@ -338,7 +318,6 @@ class PersonaSecurityService {
     const recentValidations = Array.from(this.validationHistory.values())
       .flat()
       .filter(result => {
-        const oneHourAgo = new Date(Date.now() - 60 * 60 * 1000);
         return result.score > 0; // Simplified check for recent
       }).length;
 
@@ -356,8 +335,6 @@ class PersonaSecurityService {
   }
 
   public generateSecurityAudit(): string {
-    const report = this.getSecurityReport();
-    const timestamp = new Date().toISOString();
     
     return `
 === PERSONA SECURITY AUDIT REPORT ===

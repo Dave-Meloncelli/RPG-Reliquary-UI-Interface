@@ -1,4 +1,4 @@
-import { EventBus } from './eventBus';
+import { eventBus } from './eventBus';
 
 export interface SEOAnalysis {
   id: string;
@@ -81,13 +81,13 @@ export interface SeasonalPattern {
 }
 
 export class SEOOptimizationService {
-  private eventBus: EventBus;
+  private eventBus: any;
   private analyses: Map<string, SEOAnalysis> = new Map();
   private optimizations: Map<string, ContentOptimization> = new Map();
   private marketAnalyses: Map<string, MarketAnalysis> = new Map();
   private keywordDatabase: Map<string, any> = new Map();
 
-  constructor(eventBus: EventBus) {
+  constructor(eventBus: any) {
     this.eventBus = eventBus;
     this.initializeKeywordDatabase();
   }
@@ -131,7 +131,6 @@ export class SEOOptimizationService {
     ];
 
     // Combine all keywords with search data
-    const allKeywords = [...consciousnessKeywords, ...octospineKeywords, ...temporalKeywords];
     
     allKeywords.forEach(keyword => {
       this.keywordDatabase.set(keyword.toLowerCase(), {
@@ -145,20 +144,12 @@ export class SEOOptimizationService {
 
   private generateSearchVolume(keyword: string): number {
     // Simulate realistic search volumes
-    const baseVolume = keyword.length * 100;
-    const consciousnessBonus = keyword.includes('consciousness') ? 1.5 : 1;
-    const evolutionBonus = keyword.includes('evolution') ? 1.3 : 1;
-    const aiBonus = keyword.includes('AI') || keyword.includes('artificial') ? 1.4 : 1;
     
     return Math.floor(baseVolume * consciousnessBonus * evolutionBonus * aiBonus);
   }
 
   private generateDifficulty(keyword: string): number {
     // Simulate keyword difficulty (0-100)
-    const baseDifficulty = 30;
-    const consciousnessPenalty = keyword.includes('consciousness') ? 15 : 0;
-    const evolutionPenalty = keyword.includes('evolution') ? 10 : 0;
-    const aiPenalty = keyword.includes('AI') ? 20 : 0;
     
     return Math.min(100, baseDifficulty + consciousnessPenalty + evolutionPenalty + aiPenalty);
   }
@@ -188,22 +179,16 @@ export class SEOOptimizationService {
   }
 
   async analyzeBookSEO(bookId: string, title: string, description: string, category: string): Promise<SEOAnalysis> {
-    const analysisId = `analysis_${Date.now()}`;
     
     // Extract current keywords
-    const currentKeywords = this.extractKeywords(title + ' ' + description);
     
     // Generate suggested keywords
-    const suggestedKeywords = this.generateSuggestedKeywords(title, description, category);
     
     // Analyze keyword opportunities
-    const opportunities = this.analyzeKeywordOpportunities(suggestedKeywords);
     
     // Calculate SEO score
-    const score = this.calculateSEOScore(currentKeywords, suggestedKeywords, opportunities);
     
     // Generate recommendations
-    const recommendations = this.generateRecommendations(currentKeywords, suggestedKeywords, opportunities);
     
     const analysis: SEOAnalysis = {
       id: analysisId,
@@ -231,7 +216,6 @@ export class SEOOptimizationService {
       .split(/\s+/)
       .filter(word => word.length > 3);
     
-    const keywordCounts = new Map<string, number>();
     words.forEach(word => {
       keywordCounts.set(word, (keywordCounts.get(word) || 0) + 1);
     });
@@ -243,8 +227,6 @@ export class SEOOptimizationService {
   }
 
   private generateSuggestedKeywords(title: string, description: string, category: string): string[] {
-    const baseKeywords = this.extractKeywords(title + ' ' + description);
-    const categoryKeywords = this.getCategoryKeywords(category);
     const relatedKeywords = baseKeywords.flatMap(keyword => 
       this.keywordDatabase.get(keyword)?.relatedKeywords || []
     );
@@ -264,10 +246,8 @@ export class SEOOptimizationService {
 
   private analyzeKeywordOpportunities(keywords: string[]): SEOOpportunity[] {
     return keywords.map(keyword => {
-      const data = this.keywordDatabase.get(keyword.toLowerCase());
       if (!data) return null;
       
-      const potentialTraffic = data.searchVolume * (1 - data.difficulty / 100);
       const estimatedRevenue = potentialTraffic * 0.01 * 29.99; // 1% conversion, $29.99 avg price
       
       return {
@@ -294,9 +274,6 @@ export class SEOOptimizationService {
   }
 
   private calculateSEOScore(currentKeywords: string[], suggestedKeywords: string[], opportunities: SEOOpportunity[]): number {
-    const currentScore = currentKeywords.length * 10;
-    const opportunityScore = opportunities.reduce((sum, opp) => sum + opp.estimatedRevenue, 0) / 100;
-    const keywordDiversityScore = new Set([...currentKeywords, ...suggestedKeywords]).size * 2;
     
     return Math.min(100, currentScore + opportunityScore + keywordDiversityScore);
   }
@@ -346,23 +323,16 @@ export class SEOOptimizationService {
   }
 
   async optimizeContent(bookId: string, title: string, description: string): Promise<ContentOptimization> {
-    const optimizationId = `optimization_${Date.now()}`;
     
     // Generate optimized title
-    const optimizedTitle = this.optimizeTitle(title);
     
     // Generate optimized description
-    const optimizedDescription = this.optimizeDescription(description);
     
     // Calculate keyword density
-    const keywordDensity = this.calculateKeywordDensity(optimizedTitle + ' ' + optimizedDescription);
     
     // Calculate scores
-    const readabilityScore = this.calculateReadabilityScore(optimizedDescription);
-    const seoScore = this.calculateContentSEOScore(keywordDensity, optimizedTitle, optimizedDescription);
     
     // Generate suggestions
-    const suggestions = this.generateContentSuggestions(keywordDensity, readabilityScore, seoScore);
     
     const optimization: ContentOptimization = {
       id: optimizationId,
@@ -385,8 +355,6 @@ export class SEOOptimizationService {
 
   private optimizeTitle(title: string): string {
     // Add high-value keywords to title
-    const highValueKeywords = ['consciousness', 'evolution', 'AI', 'temporal', 'symbiosis'];
-    const titleWords = title.toLowerCase().split(' ');
     
     const missingKeywords = highValueKeywords.filter(keyword => 
       !titleWords.some(word => word.includes(keyword))
@@ -410,9 +378,6 @@ export class SEOOptimizationService {
   }
 
   private calculateKeywordDensity(text: string): Record<string, number> {
-    const words = text.toLowerCase().split(/\s+/);
-    const totalWords = words.length;
-    const keywordCounts = new Map<string, number>();
     
     words.forEach(word => {
       if (word.length > 3) {
@@ -430,17 +395,12 @@ export class SEOOptimizationService {
 
   private calculateReadabilityScore(text: string): number {
     // Simple readability score (0-100)
-    const sentences = text.split(/[.!?]+/).length;
-    const words = text.split(/\s+/).length;
-    const avgWordsPerSentence = words / sentences;
     
     // Flesch Reading Ease approximation
-    const score = Math.max(0, 100 - (avgWordsPerSentence - 12) * 2);
     return Math.min(100, score);
   }
 
   private calculateContentSEOScore(keywordDensity: Record<string, number>, title: string, description: string): number {
-    let score = 0;
     
     // Title optimization
     if (title.length > 30 && title.length < 60) score += 20;
@@ -451,7 +411,6 @@ export class SEOOptimizationService {
     if (Object.keys(keywordDensity).some(keyword => description.toLowerCase().includes(keyword))) score += 15;
     
     // Keyword density
-    const optimalDensity = Object.values(keywordDensity).some(density => density > 1 && density < 3);
     if (optimalDensity) score += 15;
     
     // Structure
@@ -461,7 +420,6 @@ export class SEOOptimizationService {
   }
 
   private generateContentSuggestions(keywordDensity: Record<string, number>, readabilityScore: number, seoScore: number): string[] {
-    const suggestions = [];
     
     if (readabilityScore < 70) {
       suggestions.push('Improve readability by using shorter sentences and simpler words');
@@ -483,13 +441,7 @@ export class SEOOptimizationService {
   }
 
   async analyzeMarket(category: string): Promise<MarketAnalysis> {
-    const analysisId = `market_${Date.now()}`;
     
-    const topKeywords = this.getTopKeywordsForCategory(category);
-    const competitorAnalysis = this.analyzeCompetitors(category);
-    const marketGaps = this.identifyMarketGaps(category);
-    const trendingTopics = this.analyzeTrendingTopics(category);
-    const seasonalPatterns = this.analyzeSeasonalPatterns(category);
     
     const analysis: MarketAnalysis = {
       id: analysisId,
@@ -508,7 +460,6 @@ export class SEOOptimizationService {
   }
 
   private getTopKeywordsForCategory(category: string): string[] {
-    const categoryKeywords = this.getCategoryKeywords(category);
     return categoryKeywords.slice(0, 10);
   }
 

@@ -1,4 +1,4 @@
-import type { Playbook } from '../types';
+import type { Playbook } from "../types/types";
 import { loomService } from './loomService';
 
 type Subscriber = (playbooks: Playbook[]) => void;
@@ -13,7 +13,6 @@ class PlaybookService {
     }
 
     private loadPlaybooks = () => {
-        const playbookScrolls = loomService.getScrolls('playbook');
         try {
             this.playbooks = playbookScrolls.map(scroll => JSON.parse(scroll.content));
         } catch (e) {

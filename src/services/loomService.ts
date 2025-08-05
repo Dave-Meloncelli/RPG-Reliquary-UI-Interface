@@ -1,6 +1,6 @@
-import type { EditableScroll, ScrollType, Playbook, CodexRule } from '../types';
-import { playbookSchema } from '../schemas/playbookSchema';
-import { codexRuleSchema } from '../schemas/codexSchema';
+import type { EditableScroll, ScrollType, Playbook, CodexRule } from "../types/types";
+import { playbookSchema } from "../../schemas/playbookSchema";
+import { codexRuleSchema } from "../../schemas/codexSchema";
 
 // --- INITIAL DATA ---
 // This data would normally live in separate files but is included here for simplicity.
@@ -136,14 +136,11 @@ class LoomService {
     }
     
     updateScroll = (id: string, newName: string, newContent: string): boolean => {
-        const scrollIndex = this.scrolls.findIndex(s => s.id === id);
         if (scrollIndex === -1) return false;
 
-        const scroll = this.scrolls[scrollIndex];
 
         // --- ArkType Validation ---
         try {
-            const parsedContent = JSON.parse(newContent);
             if (scroll.type === 'playbook') {
                 const { data, problems } = playbookSchema(parsedContent);
                 if (problems) {
@@ -169,7 +166,6 @@ class LoomService {
     }
 
     createScroll = (type: ScrollType): EditableScroll => {
-        const newId = `scroll-${type}-${this.nextId++}`;
         let newScroll: EditableScroll;
         
         if (type === 'playbook') {
@@ -197,7 +193,6 @@ class LoomService {
     }
     
     deleteScroll = (id: string) => {
-        const initialLength = this.scrolls.length;
         this.scrolls = this.scrolls.filter(s => s.id !== id);
         if (this.scrolls.length < initialLength) {
             this.notify();

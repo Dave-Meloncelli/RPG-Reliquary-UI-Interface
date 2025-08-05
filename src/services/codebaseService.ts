@@ -1,22 +1,14 @@
-import type { GitCommit, WebhookDelivery } from '../types';
+import type { GitCommit, WebhookDelivery } from "../types/types";
 
-let logIdCounter = 0;
 
-const AUTHORS = ['agent-zero', 'kairos-dev', 'sophia-ethicals', 'erdu-security', 'az86-acq-bot', 'jordan-refactor'];
-const VERBS = ['Fix', 'Add', 'Update', 'Refactor', 'Improve', 'Optimize', 'Document', 'Merge', 'Revert'];
 const NOUNS = [
     'orchestrator logic', 'agent communication protocol', 'ingestion pipeline', 
     'UI rendering bug', 'security vulnerability', 'API endpoint', 'database schema',
     'fallback strategy', 'logging mechanism', 'council deliberation UI', 'playbook configuration'
 ];
 
-const getRandomItem = <T>(arr: T[]): T => arr[Math.floor(Math.random() * arr.length)];
 
 const generateCommit = (): GitCommit => {
-    const author = getRandomItem(AUTHORS);
-    const verb = getRandomItem(VERBS);
-    const noun = getRandomItem(NOUNS);
-    const hash = Math.random().toString(36).substring(2, 9);
 
     return {
         id: hash,
@@ -35,7 +27,6 @@ const generateWebhook = (): WebhookDelivery => {
     };
 };
 
-const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
 export async function* streamCodebaseActivity(): AsyncGenerator<{
     newCommit?: GitCommit;
@@ -44,7 +35,6 @@ export async function* streamCodebaseActivity(): AsyncGenerator<{
     while (true) {
         await delay(1000 + Math.random() * 2500);
         
-        const roll = Math.random();
         let newCommit: GitCommit | undefined;
         let newWebhook: WebhookDelivery | undefined;
 

@@ -1,4 +1,6 @@
 // src/utils/env-validation.ts
+import React, { useState, useEffect } from 'react';
+
 interface EnvVariable {
   key: string;
   required: boolean;
@@ -43,14 +45,12 @@ export function validateEnvironment(): EnvValidationResult {
   const config: Record<string, string> = {};
 
   for (const envVar of ENV_VARIABLES) {
-    const value = import.meta.env[envVar.key as keyof ImportMetaEnv];
     
     if (!value && envVar.required) {
       errors.push(`Missing required environment variable: ${envVar.key} - ${envVar.description}`);
       continue;
     }
 
-    const finalValue = value || envVar.defaultValue || '';
     
     if (finalValue && envVar.validator && !envVar.validator(finalValue)) {
       errors.push(`Invalid value for ${envVar.key}: ${envVar.description}`);
@@ -73,7 +73,6 @@ export function validateEnvironment(): EnvValidationResult {
 }
 
 export function logEnvironmentStatus(): void {
-  const result = validateEnvironment();
   
   if (result.isValid) {
     console.log('✅ Environment validation passed');
@@ -94,9 +93,9 @@ export function logEnvironmentStatus(): void {
 
 // Hook for React components
 export function useEnvironmentValidation() {
-  const [validation, setValidation] = React.useState<EnvValidationResult | null>(null);
+  const [validation, setValidation] = useState<EnvValidationResult | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     setValidation(validateEnvironment());
   }, []);
 

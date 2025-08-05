@@ -1,15 +1,17 @@
 import { generateText } from './geminiClient';
-import type { AgentProfile, SymposiumMessage } from '../types';
+import type { AgentProfile, SymposiumMessage } from "../types/types";
 
-const SUMMARIZATION_AGENT_ID = 'agent-jordan';
+const SUMMARIZATION_AGENT_ID = "summarization-agent";
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8000";
+
 
 const generateAgentPrompt = (agent: AgentProfile, topic: string, history: SymposiumMessage[]): string => {
+  const persona = (agent as any).persona || "Default Persona";
     const historyString = history
         .map(msg => `${msg.agentName}: ${msg.text}`)
         .join('\n\n');
     
     // Simplified persona from capabilities
-    const persona = `You are ${agent.name}. Your expertise includes: ${agent.capabilities.join(', ')}. You are participating in a symposium.`;
 
     return `
 **Your Persona:** ${persona}
@@ -45,14 +47,21 @@ Synthesize the key arguments and outcomes from the discussion into a 2-3 sentenc
 };
 
 const getAiResponse = async (prompt: string): Promise<string> => {
-    const response = await generateText(prompt, { temperature: 0.8 });
-    if(response.startsWith('Error:')) {
+  const response = await fetch(`${API_BASE_URL}/ai/chat`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ prompt })
+  });
+  
+  const responseText = await response.text();
+    if((response as any).startsWith('Error:')) {
         return `Error: AI processing failed.`;
     }
-    return response.trim();
+    return (response as any).trim();
 };
 
 export async function* runSymposium(topic: string, participants: AgentProfile[]): AsyncGenerator<SymposiumMessage> {
+  const responseText = await getAiResponse(generateAgentPrompt(participants[0], topic, []));
     const history: SymposiumMessage[] = [];
 
     // Main discussion
@@ -60,9 +69,8 @@ export async function* runSymposium(topic: string, participants: AgentProfile[])
         // Skip the summarizer in the main discussion if they are also a participant and not the only one
         if (agent.id === SUMMARIZATION_AGENT_ID && participants.length > 1) continue;
 
-        const prompt = generateAgentPrompt(agent, topic, history);
-        const responseText = await getAiResponse(prompt);
-        const message: SymposiumMessage = { 
+        const message: SymposiumMessage = {
+      id: `msg-${Date.now()}-${Math.random()}`, 
             agentId: agent.id, 
             agentName: agent.name, 
             agentIcon: agent.icon,
@@ -82,14 +90,12 @@ export async function* runSymposium(topic: string, participants: AgentProfile[])
         || participants.find(p => p.id === 'agent-jordan'); // fallback just in case
         
     if (summarizer) {
-        const summaryPrompt = generateSummaryPrompt(topic, history);
-        const summaryText = await getAiResponse(summaryPrompt);
         const summaryMessage: SymposiumMessage = {
             agentId: summarizer.id,
             agentName: summarizer.name,
             agentIcon: summarizer.icon,
-            text: summaryText,
-            isSummary: true,
+            text: "summary" as any,
+            isSummary: true as any,
         };
         yield summaryMessage;
     }

@@ -4,6 +4,92 @@ This document serves as a living record of recurring issues and their permanent 
 
 ---
 
+## 3. Critical Application Startup Failure: Missing index.html and Import Path Issues
+
+### Fault Description
+The application failed to start with multiple critical errors:
+- **404 Error**: "This localhost page can't be found" when accessing `http://localhost:3000`
+- **Import Resolution Errors**: `Cannot find module './components/Desktop'` and similar errors
+- **EventBus Type Errors**: `'EventBus' has no exported member named 'EventBus'`
+- **Vite Build Failures**: Failed to scan dependencies and resolve imports
+
+### Root Cause Analysis
+The issues stemmed from several architectural problems:
+
+1. **Missing Entry Point**: Vite requires an `index.html` file in the root directory to serve the React application, but this file was missing
+2. **Incorrect Import Paths**: Components in `src/components/App.tsx` were using relative paths like `../components/Desktop` instead of `./Desktop`
+3. **EventBus Type Mismatches**: Multiple services were importing `EventBus` as a type instead of using `typeof eventBus`
+4. **Directory Mismatch**: User was running commands from `F:\AZ Interface` while fixes were applied to `C:\az-interface`
+
+### Implemented Solution (Remediation)
+
+#### 3.1 Missing index.html Fix
+Created the main `index.html` file in the root directory:
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agent Zero Vault</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>
+```
+
+#### 3.2 Import Path Corrections
+Fixed relative import paths in `src/components/App.tsx`:
+```typescript
+// Before (incorrect)
+import Desktop from '../components/Desktop';
+import Dock from '../components/Dock';
+
+// After (correct)
+import Desktop from './Desktop';
+import Dock from './Dock';
+```
+
+#### 3.3 EventBus Type Fixes
+Corrected EventBus type annotations across multiple services:
+```typescript
+// Before (incorrect)
+private eventBus: EventBus;
+constructor(eventBus: EventBus) {
+
+// After (correct)
+private eventBus: typeof eventBus;
+constructor(eventBus: typeof eventBus) {
+```
+
+**Services Fixed:**
+- `src/services/apiBuildAgentService.ts`
+- `src/services/openAICodexService.ts`
+- `src/services/ashrakaIntegrationService.ts`
+- `src/services/googleAIStudioService.ts`
+- `src/services/googleVertexAIService.ts`
+- `src/services/contentIngestionService.ts`
+- `src/services/seoOptimizationService.ts`
+
+#### 3.4 Development Environment Alignment
+Ensured consistent working directory usage:
+- **Correct Path**: `C:\az-interface`
+- **Server Status**: Confirmed running on `http://localhost:3000`
+- **Application Access**: Successfully serving React application
+
+### Verification
+- ✅ Server responds with 200 OK at `http://localhost:3000`
+- ✅ React application loads without critical import errors
+- ✅ Vite development server starts successfully
+- ✅ Core components resolve correctly
+- ✅ Dependencies installed in both C:\az-interface and F:\AZ Interface
+- ✅ Schema files synchronized between directories
+
+---
+
 ## 1. Persistent Parsing Error: "List item found without a parent container"
 
 ### Fault Description
@@ -51,3 +137,50 @@ The architecture has been refactored to be more robust and eliminate the problem
 1.  **Data Co-location:** The large, constant raw data strings have been moved from `services/dataParsers.ts` directly into `constants.tsx`. This places the data in the same module where it is parsed and used to define the application's core constants.
 2.  **Pure Service Module:** The `services/dataParsers.ts` file has been simplified into a pure service module. It no longer contains any raw data and exclusively exports the parsing functions (`parseAgentPassports`, etc.).
 3.  **Simplified Dependency:** `constants.tsx` now has a simple, one-way dependency on `dataParsers.ts` for its functions, resolving the initialization error. The data is defined and parsed within the same module, making the flow linear and predictable.
+
+---
+
+## 4. Directory Synchronization: Dual Repository Issue
+
+### Fault Description
+The user was running the application from `F:\AZ Interface` while fixes were being applied to `C:\az-interface`, causing persistent import errors and dependency issues.
+
+### Root Cause Analysis
+- **Dual Directories**: Two separate copies of the project existed
+- **Dependency Mismatch**: Dependencies installed in `C:\az-interface` but not in `F:\AZ Interface`
+- **File Synchronization**: Schema files and other assets existed in one directory but not the other
+- **Import Resolution**: Vite was resolving imports from the wrong directory
+
+### Implemented Solution (Remediation)
+
+#### 4.1 Dependency Installation
+Installed missing dependencies in the user's working directory:
+```bash
+cd "F:\AZ Interface"
+npm install @google/genai monaco-editor
+```
+
+#### 4.2 File Synchronization
+Copied missing schema files from the fixed directory:
+```powershell
+Copy-Item "C:\az-interface\schemas\*" "F:\AZ Interface\schemas\" -Recurse -Force
+```
+
+#### 4.3 Server Verification
+Confirmed the development server is running correctly:
+- ✅ Server responds with 200 OK at `http://localhost:3000`
+- ✅ All dependencies resolved
+- ✅ Import errors eliminated
+- ✅ Application loads successfully
+
+### Prevention Strategy
+1. **Single Source of Truth**: Use only one project directory
+2. **Directory Verification**: Always check `Get-Location` before running commands
+3. **Dependency Management**: Ensure dependencies are installed in the working directory
+4. **File Synchronization**: Keep all project files in sync between directories if multiple copies exist
+
+### Current Status
+- ✅ Application running successfully from `F:\AZ Interface`
+- ✅ All dependencies installed and resolved
+- ✅ Import errors eliminated
+- ✅ Book Sales App and other features accessible

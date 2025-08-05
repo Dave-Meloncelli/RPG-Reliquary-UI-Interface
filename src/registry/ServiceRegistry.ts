@@ -62,7 +62,6 @@ export class ServiceRegistry {
   }
   
   getDependencies(name: string): string[] {
-    const service = this.get(name);
     return service ? service.dependencies : [];
   }
   
@@ -73,17 +72,14 @@ export class ServiceRegistry {
   }
   
   getIntegrationPoints(name: string): string[] {
-    const service = this.get(name);
     return service ? service.integrationPoints : [];
   }
   
   getApiEndpoints(name: string): ApiDefinition[] {
-    const service = this.get(name);
     return service ? service.api : [];
   }
   
   updateStatus(name: string, status: ServiceEntry['status']): void {
-    const service = this.get(name);
     if (service) {
       service.status = status;
       service.lastUpdated = new Date();
@@ -91,7 +87,6 @@ export class ServiceRegistry {
   }
   
   addApiEndpoint(name: string, api: ApiDefinition): void {
-    const service = this.get(name);
     if (service) {
       service.api.push(api);
       service.lastUpdated = new Date();
@@ -111,8 +106,6 @@ export class ServiceRegistry {
     const warnings: string[] = [];
     
     // Check for duplicate names
-    const names = this.getAll().map(s => s.name);
-    const duplicates = names.filter((name, index) => names.indexOf(name) !== index);
     if (duplicates.length > 0) {
       errors.push(`Duplicate service names found: ${duplicates.join(', ')}`);
     }
@@ -129,7 +122,6 @@ export class ServiceRegistry {
     // Check for deprecated services with dependents
     for (const service of this.getAll()) {
       if (service.status === 'deprecated') {
-        const dependents = this.getDependents(service.name);
         if (dependents.length > 0) {
           warnings.push(`Deprecated service ${service.name} has dependents: ${dependents.join(', ')}`);
         }
@@ -138,8 +130,6 @@ export class ServiceRegistry {
     
     // Check for duplicate API endpoints
     for (const service of this.getAll()) {
-      const endpoints = service.api.map(api => `${api.method} ${api.endpoint}`);
-      const duplicates = endpoints.filter((endpoint, index) => endpoints.indexOf(endpoint) !== index);
       if (duplicates.length > 0) {
         errors.push(`Service ${service.name}: Duplicate API endpoints found: ${duplicates.join(', ')}`);
       }
@@ -154,7 +144,6 @@ export class ServiceRegistry {
   
   private isExternalDependency(dep: string): boolean {
     // Check if dependency is external (not a local service)
-    const externalPrefixes = ['axios', 'fetch', 'http', 'https', '@', 'lodash', 'date-fns'];
     return externalPrefixes.some(prefix => dep.startsWith(prefix));
   }
   

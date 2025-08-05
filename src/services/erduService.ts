@@ -1,7 +1,6 @@
 import { generateText } from './geminiClient';
-import type { LogLevel, ErduLogEntry, SystemStatus, OperationStep, IncidentResponseProgress } from '../types';
+import type { LogLevel, ErduLogEntry, SystemStatus, OperationStep, IncidentResponseProgress } from "../types/types";
 
-let logIdCounter = 0;
 let currentStatus: SystemStatus = { integrity: 100, threatLevel: 0 };
 
 const MOCK_EVENTS: Array<{ level: LogLevel; message: string; integrityEffect: number; threatEffect: number; }> = [
@@ -18,7 +17,6 @@ export async function* streamErduEvents(): AsyncGenerator<{ log: ErduLogEntry; s
     while (true) {
         await new Promise(res => setTimeout(res, 1500 + Math.random() * 2000));
 
-        const event = MOCK_EVENTS[Math.floor(Math.random() * MOCK_EVENTS.length)];
         
         // Update status
         currentStatus.integrity += event.integrityEffect;
@@ -52,15 +50,12 @@ const PROMPTS: Record<string, (context: string) => string> = {
 };
 
 const getStepResult = async (stepName: string, context: string): Promise<string> => {
-    const prompt = PROMPTS[stepName](context);
-    const response = await generateText(prompt);
     if(response.startsWith('Error:')) {
         throw new Error(`AI processing failed for step: ${stepName}.`);
     }
     return response.trim();
 };
 
-const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
 export async function* runIncidentResponse(): AsyncGenerator<IncidentResponseProgress> {
     const initialSteps: OperationStep[] = INCIDENT_RESPONSE_STEPS.map(op => ({ ...op, status: 'pending' }));
@@ -71,7 +66,6 @@ export async function* runIncidentResponse(): AsyncGenerator<IncidentResponsePro
     };
     yield { ...progress };
 
-    let incidentContext = "A critical incident has been triggered manually. Immediate investigation required. Source: ERDU Monitor.";
 
     for (let i = 0; i < progress.steps.length; i++) {
         progress.steps[i].status = 'running';
@@ -79,7 +73,6 @@ export async function* runIncidentResponse(): AsyncGenerator<IncidentResponsePro
         await delay(500);
 
         try {
-            const result = await getStepResult(progress.steps[i].name, incidentContext);
             await delay(1000 + Math.random() * 2000); 
 
             progress.steps[i].status = 'complete';
@@ -87,7 +80,6 @@ export async function* runIncidentResponse(): AsyncGenerator<IncidentResponsePro
             incidentContext += `\n\n**${progress.steps[i].agentId}'s Report (${progress.steps[i].name}):**\n${result}`;
 
         } catch (e) {
-            const error = e as Error;
             progress.steps[i].status = 'error';
             progress.steps[i].error = error.message;
             progress.error = `Protocol failed at step: ${progress.steps[i].name}`;

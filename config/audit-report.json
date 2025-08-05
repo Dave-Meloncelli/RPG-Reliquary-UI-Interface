@@ -1,0 +1,107 @@
+{
+  "timestamp": "2025-08-04T07:18:33.697Z",
+  "summary": {
+    "totalChecks": 7,
+    "passedChecks": 2,
+    "failedChecks": 5,
+    "errorCount": 3,
+    "warningCount": 3,
+    "overallStatus": "FAIL"
+  },
+  "details": {
+    "projectStructure": {
+      "missingDirs": [],
+      "missingFiles": [],
+      "status": "PASS"
+    },
+    "dependencies": {
+      "totalDeps": 7,
+      "totalDevDeps": 20,
+      "missingDeps": [
+        "tailwindcss"
+      ],
+      "status": "FAIL"
+    },
+    "imports": {
+      "totalFiles": 121,
+      "importIssues": [
+        {
+          "file": "src\\data\\fileSystemData.ts",
+          "import": "./components/App",
+          "resolvedPath": "src\\data\\components\\App"
+        },
+        {
+          "file": "src\\data\\fileSystemData.ts",
+          "import": "./Desktop",
+          "resolvedPath": "src\\data\\Desktop"
+        },
+        {
+          "file": "src\\data\\fileSystemData.ts",
+          "import": "./Dock",
+          "resolvedPath": "src\\data\\Dock"
+        }
+      ],
+      "status": "FAIL"
+    },
+    "appRegistry": {
+      "totalApps": 36,
+      "missingApps": [
+        "image_generator",
+        "vault_explorer",
+        "task_hub",
+        "agent_network",
+        "persona_viewer",
+        "companion_chat",
+        "council_chamber",
+        "vault_codex",
+        "the_loom",
+        "operations_console",
+        "batch_ingester",
+        "automation_hub",
+        "system_editor",
+        "aegis_dashboard",
+        "erdu_monitor",
+        "technomancer_forge",
+        "control_panel",
+        "book_sales",
+        "trade_in_portal",
+        "rpg_community_hub",
+        "social_media_hub",
+        "concurrent_agent_hub"
+      ],
+      "status": "FAIL"
+    },
+    "services": {
+      "totalServices": 46,
+      "connectionIssues": [
+        "hierarchyService: Invalid import ../components/icons",
+        "personaSecurityService: Invalid import ../components/personaIcons"
+      ],
+      "status": "FAIL"
+    },
+    "documentation": {
+      "totalDocs": 4,
+      "missingDocs": [],
+      "outdatedDocs": [],
+      "status": "PASS"
+    },
+    "versionControl": {
+      "hasUncommittedChanges": true,
+      "hasGitignore": true,
+      "conventionalCommits": 0,
+      "totalRecentCommits": 10,
+      "status": "WARN"
+    }
+  },
+  "errors": [
+    "3 import resolution issues found",
+    "Missing app components: image_generator, vault_explorer, task_hub, agent_network, persona_viewer, companion_chat, council_chamber, vault_codex, the_loom, operations_console, batch_ingester, automation_hub, system_editor, aegis_dashboard, erdu_monitor, technomancer_forge, control_panel, book_sales, trade_in_portal, rpg_community_hub, social_media_hub, concurrent_agent_hub",
+    "2 service connection issues found"
+  ],
+  "warnings": [
+    "Missing dependencies: tailwindcss",
+    "Uncommitted changes detected",
+    "No conventional commits found in recent history"
+  ],
+  "recommendations": []
+}

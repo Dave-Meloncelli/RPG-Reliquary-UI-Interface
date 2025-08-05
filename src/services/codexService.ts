@@ -1,4 +1,4 @@
-import type { CodexRule } from '../types';
+import type { CodexRule } from "../types/types";
 import { loomService } from './loomService';
 
 type Subscriber = (rules: CodexRule[]) => void;
@@ -14,10 +14,8 @@ class CodexService {
     }
     
     private loadRules = () => {
-        const codexScrolls = loomService.getScrolls('codex');
         try {
             this.rules = codexScrolls.map(scroll => {
-                const parsed = JSON.parse(scroll.content);
                 // Ensure it has the structure of a CodexRule
                 return {
                     id: scroll.id,

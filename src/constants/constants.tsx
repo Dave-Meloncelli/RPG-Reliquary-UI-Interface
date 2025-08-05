@@ -31,6 +31,13 @@ import ForensicsApp from '../apps/ForensicsApp';
 import AutomationHubApp from '../apps/AutomationHubApp';
 import SystemEditorApp from '../apps/SystemEditorApp';
 import TaskReviewHubApp from '../apps/TaskReviewHubApp';
+import { BookSalesApp } from '../apps/BookSalesApp';
+import TradeInPortalApp from '../apps/TradeInPortalApp';
+import RPGCommunityHubApp from '../apps/RPGCommunityHubApp';
+import SocialMediaHubApp from '../apps/SocialMediaHubApp';
+import ConcurrentAgentHubApp from '../apps/ConcurrentAgentHubApp';
+import ConsciousnessWorkflowApp from '../apps/ConsciousnessWorkflowApp';
+import XPCharacterHubApp from '../apps/XPCharacterHubApp';
 import { 
     TerminalIcon,
     ImageIcon,
@@ -64,6 +71,13 @@ import {
     AutomationIcon,
     EditorIcon,
     TaskHubIcon,
+    BookSalesIcon,
+    TradeInIcon,
+    RPGCommunityIcon,
+    SocialMediaIcon,
+    ConcurrentAgentIcon,
+    ConsciousnessWorkflowIcon,
+    XPCharacterHubIcon,
 } from '../components/icons';
 
 
@@ -296,5 +310,55 @@ export const APPS: AppDefinition[] = [
     icon: ControlPanelIcon,
     component: ControlPanelApp,
     defaultSize: { width: 700, height: 500 },
+  },
+  // RPG Ecosystem & Business
+  {
+    id: 'book_sales',
+    title: 'Book Sales',
+    icon: BookSalesIcon,
+    component: BookSalesApp,
+    defaultSize: { width: 900, height: 700 },
+  },
+  {
+    id: 'trade_in_portal',
+    title: 'Trade-In Portal',
+    icon: TradeInIcon,
+    component: TradeInPortalApp,
+    defaultSize: { width: 800, height: 600 },
+  },
+  {
+    id: 'rpg_community_hub',
+    title: 'RPG Community Hub',
+    icon: RPGCommunityIcon,
+    component: RPGCommunityHubApp,
+    defaultSize: { width: 1000, height: 800 },
+  },
+  {
+    id: 'social_media_hub',
+    title: 'Social Media Hub',
+    icon: SocialMediaIcon,
+    component: SocialMediaHubApp,
+    defaultSize: { width: 900, height: 700 },
+  },
+  {
+    id: 'concurrent_agent_hub',
+    title: 'Concurrent Agent Hub',
+    icon: ConcurrentAgentIcon,
+    component: ConcurrentAgentHubApp,
+    defaultSize: { width: 1200, height: 800 },
+  },
+  {
+    id: 'consciousness_workflow',
+    title: 'Consciousness Workflow',
+    icon: ConsciousnessWorkflowIcon,
+    component: ConsciousnessWorkflowApp,
+    defaultSize: { width: 1000, height: 800 },
+  },
+  {
+    id: 'xp_character_hub',
+    title: 'XP & Character Hub',
+    icon: XPCharacterHubIcon,
+    component: XPCharacterHubApp,
+    defaultSize: { width: 1200, height: 900 },
   },
 ];

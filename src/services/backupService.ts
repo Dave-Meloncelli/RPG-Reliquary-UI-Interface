@@ -1,7 +1,5 @@
-import type { BackupLogEntry } from '../types';
+import type { BackupLogEntry } from "../types/types";
 
-let logIdCounter = 0;
-const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
 function* createLogEntry(message: string): Generator<BackupLogEntry> {
     yield {

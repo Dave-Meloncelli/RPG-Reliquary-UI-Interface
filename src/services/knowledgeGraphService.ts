@@ -1,4 +1,4 @@
-import type { ForensicEvent, CodeLineage } from '../types';
+import type { ForensicEvent, CodeLineage } from "../types/types";
 
 // This is a high-fidelity simulation of a backend Knowledge Graph service.
 // In a real application, these methods would make API calls to a backend that queries
@@ -38,7 +38,6 @@ const MOCK_LINEAGE: Record<string, Omit<CodeLineage, 'id'>> = {
     },
 };
 
-const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
 
 class KnowledgeGraphService {
     /**
@@ -50,8 +49,8 @@ class KnowledgeGraphService {
         await delay(1500 + Math.random() * 1000); // Simulate network latency and complex query time
         
         const relevantEvents = MOCK_EVENTS.filter(event => 
-            event.componentId.toLowerCase().includes(componentId.toLowerCase()) || 
-            event.summary.toLowerCase().includes(componentId.toLowerCase())
+            event.componentId?.toLowerCase().includes(componentId.toLowerCase()) || 
+            event.summary?.toLowerCase().includes(componentId.toLowerCase())
         );
         
         return relevantEvents.map((event, index) => ({
@@ -68,10 +67,9 @@ class KnowledgeGraphService {
     public async getCodeLineage(featureName: string): Promise<CodeLineage | null> {
         await delay(1000 + Math.random() * 800);
         
-        const lowerFeatureName = featureName.toLowerCase();
         const foundKey = Object.keys(MOCK_LINEAGE).find(key => 
             key.includes(lowerFeatureName) || 
-            MOCK_LINEAGE[key].name.toLowerCase().includes(lowerFeatureName)
+            MOCK_LINEAGE[key]?.name.toLowerCase().includes(lowerFeatureName)
         );
 
         if (foundKey && MOCK_LINEAGE[foundKey]) {

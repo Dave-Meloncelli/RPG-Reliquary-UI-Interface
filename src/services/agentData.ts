@@ -1,5 +1,5 @@
 
-import type { AgentProfile } from '../types';
+import type { AgentProfile } from "../types/types";
 import {
     AgentIconCamera,
     AgentIconScale,
@@ -29,7 +29,7 @@ import {
     AgentIconTechnomancer,
     AgentIconDebug,
     AgentIconArchaeologist,
-} from '../components/icons';
+} from "../components/icons";
 
 const lore = {
     personaFiles: {
@@ -310,7 +310,6 @@ Tinker Hexbolt is the hands-on problem solver for all mechanical and technologic
 
 const parseLore = (content: string): Partial<AgentProfile> => {
     const parsed: Partial<AgentProfile> = {};
-    const lines = content.split('\n');
     for (const line of lines) {
         if (line.startsWith('**Title**:') || line.startsWith('Title:')) {
             parsed.title = line.split(/:\s*/, 2)[1]?.trim();

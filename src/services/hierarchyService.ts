@@ -1,6 +1,6 @@
 import { getInitialAgentData } from './agentData';
-import { AgentRelationshipNode, AgentProfile } from '../types';
-import { AgentIconBrain } from '../components/icons'; // A default icon for companions
+import { AgentRelationshipNode, AgentProfile } from "../types/types";
+import { AgentIconBrain } from "../components/icons"; // A default icon for companions
 
 const relationshipConfig = {
     sidekick_assignments: {
@@ -18,11 +18,8 @@ const relationshipConfig = {
     }
 };
 
-const allAgents = getInitialAgentData();
-const agentMap = new Map<string, AgentProfile>(allAgents.map(agent => [agent.id, agent]));
 
 const createNode = (agentId: string, type: AgentRelationshipNode['type']): AgentRelationshipNode => {
-    const agentProfile = agentMap.get(agentId);
     return {
         id: agentId,
         name: agentProfile?.name || agentId.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase()),
@@ -33,9 +30,7 @@ const createNode = (agentId: string, type: AgentRelationshipNode['type']): Agent
 };
 
 const buildHierarchy = (): AgentRelationshipNode[] => {
-    const nodes = new Map<string, AgentRelationshipNode>();
     const rootNodes: AgentRelationshipNode[] = [];
-    const childIds = new Set<string>();
 
     // Pass 1: Create all nodes and identify children
     Object.entries(relationshipConfig.subordinates).forEach(([parentId, { subordinates }]) => {
@@ -52,10 +47,8 @@ const buildHierarchy = (): AgentRelationshipNode[] => {
     
     // Pass 2: Build relationships
     Object.entries(relationshipConfig.subordinates).forEach(([parentId, { subordinates }]) => {
-        const parentNode = nodes.get(parentId);
         if (parentNode) {
             subordinates.forEach(childId => {
-                let childNode = nodes.get(childId);
                 if (childNode) {
                     childNode.type = 'subordinate';
                     parentNode.children.push(childNode);
@@ -65,14 +58,12 @@ const buildHierarchy = (): AgentRelationshipNode[] => {
     });
 
     Object.entries(relationshipConfig.sidekick_assignments).forEach(([parentId, { sidekicks }]) => {
-        const parentNode = nodes.get(parentId);
         if (parentNode) {
             sidekicks.forEach(childId => {
                 // Sidekicks might not be in the main agent list, so create them if they don't exist
                 if (!nodes.has(childId)) {
                     nodes.set(childId, createNode(childId, 'sidekick'));
                 }
-                const childNode = nodes.get(childId)!;
                 childNode.type = 'sidekick';
                 parentNode.children.push(childNode);
             });

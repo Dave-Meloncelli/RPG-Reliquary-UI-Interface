@@ -100,25 +100,21 @@ class OCRService {
       progress.progress = 20;
       progress.message = 'Analyzing book dimensions...';
       
-      const bookDimensions = await this.detectBookBoundaries(imageData);
       
       // 2. Calculate optimal zoom
       progress.progress = 40;
       progress.message = 'Calculating optimal zoom level...';
       
-      const optimalZoom = this.calculateOptimalZoom(bookDimensions, settings.maintainBorderSize);
       
       // 3. Analyze paper reflectivity for lighting optimization
       progress.progress = 60;
       progress.message = 'Optimizing lighting for paper type...';
       
-      const lightingSettings = await this.analyzePaperReflectivity(imageData);
       
       // 4. Measure keystone distortion angle
       progress.progress = 80;
       progress.message = 'Measuring keystone distortion...';
       
-      const keystoneAngle = await this.measureKeystoneDistortion(imageData);
       
       // 5. Apply corrections
       progress.progress = 90;
@@ -156,25 +152,21 @@ class OCRService {
       progress.progress = 10;
       progress.message = 'Applying image preprocessing...';
       
-      const preprocessedImage = await this.applyPreprocessing(imageData, settings);
       
       // OCR Processing
       progress.progress = 30;
       progress.message = 'Running ABBYY OCR analysis...';
       
-      const ocrResult = await this.runABBYYOCR(preprocessedImage);
       
       // Data Extraction
       progress.progress = 70;
       progress.message = 'Extracting structured data...';
       
-      const extractedData = await this.extractStructuredData(ocrResult);
       
       // Quality Assessment
       progress.progress = 90;
       progress.message = 'Assessing OCR quality...';
       
-      const confidence = await this.assessOCRQuality(ocrResult);
       
       progress.progress = 100;
       progress.message = 'OCR processing complete';
@@ -216,19 +208,16 @@ class OCRService {
       progress.progress = 20;
       progress.message = 'Analyzing market value...';
       
-      const marketValue = await this.analyzeMarketValue(ocrResult.extractedData);
       
       // Rarity assessment
       progress.progress = 40;
       progress.message = 'Assessing rarity...';
       
-      const rarity = await this.assessRarity(ocrResult.extractedData);
       
       // Condition analysis
       progress.progress = 60;
       progress.message = 'Analyzing condition...';
       
-      const condition = await this.analyzeCondition(ocrResult.extractedData);
       
       // Investment potential
       progress.progress = 80;
@@ -267,8 +256,6 @@ class OCRService {
 
   // Complete scan workflow
   async performCompleteScan(imageData: string, settings: ScanSettings): Promise<ScanResult> {
-    const scanId = `scan-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-    const startTime = Date.now();
     
     const progress: ScanProgress = {
       step: 'detecting',
@@ -284,28 +271,24 @@ class OCRService {
       progress.progress = 10;
       progress.message = 'Performing auto-adjustment...';
       
-      const adjustedSettings = await this.autoAdjustForBook(imageData, settings);
       
       // Scanning
       progress.step = 'scanning';
       progress.progress = 30;
       progress.message = 'Scanning document...';
       
-      const scannedImage = await this.performScan(imageData, adjustedSettings);
       
       // OCR Processing
       progress.step = 'ocr_processing';
       progress.progress = 50;
       progress.message = 'Processing OCR...';
       
-      const ocrResult = await this.processOCR(scannedImage, adjustedSettings);
       
       // Enrichment
       progress.step = 'enriching';
       progress.progress = 80;
       progress.message = 'Enriching with market data...';
       
-      const enrichedData = await this.enrichBookData(ocrResult);
       
       // Complete
       progress.step = 'complete';
@@ -345,8 +328,6 @@ class OCRService {
   private calculateOptimalZoom(bookDimensions: any, borderSize: number): number {
     // Calculate optimal zoom based on book size and desired border
     const scannerArea = 800 * 600; // Example scanner area
-    const bookArea = bookDimensions.width * bookDimensions.height;
-    const targetArea = scannerArea - (2 * borderSize * (bookDimensions.width + bookDimensions.height));
     return Math.min(2.0, Math.max(0.5, Math.sqrt(targetArea / bookArea)));
   }
 

@@ -1,6 +1,6 @@
 import { GoogleGenAI, Chat } from "@google/genai";
 import { getPersonaProfile } from './personaService';
-import type { ChatMessage } from '../types';
+import type { ChatMessage } from "../types/types";
 
 class ChatService {
     private ai: GoogleGenAI | null;
@@ -19,13 +19,11 @@ class ChatService {
     private async initializeChat(agentId: string): Promise<Chat | null> {
         if (!this.ai) return null;
 
-        const profile = getPersonaProfile(agentId);
         if (!profile) {
             console.error(`Could not find profile for agent ${agentId}`);
             return null;
         }
 
-        const systemInstruction = profile.scrollContent || `You are ${profile.name}. Your capabilities include: ${profile.capabilities.join(', ')}.`;
 
         const chat = this.ai.chats.create({
             model: 'gemini-2.5-flash',
@@ -51,10 +49,8 @@ class ChatService {
         // Add user message to history, which is now done in the component to show it instantly.
         // We'll add it here too to ensure service-side history is complete.
         const userMessage: ChatMessage = { sender: 'user', text: message, timestamp: new Date().toLocaleTimeString() };
-        const currentHistory = this.getChatHistory(agentId);
         this.chatHistories.set(agentId, [...currentHistory, userMessage]);
 
-        let chat = this.chatSessions.get(agentId);
         if (!chat) {
             chat = await this.initializeChat(agentId);
         }
@@ -65,10 +61,7 @@ class ChatService {
         }
 
         try {
-            const responseStream = await chat.sendMessageStream({ message });
-            let fullResponse = "";
             for await (const chunk of responseStream) {
-                const chunkText = chunk.text;
                 fullResponse += chunkText;
                 yield chunkText;
             }
@@ -79,11 +72,9 @@ class ChatService {
 
         } catch (error) {
             console.error(`Gemini API error for agent ${agentId}:`, error);
-            const errorMessage = "Sorry, I encountered an error. Please try again.";
             yield errorMessage;
             const agentErrorMessage: ChatMessage = { sender: 'agent', text: errorMessage, timestamp: new Date().toLocaleTimeString() };
             // Replace the placeholder user message with the error
-            const historyWithoutUserMsg = this.getChatHistory(agentId).slice(0, -1);
             this.chatHistories.set(agentId, [...historyWithoutUserMsg, agentErrorMessage]);
         }
     }

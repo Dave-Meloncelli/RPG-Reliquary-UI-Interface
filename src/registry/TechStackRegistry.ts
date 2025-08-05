@@ -66,7 +66,6 @@ export class TechStackRegistry {
   }
   
   getDependencies(name: string): string[] {
-    const tech = this.get(name);
     return tech ? tech.dependencies : [];
   }
   
@@ -77,12 +76,10 @@ export class TechStackRegistry {
   }
   
   getConflicts(name: string): string[] {
-    const tech = this.get(name);
     return tech ? tech.conflicts : [];
   }
   
   updateStatus(name: string, status: TechStackEntry['status']): void {
-    const tech = this.get(name);
     if (tech) {
       tech.status = status;
       tech.lastUpdated = new Date();
@@ -90,7 +87,6 @@ export class TechStackRegistry {
   }
   
   updateVersion(name: string, version: string): void {
-    const tech = this.get(name);
     if (tech) {
       tech.version = version;
       tech.lastUpdated = new Date();
@@ -98,7 +94,6 @@ export class TechStackRegistry {
   }
   
   addConflict(name: string, conflict: string): void {
-    const tech = this.get(name);
     if (tech && !tech.conflicts.includes(conflict)) {
       tech.conflicts.push(conflict);
       tech.lastUpdated = new Date();
@@ -119,8 +114,6 @@ export class TechStackRegistry {
     const conflicts: DependencyConflict[] = [];
     
     // Check for duplicate names
-    const names = this.getAll().map(t => t.name);
-    const duplicates = names.filter((name, index) => names.indexOf(name) !== index);
     if (duplicates.length > 0) {
       errors.push(`Duplicate technology names found: ${duplicates.join(', ')}`);
     }
@@ -138,7 +131,6 @@ export class TechStackRegistry {
     for (const tech of this.getAll()) {
       for (const conflict of tech.conflicts) {
         if (this.technologies.has(conflict)) {
-          const conflictingTech = this.get(conflict);
           if (conflictingTech) {
             conflicts.push({
               technology: tech.name,
@@ -154,7 +146,6 @@ export class TechStackRegistry {
     // Check for deprecated technologies with dependents
     for (const tech of this.getAll()) {
       if (tech.status === 'deprecated') {
-        const dependents = this.getDependents(tech.name);
         if (dependents.length > 0) {
           warnings.push(`Deprecated technology ${tech.name} has dependents: ${dependents.join(', ')}`);
         }
@@ -218,7 +209,6 @@ export class TechStackRegistry {
     highRiskTechnologies: string[];
     outdatedTechnologies: string[];
   } {
-    let totalVulnerabilities = 0;
     const highRiskTechnologies: string[] = [];
     const outdatedTechnologies: string[] = [];
     

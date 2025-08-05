@@ -1,7 +1,6 @@
 import { GoogleGenAI, GenerateContentResponse, Type, GenerateContentParameters } from "@google/genai";
 import { RpgBookAnalysis } from "../types";
 
-const apiKey = process.env.API_KEY ?? process.env.GEMINI_API_KEY;
 
 // Initialize AI client only if API key is available
 let ai: GoogleGenAI | null = null;
@@ -19,8 +18,6 @@ interface QueuedRequest<T> {
   reject: (reason?: any) => void;
 }
 
-const MAX_CONCURRENT_REQUESTS = 2;
-let activeRequests = 0;
 const pendingQueue: QueuedRequest<any>[] = [];
 
 async function dequeueAndRun() {
@@ -56,7 +53,6 @@ export const generateText = async (
         }
         
         try {
-            const formattedContents = typeof contents === 'string' ? contents : contents;
 
             const response: GenerateContentResponse = await ai.models.generateContent({
                 model: "gemini-2.5-flash",
@@ -69,8 +65,6 @@ export const generateText = async (
             }
 
             // Fallback for robustness against potential SDK response variations, as per review.
-            const candidate = (response as any).candidates?.[0];
-            const text = candidate?.content?.parts?.map((p: any) => p.text ?? '').join('') || '';
             
             if (text) return text;
             
@@ -116,14 +110,10 @@ export const generateImageFromPrompt = async (prompt: string): Promise<string> =
 
 // --- Standardized JSON Generation (Vision) ---
 const imageUrlToBase64 = async (url: string): Promise<{ mimeType: string, data: string }> => {
-    const response = await fetch(url);
     if (!response.ok) {
         throw new Error(`Failed to fetch image: ${response.statusText}`);
     }
-    const blob = await response.blob();
-    const mimeType = blob.type;
     return new Promise((resolve, reject) => {
-        const reader = new FileReader();
         reader.onloadend = () => {
             if (typeof reader.result === 'string') {
                 resolve({ mimeType, data: reader.result.split(',')[1]});

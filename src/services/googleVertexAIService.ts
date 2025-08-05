@@ -1,4 +1,4 @@
-import { EventBus } from './eventBus';
+import { eventBus } from './eventBus';
 
 export interface VertexAIModel {
   id: string;
@@ -134,7 +134,7 @@ export interface ABTestResult {
 }
 
 export class GoogleVertexAIService {
-  private eventBus: EventBus;
+  private eventBus: any;
   private apiKey?: string;
   private projectId?: string;
   private location: string = 'us-central1';
@@ -147,7 +147,7 @@ export class GoogleVertexAIService {
   private abTestResults: Map<string, ABTestResult[]> = new Map();
   private generationHistory: Map<string, VertexAIResponse> = new Map();
 
-  constructor(eventBus: EventBus, apiKey?: string, projectId?: string) {
+  constructor(eventBus: any, apiKey?: string, projectId?: string) {
     this.eventBus = eventBus;
     this.apiKey = apiKey;
     this.projectId = projectId;
@@ -286,7 +286,6 @@ export class GoogleVertexAIService {
       throw new Error('Not connected to Vertex AI');
     }
 
-    const id = `custom_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const customModel: CustomModelConfig = {
       ...config,
       id
@@ -307,13 +306,10 @@ export class GoogleVertexAIService {
    * Start training job for custom model
    */
   async startTraining(modelConfigId: string): Promise<string> {
-    const config = this.customModels.get(modelConfigId);
     if (!config) {
       throw new Error(`Custom model configuration ${modelConfigId} not found`);
     }
 
-    const jobId = `training_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    const now = new Date().toISOString();
 
     const trainingJob: TrainingJob = {
       id: jobId,
@@ -350,7 +346,6 @@ export class GoogleVertexAIService {
    * Simulate training process
    */
   private async simulateTraining(jobId: string): Promise<void> {
-    const job = this.trainingJobs.get(jobId);
     if (!job) return;
 
     job.status = 'training';
@@ -385,7 +380,6 @@ export class GoogleVertexAIService {
     this.trainingJobs.set(jobId, job);
 
     // Add trained model to available models
-    const config = this.customModels.get(job.modelConfigId);
     if (config) {
       const trainedModel: VertexAIModel = {
         id: `trained_${job.modelConfigId}`,
@@ -420,12 +414,10 @@ export class GoogleVertexAIService {
       throw new Error('Not connected to Vertex AI');
     }
 
-    const model = this.availableModels.get(request.modelId);
     if (!model) {
       throw new Error(`Model ${request.modelId} not found`);
     }
 
-    const requestId = `gen_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const fullRequest: VertexAIRequest = {
       ...request,
       id: requestId
@@ -462,9 +454,7 @@ export class GoogleVertexAIService {
         throw new Error(`API request failed: ${response.status} ${response.statusText}`);
       }
 
-      const data = await response.json();
       
-      const content = data.predictions?.[0]?.candidates?.[0]?.content || '';
       const usage = data.metadata?.tokenMetadata || {
         inputTokenCount: 0,
         outputTokenCount: 0,
@@ -518,8 +508,6 @@ export class GoogleVertexAIService {
    * Create A/B test configuration
    */
   async createABTest(config: Omit<ABTestConfig, 'id' | 'startTime' | 'status'>): Promise<string> {
-    const id = `abtest_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    const now = new Date().toISOString();
     
     const abTest: ABTestConfig = {
       ...config,
@@ -544,15 +532,11 @@ export class GoogleVertexAIService {
    * Generate text with A/B testing
    */
   async generateTextWithABTest(testId: string, request: Omit<VertexAIRequest, 'id'>): Promise<ABTestResult> {
-    const abTest = this.abTests.get(testId);
     if (!abTest || abTest.status !== 'active') {
       throw new Error(`A/B test ${testId} not found or not active`);
     }
 
     // Select variant based on traffic percentage
-    const random = Math.random() * 100;
-    let cumulativePercentage = 0;
-    let selectedVariant = abTest.variants[0];
 
     for (const variant of abTest.variants) {
       cumulativePercentage += variant.trafficPercentage;
@@ -563,13 +547,11 @@ export class GoogleVertexAIService {
     }
 
     // Generate text with selected variant
-    const startTime = Date.now();
     const response = await this.generateText({
       ...request,
       modelId: selectedVariant.modelId,
       parameters: { ...request.parameters, ...selectedVariant.parameters }
     });
-    const endTime = Date.now();
 
     // Create A/B test result
     const result: ABTestResult = {
@@ -608,15 +590,12 @@ export class GoogleVertexAIService {
     metrics: Record<string, any>;
     recommendations: string[];
   }> {
-    const abTest = this.abTests.get(testId);
-    const results = this.abTestResults.get(testId) || [];
 
     if (!abTest || results.length === 0) {
       throw new Error(`No results found for A/B test ${testId}`);
     }
 
     // Group results by variant
-    const variantResults = new Map<string, ABTestResult[]>();
     abTest.variants.forEach(variant => {
       variantResults.set(variant.id, results.filter(r => r.variantId === variant.id));
     });
@@ -633,11 +612,6 @@ export class GoogleVertexAIService {
     for (const [variantId, variantResults] of variantResults) {
       if (variantResults.length === 0) continue;
 
-      const avgResponseTime = variantResults.reduce((sum, r) => sum + r.metrics.responseTime, 0) / variantResults.length;
-      const avgUserSatisfaction = variantResults.reduce((sum, r) => sum + (r.metrics.userSatisfaction || 0), 0) / variantResults.length;
-      const avgConversionRate = variantResults.reduce((sum, r) => sum + (r.metrics.conversionRate || 0), 0) / variantResults.length;
-      const errorRate = variantResults.reduce((sum, r) => sum + r.metrics.errorRate, 0) / variantResults.length;
-      const totalRequests = variantResults.length;
 
       variantMetrics.set(variantId, {
         avgResponseTime,
@@ -650,7 +624,6 @@ export class GoogleVertexAIService {
 
     // Determine winner based on primary metric (user satisfaction)
     let winner: string | undefined;
-    let highestSatisfaction = 0;
 
     for (const [variantId, metrics] of variantMetrics) {
       if (metrics.avgUserSatisfaction > highestSatisfaction) {
@@ -660,12 +633,10 @@ export class GoogleVertexAIService {
     }
 
     // Calculate confidence (simplified)
-    const confidence = Math.min(0.95, 0.5 + (results.length * 0.01));
 
     // Generate recommendations
     const recommendations: string[] = [];
     if (winner) {
-      const winnerMetrics = variantMetrics.get(winner);
       if (winnerMetrics) {
         recommendations.push(`Variant ${winner} shows the best user satisfaction (${winnerMetrics.avgUserSatisfaction.toFixed(2)})`);
         recommendations.push(`Consider increasing traffic allocation to the winning variant`);
@@ -740,7 +711,7 @@ export class GoogleVertexAIService {
    */
   getGenerationHistory(limit: number = 50): VertexAIResponse[] {
     return Array.from(this.generationHistory.values())
-      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+      .sort((a, b) => new Date(b.timestamp || Date.now()).getTime() - new Date(a.timestamp || Date.now()).getTime())
       .slice(0, limit);
   }
 

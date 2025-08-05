@@ -198,10 +198,10 @@ const BatchIngesterApp: React.FC = () => {
     }
   };
 
-  return (
+    return (
     <div className="flex flex-col h-full bg-slate-900/80 text-slate-200 font-sans">
       <div className="p-4 border-b border-slate-700/50">
-        <h2 className="text-lg font-bold text-white">Batch Ingester</h2>
+            <h2 className="text-lg font-bold text-white">Batch Ingester</h2>
         <p className="text-sm text-slate-400">Bulk photo processing, publisher silo integration, and automated intake.</p>
       </div>
 
@@ -362,9 +362,9 @@ const BatchIngesterApp: React.FC = () => {
             </div>
           )}
         </div>
-      </div>
-    </div>
-  );
+            </div>
+        </div>
+    );
 };
 
 export default BatchIngesterApp; 

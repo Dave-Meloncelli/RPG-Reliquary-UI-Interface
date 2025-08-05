@@ -1,7 +1,7 @@
 import { generateText } from './geminiClient';
 import { playbookService } from './playbookService';
 import { getPersonaProfile } from './personaService';
-import type { OperationProgress, Playbook, OperationStep } from '../types';
+import type { OperationProgress, Playbook, OperationStep } from "../types/types";
 
 type Subscriber = (progress: OperationProgress) => void;
 
@@ -33,7 +33,6 @@ class OperationService {
         }
         this.isRunning = true;
 
-        const playbook = playbookService.getPlaybooks().find(p => p.id === playbookId);
         if (!playbook) {
             console.error(`Playbook with id ${playbookId} not found.`);
             this.progress = {
@@ -59,29 +58,23 @@ class OperationService {
         this.notify();
 
         for (let i = 0; i < this.progress.steps.length; i++) {
-            const step = this.progress.steps[i];
-            const playbookStep = playbook.steps[i];
 
             // --- Set step to running ---
             step.status = 'running';
             this.notify();
 
             try {
-                const agentProfile = getPersonaProfile(step.agentId);
                 if (!agentProfile) {
                     throw new Error(`Agent profile for ${step.agentId} not found.`);
                 }
                 
-                const systemInstruction = agentProfile.scrollContent || `You are ${agentProfile.name}. Your expertise is: ${agentProfile.capabilities.join(', ')}.`;
                 
-                const result = await generateText(playbookStep.prompt, { systemInstruction });
 
                 step.status = 'complete';
                 step.result = result;
                 this.notify();
 
             } catch (e) {
-                const error = e as Error;
                 step.status = 'error';
                 step.error = error.message;
                 if (this.progress) this.progress.error = `Operation failed at step: ${step.name}`;

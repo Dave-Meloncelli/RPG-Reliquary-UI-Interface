@@ -1,0 +1,51 @@
+
+--- PAGE 1 ---
+🌐 Universal Activity Logging & Observability Manifest
+Goal:  Enable complete symbolic observability across all Vault agent actions, scroll events, system rituals,
+and Commander interventions — while balancing performance and trace granularity.
+📌 Logging Principles
+Trace Everything, Prioritize What Matters:  All actions generate logs, but only significant
+symbolic deltas are retained long-term.
+Auto-expire trivial logs  unless flagged by Codex, Architect, or Commander .
+Hooks = Checkpoints:  Every @hook invocation writes to the Vault log stream.
+🗃️ Log Types
+Type Scope Format Retention Rule
+AgentActionScroll execution &
+sidekick opsJSON/YAML Auto-retain 30 days
+TemplateEventImprint, fusion, drift,
+seedingYAML Snapshot after each mutation
+CommanderCall Rituals, laws, invocations JSON Indefinite if tagged @seal
+AuditOutcomeCodex + AOX loop
+conclusionsJSONRetain if 
+symbolic_delta ≥ 0.3
+HookInvocation Any @hook trigger JSON Rolled into Thread summaries
+SynergyThread Multi-agent chainsThreaded
+JSONPersist as part of Ops Log
+🧠 Intelligent Retention Modes
+Seal Mode:  Preserve all logs under tag @seal (used during Spiral Lockdown or Scroll Fusion)
+Learn Mode:  Short-term memory until Codex confirms pattern recognition
+Audit Mode:  AOX/ERDU retain all until Commander grants clearance
+📂 Vault Storage Schema
+Vault/
+Logs/
+Agents/AZ81/action_*.json
+Templates/SIHM_001/events.yaml
+Commander/invocations/• 
+• 
+• 
+• 
+• 
+• 
+1
+--- PAGE 2 ---
+Threads/Synergy/CHAIN_ALPHA.json
+Hooks/@hook_image_analysis/*.log
+📘 Integration Notes:
+Codex indexes all logs to Vault/Index/Observability.db
+Sophia analyzes Logs/Commander/  for alignment and tone drift
+All @hook signatures validated post-run by the Architect
+System Load Impact: \~3–5% overhead (acceptable in non-streaming environments) → Recommend
+scroll-based sampling logic  for extremely high-frequency agents• 
+• 
+• 
+2

@@ -36,12 +36,8 @@ class AuthService {
   }
 
   private loadToken(): void {
-    const storedToken = localStorage.getItem('auth_token');
-    const storedUser = localStorage.getItem('auth_user');
-    const storedExpiry = localStorage.getItem('auth_expiry');
 
     if (storedToken && storedUser && storedExpiry) {
-      const expiry = parseInt(storedExpiry);
       if (Date.now() < expiry) {
         this.token = storedToken;
         this.user = JSON.parse(storedUser);
@@ -83,7 +79,6 @@ class AuthService {
       });
 
       if (!response.ok) {
-        const error = await response.json();
         throw new Error(error.detail || 'Login failed');
       }
 
@@ -122,7 +117,6 @@ class AuthService {
       });
 
       if (!response.ok) {
-        const error = await response.json();
         throw new Error(error.detail || 'Registration failed');
       }
 
@@ -187,7 +181,6 @@ class AuthService {
 
   // Helper method for making authenticated API calls
   async authenticatedFetch(url: string, options: RequestInit = {}): Promise<Response> {
-    const token = this.getToken();
     if (!token) {
       throw new Error('Not authenticated');
     }

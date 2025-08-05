@@ -619,13 +619,10 @@ Keep under 500 words.`
 
   // Execute workflow
   async executeWorkflow(workflowId: string, input?: any): Promise<N8nWorkflowRun> {
-    const workflow = this.workflows.get(workflowId);
     if (!workflow) {
       throw new Error(`Workflow ${workflowId} not found`);
     }
 
-    const runId = `run-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-    const startTime = new Date();
 
     const run: N8nWorkflowRun = {
       id: runId,
@@ -674,7 +671,6 @@ Keep under 500 words.`
   // Simulate workflow execution
   private async simulateWorkflowExecution(workflow: N8nWorkflow, run: N8nWorkflowRun, input?: any): Promise<void> {
     for (const node of workflow.nodes) {
-      const nodeStartTime = new Date();
       
       const executionData: N8nExecutionData = {
         nodeId: node.id,
@@ -765,14 +761,10 @@ Keep under 500 words.`
     averageExecutionTime: number;
     lastRun?: Date;
   } {
-    const workflow = this.workflows.get(workflowId);
     if (!workflow) {
       throw new Error(`Workflow ${workflowId} not found`);
     }
 
-    const runs = this.getWorkflowHistory(workflowId);
-    const successfulRuns = runs.filter(run => run.status === 'completed').length;
-    const lastRun = runs.length > 0 ? runs[runs.length - 1].startTime : undefined;
 
     return {
       totalRuns: runs.length,
@@ -784,7 +776,6 @@ Keep under 500 words.`
 
   // Update workflow configuration
   updateWorkflow(id: string, updates: Partial<N8nWorkflow>): void {
-    const workflow = this.workflows.get(id);
     if (!workflow) {
       throw new Error(`Workflow ${id} not found`);
     }

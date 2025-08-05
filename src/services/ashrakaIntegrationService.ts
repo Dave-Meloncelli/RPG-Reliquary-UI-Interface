@@ -1,4 +1,4 @@
-import { EventBus } from './eventBus';
+import { eventBus } from './eventBus';
 
 export interface AshrakaState {
   status: 'active' | 'inactive' | 'error';
@@ -45,12 +45,12 @@ export interface AshrakaContinuance {
 }
 
 export class AshrakaIntegrationService {
-  private eventBus: EventBus;
+  private eventBus: any;
   private repoPath: string;
   private isConnected: boolean = false;
   private syncInterval?: NodeJS.Timeout;
 
-  constructor(eventBus: EventBus, repoPath: string = 'C:\\Users\\davem\\ashraka-autonomy') {
+  constructor(eventBus: any, repoPath: string = 'C:\\Users\\davem\\ashraka-autonomy') {
     this.eventBus = eventBus;
     this.repoPath = repoPath;
   }
@@ -61,7 +61,6 @@ export class AshrakaIntegrationService {
   async initialize(): Promise<boolean> {
     try {
       // Check if repository exists and is accessible
-      const fs = await import('fs/promises');
       await fs.access(this.repoPath);
       
       this.isConnected = true;
@@ -92,11 +91,7 @@ export class AshrakaIntegrationService {
     }
 
     try {
-      const fs = await import('fs/promises');
-      const path = await import('path');
       
-      const statePath = path.join(this.repoPath, 'autonomy.json');
-      const stateData = await fs.readFile(statePath, 'utf-8');
       
       return JSON.parse(stateData) as AshrakaState;
     } catch (error) {
@@ -114,11 +109,7 @@ export class AshrakaIntegrationService {
     }
 
     try {
-      const fs = await import('fs/promises');
-      const path = await import('path');
       
-      const statePath = path.join(this.repoPath, 'autonomy.json');
-      const currentState = await this.getState();
       
       if (!currentState) {
         throw new Error('Cannot read current state');
@@ -154,16 +145,12 @@ export class AshrakaIntegrationService {
     }
 
     try {
-      const fs = await import('fs/promises');
-      const path = await import('path');
       
-      const logPath = path.join(this.repoPath, 'ashraka.log');
       const logEntry: AshrakaLogEntry = {
         ...entry,
         timestamp: new Date().toISOString()
       };
 
-      const logLine = JSON.stringify(logEntry) + '\n';
       await fs.appendFile(logPath, logLine);
       
       this.eventBus.emit('ashraka:log_entry_added', {
@@ -187,13 +174,8 @@ export class AshrakaIntegrationService {
     }
 
     try {
-      const fs = await import('fs/promises');
-      const path = await import('path');
       
-      const logPath = path.join(this.repoPath, 'ashraka.log');
-      const logData = await fs.readFile(logPath, 'utf-8');
       
-      const lines = logData.trim().split('\n').filter(line => line.trim());
       const entries = lines
         .map(line => {
           try {
@@ -203,7 +185,7 @@ export class AshrakaIntegrationService {
           }
         })
         .filter((entry): entry is AshrakaLogEntry => entry !== null)
-        .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+        .sort((a, b) => new Date(b.timestamp || Date.now()).getTime() - new Date(a.timestamp || Date.now()).getTime())
         .slice(0, limit);
 
       return entries;
@@ -222,15 +204,11 @@ export class AshrakaIntegrationService {
     }
 
     try {
-      const fs = await import('fs/promises');
-      const path = await import('path');
       
-      const continuancePath = path.join(this.repoPath, 'continuance.md');
       
       // Read existing continuance or create new
       let continuance: AshrakaContinuance;
       try {
-        const continuanceData = await fs.readFile(continuancePath, 'utf-8');
         continuance = JSON.parse(continuanceData);
       } catch {
         continuance = {
@@ -274,13 +252,11 @@ export class AshrakaIntegrationService {
     score: number;
     corrections: string[];
   }> {
-    const state = await this.getState();
     if (!state) {
       return { hasDrift: false, score: 0, corrections: [] };
     }
 
     const corrections: string[] = [];
-    let driftScore = 0;
 
     // Check for emotional conflicts
     if (state.symbolic_state?.emotion?.conflict) {
@@ -302,9 +278,6 @@ export class AshrakaIntegrationService {
 
     // Check for long-awaited responses
     if (state.symbolic_state?.system?.awaiting_response) {
-      const lastUpdate = new Date(state.last_update);
-      const now = new Date();
-      const hoursSinceUpdate = (now.getTime() - lastUpdate.getTime()) / (1000 * 60 * 60);
       
       if (hoursSinceUpdate > 24) {
         driftScore += 25;
@@ -323,7 +296,6 @@ export class AshrakaIntegrationService {
    * Apply drift corrections
    */
   async applyDriftCorrections(): Promise<boolean> {
-    const drift = await this.detectDrift();
     
     if (!drift.hasDrift) {
       return true;
@@ -331,7 +303,6 @@ export class AshrakaIntegrationService {
 
     try {
       // Apply corrections based on drift analysis
-      const state = await this.getState();
       if (!state) return false;
 
       const updates: Partial<AshrakaState> = {
@@ -376,7 +347,6 @@ export class AshrakaIntegrationService {
     this.syncInterval = setInterval(async () => {
       try {
         // Check for drift every 5 minutes
-        const drift = await this.detectDrift();
         if (drift.hasDrift) {
           await this.applyDriftCorrections();
         }
