@@ -1,0 +1,132 @@
+name: Repository Analytics
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly on Sunday
+  workflow_dispatch:  # Manual trigger
+  push:
+    branches: [ main ]
+
+jobs:
+  analytics:
+    name: Generate Analytics Report
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Generate Code Metrics
+      run: |
+        echo "=== CODE METRICS REPORT ===" > analytics-report.md
+        echo "Generated: $(date)" >> analytics-report.md
+        echo "" >> analytics-report.md
+        
+        echo "## File Statistics" >> analytics-report.md
+        echo "- Total TypeScript files: $(find src -name "*.ts" -o -name "*.tsx" | wc -l)" >> analytics-report.md
+        echo "- Total JavaScript files: $(find src -name "*.js" -o -name "*.jsx" | wc -l)" >> analytics-report.md
+        echo "- Total Markdown files: $(find . -name "*.md" | wc -l)" >> analytics-report.md
+        echo "" >> analytics-report.md
+        
+        echo "## Build Analysis" >> analytics-report.md
+        npm run build 2>&1 | tee build-output.txt
+        echo "- Build status: $?" >> analytics-report.md
+        echo "" >> analytics-report.md
+        
+        echo "## TypeScript Analysis" >> analytics-report.md
+        npm run type-check 2>&1 | tee typescript-output.txt
+        echo "- TypeScript errors: $(grep -c 'error TS' typescript-output.txt || echo '0')" >> analytics-report.md
+        echo "" >> analytics-report.md
+        
+        echo "## Linting Analysis" >> analytics-report.md
+        npm run lint 2>&1 | tee lint-output.txt
+        echo "- Linting errors: $(grep -c 'error' lint-output.txt || echo '0')" >> analytics-report.md
+        echo "- Linting warnings: $(grep -c 'warning' lint-output.txt || echo '0')" >> analytics-report.md
+        echo "" >> analytics-report.md
+
+    - name: Generate Performance Report
+      run: |
+        echo "## PERFORMANCE METRICS" >> performance-report.md
+        echo "Generated: $(date)" >> performance-report.md
+        echo "" >> performance-report.md
+        
+        echo "### Bundle Analysis" >> performance-report.md
+        npm run build
+        echo "- Bundle size: $(du -sh dist/ | cut -f1)" >> performance-report.md
+        echo "- Number of chunks: $(find dist/ -name "*.js" | wc -l)" >> performance-report.md
+        echo "" >> performance-report.md
+        
+        echo "### Development Server Performance" >> performance-report.md
+        timeout 30s npm run dev &
+        sleep 10
+        curl -s -o /dev/null -w "Response time: %{time_total}s\n" http://localhost:3000 || echo "Server not responding"
+        echo "" >> performance-report.md
+
+    - name: Generate Development Velocity Report
+      run: |
+        echo "## DEVELOPMENT VELOCITY" >> velocity-report.md
+        echo "Generated: $(date)" >> velocity-report.md
+        echo "" >> velocity-report.md
+        
+        echo "### Recent Activity" >> velocity-report.md
+        echo "- Commits in last 7 days: $(git log --since="7 days ago" --oneline | wc -l)" >> velocity-report.md
+        echo "- Commits in last 30 days: $(git log --since="30 days ago" --oneline | wc -l)" >> velocity-report.md
+        echo "- Files changed in last 7 days: $(git diff --name-only HEAD~7 | wc -l)" >> velocity-report.md
+        echo "" >> velocity-report.md
+        
+        echo "### Repository Health" >> velocity-report.md
+        echo "- Total commits: $(git rev-list --count HEAD)" >> velocity-report.md
+        echo "- Repository age: $(git log --reverse --format=%cd | head -1)" >> velocity-report.md
+        echo "- Active branches: $(git branch -r | wc -l)" >> velocity-report.md
+        echo "" >> velocity-report.md
+
+    - name: Upload Analytics Reports
+      uses: actions/upload-artifact@v4
+      with:
+        name: analytics-reports
+        path: |
+          analytics-report.md
+          performance-report.md
+          velocity-report.md
+        retention-days: 30
+
+    - name: Create Analytics Summary
+      run: |
+        echo "# 📊 Repository Analytics Summary" > analytics-summary.md
+        echo "**Generated**: $(date)" >> analytics-summary.md
+        echo "" >> analytics-summary.md
+        echo "## 📈 Key Metrics" >> analytics-summary.md
+        echo "- **Build Status**: $(if [ $? -eq 0 ]; then echo "✅ Success"; else echo "❌ Failed"; fi)" >> analytics-summary.md
+        echo "- **TypeScript Errors**: $(grep -c 'error TS' typescript-output.txt 2>/dev/null || echo '0')" >> analytics-summary.md
+        echo "- **Linting Issues**: $(grep -c 'error\|warning' lint-output.txt 2>/dev/null || echo '0')" >> analytics-summary.md
+        echo "- **Recent Activity**: $(git log --since="7 days ago" --oneline | wc -l) commits" >> analytics-summary.md
+        echo "" >> analytics-summary.md
+        echo "## 🔗 Full Reports" >> analytics-summary.md
+        echo "- [Analytics Report](analytics-report.md)" >> analytics-summary.md
+        echo "- [Performance Report](performance-report.md)" >> analytics-summary.md
+        echo "- [Velocity Report](velocity-report.md)" >> analytics-summary.md
+
+    - name: Comment on PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const fs = require('fs');
+          const summary = fs.readFileSync('analytics-summary.md', 'utf8');
+          github.rest.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: summary
+          }); 

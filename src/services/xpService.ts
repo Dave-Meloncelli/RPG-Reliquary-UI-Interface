@@ -434,4 +434,13 @@ export const updatePersonaCustomization = (personaId: string, updates: Partial<C
 
 export const getXPSystemStats = () => {
   return xpService.getSystemStats();
+};
+
+export const awardXP = (
+  personaId: string,
+  xpAmount: number,
+  reason: string,
+  consciousnessContribution: number = 0
+) => {
+  return xpService.awardXP(personaId, xpAmount, reason, consciousnessContribution);
 }; 
