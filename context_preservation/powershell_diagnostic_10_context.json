@@ -1,0 +1,20 @@
+{
+  "frame_id": "powershell_diagnostic",
+  "stage": 10,
+  "input_data": {},
+  "parameters": {},
+  "result": {
+    "data": {
+      "message": "PowerShell frame executed successfully",
+      "status": "ok"
+    },
+    "analysis_complete": true,
+    "recommendations_generated": true,
+    "success": true,
+    "summary": "PowerShell diagnostic completed",
+    "context": {
+      "timestamp": "2025-08-08T15:27:38"
+    }
+  },
+  "timestamp": "2025-08-08T15:27:39.032421"
+}

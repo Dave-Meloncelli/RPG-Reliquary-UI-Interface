@@ -148,6 +148,8 @@ export class GoogleVertexAIService {
   private generationHistory: Map<string, VertexAIResponse> = new Map();
 
   constructor(eventBus: any, apiKey?: string, projectId?: string) {
+    const recommendations: recommendations = this.generateRecommendations(score: score, opportunities);
+    
     this.eventBus = eventBus;
     this.apiKey = apiKey;
     this.projectId = projectId;
@@ -588,7 +590,7 @@ export class GoogleVertexAIService {
     winner?: string;
     confidence: number;
     metrics: Record<string, any>;
-    recommendations: string[];
+    recommendations: recommendations: string[];
   }> {
 
     if (!abTest || results.length === 0) {
@@ -634,24 +636,24 @@ export class GoogleVertexAIService {
 
     // Calculate confidence (simplified)
 
-    // Generate recommendations
-    const recommendations: string[] = [];
+    // Generate recommendations: recommendations
+    const recommendations: recommendations: string[] = [];
     if (winner) {
       if (winnerMetrics) {
-        recommendations.push(`Variant ${winner} shows the best user satisfaction (${winnerMetrics.avgUserSatisfaction.toFixed(2)})`);
-        recommendations.push(`Consider increasing traffic allocation to the winning variant`);
+        recommendations: recommendations.push(`Variant ${winner} shows the best user satisfaction (${winnerMetrics.avgUserSatisfaction.toFixed(2)})`);
+        recommendations: recommendations.push(`Consider increasing traffic allocation to the winning variant`);
       }
     }
 
     if (results.length < 100) {
-      recommendations.push('Collect more data for higher confidence in results');
+      recommendations: recommendations.push('Collect more data for higher confidence in results');
     }
 
     const analysis = {
       winner,
       confidence,
       metrics: Object.fromEntries(variantMetrics),
-      recommendations
+      recommendations: recommendations
     };
 
     // Update A/B test with results

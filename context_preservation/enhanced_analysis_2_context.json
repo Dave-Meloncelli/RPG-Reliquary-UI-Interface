@@ -1,0 +1,19 @@
+{
+  "frame_id": "enhanced_analysis",
+  "stage": 2,
+  "input_data": {},
+  "parameters": {
+    "include_security": true,
+    "include_performance": true
+  },
+  "result": {
+    "technical_debt_analyzed": true,
+    "security_issues_found": true,
+    "analysis_complete": true,
+    "report_paths": {
+      "json": "reports\\synthesis_report_20250808_124240.json",
+      "html": "reports\\synthesis_report_20250808_124240.html"
+    }
+  },
+  "timestamp": "2025-08-08T12:42:40.696106"
+}

@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './components/App';
 import ErrorBoundary from './components/ErrorBoundary';
 import { logEnvironmentStatus } from './utils/env-validation';
+import './styles/index.css';
 
 // Validate environment configuration
 logEnvironmentStatus();

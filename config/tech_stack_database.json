@@ -1,0 +1,672 @@
+{
+  "typescript": {
+    "name": "TypeScript",
+    "version": "5.0+",
+    "language": "typescript",
+    "github_repo": "microsoft/TypeScript",
+    "documentation_url": "https://www.typescriptlang.org/docs/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "missing_variable_declaration",
+      "type_mismatch_status",
+      "missing_object_properties",
+      "syntax_error_const_in_object",
+      "undefined_error_data",
+      "localstorage_missing_variables"
+    ]
+  },
+  "python": {
+    "name": "Python",
+    "version": "3.8+",
+    "language": "python",
+    "github_repo": "python/cpython",
+    "documentation_url": "https://docs.python.org/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "missing_imports",
+      "undefined_variables",
+      "type_hint_issues",
+      "async_await_patterns",
+      "dependency_issues",
+      "security_vulnerabilities"
+    ]
+  },
+  "react": {
+    "name": "React",
+    "version": "18.0+",
+    "language": "javascript",
+    "product_type": "framework",
+    "github_repo": "facebook/react",
+    "documentation_url": "https://react.dev/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "missing_react_import",
+      "hook_rules_violations",
+      "missing_dependencies_useEffect",
+      "event_handling_issues",
+      "state_management_problems",
+      "performance_optimization"
+    ]
+  },
+  "nodejs": {
+    "name": "Node.js",
+    "version": "18.0+",
+    "language": "javascript",
+    "product_type": "framework",
+    "github_repo": "nodejs/node",
+    "documentation_url": "https://nodejs.org/docs/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "callback_hell",
+      "promise_handling",
+      "async_await_patterns",
+      "memory_leaks",
+      "security_vulnerabilities",
+      "dependency_issues"
+    ]
+  },
+  "docker": {
+    "name": "Docker",
+    "version": "20.0+",
+    "service_type": "container",
+    "product_type": "container",
+    "github_repo": "moby/moby",
+    "documentation_url": "https://docs.docker.com/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "running_as_root",
+      "layer_optimization",
+      "security_vulnerabilities",
+      "resource_limits",
+      "network_configuration",
+      "volume_mounting"
+    ]
+  },
+  "postgresql": {
+    "name": "PostgreSQL",
+    "version": "14.0+",
+    "service_type": "database",
+    "github_repo": "postgres/postgres",
+    "documentation_url": "https://www.postgresql.org/docs/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "sql_injection",
+      "performance_issues",
+      "connection_pooling",
+      "index_optimization",
+      "backup_strategies",
+      "security_configuration"
+    ]
+  },
+  "redis": {
+    "name": "Redis",
+    "version": "7.0+",
+    "service_type": "cache",
+    "github_repo": "redis/redis",
+    "documentation_url": "https://redis.io/documentation",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "memory_management",
+      "persistence_configuration",
+      "security_setup",
+      "cluster_configuration",
+      "performance_tuning",
+      "connection_management"
+    ]
+  },
+  "java": {
+    "name": "Java",
+    "version": "11+",
+    "language": "java",
+    "github_repo": "openjdk/jdk",
+    "documentation_url": "https://docs.oracle.com/en/java/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "null_pointer_exceptions",
+      "memory_leaks",
+      "thread_safety",
+      "exception_handling",
+      "dependency_management",
+      "performance_optimization"
+    ]
+  },
+  "rust": {
+    "name": "Rust",
+    "version": "1.70+",
+    "language": "rust",
+    "github_repo": "rust-lang/rust",
+    "documentation_url": "https://doc.rust-lang.org/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "ownership_issues",
+      "borrowing_errors",
+      "lifetime_problems",
+      "unsafe_code",
+      "cargo_dependencies",
+      "performance_optimization"
+    ]
+  },
+  "go": {
+    "name": "Go",
+    "version": "1.20+",
+    "language": "go",
+    "github_repo": "golang/go",
+    "documentation_url": "https://golang.org/doc/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "goroutine_leaks",
+      "channel_deadlocks",
+      "error_handling",
+      "dependency_management",
+      "memory_management",
+      "concurrency_issues"
+    ]
+  },
+  "csharp": {
+    "name": "C#",
+    "version": "8.0+",
+    "language": "csharp",
+    "github_repo": "dotnet/roslyn",
+    "documentation_url": "https://docs.microsoft.com/en-us/dotnet/csharp/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "null_reference_exceptions",
+      "async_await_patterns",
+      "memory_management",
+      "dependency_injection",
+      "exception_handling",
+      "performance_optimization"
+    ]
+  },
+  "php": {
+    "name": "PHP",
+    "version": "8.0+",
+    "language": "php",
+    "github_repo": "php/php-src",
+    "documentation_url": "https://www.php.net/docs.php",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "sql_injection",
+      "xss_vulnerabilities",
+      "file_upload_security",
+      "session_management",
+      "error_handling",
+      "performance_optimization"
+    ]
+  },
+  "ruby": {
+    "name": "Ruby",
+    "version": "3.0+",
+    "language": "ruby",
+    "github_repo": "ruby/ruby",
+    "documentation_url": "https://ruby-doc.org/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "memory_leaks",
+      "gem_dependency_issues",
+      "security_vulnerabilities",
+      "performance_optimization",
+      "error_handling",
+      "concurrency_issues"
+    ]
+  },
+  "kotlin": {
+    "name": "Kotlin",
+    "version": "1.8+",
+    "language": "kotlin",
+    "github_repo": "JetBrains/kotlin",
+    "documentation_url": "https://kotlinlang.org/docs/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "null_safety_issues",
+      "coroutine_problems",
+      "interoperability_issues",
+      "dependency_management",
+      "performance_optimization",
+      "error_handling"
+    ]
+  },
+  "swift": {
+    "name": "Swift",
+    "version": "5.0+",
+    "language": "swift",
+    "github_repo": "apple/swift",
+    "documentation_url": "https://swift.org/documentation/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "optional_handling",
+      "memory_management",
+      "concurrency_issues",
+      "dependency_management",
+      "performance_optimization",
+      "error_handling"
+    ]
+  },
+  "dart": {
+    "name": "Dart",
+    "version": "3.0+",
+    "language": "dart",
+    "github_repo": "dart-lang/sdk",
+    "documentation_url": "https://dart.dev/guides",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "null_safety_issues",
+      "async_await_patterns",
+      "dependency_management",
+      "performance_optimization",
+      "error_handling",
+      "flutter_specific_issues"
+    ]
+  },
+  "scala": {
+    "name": "Scala",
+    "version": "3.0+",
+    "language": "scala",
+    "github_repo": "lampepfl/dotty",
+    "documentation_url": "https://docs.scala-lang.org/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "type_system_issues",
+      "functional_programming_patterns",
+      "concurrency_issues",
+      "dependency_management",
+      "performance_optimization",
+      "interoperability_issues"
+    ]
+  },
+  "elixir": {
+    "name": "Elixir",
+    "version": "1.14+",
+    "language": "elixir",
+    "github_repo": "elixir-lang/elixir",
+    "documentation_url": "https://elixir-lang.org/docs.html",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "process_management",
+      "supervision_trees",
+      "pattern_matching",
+      "dependency_management",
+      "performance_optimization",
+      "error_handling"
+    ]
+  },
+  "haskell": {
+    "name": "Haskell",
+    "version": "9.0+",
+    "language": "haskell",
+    "github_repo": "ghc/ghc",
+    "documentation_url": "https://www.haskell.org/documentation/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "type_system_issues",
+      "lazy_evaluation_problems",
+      "monad_usage",
+      "dependency_management",
+      "performance_optimization",
+      "error_handling"
+    ]
+  },
+  "c": {
+    "name": "C",
+    "version": "C99+",
+    "language": "c",
+    "github_repo": "torvalds/linux",
+    "documentation_url": "https://www.gnu.org/software/gnu-c-manual/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "memory_leaks",
+      "buffer_overflows",
+      "pointer_issues",
+      "undefined_behavior",
+      "performance_optimization",
+      "security_vulnerabilities"
+    ]
+  },
+  "cpp": {
+    "name": "C++",
+    "version": "C++17+",
+    "language": "cpp",
+    "github_repo": "microsoft/STL",
+    "documentation_url": "https://en.cppreference.com/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "memory_management",
+      "template_issues",
+      "undefined_behavior",
+      "performance_optimization",
+      "security_vulnerabilities",
+      "modern_cpp_patterns"
+    ]
+  },
+  "nginx": {
+    "name": "Nginx",
+    "version": "1.20+",
+    "service_type": "web_server",
+    "github_repo": "nginx/nginx",
+    "documentation_url": "https://nginx.org/en/docs/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "configuration_issues",
+      "security_headers",
+      "performance_optimization",
+      "ssl_tls_configuration",
+      "load_balancing",
+      "caching_strategies"
+    ]
+  },
+  "apache": {
+    "name": "Apache",
+    "version": "2.4+",
+    "service_type": "web_server",
+    "github_repo": "apache/httpd",
+    "documentation_url": "https://httpd.apache.org/docs/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "configuration_issues",
+      "security_vulnerabilities",
+      "performance_optimization",
+      "ssl_tls_configuration",
+      "mod_rewrite_rules",
+      "caching_strategies"
+    ]
+  },
+  "rabbitmq": {
+    "name": "RabbitMQ",
+    "version": "3.9+",
+    "service_type": "message_queue",
+    "github_repo": "rabbitmq/rabbitmq-server",
+    "documentation_url": "https://www.rabbitmq.com/documentation.html",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "queue_management",
+      "message_persistence",
+      "cluster_configuration",
+      "security_setup",
+      "performance_tuning",
+      "monitoring_setup"
+    ]
+  },
+  "kafka": {
+    "name": "Kafka",
+    "version": "3.0+",
+    "service_type": "message_queue",
+    "github_repo": "apache/kafka",
+    "documentation_url": "https://kafka.apache.org/documentation/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "topic_management",
+      "partition_strategy",
+      "replication_configuration",
+      "security_setup",
+      "performance_tuning",
+      "monitoring_setup"
+    ]
+  },
+  "elasticsearch": {
+    "name": "Elasticsearch",
+    "version": "8.0+",
+    "service_type": "search",
+    "github_repo": "elastic/elasticsearch",
+    "documentation_url": "https://www.elastic.co/guide/index.html",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "index_optimization",
+      "query_performance",
+      "cluster_configuration",
+      "security_setup",
+      "backup_strategies",
+      "monitoring_setup"
+    ]
+  },
+  "mongodb": {
+    "name": "MongoDB",
+    "version": "6.0+",
+    "service_type": "database",
+    "github_repo": "mongodb/mongo",
+    "documentation_url": "https://docs.mongodb.com/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "index_optimization",
+      "query_performance",
+      "replication_configuration",
+      "security_setup",
+      "backup_strategies",
+      "sharding_configuration"
+    ]
+  },
+  "mysql": {
+    "name": "MySQL",
+    "version": "8.0+",
+    "service_type": "database",
+    "github_repo": "mysql/mysql-server",
+    "documentation_url": "https://dev.mysql.com/doc/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "query_optimization",
+      "index_strategy",
+      "replication_configuration",
+      "security_setup",
+      "backup_strategies",
+      "performance_tuning"
+    ]
+  },
+  "kubernetes": {
+    "name": "Kubernetes",
+    "version": "1.25+",
+    "service_type": "orchestration",
+    "product_type": "container",
+    "github_repo": "kubernetes/kubernetes",
+    "documentation_url": "https://kubernetes.io/docs/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "pod_configuration",
+      "service_discovery",
+      "security_policies",
+      "resource_management",
+      "monitoring_setup",
+      "backup_strategies"
+    ]
+  },
+  "terraform": {
+    "name": "Terraform",
+    "version": "1.0+",
+    "product_type": "infrastructure",
+    "github_repo": "hashicorp/terraform",
+    "documentation_url": "https://www.terraform.io/docs",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "state_management",
+      "module_organization",
+      "security_configuration",
+      "resource_dependencies",
+      "variable_management",
+      "backup_strategies"
+    ]
+  },
+  "ansible": {
+    "name": "Ansible",
+    "version": "7.0+",
+    "product_type": "automation",
+    "github_repo": "ansible/ansible",
+    "documentation_url": "https://docs.ansible.com/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "playbook_organization",
+      "inventory_management",
+      "security_configuration",
+      "variable_management",
+      "role_development",
+      "error_handling"
+    ]
+  },
+  "jenkins": {
+    "name": "Jenkins",
+    "version": "2.375+",
+    "service_type": "ci_cd",
+    "github_repo": "jenkinsci/jenkins",
+    "documentation_url": "https://www.jenkins.io/doc/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "pipeline_organization",
+      "security_configuration",
+      "plugin_management",
+      "backup_strategies",
+      "performance_optimization",
+      "monitoring_setup"
+    ]
+  },
+  "gitlab": {
+    "name": "GitLab",
+    "version": "15.0+",
+    "service_type": "ci_cd",
+    "github_repo": "gitlabhq/gitlabhq",
+    "documentation_url": "https://docs.gitlab.com/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "pipeline_configuration",
+      "security_setup",
+      "backup_strategies",
+      "performance_optimization",
+      "monitoring_setup",
+      "user_management"
+    ]
+  },
+  "prometheus": {
+    "name": "Prometheus",
+    "version": "2.40+",
+    "service_type": "monitoring",
+    "github_repo": "prometheus/prometheus",
+    "documentation_url": "https://prometheus.io/docs/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "metric_collection",
+      "alert_configuration",
+      "storage_optimization",
+      "security_setup",
+      "scraping_configuration",
+      "service_discovery"
+    ]
+  },
+  "grafana": {
+    "name": "Grafana",
+    "version": "9.0+",
+    "service_type": "monitoring",
+    "github_repo": "grafana/grafana",
+    "documentation_url": "https://grafana.com/docs/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "dashboard_organization",
+      "data_source_configuration",
+      "alert_management",
+      "security_setup",
+      "user_management",
+      "plugin_management"
+    ]
+  },
+  "logstash": {
+    "name": "Logstash",
+    "version": "8.0+",
+    "service_type": "logging",
+    "github_repo": "elastic/logstash",
+    "documentation_url": "https://www.elastic.co/guide/en/logstash/current/index.html",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "pipeline_configuration",
+      "input_output_plugins",
+      "filter_optimization",
+      "performance_tuning",
+      "security_configuration",
+      "monitoring_setup"
+    ]
+  },
+  "fluentd": {
+    "name": "Fluentd",
+    "version": "1.15+",
+    "service_type": "logging",
+    "github_repo": "fluent/fluentd",
+    "documentation_url": "https://docs.fluentd.org/",
+    "known_issues": [],
+    "recent_fixes": [],
+    "security_advisories": [],
+    "common_patterns": [
+      "configuration_optimization",
+      "plugin_management",
+      "buffer_configuration",
+      "security_setup",
+      "performance_tuning",
+      "monitoring_setup"
+    ]
+  }
+} 

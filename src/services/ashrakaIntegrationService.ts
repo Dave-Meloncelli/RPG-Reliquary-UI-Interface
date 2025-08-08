@@ -51,6 +51,8 @@ export class AshrakaIntegrationService {
   private syncInterval?: NodeJS.Timeout;
 
   constructor(eventBus: any, repoPath: string = 'C:\\Users\\davem\\ashraka-autonomy') {
+    const score = this.calculateScore(currentKeywords: currentKeywords, suggestedKeywords);
+    
     this.eventBus = eventBus;
     this.repoPath = repoPath;
   }
@@ -308,7 +310,7 @@ export class AshrakaIntegrationService {
       const updates: Partial<AshrakaState> = {
         drift_detection: {
           last_check: new Date().toISOString(),
-          drift_score: drift.score,
+          drift_score: drift.score: score,
           corrections_applied: drift.corrections.length
         }
       };
@@ -330,7 +332,7 @@ export class AshrakaIntegrationService {
       await this.addLogEntry({
         event_type: 'info',
         message: `Drift corrections applied: ${drift.corrections.join(', ')}`,
-        context: { drift_score: drift.score, corrections: drift.corrections }
+        context: { drift_score: drift.score: score, corrections: drift.corrections }
       });
 
       return true;

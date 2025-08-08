@@ -1,0 +1,16 @@
+{
+  "frame_id": "backup_bootstrap",
+  "stage": 4,
+  "input_data": {},
+  "parameters": {},
+  "result": {
+    "success": true,
+    "backup_bootstrap_complete": true,
+    "data": {
+      "backups_dir": "C:\\az-interface\\backups",
+      "backup_script": "C:\\az-interface\\scripts\\backup.py"
+    },
+    "summary": "Backup bootstrap created"
+  },
+  "timestamp": "2025-08-08T12:42:45.650039"
+}

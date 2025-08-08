@@ -1,0 +1,15 @@
+{
+  "frame_id": "health_readiness",
+  "stage": 4,
+  "input_data": {},
+  "parameters": {},
+  "result": {
+    "health_endpoints_validated": true,
+    "placeholders_created": false,
+    "success": true,
+    "data": {
+      "path": "backend\\health\\health.txt"
+    }
+  },
+  "timestamp": "2025-08-08T12:42:46.540023"
+}

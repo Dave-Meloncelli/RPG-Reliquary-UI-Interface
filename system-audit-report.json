@@ -1,0 +1,289 @@
+{
+  "timestamp": "2025-08-08T07:27:37.946Z",
+  "summary": {
+    "totalFiles": 9,
+    "templates": 0,
+    "endpoints": 0,
+    "tools": 0,
+    "documentation": 1,
+    "connections": 5,
+    "dependencies": 0,
+    "missing": 0,
+    "recommendations": 9
+  },
+  "details": {
+    "files": {
+      "app.log": {
+        "path": "app.log",
+        "name": "app.log",
+        "extension": ".log",
+        "size": 1087,
+        "modified": "2025-08-08T04:04:31.884Z",
+        "category": "General",
+        "description": "test/liveness \\\"HTTP/1.1 200 OK\\\"\", \"component\": \"httpx\", \"requestId\": null}",
+        "dependencies": [],
+        "connections": [
+          "API: /liveness",
+          "API: /readiness"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\.package-lock.json": {
+        "path": "node_modules\\.package-lock.json",
+        "name": ".package-lock.json",
+        "extension": ".json",
+        "size": 125,
+        "modified": "2025-08-08T04:49:15.860Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "package-lock.json": {
+        "path": "package-lock.json",
+        "name": "package-lock.json",
+        "extension": ".json",
+        "size": 182,
+        "modified": "2025-08-08T04:49:15.860Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "package.json": {
+        "path": "package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 189,
+        "modified": "2025-08-08T03:56:16.606Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [
+          "node scripts/ci-gate.js",
+          "node scripts/remediation.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "examples\\recursiveABTestingExample.ts": {
+        "path": "examples\\recursiveABTestingExample.ts",
+        "name": "recursiveABTestingExample.ts",
+        "extension": ".ts",
+        "size": 10065,
+        "modified": "2025-08-08T03:20:11.819Z",
+        "category": "General",
+        "description": "Define a test problem",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "services\\recursiveABTestingService.ts": {
+        "path": "services\\recursiveABTestingService.ts",
+        "name": "recursiveABTestingService.ts",
+        "extension": ".ts",
+        "size": 16420,
+        "modified": "2025-08-08T03:20:12.041Z",
+        "category": "Service",
+        "description": "Private helper methods",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "types\\recursiveABTesting.ts": {
+        "path": "types\\recursiveABTesting.ts",
+        "name": "recursiveABTesting.ts",
+        "extension": ".ts",
+        "size": 6662,
+        "modified": "2025-08-08T03:20:12.192Z",
+        "category": "General",
+        "description": "0-100",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "README.md": {
+        "path": "README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 26758,
+        "modified": "2025-08-08T03:20:11.701Z",
+        "category": "General",
+        "description": "img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "vite.config.ts": {
+        "path": "vite.config.ts",
+        "name": "vite.config.ts",
+        "extension": ".ts",
+        "size": 2001,
+        "modified": "2025-08-08T03:20:12.200Z",
+        "category": "Configuration",
+        "description": "localhost:8000',",
+        "dependencies": [],
+        "connections": [
+          "API: /api"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      }
+    },
+    "connections": {
+      "API: /liveness": [
+        "app.log"
+      ],
+      "API: /readiness": [
+        "app.log"
+      ],
+      "node scripts/ci-gate.js": [
+        "package.json"
+      ],
+      "node scripts/remediation.js": [
+        "package.json"
+      ],
+      "API: /api": [
+        "vite.config.ts"
+      ]
+    },
+    "dependencies": {},
+    "templates": {},
+    "endpoints": {},
+    "tools": {},
+    "documentation": {
+      "README.md": {
+        "path": "README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 26758,
+        "modified": "2025-08-08T03:20:11.701Z",
+        "category": "General",
+        "description": "img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      }
+    },
+    "missing": {},
+    "recommendations": [
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\.package-lock.json",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "package-lock.json",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "examples\\recursiveABTestingExample.ts",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "services\\recursiveABTestingService.ts",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "types\\recursiveABTesting.ts",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "README.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\.package-lock.json",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "package-lock.json",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "package.json",
+        "message": "File lacks description - add documentation"
+      }
+    ]
+  },
+  "knowledgeHubStatus": {
+    "exists": true,
+    "completeness": "100.00",
+    "missingItems": {},
+    "recommendations": [
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\.package-lock.json",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "package-lock.json",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "examples\\recursiveABTestingExample.ts",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "services\\recursiveABTestingService.ts",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "types\\recursiveABTesting.ts",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "README.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\.package-lock.json",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "package-lock.json",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "package.json",
+        "message": "File lacks description - add documentation"
+      }
+    ]
+  }
+}

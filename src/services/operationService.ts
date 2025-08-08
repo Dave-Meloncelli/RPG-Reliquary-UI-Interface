@@ -36,7 +36,6 @@ class OperationService {
         if (!playbook) {
             console.error(`Playbook with id ${playbookId} not found.`);
             this.progress = {
-                steps: [],
                 isComplete: true,
                 error: `Playbook not found: ${playbookId}`
             };
@@ -52,12 +51,11 @@ class OperationService {
         }));
 
         this.progress = {
-            steps: initialSteps,
             isComplete: false,
         };
         this.notify();
 
-        for (let i = 0; i < this.progress.steps.length; i++) {
+        for (let i = 0; i < initialSteps.length; i++) {
 
             // --- Set step to running ---
             step.status = 'running';
@@ -68,7 +66,7 @@ class OperationService {
                     throw new Error(`Agent profile for ${step.agentId} not found.`);
                 }
                 
-                
+                // Execute the step logic here
 
                 step.status = 'complete';
                 step.result = result;
@@ -89,6 +87,11 @@ class OperationService {
             this.notify();
         }
         this.isRunning = false;
+    }
+
+    private async executeStep(step: OperationStep, agentProfile: any): Promise<any> {
+        // Placeholder for step execution logic
+        return { success: true, message: `Step ${step.name} completed` };
     }
 }
 

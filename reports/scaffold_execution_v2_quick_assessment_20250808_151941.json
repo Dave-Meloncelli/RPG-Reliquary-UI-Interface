@@ -1,0 +1,1391 @@
+{
+  "metadata": {
+    "scaffold_id": "quick_assessment",
+    "scaffold_name": "Quick Assessment",
+    "start_time": "2025-08-08T15:19:39.432881",
+    "end_time": "2025-08-08T15:19:41.375807",
+    "version": "2.0",
+    "framework_version": "v2"
+  },
+  "execution_summary": {
+    "total_stages": 9,
+    "successful_stages": 9,
+    "failed_stages": 1,
+    "total_frames_executed": 7,
+    "total_successful_frames": 7
+  },
+  "context_preservation": {
+    "context_loaded": true,
+    "context_items": 5,
+    "context_preserved": true
+  },
+  "external_command_analysis": {
+    "failure_summary": {
+      "status": "no_failures",
+      "message": "All commands executed successfully"
+    },
+    "command_history": []
+  },
+  "stage_results": [
+    {
+      "stage": 1,
+      "stage_name": "SCOPE",
+      "result": {
+        "stage": 1,
+        "stage_name": "SCOPE",
+        "frames_executed": 1,
+        "successful_frames": 1,
+        "failed_frames": 0,
+        "results": [
+          {
+            "frame_id": "synthesis_analysis",
+            "frame_name": "Synthesis Analysis",
+            "success": true,
+            "result": {
+              "synthesis_complete": true,
+              "synergies_found": true,
+              "risks_identified": false,
+              "opportunities_found": true,
+              "analysis_successful": true,
+              "timestamp": "2025-08-08T15:19:39.546267"
+            }
+          }
+        ],
+        "stage_failed": false
+      },
+      "timestamp": "2025-08-08T15:19:39.547454"
+    },
+    {
+      "stage": 2,
+      "stage_name": "IDENTIFY_ANALYZE",
+      "result": {
+        "stage": 2,
+        "stage_name": "IDENTIFY_ANALYZE",
+        "frames_executed": 1,
+        "successful_frames": 1,
+        "failed_frames": 0,
+        "results": [
+          {
+            "frame_id": "system_audit",
+            "frame_name": "System Audit",
+            "success": true,
+            "result": {
+              "success": true,
+              "audit_complete": true,
+              "hub_validated": true,
+              "summary": {
+                "totalFiles": 9,
+                "templates": 0,
+                "endpoints": 0,
+                "tools": 0,
+                "documentation": 0,
+                "connections": 5,
+                "dependencies": 0,
+                "missing": 0,
+                "recommendations": 9
+              },
+              "context": {
+                "input_data": {},
+                "parameters": {
+                  "recursive": true,
+                  "validate_hub": true
+                },
+                "previous_results": {
+                  "stage_1": {
+                    "stage": 1,
+                    "stage_name": "SCOPE",
+                    "frames_executed": 1,
+                    "successful_frames": 1,
+                    "failed_frames": 0,
+                    "results": [
+                      {
+                        "frame_id": "synthesis_analysis",
+                        "frame_name": "Synthesis Analysis",
+                        "success": true,
+                        "result": {
+                          "synthesis_complete": true,
+                          "synergies_found": true,
+                          "risks_identified": false,
+                          "opportunities_found": true,
+                          "analysis_successful": true,
+                          "timestamp": "2025-08-08T15:19:39.546267"
+                        }
+                      }
+                    ],
+                    "stage_failed": false
+                  }
+                },
+                "entry_point": "performFullAudit"
+              }
+            }
+          }
+        ],
+        "stage_failed": false
+      },
+      "timestamp": "2025-08-08T15:19:40.259737"
+    },
+    {
+      "stage": 3,
+      "stage_name": "PLAN",
+      "result": {
+        "status": "no_frames",
+        "message": "No frames defined for stage 3"
+      },
+      "timestamp": "2025-08-08T15:19:40.260012"
+    },
+    {
+      "stage": 4,
+      "stage_name": "IMPLEMENT",
+      "result": {
+        "status": "no_frames",
+        "message": "No frames defined for stage 4"
+      },
+      "timestamp": "2025-08-08T15:19:40.260290"
+    },
+    {
+      "stage": 5,
+      "stage_name": "SUCCESS_CONTINUE",
+      "result": {
+        "status": "no_frames",
+        "message": "No frames defined for stage 5"
+      },
+      "timestamp": "2025-08-08T15:19:40.260573"
+    },
+    {
+      "stage": 6,
+      "stage_name": "FINAL_AUDIT",
+      "result": {
+        "stage": 6,
+        "stage_name": "FINAL_AUDIT",
+        "frames_executed": 1,
+        "successful_frames": 1,
+        "failed_frames": 0,
+        "results": [
+          {
+            "frame_id": "synthesis_analysis",
+            "frame_name": "Synthesis Analysis",
+            "success": true,
+            "result": {
+              "synthesis_complete": true,
+              "synergies_found": true,
+              "risks_identified": false,
+              "opportunities_found": true,
+              "analysis_successful": true,
+              "timestamp": "2025-08-08T15:19:40.268548"
+            }
+          }
+        ],
+        "stage_failed": false
+      },
+      "timestamp": "2025-08-08T15:19:40.270259"
+    },
+    {
+      "stage": 7,
+      "stage_name": "META_AUDIT",
+      "result": {
+        "status": "meta_audit_complete",
+        "meta_analysis": {
+          "framework_performance": {
+            "total_stages": 9,
+            "successful_stages": 6,
+            "failed_stages": 0,
+            "success_rate": 100.0
+          },
+          "context_preservation": {
+            "context_loaded": true,
+            "context_items": 5,
+            "context_merge_count": 0
+          },
+          "frame_analysis": {
+            "total_frames_executed": 3,
+            "successful_frames": 3,
+            "failed_frames": 0
+          },
+          "optimization_recommendations": [],
+          "context_loss_analysis": {
+            "potential_loss_points": [],
+            "preservation_effectiveness": 100.0,
+            "recommendations": [
+              "Context preservation working effectively"
+            ]
+          }
+        },
+        "report_path": "reports/meta_analysis_quick_assessment_20250808_151940.json"
+      },
+      "timestamp": "2025-08-08T15:19:40.304171"
+    },
+    {
+      "stage": 8,
+      "stage_name": "APPROVAL",
+      "result": {
+        "stage": 8,
+        "stage_name": "APPROVAL",
+        "frames_executed": 1,
+        "successful_frames": 1,
+        "failed_frames": 0,
+        "results": [
+          {
+            "frame_id": "human_approval",
+            "frame_name": "Human Approval Gate",
+            "success": true,
+            "result": {
+              "success": true,
+              "remediation_generated": true,
+              "plan_path": "reports\\remediation_plan_1754637580416.json"
+            }
+          }
+        ],
+        "stage_failed": false
+      },
+      "timestamp": "2025-08-08T15:19:40.434420"
+    },
+    {
+      "stage": 9,
+      "stage_name": "UPDATE_REGISTERS",
+      "result": {
+        "stage": 9,
+        "stage_name": "UPDATE_REGISTERS",
+        "frames_executed": 1,
+        "successful_frames": 1,
+        "failed_frames": 0,
+        "results": [
+          {
+            "frame_id": "knowledge_hub_update",
+            "frame_name": "Knowledge Hub Update",
+            "success": true,
+            "result": {
+              "success": true,
+              "hub_updated": true,
+              "report_generated": true,
+              "summary": {
+                "newFiles": 310,
+                "modifiedFiles": 41,
+                "newTemplates": 0,
+                "newEndpoints": 0,
+                "newTools": 0,
+                "newScripts": 0,
+                "newDocumentation": 0
+              },
+              "context": {
+                "input_data": {},
+                "parameters": {
+                  "auto_update": true,
+                  "generate_report": true
+                },
+                "previous_results": {
+                  "stage_1": {
+                    "stage": 1,
+                    "stage_name": "SCOPE",
+                    "frames_executed": 1,
+                    "successful_frames": 1,
+                    "failed_frames": 0,
+                    "results": [
+                      {
+                        "frame_id": "synthesis_analysis",
+                        "frame_name": "Synthesis Analysis",
+                        "success": true,
+                        "result": {
+                          "synthesis_complete": true,
+                          "synergies_found": true,
+                          "risks_identified": false,
+                          "opportunities_found": true,
+                          "analysis_successful": true,
+                          "timestamp": "2025-08-08T15:19:39.546267"
+                        }
+                      }
+                    ],
+                    "stage_failed": false
+                  },
+                  "stage_2": {
+                    "stage": 2,
+                    "stage_name": "IDENTIFY_ANALYZE",
+                    "frames_executed": 1,
+                    "successful_frames": 1,
+                    "failed_frames": 0,
+                    "results": [
+                      {
+                        "frame_id": "system_audit",
+                        "frame_name": "System Audit",
+                        "success": true,
+                        "result": {
+                          "success": true,
+                          "audit_complete": true,
+                          "hub_validated": true,
+                          "summary": {
+                            "totalFiles": 9,
+                            "templates": 0,
+                            "endpoints": 0,
+                            "tools": 0,
+                            "documentation": 0,
+                            "connections": 5,
+                            "dependencies": 0,
+                            "missing": 0,
+                            "recommendations": 9
+                          },
+                          "context": {
+                            "input_data": {},
+                            "parameters": {
+                              "recursive": true,
+                              "validate_hub": true
+                            },
+                            "previous_results": {
+                              "stage_1": {
+                                "stage": 1,
+                                "stage_name": "SCOPE",
+                                "frames_executed": 1,
+                                "successful_frames": 1,
+                                "failed_frames": 0,
+                                "results": [
+                                  {
+                                    "frame_id": "synthesis_analysis",
+                                    "frame_name": "Synthesis Analysis",
+                                    "success": true,
+                                    "result": {
+                                      "synthesis_complete": true,
+                                      "synergies_found": true,
+                                      "risks_identified": false,
+                                      "opportunities_found": true,
+                                      "analysis_successful": true,
+                                      "timestamp": "2025-08-08T15:19:39.546267"
+                                    }
+                                  }
+                                ],
+                                "stage_failed": false
+                              }
+                            },
+                            "entry_point": "performFullAudit"
+                          }
+                        }
+                      }
+                    ],
+                    "stage_failed": false
+                  },
+                  "stage_3": {
+                    "status": "no_frames",
+                    "message": "No frames defined for stage 3"
+                  },
+                  "stage_4": {
+                    "status": "no_frames",
+                    "message": "No frames defined for stage 4"
+                  },
+                  "stage_5": {
+                    "status": "no_frames",
+                    "message": "No frames defined for stage 5"
+                  },
+                  "stage_6": {
+                    "stage": 6,
+                    "stage_name": "FINAL_AUDIT",
+                    "frames_executed": 1,
+                    "successful_frames": 1,
+                    "failed_frames": 0,
+                    "results": [
+                      {
+                        "frame_id": "synthesis_analysis",
+                        "frame_name": "Synthesis Analysis",
+                        "success": true,
+                        "result": {
+                          "synthesis_complete": true,
+                          "synergies_found": true,
+                          "risks_identified": false,
+                          "opportunities_found": true,
+                          "analysis_successful": true,
+                          "timestamp": "2025-08-08T15:19:40.268548"
+                        }
+                      }
+                    ],
+                    "stage_failed": false
+                  },
+                  "stage_7": {
+                    "stage": 7,
+                    "stage_name": "META_AUDIT",
+                    "frames_executed": 1,
+                    "successful_frames": 1,
+                    "failed_frames": 0,
+                    "results": [
+                      {
+                        "frame_id": "meta_analysis",
+                        "frame_name": "Meta-Analysis",
+                        "success": true,
+                        "result": {
+                          "framework_optimized": true,
+                          "context_preserved": true,
+                          "framework_performance": {
+                            "execution_efficiency": 85,
+                            "resource_utilization": "optimal",
+                            "execution_time": "within_limits",
+                            "success_rate": 90,
+                            "bottlenecks": [],
+                            "optimization_opportunities": [],
+                            "total_reports": 140,
+                            "recent_executions": 10
+                          },
+                          "context_analysis": {
+                            "preservation_rate": 100,
+                            "context_loss_points": [],
+                            "merge_effectiveness": "high",
+                            "recommendations": [],
+                            "preserved_contexts": 23,
+                            "context_utilization": "active"
+                          },
+                          "recommendations": [
+                            "Consider implementing parallel frame execution for independent frames",
+                            "Add frame dependency analysis to optimize execution order",
+                            "Implement adaptive retry strategies based on failure patterns",
+                            "Add real-time monitoring and alerting for framework execution",
+                            "Consider implementing frame caching for frequently used frames",
+                            "Add performance profiling for individual frame execution times"
+                          ],
+                          "timestamp": "2025-08-08T15:19:40.298314"
+                        }
+                      }
+                    ],
+                    "stage_failed": false
+                  },
+                  "stage_8": {
+                    "stage": 8,
+                    "stage_name": "APPROVAL",
+                    "frames_executed": 1,
+                    "successful_frames": 1,
+                    "failed_frames": 0,
+                    "results": [
+                      {
+                        "frame_id": "human_approval",
+                        "frame_name": "Human Approval Gate",
+                        "success": true,
+                        "result": {
+                          "success": true,
+                          "remediation_generated": true,
+                          "plan_path": "reports\\remediation_plan_1754637580416.json"
+                        }
+                      }
+                    ],
+                    "stage_failed": false
+                  }
+                },
+                "entry_point": "updateHub"
+              }
+            }
+          }
+        ],
+        "stage_failed": false
+      },
+      "timestamp": "2025-08-08T15:19:40.742789"
+    },
+    {
+      "stage": 10,
+      "stage_name": "PUSH_GITHUB",
+      "result": {
+        "stage": 10,
+        "stage_name": "PUSH_GITHUB",
+        "frames_executed": 2,
+        "successful_frames": 2,
+        "failed_frames": 0,
+        "results": [
+          {
+            "frame_id": "external_failure_diagnostic",
+            "frame_name": "External Failure Diagnostic",
+            "success": true,
+            "result": {
+              "success": true,
+              "analysis_complete": true,
+              "recommendations_generated": true,
+              "data": {
+                "status": "no_failures",
+                "message": "No external failures detected",
+                "recommendations": []
+              },
+              "summary": "No external command failures found",
+              "context": {
+                "failures_analyzed": 0,
+                "recommendations_generated": 0
+              }
+            }
+          },
+          {
+            "frame_id": "powershell_diagnostic",
+            "frame_name": "PowerShell Diagnostic",
+            "success": true,
+            "result": {
+              "data": {
+                "message": "PowerShell frame executed successfully",
+                "status": "ok"
+              },
+              "analysis_complete": true,
+              "recommendations_generated": true,
+              "success": true,
+              "summary": "PowerShell diagnostic completed",
+              "context": {
+                "timestamp": "2025-08-08T15:19:41"
+              }
+            }
+          }
+        ],
+        "stage_failed": false
+      },
+      "timestamp": "2025-08-08T15:19:41.361831"
+    }
+  ],
+  "frame_execution_history": [
+    {
+      "frame_id": "synthesis_analysis",
+      "stage": 1,
+      "success": true,
+      "timestamp": "2025-08-08T15:19:39.547358",
+      "result": {
+        "synthesis_complete": true,
+        "synergies_found": true,
+        "risks_identified": false,
+        "opportunities_found": true,
+        "analysis_successful": true,
+        "timestamp": "2025-08-08T15:19:39.546267"
+      }
+    },
+    {
+      "frame_id": "system_audit",
+      "stage": 2,
+      "success": true,
+      "timestamp": "2025-08-08T15:19:40.259646",
+      "result": {
+        "success": true,
+        "audit_complete": true,
+        "hub_validated": true,
+        "summary": {
+          "totalFiles": 9,
+          "templates": 0,
+          "endpoints": 0,
+          "tools": 0,
+          "documentation": 0,
+          "connections": 5,
+          "dependencies": 0,
+          "missing": 0,
+          "recommendations": 9
+        },
+        "context": {
+          "input_data": {},
+          "parameters": {
+            "recursive": true,
+            "validate_hub": true
+          },
+          "previous_results": {
+            "stage_1": {
+              "stage": 1,
+              "stage_name": "SCOPE",
+              "frames_executed": 1,
+              "successful_frames": 1,
+              "failed_frames": 0,
+              "results": [
+                {
+                  "frame_id": "synthesis_analysis",
+                  "frame_name": "Synthesis Analysis",
+                  "success": true,
+                  "result": {
+                    "synthesis_complete": true,
+                    "synergies_found": true,
+                    "risks_identified": false,
+                    "opportunities_found": true,
+                    "analysis_successful": true,
+                    "timestamp": "2025-08-08T15:19:39.546267"
+                  }
+                }
+              ],
+              "stage_failed": false
+            }
+          },
+          "entry_point": "performFullAudit"
+        }
+      }
+    },
+    {
+      "frame_id": "synthesis_analysis",
+      "stage": 6,
+      "success": true,
+      "timestamp": "2025-08-08T15:19:40.270030",
+      "result": {
+        "synthesis_complete": true,
+        "synergies_found": true,
+        "risks_identified": false,
+        "opportunities_found": true,
+        "analysis_successful": true,
+        "timestamp": "2025-08-08T15:19:40.268548"
+      }
+    },
+    {
+      "frame_id": "meta_analysis",
+      "stage": 7,
+      "success": true,
+      "timestamp": "2025-08-08T15:19:40.301978",
+      "result": {
+        "framework_optimized": true,
+        "context_preserved": true,
+        "framework_performance": {
+          "execution_efficiency": 85.0,
+          "resource_utilization": "optimal",
+          "execution_time": "within_limits",
+          "success_rate": 90.0,
+          "bottlenecks": [],
+          "optimization_opportunities": [],
+          "total_reports": 140,
+          "recent_executions": 10
+        },
+        "context_analysis": {
+          "preservation_rate": 100.0,
+          "context_loss_points": [],
+          "merge_effectiveness": "high",
+          "recommendations": [],
+          "preserved_contexts": 23,
+          "context_utilization": "active"
+        },
+        "recommendations": [
+          "Consider implementing parallel frame execution for independent frames",
+          "Add frame dependency analysis to optimize execution order",
+          "Implement adaptive retry strategies based on failure patterns",
+          "Add real-time monitoring and alerting for framework execution",
+          "Consider implementing frame caching for frequently used frames",
+          "Add performance profiling for individual frame execution times"
+        ],
+        "timestamp": "2025-08-08T15:19:40.298314"
+      }
+    },
+    {
+      "frame_id": "human_approval",
+      "stage": 8,
+      "success": true,
+      "timestamp": "2025-08-08T15:19:40.434305",
+      "result": {
+        "success": true,
+        "remediation_generated": true,
+        "plan_path": "reports\\remediation_plan_1754637580416.json"
+      }
+    },
+    {
+      "frame_id": "knowledge_hub_update",
+      "stage": 9,
+      "success": true,
+      "timestamp": "2025-08-08T15:19:40.742680",
+      "result": {
+        "success": true,
+        "hub_updated": true,
+        "report_generated": true,
+        "summary": {
+          "newFiles": 310,
+          "modifiedFiles": 41,
+          "newTemplates": 0,
+          "newEndpoints": 0,
+          "newTools": 0,
+          "newScripts": 0,
+          "newDocumentation": 0
+        },
+        "context": {
+          "input_data": {},
+          "parameters": {
+            "auto_update": true,
+            "generate_report": true
+          },
+          "previous_results": {
+            "stage_1": {
+              "stage": 1,
+              "stage_name": "SCOPE",
+              "frames_executed": 1,
+              "successful_frames": 1,
+              "failed_frames": 0,
+              "results": [
+                {
+                  "frame_id": "synthesis_analysis",
+                  "frame_name": "Synthesis Analysis",
+                  "success": true,
+                  "result": {
+                    "synthesis_complete": true,
+                    "synergies_found": true,
+                    "risks_identified": false,
+                    "opportunities_found": true,
+                    "analysis_successful": true,
+                    "timestamp": "2025-08-08T15:19:39.546267"
+                  }
+                }
+              ],
+              "stage_failed": false
+            },
+            "stage_2": {
+              "stage": 2,
+              "stage_name": "IDENTIFY_ANALYZE",
+              "frames_executed": 1,
+              "successful_frames": 1,
+              "failed_frames": 0,
+              "results": [
+                {
+                  "frame_id": "system_audit",
+                  "frame_name": "System Audit",
+                  "success": true,
+                  "result": {
+                    "success": true,
+                    "audit_complete": true,
+                    "hub_validated": true,
+                    "summary": {
+                      "totalFiles": 9,
+                      "templates": 0,
+                      "endpoints": 0,
+                      "tools": 0,
+                      "documentation": 0,
+                      "connections": 5,
+                      "dependencies": 0,
+                      "missing": 0,
+                      "recommendations": 9
+                    },
+                    "context": {
+                      "input_data": {},
+                      "parameters": {
+                        "recursive": true,
+                        "validate_hub": true
+                      },
+                      "previous_results": {
+                        "stage_1": {
+                          "stage": 1,
+                          "stage_name": "SCOPE",
+                          "frames_executed": 1,
+                          "successful_frames": 1,
+                          "failed_frames": 0,
+                          "results": [
+                            {
+                              "frame_id": "synthesis_analysis",
+                              "frame_name": "Synthesis Analysis",
+                              "success": true,
+                              "result": {
+                                "synthesis_complete": true,
+                                "synergies_found": true,
+                                "risks_identified": false,
+                                "opportunities_found": true,
+                                "analysis_successful": true,
+                                "timestamp": "2025-08-08T15:19:39.546267"
+                              }
+                            }
+                          ],
+                          "stage_failed": false
+                        }
+                      },
+                      "entry_point": "performFullAudit"
+                    }
+                  }
+                }
+              ],
+              "stage_failed": false
+            },
+            "stage_3": {
+              "status": "no_frames",
+              "message": "No frames defined for stage 3"
+            },
+            "stage_4": {
+              "status": "no_frames",
+              "message": "No frames defined for stage 4"
+            },
+            "stage_5": {
+              "status": "no_frames",
+              "message": "No frames defined for stage 5"
+            },
+            "stage_6": {
+              "stage": 6,
+              "stage_name": "FINAL_AUDIT",
+              "frames_executed": 1,
+              "successful_frames": 1,
+              "failed_frames": 0,
+              "results": [
+                {
+                  "frame_id": "synthesis_analysis",
+                  "frame_name": "Synthesis Analysis",
+                  "success": true,
+                  "result": {
+                    "synthesis_complete": true,
+                    "synergies_found": true,
+                    "risks_identified": false,
+                    "opportunities_found": true,
+                    "analysis_successful": true,
+                    "timestamp": "2025-08-08T15:19:40.268548"
+                  }
+                }
+              ],
+              "stage_failed": false
+            },
+            "stage_7": {
+              "stage": 7,
+              "stage_name": "META_AUDIT",
+              "frames_executed": 1,
+              "successful_frames": 1,
+              "failed_frames": 0,
+              "results": [
+                {
+                  "frame_id": "meta_analysis",
+                  "frame_name": "Meta-Analysis",
+                  "success": true,
+                  "result": {
+                    "framework_optimized": true,
+                    "context_preserved": true,
+                    "framework_performance": {
+                      "execution_efficiency": 85,
+                      "resource_utilization": "optimal",
+                      "execution_time": "within_limits",
+                      "success_rate": 90,
+                      "bottlenecks": [],
+                      "optimization_opportunities": [],
+                      "total_reports": 140,
+                      "recent_executions": 10
+                    },
+                    "context_analysis": {
+                      "preservation_rate": 100,
+                      "context_loss_points": [],
+                      "merge_effectiveness": "high",
+                      "recommendations": [],
+                      "preserved_contexts": 23,
+                      "context_utilization": "active"
+                    },
+                    "recommendations": [
+                      "Consider implementing parallel frame execution for independent frames",
+                      "Add frame dependency analysis to optimize execution order",
+                      "Implement adaptive retry strategies based on failure patterns",
+                      "Add real-time monitoring and alerting for framework execution",
+                      "Consider implementing frame caching for frequently used frames",
+                      "Add performance profiling for individual frame execution times"
+                    ],
+                    "timestamp": "2025-08-08T15:19:40.298314"
+                  }
+                }
+              ],
+              "stage_failed": false
+            },
+            "stage_8": {
+              "stage": 8,
+              "stage_name": "APPROVAL",
+              "frames_executed": 1,
+              "successful_frames": 1,
+              "failed_frames": 0,
+              "results": [
+                {
+                  "frame_id": "human_approval",
+                  "frame_name": "Human Approval Gate",
+                  "success": true,
+                  "result": {
+                    "success": true,
+                    "remediation_generated": true,
+                    "plan_path": "reports\\remediation_plan_1754637580416.json"
+                  }
+                }
+              ],
+              "stage_failed": false
+            }
+          },
+          "entry_point": "updateHub"
+        }
+      }
+    },
+    {
+      "frame_id": "external_failure_diagnostic",
+      "stage": 10,
+      "success": true,
+      "timestamp": "2025-08-08T15:19:40.845243",
+      "result": {
+        "success": true,
+        "analysis_complete": true,
+        "recommendations_generated": true,
+        "data": {
+          "status": "no_failures",
+          "message": "No external failures detected",
+          "recommendations": []
+        },
+        "summary": "No external command failures found",
+        "context": {
+          "failures_analyzed": 0,
+          "recommendations_generated": 0
+        }
+      }
+    },
+    {
+      "frame_id": "powershell_diagnostic",
+      "stage": 10,
+      "success": true,
+      "timestamp": "2025-08-08T15:19:41.361702",
+      "result": {
+        "data": {
+          "message": "PowerShell frame executed successfully",
+          "status": "ok"
+        },
+        "analysis_complete": true,
+        "recommendations_generated": true,
+        "success": true,
+        "summary": "PowerShell diagnostic completed",
+        "context": {
+          "timestamp": "2025-08-08T15:19:41"
+        }
+      }
+    }
+  ],
+  "input_data": {},
+  "previous_results": {
+    "stage_1": {
+      "stage": 1,
+      "stage_name": "SCOPE",
+      "frames_executed": 1,
+      "successful_frames": 1,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "synthesis_analysis",
+          "frame_name": "Synthesis Analysis",
+          "success": true,
+          "result": {
+            "synthesis_complete": true,
+            "synergies_found": true,
+            "risks_identified": false,
+            "opportunities_found": true,
+            "analysis_successful": true,
+            "timestamp": "2025-08-08T15:19:39.546267"
+          }
+        }
+      ],
+      "stage_failed": false
+    },
+    "stage_2": {
+      "stage": 2,
+      "stage_name": "IDENTIFY_ANALYZE",
+      "frames_executed": 1,
+      "successful_frames": 1,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "system_audit",
+          "frame_name": "System Audit",
+          "success": true,
+          "result": {
+            "success": true,
+            "audit_complete": true,
+            "hub_validated": true,
+            "summary": {
+              "totalFiles": 9,
+              "templates": 0,
+              "endpoints": 0,
+              "tools": 0,
+              "documentation": 0,
+              "connections": 5,
+              "dependencies": 0,
+              "missing": 0,
+              "recommendations": 9
+            },
+            "context": {
+              "input_data": {},
+              "parameters": {
+                "recursive": true,
+                "validate_hub": true
+              },
+              "previous_results": {
+                "stage_1": {
+                  "stage": 1,
+                  "stage_name": "SCOPE",
+                  "frames_executed": 1,
+                  "successful_frames": 1,
+                  "failed_frames": 0,
+                  "results": [
+                    {
+                      "frame_id": "synthesis_analysis",
+                      "frame_name": "Synthesis Analysis",
+                      "success": true,
+                      "result": {
+                        "synthesis_complete": true,
+                        "synergies_found": true,
+                        "risks_identified": false,
+                        "opportunities_found": true,
+                        "analysis_successful": true,
+                        "timestamp": "2025-08-08T15:19:39.546267"
+                      }
+                    }
+                  ],
+                  "stage_failed": false
+                }
+              },
+              "entry_point": "performFullAudit"
+            }
+          }
+        }
+      ],
+      "stage_failed": false
+    },
+    "stage_3": {
+      "status": "no_frames",
+      "message": "No frames defined for stage 3"
+    },
+    "stage_4": {
+      "status": "no_frames",
+      "message": "No frames defined for stage 4"
+    },
+    "stage_5": {
+      "status": "no_frames",
+      "message": "No frames defined for stage 5"
+    },
+    "stage_6": {
+      "stage": 6,
+      "stage_name": "FINAL_AUDIT",
+      "frames_executed": 1,
+      "successful_frames": 1,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "synthesis_analysis",
+          "frame_name": "Synthesis Analysis",
+          "success": true,
+          "result": {
+            "synthesis_complete": true,
+            "synergies_found": true,
+            "risks_identified": false,
+            "opportunities_found": true,
+            "analysis_successful": true,
+            "timestamp": "2025-08-08T15:19:40.268548"
+          }
+        }
+      ],
+      "stage_failed": false
+    },
+    "stage_7": {
+      "stage": 7,
+      "stage_name": "META_AUDIT",
+      "frames_executed": 1,
+      "successful_frames": 1,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "meta_analysis",
+          "frame_name": "Meta-Analysis",
+          "success": true,
+          "result": {
+            "framework_optimized": true,
+            "context_preserved": true,
+            "framework_performance": {
+              "execution_efficiency": 85.0,
+              "resource_utilization": "optimal",
+              "execution_time": "within_limits",
+              "success_rate": 90.0,
+              "bottlenecks": [],
+              "optimization_opportunities": [],
+              "total_reports": 140,
+              "recent_executions": 10
+            },
+            "context_analysis": {
+              "preservation_rate": 100.0,
+              "context_loss_points": [],
+              "merge_effectiveness": "high",
+              "recommendations": [],
+              "preserved_contexts": 23,
+              "context_utilization": "active"
+            },
+            "recommendations": [
+              "Consider implementing parallel frame execution for independent frames",
+              "Add frame dependency analysis to optimize execution order",
+              "Implement adaptive retry strategies based on failure patterns",
+              "Add real-time monitoring and alerting for framework execution",
+              "Consider implementing frame caching for frequently used frames",
+              "Add performance profiling for individual frame execution times"
+            ],
+            "timestamp": "2025-08-08T15:19:40.298314"
+          }
+        }
+      ],
+      "stage_failed": false
+    },
+    "stage_8": {
+      "stage": 8,
+      "stage_name": "APPROVAL",
+      "frames_executed": 1,
+      "successful_frames": 1,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "human_approval",
+          "frame_name": "Human Approval Gate",
+          "success": true,
+          "result": {
+            "success": true,
+            "remediation_generated": true,
+            "plan_path": "reports\\remediation_plan_1754637580416.json"
+          }
+        }
+      ],
+      "stage_failed": false
+    },
+    "stage_9": {
+      "stage": 9,
+      "stage_name": "UPDATE_REGISTERS",
+      "frames_executed": 1,
+      "successful_frames": 1,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "knowledge_hub_update",
+          "frame_name": "Knowledge Hub Update",
+          "success": true,
+          "result": {
+            "success": true,
+            "hub_updated": true,
+            "report_generated": true,
+            "summary": {
+              "newFiles": 310,
+              "modifiedFiles": 41,
+              "newTemplates": 0,
+              "newEndpoints": 0,
+              "newTools": 0,
+              "newScripts": 0,
+              "newDocumentation": 0
+            },
+            "context": {
+              "input_data": {},
+              "parameters": {
+                "auto_update": true,
+                "generate_report": true
+              },
+              "previous_results": {
+                "stage_1": {
+                  "stage": 1,
+                  "stage_name": "SCOPE",
+                  "frames_executed": 1,
+                  "successful_frames": 1,
+                  "failed_frames": 0,
+                  "results": [
+                    {
+                      "frame_id": "synthesis_analysis",
+                      "frame_name": "Synthesis Analysis",
+                      "success": true,
+                      "result": {
+                        "synthesis_complete": true,
+                        "synergies_found": true,
+                        "risks_identified": false,
+                        "opportunities_found": true,
+                        "analysis_successful": true,
+                        "timestamp": "2025-08-08T15:19:39.546267"
+                      }
+                    }
+                  ],
+                  "stage_failed": false
+                },
+                "stage_2": {
+                  "stage": 2,
+                  "stage_name": "IDENTIFY_ANALYZE",
+                  "frames_executed": 1,
+                  "successful_frames": 1,
+                  "failed_frames": 0,
+                  "results": [
+                    {
+                      "frame_id": "system_audit",
+                      "frame_name": "System Audit",
+                      "success": true,
+                      "result": {
+                        "success": true,
+                        "audit_complete": true,
+                        "hub_validated": true,
+                        "summary": {
+                          "totalFiles": 9,
+                          "templates": 0,
+                          "endpoints": 0,
+                          "tools": 0,
+                          "documentation": 0,
+                          "connections": 5,
+                          "dependencies": 0,
+                          "missing": 0,
+                          "recommendations": 9
+                        },
+                        "context": {
+                          "input_data": {},
+                          "parameters": {
+                            "recursive": true,
+                            "validate_hub": true
+                          },
+                          "previous_results": {
+                            "stage_1": {
+                              "stage": 1,
+                              "stage_name": "SCOPE",
+                              "frames_executed": 1,
+                              "successful_frames": 1,
+                              "failed_frames": 0,
+                              "results": [
+                                {
+                                  "frame_id": "synthesis_analysis",
+                                  "frame_name": "Synthesis Analysis",
+                                  "success": true,
+                                  "result": {
+                                    "synthesis_complete": true,
+                                    "synergies_found": true,
+                                    "risks_identified": false,
+                                    "opportunities_found": true,
+                                    "analysis_successful": true,
+                                    "timestamp": "2025-08-08T15:19:39.546267"
+                                  }
+                                }
+                              ],
+                              "stage_failed": false
+                            }
+                          },
+                          "entry_point": "performFullAudit"
+                        }
+                      }
+                    }
+                  ],
+                  "stage_failed": false
+                },
+                "stage_3": {
+                  "status": "no_frames",
+                  "message": "No frames defined for stage 3"
+                },
+                "stage_4": {
+                  "status": "no_frames",
+                  "message": "No frames defined for stage 4"
+                },
+                "stage_5": {
+                  "status": "no_frames",
+                  "message": "No frames defined for stage 5"
+                },
+                "stage_6": {
+                  "stage": 6,
+                  "stage_name": "FINAL_AUDIT",
+                  "frames_executed": 1,
+                  "successful_frames": 1,
+                  "failed_frames": 0,
+                  "results": [
+                    {
+                      "frame_id": "synthesis_analysis",
+                      "frame_name": "Synthesis Analysis",
+                      "success": true,
+                      "result": {
+                        "synthesis_complete": true,
+                        "synergies_found": true,
+                        "risks_identified": false,
+                        "opportunities_found": true,
+                        "analysis_successful": true,
+                        "timestamp": "2025-08-08T15:19:40.268548"
+                      }
+                    }
+                  ],
+                  "stage_failed": false
+                },
+                "stage_7": {
+                  "stage": 7,
+                  "stage_name": "META_AUDIT",
+                  "frames_executed": 1,
+                  "successful_frames": 1,
+                  "failed_frames": 0,
+                  "results": [
+                    {
+                      "frame_id": "meta_analysis",
+                      "frame_name": "Meta-Analysis",
+                      "success": true,
+                      "result": {
+                        "framework_optimized": true,
+                        "context_preserved": true,
+                        "framework_performance": {
+                          "execution_efficiency": 85,
+                          "resource_utilization": "optimal",
+                          "execution_time": "within_limits",
+                          "success_rate": 90,
+                          "bottlenecks": [],
+                          "optimization_opportunities": [],
+                          "total_reports": 140,
+                          "recent_executions": 10
+                        },
+                        "context_analysis": {
+                          "preservation_rate": 100,
+                          "context_loss_points": [],
+                          "merge_effectiveness": "high",
+                          "recommendations": [],
+                          "preserved_contexts": 23,
+                          "context_utilization": "active"
+                        },
+                        "recommendations": [
+                          "Consider implementing parallel frame execution for independent frames",
+                          "Add frame dependency analysis to optimize execution order",
+                          "Implement adaptive retry strategies based on failure patterns",
+                          "Add real-time monitoring and alerting for framework execution",
+                          "Consider implementing frame caching for frequently used frames",
+                          "Add performance profiling for individual frame execution times"
+                        ],
+                        "timestamp": "2025-08-08T15:19:40.298314"
+                      }
+                    }
+                  ],
+                  "stage_failed": false
+                },
+                "stage_8": {
+                  "stage": 8,
+                  "stage_name": "APPROVAL",
+                  "frames_executed": 1,
+                  "successful_frames": 1,
+                  "failed_frames": 0,
+                  "results": [
+                    {
+                      "frame_id": "human_approval",
+                      "frame_name": "Human Approval Gate",
+                      "success": true,
+                      "result": {
+                        "success": true,
+                        "remediation_generated": true,
+                        "plan_path": "reports\\remediation_plan_1754637580416.json"
+                      }
+                    }
+                  ],
+                  "stage_failed": false
+                }
+              },
+              "entry_point": "updateHub"
+            }
+          }
+        }
+      ],
+      "stage_failed": false
+    },
+    "stage_10": {
+      "stage": 10,
+      "stage_name": "PUSH_GITHUB",
+      "frames_executed": 2,
+      "successful_frames": 2,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "external_failure_diagnostic",
+          "frame_name": "External Failure Diagnostic",
+          "success": true,
+          "result": {
+            "success": true,
+            "analysis_complete": true,
+            "recommendations_generated": true,
+            "data": {
+              "status": "no_failures",
+              "message": "No external failures detected",
+              "recommendations": []
+            },
+            "summary": "No external command failures found",
+            "context": {
+              "failures_analyzed": 0,
+              "recommendations_generated": 0
+            }
+          }
+        },
+        {
+          "frame_id": "powershell_diagnostic",
+          "frame_name": "PowerShell Diagnostic",
+          "success": true,
+          "result": {
+            "data": {
+              "message": "PowerShell frame executed successfully",
+              "status": "ok"
+            },
+            "analysis_complete": true,
+            "recommendations_generated": true,
+            "success": true,
+            "summary": "PowerShell diagnostic completed",
+            "context": {
+              "timestamp": "2025-08-08T15:19:41"
+            }
+          }
+        }
+      ],
+      "stage_failed": false
+    }
+  },
+  "recommendations": {
+    "framework_improvements": [],
+    "external_fixes": [],
+    "quality_improvements": [],
+    "priority_actions": []
+  }
+}

@@ -45,6 +45,14 @@ export function validateEnvironment(): EnvValidationResult {
   const config: Record<string, string> = {};
 
   for (const envVar of ENV_VARIABLES) {
+    const result = this.validateConfig(config);
+    
+    const finalValue = value || envVar.defaultValue;
+    
+    const finalValue = value || envVar.defaultValue;
+    
+    const value = process.env[envVar.key];
+    
     
     if (!value && envVar.required) {
       errors.push(`Missing required environment variable: ${envVar.key} - ${envVar.description}`);

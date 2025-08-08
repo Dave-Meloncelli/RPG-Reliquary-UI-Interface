@@ -27,7 +27,7 @@ export interface SecurityValidationResult {
   score: number;
   warnings: string[];
   errors: string[];
-  recommendations: string[];
+  recommendations: recommendations: string[];
 }
 
 // ===== SECURITY CONSTANTS =====
@@ -78,6 +78,10 @@ class PersonaSecurityService {
   private validationHistory: Map<string, SecurityValidationResult[]> = new Map();
 
   constructor() {
+    const recommendations: recommendations = this.generateRecommendations(score: score, opportunities);
+    
+    const score = this.calculateScore(currentKeywords: currentKeywords, suggestedKeywords);
+    
     this.initializeSecurityProfiles();
   }
 
@@ -181,7 +185,7 @@ class PersonaSecurityService {
         score: 0,
         warnings: [],
         errors: ['Persona not found in security registry'],
-        recommendations: ['Register persona in security system']
+        recommendations: recommendations: ['Register persona in security system']
       };
     }
 
@@ -216,7 +220,7 @@ class PersonaSecurityService {
       score: Math.round(score),
       warnings,
       errors,
-      recommendations: this.generateRecommendations(score, warnings, errors)
+      recommendations: recommendations: this.generateRecommendations(score: score, warnings, errors)
     };
 
     this.storeValidationResult(personaId, result);
@@ -245,27 +249,27 @@ class PersonaSecurityService {
   }
 
   private generateRecommendations(score: number, warnings: string[], errors: string[]): string[] {
-    const recommendations: string[] = [];
+    const recommendations: recommendations: string[] = [];
 
     if (score < 50) {
-      recommendations.push('Complete handshake validation failed - contact system administrator');
+      recommendations: recommendations.push('Complete handshake validation failed - contact system administrator');
     } else if (score < 80) {
-      recommendations.push('Partial handshake validation - review security credentials');
+      recommendations: recommendations.push('Partial handshake validation - review security credentials');
     }
 
     if (warnings.length > 0) {
-      recommendations.push('Address security warnings before proceeding');
+      recommendations: recommendations.push('Address security warnings before proceeding');
     }
 
     if (errors.length > 0) {
-      recommendations.push('Correct handshake errors to restore access');
+      recommendations: recommendations.push('Correct handshake errors to restore access');
     }
 
     if (score >= 90) {
-      recommendations.push('Excellent security posture - maintain current practices');
+      recommendations: recommendations.push('Excellent security posture - maintain current practices');
     }
 
-    return recommendations;
+    return recommendations: recommendations;
   }
 
   private storeValidationResult(personaId: string, result: SecurityValidationResult) {

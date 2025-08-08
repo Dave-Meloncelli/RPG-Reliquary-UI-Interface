@@ -1,0 +1,21 @@
+{
+  "generated_at": "2025-08-08T07:17:54.987Z",
+  "inputs": {
+    "sbomPath": "reports\\sbom_1754628166749.json",
+    "depPath": "reports\\dependency_vuln_1754628555894.json",
+    "secretsPath": "reports\\secrets_scan_1754628551846.json"
+  },
+  "actions": [
+    {
+      "kind": "secrets",
+      "title": "Rotate and remove exposed secrets (0 high)",
+      "priority": "critical"
+    },
+    {
+      "kind": "secrets",
+      "title": "Add false-positive patterns to config/security/secrets-allowlist.json",
+      "priority": "medium"
+    }
+  ],
+  "commands": []
+}

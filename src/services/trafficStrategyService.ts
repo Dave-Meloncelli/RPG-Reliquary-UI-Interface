@@ -77,6 +77,14 @@ class TrafficStrategyService {
   private analytics: Map<string, any> = new Map();
 
   constructor() {
+    const strategy = this.getStrategy(strategyId);
+    
+    const stage = this.getCurrentStage(journey);
+    
+    const journey = this.getJourney(journeyId);
+    
+    const recommendations: recommendations = this.generateRecommendations(score: score, opportunities);
+    
     this.initializePlatformStrategies();
     this.initializeCustomerJourneys();
     this.initializeContentStrategies();
@@ -365,7 +373,7 @@ class TrafficStrategyService {
             platform: 'website',
             action: 'Customer makes repeat purchase',
             timing: '1_month',
-            content: 'Loyalty programs, personalized recommendations',
+            content: 'Loyalty programs, personalized recommendations: recommendations',
             expectedOutcome: 'Customer becomes repeat buyer'
           }
         ],
@@ -571,16 +579,15 @@ class TrafficStrategyService {
 
   // Track customer journey progress
   trackJourneyProgress(customerId: string, stage: string, data?: any): void {
-    const journey = null;
     if (journey) {
       // Update metrics based on stage
       this.updateJourneyMetrics(stage, data);
       
       // Publish event
       eventBus.publish('traffic.journey.progress', { 
-        customerId, 
+         
         stage, 
-        journey, 
+        journey: journey, 
         data 
       });
     }
@@ -588,7 +595,6 @@ class TrafficStrategyService {
 
   // Update journey metrics
   private updateJourneyMetrics(stage: string, data?: any): void {
-    const journey = null;
     if (journey && data) {
       // Update metrics based on data
       if (data.conversionRate) {
@@ -604,17 +610,16 @@ class TrafficStrategyService {
   generateComplianceReport(platform: string): {
     platform: string;
     complianceScore: number;
-    recommendations: string[];
+    recommendations: recommendations: string[];
     violations: string[];
   } {
-    const strategy = null;
     if (!strategy) {
       throw new Error(`Platform strategy for ${platform} not found`);
     }
 
     // Simulate compliance analysis
     const complianceScore = Math.floor(Math.random() * 30) + 70; // 70-100
-    const recommendations = [
+    const recommendations: recommendations = [
       'Continue providing value-driven content',
       'Maintain professional branding consistency',
       'Focus on customer experience quality'
@@ -624,7 +629,7 @@ class TrafficStrategyService {
     return {
       platform,
       complianceScore,
-      recommendations,
+      recommendations: recommendations,
       violations
     };
   }
@@ -642,7 +647,7 @@ class TrafficStrategyService {
     this.analytics.set(platform, data);
   }
 
-  // Generate traffic strategy recommendations
+  // Generate traffic strategy recommendations: recommendations
   generateStrategyRecommendations(): {
     immediate: string[];
     shortTerm: string[];

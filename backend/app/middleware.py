@@ -1,12 +1,33 @@
 from fastapi import Request, Response
-from fastapi.middleware.base import BaseHTTPMiddleware
+from starlette.middleware.base import BaseHTTPMiddleware
 from fastapi.responses import JSONResponse
 import time
 import logging
 from typing import Optional
+import uuid
+import contextvars
 from .security import get_security_headers, check_rate_limit, get_rate_limit_key
 
 logger = logging.getLogger(__name__)
+
+# Context variable for request ID
+request_id_var: contextvars.ContextVar[Optional[str]] = contextvars.ContextVar("request_id", default=None)
+
+def get_request_id() -> Optional[str]:
+    try:
+        return request_id_var.get()
+    except LookupError:
+        return None
+
+class RequestIdMiddleware(BaseHTTPMiddleware):
+    """Assigns/propagates X-Request-ID and stores in contextvar for logging"""
+    async def dispatch(self, request: Request, call_next):
+        request_id = request.headers.get("X-Request-ID") or str(uuid.uuid4())
+        request.state.request_id = request_id
+        request_id_var.set(request_id)
+        response = await call_next(request)
+        response.headers["X-Request-ID"] = request_id
+        return response
 
 class SecurityMiddleware(BaseHTTPMiddleware):
     """Security middleware for adding security headers and rate limiting"""
@@ -75,13 +96,31 @@ class LoggingMiddleware(BaseHTTPMiddleware):
         start_time = time.time()
         
         # Log request
-        logger.info(f"Request: {request.method} {request.url.path} from {request.client.host}")
+        rid = get_request_id()
+        logger.info(
+            f"Request {request.method} {request.url.path}",
+            extra={
+                "requestId": rid,
+                "client": getattr(request.client, 'host', None),
+                "path": request.url.path,
+                "method": request.method,
+                "component": "http"
+            }
+        )
         
         response = await call_next(request)
         
         # Log response
         process_time = time.time() - start_time
-        logger.info(f"Response: {response.status_code} in {process_time:.3f}s")
+        logger.info(
+            "Response",
+            extra={
+                "requestId": rid,
+                "status": getattr(response, 'status_code', None),
+                "durationMs": int(process_time * 1000),
+                "component": "http"
+            }
+        )
         
         # Add timing header
         response.headers["X-Process-Time"] = str(process_time)

@@ -29,6 +29,7 @@ class AuthService {
   private token: string | null = null;
   private user: User | null = null;
   private tokenExpiry: number | null = null;
+  private baseURL: string = 'http://localhost:3001/api';
 
   constructor() {
     // Load token from localStorage on initialization
@@ -36,8 +37,12 @@ class AuthService {
   }
 
   private loadToken(): void {
+    const storedToken = localStorage.getItem('auth_token');
+    const storedUser = localStorage.getItem('auth_user');
+    const storedExpiry = localStorage.getItem('auth_expiry');
 
     if (storedToken && storedUser && storedExpiry) {
+      const expiry = parseInt(storedExpiry);
       if (Date.now() < expiry) {
         this.token = storedToken;
         this.user = JSON.parse(storedUser);
@@ -70,7 +75,7 @@ class AuthService {
 
   async login(credentials: LoginCredentials): Promise<User> {
     try {
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch(`${this.baseURL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -79,13 +84,14 @@ class AuthService {
       });
 
       if (!response.ok) {
-        throw new Error(error.detail || 'Login failed');
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || 'Login failed');
       }
 
       const authData: AuthResponse = await response.json();
-      
+
       // Get user data
-      const userResponse = await fetch('/api/users/me', {
+      const userResponse = await fetch(`${this.baseURL}/users/me`, {
         headers: {
           'Authorization': `Bearer ${authData.access_token}`,
         },
@@ -98,17 +104,19 @@ class AuthService {
       const user: User = await userResponse.json();
       this.saveToken(authData.access_token, user, authData.expires_in);
 
+      // Publish login event
       eventBus.publish('auth.login', { user });
+
       return user;
     } catch (error) {
-      eventBus.publish('auth.error', { error: error instanceof Error ? error.message : 'Login failed' });
+      console.error('Login error:', error);
       throw error;
     }
   }
 
   async register(data: RegisterData): Promise<User> {
     try {
-      const response = await fetch('/api/auth/register', {
+      const response = await fetch(`${this.baseURL}/auth/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -117,14 +125,14 @@ class AuthService {
       });
 
       if (!response.ok) {
-        throw new Error(error.detail || 'Registration failed');
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || 'Registration failed');
       }
 
       const user: User = await response.json();
-      eventBus.publish('auth.register', { user });
       return user;
     } catch (error) {
-      eventBus.publish('auth.error', { error: error instanceof Error ? error.message : 'Registration failed' });
+      console.error('Registration error:', error);
       throw error;
     }
   }
@@ -135,30 +143,24 @@ class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return this.token !== null && this.user !== null && this.tokenExpiry !== null && Date.now() < this.tokenExpiry;
+    return this.token !== null && this.tokenExpiry !== null && Date.now() < this.tokenExpiry;
   }
 
   getToken(): string | null {
-    if (this.isAuthenticated()) {
-      return this.token;
-    }
-    return null;
+    return this.token;
   }
 
   getUser(): User | null {
-    if (this.isAuthenticated()) {
-      return this.user;
-    }
-    return null;
+    return this.user;
   }
 
   async refreshUser(): Promise<User | null> {
-    if (!this.isAuthenticated()) {
+    if (!this.token) {
       return null;
     }
 
     try {
-      const response = await fetch('/api/users/me', {
+      const response = await fetch(`${this.baseURL}/users/me`, {
         headers: {
           'Authorization': `Bearer ${this.token}`,
         },
@@ -174,20 +176,20 @@ class AuthService {
       localStorage.setItem('auth_user', JSON.stringify(user));
       return user;
     } catch (error) {
+      console.error('Error refreshing user:', error);
       this.clearAuth();
       return null;
     }
   }
 
-  // Helper method for making authenticated API calls
   async authenticatedFetch(url: string, options: RequestInit = {}): Promise<Response> {
-    if (!token) {
-      throw new Error('Not authenticated');
+    if (!this.token) {
+      throw new Error('No authentication token available');
     }
 
     const headers = {
+      'Authorization': `Bearer ${this.token}`,
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`,
       ...options.headers,
     };
 

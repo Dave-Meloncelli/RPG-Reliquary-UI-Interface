@@ -1,0 +1,59 @@
+{
+  "frame_id": "system_audit",
+  "stage": 2,
+  "input_data": {},
+  "parameters": {
+    "recursive": true,
+    "validate_hub": true
+  },
+  "result": {
+    "success": true,
+    "audit_complete": true,
+    "hub_validated": true,
+    "summary": {
+      "totalFiles": 9,
+      "templates": 0,
+      "endpoints": 0,
+      "tools": 0,
+      "documentation": 0,
+      "connections": 5,
+      "dependencies": 0,
+      "missing": 0,
+      "recommendations": 9
+    },
+    "context": {
+      "input_data": {},
+      "parameters": {
+        "recursive": true,
+        "validate_hub": true
+      },
+      "previous_results": {
+        "stage_1": {
+          "stage": 1,
+          "stage_name": "SCOPE",
+          "frames_executed": 1,
+          "successful_frames": 1,
+          "failed_frames": 0,
+          "results": [
+            {
+              "frame_id": "synthesis_analysis",
+              "frame_name": "Synthesis Analysis",
+              "success": true,
+              "result": {
+                "synthesis_complete": true,
+                "synergies_found": true,
+                "risks_identified": false,
+                "opportunities_found": true,
+                "analysis_successful": true,
+                "timestamp": "2025-08-08T15:27:37.353820"
+              }
+            }
+          ],
+          "stage_failed": false
+        }
+      },
+      "entry_point": "performFullAudit"
+    }
+  },
+  "timestamp": "2025-08-08T15:27:37.983225"
+}

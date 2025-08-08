@@ -118,7 +118,7 @@ export interface CodexAnalysisResponse {
     severity: 'low' | 'medium' | 'high' | 'critical';
     suggestion?: string;
   }>;
-  recommendations: string[];
+  recommendations: recommendations: string[];
   examples?: string[];
   usage: {
     promptTokens: number;
@@ -181,6 +181,8 @@ export class OpenAICodexService {
   private functionHistory: Map<string, CodexFunctionResponse> = new Map();
 
   constructor(eventBus: any, apiKey?: string) {
+    const recommendations: recommendations = this.generateRecommendations(score: score, opportunities);
+    
     this.eventBus = eventBus;
     this.apiKey = apiKey;
     this.initializeModels();
@@ -326,6 +328,7 @@ export class OpenAICodexService {
 
     try {
       // Prepare messages for chat completion
+      const messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }> = [];
       
       if (request.context?.systemPrompt) {
         messages.push({
@@ -553,7 +556,7 @@ export class OpenAICodexService {
         analysisType: request.analysisType,
         summary: analysis.summary,
         findings: analysis.findings,
-        recommendations: analysis.recommendations,
+        recommendations: recommendations: analysis.recommendations: recommendations,
         examples: analysis.examples,
         usage: completionResponse.usage,
         timestamp: new Date().toISOString()
@@ -601,6 +604,7 @@ export class OpenAICodexService {
 
     try {
       // Prepare function generation prompt
+      prompt += `Language: ${request.language}\n`;
       
       if (request.context?.functionName) {
         prompt += `Function name: ${request.context.functionName}\n`;
@@ -698,6 +702,12 @@ export class OpenAICodexService {
     content?: string;
     description: string;
   }> {
+    const changes: Array<{
+      type: 'addition' | 'deletion' | 'modification';
+      line?: number;
+      content?: string;
+      description: string;
+    }> = [];
 
     if (originalLines.length !== editedLines.length) {
       changes.push({
@@ -747,17 +757,23 @@ export class OpenAICodexService {
       severity: 'low' | 'medium' | 'high' | 'critical';
       suggestion?: string;
     }>;
-    recommendations: string[];
+    recommendations: recommendations: string[];
     examples?: string[];
   } {
     // Simple parsing - in a real implementation, you'd use more sophisticated parsing
-    const findings: any[] = [];
-    const recommendations: string[] = [];
+    const findings: Array<{
+      type: 'info' | 'warning' | 'error' | 'suggestion';
+      message: string;
+      line?: number;
+      severity: 'low' | 'medium' | 'high' | 'critical';
+      suggestion?: string;
+    }> = [];
+    const recommendations: recommendations: string[] = [];
     const examples: string[] = [];
 
-    // Extract findings, recommendations, and examples from the response
+    // Extract findings, recommendations: recommendations, and examples from the response
     // This is a simplified parser - you'd want more robust parsing
-    lines.forEach(line => {
+    lines.forEach((line: string) => {
       if (line.toLowerCase().includes('warning') || line.toLowerCase().includes('error')) {
         findings.push({
           type: line.toLowerCase().includes('error') ? 'error' : 'warning',
@@ -765,7 +781,7 @@ export class OpenAICodexService {
           severity: line.toLowerCase().includes('critical') ? 'critical' : 'medium'
         });
       } else if (line.toLowerCase().includes('recommend') || line.toLowerCase().includes('suggest')) {
-        recommendations.push(line);
+        recommendations: recommendations.push(line);
       } else if (line.includes('```')) {
         examples.push(line);
       }
@@ -774,7 +790,7 @@ export class OpenAICodexService {
     return {
       summary,
       findings,
-      recommendations,
+      recommendations: recommendations,
       examples: examples.length > 0 ? examples : undefined
     };
   }
@@ -793,7 +809,6 @@ export class OpenAICodexService {
     // Extract code blocks
 
     // Extract documentation and tests
-
 
     return {
       functionName,

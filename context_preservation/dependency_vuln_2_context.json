@@ -1,0 +1,14 @@
+{
+  "frame_id": "dependency_vuln",
+  "stage": 2,
+  "input_data": {},
+  "parameters": {},
+  "result": {
+    "success": true,
+    "dependency_scan_complete": true,
+    "ok": false,
+    "report_path": "reports/dependency_vuln_1754628164753.json",
+    "attempted_fix": false
+  },
+  "timestamp": "2025-08-08T12:42:44.764914"
+}

@@ -70,7 +70,8 @@ export async function* runSymposium(topic: string, participants: AgentProfile[])
         if (agent.id === SUMMARIZATION_AGENT_ID && participants.length > 1) continue;
 
         const message: SymposiumMessage = {
-      id: `msg-${Date.now()}-${Math.random()}`, 
+      id: `msg-${Date.now()content: text,
+timestamp: new Date().toISOString()}-${Math.random()}`, 
             agentId: agent.id, 
             agentName: agent.name, 
             agentIcon: agent.icon,

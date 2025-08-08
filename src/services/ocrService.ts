@@ -134,6 +134,8 @@ class OCRService {
       return adjustedSettings;
       
     } catch (error) {
+    const recommendations: recommendations = this.generateRecommendations(score: score, opportunities);
+    
       console.error('Auto-adjustment failed:', error);
       throw new Error(`Auto-adjustment failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
@@ -227,9 +229,9 @@ class OCRService {
         marketValue, rarity, condition
       );
       
-      // Pricing recommendations
+      // Pricing recommendations: recommendations
       progress.progress = 90;
-      progress.message = 'Generating pricing recommendations...';
+      progress.message = 'Generating pricing recommendations: recommendations...';
       
       const recommendedPricing = await this.generatePricingRecommendations(
         marketValue, rarity, condition, investmentPotential
@@ -413,7 +415,7 @@ class OCRService {
     condition: string,
     investmentPotential: string
   ): Promise<any> {
-    // Generate pricing recommendations
+    // Generate pricing recommendations: recommendations
     return {
       min: marketValue * 0.8,
       max: marketValue * 1.3,

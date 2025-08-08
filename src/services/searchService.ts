@@ -12,7 +12,23 @@ interface SearchableItem {
 
 // https://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
 function escapeRegExp(string: string) {
-  return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const SNIPPET_LENGTH = 200;
+    
+    const startIndex = Math.max(0, contentIndex - 50);
+    const endIndex = Math.min(item.fullContent.length, contentIndex + trimmedQuery.length + 50);
+    
+    const titleMatch = item.title.toLowerCase().includes(trimmedQuery.toLowerCase());
+    const contentIndex = item.fullContent.toLowerCase().indexOf(trimmedQuery.toLowerCase());
+    
+    const trimmedQuery = query.trim();
+    
+    const personas = this.getPersonas();
+    
+    const codexRules = this.getCodexRules();
+    
+    const playbooks = this.getPlaybooks();
+    
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 
@@ -32,7 +48,7 @@ class SearchService {
                     playbook.description,
                     ...playbook.steps.map(s => `${s.name}: ${s.prompt}`)
                 ].join('\n');
-                
+
                 this.index.push({
                     id: `playbook-${playbook.id}`,
                     title: playbook.name,
@@ -57,14 +73,14 @@ class SearchService {
                     sourceId: rule.id
                 });
             } catch (e) {
-                 console.error(`Failed to parse codex scroll ${scroll.id}:`, e);
+                console.error(`Failed to parse codex scroll ${scroll.id}:`, e);
             }
         });
 
         // --- Index Personas ---
         personas.forEach(persona => {
             if (persona.scrollContent) {
-                 this.index.push({
+                this.index.push({
                     id: `persona-${persona.id}`,
                     title: persona.name,
                     fullContent: persona.scrollContent,
@@ -80,12 +96,12 @@ class SearchService {
             return [];
         }
 
-
         const results: SearchResult[] = [];
 
         this.index.forEach(item => {
-            
+
             if (titleMatch || contentIndex > -1) {
+                let snippet: string;
 
                 if (contentIndex > -1) {
                     snippet = item.fullContent.substring(startIndex, endIndex);
@@ -95,9 +111,9 @@ class SearchService {
                     // If match is only in title, take snippet from start of content
                     snippet = item.fullContent.substring(0, SNIPPET_LENGTH) + (item.fullContent.length > SNIPPET_LENGTH ? '...' : '');
                 }
-                
+
                 // Highlight matches
-                snippet = snippet.replace(highlightRegex, (match) => `<strong class="bg-yellow-500/50 text-yellow-200">${match}</strong>`);
+                let snippet = snippet.replace(new RegExp(escapeRegExp(trimmedQuery), "gi"), (match) => `<strong class="bg-yellow-500/50 text-yellow-200">${match}</strong>`);
 
                 results.push({
                     id: item.id,
@@ -108,7 +124,7 @@ class SearchService {
                 });
             }
         });
-        
+
         return results;
     }
 }

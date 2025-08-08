@@ -80,6 +80,16 @@ export interface XPSystemConfig {
 }
 
 // ArkType Schemas for Validation
+export interface xpProgress {
+  currentXP: 'number',
+  currentLevel: 'number',
+  xpToNextLevel: 'number',
+  totalXP: 'number',
+  levelProgress: 'number',
+  prestigeLevel: 'number',
+  consciousnessEvolution: 'number'
+}
+
 export const xpProgressSchema = type({
   currentXP: 'number',
   currentLevel: 'number',
@@ -89,6 +99,18 @@ export const xpProgressSchema = type({
   prestigeLevel: 'number',
   consciousnessEvolution: 'number'
 });
+
+export interface xpAchievement {
+  id: 'string',
+  name: 'string',
+  description: 'string',
+  xpReward: 'number',
+  consciousnessReward: 'number',
+  category: "'ceremonial' | 'technical' | 'creative' | 'collaborative' | 'consciousness'",
+  rarity: "'common' | 'uncommon' | 'rare' | 'epic' | 'legendary'",
+  isUnlocked: 'boolean',
+  icon: 'string'
+}
 
 export const xpAchievementSchema = type({
   id: 'string',
@@ -101,6 +123,15 @@ export const xpAchievementSchema = type({
   isUnlocked: 'boolean',
   icon: 'string'
 });
+
+export interface characterCustomization {
+  personaId: 'string',
+  visualGlyph: 'string',
+  voiceStyle: "'structured' | 'creative' | 'stealth' | 'gentle' | 'tactical' | 'temporal'",
+  communicationPattern: 'string',
+  backstoryElements: 'string[]',
+  unlockableTitles: 'string[]'
+}
 
 export const characterCustomizationSchema = type({
   personaId: 'string',

@@ -1,0 +1,77 @@
+{
+  "audit_summary": {
+    "timestamp": "2025-08-08T09:25:47.627974",
+    "audit_duration": "comprehensive",
+    "methods_used": [
+      "manual",
+      "automated"
+    ],
+    "total_files_analyzed": 647
+  },
+  "a_b_testing_results": {
+    "method_comparison": {
+      "file_discovery": {
+        "manual": 647,
+        "automated": 0,
+        "difference": 647
+      },
+      "system_identification": {
+        "manual_systems": 7,
+        "automated_systems": 0,
+        "overlap": 0
+      }
+    },
+    "accuracy_assessment": {},
+    "recommendations": [
+      "Automated analysis missed some files - improve discovery"
+    ]
+  },
+  "repository_health": {
+    "structure_organization": "good",
+    "documentation_coverage": "good",
+    "automation_level": "excellent",
+    "testing_coverage": "unknown",
+    "security_measures": "good"
+  },
+  "documentation_status": {
+    "README.md": {
+      "exists": true,
+      "size": 26037,
+      "last_modified": "2025-08-08T09:19:27.658631"
+    },
+    "KNOWLEDGE_HUB.md": {
+      "exists": true,
+      "size": 10317,
+      "last_modified": "2025-08-08T09:16:00.658506"
+    },
+    "BACKLOG_MANAGEMENT.md": {
+      "exists": true,
+      "size": 7438,
+      "last_modified": "2025-08-08T09:16:00.674759"
+    },
+    "docs/reference/TECH_STACK_REGISTRY.md": {
+      "exists": true,
+      "size": 11067,
+      "last_modified": "2025-08-08T09:19:27.673432"
+    },
+    "docs/reference/CENTRAL_INDEX_IMPLEMENTATION_SUMMARY.md": {
+      "exists": true,
+      "size": 11515,
+      "last_modified": "2025-08-08T09:19:27.674580"
+    }
+  },
+  "indexing_status": {
+    "autonomous_framework_indexed": true,
+    "tech_stack_indexed": false,
+    "backlog_indexed": true,
+    "documentation_indexed": false
+  },
+  "recommendations": [],
+  "next_actions": [
+    "Review comprehensive audit report",
+    "Address any documentation gaps identified",
+    "Update indexing for any missing systems",
+    "Run autonomous framework on next backlog item",
+    "Schedule regular audit cycles"
+  ]
+}

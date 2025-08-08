@@ -1,0 +1,17 @@
+{
+  "frame_id": "human_approval",
+  "stage": 8,
+  "input_data": {},
+  "parameters": {},
+  "result": {
+    "success": true,
+    "remediation_generated": true,
+    "plan_path": "reports\\remediation_plan_1754638058109.json",
+    "summary": "Generated remediation plan with 2 actions",
+    "context": {
+      "actions_count": 2,
+      "commands_count": 0
+    }
+  },
+  "timestamp": "2025-08-08T15:27:38.124827"
+}
