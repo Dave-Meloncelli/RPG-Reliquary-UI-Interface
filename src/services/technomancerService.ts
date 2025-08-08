@@ -18,9 +18,9 @@ const INITIAL_TECHS: MonitoredTechnology[] = [
 ];
 
 const INITIAL_FAULTS: FaultFixRecord[] = [
-    { id: 'ff-1', timestamp: '2024-05-10', faultId: "fault-description", solution: 'Updated MediaStream constraints and added polyfills for broader compatibility.', affectedSystems: [] as any },
-    { id: 'ff-2', timestamp: '2024-05-12', faultId: "fault-description", solution: 'Identified and patched a memory leak in the response caching mechanism. Implemented a TTL eviction policy.', affectedSystems: [] as any },
-    { id: 'ff-3', timestamp: '2024-05-15', faultId: "fault-description", solution: 'Fixed an issue in the Observatory service where the provider name was not updated after a fallback event.', affectedSystems: [] as any },
+    { id: \'ff-1\', timestamp: \'2024-05-10\', faultId: "fault-description", solution: \'Updated MediaStream constraints and added polyfills for broader compatibility.\', description: \'Updated MediaStream constraints and added polyfills for broader compatibility.\', appliedBy: \'system\', success: true, rollbackRequired: false },
+    { id: \'ff-2\', timestamp: \'2024-05-12\', faultId: "fault-description", solution: \'Identified and patched a memory leak in the response caching mechanism. Implemented a TTL eviction policy.\', description: \'Identified and patched a memory leak in the response caching mechanism. Implemented a TTL eviction policy.\', appliedBy: \'system\', success: true, rollbackRequired: false },
+    { id: \'ff-3\', timestamp: \'2024-05-15\', faultId: "fault-description", solution: \'Fixed an issue in the Observatory service where the provider name was not updated after a fallback event.\', description: \'Fixed an issue in the Observatory service where the provider name was not updated after a fallback event.\', appliedBy: \'system\', success: true, rollbackRequired: false },
 ];
 
 class TechnomancerService {
@@ -29,6 +29,12 @@ class TechnomancerService {
     private updateInterval: number | null = null;
 
     constructor() {
+    const parts = version.split('.');
+    
+    const isSecurity = this.isSecurityUpdate(tech);
+    
+    for (const tech of this.techStack) {
+    
         this.state = {
             technologies: INITIAL_TECHS,
             updateLogs: [],
@@ -47,10 +53,6 @@ class TechnomancerService {
         this.updateInterval = window.setInterval(() => {
             // Low probability to simulate a new update or vulnerability
             if (Math.random() < 0.1) {
-      const tech = this.state.technologies[Math.floor(Math.random() * this.state.technologies.length)];
-      const isSecurity = Math.random() > 0.7;
-      const oldVersion = tech.version;
-      const newVersion = this.incrementVersion(oldVersion);
                 
                 if(tech.status === 'Up-to-date') {
                     
@@ -58,7 +60,7 @@ class TechnomancerService {
                     
                     this.state.updateLogs.unshift({
                         id: `log-${Date.now()}`,
-                        techId: tech.id as any,
+                        
                         techName: tech.name as any,
                         timestamp: new Date().toLocaleString(),
                         type: isSecurity ? 'Security Advisory' : 'Update',
@@ -74,7 +76,6 @@ class TechnomancerService {
     }
     
     private incrementVersion(version: string): string {
-    const parts = version.split(".");
         parts[parts.length - 1] = (parseInt(parts[parts.length - 1]) + 1).toString();
         return parts.join('.');
     }

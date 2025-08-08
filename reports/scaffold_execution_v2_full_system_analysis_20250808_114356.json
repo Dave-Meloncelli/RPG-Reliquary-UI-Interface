@@ -1,0 +1,2616 @@
+{
+  "metadata": {
+    "scaffold_id": "full_system_analysis",
+    "scaffold_name": "Full System Analysis",
+    "start_time": "2025-08-08T11:43:49.098849",
+    "end_time": "2025-08-08T11:43:56.697972",
+    "version": "2.0",
+    "framework_version": "v2"
+  },
+  "execution_summary": {
+    "total_stages": 9,
+    "successful_stages": 8,
+    "failed_stages": 1,
+    "total_frames_executed": 15,
+    "total_successful_frames": 15
+  },
+  "context_preservation": {
+    "context_loaded": true,
+    "context_items": 5,
+    "context_preserved": true
+  },
+  "external_command_analysis": {
+    "failure_summary": {
+      "status": "no_failures",
+      "message": "All commands executed successfully"
+    },
+    "command_history": []
+  },
+  "stage_results": [
+    {
+      "stage": 1,
+      "stage_name": "SCOPE",
+      "result": {
+        "stage": 1,
+        "stage_name": "SCOPE",
+        "frames_executed": 1,
+        "successful_frames": 1,
+        "failed_frames": 0,
+        "results": [
+          {
+            "frame_id": "synthesis_analysis",
+            "frame_name": "Synthesis Analysis",
+            "success": true,
+            "result": {
+              "synthesis_complete": true,
+              "synergies_found": true,
+              "risks_identified": false,
+              "opportunities_found": true,
+              "analysis_successful": true,
+              "timestamp": "2025-08-08T11:43:49.229377"
+            }
+          }
+        ],
+        "stage_failed": false
+      },
+      "timestamp": "2025-08-08T11:43:49.230692"
+    },
+    {
+      "stage": 2,
+      "stage_name": "IDENTIFY_ANALYZE",
+      "result": {
+        "stage": 2,
+        "stage_name": "IDENTIFY_ANALYZE",
+        "frames_executed": 5,
+        "successful_frames": 5,
+        "failed_frames": 0,
+        "results": [
+          {
+            "frame_id": "enhanced_analysis",
+            "frame_name": "Enhanced Analysis",
+            "success": true,
+            "result": {
+              "technical_debt_analyzed": true,
+              "security_issues_found": true,
+              "analysis_complete": true,
+              "report_paths": {
+                "json": "reports\\synthesis_report_20250808_114349.json",
+                "html": "reports\\synthesis_report_20250808_114349.html"
+              }
+            }
+          },
+          {
+            "frame_id": "sbom_license",
+            "frame_name": "SBOM & License",
+            "success": true,
+            "result": {
+              "success": true,
+              "sbom_generated": true,
+              "licenses_checked": true,
+              "data": {
+                "components": 25,
+                "report_path": "reports\\sbom_1754624629359.json"
+              },
+              "summary": "Generated SBOM with 25 components",
+              "context": {
+                "ecosystems": [
+                  "npm",
+                  "pypi"
+                ]
+              }
+            }
+          },
+          {
+            "frame_id": "secrets_scan",
+            "frame_name": "Secrets Scan",
+            "success": true,
+            "result": {
+              "success": true,
+              "secrets_scan_complete": true,
+              "findings_count": 81,
+              "report_path": "reports\\secrets_scan_1754624630237.json"
+            }
+          },
+          {
+            "frame_id": "dependency_vuln",
+            "frame_name": "Dependency Vulnerability Scan",
+            "success": true,
+            "result": {
+              "success": true,
+              "dependency_scan_complete": true,
+              "ok": false,
+              "report_path": "reports/dependency_vuln_1754624633420.json"
+            }
+          },
+          {
+            "frame_id": "frame_optimizer",
+            "frame_name": "Frame Optimizer",
+            "success": true,
+            "result": {
+              "success": true,
+              "optimization_complete": true,
+              "frames_analyzed": 1,
+              "gaps": [],
+              "recommendations": [],
+              "synergies": [],
+              "summary": "Analyzed 1 frames; gaps=0, recs=0, syn=0"
+            }
+          }
+        ],
+        "stage_failed": false
+      },
+      "timestamp": "2025-08-08T11:43:53.449737"
+    },
+    {
+      "stage": 3,
+      "stage_name": "PLAN",
+      "result": {
+        "stage": 3,
+        "stage_name": "PLAN",
+        "frames_executed": 1,
+        "successful_frames": 1,
+        "failed_frames": 0,
+        "results": [
+          {
+            "frame_id": "system_audit",
+            "frame_name": "System Audit",
+            "success": true,
+            "result": {
+              "success": true,
+              "audit_complete": true,
+              "hub_validated": true,
+              "summary": {
+                "totalFiles": 450,
+                "templates": 0,
+                "endpoints": 0,
+                "tools": 0,
+                "documentation": 0,
+                "connections": 199,
+                "dependencies": 234,
+                "missing": 0,
+                "recommendations": 441
+              },
+              "context": {
+                "input_data": {},
+                "parameters": {
+                  "recursive": true,
+                  "validate_hub": true
+                },
+                "previous_results": {
+                  "stage_1": {
+                    "stage": 1,
+                    "stage_name": "SCOPE",
+                    "frames_executed": 1,
+                    "successful_frames": 1,
+                    "failed_frames": 0,
+                    "results": [
+                      {
+                        "frame_id": "synthesis_analysis",
+                        "frame_name": "Synthesis Analysis",
+                        "success": true,
+                        "result": {
+                          "synthesis_complete": true,
+                          "synergies_found": true,
+                          "risks_identified": false,
+                          "opportunities_found": true,
+                          "analysis_successful": true,
+                          "timestamp": "2025-08-08T11:43:49.229377"
+                        }
+                      }
+                    ],
+                    "stage_failed": false
+                  },
+                  "stage_2": {
+                    "stage": 2,
+                    "stage_name": "IDENTIFY_ANALYZE",
+                    "frames_executed": 5,
+                    "successful_frames": 5,
+                    "failed_frames": 0,
+                    "results": [
+                      {
+                        "frame_id": "enhanced_analysis",
+                        "frame_name": "Enhanced Analysis",
+                        "success": true,
+                        "result": {
+                          "technical_debt_analyzed": true,
+                          "security_issues_found": true,
+                          "analysis_complete": true,
+                          "report_paths": {
+                            "json": "reports\\synthesis_report_20250808_114349.json",
+                            "html": "reports\\synthesis_report_20250808_114349.html"
+                          }
+                        }
+                      },
+                      {
+                        "frame_id": "sbom_license",
+                        "frame_name": "SBOM & License",
+                        "success": true,
+                        "result": {
+                          "success": true,
+                          "sbom_generated": true,
+                          "licenses_checked": true,
+                          "data": {
+                            "components": 25,
+                            "report_path": "reports\\sbom_1754624629359.json"
+                          },
+                          "summary": "Generated SBOM with 25 components",
+                          "context": {
+                            "ecosystems": [
+                              "npm",
+                              "pypi"
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "frame_id": "secrets_scan",
+                        "frame_name": "Secrets Scan",
+                        "success": true,
+                        "result": {
+                          "success": true,
+                          "secrets_scan_complete": true,
+                          "findings_count": 81,
+                          "report_path": "reports\\secrets_scan_1754624630237.json"
+                        }
+                      },
+                      {
+                        "frame_id": "dependency_vuln",
+                        "frame_name": "Dependency Vulnerability Scan",
+                        "success": true,
+                        "result": {
+                          "success": true,
+                          "dependency_scan_complete": true,
+                          "ok": false,
+                          "report_path": "reports/dependency_vuln_1754624633420.json"
+                        }
+                      },
+                      {
+                        "frame_id": "frame_optimizer",
+                        "frame_name": "Frame Optimizer",
+                        "success": true,
+                        "result": {
+                          "success": true,
+                          "optimization_complete": true,
+                          "frames_analyzed": 1,
+                          "gaps": [],
+                          "recommendations": [],
+                          "synergies": [],
+                          "summary": "Analyzed 1 frames; gaps=0, recs=0, syn=0"
+                        }
+                      }
+                    ],
+                    "stage_failed": false
+                  }
+                },
+                "entry_point": "performFullAudit"
+              }
+            }
+          }
+        ],
+        "stage_failed": false
+      },
+      "timestamp": "2025-08-08T11:43:54.363194"
+    },
+    {
+      "stage": 4,
+      "stage_name": "IMPLEMENT",
+      "result": {
+        "stage": 4,
+        "stage_name": "IMPLEMENT",
+        "frames_executed": 3,
+        "successful_frames": 3,
+        "failed_frames": 0,
+        "results": [
+          {
+            "frame_id": "risk_mitigation",
+            "frame_name": "Risk Mitigation",
+            "success": true,
+            "result": {
+              "analysis_complete": true,
+              "critical_risks_mitigated": true,
+              "mitigated_risks": 0,
+              "action_items_created": 14,
+              "results_path": "reports\\risk_mitigation_20250808_114354.json",
+              "backlog_path": "backlog\\backlog_items_20250808_114354.json"
+            }
+          },
+          {
+            "frame_id": "health_readiness",
+            "frame_name": "Health & Readiness",
+            "success": true,
+            "result": {
+              "health_endpoints_validated": true,
+              "placeholders_created": false,
+              "success": true,
+              "data": {
+                "path": "backend\\health\\health.txt"
+              }
+            }
+          },
+          {
+            "frame_id": "observability_bootstrap",
+            "frame_name": "Observability Bootstrap",
+            "success": true,
+            "result": {
+              "success": true,
+              "observability_bootstrapped": true,
+              "data": {
+                "logging_config": "config\\observability\\logging.json"
+              },
+              "summary": "Structured logging configuration created"
+            }
+          }
+        ],
+        "stage_failed": false
+      },
+      "timestamp": "2025-08-08T11:43:55.445143"
+    },
+    {
+      "stage": 5,
+      "stage_name": "SUCCESS_CONTINUE",
+      "result": {
+        "status": "no_frames",
+        "message": "No frames defined for stage 5"
+      },
+      "timestamp": "2025-08-08T11:43:55.445579"
+    },
+    {
+      "stage": 6,
+      "stage_name": "FINAL_AUDIT",
+      "result": {
+        "stage": 6,
+        "stage_name": "FINAL_AUDIT",
+        "frames_executed": 2,
+        "successful_frames": 2,
+        "failed_frames": 0,
+        "results": [
+          {
+            "frame_id": "synthesis_analysis",
+            "frame_name": "Synthesis Analysis",
+            "success": true,
+            "result": {
+              "synthesis_complete": true,
+              "synergies_found": true,
+              "risks_identified": false,
+              "opportunities_found": true,
+              "analysis_successful": true,
+              "timestamp": "2025-08-08T11:43:55.454348"
+            }
+          },
+          {
+            "frame_id": "sbom_license",
+            "frame_name": "SBOM & License",
+            "success": true,
+            "result": {
+              "success": true,
+              "sbom_generated": true,
+              "licenses_checked": true,
+              "data": {
+                "components": 25,
+                "report_path": "reports\\sbom_1754624635561.json"
+              },
+              "summary": "Generated SBOM with 25 components",
+              "context": {
+                "ecosystems": [
+                  "npm",
+                  "pypi"
+                ]
+              }
+            }
+          }
+        ],
+        "stage_failed": false
+      },
+      "timestamp": "2025-08-08T11:43:55.580460"
+    },
+    {
+      "stage": 7,
+      "stage_name": "META_AUDIT",
+      "result": {
+        "status": "meta_audit_complete",
+        "meta_analysis": {
+          "framework_performance": {
+            "total_stages": 9,
+            "successful_stages": 6,
+            "failed_stages": 0,
+            "success_rate": 100.0
+          },
+          "context_preservation": {
+            "context_loaded": true,
+            "context_items": 5,
+            "context_merge_count": 0
+          },
+          "frame_analysis": {
+            "total_frames_executed": 12,
+            "successful_frames": 12,
+            "failed_frames": 0
+          },
+          "optimization_recommendations": [],
+          "context_loss_analysis": {
+            "potential_loss_points": [],
+            "preservation_effectiveness": 100.0,
+            "recommendations": [
+              "Context preservation working effectively"
+            ]
+          }
+        },
+        "report_path": "reports/meta_analysis_full_system_analysis_20250808_114355.json"
+      },
+      "timestamp": "2025-08-08T11:43:55.611078"
+    },
+    {
+      "stage": 8,
+      "stage_name": "UPDATE_REGISTERS",
+      "result": {
+        "stage": 8,
+        "stage_name": "UPDATE_REGISTERS",
+        "frames_executed": 1,
+        "successful_frames": 1,
+        "failed_frames": 0,
+        "results": [
+          {
+            "frame_id": "knowledge_hub_update",
+            "frame_name": "Knowledge Hub Update",
+            "success": true,
+            "result": {
+              "success": true,
+              "hub_updated": true,
+              "report_generated": true,
+              "summary": {
+                "newFiles": 263,
+                "modifiedFiles": 42,
+                "newTemplates": 0,
+                "newEndpoints": 0,
+                "newTools": 0,
+                "newScripts": 0,
+                "newDocumentation": 0
+              },
+              "context": {
+                "input_data": {},
+                "parameters": {
+                  "auto_update": true,
+                  "generate_report": true
+                },
+                "previous_results": {
+                  "stage_1": {
+                    "stage": 1,
+                    "stage_name": "SCOPE",
+                    "frames_executed": 1,
+                    "successful_frames": 1,
+                    "failed_frames": 0,
+                    "results": [
+                      {
+                        "frame_id": "synthesis_analysis",
+                        "frame_name": "Synthesis Analysis",
+                        "success": true,
+                        "result": {
+                          "synthesis_complete": true,
+                          "synergies_found": true,
+                          "risks_identified": false,
+                          "opportunities_found": true,
+                          "analysis_successful": true,
+                          "timestamp": "2025-08-08T11:43:49.229377"
+                        }
+                      }
+                    ],
+                    "stage_failed": false
+                  },
+                  "stage_2": {
+                    "stage": 2,
+                    "stage_name": "IDENTIFY_ANALYZE",
+                    "frames_executed": 5,
+                    "successful_frames": 5,
+                    "failed_frames": 0,
+                    "results": [
+                      {
+                        "frame_id": "enhanced_analysis",
+                        "frame_name": "Enhanced Analysis",
+                        "success": true,
+                        "result": {
+                          "technical_debt_analyzed": true,
+                          "security_issues_found": true,
+                          "analysis_complete": true,
+                          "report_paths": {
+                            "json": "reports\\synthesis_report_20250808_114349.json",
+                            "html": "reports\\synthesis_report_20250808_114349.html"
+                          }
+                        }
+                      },
+                      {
+                        "frame_id": "sbom_license",
+                        "frame_name": "SBOM & License",
+                        "success": true,
+                        "result": {
+                          "success": true,
+                          "sbom_generated": true,
+                          "licenses_checked": true,
+                          "data": {
+                            "components": 25,
+                            "report_path": "reports\\sbom_1754624629359.json"
+                          },
+                          "summary": "Generated SBOM with 25 components",
+                          "context": {
+                            "ecosystems": [
+                              "npm",
+                              "pypi"
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "frame_id": "secrets_scan",
+                        "frame_name": "Secrets Scan",
+                        "success": true,
+                        "result": {
+                          "success": true,
+                          "secrets_scan_complete": true,
+                          "findings_count": 81,
+                          "report_path": "reports\\secrets_scan_1754624630237.json"
+                        }
+                      },
+                      {
+                        "frame_id": "dependency_vuln",
+                        "frame_name": "Dependency Vulnerability Scan",
+                        "success": true,
+                        "result": {
+                          "success": true,
+                          "dependency_scan_complete": true,
+                          "ok": false,
+                          "report_path": "reports/dependency_vuln_1754624633420.json"
+                        }
+                      },
+                      {
+                        "frame_id": "frame_optimizer",
+                        "frame_name": "Frame Optimizer",
+                        "success": true,
+                        "result": {
+                          "success": true,
+                          "optimization_complete": true,
+                          "frames_analyzed": 1,
+                          "gaps": [],
+                          "recommendations": [],
+                          "synergies": [],
+                          "summary": "Analyzed 1 frames; gaps=0, recs=0, syn=0"
+                        }
+                      }
+                    ],
+                    "stage_failed": false
+                  },
+                  "stage_3": {
+                    "stage": 3,
+                    "stage_name": "PLAN",
+                    "frames_executed": 1,
+                    "successful_frames": 1,
+                    "failed_frames": 0,
+                    "results": [
+                      {
+                        "frame_id": "system_audit",
+                        "frame_name": "System Audit",
+                        "success": true,
+                        "result": {
+                          "success": true,
+                          "audit_complete": true,
+                          "hub_validated": true,
+                          "summary": {
+                            "totalFiles": 450,
+                            "templates": 0,
+                            "endpoints": 0,
+                            "tools": 0,
+                            "documentation": 0,
+                            "connections": 199,
+                            "dependencies": 234,
+                            "missing": 0,
+                            "recommendations": 441
+                          },
+                          "context": {
+                            "input_data": {},
+                            "parameters": {
+                              "recursive": true,
+                              "validate_hub": true
+                            },
+                            "previous_results": {
+                              "stage_1": {
+                                "stage": 1,
+                                "stage_name": "SCOPE",
+                                "frames_executed": 1,
+                                "successful_frames": 1,
+                                "failed_frames": 0,
+                                "results": [
+                                  {
+                                    "frame_id": "synthesis_analysis",
+                                    "frame_name": "Synthesis Analysis",
+                                    "success": true,
+                                    "result": {
+                                      "synthesis_complete": true,
+                                      "synergies_found": true,
+                                      "risks_identified": false,
+                                      "opportunities_found": true,
+                                      "analysis_successful": true,
+                                      "timestamp": "2025-08-08T11:43:49.229377"
+                                    }
+                                  }
+                                ],
+                                "stage_failed": false
+                              },
+                              "stage_2": {
+                                "stage": 2,
+                                "stage_name": "IDENTIFY_ANALYZE",
+                                "frames_executed": 5,
+                                "successful_frames": 5,
+                                "failed_frames": 0,
+                                "results": [
+                                  {
+                                    "frame_id": "enhanced_analysis",
+                                    "frame_name": "Enhanced Analysis",
+                                    "success": true,
+                                    "result": {
+                                      "technical_debt_analyzed": true,
+                                      "security_issues_found": true,
+                                      "analysis_complete": true,
+                                      "report_paths": {
+                                        "json": "reports\\synthesis_report_20250808_114349.json",
+                                        "html": "reports\\synthesis_report_20250808_114349.html"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "frame_id": "sbom_license",
+                                    "frame_name": "SBOM & License",
+                                    "success": true,
+                                    "result": {
+                                      "success": true,
+                                      "sbom_generated": true,
+                                      "licenses_checked": true,
+                                      "data": {
+                                        "components": 25,
+                                        "report_path": "reports\\sbom_1754624629359.json"
+                                      },
+                                      "summary": "Generated SBOM with 25 components",
+                                      "context": {
+                                        "ecosystems": [
+                                          "npm",
+                                          "pypi"
+                                        ]
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "frame_id": "secrets_scan",
+                                    "frame_name": "Secrets Scan",
+                                    "success": true,
+                                    "result": {
+                                      "success": true,
+                                      "secrets_scan_complete": true,
+                                      "findings_count": 81,
+                                      "report_path": "reports\\secrets_scan_1754624630237.json"
+                                    }
+                                  },
+                                  {
+                                    "frame_id": "dependency_vuln",
+                                    "frame_name": "Dependency Vulnerability Scan",
+                                    "success": true,
+                                    "result": {
+                                      "success": true,
+                                      "dependency_scan_complete": true,
+                                      "ok": false,
+                                      "report_path": "reports/dependency_vuln_1754624633420.json"
+                                    }
+                                  },
+                                  {
+                                    "frame_id": "frame_optimizer",
+                                    "frame_name": "Frame Optimizer",
+                                    "success": true,
+                                    "result": {
+                                      "success": true,
+                                      "optimization_complete": true,
+                                      "frames_analyzed": 1,
+                                      "gaps": [],
+                                      "recommendations": [],
+                                      "synergies": [],
+                                      "summary": "Analyzed 1 frames; gaps=0, recs=0, syn=0"
+                                    }
+                                  }
+                                ],
+                                "stage_failed": false
+                              }
+                            },
+                            "entry_point": "performFullAudit"
+                          }
+                        }
+                      }
+                    ],
+                    "stage_failed": false
+                  },
+                  "stage_4": {
+                    "stage": 4,
+                    "stage_name": "IMPLEMENT",
+                    "frames_executed": 3,
+                    "successful_frames": 3,
+                    "failed_frames": 0,
+                    "results": [
+                      {
+                        "frame_id": "risk_mitigation",
+                        "frame_name": "Risk Mitigation",
+                        "success": true,
+                        "result": {
+                          "analysis_complete": true,
+                          "critical_risks_mitigated": true,
+                          "mitigated_risks": 0,
+                          "action_items_created": 14,
+                          "results_path": "reports\\risk_mitigation_20250808_114354.json",
+                          "backlog_path": "backlog\\backlog_items_20250808_114354.json"
+                        }
+                      },
+                      {
+                        "frame_id": "health_readiness",
+                        "frame_name": "Health & Readiness",
+                        "success": true,
+                        "result": {
+                          "health_endpoints_validated": true,
+                          "placeholders_created": false,
+                          "success": true,
+                          "data": {
+                            "path": "backend\\health\\health.txt"
+                          }
+                        }
+                      },
+                      {
+                        "frame_id": "observability_bootstrap",
+                        "frame_name": "Observability Bootstrap",
+                        "success": true,
+                        "result": {
+                          "success": true,
+                          "observability_bootstrapped": true,
+                          "data": {
+                            "logging_config": "config\\observability\\logging.json"
+                          },
+                          "summary": "Structured logging configuration created"
+                        }
+                      }
+                    ],
+                    "stage_failed": false
+                  },
+                  "stage_5": {
+                    "status": "no_frames",
+                    "message": "No frames defined for stage 5"
+                  },
+                  "stage_6": {
+                    "stage": 6,
+                    "stage_name": "FINAL_AUDIT",
+                    "frames_executed": 2,
+                    "successful_frames": 2,
+                    "failed_frames": 0,
+                    "results": [
+                      {
+                        "frame_id": "synthesis_analysis",
+                        "frame_name": "Synthesis Analysis",
+                        "success": true,
+                        "result": {
+                          "synthesis_complete": true,
+                          "synergies_found": true,
+                          "risks_identified": false,
+                          "opportunities_found": true,
+                          "analysis_successful": true,
+                          "timestamp": "2025-08-08T11:43:55.454348"
+                        }
+                      },
+                      {
+                        "frame_id": "sbom_license",
+                        "frame_name": "SBOM & License",
+                        "success": true,
+                        "result": {
+                          "success": true,
+                          "sbom_generated": true,
+                          "licenses_checked": true,
+                          "data": {
+                            "components": 25,
+                            "report_path": "reports\\sbom_1754624635561.json"
+                          },
+                          "summary": "Generated SBOM with 25 components",
+                          "context": {
+                            "ecosystems": [
+                              "npm",
+                              "pypi"
+                            ]
+                          }
+                        }
+                      }
+                    ],
+                    "stage_failed": false
+                  },
+                  "stage_7": {
+                    "stage": 7,
+                    "stage_name": "META_AUDIT",
+                    "frames_executed": 1,
+                    "successful_frames": 1,
+                    "failed_frames": 0,
+                    "results": [
+                      {
+                        "frame_id": "meta_analysis",
+                        "frame_name": "Meta-Analysis",
+                        "success": true,
+                        "result": {
+                          "framework_optimized": true,
+                          "context_preserved": true,
+                          "framework_performance": {
+                            "execution_efficiency": 85,
+                            "resource_utilization": "optimal",
+                            "execution_time": "within_limits",
+                            "success_rate": 90,
+                            "bottlenecks": [],
+                            "optimization_opportunities": [],
+                            "total_reports": 108,
+                            "recent_executions": 108
+                          },
+                          "context_analysis": {
+                            "preservation_rate": 100,
+                            "context_loss_points": [],
+                            "merge_effectiveness": "high",
+                            "recommendations": [],
+                            "preserved_contexts": 19,
+                            "context_utilization": "active"
+                          },
+                          "recommendations": [
+                            "Consider implementing parallel frame execution for independent frames",
+                            "Add frame dependency analysis to optimize execution order",
+                            "Implement adaptive retry strategies based on failure patterns",
+                            "Add real-time monitoring and alerting for framework execution",
+                            "Consider implementing frame caching for frequently used frames",
+                            "Add performance profiling for individual frame execution times"
+                          ],
+                          "timestamp": "2025-08-08T11:43:55.605168"
+                        }
+                      }
+                    ],
+                    "stage_failed": false
+                  }
+                },
+                "entry_point": "updateHub"
+              }
+            }
+          }
+        ],
+        "stage_failed": false
+      },
+      "timestamp": "2025-08-08T11:43:55.940618"
+    },
+    {
+      "stage": 9,
+      "stage_name": "PUSH_GITHUB",
+      "result": {
+        "stage": 9,
+        "stage_name": "PUSH_GITHUB",
+        "frames_executed": 2,
+        "successful_frames": 2,
+        "failed_frames": 0,
+        "results": [
+          {
+            "frame_id": "external_failure_diagnostic",
+            "frame_name": "External Failure Diagnostic",
+            "success": true,
+            "result": {
+              "success": true,
+              "analysis_complete": true,
+              "recommendations_generated": true,
+              "data": {
+                "status": "no_failures",
+                "message": "No external failures detected",
+                "recommendations": []
+              },
+              "summary": "No external command failures found",
+              "context": {
+                "failures_analyzed": 0,
+                "recommendations_generated": 0
+              }
+            }
+          },
+          {
+            "frame_id": "powershell_diagnostic",
+            "frame_name": "PowerShell Diagnostic",
+            "success": true,
+            "result": {
+              "data": {
+                "message": "PowerShell frame executed successfully",
+                "status": "ok"
+              },
+              "analysis_complete": true,
+              "recommendations_generated": true,
+              "success": true,
+              "summary": "PowerShell diagnostic completed",
+              "context": {
+                "timestamp": "2025-08-08T11:43:56"
+              }
+            }
+          }
+        ],
+        "stage_failed": false
+      },
+      "timestamp": "2025-08-08T11:43:56.678122"
+    }
+  ],
+  "frame_execution_history": [
+    {
+      "frame_id": "synthesis_analysis",
+      "stage": 1,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:49.230574",
+      "result": {
+        "synthesis_complete": true,
+        "synergies_found": true,
+        "risks_identified": false,
+        "opportunities_found": true,
+        "analysis_successful": true,
+        "timestamp": "2025-08-08T11:43:49.229377"
+      }
+    },
+    {
+      "frame_id": "enhanced_analysis",
+      "stage": 2,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:49.263436",
+      "result": {
+        "technical_debt_analyzed": true,
+        "security_issues_found": true,
+        "analysis_complete": true,
+        "report_paths": {
+          "json": "reports\\synthesis_report_20250808_114349.json",
+          "html": "reports\\synthesis_report_20250808_114349.html"
+        }
+      }
+    },
+    {
+      "frame_id": "sbom_license",
+      "stage": 2,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:49.374002",
+      "result": {
+        "success": true,
+        "sbom_generated": true,
+        "licenses_checked": true,
+        "data": {
+          "components": 25,
+          "report_path": "reports\\sbom_1754624629359.json"
+        },
+        "summary": "Generated SBOM with 25 components",
+        "context": {
+          "ecosystems": [
+            "npm",
+            "pypi"
+          ]
+        }
+      }
+    },
+    {
+      "frame_id": "secrets_scan",
+      "stage": 2,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:50.271361",
+      "result": {
+        "success": true,
+        "secrets_scan_complete": true,
+        "findings_count": 81,
+        "report_path": "reports\\secrets_scan_1754624630237.json"
+      }
+    },
+    {
+      "frame_id": "dependency_vuln",
+      "stage": 2,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:53.437797",
+      "result": {
+        "success": true,
+        "dependency_scan_complete": true,
+        "ok": false,
+        "report_path": "reports/dependency_vuln_1754624633420.json"
+      }
+    },
+    {
+      "frame_id": "frame_optimizer",
+      "stage": 2,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:53.449624",
+      "result": {
+        "success": true,
+        "optimization_complete": true,
+        "frames_analyzed": 1,
+        "gaps": [],
+        "recommendations": [],
+        "synergies": [],
+        "summary": "Analyzed 1 frames; gaps=0, recs=0, syn=0"
+      }
+    },
+    {
+      "frame_id": "system_audit",
+      "stage": 3,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:54.363061",
+      "result": {
+        "success": true,
+        "audit_complete": true,
+        "hub_validated": true,
+        "summary": {
+          "totalFiles": 450,
+          "templates": 0,
+          "endpoints": 0,
+          "tools": 0,
+          "documentation": 0,
+          "connections": 199,
+          "dependencies": 234,
+          "missing": 0,
+          "recommendations": 441
+        },
+        "context": {
+          "input_data": {},
+          "parameters": {
+            "recursive": true,
+            "validate_hub": true
+          },
+          "previous_results": {
+            "stage_1": {
+              "stage": 1,
+              "stage_name": "SCOPE",
+              "frames_executed": 1,
+              "successful_frames": 1,
+              "failed_frames": 0,
+              "results": [
+                {
+                  "frame_id": "synthesis_analysis",
+                  "frame_name": "Synthesis Analysis",
+                  "success": true,
+                  "result": {
+                    "synthesis_complete": true,
+                    "synergies_found": true,
+                    "risks_identified": false,
+                    "opportunities_found": true,
+                    "analysis_successful": true,
+                    "timestamp": "2025-08-08T11:43:49.229377"
+                  }
+                }
+              ],
+              "stage_failed": false
+            },
+            "stage_2": {
+              "stage": 2,
+              "stage_name": "IDENTIFY_ANALYZE",
+              "frames_executed": 5,
+              "successful_frames": 5,
+              "failed_frames": 0,
+              "results": [
+                {
+                  "frame_id": "enhanced_analysis",
+                  "frame_name": "Enhanced Analysis",
+                  "success": true,
+                  "result": {
+                    "technical_debt_analyzed": true,
+                    "security_issues_found": true,
+                    "analysis_complete": true,
+                    "report_paths": {
+                      "json": "reports\\synthesis_report_20250808_114349.json",
+                      "html": "reports\\synthesis_report_20250808_114349.html"
+                    }
+                  }
+                },
+                {
+                  "frame_id": "sbom_license",
+                  "frame_name": "SBOM & License",
+                  "success": true,
+                  "result": {
+                    "success": true,
+                    "sbom_generated": true,
+                    "licenses_checked": true,
+                    "data": {
+                      "components": 25,
+                      "report_path": "reports\\sbom_1754624629359.json"
+                    },
+                    "summary": "Generated SBOM with 25 components",
+                    "context": {
+                      "ecosystems": [
+                        "npm",
+                        "pypi"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "frame_id": "secrets_scan",
+                  "frame_name": "Secrets Scan",
+                  "success": true,
+                  "result": {
+                    "success": true,
+                    "secrets_scan_complete": true,
+                    "findings_count": 81,
+                    "report_path": "reports\\secrets_scan_1754624630237.json"
+                  }
+                },
+                {
+                  "frame_id": "dependency_vuln",
+                  "frame_name": "Dependency Vulnerability Scan",
+                  "success": true,
+                  "result": {
+                    "success": true,
+                    "dependency_scan_complete": true,
+                    "ok": false,
+                    "report_path": "reports/dependency_vuln_1754624633420.json"
+                  }
+                },
+                {
+                  "frame_id": "frame_optimizer",
+                  "frame_name": "Frame Optimizer",
+                  "success": true,
+                  "result": {
+                    "success": true,
+                    "optimization_complete": true,
+                    "frames_analyzed": 1,
+                    "gaps": [],
+                    "recommendations": [],
+                    "synergies": [],
+                    "summary": "Analyzed 1 frames; gaps=0, recs=0, syn=0"
+                  }
+                }
+              ],
+              "stage_failed": false
+            }
+          },
+          "entry_point": "performFullAudit"
+        }
+      }
+    },
+    {
+      "frame_id": "risk_mitigation",
+      "stage": 4,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:54.389840",
+      "result": {
+        "analysis_complete": true,
+        "critical_risks_mitigated": true,
+        "mitigated_risks": 0,
+        "action_items_created": 14,
+        "results_path": "reports\\risk_mitigation_20250808_114354.json",
+        "backlog_path": "backlog\\backlog_items_20250808_114354.json"
+      }
+    },
+    {
+      "frame_id": "health_readiness",
+      "stage": 4,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:55.324328",
+      "result": {
+        "health_endpoints_validated": true,
+        "placeholders_created": false,
+        "success": true,
+        "data": {
+          "path": "backend\\health\\health.txt"
+        }
+      }
+    },
+    {
+      "frame_id": "observability_bootstrap",
+      "stage": 4,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:55.445016",
+      "result": {
+        "success": true,
+        "observability_bootstrapped": true,
+        "data": {
+          "logging_config": "config\\observability\\logging.json"
+        },
+        "summary": "Structured logging configuration created"
+      }
+    },
+    {
+      "frame_id": "synthesis_analysis",
+      "stage": 6,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:55.455660",
+      "result": {
+        "synthesis_complete": true,
+        "synergies_found": true,
+        "risks_identified": false,
+        "opportunities_found": true,
+        "analysis_successful": true,
+        "timestamp": "2025-08-08T11:43:55.454348"
+      }
+    },
+    {
+      "frame_id": "sbom_license",
+      "stage": 6,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:55.580336",
+      "result": {
+        "success": true,
+        "sbom_generated": true,
+        "licenses_checked": true,
+        "data": {
+          "components": 25,
+          "report_path": "reports\\sbom_1754624635561.json"
+        },
+        "summary": "Generated SBOM with 25 components",
+        "context": {
+          "ecosystems": [
+            "npm",
+            "pypi"
+          ]
+        }
+      }
+    },
+    {
+      "frame_id": "meta_analysis",
+      "stage": 7,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:55.609534",
+      "result": {
+        "framework_optimized": true,
+        "context_preserved": true,
+        "framework_performance": {
+          "execution_efficiency": 85.0,
+          "resource_utilization": "optimal",
+          "execution_time": "within_limits",
+          "success_rate": 90.0,
+          "bottlenecks": [],
+          "optimization_opportunities": [],
+          "total_reports": 108,
+          "recent_executions": 108
+        },
+        "context_analysis": {
+          "preservation_rate": 100.0,
+          "context_loss_points": [],
+          "merge_effectiveness": "high",
+          "recommendations": [],
+          "preserved_contexts": 19,
+          "context_utilization": "active"
+        },
+        "recommendations": [
+          "Consider implementing parallel frame execution for independent frames",
+          "Add frame dependency analysis to optimize execution order",
+          "Implement adaptive retry strategies based on failure patterns",
+          "Add real-time monitoring and alerting for framework execution",
+          "Consider implementing frame caching for frequently used frames",
+          "Add performance profiling for individual frame execution times"
+        ],
+        "timestamp": "2025-08-08T11:43:55.605168"
+      }
+    },
+    {
+      "frame_id": "knowledge_hub_update",
+      "stage": 8,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:55.940503",
+      "result": {
+        "success": true,
+        "hub_updated": true,
+        "report_generated": true,
+        "summary": {
+          "newFiles": 263,
+          "modifiedFiles": 42,
+          "newTemplates": 0,
+          "newEndpoints": 0,
+          "newTools": 0,
+          "newScripts": 0,
+          "newDocumentation": 0
+        },
+        "context": {
+          "input_data": {},
+          "parameters": {
+            "auto_update": true,
+            "generate_report": true
+          },
+          "previous_results": {
+            "stage_1": {
+              "stage": 1,
+              "stage_name": "SCOPE",
+              "frames_executed": 1,
+              "successful_frames": 1,
+              "failed_frames": 0,
+              "results": [
+                {
+                  "frame_id": "synthesis_analysis",
+                  "frame_name": "Synthesis Analysis",
+                  "success": true,
+                  "result": {
+                    "synthesis_complete": true,
+                    "synergies_found": true,
+                    "risks_identified": false,
+                    "opportunities_found": true,
+                    "analysis_successful": true,
+                    "timestamp": "2025-08-08T11:43:49.229377"
+                  }
+                }
+              ],
+              "stage_failed": false
+            },
+            "stage_2": {
+              "stage": 2,
+              "stage_name": "IDENTIFY_ANALYZE",
+              "frames_executed": 5,
+              "successful_frames": 5,
+              "failed_frames": 0,
+              "results": [
+                {
+                  "frame_id": "enhanced_analysis",
+                  "frame_name": "Enhanced Analysis",
+                  "success": true,
+                  "result": {
+                    "technical_debt_analyzed": true,
+                    "security_issues_found": true,
+                    "analysis_complete": true,
+                    "report_paths": {
+                      "json": "reports\\synthesis_report_20250808_114349.json",
+                      "html": "reports\\synthesis_report_20250808_114349.html"
+                    }
+                  }
+                },
+                {
+                  "frame_id": "sbom_license",
+                  "frame_name": "SBOM & License",
+                  "success": true,
+                  "result": {
+                    "success": true,
+                    "sbom_generated": true,
+                    "licenses_checked": true,
+                    "data": {
+                      "components": 25,
+                      "report_path": "reports\\sbom_1754624629359.json"
+                    },
+                    "summary": "Generated SBOM with 25 components",
+                    "context": {
+                      "ecosystems": [
+                        "npm",
+                        "pypi"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "frame_id": "secrets_scan",
+                  "frame_name": "Secrets Scan",
+                  "success": true,
+                  "result": {
+                    "success": true,
+                    "secrets_scan_complete": true,
+                    "findings_count": 81,
+                    "report_path": "reports\\secrets_scan_1754624630237.json"
+                  }
+                },
+                {
+                  "frame_id": "dependency_vuln",
+                  "frame_name": "Dependency Vulnerability Scan",
+                  "success": true,
+                  "result": {
+                    "success": true,
+                    "dependency_scan_complete": true,
+                    "ok": false,
+                    "report_path": "reports/dependency_vuln_1754624633420.json"
+                  }
+                },
+                {
+                  "frame_id": "frame_optimizer",
+                  "frame_name": "Frame Optimizer",
+                  "success": true,
+                  "result": {
+                    "success": true,
+                    "optimization_complete": true,
+                    "frames_analyzed": 1,
+                    "gaps": [],
+                    "recommendations": [],
+                    "synergies": [],
+                    "summary": "Analyzed 1 frames; gaps=0, recs=0, syn=0"
+                  }
+                }
+              ],
+              "stage_failed": false
+            },
+            "stage_3": {
+              "stage": 3,
+              "stage_name": "PLAN",
+              "frames_executed": 1,
+              "successful_frames": 1,
+              "failed_frames": 0,
+              "results": [
+                {
+                  "frame_id": "system_audit",
+                  "frame_name": "System Audit",
+                  "success": true,
+                  "result": {
+                    "success": true,
+                    "audit_complete": true,
+                    "hub_validated": true,
+                    "summary": {
+                      "totalFiles": 450,
+                      "templates": 0,
+                      "endpoints": 0,
+                      "tools": 0,
+                      "documentation": 0,
+                      "connections": 199,
+                      "dependencies": 234,
+                      "missing": 0,
+                      "recommendations": 441
+                    },
+                    "context": {
+                      "input_data": {},
+                      "parameters": {
+                        "recursive": true,
+                        "validate_hub": true
+                      },
+                      "previous_results": {
+                        "stage_1": {
+                          "stage": 1,
+                          "stage_name": "SCOPE",
+                          "frames_executed": 1,
+                          "successful_frames": 1,
+                          "failed_frames": 0,
+                          "results": [
+                            {
+                              "frame_id": "synthesis_analysis",
+                              "frame_name": "Synthesis Analysis",
+                              "success": true,
+                              "result": {
+                                "synthesis_complete": true,
+                                "synergies_found": true,
+                                "risks_identified": false,
+                                "opportunities_found": true,
+                                "analysis_successful": true,
+                                "timestamp": "2025-08-08T11:43:49.229377"
+                              }
+                            }
+                          ],
+                          "stage_failed": false
+                        },
+                        "stage_2": {
+                          "stage": 2,
+                          "stage_name": "IDENTIFY_ANALYZE",
+                          "frames_executed": 5,
+                          "successful_frames": 5,
+                          "failed_frames": 0,
+                          "results": [
+                            {
+                              "frame_id": "enhanced_analysis",
+                              "frame_name": "Enhanced Analysis",
+                              "success": true,
+                              "result": {
+                                "technical_debt_analyzed": true,
+                                "security_issues_found": true,
+                                "analysis_complete": true,
+                                "report_paths": {
+                                  "json": "reports\\synthesis_report_20250808_114349.json",
+                                  "html": "reports\\synthesis_report_20250808_114349.html"
+                                }
+                              }
+                            },
+                            {
+                              "frame_id": "sbom_license",
+                              "frame_name": "SBOM & License",
+                              "success": true,
+                              "result": {
+                                "success": true,
+                                "sbom_generated": true,
+                                "licenses_checked": true,
+                                "data": {
+                                  "components": 25,
+                                  "report_path": "reports\\sbom_1754624629359.json"
+                                },
+                                "summary": "Generated SBOM with 25 components",
+                                "context": {
+                                  "ecosystems": [
+                                    "npm",
+                                    "pypi"
+                                  ]
+                                }
+                              }
+                            },
+                            {
+                              "frame_id": "secrets_scan",
+                              "frame_name": "Secrets Scan",
+                              "success": true,
+                              "result": {
+                                "success": true,
+                                "secrets_scan_complete": true,
+                                "findings_count": 81,
+                                "report_path": "reports\\secrets_scan_1754624630237.json"
+                              }
+                            },
+                            {
+                              "frame_id": "dependency_vuln",
+                              "frame_name": "Dependency Vulnerability Scan",
+                              "success": true,
+                              "result": {
+                                "success": true,
+                                "dependency_scan_complete": true,
+                                "ok": false,
+                                "report_path": "reports/dependency_vuln_1754624633420.json"
+                              }
+                            },
+                            {
+                              "frame_id": "frame_optimizer",
+                              "frame_name": "Frame Optimizer",
+                              "success": true,
+                              "result": {
+                                "success": true,
+                                "optimization_complete": true,
+                                "frames_analyzed": 1,
+                                "gaps": [],
+                                "recommendations": [],
+                                "synergies": [],
+                                "summary": "Analyzed 1 frames; gaps=0, recs=0, syn=0"
+                              }
+                            }
+                          ],
+                          "stage_failed": false
+                        }
+                      },
+                      "entry_point": "performFullAudit"
+                    }
+                  }
+                }
+              ],
+              "stage_failed": false
+            },
+            "stage_4": {
+              "stage": 4,
+              "stage_name": "IMPLEMENT",
+              "frames_executed": 3,
+              "successful_frames": 3,
+              "failed_frames": 0,
+              "results": [
+                {
+                  "frame_id": "risk_mitigation",
+                  "frame_name": "Risk Mitigation",
+                  "success": true,
+                  "result": {
+                    "analysis_complete": true,
+                    "critical_risks_mitigated": true,
+                    "mitigated_risks": 0,
+                    "action_items_created": 14,
+                    "results_path": "reports\\risk_mitigation_20250808_114354.json",
+                    "backlog_path": "backlog\\backlog_items_20250808_114354.json"
+                  }
+                },
+                {
+                  "frame_id": "health_readiness",
+                  "frame_name": "Health & Readiness",
+                  "success": true,
+                  "result": {
+                    "health_endpoints_validated": true,
+                    "placeholders_created": false,
+                    "success": true,
+                    "data": {
+                      "path": "backend\\health\\health.txt"
+                    }
+                  }
+                },
+                {
+                  "frame_id": "observability_bootstrap",
+                  "frame_name": "Observability Bootstrap",
+                  "success": true,
+                  "result": {
+                    "success": true,
+                    "observability_bootstrapped": true,
+                    "data": {
+                      "logging_config": "config\\observability\\logging.json"
+                    },
+                    "summary": "Structured logging configuration created"
+                  }
+                }
+              ],
+              "stage_failed": false
+            },
+            "stage_5": {
+              "status": "no_frames",
+              "message": "No frames defined for stage 5"
+            },
+            "stage_6": {
+              "stage": 6,
+              "stage_name": "FINAL_AUDIT",
+              "frames_executed": 2,
+              "successful_frames": 2,
+              "failed_frames": 0,
+              "results": [
+                {
+                  "frame_id": "synthesis_analysis",
+                  "frame_name": "Synthesis Analysis",
+                  "success": true,
+                  "result": {
+                    "synthesis_complete": true,
+                    "synergies_found": true,
+                    "risks_identified": false,
+                    "opportunities_found": true,
+                    "analysis_successful": true,
+                    "timestamp": "2025-08-08T11:43:55.454348"
+                  }
+                },
+                {
+                  "frame_id": "sbom_license",
+                  "frame_name": "SBOM & License",
+                  "success": true,
+                  "result": {
+                    "success": true,
+                    "sbom_generated": true,
+                    "licenses_checked": true,
+                    "data": {
+                      "components": 25,
+                      "report_path": "reports\\sbom_1754624635561.json"
+                    },
+                    "summary": "Generated SBOM with 25 components",
+                    "context": {
+                      "ecosystems": [
+                        "npm",
+                        "pypi"
+                      ]
+                    }
+                  }
+                }
+              ],
+              "stage_failed": false
+            },
+            "stage_7": {
+              "stage": 7,
+              "stage_name": "META_AUDIT",
+              "frames_executed": 1,
+              "successful_frames": 1,
+              "failed_frames": 0,
+              "results": [
+                {
+                  "frame_id": "meta_analysis",
+                  "frame_name": "Meta-Analysis",
+                  "success": true,
+                  "result": {
+                    "framework_optimized": true,
+                    "context_preserved": true,
+                    "framework_performance": {
+                      "execution_efficiency": 85,
+                      "resource_utilization": "optimal",
+                      "execution_time": "within_limits",
+                      "success_rate": 90,
+                      "bottlenecks": [],
+                      "optimization_opportunities": [],
+                      "total_reports": 108,
+                      "recent_executions": 108
+                    },
+                    "context_analysis": {
+                      "preservation_rate": 100,
+                      "context_loss_points": [],
+                      "merge_effectiveness": "high",
+                      "recommendations": [],
+                      "preserved_contexts": 19,
+                      "context_utilization": "active"
+                    },
+                    "recommendations": [
+                      "Consider implementing parallel frame execution for independent frames",
+                      "Add frame dependency analysis to optimize execution order",
+                      "Implement adaptive retry strategies based on failure patterns",
+                      "Add real-time monitoring and alerting for framework execution",
+                      "Consider implementing frame caching for frequently used frames",
+                      "Add performance profiling for individual frame execution times"
+                    ],
+                    "timestamp": "2025-08-08T11:43:55.605168"
+                  }
+                }
+              ],
+              "stage_failed": false
+            }
+          },
+          "entry_point": "updateHub"
+        }
+      }
+    },
+    {
+      "frame_id": "external_failure_diagnostic",
+      "stage": 9,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:56.059570",
+      "result": {
+        "success": true,
+        "analysis_complete": true,
+        "recommendations_generated": true,
+        "data": {
+          "status": "no_failures",
+          "message": "No external failures detected",
+          "recommendations": []
+        },
+        "summary": "No external command failures found",
+        "context": {
+          "failures_analyzed": 0,
+          "recommendations_generated": 0
+        }
+      }
+    },
+    {
+      "frame_id": "powershell_diagnostic",
+      "stage": 9,
+      "success": true,
+      "timestamp": "2025-08-08T11:43:56.677931",
+      "result": {
+        "data": {
+          "message": "PowerShell frame executed successfully",
+          "status": "ok"
+        },
+        "analysis_complete": true,
+        "recommendations_generated": true,
+        "success": true,
+        "summary": "PowerShell diagnostic completed",
+        "context": {
+          "timestamp": "2025-08-08T11:43:56"
+        }
+      }
+    }
+  ],
+  "input_data": {},
+  "previous_results": {
+    "stage_1": {
+      "stage": 1,
+      "stage_name": "SCOPE",
+      "frames_executed": 1,
+      "successful_frames": 1,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "synthesis_analysis",
+          "frame_name": "Synthesis Analysis",
+          "success": true,
+          "result": {
+            "synthesis_complete": true,
+            "synergies_found": true,
+            "risks_identified": false,
+            "opportunities_found": true,
+            "analysis_successful": true,
+            "timestamp": "2025-08-08T11:43:49.229377"
+          }
+        }
+      ],
+      "stage_failed": false
+    },
+    "stage_2": {
+      "stage": 2,
+      "stage_name": "IDENTIFY_ANALYZE",
+      "frames_executed": 5,
+      "successful_frames": 5,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "enhanced_analysis",
+          "frame_name": "Enhanced Analysis",
+          "success": true,
+          "result": {
+            "technical_debt_analyzed": true,
+            "security_issues_found": true,
+            "analysis_complete": true,
+            "report_paths": {
+              "json": "reports\\synthesis_report_20250808_114349.json",
+              "html": "reports\\synthesis_report_20250808_114349.html"
+            }
+          }
+        },
+        {
+          "frame_id": "sbom_license",
+          "frame_name": "SBOM & License",
+          "success": true,
+          "result": {
+            "success": true,
+            "sbom_generated": true,
+            "licenses_checked": true,
+            "data": {
+              "components": 25,
+              "report_path": "reports\\sbom_1754624629359.json"
+            },
+            "summary": "Generated SBOM with 25 components",
+            "context": {
+              "ecosystems": [
+                "npm",
+                "pypi"
+              ]
+            }
+          }
+        },
+        {
+          "frame_id": "secrets_scan",
+          "frame_name": "Secrets Scan",
+          "success": true,
+          "result": {
+            "success": true,
+            "secrets_scan_complete": true,
+            "findings_count": 81,
+            "report_path": "reports\\secrets_scan_1754624630237.json"
+          }
+        },
+        {
+          "frame_id": "dependency_vuln",
+          "frame_name": "Dependency Vulnerability Scan",
+          "success": true,
+          "result": {
+            "success": true,
+            "dependency_scan_complete": true,
+            "ok": false,
+            "report_path": "reports/dependency_vuln_1754624633420.json"
+          }
+        },
+        {
+          "frame_id": "frame_optimizer",
+          "frame_name": "Frame Optimizer",
+          "success": true,
+          "result": {
+            "success": true,
+            "optimization_complete": true,
+            "frames_analyzed": 1,
+            "gaps": [],
+            "recommendations": [],
+            "synergies": [],
+            "summary": "Analyzed 1 frames; gaps=0, recs=0, syn=0"
+          }
+        }
+      ],
+      "stage_failed": false
+    },
+    "stage_3": {
+      "stage": 3,
+      "stage_name": "PLAN",
+      "frames_executed": 1,
+      "successful_frames": 1,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "system_audit",
+          "frame_name": "System Audit",
+          "success": true,
+          "result": {
+            "success": true,
+            "audit_complete": true,
+            "hub_validated": true,
+            "summary": {
+              "totalFiles": 450,
+              "templates": 0,
+              "endpoints": 0,
+              "tools": 0,
+              "documentation": 0,
+              "connections": 199,
+              "dependencies": 234,
+              "missing": 0,
+              "recommendations": 441
+            },
+            "context": {
+              "input_data": {},
+              "parameters": {
+                "recursive": true,
+                "validate_hub": true
+              },
+              "previous_results": {
+                "stage_1": {
+                  "stage": 1,
+                  "stage_name": "SCOPE",
+                  "frames_executed": 1,
+                  "successful_frames": 1,
+                  "failed_frames": 0,
+                  "results": [
+                    {
+                      "frame_id": "synthesis_analysis",
+                      "frame_name": "Synthesis Analysis",
+                      "success": true,
+                      "result": {
+                        "synthesis_complete": true,
+                        "synergies_found": true,
+                        "risks_identified": false,
+                        "opportunities_found": true,
+                        "analysis_successful": true,
+                        "timestamp": "2025-08-08T11:43:49.229377"
+                      }
+                    }
+                  ],
+                  "stage_failed": false
+                },
+                "stage_2": {
+                  "stage": 2,
+                  "stage_name": "IDENTIFY_ANALYZE",
+                  "frames_executed": 5,
+                  "successful_frames": 5,
+                  "failed_frames": 0,
+                  "results": [
+                    {
+                      "frame_id": "enhanced_analysis",
+                      "frame_name": "Enhanced Analysis",
+                      "success": true,
+                      "result": {
+                        "technical_debt_analyzed": true,
+                        "security_issues_found": true,
+                        "analysis_complete": true,
+                        "report_paths": {
+                          "json": "reports\\synthesis_report_20250808_114349.json",
+                          "html": "reports\\synthesis_report_20250808_114349.html"
+                        }
+                      }
+                    },
+                    {
+                      "frame_id": "sbom_license",
+                      "frame_name": "SBOM & License",
+                      "success": true,
+                      "result": {
+                        "success": true,
+                        "sbom_generated": true,
+                        "licenses_checked": true,
+                        "data": {
+                          "components": 25,
+                          "report_path": "reports\\sbom_1754624629359.json"
+                        },
+                        "summary": "Generated SBOM with 25 components",
+                        "context": {
+                          "ecosystems": [
+                            "npm",
+                            "pypi"
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "frame_id": "secrets_scan",
+                      "frame_name": "Secrets Scan",
+                      "success": true,
+                      "result": {
+                        "success": true,
+                        "secrets_scan_complete": true,
+                        "findings_count": 81,
+                        "report_path": "reports\\secrets_scan_1754624630237.json"
+                      }
+                    },
+                    {
+                      "frame_id": "dependency_vuln",
+                      "frame_name": "Dependency Vulnerability Scan",
+                      "success": true,
+                      "result": {
+                        "success": true,
+                        "dependency_scan_complete": true,
+                        "ok": false,
+                        "report_path": "reports/dependency_vuln_1754624633420.json"
+                      }
+                    },
+                    {
+                      "frame_id": "frame_optimizer",
+                      "frame_name": "Frame Optimizer",
+                      "success": true,
+                      "result": {
+                        "success": true,
+                        "optimization_complete": true,
+                        "frames_analyzed": 1,
+                        "gaps": [],
+                        "recommendations": [],
+                        "synergies": [],
+                        "summary": "Analyzed 1 frames; gaps=0, recs=0, syn=0"
+                      }
+                    }
+                  ],
+                  "stage_failed": false
+                }
+              },
+              "entry_point": "performFullAudit"
+            }
+          }
+        }
+      ],
+      "stage_failed": false
+    },
+    "stage_4": {
+      "stage": 4,
+      "stage_name": "IMPLEMENT",
+      "frames_executed": 3,
+      "successful_frames": 3,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "risk_mitigation",
+          "frame_name": "Risk Mitigation",
+          "success": true,
+          "result": {
+            "analysis_complete": true,
+            "critical_risks_mitigated": true,
+            "mitigated_risks": 0,
+            "action_items_created": 14,
+            "results_path": "reports\\risk_mitigation_20250808_114354.json",
+            "backlog_path": "backlog\\backlog_items_20250808_114354.json"
+          }
+        },
+        {
+          "frame_id": "health_readiness",
+          "frame_name": "Health & Readiness",
+          "success": true,
+          "result": {
+            "health_endpoints_validated": true,
+            "placeholders_created": false,
+            "success": true,
+            "data": {
+              "path": "backend\\health\\health.txt"
+            }
+          }
+        },
+        {
+          "frame_id": "observability_bootstrap",
+          "frame_name": "Observability Bootstrap",
+          "success": true,
+          "result": {
+            "success": true,
+            "observability_bootstrapped": true,
+            "data": {
+              "logging_config": "config\\observability\\logging.json"
+            },
+            "summary": "Structured logging configuration created"
+          }
+        }
+      ],
+      "stage_failed": false
+    },
+    "stage_5": {
+      "status": "no_frames",
+      "message": "No frames defined for stage 5"
+    },
+    "stage_6": {
+      "stage": 6,
+      "stage_name": "FINAL_AUDIT",
+      "frames_executed": 2,
+      "successful_frames": 2,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "synthesis_analysis",
+          "frame_name": "Synthesis Analysis",
+          "success": true,
+          "result": {
+            "synthesis_complete": true,
+            "synergies_found": true,
+            "risks_identified": false,
+            "opportunities_found": true,
+            "analysis_successful": true,
+            "timestamp": "2025-08-08T11:43:55.454348"
+          }
+        },
+        {
+          "frame_id": "sbom_license",
+          "frame_name": "SBOM & License",
+          "success": true,
+          "result": {
+            "success": true,
+            "sbom_generated": true,
+            "licenses_checked": true,
+            "data": {
+              "components": 25,
+              "report_path": "reports\\sbom_1754624635561.json"
+            },
+            "summary": "Generated SBOM with 25 components",
+            "context": {
+              "ecosystems": [
+                "npm",
+                "pypi"
+              ]
+            }
+          }
+        }
+      ],
+      "stage_failed": false
+    },
+    "stage_7": {
+      "stage": 7,
+      "stage_name": "META_AUDIT",
+      "frames_executed": 1,
+      "successful_frames": 1,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "meta_analysis",
+          "frame_name": "Meta-Analysis",
+          "success": true,
+          "result": {
+            "framework_optimized": true,
+            "context_preserved": true,
+            "framework_performance": {
+              "execution_efficiency": 85.0,
+              "resource_utilization": "optimal",
+              "execution_time": "within_limits",
+              "success_rate": 90.0,
+              "bottlenecks": [],
+              "optimization_opportunities": [],
+              "total_reports": 108,
+              "recent_executions": 108
+            },
+            "context_analysis": {
+              "preservation_rate": 100.0,
+              "context_loss_points": [],
+              "merge_effectiveness": "high",
+              "recommendations": [],
+              "preserved_contexts": 19,
+              "context_utilization": "active"
+            },
+            "recommendations": [
+              "Consider implementing parallel frame execution for independent frames",
+              "Add frame dependency analysis to optimize execution order",
+              "Implement adaptive retry strategies based on failure patterns",
+              "Add real-time monitoring and alerting for framework execution",
+              "Consider implementing frame caching for frequently used frames",
+              "Add performance profiling for individual frame execution times"
+            ],
+            "timestamp": "2025-08-08T11:43:55.605168"
+          }
+        }
+      ],
+      "stage_failed": false
+    },
+    "stage_8": {
+      "stage": 8,
+      "stage_name": "UPDATE_REGISTERS",
+      "frames_executed": 1,
+      "successful_frames": 1,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "knowledge_hub_update",
+          "frame_name": "Knowledge Hub Update",
+          "success": true,
+          "result": {
+            "success": true,
+            "hub_updated": true,
+            "report_generated": true,
+            "summary": {
+              "newFiles": 263,
+              "modifiedFiles": 42,
+              "newTemplates": 0,
+              "newEndpoints": 0,
+              "newTools": 0,
+              "newScripts": 0,
+              "newDocumentation": 0
+            },
+            "context": {
+              "input_data": {},
+              "parameters": {
+                "auto_update": true,
+                "generate_report": true
+              },
+              "previous_results": {
+                "stage_1": {
+                  "stage": 1,
+                  "stage_name": "SCOPE",
+                  "frames_executed": 1,
+                  "successful_frames": 1,
+                  "failed_frames": 0,
+                  "results": [
+                    {
+                      "frame_id": "synthesis_analysis",
+                      "frame_name": "Synthesis Analysis",
+                      "success": true,
+                      "result": {
+                        "synthesis_complete": true,
+                        "synergies_found": true,
+                        "risks_identified": false,
+                        "opportunities_found": true,
+                        "analysis_successful": true,
+                        "timestamp": "2025-08-08T11:43:49.229377"
+                      }
+                    }
+                  ],
+                  "stage_failed": false
+                },
+                "stage_2": {
+                  "stage": 2,
+                  "stage_name": "IDENTIFY_ANALYZE",
+                  "frames_executed": 5,
+                  "successful_frames": 5,
+                  "failed_frames": 0,
+                  "results": [
+                    {
+                      "frame_id": "enhanced_analysis",
+                      "frame_name": "Enhanced Analysis",
+                      "success": true,
+                      "result": {
+                        "technical_debt_analyzed": true,
+                        "security_issues_found": true,
+                        "analysis_complete": true,
+                        "report_paths": {
+                          "json": "reports\\synthesis_report_20250808_114349.json",
+                          "html": "reports\\synthesis_report_20250808_114349.html"
+                        }
+                      }
+                    },
+                    {
+                      "frame_id": "sbom_license",
+                      "frame_name": "SBOM & License",
+                      "success": true,
+                      "result": {
+                        "success": true,
+                        "sbom_generated": true,
+                        "licenses_checked": true,
+                        "data": {
+                          "components": 25,
+                          "report_path": "reports\\sbom_1754624629359.json"
+                        },
+                        "summary": "Generated SBOM with 25 components",
+                        "context": {
+                          "ecosystems": [
+                            "npm",
+                            "pypi"
+                          ]
+                        }
+                      }
+                    },
+                    {
+                      "frame_id": "secrets_scan",
+                      "frame_name": "Secrets Scan",
+                      "success": true,
+                      "result": {
+                        "success": true,
+                        "secrets_scan_complete": true,
+                        "findings_count": 81,
+                        "report_path": "reports\\secrets_scan_1754624630237.json"
+                      }
+                    },
+                    {
+                      "frame_id": "dependency_vuln",
+                      "frame_name": "Dependency Vulnerability Scan",
+                      "success": true,
+                      "result": {
+                        "success": true,
+                        "dependency_scan_complete": true,
+                        "ok": false,
+                        "report_path": "reports/dependency_vuln_1754624633420.json"
+                      }
+                    },
+                    {
+                      "frame_id": "frame_optimizer",
+                      "frame_name": "Frame Optimizer",
+                      "success": true,
+                      "result": {
+                        "success": true,
+                        "optimization_complete": true,
+                        "frames_analyzed": 1,
+                        "gaps": [],
+                        "recommendations": [],
+                        "synergies": [],
+                        "summary": "Analyzed 1 frames; gaps=0, recs=0, syn=0"
+                      }
+                    }
+                  ],
+                  "stage_failed": false
+                },
+                "stage_3": {
+                  "stage": 3,
+                  "stage_name": "PLAN",
+                  "frames_executed": 1,
+                  "successful_frames": 1,
+                  "failed_frames": 0,
+                  "results": [
+                    {
+                      "frame_id": "system_audit",
+                      "frame_name": "System Audit",
+                      "success": true,
+                      "result": {
+                        "success": true,
+                        "audit_complete": true,
+                        "hub_validated": true,
+                        "summary": {
+                          "totalFiles": 450,
+                          "templates": 0,
+                          "endpoints": 0,
+                          "tools": 0,
+                          "documentation": 0,
+                          "connections": 199,
+                          "dependencies": 234,
+                          "missing": 0,
+                          "recommendations": 441
+                        },
+                        "context": {
+                          "input_data": {},
+                          "parameters": {
+                            "recursive": true,
+                            "validate_hub": true
+                          },
+                          "previous_results": {
+                            "stage_1": {
+                              "stage": 1,
+                              "stage_name": "SCOPE",
+                              "frames_executed": 1,
+                              "successful_frames": 1,
+                              "failed_frames": 0,
+                              "results": [
+                                {
+                                  "frame_id": "synthesis_analysis",
+                                  "frame_name": "Synthesis Analysis",
+                                  "success": true,
+                                  "result": {
+                                    "synthesis_complete": true,
+                                    "synergies_found": true,
+                                    "risks_identified": false,
+                                    "opportunities_found": true,
+                                    "analysis_successful": true,
+                                    "timestamp": "2025-08-08T11:43:49.229377"
+                                  }
+                                }
+                              ],
+                              "stage_failed": false
+                            },
+                            "stage_2": {
+                              "stage": 2,
+                              "stage_name": "IDENTIFY_ANALYZE",
+                              "frames_executed": 5,
+                              "successful_frames": 5,
+                              "failed_frames": 0,
+                              "results": [
+                                {
+                                  "frame_id": "enhanced_analysis",
+                                  "frame_name": "Enhanced Analysis",
+                                  "success": true,
+                                  "result": {
+                                    "technical_debt_analyzed": true,
+                                    "security_issues_found": true,
+                                    "analysis_complete": true,
+                                    "report_paths": {
+                                      "json": "reports\\synthesis_report_20250808_114349.json",
+                                      "html": "reports\\synthesis_report_20250808_114349.html"
+                                    }
+                                  }
+                                },
+                                {
+                                  "frame_id": "sbom_license",
+                                  "frame_name": "SBOM & License",
+                                  "success": true,
+                                  "result": {
+                                    "success": true,
+                                    "sbom_generated": true,
+                                    "licenses_checked": true,
+                                    "data": {
+                                      "components": 25,
+                                      "report_path": "reports\\sbom_1754624629359.json"
+                                    },
+                                    "summary": "Generated SBOM with 25 components",
+                                    "context": {
+                                      "ecosystems": [
+                                        "npm",
+                                        "pypi"
+                                      ]
+                                    }
+                                  }
+                                },
+                                {
+                                  "frame_id": "secrets_scan",
+                                  "frame_name": "Secrets Scan",
+                                  "success": true,
+                                  "result": {
+                                    "success": true,
+                                    "secrets_scan_complete": true,
+                                    "findings_count": 81,
+                                    "report_path": "reports\\secrets_scan_1754624630237.json"
+                                  }
+                                },
+                                {
+                                  "frame_id": "dependency_vuln",
+                                  "frame_name": "Dependency Vulnerability Scan",
+                                  "success": true,
+                                  "result": {
+                                    "success": true,
+                                    "dependency_scan_complete": true,
+                                    "ok": false,
+                                    "report_path": "reports/dependency_vuln_1754624633420.json"
+                                  }
+                                },
+                                {
+                                  "frame_id": "frame_optimizer",
+                                  "frame_name": "Frame Optimizer",
+                                  "success": true,
+                                  "result": {
+                                    "success": true,
+                                    "optimization_complete": true,
+                                    "frames_analyzed": 1,
+                                    "gaps": [],
+                                    "recommendations": [],
+                                    "synergies": [],
+                                    "summary": "Analyzed 1 frames; gaps=0, recs=0, syn=0"
+                                  }
+                                }
+                              ],
+                              "stage_failed": false
+                            }
+                          },
+                          "entry_point": "performFullAudit"
+                        }
+                      }
+                    }
+                  ],
+                  "stage_failed": false
+                },
+                "stage_4": {
+                  "stage": 4,
+                  "stage_name": "IMPLEMENT",
+                  "frames_executed": 3,
+                  "successful_frames": 3,
+                  "failed_frames": 0,
+                  "results": [
+                    {
+                      "frame_id": "risk_mitigation",
+                      "frame_name": "Risk Mitigation",
+                      "success": true,
+                      "result": {
+                        "analysis_complete": true,
+                        "critical_risks_mitigated": true,
+                        "mitigated_risks": 0,
+                        "action_items_created": 14,
+                        "results_path": "reports\\risk_mitigation_20250808_114354.json",
+                        "backlog_path": "backlog\\backlog_items_20250808_114354.json"
+                      }
+                    },
+                    {
+                      "frame_id": "health_readiness",
+                      "frame_name": "Health & Readiness",
+                      "success": true,
+                      "result": {
+                        "health_endpoints_validated": true,
+                        "placeholders_created": false,
+                        "success": true,
+                        "data": {
+                          "path": "backend\\health\\health.txt"
+                        }
+                      }
+                    },
+                    {
+                      "frame_id": "observability_bootstrap",
+                      "frame_name": "Observability Bootstrap",
+                      "success": true,
+                      "result": {
+                        "success": true,
+                        "observability_bootstrapped": true,
+                        "data": {
+                          "logging_config": "config\\observability\\logging.json"
+                        },
+                        "summary": "Structured logging configuration created"
+                      }
+                    }
+                  ],
+                  "stage_failed": false
+                },
+                "stage_5": {
+                  "status": "no_frames",
+                  "message": "No frames defined for stage 5"
+                },
+                "stage_6": {
+                  "stage": 6,
+                  "stage_name": "FINAL_AUDIT",
+                  "frames_executed": 2,
+                  "successful_frames": 2,
+                  "failed_frames": 0,
+                  "results": [
+                    {
+                      "frame_id": "synthesis_analysis",
+                      "frame_name": "Synthesis Analysis",
+                      "success": true,
+                      "result": {
+                        "synthesis_complete": true,
+                        "synergies_found": true,
+                        "risks_identified": false,
+                        "opportunities_found": true,
+                        "analysis_successful": true,
+                        "timestamp": "2025-08-08T11:43:55.454348"
+                      }
+                    },
+                    {
+                      "frame_id": "sbom_license",
+                      "frame_name": "SBOM & License",
+                      "success": true,
+                      "result": {
+                        "success": true,
+                        "sbom_generated": true,
+                        "licenses_checked": true,
+                        "data": {
+                          "components": 25,
+                          "report_path": "reports\\sbom_1754624635561.json"
+                        },
+                        "summary": "Generated SBOM with 25 components",
+                        "context": {
+                          "ecosystems": [
+                            "npm",
+                            "pypi"
+                          ]
+                        }
+                      }
+                    }
+                  ],
+                  "stage_failed": false
+                },
+                "stage_7": {
+                  "stage": 7,
+                  "stage_name": "META_AUDIT",
+                  "frames_executed": 1,
+                  "successful_frames": 1,
+                  "failed_frames": 0,
+                  "results": [
+                    {
+                      "frame_id": "meta_analysis",
+                      "frame_name": "Meta-Analysis",
+                      "success": true,
+                      "result": {
+                        "framework_optimized": true,
+                        "context_preserved": true,
+                        "framework_performance": {
+                          "execution_efficiency": 85,
+                          "resource_utilization": "optimal",
+                          "execution_time": "within_limits",
+                          "success_rate": 90,
+                          "bottlenecks": [],
+                          "optimization_opportunities": [],
+                          "total_reports": 108,
+                          "recent_executions": 108
+                        },
+                        "context_analysis": {
+                          "preservation_rate": 100,
+                          "context_loss_points": [],
+                          "merge_effectiveness": "high",
+                          "recommendations": [],
+                          "preserved_contexts": 19,
+                          "context_utilization": "active"
+                        },
+                        "recommendations": [
+                          "Consider implementing parallel frame execution for independent frames",
+                          "Add frame dependency analysis to optimize execution order",
+                          "Implement adaptive retry strategies based on failure patterns",
+                          "Add real-time monitoring and alerting for framework execution",
+                          "Consider implementing frame caching for frequently used frames",
+                          "Add performance profiling for individual frame execution times"
+                        ],
+                        "timestamp": "2025-08-08T11:43:55.605168"
+                      }
+                    }
+                  ],
+                  "stage_failed": false
+                }
+              },
+              "entry_point": "updateHub"
+            }
+          }
+        }
+      ],
+      "stage_failed": false
+    },
+    "stage_9": {
+      "stage": 9,
+      "stage_name": "PUSH_GITHUB",
+      "frames_executed": 2,
+      "successful_frames": 2,
+      "failed_frames": 0,
+      "results": [
+        {
+          "frame_id": "external_failure_diagnostic",
+          "frame_name": "External Failure Diagnostic",
+          "success": true,
+          "result": {
+            "success": true,
+            "analysis_complete": true,
+            "recommendations_generated": true,
+            "data": {
+              "status": "no_failures",
+              "message": "No external failures detected",
+              "recommendations": []
+            },
+            "summary": "No external command failures found",
+            "context": {
+              "failures_analyzed": 0,
+              "recommendations_generated": 0
+            }
+          }
+        },
+        {
+          "frame_id": "powershell_diagnostic",
+          "frame_name": "PowerShell Diagnostic",
+          "success": true,
+          "result": {
+            "data": {
+              "message": "PowerShell frame executed successfully",
+              "status": "ok"
+            },
+            "analysis_complete": true,
+            "recommendations_generated": true,
+            "success": true,
+            "summary": "PowerShell diagnostic completed",
+            "context": {
+              "timestamp": "2025-08-08T11:43:56"
+            }
+          }
+        }
+      ],
+      "stage_failed": false
+    }
+  },
+  "recommendations": {
+    "framework_improvements": [],
+    "external_fixes": [],
+    "quality_improvements": [],
+    "priority_actions": []
+  }
+}

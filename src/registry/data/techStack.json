@@ -6,7 +6,7 @@
     "description": "Python package: fastapi",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "uvicorn[standard]": {
     "name": "uvicorn[standard]",
@@ -15,7 +15,7 @@
     "description": "Python package: uvicorn[standard]",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "sqlalchemy": {
     "name": "sqlalchemy",
@@ -24,7 +24,7 @@
     "description": "Python package: sqlalchemy",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "psycopg2-binary": {
     "name": "psycopg2-binary",
@@ -33,7 +33,7 @@
     "description": "Python package: psycopg2-binary",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "pydantic": {
     "name": "pydantic",
@@ -42,7 +42,7 @@
     "description": "Python package: pydantic",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "pydantic[email]": {
     "name": "pydantic[email]",
@@ -51,7 +51,7 @@
     "description": "Python package: pydantic[email]",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.346Z"
+    "lastUpdated": "2025-08-05T22:22:18.708Z"
   },
   "python-dotenv": {
     "name": "python-dotenv",
@@ -60,7 +60,7 @@
     "description": "Python package: python-dotenv",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "python-jose[cryptography]": {
     "name": "python-jose[cryptography]",
@@ -69,7 +69,7 @@
     "description": "Python package: python-jose[cryptography]",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "passlib[bcrypt]": {
     "name": "passlib[bcrypt]",
@@ -78,7 +78,7 @@
     "description": "Python package: passlib[bcrypt]",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "bcrypt": {
     "name": "bcrypt",
@@ -87,7 +87,7 @@
     "description": "Python package: bcrypt",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.346Z"
+    "lastUpdated": "2025-08-05T22:22:18.708Z"
   },
   "redis": {
     "name": "redis",
@@ -96,7 +96,7 @@
     "description": "Python package: redis",
     "status": "active",
     "priority": "high",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "python-multipart": {
     "name": "python-multipart",
@@ -105,7 +105,7 @@
     "description": "Python package: python-multipart",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "alembic": {
     "name": "alembic",
@@ -114,7 +114,7 @@
     "description": "Python package: alembic",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.346Z"
+    "lastUpdated": "2025-08-05T22:22:18.708Z"
   },
   "pytest": {
     "name": "pytest",
@@ -123,7 +123,7 @@
     "description": "Python package: pytest",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "pytest-asyncio": {
     "name": "pytest-asyncio",
@@ -132,7 +132,7 @@
     "description": "Python package: pytest-asyncio",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "httpx": {
     "name": "httpx",
@@ -141,7 +141,7 @@
     "description": "Python package: httpx",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "email-validator": {
     "name": "email-validator",
@@ -150,7 +150,7 @@
     "description": "Python package: email-validator",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.346Z"
+    "lastUpdated": "2025-08-05T22:22:18.708Z"
   },
   "cryptography": {
     "name": "cryptography",
@@ -159,7 +159,7 @@
     "description": "Python package: cryptography",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "crewai": {
     "name": "crewai",
@@ -168,7 +168,7 @@
     "description": "Python package: crewai",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "langchain": {
     "name": "langchain",
@@ -177,7 +177,7 @@
     "description": "Python package: langchain",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "langchain-openai": {
     "name": "langchain-openai",
@@ -186,7 +186,7 @@
     "description": "Python package: langchain-openai",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "langchain-anthropic": {
     "name": "langchain-anthropic",
@@ -195,7 +195,7 @@
     "description": "Python package: langchain-anthropic",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "langchain-google-genai": {
     "name": "langchain-google-genai",
@@ -204,7 +204,7 @@
     "description": "Python package: langchain-google-genai",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "langchain-community": {
     "name": "langchain-community",
@@ -213,7 +213,7 @@
     "description": "Python package: langchain-community",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "streamlit": {
     "name": "streamlit",
@@ -222,7 +222,7 @@
     "description": "Python package: streamlit",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "streamlit-option-menu": {
     "name": "streamlit-option-menu",
@@ -231,7 +231,7 @@
     "description": "Python package: streamlit-option-menu",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "pandas": {
     "name": "pandas",
@@ -240,7 +240,7 @@
     "description": "Python package: pandas",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "numpy": {
     "name": "numpy",
@@ -249,7 +249,7 @@
     "description": "Python package: numpy",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "requests": {
     "name": "requests",
@@ -258,7 +258,7 @@
     "description": "Python package: requests",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "asyncio-mqtt": {
     "name": "asyncio-mqtt",
@@ -267,7 +267,7 @@
     "description": "Python package: asyncio-mqtt",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "aiohttp": {
     "name": "aiohttp",
@@ -276,7 +276,7 @@
     "description": "Python package: aiohttp",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "prometheus-client": {
     "name": "prometheus-client",
@@ -285,7 +285,7 @@
     "description": "Python package: prometheus-client",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "structlog": {
     "name": "structlog",
@@ -294,7 +294,7 @@
     "description": "Python package: structlog",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "black": {
     "name": "black",
@@ -303,7 +303,7 @@
     "description": "Python package: black",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "isort": {
     "name": "isort",
@@ -312,7 +312,7 @@
     "description": "Python package: isort",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "flake8": {
     "name": "flake8",
@@ -321,7 +321,7 @@
     "description": "Python package: flake8",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "pydantic-settings": {
     "name": "pydantic-settings",
@@ -330,7 +330,7 @@
     "description": "Python package: pydantic-settings",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "chromadb": {
     "name": "chromadb",
@@ -339,7 +339,7 @@
     "description": "Python package: chromadb",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "sentence-transformers": {
     "name": "sentence-transformers",
@@ -348,7 +348,7 @@
     "description": "Python package: sentence-transformers",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "aiofiles": {
     "name": "aiofiles",
@@ -357,7 +357,7 @@
     "description": "Python package: aiofiles",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "python-dateutil": {
     "name": "python-dateutil",
@@ -366,7 +366,7 @@
     "description": "Python package: python-dateutil",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "pytz": {
     "name": "pytz",
@@ -375,7 +375,7 @@
     "description": "Python package: pytz",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "pyyaml": {
     "name": "pyyaml",
@@ -384,7 +384,7 @@
     "description": "Python package: pyyaml",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "orjson": {
     "name": "orjson",
@@ -393,7 +393,7 @@
     "description": "Python package: orjson",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "beautifulsoup4": {
     "name": "beautifulsoup4",
@@ -402,7 +402,7 @@
     "description": "Python package: beautifulsoup4",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "selenium": {
     "name": "selenium",
@@ -411,7 +411,7 @@
     "description": "Python package: selenium",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "playwright": {
     "name": "playwright",
@@ -420,7 +420,7 @@
     "description": "Python package: playwright",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "pillow": {
     "name": "pillow",
@@ -429,7 +429,7 @@
     "description": "Python package: pillow",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "opencv-python": {
     "name": "opencv-python",
@@ -438,7 +438,7 @@
     "description": "Python package: opencv-python",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "scikit-learn": {
     "name": "scikit-learn",
@@ -447,7 +447,7 @@
     "description": "Python package: scikit-learn",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "transformers": {
     "name": "transformers",
@@ -456,7 +456,7 @@
     "description": "Python package: transformers",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "torch": {
     "name": "torch",
@@ -465,7 +465,7 @@
     "description": "Python package: torch",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "celery": {
     "name": "celery",
@@ -474,7 +474,7 @@
     "description": "Python package: celery",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "flower": {
     "name": "flower",
@@ -483,7 +483,7 @@
     "description": "Python package: flower",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "websockets": {
     "name": "websockets",
@@ -492,7 +492,7 @@
     "description": "Python package: websockets",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "networkx": {
     "name": "networkx",
@@ -501,7 +501,7 @@
     "description": "Python package: networkx",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "matplotlib": {
     "name": "matplotlib",
@@ -510,7 +510,7 @@
     "description": "Python package: matplotlib",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "seaborn": {
     "name": "seaborn",
@@ -519,7 +519,7 @@
     "description": "Python package: seaborn",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.347Z"
+    "lastUpdated": "2025-08-05T22:22:18.714Z"
   },
   "mkdocs": {
     "name": "mkdocs",
@@ -528,7 +528,7 @@
     "description": "Python package: mkdocs",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "mkdocs-material": {
     "name": "mkdocs-material",
@@ -537,7 +537,7 @@
     "description": "Python package: mkdocs-material",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "python-socketio": {
     "name": "python-socketio",
@@ -546,7 +546,7 @@
     "description": "Python package: python-socketio",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "pyjwt": {
     "name": "pyjwt",
@@ -555,7 +555,7 @@
     "description": "Python package: pyjwt",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "pyopenssl": {
     "name": "pyopenssl",
@@ -564,7 +564,7 @@
     "description": "Python package: pyopenssl",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "certifi": {
     "name": "certifi",
@@ -573,7 +573,7 @@
     "description": "Python package: certifi",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   },
   "celery[redis]": {
     "name": "celery[redis]",
@@ -582,6 +582,6 @@
     "description": "Python package: celery[redis]",
     "status": "active",
     "priority": "medium",
-    "lastUpdated": "2025-08-04T05:35:12.350Z"
+    "lastUpdated": "2025-08-05T22:22:18.720Z"
   }
 }

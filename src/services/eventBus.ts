@@ -7,8 +7,6 @@ class EventBus {
   private subscribers: { [K in keyof EventMap]?: Set<EventCallback<K>> } = {};
 
   publish<E extends keyof EventMap>(event: E, payload: EventMap[E]): void {
-    // The cast here is important to ensure type safety inside the forEach loop.
-    // It correctly correlates the event key with the callback and payload types.
     if (!handlers) return;
     
     // Create a copy of handlers to avoid issues if handlers are modified during iteration

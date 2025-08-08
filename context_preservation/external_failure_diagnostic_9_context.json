@@ -1,0 +1,25 @@
+{
+  "frame_id": "external_failure_diagnostic",
+  "stage": 9,
+  "input_data": {},
+  "parameters": {
+    "comprehensive_analysis": true,
+    "generate_recommendations": true
+  },
+  "result": {
+    "success": true,
+    "analysis_complete": true,
+    "recommendations_generated": true,
+    "data": {
+      "status": "no_failures",
+      "message": "No external failures detected",
+      "recommendations": []
+    },
+    "summary": "No external command failures found",
+    "context": {
+      "failures_analyzed": 0,
+      "recommendations_generated": 0
+    }
+  },
+  "timestamp": "2025-08-08T11:43:56.058483"
+}

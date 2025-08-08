@@ -1,7 +1,7 @@
 import type { TaskItem } from "../types/types";
 import { eventBus } from "./eventBus";
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8000";
+
 // import { eventBus } from \'./eventBus\';
 
 
@@ -92,7 +92,6 @@ class TaskQueueService {
     }
 
     resolveTaskBySourceId = (sourceId: string) => {
-    const task = this.state.tasks.find(t => t.sourceId === sourceId);
         if (task) {
             this.resolveTask(task.id);
         }

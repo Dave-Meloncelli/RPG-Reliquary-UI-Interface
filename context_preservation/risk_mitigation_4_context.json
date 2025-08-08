@@ -1,0 +1,18 @@
+{
+  "frame_id": "risk_mitigation",
+  "stage": 4,
+  "input_data": {},
+  "parameters": {
+    "auto_fix": true,
+    "require_permission": true
+  },
+  "result": {
+    "analysis_complete": true,
+    "critical_risks_mitigated": true,
+    "mitigated_risks": 0,
+    "action_items_created": 14,
+    "results_path": "reports\\risk_mitigation_20250808_124245.json",
+    "backlog_path": "backlog\\backlog_items_20250808_124245.json"
+  },
+  "timestamp": "2025-08-08T12:42:45.641352"
+}

@@ -16,6 +16,13 @@ const App: React.FC = () => {
   useEffect(() => {
     // Check authentication status on app load
     const checkAuth = async () => {
+      // Development mode bypass - remove this in production
+      if (import.meta.env.DEV) {
+        setIsAuthenticated(true);
+        setIsLoading(false);
+        return;
+      }
+
       if (authService.isAuthenticated()) {
         setIsAuthenticated(true);
       } else {

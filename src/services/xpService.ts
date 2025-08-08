@@ -33,6 +33,13 @@ class XPService {
   private config: XPSystemConfig;
 
   constructor() {
+    // maxDailyXP: 1000, // Removed - not in type definition
+    rarity: 'uncommon' as const
+    category: 'ceremonial' as const
+    rarity: 'rare' as const
+    category: 'consciousness' as const
+    rarity: 'common' as const
+    category: 'ceremonial' as const
     this.config = {
       maxDailyXP: 1000,
       dignityThreshold: 0.8,

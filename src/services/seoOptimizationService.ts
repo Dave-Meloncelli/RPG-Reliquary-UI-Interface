@@ -11,7 +11,7 @@ export interface SEOAnalysis {
   competition: Record<string, number>;
   opportunities: SEOOpportunity[];
   score: number;
-  recommendations: string[];
+  recommendations: recommendations: string[];
 }
 
 export interface SEOOpportunity {
@@ -33,7 +33,7 @@ export interface ContentOptimization {
   keywordDensity: Record<string, number>;
   readabilityScore: number;
   seoScore: number;
-  suggestions: string[];
+  suggestions: suggestions: string[];
 }
 
 export interface MarketAnalysis {
@@ -43,7 +43,7 @@ export interface MarketAnalysis {
   competitorAnalysis: CompetitorInfo[];
   marketGaps: MarketGap[];
   trendingTopics: TrendingTopic[];
-  seasonalPatterns: SeasonalPattern[];
+  seasonalPatterns: seasonalPatterns: SeasonalPattern[];
 }
 
 export interface CompetitorInfo {
@@ -77,7 +77,7 @@ export interface SeasonalPattern {
   peakMonths: number[];
   lowMonths: number[];
   seasonalMultiplier: number;
-  recommendations: string[];
+  recommendations: recommendations: string[];
 }
 
 export class SEOOptimizationService {
@@ -88,6 +88,30 @@ export class SEOOptimizationService {
   private keywordDatabase: Map<string, any> = new Map();
 
   constructor(eventBus: any) {
+    const recommendations: recommendations = this.generateRecommendations(score: score, opportunities);
+    
+    const score = this.calculateScore(currentKeywords: currentKeywords, suggestedKeywords);
+    
+    const opportunities = this.identifyOpportunities(currentKeywords: currentKeywords, suggestedKeywords);
+    
+    const suggestedKeywords = this.generateSuggestedKeywords(currentKeywords);
+    
+    const currentKeywords = this.extractCurrentKeywords(content);
+    
+    const analysisId = this.generateAnalysisId();
+    
+    const baseDifficulty = this.getBaseDifficulty(keyword);
+    const consciousnessPenalty = this.getConsciousnessPenalty();
+    const evolutionPenalty = this.getEvolutionPenalty();
+    const aiPenalty = this.getAIPenalty();
+    
+    const baseVolume = this.getBaseVolume(keyword);
+    const consciousnessBonus = this.getConsciousnessBonus();
+    const evolutionBonus = this.getEvolutionBonus();
+    const aiBonus = this.getAIBonus();
+    
+    const allKeywords = this.extractKeywords(content);
+    
     this.eventBus = eventBus;
     this.initializeKeywordDatabase();
   }
@@ -131,7 +155,7 @@ export class SEOOptimizationService {
     ];
 
     // Combine all keywords with search data
-    
+
     allKeywords.forEach(keyword => {
       this.keywordDatabase.set(keyword.toLowerCase(), {
         searchVolume: this.generateSearchVolume(keyword),
@@ -144,13 +168,13 @@ export class SEOOptimizationService {
 
   private generateSearchVolume(keyword: string): number {
     // Simulate realistic search volumes
-    
+
     return Math.floor(baseVolume * consciousnessBonus * evolutionBonus * aiBonus);
   }
 
   private generateDifficulty(keyword: string): number {
     // Simulate keyword difficulty (0-100)
-    
+
     return Math.min(100, baseDifficulty + consciousnessPenalty + evolutionPenalty + aiPenalty);
   }
 
@@ -179,34 +203,34 @@ export class SEOOptimizationService {
   }
 
   async analyzeBookSEO(bookId: string, title: string, description: string, category: string): Promise<SEOAnalysis> {
-    
+
     // Extract current keywords
-    
+
     // Generate suggested keywords
-    
+
     // Analyze keyword opportunities
-    
+
     // Calculate SEO score
-    
-    // Generate recommendations
-    
+
+    // Generate recommendations: recommendations
+
     const analysis: SEOAnalysis = {
       id: analysisId,
       bookId,
       title,
-      currentKeywords,
-      suggestedKeywords,
+      currentKeywords: currentKeywords,
+      suggestedKeywords: suggestedKeywords,
       keywordDifficulty: this.getKeywordDifficulties(suggestedKeywords),
       searchVolume: this.getSearchVolumes(suggestedKeywords),
       competition: this.getCompetitionLevels(suggestedKeywords),
-      opportunities,
-      score,
-      recommendations
+      opportunities: opportunities,
+      score: score,
+      recommendations: recommendations
     };
 
     this.analyses.set(analysisId, analysis);
     this.eventBus.emit('seo:analysis:completed', { analysis });
-    
+
     return analysis;
   }
 
@@ -215,11 +239,11 @@ export class SEOOptimizationService {
       .replace(/[^\w\s]/g, '')
       .split(/\s+/)
       .filter(word => word.length > 3);
-    
+
     words.forEach(word => {
       keywordCounts.set(word, (keywordCounts.get(word) || 0) + 1);
     });
-    
+
     return Array.from(keywordCounts.entries())
       .sort((a, b) => b[1] - a[1])
       .slice(0, 10)
@@ -227,10 +251,10 @@ export class SEOOptimizationService {
   }
 
   private generateSuggestedKeywords(title: string, description: string, category: string): string[] {
-    const relatedKeywords = baseKeywords.flatMap(keyword => 
+    const relatedKeywords = baseKeywords.flatMap(keyword =>
       this.keywordDatabase.get(keyword)?.relatedKeywords || []
     );
-    
+
     return [...new Set([...baseKeywords, ...categoryKeywords, ...relatedKeywords])].slice(0, 20);
   }
 
@@ -240,16 +264,16 @@ export class SEOOptimizationService {
       'Technology/Accessibility': ['accessibility', 'technology', 'disability', 'inclusion', 'assistance'],
       'Philosophy/Consciousness': ['philosophy', 'consciousness', 'mind', 'awareness', 'spirituality']
     };
-    
+
     return categoryMap[category] || [];
   }
 
   private analyzeKeywordOpportunities(keywords: string[]): SEOOpportunity[] {
     return keywords.map(keyword => {
       if (!data) return null;
-      
+
       const estimatedRevenue = potentialTraffic * 0.01 * 29.99; // 1% conversion, $29.99 avg price
-      
+
       return {
         keyword,
         searchVolume: data.searchVolume,
@@ -269,33 +293,33 @@ export class SEOOptimizationService {
       `Use "${keyword}" in marketing materials`,
       `Develop companion content about "${keyword}"`
     ];
-    
+
     return implementations[Math.floor(Math.random() * implementations.length)];
   }
 
   private calculateSEOScore(currentKeywords: string[], suggestedKeywords: string[], opportunities: SEOOpportunity[]): number {
-    
+
     return Math.min(100, currentScore + opportunityScore + keywordDiversityScore);
   }
 
   private generateRecommendations(currentKeywords: string[], suggestedKeywords: string[], opportunities: SEOOpportunity[]): string[] {
-    const recommendations = [
+    const recommendations: recommendations = [
       'Optimize book title with high-volume keywords',
       'Enhance book description with relevant keywords',
       'Create companion content for keyword opportunities',
       'Develop marketing campaigns around trending keywords',
       'Consider book series expansion for keyword coverage'
     ];
-    
+
     const topOpportunities = opportunities
       .sort((a, b) => b.estimatedRevenue - a.estimatedRevenue)
       .slice(0, 3);
-    
+
     topOpportunities.forEach(opp => {
-      recommendations.push(`Focus on "${opp.keyword}" - potential $${opp.estimatedRevenue.toFixed(2)} revenue`);
+      recommendations: recommendations.push(`Focus on "${opp.keyword}" - potential $${opp.estimatedRevenue.toFixed(2)} revenue`);
     });
-    
-    return recommendations;
+
+    return recommendations: recommendations;
   }
 
   private getKeywordDifficulties(keywords: string[]): Record<string, number> {
@@ -323,139 +347,139 @@ export class SEOOptimizationService {
   }
 
   async optimizeContent(bookId: string, title: string, description: string): Promise<ContentOptimization> {
-    
+
     // Generate optimized title
-    
+
     // Generate optimized description
-    
+
     // Calculate keyword density
-    
+
     // Calculate scores
-    
-    // Generate suggestions
-    
+
+    // Generate suggestions: suggestions
+
     const optimization: ContentOptimization = {
       id: optimizationId,
       bookId,
       originalTitle: title,
-      optimizedTitle,
+      optimizedTitle: optimizedTitle,
       originalDescription: description,
-      optimizedDescription,
-      keywordDensity,
-      readabilityScore,
-      seoScore,
-      suggestions
+      optimizedDescription: optimizedDescription,
+      keywordDensity: keywordDensity,
+      readabilityScore: readabilityScore,
+      seoScore: seoScore,
+      suggestions: suggestions
     };
 
     this.optimizations.set(optimizationId, optimization);
     this.eventBus.emit('seo:optimization:completed', { optimization });
-    
+
     return optimization;
   }
 
   private optimizeTitle(title: string): string {
     // Add high-value keywords to title
-    
-    const missingKeywords = highValueKeywords.filter(keyword => 
+
+    const missingKeywords = highValueKeywords.filter(keyword =>
       !titleWords.some(word => word.includes(keyword))
     );
-    
+
     if (missingKeywords.length > 0 && title.length < 60) {
       return `${title}: ${missingKeywords[0]} Guide`;
     }
-    
+
     return title;
   }
 
   private optimizeDescription(description: string): string {
     // Enhance description with keywords and structure
     const enhancedDescription = description
-      .replace(/(consciousness|evolution|AI|temporal|symbiosis)/gi, (match) => 
+      .replace(/(consciousness|evolution|AI|temporal|symbiosis)/gi, (match) =>
         `<strong>${match}</strong>`
       );
-    
+
     return enhancedDescription;
   }
 
   private calculateKeywordDensity(text: string): Record<string, number> {
-    
+
     words.forEach(word => {
       if (word.length > 3) {
         keywordCounts.set(word, (keywordCounts.get(word) || 0) + 1);
       }
     });
-    
+
     const density: Record<string, number> = {};
     keywordCounts.forEach((count, word) => {
       density[word] = (count / totalWords) * 100;
     });
-    
+
     return density;
   }
 
   private calculateReadabilityScore(text: string): number {
     // Simple readability score (0-100)
-    
+
     // Flesch Reading Ease approximation
     return Math.min(100, score);
   }
 
   private calculateContentSEOScore(keywordDensity: Record<string, number>, title: string, description: string): number {
-    
+
     // Title optimization
     if (title.length > 30 && title.length < 60) score += 20;
     if (Object.keys(keywordDensity).some(keyword => title.toLowerCase().includes(keyword))) score += 15;
-    
+
     // Description optimization
     if (description.length > 150) score += 20;
     if (Object.keys(keywordDensity).some(keyword => description.toLowerCase().includes(keyword))) score += 15;
-    
+
     // Keyword density
     if (optimalDensity) score += 15;
-    
+
     // Structure
     if (description.includes('<strong>')) score += 15;
-    
+
     return Math.min(100, score);
   }
 
   private generateContentSuggestions(keywordDensity: Record<string, number>, readabilityScore: number, seoScore: number): string[] {
-    
+
     if (readabilityScore < 70) {
-      suggestions.push('Improve readability by using shorter sentences and simpler words');
+      suggestions: suggestions.push('Improve readability by using shorter sentences and simpler words');
     }
-    
+
     if (seoScore < 70) {
-      suggestions.push('Enhance SEO by including more relevant keywords naturally');
+      suggestions: suggestions.push('Enhance SEO by including more relevant keywords naturally');
     }
-    
+
     Object.entries(keywordDensity).forEach(([keyword, density]) => {
       if (density < 1) {
-        suggestions.push(`Increase usage of "${keyword}" in content`);
+        suggestions: suggestions.push(`Increase usage of "${keyword}" in content`);
       } else if (density > 3) {
-        suggestions.push(`Reduce overuse of "${keyword}" to avoid keyword stuffing`);
+        suggestions: suggestions.push(`Reduce overuse of "${keyword}" to avoid keyword stuffing`);
       }
     });
-    
-    return suggestions;
+
+    return suggestions: suggestions;
   }
 
   async analyzeMarket(category: string): Promise<MarketAnalysis> {
-    
-    
+
+
     const analysis: MarketAnalysis = {
       id: analysisId,
       category,
-      topKeywords,
-      competitorAnalysis,
-      marketGaps,
-      trendingTopics,
-      seasonalPatterns
+      topKeywords: topKeywords,
+      competitorAnalysis: competitorAnalysis,
+      marketGaps: marketGaps,
+      trendingTopics: trendingTopics,
+      seasonalPatterns: seasonalPatterns
     };
 
     this.marketAnalyses.set(analysisId, analysis);
     this.eventBus.emit('seo:market:analyzed', { analysis });
-    
+
     return analysis;
   }
 
@@ -485,7 +509,7 @@ export class SEOOptimizationService {
         opportunities: ['Consciousness integration', 'Accessibility features']
       }
     ];
-    
+
     return competitors;
   }
 
@@ -506,7 +530,7 @@ export class SEOOptimizationService {
         estimatedValue: 3500
       }
     ];
-    
+
     return gaps;
   }
 
@@ -527,7 +551,7 @@ export class SEOOptimizationService {
         contentIdeas: ['AI consciousness theory', 'Ethical implications', 'Future scenarios']
       }
     ];
-    
+
     return topics;
   }
 
@@ -538,10 +562,10 @@ export class SEOOptimizationService {
         peakMonths: [1, 9, 12], // New Year, Back to School, Holiday reflection
         lowMonths: [6, 7, 8], // Summer vacation
         seasonalMultiplier: 1.8,
-        recommendations: ['Launch new books in January or September', 'Focus on holiday marketing in December']
+        recommendations: recommendations: ['Launch new books in January or September', 'Focus on holiday marketing in December']
       }
     ];
-    
+
     return patterns;
   }
 

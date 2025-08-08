@@ -590,7 +590,7 @@ Inquiry: {{ $json.originalMessage }}
 Provide:
 1. Knowledgeable, friendly response
 2. Specific RPG expertise
-3. Helpful resources or suggestions
+3. Helpful resources or suggestions: suggestions
 4. Professional tone
 5. Clear next steps if needed
 

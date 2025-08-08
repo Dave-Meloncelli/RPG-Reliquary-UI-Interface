@@ -10,25 +10,72 @@ import jwt
 import time
 from datetime import datetime, timedelta
 from dotenv import load_dotenv
-from sqlalchemy import create_engine, Column, String, Integer, DateTime, Boolean, Text
+from sqlalchemy import create_engine, Column, String, Integer, DateTime, Boolean, Text, text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.exc import SQLAlchemyError
 import redis
 from contextlib import asynccontextmanager
+import json
+
+# Import template handler
+from .template_handler import template_handler, TemplateCommand, TemplateResult, TemplateCategory
+from .middleware import (
+    SecurityMiddleware,
+    RateLimitMiddleware,
+    LoggingMiddleware,
+    ErrorHandlingMiddleware,
+    CSRFMiddleware,
+    ContentTypeMiddleware,
+    RequestIdMiddleware,
+)
 
 # Load environment variables
 load_dotenv()
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('app.log'),
-        logging.StreamHandler()
-    ]
-)
+def configure_logging():
+    """Configure logging based on config/observability/logging.json"""
+    try:
+        with open(os.path.join('config', 'observability', 'logging.json'), 'r', encoding='utf-8') as f:
+            cfg = json.load(f)
+    except Exception:
+        cfg = {"level": "info", "format": "plain"}
+
+    level = getattr(logging, str(cfg.get('level', 'info')).upper(), logging.INFO)
+    root = logging.getLogger()
+    root.setLevel(level)
+    # Clear existing handlers to avoid duplicates
+    for h in list(root.handlers):
+        root.removeHandler(h)
+
+    class JsonFormatter(logging.Formatter):
+        def format(self, record: logging.LogRecord) -> str:
+            base = {
+                "timestamp": datetime.utcnow().isoformat(),
+                "level": record.levelname.lower(),
+                "message": record.getMessage(),
+                "component": getattr(record, 'component', record.name),
+                "requestId": getattr(record, 'requestId', None)
+            }
+            # Attach any extras commonly used
+            for k in ("status", "durationMs", "path", "method", "client"):
+                v = getattr(record, k, None)
+                if v is not None:
+                    base[k] = v
+            return json.dumps(base)
+
+    stream_handler = logging.StreamHandler()
+    file_handler = logging.FileHandler('app.log')
+    if cfg.get('format') == 'json':
+        fmt = JsonFormatter()
+    else:
+        fmt = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    stream_handler.setFormatter(fmt)
+    file_handler.setFormatter(fmt)
+    root.addHandler(stream_handler)
+    root.addHandler(file_handler)
+
+configure_logging()
 logger = logging.getLogger(__name__)
 
 # Security configuration
@@ -39,7 +86,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 # Database configuration
 DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./app.db")
 engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(autobind=engine)
+SessionLocal = sessionmaker(bind=engine)
 Base = declarative_base()
 
 # Redis configuration
@@ -121,6 +168,24 @@ class TokenResponse(BaseModel):
     token_type: str
     expires_in: int
 
+# Template-related models
+class TemplateExecuteRequest(BaseModel):
+    message: str
+    user_context: Optional[Dict[str, Any]] = {}
+
+class TemplateExecuteResponse(BaseModel):
+    success: bool
+    output: str
+    data: Dict[str, Any] = {}
+    errors: List[str] = []
+    execution_time: float
+    template_used: str
+
+class TemplateListResponse(BaseModel):
+    templates: List[Dict[str, Any]]
+    total_count: int
+    categories: List[str]
+
 # Utility functions
 def get_password_hash(password: str) -> str:
     import hashlib
@@ -188,7 +253,7 @@ async def lifespan(app: FastAPI):
     try:
         # Test database connection
         db = SessionLocal()
-        db.execute("SELECT 1")
+        db.execute(text("SELECT 1"))
         db.close()
         logger.info("Database connection successful")
     except Exception as e:
@@ -200,13 +265,16 @@ async def lifespan(app: FastAPI):
         redis_client.ping()
         logger.info("Redis connection successful")
     except Exception as e:
-        logger.error(f"Redis connection failed: {e}")
-        raise
-    
+        logger.warning(f"Redis connection failed: {e}")
+        logger.info("Continuing without Redis (rate limiting disabled)")
+        # Don't raise - make Redis optional
+    # Set readiness state
+    app.state.ready = True
     yield
     
     # Shutdown
     logger.info("Shutting down AZ Interface API")
+    app.state.ready = False
 
 # Create FastAPI app
 app = FastAPI(
@@ -230,6 +298,19 @@ app.add_middleware(
     allow_methods=["GET", "POST", "PUT", "DELETE"],
     allow_headers=["*"],
 )
+
+# Install core middlewares
+app.add_middleware(RequestIdMiddleware)
+app.add_middleware(ErrorHandlingMiddleware)
+app.add_middleware(SecurityMiddleware)
+app.add_middleware(ContentTypeMiddleware)
+app.add_middleware(LoggingMiddleware)
+# Optional rate limit if Redis available
+try:
+    redis_client.ping()
+    app.add_middleware(RateLimitMiddleware, redis_client=redis_client)
+except Exception:
+    pass
 
 # Global exception handler
 @app.exception_handler(ValidationError)
@@ -265,6 +346,38 @@ async def health_check():
         timestamp=datetime.utcnow(),
         version="1.0.0"
     )
+
+# Liveness probe (process/responding)
+@app.get("/liveness")
+async def liveness():
+    return {"status": "alive", "timestamp": datetime.utcnow().isoformat()}
+
+# Readiness probe (dependencies ready: DB, optional Redis)
+@app.get("/readiness")
+async def readiness():
+    issues = []
+    # DB check
+    try:
+        db = SessionLocal()
+        db.execute(text("SELECT 1"))
+        db.close()
+    except Exception as e:
+        issues.append({"component": "database", "error": str(e)})
+    # Redis optional
+    try:
+        redis_client.ping()
+    except Exception as e:
+        # Redis is optional; record warning but do not fail readiness
+        issues.append({"component": "redis", "warning": str(e)})
+    # Also consider app.state.ready
+    not_ready = not getattr(app.state, 'ready', False) or any('error' in i for i in issues)
+    status_code = 200 if not not_ready else 503
+    payload = {
+        "status": "ready" if status_code == 200 else "not_ready",
+        "issues": issues,
+        "timestamp": datetime.utcnow().isoformat()
+    }
+    return JSONResponse(status_code=status_code, content=payload)
 
 # Authentication endpoints
 @app.post("/auth/register", response_model=UserResponse)
@@ -473,6 +586,142 @@ async def delete_task(
         db.rollback()
         logger.error(f"Task deletion failed: {e}")
         raise HTTPException(status_code=500, detail="Task deletion failed")
+
+# ============================================================================
+# TEMPLATE COMMAND HANDLERS - AZV-002 Implementation
+# ============================================================================
+
+@app.post("/templates/execute", response_model=TemplateExecuteResponse)
+async def execute_template_command(
+    request: TemplateExecuteRequest,
+    current_user: User = Depends(get_current_user)
+):
+    """
+    Execute a template command from user message
+    
+    Supports @template commands like:
+    - @template rpg_condition_assessment item_type="book" condition_notes="good"
+    - @template market_intelligence item_category="rpg" timeframe="30d"
+    - @template list
+    """
+    check_rate_limit(Request, current_user.id)
+    
+    try:
+        # Check for special commands
+        if request.message.strip().lower() == "@template list":
+            templates = template_handler.get_available_templates()
+            return TemplateExecuteResponse(
+                success=True,
+                output="Available templates:\n\n" + "\n".join([
+                    f"• {t['symbol']} **{t['name']}** ({t['category']}) - {t['description']}"
+                    for t in templates
+                ]),
+                data={"templates": templates},
+                execution_time=0.0,
+                template_used="template_list"
+            )
+        
+        # Parse template command
+        command = template_handler.parse_template_command(request.message, request.user_context)
+        
+        if not command:
+            return TemplateExecuteResponse(
+                success=False,
+                output="No template command found. Use @template list to see available templates.",
+                errors=["No @template command detected"],
+                execution_time=0.0,
+                template_used=""
+            )
+        
+        # Execute template
+        result = await template_handler.execute_template(command)
+        
+        logger.info(f"Template executed by user {current_user.username}: {result.template_used}")
+        
+        return TemplateExecuteResponse(
+            success=result.success,
+            output=result.output,
+            data=result.data,
+            errors=result.errors,
+            execution_time=result.execution_time,
+            template_used=result.template_used
+        )
+        
+    except Exception as e:
+        logger.error(f"Error in template execution: {str(e)}")
+        return TemplateExecuteResponse(
+            success=False,
+            output=f"Error executing template command: {str(e)}",
+            errors=[str(e)],
+            execution_time=0.0,
+            template_used=""
+        )
+
+@app.get("/templates/list", response_model=TemplateListResponse)
+async def list_templates(
+    category: Optional[str] = None,
+    current_user: User = Depends(get_current_user)
+):
+    """
+    List available templates, optionally filtered by category
+    
+    Categories: Business, Vault, System, Integration, Consciousness
+    """
+    check_rate_limit(Request, current_user.id)
+    
+    try:
+        # Convert category string to enum if provided
+        template_category = None
+        if category:
+            try:
+                template_category = TemplateCategory(category)
+            except ValueError:
+                raise HTTPException(
+                    status_code=400, 
+                    detail=f"Invalid category. Must be one of: {[c.value for c in TemplateCategory]}"
+                )
+        
+        templates = template_handler.get_available_templates(template_category)
+        
+        # Get unique categories
+        categories = list(set([t["category"] for t in templates]))
+        
+        logger.info(f"Templates listed by user {current_user.username}: {len(templates)} templates")
+        
+        return TemplateListResponse(
+            templates=templates,
+            total_count=len(templates),
+            categories=categories
+        )
+        
+    except Exception as e:
+        logger.error(f"Error listing templates: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error listing templates: {str(e)}")
+
+@app.get("/templates/{template_id}")
+async def get_template_details(
+    template_id: str,
+    current_user: User = Depends(get_current_user)
+):
+    """
+    Get detailed information about a specific template
+    """
+    check_rate_limit(Request, current_user.id)
+    
+    try:
+        templates = template_handler.get_available_templates()
+        template = next((t for t in templates if t["id"] == template_id), None)
+        
+        if not template:
+            raise HTTPException(status_code=404, detail=f"Template '{template_id}' not found")
+        
+        logger.info(f"Template details retrieved by user {current_user.username}: {template_id}")
+        
+        return template
+        
+    except Exception as e:
+        logger.error(f"Error getting template details: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error getting template details: {str(e)}")
 
 if __name__ == "__main__":
     import uvicorn

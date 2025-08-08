@@ -15,6 +15,26 @@ export interface WindowState {
   isDraggable?: boolean;
 }
 
+export interface WindowInstance {
+  id: string;
+  appId: string;
+  title: string;
+  Component: React.ComponentType;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  zIndex: number;
+  isMinimized: boolean;
+  isMaximized: boolean;
+  preMaximizeState?: {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+  };
+}
+
 export interface AppDefinition {
   id: string;
   name: string;
@@ -39,13 +59,13 @@ export interface AppProps {
   isActive?: boolean;
 }
 
-export type AppCategory = 
-  | 'system' 
-  | 'productivity' 
-  | 'development' 
-  | 'ai' 
-  | 'utilities' 
-  | 'games' 
+export type AppCategory =
+  | 'system'
+  | 'productivity'
+  | 'development'
+  | 'ai'
+  | 'utilities'
+  | 'games'
   | 'communication'
   | 'monitoring';
 
@@ -196,24 +216,28 @@ export interface SymposiumMessage {
 
 // Ingestion and Operation Types
 export interface OperationStep {
-  id: string;
+  id?: string;
   name: string;
+  agentId: string;
   status: 'pending' | 'running' | 'completed' | 'failed';
-  progress: number;
+  progress?: number;
   startTime?: Date;
   endTime?: Date;
   error?: string;
+  result?: any;
 }
 
 export interface OperationProgress {
-  operationId: string;
-  currentStep: number;
-  totalSteps: number;
-  status: 'pending' | 'running' | 'completed' | 'failed';
-  progress: number;
-  startTime: Date;
+  operationId?: string;
+  currentStep?: number;
+  totalSteps?: number;
+  status?: 'pending' | 'running' | 'completed' | 'failed';
+  progress?: number;
+  startTime?: Date;
   estimatedCompletion?: Date;
   error?: string;
+  isComplete?: boolean;
+  steps?: OperationStep[];
 }
 
 export interface IngestionReport {
@@ -684,6 +708,10 @@ export interface EventMap {
   'task.created': { task: TaskItem };
   'task.resolved': { id: string };
   'traffic.journey.progress': { journey: any; progress: number };
+  'auth.login': { user: any };
+  'auth.logout': {};
+  'auth.register': { user: any };
+  'auth.error': { error: string };
 }
 
 // RPG Book Analysis Types

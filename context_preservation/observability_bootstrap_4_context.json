@@ -1,0 +1,15 @@
+{
+  "frame_id": "observability_bootstrap",
+  "stage": 4,
+  "input_data": {},
+  "parameters": {},
+  "result": {
+    "success": true,
+    "observability_bootstrapped": true,
+    "data": {
+      "logging_config": "config\\observability\\logging.json"
+    },
+    "summary": "Structured logging configuration created"
+  },
+  "timestamp": "2025-08-08T12:42:46.639827"
+}

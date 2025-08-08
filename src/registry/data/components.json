@@ -34,7 +34,7 @@
       "onChange"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.308Z",
+    "lastUpdated": "2025-08-05T22:22:18.539Z",
     "status": "active"
   },
   "AegisDashboardApp": {
@@ -54,7 +54,7 @@
     ],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.309Z",
+    "lastUpdated": "2025-08-05T22:22:18.541Z",
     "status": "active"
   },
   "AgentNetworkApp": {
@@ -75,7 +75,7 @@
     ],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.309Z",
+    "lastUpdated": "2025-08-05T22:22:18.541Z",
     "status": "active"
   },
   "AutomationHubApp": {
@@ -101,7 +101,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.309Z",
+    "lastUpdated": "2025-08-05T22:22:18.541Z",
     "status": "active"
   },
   "BackupApp": {
@@ -127,7 +127,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.309Z",
+    "lastUpdated": "2025-08-05T22:22:18.542Z",
     "status": "active"
   },
   "BatchIngesterApp": {
@@ -162,7 +162,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.309Z",
+    "lastUpdated": "2025-08-05T22:22:18.542Z",
     "status": "active"
   },
   "BookSalesApp": {
@@ -203,7 +203,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.310Z",
+    "lastUpdated": "2025-08-05T22:22:18.543Z",
     "status": "active"
   },
   "CodebaseApp": {
@@ -222,7 +222,7 @@
     ],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.310Z",
+    "lastUpdated": "2025-08-05T22:22:18.545Z",
     "status": "active"
   },
   "CodexApp": {
@@ -247,7 +247,7 @@
       "onSelect"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.310Z",
+    "lastUpdated": "2025-08-05T22:22:18.546Z",
     "status": "active"
   },
   "CompanionChatApp": {
@@ -283,7 +283,78 @@
       "onChange"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.310Z",
+    "lastUpdated": "2025-08-05T22:22:18.546Z",
+    "status": "active"
+  },
+  "ConcurrentAgentHubApp": {
+    "name": "ConcurrentAgentHubApp",
+    "path": "src\\apps\\ConcurrentAgentHubApp.tsx",
+    "dependencies": [
+      "../services/concurrentAgentService",
+      "../services/agentData"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "handleSubmitTask",
+      "handleSubmitMultipleTasks",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onClick",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-05T22:22:18.547Z",
+    "status": "active"
+  },
+  "ConsciousnessWorkflowApp": {
+    "name": "ConsciousnessWorkflowApp",
+    "path": "src\\apps\\ConsciousnessWorkflowApp.tsx",
+    "dependencies": [
+      "../services/consciousnessWorkflowService"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "handleStartBlock",
+      "handleEndBlock",
+      "handleEndSession",
+      "onClick",
+      "onChange",
+      "onClick",
+      "onClick",
+      "onClick",
+      "onClick",
+      "onClick",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-05T22:22:18.549Z",
     "status": "active"
   },
   "ControlPanelApp": {
@@ -312,7 +383,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.311Z",
+    "lastUpdated": "2025-08-05T22:22:18.550Z",
     "status": "active"
   },
   "CouncilChamberApp": {
@@ -341,7 +412,7 @@
       "onChange"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.311Z",
+    "lastUpdated": "2025-08-05T22:22:18.552Z",
     "status": "active"
   },
   "CuratorApp": {
@@ -381,7 +452,7 @@
       "onSelectionChange"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.311Z",
+    "lastUpdated": "2025-08-05T22:22:18.554Z",
     "status": "active"
   },
   "DiagnosticsApp": {
@@ -416,7 +487,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.311Z",
+    "lastUpdated": "2025-08-05T22:22:18.556Z",
     "status": "active"
   },
   "ErduMonitorApp": {
@@ -442,7 +513,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.311Z",
+    "lastUpdated": "2025-08-05T22:22:18.558Z",
     "status": "active"
   },
   "ForensicsApp": {
@@ -455,7 +526,7 @@
     "hooks": [],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.311Z",
+    "lastUpdated": "2025-08-05T22:22:18.559Z",
     "status": "active"
   },
   "HierarchyApp": {
@@ -468,7 +539,7 @@
     "hooks": [],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.312Z",
+    "lastUpdated": "2025-08-05T22:22:18.561Z",
     "status": "active"
   },
   "ImageGeneratorApp": {
@@ -494,7 +565,7 @@
       "onChange"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.312Z",
+    "lastUpdated": "2025-08-05T22:22:18.561Z",
     "status": "active"
   },
   "InfrastructureApp": {
@@ -512,7 +583,7 @@
     ],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.312Z",
+    "lastUpdated": "2025-08-05T22:22:18.562Z",
     "status": "active"
   },
   "IngestionPipelineApp": {
@@ -537,7 +608,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.312Z",
+    "lastUpdated": "2025-08-05T22:22:18.562Z",
     "status": "active"
   },
   "LoomApp": {
@@ -580,7 +651,7 @@
       "onChange"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.312Z",
+    "lastUpdated": "2025-08-05T22:22:18.563Z",
     "status": "active"
   },
   "NotepadApp": {
@@ -596,7 +667,7 @@
       "onChange"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.312Z",
+    "lastUpdated": "2025-08-05T22:22:18.565Z",
     "status": "active"
   },
   "ObservatoryApp": {
@@ -616,7 +687,7 @@
     ],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.313Z",
+    "lastUpdated": "2025-08-05T22:22:18.566Z",
     "status": "active"
   },
   "OperationsConsoleApp": {
@@ -644,7 +715,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.313Z",
+    "lastUpdated": "2025-08-05T22:22:18.569Z",
     "status": "active"
   },
   "OrchestratorApp": {
@@ -663,7 +734,7 @@
     ],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.313Z",
+    "lastUpdated": "2025-08-05T22:22:18.572Z",
     "status": "active"
   },
   "PersonaViewerApp": {
@@ -688,7 +759,7 @@
       "onSelect"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.319Z",
+    "lastUpdated": "2025-08-05T22:22:18.645Z",
     "status": "active"
   },
   "PlaybookApp": {
@@ -710,7 +781,7 @@
       "onSelect"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.314Z",
+    "lastUpdated": "2025-08-05T22:22:18.583Z",
     "status": "active"
   },
   "RPGCommunityHubApp": {
@@ -738,7 +809,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.314Z",
+    "lastUpdated": "2025-08-05T22:22:18.590Z",
     "status": "active"
   },
   "SocialMediaHubApp": {
@@ -763,7 +834,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.314Z",
+    "lastUpdated": "2025-08-05T22:22:18.595Z",
     "status": "active"
   },
   "SymposiumApp": {
@@ -799,7 +870,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.314Z",
+    "lastUpdated": "2025-08-05T22:22:18.601Z",
     "status": "active"
   },
   "SystemEditorApp": {
@@ -838,7 +909,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.314Z",
+    "lastUpdated": "2025-08-05T22:22:18.607Z",
     "status": "active"
   },
   "TaskReviewHubApp": {
@@ -869,7 +940,7 @@
       "onOpen"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.315Z",
+    "lastUpdated": "2025-08-05T22:22:18.613Z",
     "status": "active"
   },
   "TechnomancerApp": {
@@ -890,7 +961,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.315Z",
+    "lastUpdated": "2025-08-05T22:22:18.618Z",
     "status": "active"
   },
   "TerminalApp": {
@@ -923,7 +994,7 @@
       "onChange"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.315Z",
+    "lastUpdated": "2025-08-05T22:22:18.624Z",
     "status": "active"
   },
   "TradeInPortalApp": {
@@ -951,7 +1022,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.315Z",
+    "lastUpdated": "2025-08-05T22:22:18.628Z",
     "status": "active"
   },
   "VaultExplorerApp": {
@@ -973,7 +1044,47 @@
       "onChange"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.316Z",
+    "lastUpdated": "2025-08-05T22:22:18.633Z",
+    "status": "active"
+  },
+  "XPCharacterHubApp": {
+    "name": "XPCharacterHubApp",
+    "path": "src\\apps\\XPCharacterHubApp.tsx",
+    "dependencies": [
+      "../services/xpService",
+      "../types/xpTypes"
+    ],
+    "props": [],
+    "hooks": [
+      "useState",
+      "useEffect",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useState",
+      "useEffect"
+    ],
+    "eventHandlers": [
+      "handleAwardXP",
+      "handleUpdateCustomization",
+      "onClick",
+      "onClick",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onClick",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onChange",
+      "onClick"
+    ],
+    "apiCalls": [],
+    "lastUpdated": "2025-08-05T22:22:18.636Z",
     "status": "active"
   },
   "App": {
@@ -1007,7 +1118,7 @@
       "onLoginSuccess"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.316Z",
+    "lastUpdated": "2025-08-05T22:22:18.637Z",
     "status": "active"
   },
   "AgentStatusSummaryWidget": {
@@ -1025,7 +1136,7 @@
     ],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.316Z",
+    "lastUpdated": "2025-08-05T22:22:18.637Z",
     "status": "active"
   },
   "KeyMetricsWidget": {
@@ -1043,7 +1154,7 @@
     ],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.316Z",
+    "lastUpdated": "2025-08-05T22:22:18.637Z",
     "status": "active"
   },
   "SystemStatusWidget": {
@@ -1061,7 +1172,7 @@
     ],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.316Z",
+    "lastUpdated": "2025-08-05T22:22:18.638Z",
     "status": "active"
   },
   "WidgetFactory": {
@@ -1082,7 +1193,7 @@
     "hooks": [],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.316Z",
+    "lastUpdated": "2025-08-05T22:22:18.638Z",
     "status": "active"
   },
   "WidgetWrapper": {
@@ -1109,7 +1220,7 @@
     "hooks": [],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.317Z",
+    "lastUpdated": "2025-08-05T22:22:18.639Z",
     "status": "active"
   },
   "Desktop": {
@@ -1133,7 +1244,7 @@
       "onPositionChange"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.317Z",
+    "lastUpdated": "2025-08-05T22:22:18.639Z",
     "status": "active"
   },
   "Dock": {
@@ -1159,7 +1270,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.317Z",
+    "lastUpdated": "2025-08-05T22:22:18.639Z",
     "status": "active"
   },
   "EditorPane": {
@@ -1214,7 +1325,7 @@
       "onChange"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.317Z",
+    "lastUpdated": "2025-08-05T22:22:18.640Z",
     "status": "active"
   },
   "FileExplorer": {
@@ -1249,7 +1360,7 @@
       "onFileSelect"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.317Z",
+    "lastUpdated": "2025-08-05T22:22:18.640Z",
     "status": "active"
   },
   "MonacoWrapper": {
@@ -1284,7 +1395,7 @@
     ],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.317Z",
+    "lastUpdated": "2025-08-05T22:22:18.640Z",
     "status": "active"
   },
   "ErduIncidentList": {
@@ -1321,7 +1432,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.318Z",
+    "lastUpdated": "2025-08-05T22:22:18.641Z",
     "status": "active"
   },
   "ErrorBoundary": {
@@ -1334,7 +1445,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.318Z",
+    "lastUpdated": "2025-08-05T22:22:18.641Z",
     "status": "active"
   },
   "TerminalIcon": {
@@ -1345,7 +1456,7 @@
     "hooks": [],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.318Z",
+    "lastUpdated": "2025-08-05T22:22:18.641Z",
     "status": "active"
   },
   "InstallationWizard": {
@@ -1388,7 +1499,7 @@
       "fetch",
       "fetch"
     ],
-    "lastUpdated": "2025-08-04T05:35:12.318Z",
+    "lastUpdated": "2025-08-05T22:22:18.642Z",
     "status": "active"
   },
   "LoginModal": {
@@ -1437,7 +1548,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.318Z",
+    "lastUpdated": "2025-08-05T22:22:18.643Z",
     "status": "active"
   },
   "PasswordResetModal": {
@@ -1488,7 +1599,7 @@
       "fetch",
       "fetch"
     ],
-    "lastUpdated": "2025-08-04T05:35:12.319Z",
+    "lastUpdated": "2025-08-05T22:22:18.643Z",
     "status": "active"
   },
   "PersonaDetail": {
@@ -1508,7 +1619,7 @@
     "hooks": [],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.358Z",
+    "lastUpdated": "2025-08-05T22:22:18.739Z",
     "status": "active"
   },
   "PersonaList": {
@@ -1540,7 +1651,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.359Z",
+    "lastUpdated": "2025-08-05T22:22:18.740Z",
     "status": "active"
   },
   "PersonaCharacterIcons": {
@@ -1557,7 +1668,7 @@
     "hooks": [],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.319Z",
+    "lastUpdated": "2025-08-05T22:22:18.644Z",
     "status": "active"
   },
   "Window": {
@@ -1621,7 +1732,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.319Z",
+    "lastUpdated": "2025-08-05T22:22:18.645Z",
     "status": "active"
   },
   "APPS": {
@@ -1664,13 +1775,16 @@
       "../apps/TradeInPortalApp",
       "../apps/RPGCommunityHubApp",
       "../apps/SocialMediaHubApp",
+      "../apps/ConcurrentAgentHubApp",
+      "../apps/ConsciousnessWorkflowApp",
+      "../apps/XPCharacterHubApp",
       "../components/icons"
     ],
     "props": [],
     "hooks": [],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.320Z",
+    "lastUpdated": "2025-08-05T22:22:18.646Z",
     "status": "active"
   },
   "WindowProvider": {
@@ -1700,7 +1814,7 @@
     ],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.321Z",
+    "lastUpdated": "2025-08-05T22:22:18.647Z",
     "status": "active"
   },
   "index": {
@@ -1717,7 +1831,7 @@
     "hooks": [],
     "eventHandlers": [],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.323Z",
+    "lastUpdated": "2025-08-05T22:22:18.649Z",
     "status": "active"
   },
   "PersonaFusionChamber": {
@@ -1755,7 +1869,7 @@
       "onClick"
     ],
     "apiCalls": [],
-    "lastUpdated": "2025-08-04T05:35:12.359Z",
+    "lastUpdated": "2025-08-05T22:22:18.740Z",
     "status": "active"
   }
 }
