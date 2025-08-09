@@ -6,12 +6,12 @@
   "result": {
     "success": true,
     "remediation_generated": true,
-    "plan_path": "reports\\remediation_plan_1754638058109.json",
+    "plan_path": "reports\\remediation_plan_1754658065568.json",
     "summary": "Generated remediation plan with 2 actions",
     "context": {
       "actions_count": 2,
       "commands_count": 0
     }
   },
-  "timestamp": "2025-08-08T15:27:38.124827"
+  "timestamp": "2025-08-08T21:01:05.585015"
 }

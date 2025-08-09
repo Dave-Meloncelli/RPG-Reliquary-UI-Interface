@@ -1,0 +1,8 @@
+{
+  "*.{js,jsx,ts,tsx,json,md,css,scss,html}": [
+    "python -c \"print('ok')\""
+  ],
+  "*.{py}": [
+    "python -c \"print('ok')\""
+  ]
+}

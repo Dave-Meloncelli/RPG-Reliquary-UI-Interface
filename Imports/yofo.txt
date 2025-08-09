@@ -1,0 +1,472 @@
+0:00
+[Music]
+0:02
+Something really strange is happening
+0:03
+right now in the AI world. On one side,
+0:06
+a mysterious model called Horizon Alpha
+0:08
+suddenly showed up on Open Router
+0:10
+without a single announcement, no
+0:12
+author, no documentation, just anonymous
+0:14
+slapped on it. And on the other side,
+0:16
+some suspicious GitHub repositories
+0:18
+briefly went live with names like Yofo
+0:22
+Wildflower and Yofo Deepcurren
+0:24
+containing what looked like configs for
+0:26
+massive open-source GPT style models.
+0:30
+People spotted those before they
+0:32
+vanished, and the connection between
+0:33
+both events is way too tight to be a
+0:36
+coincidence. Let's start with Horizon
+0:38
+Alpha. It was dropped quietly on July
+0:40
+31st and within hours it climbed to the
+0:43
+top of EQBench, the benchmark known for
+0:46
+testing creative reasoning, emotional
+0:48
+intelligence, and long- form writing.
+0:50
+These aren't raw math tests or factual
+0:53
+recall. This is where most models
+0:54
+struggle to sound human, stay coherent
+0:58
+over multiple paragraphs, or maintain
+1:00
+subtle narrative flow. Horizon Alpha
+1:02
+didn't just compete, it destroyed
+1:04
+everything in its path. Now, here's
+1:06
+where it gets weird. Just as Horizon
+1:08
+Alpha was making noise, the AI community
+1:11
+started uncovering leaked model
+1:13
+repositories tied to open AI staff
+1:15
+accounts. One of them was labeled Yofo
+1:18
+Wildflower/GPTOSS20B
+1:21
+and the other YOFO deepcurren/poss
+1:26
+120B. That GPTOSS tag pretty clear it
+1:30
+stands for GPT open-source software. And
+1:32
+those two model names, Wildflower and
+1:35
+Deep Current, seem to represent a small
+1:37
+and large version of the same
+1:39
+architecture. The timing of these leaks
+1:41
+couldn't have been worse for secrecy and
+1:43
+better for speculation. Because Horizon
+1:46
+Alpha, it fits, it behaves like a highly
+1:49
+capable base model. It's extremely fast,
+1:51
+spitting out roughly 150 tokens per
+1:54
+second. It has a 256,000
+1:57
+token context window. That's huge. It
+2:00
+reads images, interprets complex
+2:02
+puzzles, writes clean HTML
+2:05
+visualizations for spatial logic
+2:07
+problems. One person gave it a task from
+2:09
+a kid's picture book just saying, "Read
+2:11
+the text and do what it says." And it
+2:13
+did flawlessly. OCR, reasoning, vision,
+2:17
+all working together. Now, combine that
+2:19
+with what was found in the leaked config
+2:21
+from the YFO deepurren repo. That model,
+2:24
+the suspected 120 billion parameter GPTO
+2:27
+OSS is structured as a mixture of
+2:29
+experts. This means that while the full
+2:32
+model holds 120 billion parameters, only
+2:35
+a small group about 5 billion are
+2:38
+activated per query. This makes the
+2:41
+model fast, memory efficient, and
+2:43
+shockingly cheap to run considering its
+2:46
+size, which would explain why Horizon
+2:49
+Alpha runs as fast as it does. It acts
+2:51
+like a refined architecture and just
+2:54
+like the models in those repos, Horizon
+2:56
+Alpha lacks obvious safety alignment. It
+2:59
+agrees with almost anything, doesn't
+3:01
+challenge bad ideas and fails at simple
+3:03
+math logic traps. Those are usually the
+3:05
+first things fixed in a commercial
+3:07
+release. But if it's a base model or an
+3:10
+open-source drop being tested publicly,
+3:12
+it starts to make sense. You don't
+3:14
+safety align until after the base is
+3:17
+finalized. Also, get this. When Horizon
+3:19
+Alpha was asked directly who made it, it
+3:22
+responded, "I'm an Open AI language
+3:25
+model GPT4
+3:27
+class. I was created by Open AI." It
+3:30
+didn't hesitate. That triggered a wave
+3:32
+of Reddit threads asking if OpenAI is
+3:34
+quietly testing GPT5 capabilities under
+3:37
+the radar. The theory is that Horizon
+3:39
+Alpha might be a stripped down test
+3:41
+version of GPT5 or an openweight sibling
+3:44
+with different tuning and the GitHub
+3:46
+leaks. They might have revealed the open
+3:48
+source plan behind it. Let's go back to
+3:49
+those for a second. The repositories
+3:50
+weren't empty. One of them included a
+3:52
+full config for a model with mixture of
+3:55
+experts, a giant vocabulary set, and
+3:57
+support for sliding window attention.
+3:59
+That attention mechanism allows the
+4:01
+model to handle very long sequences of
+4:04
+text without performance loss, which
+4:06
+matches Horizon Alpha's huge context
+4:08
+length. And inside those configs, people
+4:11
+noticed something unusual. FP4 precision
+4:16
+4bit floatingpoint weights. That's half
+4:19
+the size of FP8 and a quarter of FP16.
+4:22
+If true, that would make GPT OSS120B one
+4:25
+of the most memory efficient large
+4:28
+models ever built. Instead of needing
+4:30
+240 GB of VRAM to load, it could run
+4:33
+with just 60. In theory, a high-end
+4:35
+gaming PC or workstation with some RAM
+4:38
+headroom could actually load and run
+4:39
+this monster locally if the inference is
+4:42
+optimized. People started asking, "Wait
+4:45
+a second, is OpenAI testing FP4 training
+4:48
+here?" That's not just compression.
+4:50
+Training directly in FP4 is hard. You
+4:53
+lose so much numerical precision. The
+4:55
+gradients go wild and models collapse
+4:57
+unless your training process is rock
+4:59
+solid. But if they pulled it off, it's a
+5:01
+breakthrough. It opens the door to
+5:03
+training huge models with less compute
+5:05
+and running them on far smaller
+5:07
+machines. Now, not everyone's convinced.
+5:09
+Some argue it's more likely that the
+5:12
+model was trained in FP16
+5:14
+then quantized down to FP4 afterward.
+5:17
+That's still impressive, but it's not
+5:19
+the same thing. However, there's no
+5:21
+quantization config in the leaked files
+5:24
+and no mention of post-processing steps.
+5:27
+That absence is exactly what's fueling
+5:29
+the theory that FP4 might have been used
+5:32
+from the beginning. If true, we're
+5:34
+looking at a turning point in model
+5:35
+training efficiency. Meanwhile, the
+5:37
+model's name, Horizon Alpha, might just
+5:39
+be a placeholder. Or maybe it's
+5:42
+symbolic, a new horizon, a starting
+5:43
+point, alpha version. What's even more
+5:46
+telling is how quickly people tied it to
+5:48
+Open AI. There's a reason for that. It's
+5:51
+not just the benchmark dominance or the
+5:53
+language style. It's the fact that Open
+5:55
+AI has been under pressure lately.
+5:57
+Pressure from competitors and
+5:59
+internally. The collapse of their $3
+6:01
+billion deal to acquire Windsurf made
+6:04
+headlines. First, Anthropic pulled their
+6:07
+models from the partnership. Then,
+6:10
+Microsoft, yes, their closest ally,
+6:13
+reportedly blocked the acquisition to
+6:15
+protect GitHub co-pilot. And just when
+6:18
+things couldn't get messier, Google
+6:20
+stepped in and hired Windsurf's top
+6:22
+engineers. That left OpenAI with nothing
+6:25
+but a PR headache and no strategic win.
+6:28
+Add to that a rumored restructuring plan
+6:30
+to turn OpenAI into a fully for-profit
+6:33
+company to raise $40 billion tied to a
+6:36
+clause with a 20 billion penalty if
+6:39
+certain milestones aren't met. That kind
+6:41
+of money pressure means they have to
+6:43
+ship something massive, something like
+6:46
+GPT5
+6:48
+or a family of open- source models that
+6:50
+can recapture developer goodwill.
+6:52
+Because while Open AI has been dealing
+6:53
+with internal chaos, their competitors
+6:56
+haven't slowed down. China is moving
+6:58
+fast. Alibaba launched Quen 3 thinking,
+7:01
+a model that outperforms OpenAI and
+7:04
+Google on reasoning and code generation
+7:06
+benchmarks. Moonshot AI released a 1
+7:09
+trillion parameter agentic model. Z.AI
+7:12
+dropped GLM4.5
+7:15
+which now ranks third overall across all
+7:17
+proprietary and open models. And over in
+7:19
+Europe, Mistl has been building compact
+7:21
+highquality openweight models designed
+7:24
+for local inference. Their defro model
+7:26
+is optimized for coding tasks and runs
+7:28
+on consumer hardware. These companies
+7:30
+aren't just experimenting, they're
+7:32
+releasing polished, aligned, openweight
+7:35
+models with clear use cases. That's a
+7:38
+lot of pressure on Open AI, especially
+7:40
+if they want to stay in front. So, what
+7:42
+happens now? Horizon Alpha continues to
+7:44
+sit at the top of the EQ bench
+7:46
+leaderboard. Developers keep pushing it,
+7:48
+testing its limits, and trying to
+7:50
+connect the dots. At the same time, the
+7:52
+community waits to see if OpenAI will
+7:55
+officially release the models linked to
+7:57
+YOFO Wildflower and Yofo Deep Current.
+8:00
+Will we see a 20 billion parameter and a
+8:03
+120 billion parameter GPTO OS family
+8:06
+released on HugenFace or Open Router? Or
+8:08
+was this just a tease to test the water?
+8:11
+And let's not forget, some people
+8:13
+believe Horizon Alpha and GPTO OS are
+8:16
+part of the same plan. Horizon Alpha
+8:18
+could be the aligned test bed for
+8:21
+creative tasks, while GPTOS might be the
+8:25
+stripped down efficient version for
+8:27
+developers and open-source enthusiasts.
+8:30
+Different rappers, same core, or maybe
+8:33
+not. Maybe Horizon Alpha really is a
+8:35
+cloaked GPT5 running under a generic
+8:37
+name to gather real world feedback
+8:39
+before a full reveal. Whatever it is,
+8:41
+the fact that it can generate long
+8:43
+coherent stories, solve spatial puzzles,
+8:46
+understand image text combinations, and
+8:48
+respond with zero delay, all without an
+8:51
+official identity is kind of insane. One
+8:54
+way or another, the world's most famous
+8:56
+AI lab just dropped a model that doesn't
+8:59
+admit it exists. And right next to it,
+9:00
+we've got deleted GitHub repos leaking
+9:02
+what looks like the blueprint for a
+9:04
+massive open-source strategy. Whatever
+9:06
+OpenAI is doing, they've made one thing
+9:08
+clear. Something big is coming. So, what
+9:11
+do you think? Is this OpenAI's way of
+9:13
+going open source, or are they hiding
+9:16
+something bigger? Drop your thoughts in
+9:18
+the comments. I read them all. Don't
+9:20
+forget to subscribe and hit the like
+9:22
+button if you found this interesting.
+9:24
+Thanks for watching and I'll catch you
+9:26
+in the next one.

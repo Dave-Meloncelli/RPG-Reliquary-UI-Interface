@@ -280,7 +280,7 @@ class FrameRegistry:
             name='System Audit',
             type=FrameType.ANALYSIS,
             description='Comprehensive system audit and validation',
-            file_path='scripts/system-audit.cjs',
+            file_path='scripts/js/system-audit.js',
             entry_point='performFullAudit',
             dependencies=['fs', 'path', 'child_process'],
             parameters={'recursive': True, 'validate_hub': True},
@@ -295,7 +295,7 @@ class FrameRegistry:
             name='Knowledge Hub Update',
             type=FrameType.PROCESS,
             description='Updates Knowledge Hub with new findings',
-            file_path='scripts/knowledge-hub-updater.js',
+            file_path='scripts/js/knowledge-hub-updater.js',
             entry_point='updateHub',
             dependencies=['fs', 'path', 'child_process'],
             parameters={'auto_update': True, 'generate_report': True},
@@ -310,7 +310,7 @@ class FrameRegistry:
             name='External Failure Diagnostic',
             type=FrameType.DIAGNOSTIC,
             description='Analyze external command failures and generate recommendations',
-            file_path='scripts/external-failure-diagnostic.js',
+            file_path='scripts/js/external-failure-diagnostic.js',
             entry_point='analyzeFailures',
             dependencies=['node'],
             parameters={'comprehensive_analysis': True, 'generate_recommendations': True},
@@ -325,7 +325,7 @@ class FrameRegistry:
             name='PowerShell Diagnostic',
             type=FrameType.DIAGNOSTIC,
             description='Validates PowerShell frame execution and structure',
-            file_path='scripts/powershell-diagnostic.ps1',
+            file_path='scripts/ps/powershell-diagnostic.ps1',
             entry_point='',
             dependencies=['powershell'],
             parameters={},
@@ -340,7 +340,7 @@ class FrameRegistry:
             name='SBOM & License',
             type=FrameType.ANALYSIS,
             description='Generate SBOM and basic license info',
-            file_path='scripts/sbom-license.js',
+            file_path='scripts/js/sbom-license.js',
             entry_point='generateSbom',
             dependencies=['node'],
             parameters={},
@@ -355,7 +355,7 @@ class FrameRegistry:
             name='Health & Readiness',
             type=FrameType.IMPLEMENTATION,
             description='Validate or create health/readiness placeholders',
-            file_path='scripts/health-readiness.ps1',
+            file_path='scripts/ps/health-readiness.ps1',
             entry_point='',
             dependencies=['powershell'],
             parameters={},
@@ -370,7 +370,7 @@ class FrameRegistry:
             name='Observability Bootstrap',
             type=FrameType.IMPLEMENTATION,
             description='Create basic structured logging configuration',
-            file_path='scripts/observability-bootstrap.js',
+            file_path='scripts/js/observability-bootstrap.js',
             entry_point='bootstrapObservability',
             dependencies=['node'],
             parameters={},
@@ -415,7 +415,7 @@ class FrameRegistry:
             name='Secrets Scan',
             type=FrameType.ANALYSIS,
             description='Scan repository for potential secrets',
-            file_path='scripts/secrets-scan.js',
+            file_path='scripts/js/secrets-scan.js',
             entry_point='scanSecrets',
             dependencies=['node'],
             parameters={},
@@ -430,7 +430,7 @@ class FrameRegistry:
             name='Dependency Vulnerability Scan',
             type=FrameType.ANALYSIS,
             description='Aggregate dependency vulnerability report',
-            file_path='scripts/dependency-vuln.js',
+            file_path='scripts/js/dependency-vuln.js',
             entry_point='scanDependencies',
             dependencies=['node'],
             parameters={},
@@ -445,7 +445,7 @@ class FrameRegistry:
             name='Human Approval Gate',
             type=FrameType.PROCESS,
             description='Aggregate recommendations and remediations for human review',
-            file_path='scripts/remediation.js',
+            file_path='scripts/js/remediation.js',
             entry_point='generateRemediationPlan',
             dependencies=['node'],
             parameters={},
@@ -498,6 +498,186 @@ class FrameRegistry:
             rollback_plan='No rollback needed - analysis only',
             context_preservation=True
         )
+
+        # Register Pre-Existing Systems Discovery frame
+        self.frames['pre_existing_systems_discovery'] = Frame(
+            id='pre_existing_systems_discovery',
+            name='Pre-Existing Systems Discovery',
+            description='Discovers and analyzes existing audit systems, GitHub Actions, hooks, and automation infrastructure',
+            file_path='scripts/pre-existing-systems-discovery.py',
+            type=FrameType.ANALYSIS,
+            entry_point='discover_existing_systems',
+            dependencies=['python'],
+            parameters={'timeout': 300},
+            success_criteria={'systems_discovered': True, 'integration_plan_generated': True},
+            rollback_plan='No rollback needed - discovery only',
+            context_preservation=True
+        )
+
+        # Register System Integration Implementation frame
+        self.frames['system_integration_implementation'] = Frame(
+            id='system_integration_implementation',
+            name='System Integration Implementation',
+            description='Implements integration with existing audit systems, GitHub Actions, hooks, and automation infrastructure',
+            file_path='scripts/system-integration-implementation.py',
+            type=FrameType.IMPLEMENTATION,
+            entry_point='implement_system_integration',
+            dependencies=['python'],
+            parameters={'timeout': 300},
+            success_criteria={'integration_implemented': True},
+            rollback_plan='Restore backup files if integration fails',
+            context_preservation=True
+        )
+
+        # Register Improvement and Optimization frame
+        self.frames['improvement_optimization'] = Frame(
+            id='improvement_optimization',
+            name='Improvement and Optimization',
+            description='Continuously analyzes and improves the autonomous framework and system performance',
+            file_path='scripts/frames/improvement-optimization-frame.py',
+            type=FrameType.ANALYSIS,
+            entry_point='run_improvement_optimization',
+            dependencies=['python'],
+            parameters={'timeout': 300},
+            success_criteria={'improvement_optimization_complete': True},
+            rollback_plan='No rollback needed - analysis only',
+            context_preservation=True
+        )
+
+        # Register Deep Pattern Recognition frame
+        self.frames['deep_pattern_recognition'] = Frame(
+            id='deep_pattern_recognition',
+            name='Deep Pattern Recognition',
+            description='Analyzes execution logs for cognitive patterns, decision-making processes, and meta-learning insights',
+            file_path='scripts/frames/deep-pattern-recognition-frame.py',
+            type=FrameType.ANALYSIS,
+            entry_point='run_deep_pattern_recognition',
+            dependencies=['python'],
+            parameters={'timeout': 600},
+            success_criteria={'deep_pattern_recognition_complete': True},
+            rollback_plan='No rollback needed - analysis only',
+            context_preservation=True
+        )
+        
+        # Register Knowledge Hub Update frame
+        self.frames['knowledge_hub_update'] = Frame(
+            id='knowledge_hub_update',
+            name='Knowledge Hub Update',
+            description='Manages persistent learning and knowledge storage across framework executions',
+            file_path='scripts/frames/knowledge-hub-update-frame.py',
+            type=FrameType.META_ANALYSIS,
+            entry_point='run_knowledge_hub_update',
+            dependencies=['python'],
+            parameters={'timeout': 300},
+            success_criteria={'hub_updated': True},
+            rollback_plan='No rollback needed - read-only operations',
+            context_preservation=True
+        )
+        
+        # Register Meta Analysis frame
+        self.frames['meta_analysis'] = Frame(
+            id='meta_analysis',
+            name='Meta Analysis',
+            description='Analyzes framework execution for self-improvement and optimization',
+            file_path='scripts/frames/meta-analysis-frame.py',
+            type=FrameType.META_ANALYSIS,
+            entry_point='run_meta_analysis',
+            dependencies=['python'],
+            parameters={'timeout': 300},
+            success_criteria={'meta_analysis_complete': True},
+            rollback_plan='No rollback needed - analysis only',
+            context_preservation=True
+        )
+        
+        # Register Human Approval frame
+        self.frames['human_approval'] = Frame(
+            id='human_approval',
+            name='Human Approval',
+            description='Provides human-in-the-loop approval for critical decisions and actions',
+            file_path='scripts/frames/human-approval-frame.py',
+            type=FrameType.VERIFICATION,
+            entry_point='run_human_approval',
+            dependencies=['python'],
+            parameters={'timeout': 300},
+            success_criteria={'human_approval_complete': True},
+            rollback_plan='No rollback needed - approval only',
+            context_preservation=True
+        )
+
+        # Register Self-Healing frame
+        self.frames['self_healing'] = Frame(
+            id='self_healing',
+            name='Self-Healing',
+            description='Automatically detects and recovers from frame failures',
+            file_path='scripts/frames/self-healing-frame.py',
+            type=FrameType.MITIGATION,
+            entry_point='run_self_healing',
+            dependencies=['python'],
+            parameters={'timeout': 300},
+            success_criteria={'self_healing_complete': True},
+            rollback_plan='No rollback needed - mitigation only',
+            context_preservation=True
+        )
+
+        # Register Parallel Execution Coordinator frame
+        self.frames['parallel_execution'] = Frame(
+            id='parallel_execution',
+            name='Parallel Execution Coordinator',
+            description='Coordinates parallel execution of independent frames',
+            file_path='scripts/frames/parallel-execution-coordinator-frame.py',
+            type=FrameType.PROCESS,
+            entry_point='run_parallel_execution_coordinator',
+            dependencies=['python'],
+            parameters={'timeout': 600},
+            success_criteria={'parallel_execution_complete': True},
+            rollback_plan='No rollback needed - coordination only',
+            context_preservation=True
+        )
+
+        # Register Predictive Analysis frame
+        self.frames['predictive_analysis'] = Frame(
+            id='predictive_analysis',
+            name='Predictive Analysis',
+            description='Analyzes historical execution data to predict failures and optimize performance',
+            file_path='scripts/frames/predictive-analysis-frame.py',
+            type=FrameType.ANALYSIS,
+            entry_point='run_predictive_analysis',
+            dependencies=['python'],
+            parameters={'timeout': 300},
+            success_criteria={'predictive_analysis_complete': True},
+            rollback_plan='No rollback needed - analysis only',
+            context_preservation=True
+        )
+
+        # Register Intelligent Caching frame
+        self.frames['intelligent_caching'] = Frame(
+            id='intelligent_caching',
+            name='Intelligent Caching',
+            description='Manages intelligent caching for repeated operations to improve performance',
+            file_path='scripts/frames/intelligent-caching-frame.py',
+            type=FrameType.PROCESS,
+            entry_point='run_intelligent_caching',
+            dependencies=['python'],
+            parameters={'timeout': 120},
+            success_criteria={'success': True},
+            rollback_plan='No rollback needed - caching only',
+            context_preservation=True
+        )
+
+        # Register Log Tailer frame
+        self.frames['log_tailer'] = Frame(
+            id='log_tailer',
+            name='Log Tailer',
+            description='Tails recent reports and runs Deep Pattern Recognition incrementally',
+            file_path='scripts/frames/log-tailer-frame.py',
+            type=FrameType.PROCESS,
+            entry_point='run_log_tailer',
+            dependencies=['python'],
+            parameters={'timeout': 180},
+            success_criteria={'log_tailer_complete': True},
+            rollback_plan='No rollback needed - read-only',
+            context_preservation=True
+        )
     
     def _load_scaffolds(self):
         """Load predefined scaffolds including task-specific ones"""
@@ -530,19 +710,19 @@ class FrameRegistry:
             name='Full System Analysis',
             description='Complete system analysis and optimization',
             stages={
-                1: [self.frames['synthesis_analysis']],      # Scope
+                1: [self.frames['pre_existing_systems_discovery'], self.frames['synthesis_analysis']],      # Scope: Discover existing systems first
                 2: [self.frames['enhanced_analysis'], self.frames['sbom_license'], self.frames['secrets_scan'], self.frames['dependency_vuln'], self.frames['frame_optimizer']],       # Identify & Analyze
                 3: [self.frames['system_audit']],           # Plan
                 4: [self.frames['risk_mitigation'], self.frames['backup_bootstrap'], self.frames['health_readiness'], self.frames['observability_bootstrap']],  # Implement
                 5: [],                                      # Success continue
                 6: [self.frames['synthesis_analysis'], self.frames['sbom_license']],     # Final audit
-                7: [self.frames['meta_analysis']],          # Meta-audit
+                7: [self.frames['meta_analysis'], self.frames['improvement_optimization']],          # Meta-audit + Improvement
                 8: [self.frames['human_approval']],           # Approval (Human-in-the-loop)
                 9: [self.frames['knowledge_hub_update']],   # Update Registers
                 10: [self.frames['external_failure_diagnostic'], self.frames['powershell_diagnostic']]  # Push GitHub/Diagnostics
             },
             dependencies=['python', 'node', 'git'],
-            success_criteria={'analysis_complete': True, 'hub_updated': True},
+            success_criteria={'analysis_complete': True, 'hub_updated': True, 'systems_discovered': True, 'improvement_optimization_complete': True},
             context_preservation=True
         )
         
@@ -565,6 +745,94 @@ class FrameRegistry:
             },
             dependencies=['python', 'node'],
             success_criteria={'assessment_complete': True, 'hub_updated': True, 'failures_analyzed': True},
+            context_preservation=True
+        )
+
+        # System Integration Scaffold (NEW)
+        self.scaffolds['system_integration'] = Scaffold(
+            id='system_integration',
+            name='System Integration',
+            description='Discover existing systems and integrate framework with them',
+            stages={
+                1: [self.frames['pre_existing_systems_discovery']],      # Scope: Discover existing systems
+                2: [self.frames['synthesis_analysis']],      # Identify & Analyze: Analyze integration opportunities
+                3: [self.frames['system_audit']],           # Plan: Plan integration strategy
+                4: [self.frames['system_integration_implementation'], self.frames['risk_mitigation']],        # Implement: Implement integration and mitigate risks
+                5: [],                                      # Success continue
+                6: [self.frames['synthesis_analysis']],     # Final audit: Verify integration
+                7: [self.frames['meta_analysis']],          # Meta-audit: Analyze integration success
+                8: [self.frames['human_approval']],         # Approval: Human review of integration plan
+                9: [self.frames['knowledge_hub_update']],   # Update Registers: Document integration
+                10: [self.frames['external_failure_diagnostic']]  # Diagnostics: Check for integration issues
+            },
+            dependencies=['python', 'node', 'git'],
+            success_criteria={'systems_discovered': True, 'integration_plan_generated': True, 'integration_implemented': True, 'hub_updated': True},
+            context_preservation=True
+        )
+
+        # Continuous Improvement Scaffold
+        self.scaffolds['continuous_improvement'] = Scaffold(
+            id='continuous_improvement',
+            name='Continuous Improvement',
+            description='Continuous analysis and optimization of the autonomous framework',
+            stages={
+                1: [self.frames['improvement_optimization']],      # Scope: Analyze current performance
+                2: [self.frames['predictive_analysis'], self.frames['synthesis_analysis']],      # Identify & Analyze
+                3: [self.frames['parallel_execution']],           # Plan: coordinate parallel runs where possible
+                4: [self.frames['risk_mitigation'], self.frames['self_healing']],        # Implement: Mitigate + heal
+                5: [],                                      # Success continue
+                6: [self.frames['improvement_optimization'], self.frames['intelligent_caching']],     # Final audit + caching
+                7: [self.frames['meta_analysis'], self.frames['deep_pattern_recognition'], self.frames['log_tailer']],          # Meta + DPR tailing
+                8: [self.frames['human_approval']],         # Approval
+                9: [self.frames['knowledge_hub_update']],   # Update Registers
+                10: [self.frames['external_failure_diagnostic']]  # Diagnostics: Check for improvement issues
+            },
+            dependencies=['python', 'node'],
+            success_criteria={'improvement_optimization_complete': True, 'hub_updated': True, 'improvements_identified': True, 'deep_pattern_recognition_complete': True},
+            context_preservation=True
+        )
+
+        # Deep Pattern Recognition Scaffold
+        self.scaffolds['deep_pattern_recognition'] = Scaffold(
+            id='deep_pattern_recognition',
+            name='Deep Pattern Recognition',
+            description='Deep recursive pattern recognition for cognitive insights and meta-learning',
+            stages={
+                1: [self.frames['log_tailer']],      # Scope: stream/tail recent logs
+                2: [self.frames['deep_pattern_recognition'], self.frames['synthesis_analysis']],      # Analyze
+                3: [self.frames['predictive_analysis']],           # Plan: predictive strategy
+                4: [self.frames['improvement_optimization'], self.frames['self_healing']],        # Implement
+                5: [],                                      # Success continue
+                6: [self.frames['deep_pattern_recognition'], self.frames['intelligent_caching']],     # Final audit + cache
+                7: [self.frames['meta_analysis']],          # Meta-audit
+                8: [self.frames['human_approval']],         # Approval
+                9: [self.frames['knowledge_hub_update']],   # Update Registers
+                10: [self.frames['external_failure_diagnostic']]  # Diagnostics: Check for pattern issues
+            },
+            dependencies=['python', 'node'],
+            success_criteria={'deep_pattern_recognition_complete': True, 'hub_updated': True, 'cognitive_insights_identified': True},
+            context_preservation=True
+        )
+
+        # Streaming Observability Scaffold (NEW)
+        self.scaffolds['streaming_observability'] = Scaffold(
+            id='streaming_observability',
+            name='Streaming Observability',
+            description='Continuously tail reports and feed incremental Deep Pattern Recognition for near-real-time insights',
+            stages={
+                1: [self.frames['observability_bootstrap']],
+                2: [self.frames['log_tailer']],
+                3: [self.frames['deep_pattern_recognition']],
+                4: [self.frames['predictive_analysis']],
+                5: [],
+                6: [self.frames['improvement_optimization']],
+                7: [self.frames['meta_analysis']],
+                8: [self.frames['human_approval']],
+                9: [self.frames['knowledge_hub_update']],
+                10: [self.frames['external_failure_diagnostic']]
+            },
+            dependencies=['python', 'node'],
+            success_criteria={'deep_pattern_recognition_complete': True, 'hub_updated': True},
             context_preservation=True
         )
 
@@ -1981,21 +2249,33 @@ def main():
         print(f"   Context Preservation: {'✅' if frame['context_preservation'] else '❌'}")
         print()
     
-    # Execute a scaffold (you can modify this to accept command line arguments)
-    if len(sys.argv) > 1:
-        scaffold_id = sys.argv[1]
-        input_data = json.loads(sys.argv[2]) if len(sys.argv) > 2 else {}
+    # Execute a scaffold with safer CLI parsing: require explicit --scaffold
+    args = sys.argv[1:]
+    scaffold_id = None
+    input_data = {}
+    if '--scaffold' in args:
+        idx = args.index('--scaffold')
+        if idx + 1 < len(args):
+            scaffold_id = args[idx + 1]
+    if '--input' in args:
+        idx = args.index('--input')
+        if idx + 1 < len(args):
+            try:
+                input_data = json.loads(args[idx + 1])
+            except Exception:
+                input_data = {}
+    if scaffold_id:
         
         print(f"\n🚀 Executing scaffold: {scaffold_id}")
         result = framework.execute_scaffold(scaffold_id, input_data)
         print(f"✅ Execution complete: {result['status']}")
     else:
         print("\n💡 Usage:")
-        print("python autonomous-framework-v2.py <scaffold_id> [input_data_json]")
+        print("python autonomous-framework-v2.py --scaffold <id> [--input '<json>']")
         print("\nExamples:")
-        print("python autonomous-framework-v2.py websocket_implementation")
-        print("python autonomous-framework-v2.py full_system_analysis")
-        print("python autonomous-framework-v2.py quick_assessment '{\"scope\": \"security\"}'")
+        print("python autonomous-framework-v2.py --scaffold websocket_implementation")
+        print("python autonomous-framework-v2.py --scaffold full_system_analysis")
+        print("python autonomous-framework-v2.py --scaffold quick_assessment --input '{\"scope\": \"security\"}'")
 
 if __name__ == "__main__":
     main()

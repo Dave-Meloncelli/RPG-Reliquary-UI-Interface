@@ -1,0 +1,15 @@
+{
+  "continuance": false,
+  "auto_approval_threshold": 0.8,
+  "parallel": {
+    "max_workers": 2
+  },
+  "log_tailer": {
+    "poll_seconds": 0,
+    "max_batch": 6,
+    "exclude_large_mb": 100
+  },
+  "caching": {
+    "max_size_mb": 100
+  }
+}

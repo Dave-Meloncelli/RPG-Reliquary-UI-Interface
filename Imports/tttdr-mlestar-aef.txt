@@ -1,0 +1,516 @@
+
+Search in video
+0:00
+[Music]
+0:01
+Something big is going on at Google. In
+0:04
+the span of just a few days, they
+0:05
+dropped three massive AI innovations.
+0:08
+Each one aimed at completely different
+0:10
+domains, but all with one goal. Making
+0:13
+humans obsolete in highlevel tasks.
+0:17
+We're talking about writing deep
+0:18
+research reports, building real machine
+0:21
+learning pipelines, and mapping the
+0:23
+entire Earth like a virtual satellite.
+0:25
+Let's begin right at the top with a
+0:27
+system known as TTDDDR or test time
+0:30
+diffusion deep researcher. The name
+0:32
+might sound like a bit of a puzzle, but
+0:34
+what it does is a major leap in making
+0:36
+AI behave like an actual human
+0:38
+researcher. See, most AI agents that
+0:40
+generate research reports are just a
+0:42
+bunch of tools duct taped together. They
+0:44
+don't think like us. Real researchers
+0:46
+don't just spit out results. We plan,
+0:49
+search, refine, draft, rewrite, gather
+0:51
+feedback, and then reshape everything
+0:53
+until it feels solid. TTDR mimics that
+0:57
+process. It treats the whole research
+0:59
+journey as a kind of diffusion process
+1:01
+like slowly cleaning up a blurry image
+1:04
+until the final version becomes crystal
+1:06
+clear. Only here it starts with a rough
+1:08
+research draft and that draft keeps
+1:10
+evolving with every step. What's clever
+1:12
+is that it doesn't just rely on a fixed
+1:14
+database or internal knowledge. TTDDR
+1:17
+pulls in external info at every single
+1:19
+stage using a retrieval system that
+1:21
+helps the AI improve the draft as it
+1:23
+goes. That way, it doesn't lose track of
+1:26
+context or fumble the flow like other
+1:28
+agents usually do. Each draft version
+1:31
+becomes the foundation for the next,
+1:33
+just like we do when writing a paper.
+1:35
+Google tested it on some seriously tough
+1:37
+benchmarks that demand multi-step
+1:38
+reasoning and in-depth search. Think
+1:41
+complex research questions that can't be
+1:43
+answered with a quick summary. And the
+1:45
+results, it beat OpenAI's deep research
+1:47
+system almost across the board. On long
+1:49
+form reports, TTDDDR won nearly
+1:52
+threearters of head-to-head comparisons.
+1:54
+Even on data sets with short form
+1:55
+answers, it still outperformed Open AI
+1:58
+by close to 8% in some cases. It also
+2:01
+ranked higher in helpfulness and
+2:02
+comprehensiveness, especially for those
+2:05
+multihop layered tasks where most agents
+2:08
+fall apart. It runs through three major
+2:11
+stages: planning, iterative search, and
+2:13
+final report writing. Each one powered
+2:15
+by its own set of small agents and
+2:17
+workflows that self-improve using
+2:20
+something Google calls self-evolution.
+2:23
+That mechanism basically lets each part
+2:25
+of the pipeline learn from previous
+2:27
+errors and reconfigure itself to get
+2:30
+better. They run this in parallel,
+2:32
+sequentially or even in looped cycles.
+2:35
+Now, before we move on, just to be
+2:37
+clear, TTDR followed complex ideas more
+2:41
+reliably, stayed focused through longer
+2:44
+reasoning steps, and made fewer
+2:45
+mistakes. OpenAI's system did slightly
+2:48
+better on GIA, but across fulllength
+2:51
+research tasks, TTDR showed stronger
+2:54
+performance overall. Now, let's talk
+2:55
+about MLE Star. It might look like just
+2:58
+another machine learning tool at first
+3:00
+glance, but it's operating on a whole
+3:02
+different level. This is a full-blown AI
+3:04
+agent that takes a machine learning task
+3:06
+like classification or regression and
+3:09
+builds out real Python code that
+3:11
+actually works and wins. The key is that
+3:14
+it doesn't blindly guess. It starts by
+3:17
+searching the web for relevant models,
+3:19
+not whatever was trending in 2017, but
+3:22
+the newest and most competitive models
+3:24
+like vision transformer or efficient net
+3:26
+depending on the data type. So instead
+3:28
+of defaulting to outdated stuff like
+3:30
+residual network or only using
+3:32
+scikitlearn out of habit, it adapts to
+3:36
+the task in front of it. But what makes
+3:38
+MLE star dangerous in a good way is how
+3:41
+it refineses its code. After generating
+3:44
+a basic pipeline, it carefully tests
+3:46
+each component to find what actually
+3:48
+drives performance. It focuses on the
+3:50
+most impactful part and starts refining
+3:53
+from there. Maybe it's feature
+3:54
+engineering. Maybe it's how the model
+3:56
+ensemble is built. Once it finds the key
+3:58
+piece, it zooms in on just that and
+4:00
+iteratively experiments with different
+4:02
+strategies, reflecting on past results.
+4:05
+And yeah, it keeps looping that
+4:06
+refinement until it hits gold. And when
+4:08
+it comes to ensembles, MLE Star goes
+4:11
+further by creating its own merging
+4:14
+strategies instead of relying on simple
+4:16
+voting. It proposes several candidate
+4:19
+models, merges them using ensemble logic
+4:22
+it creates on the fly, and then tweaks
+4:24
+that logic based on results from earlier
+4:27
+runs. No cookie cutter voting. This is
+4:29
+dynamic optimization agent style to keep
+4:32
+things from breaking. And this is a huge
+4:35
+problem with large language model
+4:37
+generated code. Google added three
+4:39
+safety nets. a debugging agent to handle
+4:42
+execution errors, a data leakage checker
+4:44
+that scans for common security issues
+4:47
+like accidentally using test data in
+4:49
+training, and a data usage checker that
+4:52
+ensures the model actually uses all the
+4:55
+data sources provided. You'd be
+4:57
+surprised how many models skip over
+4:59
+JavaScript object notation files or
+5:01
+ignore satellite imagery just because
+5:03
+commaepparated values are easier. They
+5:06
+tested MLE Star on Kaggle Tasks from a
+5:09
+benchmark called MLE Bench Light. Out of
+5:12
+all submissions, MLE Star won medals in
+5:16
+almost 2/3 of the competitions and over
+5:18
+one-third were gold medals. Compared to
+5:21
+the previous best baseline, which only
+5:22
+managed medals about one quarter of the
+5:24
+time, this was a massive jump. They also
+5:27
+did deeper analysis. For example, they
+5:29
+checked how MLE star chose models in
+5:32
+image classification. While older agents
+5:34
+stuck to residual network, MLE star
+5:37
+leaned toward newer and better options
+5:39
+without needing extra prompting. But
+5:41
+when they did give it extra human help,
+5:43
+like manually suggesting real
+5:45
+multi-layer perceptron, it adapted
+5:48
+immediately and integrated it into the
+5:50
+training pipeline. It also proved really
+5:53
+good at correcting hallucinated code
+5:55
+like cases where the large language
+5:56
+model wrongly tried to normalize test
+5:59
+data using its own stats. That's a no no
+6:02
+in machine learning and Emily Star
+6:03
+caught it. Same with forgotten data. It
+6:06
+doublech checked the task description
+6:07
+and made sure everything was pulled in
+6:09
+and used properly. So yeah, this goes
+6:10
+way beyond just generating code. It
+6:12
+handles the entire process with built-in
+6:14
+checks, smart refinement, and real
+6:17
+flexibility. And since the code base is
+6:19
+open source, anyone can start using it
+6:22
+right now through Google's agent
+6:24
+development kit. Now, let's go even
+6:26
+bigger, like planet size. This one's
+6:28
+called Alpha Earth Foundations, or AEF.
+6:32
+And it's Deep Mind's answer to a problem
+6:34
+we've had for decades. How to actually
+6:36
+make sense of all the data pouring in
+6:39
+from Earth observation satellites,
+6:41
+climate models, drones, infield sensors,
+6:44
+radar scans, and more. There's just too
+6:47
+much of it and too little label data to
+6:49
+match. Satellites can give us images of
+6:51
+floods or forests, but unless you have
+6:54
+accurate ground truth labels, they're
+6:56
+hard to use for realworld mapping.
+6:58
+That's where AEF comes in. It's
+6:59
+basically what they're calling a virtual
+7:01
+satellite, an AI model that doesn't rely
+7:04
+on waiting for the next satellite pass.
+7:06
+Instead, it creates global geospatial
+7:09
+layers from all the Earth observation
+7:12
+data we have and turns them into what
+7:14
+they call embedding fields. These fields
+7:16
+are 10x 10 m in resolution, cover the
+7:20
+entire globe, and go all the way back to
+7:22
+2017. Every layer acts like a
+7:25
+highdensity data tile representing
+7:27
+climate, terrain, vegetation,
+7:29
+infrastructure, you name it. What's wild
+7:31
+is how compact this is. Each patch is
+7:34
+encoded into a 64 byt vector which is 16
+7:37
+times smaller than the most compact
+7:39
+traditional models with no loss in
+7:41
+performance. It works with past records,
+7:43
+handles missing information without
+7:44
+breaking, and can generate accurate maps
+7:46
+for any date you need. If a region had
+7:48
+clouds or missed satellite passes, AF
+7:51
+still gives you a coherent map using
+7:53
+learned associations and fused
+7:55
+modalities. Under the hood, it uses the
+7:58
+spaceime precision architecture.
+8:00
+Basically, it processes data across
+8:03
+three axes, space, time, and resolution
+8:06
+at the same time. It combines attention
+8:08
+mechanisms for spatial patterns,
+8:10
+temporal layers to pull in data over
+8:12
+time, and multi-resolution blocks that
+8:15
+keep fine details sharp. Plus, it brings
+8:18
+in geotagged text from Wikipedia and
+8:20
+other sources, blending raw data with
+8:22
+real world semantics.
+8:25
+This model is already in action across
+8:27
+the globe. Agencies like the United
+8:28
+Nations, Brazil's map biomas, and
+8:31
+scientific teams are using the system to
+8:33
+monitor forest loss, track agricultural
+8:35
+development, follow urban sprawl, and
+8:38
+study environmental changes that often
+8:39
+go unnoticed, like the slow drift of
+8:41
+sand dunes or the shrinking of wetlands.
+8:44
+One feature that makes this possible is
+8:46
+the ability to generate maps for any
+8:48
+date without waiting for satellite
+8:50
+updates. The system pulls from existing
+8:53
+data, fills in the blanks where needed,
+8:55
+and produces detailed, up-to-date views
+8:57
+of regions that might otherwise be
+8:59
+missed. There's no lag, no need to rely
+9:02
+on cloud-free scenes, and no manual
+9:05
+stitching together of data sets.
+9:07
+Everything comes together in one
+9:09
+coherent analysis ready map on demand.
+9:12
+Um, so now instead of building a new
+9:14
+model for every mapping task,
+9:15
+governments and researchers can just
+9:17
+plug into AEF's global annual embedding
+9:21
+layers directly in Google Earth Engine.
+9:23
+It levels the playing field for smaller
+9:25
+organizations that don't have graphics
+9:28
+processing unit clusters or massive
+9:30
+teams. And moving forward, DeepMind
+9:32
+wants to scale it to even finer
+9:33
+resolutions, integrate more text and
+9:35
+local knowledge, and evolve it into
+9:38
+dynamic Earth twins. Basically, living
+9:41
+digital models of our planet that update
+9:44
+in real time. Now, what do you think is
+9:45
+the most dangerous potential use of any
+9:48
+of this? Drop your thoughts in the
+9:50
+comments. Don't forget to like and
+9:51
+subscribe. Thanks for watching and catch
+9:53
+you in the next one.

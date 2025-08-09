@@ -1,0 +1,40 @@
+name: Framework Integration
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+jobs:
+  framework-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: |
+          pip install -r backend/requirements.txt
+          npm ci
+          
+      - name: Run Framework Integration
+        run: |
+          python autonomous-framework-v2.py system_integration
+          
+      - name: Upload Integration Report
+        uses: actions/upload-artifact@v3
+        with:
+          name: framework-integration-report
+          path: reports/system_integration_implementation_*.json

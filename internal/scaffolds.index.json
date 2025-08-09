@@ -1,0 +1,94 @@
+[
+  {
+    "id": "websocket_implementation",
+    "name": "WebSocket Server Implementation",
+    "description": "Complete WebSocket server implementation for AZV-003",
+    "stages": 10,
+    "dependencies": [
+      "python",
+      "fastapi",
+      "websockets"
+    ],
+    "context_preservation": true
+  },
+  {
+    "id": "full_system_analysis",
+    "name": "Full System Analysis",
+    "description": "Complete system analysis and optimization",
+    "stages": 10,
+    "dependencies": [
+      "python",
+      "node",
+      "git"
+    ],
+    "context_preservation": true
+  },
+  {
+    "id": "quick_assessment",
+    "name": "Quick Assessment",
+    "description": "Rapid system assessment with external failure analysis",
+    "stages": 10,
+    "dependencies": [
+      "python",
+      "node"
+    ],
+    "context_preservation": true
+  },
+  {
+    "id": "system_integration",
+    "name": "System Integration",
+    "description": "Discover existing systems and integrate framework with them",
+    "stages": 10,
+    "dependencies": [
+      "python",
+      "node",
+      "git"
+    ],
+    "context_preservation": true
+  },
+  {
+    "id": "continuous_improvement",
+    "name": "Continuous Improvement",
+    "description": "Continuous analysis and optimization of the autonomous framework",
+    "stages": 10,
+    "dependencies": [
+      "python",
+      "node"
+    ],
+    "context_preservation": true
+  },
+  {
+    "id": "deep_pattern_recognition",
+    "name": "Deep Pattern Recognition",
+    "description": "Deep recursive pattern recognition for cognitive insights and meta-learning",
+    "stages": 10,
+    "dependencies": [
+      "python",
+      "node"
+    ],
+    "context_preservation": true
+  },
+  {
+    "id": "streaming_observability",
+    "name": "Streaming Observability",
+    "description": "Continuously tail reports and feed incremental Deep Pattern Recognition for near-real-time insights",
+    "stages": 10,
+    "dependencies": [
+      "python",
+      "node"
+    ],
+    "context_preservation": true
+  },
+  {
+    "id": "all_in_analysis",
+    "name": "Comprehensive All-In Analysis",
+    "description": "Complete analysis of gaps, risks, opportunities, and synergies across all dimensions",
+    "stages": 10,
+    "dependencies": [
+      "python",
+      "node",
+      "git"
+    ],
+    "context_preservation": true
+  }
+]

@@ -23,6 +23,11 @@ jobs:
         language: [ 'javascript' ]
 
     steps:
+
+      - name: Run Framework Integration
+        run: |
+          python autonomous-framework-v2.py quick_assessment
+
     - name: Checkout repository
       uses: actions/checkout@v4
 

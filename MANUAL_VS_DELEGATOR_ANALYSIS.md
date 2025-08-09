@@ -1,3 +1,4 @@
+
 # 🧠 Manual vs Smart Delegator: Process Analysis & Learnings
 
 ## 🎯 **EXECUTIVE SUMMARY**

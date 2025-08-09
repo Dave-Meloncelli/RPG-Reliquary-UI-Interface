@@ -1,0 +1,18 @@
+[
+  {
+    "scaffold_id": "unknown",
+    "prediction_type": "execution_prediction",
+    "predicted_success_rate": 1.0,
+    "predicted_duration": 300,
+    "predicted_frame_count": 1,
+    "risk_assessment": {
+      "risk_score": 0.0,
+      "risk_level": "minimal",
+      "risk_factors": [],
+      "recommendations": []
+    },
+    "confidence": 0.7,
+    "prediction_horizon": "next_execution",
+    "created_at": "2025-08-08T22:26:23.963192"
+  }
+]

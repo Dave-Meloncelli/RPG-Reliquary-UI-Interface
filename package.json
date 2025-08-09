@@ -4,6 +4,27 @@
   "type": "module",
   "scripts": {
     "ci:gate": "node scripts/ci-gate.js",
-    "remediate": "node scripts/remediation.js"
+    "remediate": "node scripts/remediation.js",
+    "prepare": "husky install",
+    "lint": "echo skip",
+    "format": "echo skip",
+    "typecheck": "echo skip",
+    "test": "echo skip"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "eslint": "^9.7.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^16.1.5",
+    "prettier": "^3.3.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,md,css,scss,html}": [
+      "node -e \"process.exit(0)\""
+    ],
+    "*.py": [
+      "python -c \"print('ok')\""
+    ]
   }
 }

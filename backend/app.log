@@ -1,0 +1,12 @@
+2025-08-07 11:49:34,168 - app.main - INFO - Starting AZ Interface API
+2025-08-07 11:49:34,168 - app.main - ERROR - Database connection failed: Session.__init__() got an unexpected keyword argument 'autobind'. Did you mean 'autobegin'?
+2025-08-07 11:50:06,596 - app.main - INFO - Starting AZ Interface API
+2025-08-07 11:50:06,597 - app.main - ERROR - Database connection failed: Textual SQL expression 'SELECT 1' should be explicitly declared as text('SELECT 1')
+2025-08-07 12:26:09,944 - app.main - INFO - Starting AZ Interface API
+2025-08-07 12:26:09,946 - app.main - INFO - Database connection successful
+2025-08-07 12:26:21,752 - app.main - ERROR - Redis connection failed: Error 11001 connecting to redis:6379. getaddrinfo failed.
+2025-08-07 12:26:51,977 - app.main - INFO - Starting AZ Interface API
+2025-08-07 12:26:51,978 - app.main - INFO - Database connection successful
+2025-08-07 12:27:03,728 - app.main - WARNING - Redis connection failed: Error 11001 connecting to redis:6379. getaddrinfo failed.
+2025-08-07 12:27:03,728 - app.main - INFO - Continuing without Redis (rate limiting disabled)
+2025-08-07 12:29:15,917 - app.main - INFO - Shutting down AZ Interface API

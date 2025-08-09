@@ -16,15 +16,15 @@
       "success_rate": 90.0,
       "bottlenecks": [],
       "optimization_opportunities": [],
-      "total_reports": 149,
-      "recent_executions": 19
+      "total_reports": 197,
+      "recent_executions": 4
     },
     "context_analysis": {
       "preservation_rate": 100.0,
       "context_loss_points": [],
       "merge_effectiveness": "high",
       "recommendations": [],
-      "preserved_contexts": 24,
+      "preserved_contexts": 30,
       "context_utilization": "active"
     },
     "recommendations": [
@@ -35,7 +35,7 @@
       "Consider implementing frame caching for frequently used frames",
       "Add performance profiling for individual frame execution times"
     ],
-    "timestamp": "2025-08-08T15:27:38.011533"
+    "timestamp": "2025-08-08T21:01:05.451594"
   },
-  "timestamp": "2025-08-08T15:27:38.013178"
+  "timestamp": "2025-08-08T21:01:05.452909"
 }

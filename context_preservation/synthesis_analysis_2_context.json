@@ -1,0 +1,17 @@
+{
+  "frame_id": "synthesis_analysis",
+  "stage": 2,
+  "input_data": {},
+  "parameters": {
+    "scope": "full_system"
+  },
+  "result": {
+    "synthesis_complete": true,
+    "synergies_found": true,
+    "risks_identified": false,
+    "opportunities_found": true,
+    "analysis_successful": true,
+    "timestamp": "2025-08-08T21:01:04.819805"
+  },
+  "timestamp": "2025-08-08T21:01:04.820004"
+}

@@ -1,0 +1,234 @@
+[
+  {
+    "id": "synthesis_analysis",
+    "name": "Synthesis Analysis",
+    "type": "analysis",
+    "description": "Analyzes system for synergies, risks, and opportunities",
+    "file_path": "autonomous-system-v3.py",
+    "context_preservation": true
+  },
+  {
+    "id": "risk_mitigation",
+    "name": "Risk Mitigation",
+    "type": "mitigation",
+    "description": "Automatically mitigates critical risks",
+    "file_path": "autonomous-system-v5.py",
+    "context_preservation": true
+  },
+  {
+    "id": "enhanced_analysis",
+    "name": "Enhanced Analysis",
+    "type": "analysis",
+    "description": "Industry-standard analysis with expanded scope",
+    "file_path": "autonomous-system-v4.py",
+    "context_preservation": true
+  },
+  {
+    "id": "meta_analysis",
+    "name": "Meta Analysis",
+    "type": "meta_analysis",
+    "description": "Analyzes framework execution for self-improvement and optimization",
+    "file_path": "scripts/frames/meta-analysis-frame.py",
+    "context_preservation": true
+  },
+  {
+    "id": "websocket_implementation",
+    "name": "WebSocket Implementation",
+    "type": "implementation",
+    "description": "Implements WebSocket server for real-time communication",
+    "file_path": "backend/websocket_implementation.py",
+    "context_preservation": true
+  },
+  {
+    "id": "system_audit",
+    "name": "System Audit",
+    "type": "analysis",
+    "description": "Comprehensive system audit and validation",
+    "file_path": "scripts/js/system-audit.js",
+    "context_preservation": true
+  },
+  {
+    "id": "knowledge_hub_update",
+    "name": "Knowledge Hub Update",
+    "type": "meta_analysis",
+    "description": "Manages persistent learning and knowledge storage across framework executions",
+    "file_path": "scripts/frames/knowledge-hub-update-frame.py",
+    "context_preservation": true
+  },
+  {
+    "id": "external_failure_diagnostic",
+    "name": "External Failure Diagnostic",
+    "type": "diagnostic",
+    "description": "Analyze external command failures and generate recommendations",
+    "file_path": "scripts/js/external-failure-diagnostic.js",
+    "context_preservation": true
+  },
+  {
+    "id": "powershell_diagnostic",
+    "name": "PowerShell Diagnostic",
+    "type": "diagnostic",
+    "description": "Validates PowerShell frame execution and structure",
+    "file_path": "scripts/ps/powershell-diagnostic.ps1",
+    "context_preservation": true
+  },
+  {
+    "id": "sbom_license",
+    "name": "SBOM & License",
+    "type": "analysis",
+    "description": "Generate SBOM and basic license info",
+    "file_path": "scripts/js/sbom-license.js",
+    "context_preservation": true
+  },
+  {
+    "id": "health_readiness",
+    "name": "Health & Readiness",
+    "type": "implementation",
+    "description": "Validate or create health/readiness placeholders",
+    "file_path": "scripts/ps/health-readiness.ps1",
+    "context_preservation": true
+  },
+  {
+    "id": "observability_bootstrap",
+    "name": "Observability Bootstrap",
+    "type": "implementation",
+    "description": "Create basic structured logging configuration",
+    "file_path": "scripts/js/observability-bootstrap.js",
+    "context_preservation": true
+  },
+  {
+    "id": "frame_optimizer",
+    "name": "Frame Optimizer",
+    "type": "analysis",
+    "description": "Analyze frames for gaps, omissions, and synergies",
+    "file_path": "scripts/frame-optimizer.py",
+    "context_preservation": true
+  },
+  {
+    "id": "context_intelligence",
+    "name": "Context Intelligence",
+    "type": "analysis",
+    "description": "Scan preserved context for alignment and missing links",
+    "file_path": "scripts/context-intelligence.py",
+    "context_preservation": true
+  },
+  {
+    "id": "secrets_scan",
+    "name": "Secrets Scan",
+    "type": "analysis",
+    "description": "Scan repository for potential secrets",
+    "file_path": "scripts/js/secrets-scan.js",
+    "context_preservation": true
+  },
+  {
+    "id": "dependency_vuln",
+    "name": "Dependency Vulnerability Scan",
+    "type": "analysis",
+    "description": "Aggregate dependency vulnerability report",
+    "file_path": "scripts/js/dependency-vuln.js",
+    "context_preservation": true
+  },
+  {
+    "id": "human_approval",
+    "name": "Human Approval",
+    "type": "verification",
+    "description": "Provides human-in-the-loop approval for critical decisions and actions",
+    "file_path": "scripts/frames/human-approval-frame.py",
+    "context_preservation": true
+  },
+  {
+    "id": "backup_bootstrap",
+    "name": "Backup Bootstrap",
+    "type": "implementation",
+    "description": "Create basic backup script and directory",
+    "file_path": "scripts/backup-bootstrap.py",
+    "context_preservation": true
+  },
+  {
+    "id": "intelligent_failure_response",
+    "name": "Intelligent Failure Response",
+    "type": "analysis",
+    "description": "Analyzes failures and adds targeted diagnostic frames",
+    "file_path": "scripts/intelligent-failure-response.js",
+    "context_preservation": true
+  },
+  {
+    "id": "all_in_analysis",
+    "name": "All-In Analysis",
+    "type": "analysis",
+    "description": "Comprehensive analysis of gaps, risks, opportunities, and synergies",
+    "file_path": "scripts/all-in-analysis.py",
+    "context_preservation": true
+  },
+  {
+    "id": "pre_existing_systems_discovery",
+    "name": "Pre-Existing Systems Discovery",
+    "type": "analysis",
+    "description": "Discovers and analyzes existing audit systems, GitHub Actions, hooks, and automation infrastructure",
+    "file_path": "scripts/pre-existing-systems-discovery.py",
+    "context_preservation": true
+  },
+  {
+    "id": "system_integration_implementation",
+    "name": "System Integration Implementation",
+    "type": "implementation",
+    "description": "Implements integration with existing audit systems, GitHub Actions, hooks, and automation infrastructure",
+    "file_path": "scripts/system-integration-implementation.py",
+    "context_preservation": true
+  },
+  {
+    "id": "improvement_optimization",
+    "name": "Improvement and Optimization",
+    "type": "analysis",
+    "description": "Continuously analyzes and improves the autonomous framework and system performance",
+    "file_path": "scripts/frames/improvement-optimization-frame.py",
+    "context_preservation": true
+  },
+  {
+    "id": "deep_pattern_recognition",
+    "name": "Deep Pattern Recognition",
+    "type": "analysis",
+    "description": "Analyzes execution logs for cognitive patterns, decision-making processes, and meta-learning insights",
+    "file_path": "scripts/frames/deep-pattern-recognition-frame.py",
+    "context_preservation": true
+  },
+  {
+    "id": "self_healing",
+    "name": "Self-Healing",
+    "type": "mitigation",
+    "description": "Automatically detects and recovers from frame failures",
+    "file_path": "scripts/frames/self-healing-frame.py",
+    "context_preservation": true
+  },
+  {
+    "id": "parallel_execution",
+    "name": "Parallel Execution Coordinator",
+    "type": "process",
+    "description": "Coordinates parallel execution of independent frames",
+    "file_path": "scripts/frames/parallel-execution-coordinator-frame.py",
+    "context_preservation": true
+  },
+  {
+    "id": "predictive_analysis",
+    "name": "Predictive Analysis",
+    "type": "analysis",
+    "description": "Analyzes historical execution data to predict failures and optimize performance",
+    "file_path": "scripts/frames/predictive-analysis-frame.py",
+    "context_preservation": true
+  },
+  {
+    "id": "intelligent_caching",
+    "name": "Intelligent Caching",
+    "type": "process",
+    "description": "Manages intelligent caching for repeated operations to improve performance",
+    "file_path": "scripts/frames/intelligent-caching-frame.py",
+    "context_preservation": true
+  },
+  {
+    "id": "log_tailer",
+    "name": "Log Tailer",
+    "type": "process",
+    "description": "Tails recent reports and runs Deep Pattern Recognition incrementally",
+    "file_path": "scripts/frames/log-tailer-frame.py",
+    "context_preservation": true
+  }
+]
