@@ -26,7 +26,7 @@ Key features:
   tables) and extracts a set of capabilities (carrots).  These
   capabilities are added to a shared index and attached to the
   persona's record.
-* **Carrot index:** Maintains a registry of all discovered capability
+* **Carrot index:** Maintains a registry of all discovered capabilities, sop's, rituals, and persona
   names.  If a new carrot is found after a file has been processed,
   the script can optionally reprocess previously parsed files to
   ensure that all carrots are captured uniformly.

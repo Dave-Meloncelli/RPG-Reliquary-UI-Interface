@@ -1,0 +1,301 @@
+groups:
+  - name: agent-zero-alerts
+    rules:
+      # Service Health Alerts
+      - alert: AgentZeroAPIDown
+        expr: up{job="agent-zero-api"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: agent-zero-api
+        annotations:
+          summary: "Agent Zero API is down"
+          description: "The Agent Zero API service has been down for more than 1 minute"
+
+      - alert: AgentZeroUIDown
+        expr: up{job="agent-zero-ui"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: agent-zero-ui
+        annotations:
+          summary: "Agent Zero UI is down"
+          description: "The Agent Zero UI service has been down for more than 1 minute"
+
+      - alert: CrewAIDown
+        expr: up{job="crewai-core"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: crewai-core
+        annotations:
+          summary: "CrewAI service is down"
+          description: "The CrewAI core service has been down for more than 1 minute"
+
+      - alert: A2AGatewayDown
+        expr: up{job="a2a-gateway"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: a2a-gateway
+        annotations:
+          summary: "A2A Gateway is down"
+          description: "The A2A Protocol Gateway has been down for more than 1 minute"
+
+      - alert: A2ARegistryDown
+        expr: up{job="a2a-registry"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: a2a-registry
+        annotations:
+          summary: "A2A Registry is down"
+          description: "The A2A Agent Registry has been down for more than 1 minute"
+
+      # Performance Alerts
+      - alert: HighResponseTime
+        expr: http_request_duration_seconds{quantile="0.95"} > 2
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High response time detected"
+          description: "95th percentile response time is above 2 seconds"
+
+      - alert: HighErrorRate
+        expr: rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m]) > 0.05
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High error rate detected"
+          description: "Error rate is above 5% for the last 5 minutes"
+
+  - name: infrastructure-alerts
+    rules:
+      # Database Alerts
+      - alert: PostgreSQLDown
+        expr: up{job="postgres"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: postgres
+        annotations:
+          summary: "PostgreSQL is down"
+          description: "PostgreSQL database is not responding"
+
+      - alert: RedisDown
+        expr: up{job="redis"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: redis
+        annotations:
+          summary: "Redis is down"
+          description: "Redis cache is not responding"
+
+      - alert: MilvusDown
+        expr: up{job="milvus"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: milvus
+        annotations:
+          summary: "Milvus is down"
+          description: "Milvus vector database is not responding"
+
+      - alert: ElasticsearchDown
+        expr: up{job="elasticsearch"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: elasticsearch
+        annotations:
+          summary: "Elasticsearch is down"
+          description: "Elasticsearch is not responding"
+
+      # AI/ML Service Alerts
+      - alert: OllamaDown
+        expr: up{job="ollama"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: ollama
+        annotations:
+          summary: "Ollama is down"
+          description: "Ollama LLM service is not responding"
+
+      # Workflow Automation Alerts
+      - alert: N8NDown
+        expr: up{job="n8n"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: n8n
+        annotations:
+          summary: "n8n is down"
+          description: "n8n workflow automation is not responding"
+
+  - name: monitoring-alerts
+    rules:
+      # Monitoring Stack Alerts
+      - alert: PrometheusDown
+        expr: up{job="prometheus"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: prometheus
+        annotations:
+          summary: "Prometheus is down"
+          description: "Prometheus monitoring is not responding"
+
+      - alert: GrafanaDown
+        expr: up{job="grafana"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: grafana
+        annotations:
+          summary: "Grafana is down"
+          description: "Grafana dashboards are not accessible"
+
+      - alert: TraefikDown
+        expr: up{job="traefik"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: traefik
+        annotations:
+          summary: "Traefik is down"
+          description: "Traefik reverse proxy is not responding"
+
+  - name: resource-alerts
+    rules:
+      # Memory Alerts
+      - alert: HighMemoryUsage
+        expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes > 0.85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High memory usage"
+          description: "Memory usage is above 85%"
+
+      - alert: CriticalMemoryUsage
+        expr: (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes > 0.95
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Critical memory usage"
+          description: "Memory usage is above 95%"
+
+      # CPU Alerts
+      - alert: HighCPUUsage
+        expr: 100 - (avg by(instance) (irate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High CPU usage"
+          description: "CPU usage is above 80%"
+
+      # Disk Alerts
+      - alert: HighDiskUsage
+        expr: (node_filesystem_size_bytes - node_filesystem_free_bytes) / node_filesystem_size_bytes > 0.85
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High disk usage"
+          description: "Disk usage is above 85%"
+
+      - alert: CriticalDiskUsage
+        expr: (node_filesystem_size_bytes - node_filesystem_free_bytes) / node_filesystem_size_bytes > 0.95
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Critical disk usage"
+          description: "Disk usage is above 95%"
+
+  - name: application-alerts
+    rules:
+      # Database Connection Alerts
+      - alert: DatabaseConnectionPoolExhausted
+        expr: database_connections_active > 45
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Database connection pool nearly exhausted"
+          description: "Database connection pool is above 45 connections"
+
+      # Agent Performance Alerts
+      - alert: AgentResponseTimeHigh
+        expr: agent_response_time_seconds > 30
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Agent response time is high"
+          description: "Agent response time is above 30 seconds"
+
+      - alert: AgentFailureRateHigh
+        expr: rate(agent_failures_total[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High agent failure rate"
+          description: "Agent failure rate is above 10%"
+
+      # Workflow Alerts
+      - alert: WorkflowFailureRateHigh
+        expr: rate(n8n_workflow_failures_total[5m]) > 0.05
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High workflow failure rate"
+          description: "n8n workflow failure rate is above 5%"
+
+      # Backup Alerts
+      - alert: BackupFailed
+        expr: backup_last_success_timestamp < time() - 86400
+        for: 1h
+        labels:
+          severity: critical
+        annotations:
+          summary: "Backup failed"
+          description: "No successful backup in the last 24 hours"
+
+  - name: security-alerts
+    rules:
+      # Security Alerts
+      - alert: HighAuthenticationFailures
+        expr: rate(auth_failures_total[5m]) > 10
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High authentication failure rate"
+          description: "Authentication failure rate is above 10 per minute"
+
+      - alert: UnauthorizedAccessAttempts
+        expr: rate(unauthorized_access_attempts_total[5m]) > 5
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Unauthorized access attempts detected"
+          description: "Multiple unauthorized access attempts detected"
+
+      - alert: APIRateLimitExceeded
+        expr: rate(api_rate_limit_exceeded_total[5m]) > 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "API rate limit exceeded"
+          description: "API rate limits are being exceeded" 

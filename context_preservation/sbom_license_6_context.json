@@ -8,11 +8,11 @@
     "sbom_generated": true,
     "licenses_checked": true,
     "data": {
-      "components": 18,
-      "report_path": "reports\\sbom_1754628166749.json",
-      "license_violations": 18
+      "components": 20,
+      "report_path": "reports\\sbom_1754648381794.json",
+      "license_violations": 19
     },
-    "summary": "Generated SBOM with 18 components",
+    "summary": "Generated SBOM with 20 components",
     "context": {
       "ecosystems": [
         "npm",
@@ -20,5 +20,5 @@
       ]
     }
   },
-  "timestamp": "2025-08-08T12:42:46.766664"
+  "timestamp": "2025-08-08T18:19:41.807343"
 }

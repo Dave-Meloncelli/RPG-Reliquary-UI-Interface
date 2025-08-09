@@ -11,9 +11,9 @@
     "security_issues_found": true,
     "analysis_complete": true,
     "report_paths": {
-      "json": "reports\\synthesis_report_20250808_124240.json",
-      "html": "reports\\synthesis_report_20250808_124240.html"
+      "json": "reports\\synthesis_report_20250808_181935.json",
+      "html": "reports\\synthesis_report_20250808_181935.html"
     }
   },
-  "timestamp": "2025-08-08T12:42:40.696106"
+  "timestamp": "2025-08-08T18:19:35.390021"
 }

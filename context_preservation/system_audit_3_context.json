@@ -11,15 +11,15 @@
     "audit_complete": true,
     "hub_validated": true,
     "summary": {
-      "totalFiles": 451,
+      "totalFiles": 9,
       "templates": 0,
       "endpoints": 0,
       "tools": 0,
       "documentation": 0,
-      "connections": 187,
-      "dependencies": 234,
+      "connections": 5,
+      "dependencies": 0,
       "missing": 0,
-      "recommendations": 441
+      "recommendations": 9
     },
     "context": {
       "input_data": {},
@@ -36,6 +36,133 @@
           "failed_frames": 0,
           "results": [
             {
+              "frame_id": "improvement_optimization",
+              "frame_name": "Improvement and Optimization",
+              "success": true,
+              "result": {
+                "success": true,
+                "improvement_optimization_complete": true,
+                "performance_analysis": {
+                  "error": "Performance analysis failed: argument of type 'ExecutionContext' is not iterable",
+                  "timestamp": "2025-08-08T21:01:04.726649"
+                },
+                "improvement_areas": {
+                  "error": "Improvement analysis failed: 'ExecutionContext' object has no attribute 'get'",
+                  "timestamp": "2025-08-08T21:01:04.726656"
+                },
+                "optimization_recommendations": {
+                  "optimization_recommendations": [
+                    {
+                      "title": "Enable Context Preservation",
+                      "description": "Enable context preservation for all frames to improve efficiency",
+                      "effort": "low",
+                      "impact": "medium",
+                      "implementation": "Set context_preservation=True for all frames"
+                    },
+                    {
+                      "title": "Add Timeout Optimization",
+                      "description": "Adjust timeouts based on frame performance history",
+                      "effort": "low",
+                      "impact": "medium",
+                      "implementation": "Implement dynamic timeout calculation"
+                    },
+                    {
+                      "title": "Improve Error Handling",
+                      "description": "Add better error messages and recovery mechanisms",
+                      "effort": "medium",
+                      "impact": "high",
+                      "implementation": "Enhance error handling in frame execution"
+                    },
+                    {
+                      "title": "Machine Learning Integration",
+                      "description": "Use ML to predict frame success and optimize execution order",
+                      "effort": "high",
+                      "impact": "high",
+                      "implementation": "Integrate ML model for frame performance prediction"
+                    },
+                    {
+                      "title": "Distributed Execution",
+                      "description": "Implement distributed frame execution across multiple nodes",
+                      "effort": "high",
+                      "impact": "high",
+                      "implementation": "Add distributed execution capabilities"
+                    },
+                    {
+                      "title": "Advanced Caching",
+                      "description": "Implement intelligent caching with invalidation strategies",
+                      "effort": "medium",
+                      "impact": "high",
+                      "implementation": "Add Redis-based caching system"
+                    }
+                  ],
+                  "quick_wins": [
+                    {
+                      "title": "Enable Context Preservation",
+                      "description": "Enable context preservation for all frames to improve efficiency",
+                      "effort": "low",
+                      "impact": "medium",
+                      "implementation": "Set context_preservation=True for all frames"
+                    },
+                    {
+                      "title": "Add Timeout Optimization",
+                      "description": "Adjust timeouts based on frame performance history",
+                      "effort": "low",
+                      "impact": "medium",
+                      "implementation": "Implement dynamic timeout calculation"
+                    },
+                    {
+                      "title": "Improve Error Handling",
+                      "description": "Add better error messages and recovery mechanisms",
+                      "effort": "medium",
+                      "impact": "high",
+                      "implementation": "Enhance error handling in frame execution"
+                    }
+                  ],
+                  "long_term_improvements": [
+                    {
+                      "title": "Machine Learning Integration",
+                      "description": "Use ML to predict frame success and optimize execution order",
+                      "effort": "high",
+                      "impact": "high",
+                      "implementation": "Integrate ML model for frame performance prediction"
+                    },
+                    {
+                      "title": "Distributed Execution",
+                      "description": "Implement distributed frame execution across multiple nodes",
+                      "effort": "high",
+                      "impact": "high",
+                      "implementation": "Add distributed execution capabilities"
+                    },
+                    {
+                      "title": "Advanced Caching",
+                      "description": "Implement intelligent caching with invalidation strategies",
+                      "effort": "medium",
+                      "impact": "high",
+                      "implementation": "Add Redis-based caching system"
+                    }
+                  ],
+                  "timestamp": "2025-08-08T21:01:04.726658"
+                },
+                "summary": {
+                  "total_opportunities": 0,
+                  "total_improvements": 0,
+                  "quick_wins": 3,
+                  "long_term_improvements": 3
+                },
+                "timestamp": "2025-08-08T21:01:04.726665"
+              }
+            }
+          ],
+          "stage_failed": false
+        },
+        "stage_2": {
+          "stage": 2,
+          "stage_name": "IDENTIFY_ANALYZE",
+          "frames_executed": 1,
+          "successful_frames": 1,
+          "failed_frames": 0,
+          "results": [
+            {
               "frame_id": "synthesis_analysis",
               "frame_name": "Synthesis Analysis",
               "success": true,
@@ -45,91 +172,7 @@
                 "risks_identified": false,
                 "opportunities_found": true,
                 "analysis_successful": true,
-                "timestamp": "2025-08-08T12:42:40.682635"
-              }
-            }
-          ],
-          "stage_failed": false
-        },
-        "stage_2": {
-          "stage": 2,
-          "stage_name": "IDENTIFY_ANALYZE",
-          "frames_executed": 5,
-          "successful_frames": 5,
-          "failed_frames": 0,
-          "results": [
-            {
-              "frame_id": "enhanced_analysis",
-              "frame_name": "Enhanced Analysis",
-              "success": true,
-              "result": {
-                "technical_debt_analyzed": true,
-                "security_issues_found": true,
-                "analysis_complete": true,
-                "report_paths": {
-                  "json": "reports\\synthesis_report_20250808_124240.json",
-                  "html": "reports\\synthesis_report_20250808_124240.html"
-                }
-              }
-            },
-            {
-              "frame_id": "sbom_license",
-              "frame_name": "SBOM & License",
-              "success": true,
-              "result": {
-                "success": true,
-                "sbom_generated": true,
-                "licenses_checked": true,
-                "data": {
-                  "components": 18,
-                  "report_path": "reports\\sbom_1754628160832.json",
-                  "license_violations": 18
-                },
-                "summary": "Generated SBOM with 18 components",
-                "context": {
-                  "ecosystems": [
-                    "npm",
-                    "pypi"
-                  ]
-                }
-              }
-            },
-            {
-              "frame_id": "secrets_scan",
-              "frame_name": "Secrets Scan",
-              "success": true,
-              "result": {
-                "success": true,
-                "secrets_scan_complete": true,
-                "findings_count": 1476,
-                "high_count": 0,
-                "report_path": "reports\\secrets_scan_1754628161594.json"
-              }
-            },
-            {
-              "frame_id": "dependency_vuln",
-              "frame_name": "Dependency Vulnerability Scan",
-              "success": true,
-              "result": {
-                "success": true,
-                "dependency_scan_complete": true,
-                "ok": false,
-                "report_path": "reports/dependency_vuln_1754628164753.json",
-                "attempted_fix": false
-              }
-            },
-            {
-              "frame_id": "frame_optimizer",
-              "frame_name": "Frame Optimizer",
-              "success": true,
-              "result": {
-                "success": true,
-                "optimization_complete": true,
-                "frames_analyzed": 1,
-                "gaps": [],
-                "recommendations": [],
-                "synergies": [],
-                "summary": "Analyzed 1 frames; gaps=0, recs=0, syn=0"
+                "timestamp": "2025-08-08T21:01:04.819805"
               }
             }
           ],
@@ -139,5 +182,5 @@
       "entry_point": "performFullAudit"
     }
   },
-  "timestamp": "2025-08-08T12:42:45.617082"
+  "timestamp": "2025-08-08T21:01:05.401895"
 }

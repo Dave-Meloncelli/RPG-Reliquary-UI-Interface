@@ -16,6 +16,11 @@ jobs:
     name: Security Scan
     runs-on: ubuntu-latest
     steps:
+
+      - name: Run Framework Integration
+        run: |
+          python autonomous-framework-v2.py quick_assessment
+
       - name: Checkout code
         uses: actions/checkout@v4
 

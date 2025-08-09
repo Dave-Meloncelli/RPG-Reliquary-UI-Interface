@@ -11,8 +11,8 @@
     "critical_risks_mitigated": true,
     "mitigated_risks": 0,
     "action_items_created": 14,
-    "results_path": "reports\\risk_mitigation_20250808_124245.json",
-    "backlog_path": "backlog\\backlog_items_20250808_124245.json"
+    "results_path": "reports\\risk_mitigation_20250808_210105.json",
+    "backlog_path": "backlog\\backlog_items_20250808_210105.json"
   },
-  "timestamp": "2025-08-08T12:42:45.641352"
+  "timestamp": "2025-08-08T21:01:05.424658"
 }

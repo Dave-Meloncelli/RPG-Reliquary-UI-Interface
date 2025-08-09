@@ -1,3 +1,4 @@
+
 @echo off
 echo ============================================================
 echo 🚀 AZ Interface Installation Script

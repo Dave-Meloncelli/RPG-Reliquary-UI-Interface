@@ -1,0 +1,465 @@
+0:00
+[Music]
+0:01
+Something huge just dropped in the AI
+0:03
+world and it did not come from OpenAI or
+0:06
+Google. A tiny startup in Singapore just
+0:09
+unveiled a new AI agent called HRM
+0:13
+and it might be the biggest breakthrough
+0:15
+in reasoning we have seen in years. It
+0:18
+is not bigger. It is not trained on more
+0:20
+data. Instead, it is built different.
+0:23
+And somehow this brainspired model is
+0:26
+outsmarting models over four times its
+0:29
+size. You see models like chat GPT break
+0:31
+problems down step by step. But one
+0:34
+small error can throw everything off.
+0:36
+HRM takes a completely different route.
+0:38
+Thinks in loops like the human brain and
+0:41
+the results are shocking. Now before you
+0:43
+think this is just another tiny model
+0:45
+beats GPT headline, this one actually
+0:47
+holds up. HRM is not a scaledown large
+0:51
+language model, not a strippedback
+0:53
+transformer, and definitely not just a
+0:56
+slim version of chat GPT. It is
+0:58
+something entirely different. It mimics
+1:01
+the brain, not in the generic, oh, it is
+1:04
+a neural network way. This one literally
+1:06
+borrows the brain's layered
+1:07
+decision-making strategy and applies it
+1:10
+to artificial intelligence reasoning.
+1:12
+And somehow this architecture lets a
+1:14
+model with only 27 million parameters
+1:17
+beat models with over 100 million or
+1:20
+even billions. Let us put that in
+1:22
+context. GPT1 had 117 million
+1:27
+parameters. HRM 27 million. That is less
+1:32
+than 1/4th. But here is the kicker. It
+1:35
+outperforms Claude 3.7 and OpenAI's 03
+1:39
+mini high model on reasoning benchmarks.
+1:42
+Most modern artificial intelligence
+1:44
+models rely on something called chain of
+1:47
+thought prompting. Basically, it is like
+1:49
+the artificial intelligence is talking
+1:51
+itself through a math problem step by
+1:53
+step. Sounds clever and sometimes it
+1:55
+works. But the thing is if the
+1:57
+artificial intelligence makes just one
+1:59
+mistake in that chain, the whole answer
+2:01
+can fall apart. HRM skips that
+2:04
+completely. It does not rely on hoping
+2:07
+the chain holds. It reasons more like a
+2:09
+human by thinking strategically and then
+2:12
+executing rapidly. So, how does it do
+2:14
+that? Well, HRM has two parts that talk
+2:17
+to each other. There is a high-level
+2:19
+planner and a low-level worker. The
+2:21
+planner is like the slow strategic
+2:23
+brain. It maps out the big picture,
+2:26
+tries to figure out what kind of problem
+2:27
+it is facing. The worker is the fast
+2:30
+processor. It takes orders and does the
+2:32
+actual work quickly and efficiently.
+2:34
+Think of it like a chess master planning
+2:36
+a strategy and an assistant executing
+2:39
+the moves instantly. These two parts
+2:41
+loop through each other. The highle
+2:43
+module makes a plan. The low-level
+2:45
+module carries it out and sends back
+2:47
+results and then the highle updates
+2:49
+based on what happened. This back and
+2:51
+forth continues until the model settles
+2:53
+on the answer. This is not just a
+2:55
+gimmick. It is built into the
+2:57
+architecture and it gives the model
+2:59
+something that most others do not have a
+3:01
+way to internally check and refine its
+3:03
+own reasoning mid-process and the
+3:06
+results are pretty insane. The ARC AGI
+3:09
+benchmark basically an intelligence
+3:11
+quotient test for artificial
+3:13
+intelligence. HRM scored 40.3% that is
+3:17
+above claude 3.7s 21.2% and OpenAI's 03
+3:21
+minih high model which got 34.5.
+3:24
+These are not small differences. This is
+3:27
+a tiny model running on one graphics
+3:30
+processing unit, beating out some of the
+3:33
+biggest names in the game when it comes
+3:35
+to raw reasoning. Let us take it a step
+3:37
+further. HRM was tested on Sudoku, hard
+3:41
+and extreme levels. It solved 55% of
+3:44
+them. You want to guess how Claude or
+3:46
+OpenAI's models did? 0%. Not a single
+3:49
+one. And then there is the maze
+3:51
+challenge. 30x30 grids. HRM found the
+3:55
+optimal path in 74.5% of the tests. The
+3:59
+others again zero. All this and the
+4:02
+model was trained with just a thousand
+4:04
+examples per task. No massive internet
+4:06
+data sets, no monthsl long pre-training.
+4:09
+Guan Wang, one of the minds behind HRM,
+4:12
+said you could train it to prolevel
+4:13
+Sudoku in two graphics processing unit
+4:16
+hours. 2 hours. That is not just
+4:19
+efficient. That is ridiculous. But there
+4:21
+is more to this than just performance on
+4:23
+benchmarks. The way HRM is built solves
+4:27
+some deeper problems that current
+4:29
+transformer models face. Let us take a
+4:31
+step back. Transformer-based large
+4:33
+language models like GPT or claude work
+4:36
+by processing a set number of steps for
+4:39
+each output token. They always do the
+4:41
+same amount of thinking regardless of
+4:42
+how hard the question is. They cannot
+4:45
+say, "Hey, this is a tough one. Let me
+4:47
+think longer." They do not have the
+4:49
+ability to go back, rethink or rewrite
+4:51
+their output once it starts coming out.
+4:53
+Once they generate a token, they are
+4:55
+locked into it. It is like trying to
+4:57
+solve a math problem by writing down one
+4:59
+number at a time in pen without ever
+5:02
+checking if you are on the right track.
+5:04
+HRM breaks away from that limitation.
+5:06
+Its two-level architecture lets it adapt
+5:08
+the amount of reasoning based on the
+5:10
+complexity of the problem. In fact,
+5:12
+there is even a version of HRM that uses
+5:14
+reinforcement learning to decide on its
+5:16
+own how many iterations it needs for
+5:19
+each task. So for simple tasks, it might
+5:21
+only loop a few times. For harder ones,
+5:24
+it loops more. This makes it way closer
+5:27
+to actual flexible thinking than
+5:29
+anything else we have seen. And because
+5:31
+of how it is structured, it also avoids
+5:33
+one of the biggest issues in artificial
+5:35
+intelligence training today, deep back
+5:38
+propagation through time. Most models
+5:40
+need to remember and synchronize partial
+5:42
+derivatives across multiple layers and
+5:45
+time steps. It is memory intensive. It
+5:47
+is slow and it is probably not how
+5:50
+biological brains actually work. HRM on
+5:53
+the other hand uses more local gradient
+5:55
+updates which are easier to compute and
+5:57
+way more biologically plausible. Now
+6:00
+does that matter in practice?
+6:02
+Absolutely. Less memory required means
+6:05
+you can run more models at once or train
+6:07
+faster with fewer resources. It also
+6:09
+means this thing scales really well. You
+6:11
+could run HRM on a laptop or even embed
+6:14
+it into edge devices or robots. And that
+6:17
+is exactly what Sapien is doing. They
+6:19
+are already testing HRM in healthcare to
+6:22
+help diagnose rare diseases and in
+6:24
+seasonal climate forecasting where it
+6:26
+reportedly hit accuracy rates of 97%.
+6:30
+The startup's team includes former
+6:32
+engineers from Deep Mind, Anthropic,
+6:34
+Deep Seek, and even Elon Musk's XAI
+6:38
+group. These are people who have worked
+6:39
+at the cutting edge of artificial
+6:41
+intelligence and they are all betting on
+6:43
+HRM's brain inspired design to
+6:46
+eventually push past the limits of what
+6:48
+we've come to expect from large language
+6:50
+models. And yeah, they are not shy about
+6:53
+it. Guan Wang straight up said
+6:54
+artificial general intelligence is about
+6:56
+giving machines human level intelligence
+6:59
+and eventually beyond. Chain of thought
+7:02
+prompting is just a shortcut. What we
+7:04
+have built is something that can think.
+7:06
+That kind of confidence usually comes
+7:08
+from people trying to sell you hype, but
+7:10
+in this case, the results are backing it
+7:13
+up. You do not have to just take their
+7:14
+word for it either. The entire project
+7:16
+is open- source. You can check it out
+7:18
+yourself right now on GitHub. Train your
+7:21
+own version, modify it, see how it
+7:23
+works. That level of transparency is
+7:26
+pretty rare, especially for something
+7:28
+this promising. Now, sure, it is early
+7:30
+days. HRM still has a narrow focus. It
+7:33
+is built to reason, not to chat. Do not
+7:35
+expect it to write poetry or summarize
+7:37
+your emails. But as a proof of concept,
+7:40
+it is one of the strongest we have seen.
+7:42
+And HRM is not alone. There are other
+7:44
+architectural breakthroughs being
+7:46
+explored. Sakana is working on
+7:48
+continuous thought machines. There are
+7:50
+bitle large language models that only
+7:52
+use one bit weights. Even Google is
+7:55
+testing out diffusion-based reasoning
+7:57
+models. All of these are still in the
+7:59
+experimental phase, but they are part of
+8:02
+the same trend. rethinking how
+8:04
+artificial intelligence should actually
+8:06
+work instead of just making it bigger.
+8:08
+What is different here is that HRM is
+8:10
+already working. It is already beating
+8:12
+models four times its size using just a
+8:15
+tiny sliver of the training data with no
+8:17
+pre-training at all. It is not just
+8:19
+theory anymore. And honestly, unless
+8:21
+someone suddenly throws a few billion
+8:23
+into building a new foundational model
+8:24
+from scratch, the next big artificial
+8:27
+intelligence leap probably will not be
+8:29
+another scaled up GPT clone. And it will
+8:31
+be something like this. A totally new
+8:34
+architecture that brings better
+8:36
+reasoning, faster training, and cheaper
+8:39
+deployment without needing a warehouse
+8:41
+full of graphics processing units. If
+8:43
+HRM's path continues, it could be the
+8:46
+first step toward a world where
+8:47
+artificial intelligence agents do not
+8:49
+live in data centers. They live in your
+8:52
+laptop, in your robot, or even in your
+8:54
+car. And they will not just be paring
+8:57
+the internet. They will actually be
+8:58
+thinking. So, what do you think? Is this
+9:00
+the future of artificial general
+9:02
+intelligence? Drop your thoughts in the
+9:04
+comments. I am reading all of them. Make
+9:06
+sure to subscribe and like if you want
+9:08
+more breakthroughs like this. Thanks for
+9:10
+watching. Catch you in the next one.
+

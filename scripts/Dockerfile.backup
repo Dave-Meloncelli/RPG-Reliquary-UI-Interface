@@ -1,0 +1,45 @@
+FROM alpine:latest
+
+# Install required packages
+RUN apk add --no-cache \
+    postgresql-client \
+    redis \
+    curl \
+    tar \
+    gzip \
+    bash \
+    docker-cli \
+    aws-cli \
+    jq
+
+# Copy backup script
+COPY backup.sh /usr/local/bin/backup.sh
+RUN chmod +x /usr/local/bin/backup.sh
+
+# Create backup directory
+RUN mkdir -p /backups
+
+# Set up cron for scheduled backups
+RUN echo "0 2 * * * /usr/local/bin/backup.sh >> /var/log/backup.log 2>&1" > /etc/crontabs/root
+
+# Create entrypoint script
+COPY <<EOF /entrypoint.sh
+#!/bin/bash
+
+# Start cron daemon
+crond -f -l 8 &
+
+# Run backup immediately if BACKUP_NOW is set
+if [ "\$BACKUP_NOW" = "true" ]; then
+    echo "Running immediate backup..."
+    /usr/local/bin/backup.sh
+fi
+
+# Keep container running
+wait
+EOF
+
+RUN chmod +x /entrypoint.sh
+
+# Set entrypoint
+ENTRYPOINT ["/entrypoint.sh"] 

@@ -1,0 +1,133 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "alerts.yml"
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093
+
+scrape_configs:
+  # Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Agent Zero Backend
+  - job_name: 'agent-zero-api'
+    static_configs:
+      - targets: ['agent-zero-api:8000']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # Agent Zero Frontend
+  - job_name: 'agent-zero-ui'
+    static_configs:
+      - targets: ['agent-zero-ui:3000']
+    metrics_path: '/health'
+    scrape_interval: 30s
+
+  # CrewAI Core
+  - job_name: 'crewai-core'
+    static_configs:
+      - targets: ['crewai-core:8501']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # A2A Gateway
+  - job_name: 'a2a-gateway'
+    static_configs:
+      - targets: ['a2a-gateway:5001']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # A2A Registry
+  - job_name: 'a2a-registry'
+    static_configs:
+      - targets: ['a2a-registry:5003']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # n8n
+  - job_name: 'n8n'
+    static_configs:
+      - targets: ['n8n:5678']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # PostgreSQL
+  - job_name: 'postgres'
+    static_configs:
+      - targets: ['postgres-exporter:9187']
+    scrape_interval: 30s
+
+  # Redis
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis-exporter:9121']
+    scrape_interval: 30s
+
+  # Milvus
+  - job_name: 'milvus'
+    static_configs:
+      - targets: ['milvus:9091']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # Ollama
+  - job_name: 'ollama'
+    static_configs:
+      - targets: ['ollama:11434']
+    metrics_path: '/api/metrics'
+    scrape_interval: 30s
+
+  # Elasticsearch
+  - job_name: 'elasticsearch'
+    static_configs:
+      - targets: ['elasticsearch:9200']
+    metrics_path: '/_prometheus/metrics'
+    scrape_interval: 30s
+
+  # Grafana
+  - job_name: 'grafana'
+    static_configs:
+      - targets: ['grafana:3000']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # Traefik
+  - job_name: 'traefik'
+    static_configs:
+      - targets: ['traefik:8080']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # Node Exporter (for host metrics)
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['node-exporter:9100']
+    scrape_interval: 30s
+
+  # cAdvisor (for container metrics)
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080']
+    scrape_interval: 30s
+
+  # SonarQube
+  - job_name: 'sonarqube'
+    static_configs:
+      - targets: ['sonarqube:9000']
+    metrics_path: '/metrics'
+    scrape_interval: 60s
+
+  # Backup Service
+  - job_name: 'backup'
+    static_configs:
+      - targets: ['backup:8080']
+    metrics_path: '/metrics'
+    scrape_interval: 60s 

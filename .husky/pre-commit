@@ -1,1 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
 npx lint-staged
+
+# Framework validation
+echo "Running framework validation..."
+node scripts/framework-validation.js
+if [ $? -ne 0 ]; then
+  echo "Framework validation failed"
+  exit 1
+fi
