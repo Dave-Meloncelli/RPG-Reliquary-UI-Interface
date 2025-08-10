@@ -1,0 +1,82 @@
+{
+  "timestamp": "2025-08-10T12:12:36.383082",
+  "summary": {
+    "total_agents": 5,
+    "online_agents": 5,
+    "agent_uptime_percent": 100.0,
+    "total_messages": 3,
+    "message_types": {
+      "coordination": 1,
+      "status_update": 1,
+      "data_response": 1
+    },
+    "protocol_version": "1.0"
+  },
+  "agents": {
+    "crewai_lane_manager": {
+      "agent_id": "crewai_lane_manager",
+      "agent_name": "CrewAI Lane Manager",
+      "agent_type": "crewai",
+      "capabilities": [
+        "coordination",
+        "resource_management"
+      ],
+      "status": "online",
+      "last_heartbeat": "2025-08-10T12:12:31.381055",
+      "message_queue_size": 1
+    },
+    "n8n_workflow_manager": {
+      "agent_id": "n8n_workflow_manager",
+      "agent_name": "N8N Workflow Manager",
+      "agent_type": "n8n",
+      "capabilities": [
+        "workflow_automation",
+        "integration"
+      ],
+      "status": "online",
+      "last_heartbeat": "2025-08-10T12:12:31.381497",
+      "message_queue_size": 1
+    },
+    "agent_zero_researcher": {
+      "agent_id": "agent_zero_researcher",
+      "agent_name": "Agent Zero Researcher",
+      "agent_type": "agent_zero",
+      "capabilities": [
+        "research",
+        "analysis"
+      ],
+      "status": "online",
+      "last_heartbeat": "2025-08-10T12:12:31.381741",
+      "message_queue_size": 0
+    },
+    "playwright_automation_engineer": {
+      "agent_id": "playwright_automation_engineer",
+      "agent_name": "Playwright Automation Engineer",
+      "agent_type": "playwright",
+      "capabilities": [
+        "browser_automation",
+        "testing"
+      ],
+      "status": "online",
+      "last_heartbeat": "2025-08-10T12:12:31.381986",
+      "message_queue_size": 0
+    },
+    "framework_orchestrator": {
+      "agent_id": "framework_orchestrator",
+      "agent_name": "Framework Orchestrator",
+      "agent_type": "framework",
+      "capabilities": [
+        "orchestration",
+        "governance"
+      ],
+      "status": "online",
+      "last_heartbeat": "2025-08-10T12:12:31.382141",
+      "message_queue_size": 1
+    }
+  },
+  "recent_messages": [
+    {
+      "message_id": "026cda05-8afa-4fed-afab-e4efec2c69d6",
+      "sender_id": "crewai_lane_manager",
+      "recipient_id": "n8n_workflow_manager",
+      "message_type": 

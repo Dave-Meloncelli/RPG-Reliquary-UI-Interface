@@ -1,0 +1,70 @@
+{
+  "timestamp": "2025-08-10T12:12:41.398467",
+  "agents": {
+    "crewai_lane_manager": {
+      "agent_id": "crewai_lane_manager",
+      "agent_name": "CrewAI Lane Manager",
+      "agent_type": "crewai",
+      "capabilities": [
+        "coordination",
+        "resource_management"
+      ],
+      "status": "online",
+      "last_heartbeat": "2025-08-10T12:12:36.390745",
+      "message_queue_size": 1
+    },
+    "n8n_workflow_manager": {
+      "agent_id": "n8n_workflow_manager",
+      "agent_name": "N8N Workflow Manager",
+      "agent_type": "n8n",
+      "capabilities": [
+        "workflow_automation",
+        "integration"
+      ],
+      "status": "online",
+      "last_heartbeat": "2025-08-10T12:12:36.391172",
+      "message_queue_size": 1
+    },
+    "agent_zero_researcher": {
+      "agent_id": "agent_zero_researcher",
+      "agent_name": "Agent Zero Researcher",
+      "agent_type": "agent_zero",
+      "capabilities": [
+        "research",
+        "analysis"
+      ],
+      "status": "online",
+      "last_heartbeat": "2025-08-10T12:12:36.391480",
+      "message_queue_size": 0
+    },
+    "playwright_automation_engineer": {
+      "agent_id": "playwright_automation_engineer",
+      "agent_name": "Playwright Automation Engineer",
+      "agent_type": "playwright",
+      "capabilities": [
+        "browser_automation",
+        "testing"
+      ],
+      "status": "online",
+      "last_heartbeat": "2025-08-10T12:12:36.391836",
+      "message_queue_size": 0
+    },
+    "framework_orchestrator": {
+      "agent_id": "framework_orchestrator",
+      "agent_name": "Framework Orchestrator",
+      "agent_type": "framework",
+      "capabilities": [
+        "orchestration",
+        "governance"
+      ],
+      "status": "online",
+      "last_heartbeat": "2025-08-10T12:12:36.392106",
+      "message_queue_size": 1
+    }
+  },
+  "message_history": [
+    {
+      "message_id": "5da2efb0-47a1-42bd-a8e6-04f17bf4b929",
+      "sender_id": "crewai_lane_manager",
+      "recipient_id": "n8n_workflow_manager",
+      "message_type": 
