@@ -753,6 +753,49 @@ class FrameRegistry:
             rollback_plan='No rollback needed',
             context_preservation=True
         )
+
+        # Register Critical Infrastructure Frames (NEW)
+        self.frames['real_time_monitoring_dashboard'] = Frame(
+            id='real_time_monitoring_dashboard',
+            name='Real-Time Monitoring Dashboard',
+            description='Provides unified view of all agents and workflows with real-time monitoring',
+            file_path='scripts/frames/real-time-monitoring-dashboard-frame.py',
+            type=FrameType.IMPLEMENTATION,
+            entry_point='main',
+            dependencies=['python', 'psutil'],
+            parameters={'timeout': 300},
+            success_criteria={'dashboard_created': True, 'monitoring_active': True},
+            rollback_plan='Stop monitoring threads and cleanup',
+            context_preservation=True
+        )
+
+        self.frames['cross_agent_communication_protocol'] = Frame(
+            id='cross_agent_communication_protocol',
+            name='Cross-Agent Communication Protocol',
+            description='Implements standardized messaging between different AI systems',
+            file_path='scripts/frames/cross-agent-communication-protocol-frame.py',
+            type=FrameType.IMPLEMENTATION,
+            entry_point='main',
+            dependencies=['python'],
+            parameters={'timeout': 300},
+            success_criteria={'protocol_implemented': True, 'communication_active': True},
+            rollback_plan='Stop communication threads and cleanup',
+            context_preservation=True
+        )
+
+        self.frames['resource_allocation_engine'] = Frame(
+            id='resource_allocation_engine',
+            name='Resource Allocation Engine',
+            description='Intelligent distribution of computational resources across all systems',
+            file_path='scripts/frames/resource-allocation-engine-frame.py',
+            type=FrameType.IMPLEMENTATION,
+            entry_point='main',
+            dependencies=['python', 'psutil'],
+            parameters={'timeout': 300},
+            success_criteria={'engine_implemented': True, 'allocation_active': True},
+            rollback_plan='Stop allocation engine and release resources',
+            context_preservation=True
+        )
     
     def _load_scaffolds(self):
         """Load predefined scaffolds including task-specific ones"""
@@ -837,11 +880,33 @@ class FrameRegistry:
                 6: [self.frames['synthesis_analysis']],     # Final audit: Verify integration
                 7: [self.frames['meta_analysis']],          # Meta-audit: Analyze integration success
                 8: [self.frames['human_approval']],         # Approval: Human review of integration plan
-                9: [self.frames['knowledge_hub_update']],   # Update Registers: Document integration
-                10: [self.frames['external_failure_diagnostic']]  # Diagnostics: Check for integration issues
+                9: [self.frames['knowledge_hub_update']],   # Update Registers
+                10: [self.frames['external_failure_diagnostic']]  # Push GitHub/Diagnostics
             },
-            dependencies=['python', 'node', 'git'],
-            success_criteria={'systems_discovered': True, 'integration_plan_generated': True, 'integration_implemented': True, 'hub_updated': True},
+            dependencies=['python', 'node'],
+            success_criteria={'integration_complete': True, 'systems_connected': True},
+            context_preservation=True
+        )
+
+        # Critical Infrastructure Implementation Scaffold (NEW)
+        self.scaffolds['critical_infrastructure_implementation'] = Scaffold(
+            id='critical_infrastructure_implementation',
+            name='Critical Infrastructure Implementation',
+            description='Implements critical infrastructure gaps: monitoring, communication, and resource allocation',
+            stages={
+                1: [self.frames['synthesis_analysis']],      # Scope: Analyze current infrastructure gaps
+                2: [self.frames['system_audit'], self.frames['risk_mitigation']],      # Identify & Analyze: Audit current state and identify risks
+                3: [self.frames['pre_existing_systems_discovery']],           # Plan: Discover existing systems to integrate with
+                4: [self.frames['real_time_monitoring_dashboard'], self.frames['cross_agent_communication_protocol'], self.frames['resource_allocation_engine']],        # Implement: Deploy critical infrastructure
+                5: [],                                      # Success continue
+                6: [self.frames['synthesis_analysis'], self.frames['system_audit']],     # Final audit: Verify infrastructure deployment
+                7: [self.frames['meta_analysis'], self.frames['improvement_optimization']],          # Meta-audit: Analyze infrastructure success
+                8: [self.frames['human_approval']],         # Approval: Human review of infrastructure deployment
+                9: [self.frames['knowledge_hub_update']],   # Update Registers
+                10: [self.frames['external_failure_diagnostic']]  # Push GitHub/Diagnostics
+            },
+            dependencies=['python', 'psutil'],
+            success_criteria={'infrastructure_deployed': True, 'monitoring_active': True, 'communication_active': True, 'allocation_active': True},
             context_preservation=True
         )
 
