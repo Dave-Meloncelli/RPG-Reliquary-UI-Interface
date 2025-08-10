@@ -1,15 +1,15 @@
 {
-  "timestamp": "2025-08-10T03:06:26.480Z",
+  "timestamp": "2025-08-10T03:20:56.057Z",
   "summary": {
-    "totalFiles": 146,
+    "totalFiles": 147,
     "templates": 0,
     "endpoints": 0,
     "tools": 0,
-    "documentation": 20,
+    "documentation": 21,
     "connections": 108,
     "dependencies": 110,
     "missing": 1,
-    "recommendations": 113
+    "recommendations": 114
   },
   "details": {
     "files": {
@@ -2542,6 +2542,20 @@
         "endpointInfo": null,
         "toolInfo": null
       },
+      "SYSTEM_AUDIT_REPORT.md": {
+        "path": "SYSTEM_AUDIT_REPORT.md",
+        "name": "SYSTEM_AUDIT_REPORT.md",
+        "extension": ".md",
+        "size": 10297,
+        "modified": "2025-08-10T03:06:26.529Z",
+        "category": "General",
+        "description": "🔍 System Audit Report",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
       "README.md": {
         "path": "README.md",
         "name": "README.md",
@@ -3802,6 +3816,20 @@
         "endpointInfo": null,
         "toolInfo": null
       },
+      "SYSTEM_AUDIT_REPORT.md": {
+        "path": "SYSTEM_AUDIT_REPORT.md",
+        "name": "SYSTEM_AUDIT_REPORT.md",
+        "extension": ".md",
+        "size": 10297,
+        "modified": "2025-08-10T03:06:26.529Z",
+        "category": "General",
+        "description": "🔍 System Audit Report",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
       "README.md": {
         "path": "README.md",
         "name": "README.md",
@@ -4054,6 +4082,11 @@
       {
         "type": "orphaned_file",
         "file": "types\\recursiveABTesting.ts",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "SYSTEM_AUDIT_REPORT.md",
         "message": "File has no connections or dependencies - consider removal or documentation"
       },
       {
@@ -4628,6 +4661,11 @@
       {
         "type": "orphaned_file",
         "file": "types\\recursiveABTesting.ts",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "SYSTEM_AUDIT_REPORT.md",
         "message": "File has no connections or dependencies - consider removal or documentation"
       },
       {

@@ -6,8 +6,8 @@
   "result": {
     "success": true,
     "dependency_scan_complete": true,
-    "report_path": "reports/dependency_vuln_1754648380320.json",
-    "attempted_fix": true
+    "report_path": "reports/dependency_vuln_1754796055599.json",
+    "attempted_fix": false
   },
-  "timestamp": "2025-08-08T18:19:40.335830"
+  "timestamp": "2025-08-10T11:20:55.610686"
 }

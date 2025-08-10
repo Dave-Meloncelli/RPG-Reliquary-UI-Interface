@@ -9,7 +9,7 @@
     "licenses_checked": true,
     "data": {
       "components": 20,
-      "report_path": "reports\\sbom_1754648375521.json",
+      "report_path": "reports\\sbom_1754796049741.json",
       "license_violations": 19
     },
     "summary": "Generated SBOM with 20 components",
@@ -20,5 +20,5 @@
       ]
     }
   },
-  "timestamp": "2025-08-08T18:19:35.540565"
+  "timestamp": "2025-08-10T11:20:49.753764"
 }
