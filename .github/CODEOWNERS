@@ -1,0 +1,20 @@
+# Framework core components require review
+/autonomous-framework-v2.py @Dave-Meloncelli
+/scripts/frames/ @Dave-Meloncelli
+/.github/workflows/ @Dave-Meloncelli
+/.husky/ @Dave-Meloncelli
+
+# Security and validation tools
+/tools/scan_secrets_strict.py @Dave-Meloncelli
+/tools/validate_json_reports.py @Dave-Meloncelli
+/.github/workflows/lint.yml @Dave-Meloncelli
+
+# Configuration files
+/commitlint.config.cjs @Dave-Meloncelli
+/package.json @Dave-Meloncelli
+/config/ @Dave-Meloncelli
+
+# Documentation
+/docs/ @Dave-Meloncelli
+/internal/ @Dave-Meloncelli
+/.github/PULL_REQUEST_TEMPLATE.md @Dave-Meloncelli
