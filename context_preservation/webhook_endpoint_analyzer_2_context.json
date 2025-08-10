@@ -1,0 +1,3095 @@
+{
+  "frame_id": "webhook_endpoint_analyzer",
+  "stage": 2,
+  "input_data": {},
+  "parameters": {
+    "timeout": 300
+  },
+  "result": {
+    "success": true,
+    "webhook_endpoint_analysis_complete": true,
+    "findings_count": 283,
+    "findings": [
+      {
+        "path": "autonomous-framework-v2.py",
+        "urls": [],
+        "hints": [
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "autonomous-system-v1.py",
+        "urls": [
+          "http://www.google.com"
+        ],
+        "hints": []
+      },
+      {
+        "path": "autonomous-system-v2.py",
+        "urls": [
+          "https://httpbin.org/get"
+        ],
+        "hints": []
+      },
+      {
+        "path": "autonomous-system-v5.py",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "package-lock.json",
+        "urls": [
+          "https://eslint.org/donate",
+          "https://github.com/chalk/ansi-regex?sponsor=1",
+          "https://github.com/chalk/ansi-styles?sponsor=1",
+          "https://github.com/chalk/chalk?sponsor=1",
+          "https://github.com/chalk/slice-ansi?sponsor=1",
+          "https://github.com/chalk/strip-ansi?sponsor=1",
+          "https://github.com/chalk/wrap-ansi?sponsor=1",
+          "https://github.com/prettier/prettier?sponsor=1",
+          "https://github.com/sindresorhus/nano-spawn?sponsor=1",
+          "https://github.com/sponsors/antonk52",
+          "https://github.com/sponsors/d-fischer",
+          "https://github.com/sponsors/epoberezkin",
+          "https://github.com/sponsors/fastify",
+          "https://github.com/sponsors/isaacs",
+          "https://github.com/sponsors/jonschlinkert",
+          "https://github.com/sponsors/ljharb",
+          "https://github.com/sponsors/nzakas",
+          "https://github.com/sponsors/sindresorhus",
+          "https://github.com/sponsors/typicode",
+          "https://github.com/sponsors/wooorm"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "README.md",
+        "urls": [
+          "http://crewai-core",
+          "http://localhost",
+          "https://github.com/a2aproject",
+          "https://github.com/agent0ai/agent-zero",
+          "https://github.com/crewAIInc/crewAI",
+          "https://github.com/davem/az-interface.git",
+          "https://github.com/your-username/az-interface/discussions",
+          "https://github.com/your-username/az-interface/issues",
+          "https://github.com/your-username/az-interface/wiki",
+          "https://img.shields.io/badge/A2A--Protocol-Integrated-purple.svg",
+          "https://img.shields.io/badge/Agent--Zero-Integrated-green.svg",
+          "https://img.shields.io/badge/CrewAI-Integrated-orange.svg",
+          "https://img.shields.io/badge/Docker-Ready-blue.svg",
+          "https://img.shields.io/badge/License-MIT-yellow.svg",
+          "https://img.shields.io/badge/n8n-Integrated-red.svg",
+          "https://milvus.io/",
+          "https://n8n.io/",
+          "https://nodejs.org/",
+          "https://ollama.ai/",
+          "https://opensource.org/licenses/MIT"
+        ],
+        "hints": [
+          "api_key",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "vite.config.ts",
+        "urls": [
+          "http://localhost",
+          "https://api.anthropic.com",
+          "https://api.openai.com",
+          "https://generativelanguage.googleapis.com"
+        ],
+        "hints": []
+      },
+      {
+        "path": "backend/package-lock.json",
+        "urls": [
+          "https://feross.org/support",
+          "https://github.com/sponsors/feross",
+          "https://github.com/sponsors/jonschlinkert",
+          "https://github.com/sponsors/ljharb",
+          "https://github.com/sponsors/sindresorhus",
+          "https://opencollective.com/express",
+          "https://opencollective.com/nodemon",
+          "https://paulmillr.com/funding/",
+          "https://registry.npmjs.org/accepts/-/accepts-1.3.8.tgz",
+          "https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz",
+          "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz",
+          "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz",
+          "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.3.0.tgz",
+          "https://registry.npmjs.org/body-parser/-/body-parser-1.20.3.tgz",
+          "https://registry.npmjs.org/brace-expansion/-/brace-expansion-1.1.12.tgz",
+          "https://registry.npmjs.org/braces/-/braces-3.0.3.tgz",
+          "https://registry.npmjs.org/bytes/-/bytes-3.1.2.tgz",
+          "https://registry.npmjs.org/call-bind-apply-helpers/-/call-bind-apply-helpers-1.0.2.tgz",
+          "https://registry.npmjs.org/call-bound/-/call-bound-1.0.4.tgz",
+          "https://registry.npmjs.org/chokidar/-/chokidar-3.6.0.tgz"
+        ],
+        "hints": []
+      },
+      {
+        "path": "backend/server.js",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "backlog/backlog_items_20250808_111513.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "backlog/backlog_items_20250808_111954.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "backlog/backlog_items_20250808_112518.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "backlog/backlog_items_20250808_113112.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "backlog/backlog_items_20250808_113711.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "backlog/backlog_items_20250808_114354.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "backlog/backlog_items_20250808_124245.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "backlog/backlog_items_20250808_181349.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "backlog/backlog_items_20250808_181941.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "backlog/backlog_items_20250808_182539.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "backlog/backlog_items_20250808_183159.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "backlog/backlog_items_20250808_210105.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_artifact_constellation_binding_plan 2025-06-04 13_52_32.md",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "captured_content/captured_artifact_constellation_binding_plan.md",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "captured_content/captured_AZ1(1).txt",
+        "urls": [],
+        "hints": [
+          "bearer",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_AZ1.txt",
+        "urls": [],
+        "hints": [
+          "bearer",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_az2(1).txt",
+        "urls": [
+          "http://localhost",
+          "https://github.com/agent-zero/codex.git"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_az2.txt",
+        "urls": [
+          "http://localhost",
+          "https://github.com/agent-zero/codex.git"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_AZ300 - SME Debug & Error Resolution Agent conv.txt",
+        "urls": [],
+        "hints": [
+          "authorization",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_AZ300 - SME Debug & Error Resolution Agent_extracted.txt",
+        "urls": [],
+        "hints": [
+          "authorization",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_ChatGPT 4o  2(1).txt",
+        "urls": [
+          "http://localhost",
+          "https://github.com/frdel/agent-zero",
+          "https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkd3SVRwNU1sZFlIQjB0TUFpR0dtNlNnQ2RtZ3xBQ3Jtc0tucWtMVDQ3Z04ycGV6NFJDTTNjcjhVYnI0eElpU1J4c0FwS05HeS1XSGhnazQwMWRWd2JVNm1hVDNkUU9Ka2NVejJmSGh6S09nZU1TT2I4bG1UejFzYTUxVEFsSEd0dlVnZm9Vb29ocmV3aUo2MFEzRQ&q=https%3A%2F%2Fgithub.com%2Fgoogle%2FA2A%2Ftree%2Fmain%2Fdemo&v=mDcULe4GMyA",
+          "https://youtu.be/mDcULe4GMyA?si=CGmuyEqVVnjhNKgb",
+          "https://youtu.be/mDcULe4GMyA?si=GpxerbbbODQQ8GfB"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_ChatGPT 4o  2.txt",
+        "urls": [
+          "http://localhost",
+          "https://github.com/frdel/agent-zero",
+          "https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkd3SVRwNU1sZFlIQjB0TUFpR0dtNlNnQ2RtZ3xBQ3Jtc0tucWtMVDQ3Z04ycGV6NFJDTTNjcjhVYnI0eElpU1J4c0FwS05HeS1XSGhnazQwMWRWd2JVNm1hVDNkUU9Ka2NVejJmSGh6S09nZU1TT2I4bG1UejFzYTUxVEFsSEd0dlVnZm9Vb29ocmV3aUo2MFEzRQ&q=https%3A%2F%2Fgithub.com%2Fgoogle%2FA2A%2Ftree%2Fmain%2Fdemo&v=mDcULe4GMyA",
+          "https://youtu.be/mDcULe4GMyA?si=CGmuyEqVVnjhNKgb",
+          "https://youtu.be/mDcULe4GMyA?si=GpxerbbbODQQ8GfB"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_ChatGPT 4o  3(1).txt",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "captured_content/captured_ChatGPT 4o  3.txt",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "captured_content/captured_compass_artifact_wf-46b2e5f6-60a3-4c46-949a-52fe35c52b3d_text_markdown.md",
+        "urls": [],
+        "hints": [
+          "authorization",
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_Deep Research - FTC LNSU-1.txt",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_ERDU-AOX Spiral_ Complete Gap Analysis & Fusion Strategy_extracted.txt",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_erdu-aox-inventory-improvement.txt",
+        "urls": [
+          "https://www.googleapis.com/books/v1/volumes?q=isbn"
+        ],
+        "hints": []
+      },
+      {
+        "path": "captured_content/captured_improved-hybrid-ai-toolstack.md",
+        "urls": [
+          "http://agent_zero_backend",
+          "http://localhost",
+          "https://aka.ms/getwinget",
+          "https://api.",
+          "https://api.agentzero.ai/docs",
+          "https://api.chutes.ai/v1/completions",
+          "https://api.openai.com/v1",
+          "https://community.agentzero.ai",
+          "https://docs.agentzero.ai",
+          "https://docs.agentzero.ai/agents",
+          "https://docs.agentzero.ai/troubleshooting",
+          "https://generativelanguage.googleapis.com/v1beta",
+          "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-vision",
+          "https://github.com/UB-Mannheim/tesseract/wiki",
+          "https://ollama.ai/download/windows",
+          "https://ollama.ai/install.sh",
+          "https://sh.rustup.rs"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_loom 3(1).txt",
+        "urls": [
+          "https://chat.openai.com/settings"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_loom 3.txt",
+        "urls": [
+          "https://chat.openai.com/settings"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_loom2(1).txt",
+        "urls": [
+          "http://localhost",
+          "https://github.com/frdel/agent-zero",
+          "https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkd3SVRwNU1sZFlIQjB0TUFpR0dtNlNnQ2RtZ3xBQ3Jtc0tucWtMVDQ3Z04ycGV6NFJDTTNjcjhVYnI0eElpU1J4c0FwS05HeS1XSGhnazQwMWRWd2JVNm1hVDNkUU9Ka2NVejJmSGh6S09nZU1TT2I4bG1UejFzYTUxVEFsSEd0dlVnZm9Vb29ocmV3aUo2MFEzRQ&q=https%3A%2F%2Fgithub.com%2Fgoogle%2FA2A%2Ftree%2Fmain%2Fdemo&v=mDcULe4GMyA",
+          "https://youtu.be/mDcULe4GMyA?si=CGmuyEqVVnjhNKgb",
+          "https://youtu.be/mDcULe4GMyA?si=GpxerbbbODQQ8GfB"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_loom2.txt",
+        "urls": [
+          "http://localhost",
+          "https://github.com/frdel/agent-zero",
+          "https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkd3SVRwNU1sZFlIQjB0TUFpR0dtNlNnQ2RtZ3xBQ3Jtc0tucWtMVDQ3Z04ycGV6NFJDTTNjcjhVYnI0eElpU1J4c0FwS05HeS1XSGhnazQwMWRWd2JVNm1hVDNkUU9Ka2NVejJmSGh6S09nZU1TT2I4bG1UejFzYTUxVEFsSEd0dlVnZm9Vb29ocmV3aUo2MFEzRQ&q=https%3A%2F%2Fgithub.com%2Fgoogle%2FA2A%2Ftree%2Fmain%2Fdemo&v=mDcULe4GMyA",
+          "https://youtu.be/mDcULe4GMyA?si=CGmuyEqVVnjhNKgb",
+          "https://youtu.be/mDcULe4GMyA?si=GpxerbbbODQQ8GfB"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_merge1(1).txt",
+        "urls": [
+          "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+          "http://va.truepic.com/ejbca/publicweb/status/ocsp0",
+          "https://drive.google.com/file/d/1LKV9rl9j_aCYAniu_CjT3DksG4RAamee/view?usp=sharing",
+          "https://drive.google.com/file/d/FILE_ID/view?usp=sharing"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_merge1.txt",
+        "urls": [
+          "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+          "http://va.truepic.com/ejbca/publicweb/status/ocsp0",
+          "https://drive.google.com/file/d/1LKV9rl9j_aCYAniu_CjT3DksG4RAamee/view?usp=sharing",
+          "https://drive.google.com/file/d/FILE_ID/view?usp=sharing"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_n8n_crewai_automation (1).md",
+        "urls": [
+          "http://your-agent-zero-endpoint/analyze-product",
+          "https://api.mailchimp.com/3.0/campaigns",
+          "https://graph.facebook.com/v18.0/your-page-id/feed",
+          "https://your-website.com/wp-json/wp/v2/posts"
+        ],
+        "hints": [
+          "api-key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_n8n_integration_guide.md",
+        "urls": [
+          "https://docs.n8n.io/advanced-ai/",
+          "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.shopify/",
+          "https://n8n.io/integrations/agent/",
+          "https://n8n.io/workflows/",
+          "https://n8n.io/workflows/2027-low-stock-and-sold-out-watcher-for-shopify/",
+          "https://n8n.io/workflows/2417-flux-ai-image-generator/",
+          "https://n8n.io/workflows/2420-automate-image-validation-tasks-using-ai-vision/",
+          "https://n8n.io/workflows/2950-ai-powered-social-media-content-generator-and-publisher/",
+          "https://n8n.io/workflows/3442-fully-automated-ai-video-generation-and-multi-platform-publishing/",
+          "https://n8n.io/workflows/4455-shopify-multi-module-automation-with-gpt-4o-langchain-agents-and-integrations/",
+          "https://n8n.io/workflows/869-find-a-new-book-recommendations/"
+        ],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 19(1).txt",
+        "urls": [
+          "http://10.1.1.1",
+          "http://192.168.1.1",
+          "https://account.live.com/activity",
+          "https://account.microsoft.com/security",
+          "https://agent.company.net/ping",
+          "https://aka.ms/PSWindows",
+          "https://appleid.apple.com",
+          "https://bitwarden.com/download",
+          "https://brave.com/download",
+          "https://budgetreport.com/wp-content/uploads/2018/09/71KMUWBI5BL._SL1500_.jpg",
+          "https://cdn.mos.cms.futurecdn.net/BhjVXZg2BaoBJuXh5kErXo-1200-80.jpg",
+          "https://digitogy.com/wp-content/uploads/2018/11/laptops.jpg",
+          "https://dlcdnwebimgs.asus.com/gain/32c2ddfe-6f1d-4a9e-93e1-efc4be573c0f/w800",
+          "https://fixthephoto.com/images/content/best-cheap-routers-top-3.png",
+          "https://github.com/password_reset",
+          "https://github.com/yourname/yourrepo.git",
+          "https://gumtreeau-res.cloudinary.com/image/private/t_%24_58/gumtree/061c2227-0c83-48b4-8197-e8b661c51575.png",
+          "https://i5.walmartimages.com/asr/d26e8151-6a5b-45c9-9823-30866b009c9d.3cf79fc4438e3ea1b11356806c28e646.png",
+          "https://itworldph.com/web/image/product.product/30730/image_1024/%5BCS-CP-9020302-NA%5D%20Corsair%20PSU%20650W%20Power%20Supply%20Unit%20RM650e%2080%2B%20Gold%20ATX%20Fully%20Modular%20%28CS-CP-9020302-NA%29?unique=026d3f2",
+          "https://myaccount.google.com/security"
+        ],
+        "hints": [
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 19.txt",
+        "urls": [
+          "http://10.1.1.1",
+          "http://192.168.1.1",
+          "https://account.live.com/activity",
+          "https://account.microsoft.com/security",
+          "https://agent.company.net/ping",
+          "https://aka.ms/PSWindows",
+          "https://appleid.apple.com",
+          "https://bitwarden.com/download",
+          "https://brave.com/download",
+          "https://budgetreport.com/wp-content/uploads/2018/09/71KMUWBI5BL._SL1500_.jpg",
+          "https://cdn.mos.cms.futurecdn.net/BhjVXZg2BaoBJuXh5kErXo-1200-80.jpg",
+          "https://digitogy.com/wp-content/uploads/2018/11/laptops.jpg",
+          "https://dlcdnwebimgs.asus.com/gain/32c2ddfe-6f1d-4a9e-93e1-efc4be573c0f/w800",
+          "https://fixthephoto.com/images/content/best-cheap-routers-top-3.png",
+          "https://github.com/password_reset",
+          "https://github.com/yourname/yourrepo.git",
+          "https://gumtreeau-res.cloudinary.com/image/private/t_%24_58/gumtree/061c2227-0c83-48b4-8197-e8b661c51575.png",
+          "https://i5.walmartimages.com/asr/d26e8151-6a5b-45c9-9823-30866b009c9d.3cf79fc4438e3ea1b11356806c28e646.png",
+          "https://itworldph.com/web/image/product.product/30730/image_1024/%5BCS-CP-9020302-NA%5D%20Corsair%20PSU%20650W%20Power%20Supply%20Unit%20RM650e%2080%2B%20Gold%20ATX%20Fully%20Modular%20%28CS-CP-9020302-NA%29?unique=026d3f2",
+          "https://myaccount.google.com/security"
+        ],
+        "hints": [
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 21(1).txt",
+        "urls": [
+          "https://github.com/Dave-Meloncelli/Its-Warm-by-the-Fire",
+          "https://signup.live.com"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 21.txt",
+        "urls": [
+          "https://github.com/Dave-Meloncelli/Its-Warm-by-the-Fire",
+          "https://signup.live.com"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 22(1).txt",
+        "urls": [
+          "https://admin.google.com",
+          "https://drive.google.com/drive/folders/1xJG7y8GugV1w4dvGjFxSmiAcZSKJVJkj",
+          "https://support.google.com/a/contact/recovery_form"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 22.txt",
+        "urls": [
+          "https://admin.google.com",
+          "https://drive.google.com/drive/folders/1xJG7y8GugV1w4dvGjFxSmiAcZSKJVJkj",
+          "https://support.google.com/a/contact/recovery_form"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 24(1).txt",
+        "urls": [
+          "https://farsight.org/posts/prime-memory-vault",
+          "https://www.cleanpng.com/png-circle-sphere-alchemy-area-point-mta-i-created-an-6348928/"
+        ],
+        "hints": [
+          "authorization",
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 24.txt",
+        "urls": [
+          "https://farsight.org/posts/prime-memory-vault",
+          "https://www.cleanpng.com/png-circle-sphere-alchemy-area-point-mta-i-created-an-6348928/"
+        ],
+        "hints": [
+          "authorization",
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 26(1).txt",
+        "urls": [
+          "https://discord.gg/shvFKeDw"
+        ],
+        "hints": [
+          "authorization",
+          "bearer"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 26.txt",
+        "urls": [
+          "https://discord.gg/shvFKeDw"
+        ],
+        "hints": [
+          "authorization",
+          "bearer"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 27(1).txt",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 27.txt",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 30(1).txt",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 30.txt",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 32(1).txt",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_new 32.txt",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_OCR & Aquisitions pipeline.txt",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "api_key",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_octospine_fusion_analysis.json",
+        "urls": [
+          "http://localhost",
+          "https://admin.g",
+          "https://admin.google.com",
+          "https://digitalinspiration.co",
+          "https://digitalinspiration.com/static/d26f22bad522316a78430c916076146a/drive-file-privacy-report.png",
+          "https://discord.gg/shvFKeDw",
+          "https://docs.runreveal.com/google-workspace-logs-1.png",
+          "https://drdriveaudit.com/assets/img/drdriveaudit-preview-2.jpg",
+          "https://drive.google.com/drive/folders/1xJG7y8GugV1w4dvGjFxSmiAcZSKJVJkj",
+          "https://drive.google.com/file/d/1LKV9rl9",
+          "https://farsight.org/posts/prim",
+          "https://farsight.org/posts/prime-",
+          "https://farsight.org/posts/prime-memory-vault",
+          "https://filerev.com/wp-content/upload",
+          "https://filerev.com/wp-content/uploads/2024/04/Dri",
+          "https://filerev.com/wp-content/uploads/2024/04/Drive-Audi",
+          "https://filerev.com/wp-content/uploads/2024/04/Drive-Audit-Logs.jpg",
+          "https://files.codingninj",
+          "https://files.codingninjas.in/article_images/google-workspace-audit-logs-1-1658067881.webp",
+          "https://gatlabs.com/knowledge/wp-content/uploads/2022/01/Screenshot-2022-01-21-at-17.21.55-1024x518.png"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_octospine_quick_results.json",
+        "urls": [
+          "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+          "http://localhost",
+          "https://admin.google.com",
+          "https://drive.google.com/drive/folders/1xJG7y8GugV1w4dvGjFxSmiAcZSKJVJkj",
+          "https://drive.google.com/file/d/1LKV9rl9j_aCYAniu_CjT3DksG4RAamee/view?usp=sharing",
+          "https://drive.google.com/file/d/FILE_ID/view?usp=sharing",
+          "https://signup.live.com",
+          "https://static.next-episode.net/tv-shows-images/huge/the-office-us.jpg",
+          "https://support.google.com/a/contact/recovery_form",
+          "https://www.facebook.com/share/r/1C5fzAE3Yz/?mibextid=wwXIfr"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_octospine_quick_summary.md",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_sl5(1).txt",
+        "urls": [
+          "https://bgr.com/wp-content/uploads/2023/05/gmail-google-account-privacy-security-checkup-passkeys-2.jpg?quality=82&strip=all",
+          "https://blog.trendmicro.com.tw/wp-content/uploads/2022/09/image-66.png",
+          "https://digitalinspiration.com/static/d26f22bad522316a78430c916076146a/drive-file-privacy-report.png",
+          "https://docs.runreveal.com/google-workspace-logs-1.png",
+          "https://drdriveaudit.com/assets/img/drdriveaudit-preview-2.jpg",
+          "https://filerev.com/wp-content/uploads/2024/04/Drive-Audit-Logs.jpg",
+          "https://files.codingninjas.in/article_images/google-workspace-audit-logs-1-1658067881.webp",
+          "https://gatlabs.com/knowledge/wp-content/uploads/2022/01/Screenshot-2022-01-21-at-17.21.55-1024x518.png",
+          "https://gcloud.devoteam.com/wp-content/uploads/sites/32/2022/12/Thirdpartyapps-1.png",
+          "https://i.ytimg.com/vi/7ZmJjJnsVH0/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/7ZmJjJnsVH0/maxresdefault.jpg?amp%3Brs=AOn4CLBJqTSNtNidJHu9R9Ucy9OP9WjJ3g&sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AG4BoAC4AOKAgwIABABGDIgQSh_MA8%3D",
+          "https://i.ytimg.com/vi/HYDqdahVydY/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/KORo_3PVQyo/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/L4HjN2ufrSI/maxresdefault.jpg?rs=AOn4CLBx4A3XvHHYoEhVN-n0SkxuipPevQ&sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8%3D",
+          "https://img.webnots.com/2022/03/Security-Section-in-Google-Account.png",
+          "https://lh3.googleusercontent.com/bGS2LCsWN7as5kH3hH1ztNcBWfskJ_Iw0a6moD7GtcA37yGf9doj0Wd1HEjBKVD_-_wTB0Xik2RYhp3BKkYV8e6mRnTdcBcAbphwwZE%3Dw620-l90-sg-c0xffffff-e30",
+          "https://media.licdn.com/dms/image/v2/D4E10AQGE4zAP4EyTRA/image-shrink_1280/image-shrink_1280/0/1706202076612?e=2147483647&t=B8b0SFDQJoNy2nMv-LVgQ-X2yiymZR3pnJpRfSPVWL0&v=beta",
+          "https://miro.medium.com/max/1400/1%2AqpYMmdRVYYr96ZnDAqxzmQ.png",
+          "https://myaccount.google.com/device-activity",
+          "https://myaccount.google.com/security"
+        ],
+        "hints": [
+          "authorization",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_sl5.txt",
+        "urls": [
+          "https://bgr.com/wp-content/uploads/2023/05/gmail-google-account-privacy-security-checkup-passkeys-2.jpg?quality=82&strip=all",
+          "https://blog.trendmicro.com.tw/wp-content/uploads/2022/09/image-66.png",
+          "https://digitalinspiration.com/static/d26f22bad522316a78430c916076146a/drive-file-privacy-report.png",
+          "https://docs.runreveal.com/google-workspace-logs-1.png",
+          "https://drdriveaudit.com/assets/img/drdriveaudit-preview-2.jpg",
+          "https://filerev.com/wp-content/uploads/2024/04/Drive-Audit-Logs.jpg",
+          "https://files.codingninjas.in/article_images/google-workspace-audit-logs-1-1658067881.webp",
+          "https://gatlabs.com/knowledge/wp-content/uploads/2022/01/Screenshot-2022-01-21-at-17.21.55-1024x518.png",
+          "https://gcloud.devoteam.com/wp-content/uploads/sites/32/2022/12/Thirdpartyapps-1.png",
+          "https://i.ytimg.com/vi/7ZmJjJnsVH0/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/7ZmJjJnsVH0/maxresdefault.jpg?amp%3Brs=AOn4CLBJqTSNtNidJHu9R9Ucy9OP9WjJ3g&sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AG4BoAC4AOKAgwIABABGDIgQSh_MA8%3D",
+          "https://i.ytimg.com/vi/HYDqdahVydY/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/KORo_3PVQyo/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/L4HjN2ufrSI/maxresdefault.jpg?rs=AOn4CLBx4A3XvHHYoEhVN-n0SkxuipPevQ&sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8%3D",
+          "https://img.webnots.com/2022/03/Security-Section-in-Google-Account.png",
+          "https://lh3.googleusercontent.com/bGS2LCsWN7as5kH3hH1ztNcBWfskJ_Iw0a6moD7GtcA37yGf9doj0Wd1HEjBKVD_-_wTB0Xik2RYhp3BKkYV8e6mRnTdcBcAbphwwZE%3Dw620-l90-sg-c0xffffff-e30",
+          "https://media.licdn.com/dms/image/v2/D4E10AQGE4zAP4EyTRA/image-shrink_1280/image-shrink_1280/0/1706202076612?e=2147483647&t=B8b0SFDQJoNy2nMv-LVgQ-X2yiymZR3pnJpRfSPVWL0&v=beta",
+          "https://miro.medium.com/max/1400/1%2AqpYMmdRVYYr96ZnDAqxzmQ.png",
+          "https://myaccount.google.com/device-activity",
+          "https://myaccount.google.com/security"
+        ],
+        "hints": [
+          "authorization",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "captured_content/captured_stage2_erdu_system_deep_dive (1).md",
+        "urls": [
+          "http://AZ81-Prime",
+          "http://AZ83-Shopify",
+          "http://AZ84-Hubspot",
+          "http://localhost"
+        ],
+        "hints": []
+      },
+      {
+        "path": "captured_content/captured_stage2_erdu_system_deep_dive.md",
+        "urls": [
+          "http://AZ81-Prime",
+          "http://AZ83-Shopify",
+          "http://AZ84-Hubspot",
+          "http://localhost"
+        ],
+        "hints": []
+      },
+      {
+        "path": "captured_content/captured_to Wingman from Claude with Love.txt",
+        "urls": [],
+        "hints": [
+          "api_key",
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_transcript from vault.txt",
+        "urls": [
+          "https://farsight.org/posts/prime-memory-vault"
+        ],
+        "hints": [
+          "authorization",
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_upgrade notes.txt",
+        "urls": [
+          "https://chatgpt.com/gpts"
+        ],
+        "hints": [
+          "authorization",
+          "token"
+        ]
+      },
+      {
+        "path": "captured_content/captured_Vault_Passport_Template_vX.4.2_FULL.md",
+        "urls": [],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "config/docker-compose-enhanced.yml",
+        "urls": [
+          "http://agent-zero-api",
+          "http://elasticsearch",
+          "http://localhost",
+          "http://localhost/index.php"
+        ],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "config/docker-compose.yml",
+        "urls": [
+          "http://agent-zero-api",
+          "http://browser-controller",
+          "http://crewai-core",
+          "http://elasticsearch",
+          "http://localhost",
+          "http://mcp-server",
+          "http://ollama"
+        ],
+        "hints": []
+      },
+      {
+        "path": "config/file_tree_cleanup_report.json",
+        "urls": [
+          "http://AZ81-Prime",
+          "http://AZ83-Shopify",
+          "http://AZ84-Hubspot",
+          "http://agent_zero_backend",
+          "http://localhost",
+          "http://your-agent-zero-endpoint/analyze-product",
+          "https://admin.google.com",
+          "https://aka.ms/getwinget",
+          "https://api.",
+          "https://api.agentzero.ai/docs",
+          "https://api.chutes.ai/v1/completions",
+          "https://api.mailchimp.com/3.0/campaigns",
+          "https://api.openai.com/v1",
+          "https://community.agentzero.ai",
+          "https://docs.agentzero.ai",
+          "https://docs.agentzero.ai/agents",
+          "https://docs.agentzero.ai/troubleshooting",
+          "https://docs.n8n.io/advanced-ai/",
+          "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.shopify/",
+          "https://drive.google.com/drive/folders/1xJG7y8GugV1w4dvGjFxSmiAcZSKJVJkj"
+        ],
+        "hints": [
+          "api-key",
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "config/tech_stack_database.json",
+        "urls": [
+          "https://dart.dev/guides",
+          "https://dev.mysql.com/doc/",
+          "https://doc.rust-lang.org/",
+          "https://docs.ansible.com/",
+          "https://docs.docker.com/",
+          "https://docs.fluentd.org/",
+          "https://docs.gitlab.com/",
+          "https://docs.microsoft.com/en-us/dotnet/csharp/",
+          "https://docs.mongodb.com/",
+          "https://docs.oracle.com/en/java/",
+          "https://docs.python.org/",
+          "https://docs.scala-lang.org/",
+          "https://elixir-lang.org/docs.html",
+          "https://en.cppreference.com/",
+          "https://golang.org/doc/",
+          "https://grafana.com/docs/",
+          "https://httpd.apache.org/docs/",
+          "https://kafka.apache.org/documentation/",
+          "https://kotlinlang.org/docs/",
+          "https://kubernetes.io/docs/"
+        ],
+        "hints": []
+      },
+      {
+        "path": "config/vite-optimized.config.ts",
+        "urls": [
+          "http://localhost",
+          "https://api.anthropic.com",
+          "https://api.openai.com",
+          "https://generativelanguage.googleapis.com"
+        ],
+        "hints": []
+      },
+      {
+        "path": "config/vite.config.ts",
+        "urls": [
+          "http://localhost",
+          "https://api.anthropic.com",
+          "https://api.openai.com",
+          "https://generativelanguage.googleapis.com"
+        ],
+        "hints": []
+      },
+      {
+        "path": "context_preservation/filesystem_discovery_1_context.json",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "context_preservation/forensic_recovery_context.json",
+        "urls": [
+          "http://10.1.1.1",
+          "http://127.0.0.1",
+          "http://192.168.1.1",
+          "http://AZ81-Prime",
+          "http://AZ83-Shopify",
+          "http://AZ84-Hubspot",
+          "http://agent-zero-api",
+          "http://agent_zero_backend",
+          "http://az_interface_backend",
+          "http://browser-controller",
+          "http://crewai-core",
+          "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+          "http://elasticsearch",
+          "http://gitlab.example.com",
+          "http://localhost",
+          "http://localhost/index.php",
+          "http://mcp-server",
+          "http://ollama",
+          "http://server",
+          "http://test"
+        ],
+        "hints": [
+          "api-key",
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook",
+          "x-api-key"
+        ]
+      },
+      {
+        "path": "context_preservation/import_dependency_graph_2_context.json",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "context_preservation/webhook_endpoint_analyzer_2_context.json",
+        "urls": [
+          "http://10.1.1.1",
+          "http://127.0.0.1",
+          "http://192.168.1.1",
+          "http://AZ81-Prime",
+          "http://AZ83-Shopify",
+          "http://AZ84-Hubspot",
+          "http://agent-zero-api",
+          "http://agent_zero_backend",
+          "http://az_interface_backend",
+          "http://browser-controller",
+          "http://crewai-core",
+          "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+          "http://elasticsearch",
+          "http://gitlab.example.com",
+          "http://localhost",
+          "http://localhost/index.php",
+          "http://mcp-server",
+          "http://ollama",
+          "http://server",
+          "http://test"
+        ],
+        "hints": [
+          "api-key",
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook",
+          "x-api-key"
+        ]
+      },
+      {
+        "path": "crewai/app.py",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "Daves_NewTest/fix.txt",
+        "urls": [],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "Daves_NewTest/Handover.md",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": []
+      },
+      {
+        "path": "docs/AUTOMATION_ANALYSIS.md",
+        "urls": [],
+        "hints": [
+          "authorization",
+          "token"
+        ]
+      },
+      {
+        "path": "docs/COMPREHENSIVE_SYSTEM_AUDIT_REPORT.md",
+        "urls": [],
+        "hints": [
+          "authorization",
+          "token"
+        ]
+      },
+      {
+        "path": "docs/INSTALLATION_GUIDE.md",
+        "urls": [
+          "http://az_interface_backend",
+          "http://server",
+          "https://github.com/your-username/az-interface.git",
+          "https://github.com/your-username/az-interface/discussions",
+          "https://github.com/your-username/az-interface/issues",
+          "https://github.com/your-username/az-interface/wiki"
+        ],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "docs/KNOWLEDGE_HUB.md",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "docs/MANUAL_SYSTEM_AUDIT_SUMMARY.md",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "docs/SMART_DELEGATOR_BACKEND_ANALYSIS.md",
+        "urls": [
+          "http://127.0.0.1"
+        ],
+        "hints": []
+      },
+      {
+        "path": "Imports/ai_augmented_team_strategy.md",
+        "urls": [
+          "http://localhost",
+          "https://ollama.com/install.sh"
+        ],
+        "hints": []
+      },
+      {
+        "path": "Imports/AZ300 - SME Debug & Error Resolution Agent conv.txt",
+        "urls": [],
+        "hints": [
+          "authorization",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/AZ300 - SME Debug & Error Resolution Agent_extracted.txt",
+        "urls": [],
+        "hints": [
+          "authorization",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/budget_tech_stack_recommendations.md",
+        "urls": [
+          "http://localhost",
+          "https://github.com/pocketbase/pocketbase/releases/download/v0.20.0/pocketbase_0.20.0_linux_amd64.zip",
+          "https://ollama.com/install.sh"
+        ],
+        "hints": []
+      },
+      {
+        "path": "Imports/compass_artifact_wf-46b2e5f6-60a3-4c46-949a-52fe35c52b3d_text_markdown.md",
+        "urls": [],
+        "hints": [
+          "authorization",
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/compass_artifact_wf-e1e4e65f-80bd-4ef3-bc3c-a114a511081c_text_markdown.md",
+        "urls": [
+          "https://github.com/Dave-Meloncelli/RPG-Reliquary-UI-Interface"
+        ],
+        "hints": []
+      },
+      {
+        "path": "Imports/Deep Research - FTC LNSU-1.txt",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/enhanced_types.ts",
+        "urls": [],
+        "hints": [
+          "api_key",
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/env_validation.ts",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "Imports/ERDU-AOX Spiral_ Complete Gap Analysis & Fusion Strategy_extracted.txt",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/erdu-aox-inventory-improvement.txt",
+        "urls": [
+          "https://www.googleapis.com/books/v1/volumes?q=isbn"
+        ],
+        "hints": []
+      },
+      {
+        "path": "Imports/fix 2.txt",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "Imports/fix 3.txt",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "Imports/fix.txt",
+        "urls": [],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "Imports/hrm-transcript.txt",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/implementation_guide.md",
+        "urls": [
+          "http://localhost",
+          "https://github.com/your-repo/issues/123",
+          "https://registry.npmjs.org"
+        ],
+        "hints": [
+          "api_key",
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/improved-hybrid-ai-toolstack.md",
+        "urls": [
+          "http://agent_zero_backend",
+          "http://localhost",
+          "https://aka.ms/getwinget",
+          "https://api.",
+          "https://api.agentzero.ai/docs",
+          "https://api.chutes.ai/v1/completions",
+          "https://api.openai.com/v1",
+          "https://community.agentzero.ai",
+          "https://docs.agentzero.ai",
+          "https://docs.agentzero.ai/agents",
+          "https://docs.agentzero.ai/troubleshooting",
+          "https://generativelanguage.googleapis.com/v1beta",
+          "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro-vision",
+          "https://github.com/UB-Mannheim/tesseract/wiki",
+          "https://ollama.ai/download/windows",
+          "https://ollama.ai/install.sh",
+          "https://sh.rustup.rs"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/n8n_crewai_automation (1).md",
+        "urls": [
+          "http://your-agent-zero-endpoint/analyze-product",
+          "https://api.mailchimp.com/3.0/campaigns",
+          "https://graph.facebook.com/v18.0/your-page-id/feed",
+          "https://your-website.com/wp-json/wp/v2/posts"
+        ],
+        "hints": [
+          "api-key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/n8n_integration_guide.md",
+        "urls": [
+          "https://docs.n8n.io/advanced-ai/",
+          "https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.shopify/",
+          "https://n8n.io/integrations/agent/",
+          "https://n8n.io/workflows/",
+          "https://n8n.io/workflows/2027-low-stock-and-sold-out-watcher-for-shopify/",
+          "https://n8n.io/workflows/2417-flux-ai-image-generator/",
+          "https://n8n.io/workflows/2420-automate-image-validation-tasks-using-ai-vision/",
+          "https://n8n.io/workflows/2950-ai-powered-social-media-content-generator-and-publisher/",
+          "https://n8n.io/workflows/3442-fully-automated-ai-video-generation-and-multi-platform-publishing/",
+          "https://n8n.io/workflows/4455-shopify-multi-module-automation-with-gpt-4o-langchain-agents-and-integrations/",
+          "https://n8n.io/workflows/869-find-a-new-book-recommendations/"
+        ],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/OCR & Aquisitions pipeline.txt",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "api_key",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/repository_audit_report.md",
+        "urls": [
+          "http://localhost",
+          "https://github.com/Dave-Meloncelli/Daves_NewTest.git",
+          "https://github.com/Dave-Meloncelli/RPG-Reliquary-UI-Interface.git"
+        ],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "Imports/stage2_erdu_system_deep_dive (1).md",
+        "urls": [
+          "http://AZ81-Prime",
+          "http://AZ83-Shopify",
+          "http://AZ84-Hubspot",
+          "http://localhost"
+        ],
+        "hints": []
+      },
+      {
+        "path": "Imports/stage2_erdu_system_deep_dive.md",
+        "urls": [
+          "http://AZ81-Prime",
+          "http://AZ83-Shopify",
+          "http://AZ84-Hubspot",
+          "http://localhost"
+        ],
+        "hints": []
+      },
+      {
+        "path": "Imports/tech_silos_architecture.ts",
+        "urls": [
+          "https://api.github.com/repos/",
+          "https://github.com/advisories.atom",
+          "https://registry.npmjs.org/-/npm/v1/security/audits"
+        ],
+        "hints": [
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/to Wingman from Claude with Love.txt",
+        "urls": [],
+        "hints": [
+          "api_key",
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/vite_config.ts",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": []
+      },
+      {
+        "path": "Imports/yofo.txt",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "installer/README.md",
+        "urls": [
+          "http://localhost",
+          "https://github.com/Dave-Meloncelli/RPG-Reliquary-UI-Interface/issues",
+          "https://jrsoftware.org/isinfo.php"
+        ],
+        "hints": []
+      },
+      {
+        "path": "internal/Known-faults-fixes.md",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "token"
+        ]
+      },
+      {
+        "path": "internal/repo.manifest.json",
+        "urls": [],
+        "hints": [
+          "api_key",
+          "token"
+        ]
+      },
+      {
+        "path": "Personas/cartographer_persona_enrichment.md",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "Personas/Expert-Level AI Agent Schema.txt",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "Personas/vault_upgrade_tourist_companion_for_build_unit (1).md",
+        "urls": [],
+        "hints": [
+          "api_key",
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/all_in_analysis_1754639307.json",
+        "urls": [],
+        "hints": [
+          "api_key",
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/all_in_analysis_1754640090.json",
+        "urls": [],
+        "hints": [
+          "api_key",
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/deep_pattern_recognition_1754658765.json",
+        "urls": [],
+        "hints": [
+          "api-key",
+          "api_key",
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/deep_pattern_recognition_1754660971.json",
+        "urls": [],
+        "hints": [
+          "api-key",
+          "api_key",
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/deep_pattern_recognition_1754661236.json",
+        "urls": [],
+        "hints": [
+          "api-key",
+          "api_key",
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/filesystem_discovery_1754714312.json",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/filesystem_discovery_1754716440.json",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/filesystem_discovery_1754716813.json",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/filesystem_discovery_1754716975.json",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/framework_failure_v2_20250809_131011.json",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/framework_failure_v2_20250809_131123.json",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/framework_failure_v2_20250809_131410.json",
+        "urls": [
+          "http://10.1.1.1",
+          "http://127.0.0.1",
+          "http://192.168.1.1",
+          "http://AZ81-Prime",
+          "http://AZ83-Shopify",
+          "http://AZ84-Hubspot",
+          "http://agent-zero-api",
+          "http://agent_zero_backend",
+          "http://az_interface_backend",
+          "http://browser-controller",
+          "http://crewai-core",
+          "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+          "http://elasticsearch",
+          "http://gitlab.example.com",
+          "http://localhost",
+          "http://localhost/index.php",
+          "http://mcp-server",
+          "http://ollama",
+          "http://server",
+          "http://test"
+        ],
+        "hints": [
+          "api-key",
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook",
+          "x-api-key"
+        ]
+      },
+      {
+        "path": "reports/import_dependency_graph_1754714569.json",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/import_dependency_graph_1754714943.json",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/import_dependency_graph_1754716211.json",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/import_dependency_graph_1754716450.json",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/import_dependency_graph_1754716817.json",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "reports/risk_mitigation_20250808_181349.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "reports/risk_mitigation_20250808_181941.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "reports/risk_mitigation_20250808_182539.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "reports/risk_mitigation_20250808_183159.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "reports/risk_mitigation_20250808_210105.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "reports/scaffold_execution_v2_forensic_recovery_20250809_132017.json",
+        "urls": [
+          "http://10.1.1.1",
+          "http://127.0.0.1",
+          "http://192.168.1.1",
+          "http://AZ81-Prime",
+          "http://AZ83-Shopify",
+          "http://AZ84-Hubspot",
+          "http://agent-zero-api",
+          "http://agent_zero_backend",
+          "http://az_interface_backend",
+          "http://browser-controller",
+          "http://crewai-core",
+          "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+          "http://elasticsearch",
+          "http://gitlab.example.com",
+          "http://localhost",
+          "http://localhost/index.php",
+          "http://mcp-server",
+          "http://ollama",
+          "http://server",
+          "http://test"
+        ],
+        "hints": [
+          "api-key",
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook",
+          "x-api-key"
+        ]
+      },
+      {
+        "path": "reports/secrets_scan_1754647971903.json",
+        "urls": [],
+        "hints": [
+          "api-key",
+          "api_key"
+        ]
+      },
+      {
+        "path": "reports/secrets_scan_1754648024944.json",
+        "urls": [],
+        "hints": [
+          "api-key",
+          "api_key"
+        ]
+      },
+      {
+        "path": "reports/secrets_scan_1754648376559.json",
+        "urls": [],
+        "hints": [
+          "api-key",
+          "api_key"
+        ]
+      },
+      {
+        "path": "reports/system-audit-report.json",
+        "urls": [
+          "https://opensource.org/licenses/MIT"
+        ],
+        "hints": []
+      },
+      {
+        "path": "reports/webhook_endpoint_analysis_1754714927.json",
+        "urls": [
+          "http://10.1.1.1",
+          "http://127.0.0.1",
+          "http://192.168.1.1",
+          "http://AZ81-Prime",
+          "http://AZ83-Shopify",
+          "http://AZ84-Hubspot",
+          "http://agent-zero-api",
+          "http://agent_zero_backend",
+          "http://az_interface_backend",
+          "http://browser-controller",
+          "http://crewai-core",
+          "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+          "http://elasticsearch",
+          "http://gitlab.example.com",
+          "http://localhost",
+          "http://localhost/index.php",
+          "http://mcp-server",
+          "http://ollama",
+          "http://server",
+          "http://test"
+        ],
+        "hints": [
+          "api-key",
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook",
+          "x-api-key"
+        ]
+      },
+      {
+        "path": "reports/webhook_endpoint_analysis_1754716449.json",
+        "urls": [
+          "http://10.1.1.1",
+          "http://127.0.0.1",
+          "http://192.168.1.1",
+          "http://AZ81-Prime",
+          "http://AZ83-Shopify",
+          "http://AZ84-Hubspot",
+          "http://agent-zero-api",
+          "http://agent_zero_backend",
+          "http://az_interface_backend",
+          "http://browser-controller",
+          "http://crewai-core",
+          "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+          "http://elasticsearch",
+          "http://gitlab.example.com",
+          "http://localhost",
+          "http://localhost/index.php",
+          "http://mcp-server",
+          "http://ollama",
+          "http://server",
+          "http://test"
+        ],
+        "hints": [
+          "api-key",
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook",
+          "x-api-key"
+        ]
+      },
+      {
+        "path": "reports/webhook_endpoint_analysis_1754716816.json",
+        "urls": [
+          "http://10.1.1.1",
+          "http://127.0.0.1",
+          "http://192.168.1.1",
+          "http://AZ81-Prime",
+          "http://AZ83-Shopify",
+          "http://AZ84-Hubspot",
+          "http://agent-zero-api",
+          "http://agent_zero_backend",
+          "http://az_interface_backend",
+          "http://browser-controller",
+          "http://crewai-core",
+          "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+          "http://elasticsearch",
+          "http://gitlab.example.com",
+          "http://localhost",
+          "http://localhost/index.php",
+          "http://mcp-server",
+          "http://ollama",
+          "http://server",
+          "http://test"
+        ],
+        "hints": [
+          "api-key",
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook",
+          "x-api-key"
+        ]
+      },
+      {
+        "path": "session_context/latest_context.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "session_context/session-20250806-170005_context.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "tools/autonomous-system-manager.py",
+        "urls": [
+          "http://www.google.com",
+          "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64-user",
+          "https://github.com",
+          "https://nodejs.org/dist/v18.17.0/node-v18.17.0-x64.msi",
+          "https://pypi.org"
+        ],
+        "hints": []
+      },
+      {
+        "path": "tools/simple-autonomous-test.py",
+        "urls": [
+          "https://code.visualstudio.com/",
+          "https://nodejs.org/"
+        ],
+        "hints": []
+      },
+      {
+        "path": "tools/utilities/interface/vibe-coder-interface.py",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "tools/utilities/maintenance/enhanced-smart-delegator.py",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "tools/utilities/maintenance/implementation-engine.py",
+        "urls": [
+          "http://localhost",
+          "https://get.docker.com",
+          "https://github.com/git-for-windows/git/releases/download/v2.41.0.windows.1/Git-2.41.0-64-bit.exe",
+          "https://nodejs.org/dist/v18.17.0/node-v18.17.0-x64.msi"
+        ],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "tools/utilities/maintenance/multi-language-delegator.py",
+        "urls": [
+          "https://api.github.com",
+          "https://docs.docker.com/",
+          "https://docs.python.org/",
+          "https://nodejs.org/docs/",
+          "https://react.dev/",
+          "https://redis.io/documentation",
+          "https://www.postgresql.org/docs/",
+          "https://www.typescriptlang.org/docs/"
+        ],
+        "hints": []
+      },
+      {
+        "path": "tools/utilities/maintenance/smart-typescript-fixer.py",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "tools/utilities/maintenance/systematic-error-resolver.py",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": []
+      },
+      {
+        "path": "tools/utilities/maintenance/tech-stack-delegator.py",
+        "urls": [
+          "https://api.github.com"
+        ],
+        "hints": []
+      },
+      {
+        "path": "tools/utilities/protocols/continuance-protocols.py",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "tools/utilities/research/playwright-research-engine.py",
+        "urls": [
+          "https://github.com",
+          "https://github.com/search?q=",
+          "https://github.com/trending?q="
+        ],
+        "hints": []
+      },
+      {
+        "path": "tools/utilities/session/session-manager.py",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "tests/backend/test_main.py",
+        "urls": [],
+        "hints": [
+          "authorization",
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "src/apps/AcquisitionsApp.tsx",
+        "urls": [
+          "http://www.w3.org/2000/svg"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/apps/BackupApp.tsx",
+        "urls": [
+          "http://www.w3.org/2000/svg"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/apps/CodebaseApp.tsx",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "src/apps/CompanionChatApp.tsx",
+        "urls": [
+          "http://www.w3.org/2000/svg"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/apps/ErduMonitorApp.tsx",
+        "urls": [
+          "http://www.w3.org/2000/svg"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/apps/ImageGeneratorApp.tsx",
+        "urls": [
+          "http://www.w3.org/2000/svg"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/apps/IngestionPipelineApp.tsx",
+        "urls": [
+          "http://www.w3.org/2000/svg"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/apps/LoomApp.tsx",
+        "urls": [
+          "http://www.w3.org/2000/svg"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/apps/ObservatoryApp.tsx",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "src/apps/OperationsConsoleApp.tsx",
+        "urls": [
+          "http://www.w3.org/2000/svg"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/apps/RPGCommunityHubApp.tsx",
+        "urls": [
+          "https://chaosium.com",
+          "https://dnd.wizards.com",
+          "https://paizo.com"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/components/icons.tsx",
+        "urls": [
+          "http://www.w3.org/2000/svg"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/components/InstallationWizard.tsx",
+        "urls": [
+          "https://console.cloud.google.com/apis/credentials",
+          "https://makersuite.google.com/app/apikey",
+          "https://platform.openai.com/api-keys"
+        ],
+        "hints": [
+          "api-key"
+        ]
+      },
+      {
+        "path": "src/components/PasswordResetModal.tsx",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "src/services/acquisitionService.ts",
+        "urls": [],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "src/services/authService.ts",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "authorization",
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "src/services/chatService.ts",
+        "urls": [],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "src/services/codebaseService.ts",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "src/services/curatorService.ts",
+        "urls": [
+          "https://freeleaguepublishing.com",
+          "https://pelgranepress.com",
+          "https://www.chaosium.com"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/services/geminiClient.ts",
+        "urls": [],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "src/services/googleAIStudioService.ts",
+        "urls": [
+          "https://generativelanguage.googleapis.com/v1beta"
+        ],
+        "hints": [
+          "api-key",
+          "token"
+        ]
+      },
+      {
+        "path": "src/services/googleVertexAIService.ts",
+        "urls": [
+          "https://us-central1-aiplatform.googleapis.com/v1"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "src/services/n8nIntegrationService.ts",
+        "urls": [
+          "http://localhost",
+          "https://yourstore.com/products/"
+        ],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "src/services/observatoryService.ts",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "src/services/openAICodexService.ts",
+        "urls": [
+          "https://api.openai.com/v1"
+        ],
+        "hints": [
+          "api-key",
+          "authorization",
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "src/services/orchestratorService.ts",
+        "urls": [
+          "http://localhost",
+          "https://api.chutes.ai/v1/completions",
+          "https://api.openai.com/v1",
+          "https://generativelanguage.googleapis.com/v1beta"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/services/searchService.ts",
+        "urls": [
+          "https://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/services/symposiumService.ts",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/services/technomancerService.ts",
+        "urls": [
+          "https://github.com/example/"
+        ],
+        "hints": []
+      },
+      {
+        "path": "src/types/types.ts",
+        "urls": [],
+        "hints": [
+          "api_key",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "src/utils/env-validation.ts",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "src/registry/data/personas.json",
+        "urls": [],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "src/registry/data/services.json",
+        "urls": [],
+        "hints": [
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "services/browser-controller/main.py",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "scripts/frames/webhook-endpoint-analyzer-frame.py",
+        "urls": [],
+        "hints": [
+          "api-key",
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook",
+          "x-api-key"
+        ]
+      },
+      {
+        "path": "scripts/js/secrets-scan.js",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "internal/indexes/js.index.json",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "internal/indexes/reports.index.json",
+        "urls": [],
+        "hints": [
+          "api_key",
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/artifact_constellation_binding_plan 2025-06-04 13_52_32.md",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/artifact_constellation_binding_plan.md",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/AZ1(1).txt",
+        "urls": [],
+        "hints": [
+          "bearer",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/AZ1.txt",
+        "urls": [],
+        "hints": [
+          "bearer",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/az2(1).txt",
+        "urls": [
+          "http://localhost",
+          "https://github.com/agent-zero/codex.git"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/az2.txt",
+        "urls": [
+          "http://localhost",
+          "https://github.com/agent-zero/codex.git"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/ChatGPT 4o  2(1).txt",
+        "urls": [
+          "http://localhost",
+          "https://github.com/frdel/agent-zero",
+          "https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkd3SVRwNU1sZFlIQjB0TUFpR0dtNlNnQ2RtZ3xBQ3Jtc0tucWtMVDQ3Z04ycGV6NFJDTTNjcjhVYnI0eElpU1J4c0FwS05HeS1XSGhnazQwMWRWd2JVNm1hVDNkUU9Ka2NVejJmSGh6S09nZU1TT2I4bG1UejFzYTUxVEFsSEd0dlVnZm9Vb29ocmV3aUo2MFEzRQ&q=https%3A%2F%2Fgithub.com%2Fgoogle%2FA2A%2Ftree%2Fmain%2Fdemo&v=mDcULe4GMyA",
+          "https://youtu.be/mDcULe4GMyA?si=CGmuyEqVVnjhNKgb",
+          "https://youtu.be/mDcULe4GMyA?si=GpxerbbbODQQ8GfB"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/ChatGPT 4o  2.txt",
+        "urls": [
+          "http://localhost",
+          "https://github.com/frdel/agent-zero",
+          "https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkd3SVRwNU1sZFlIQjB0TUFpR0dtNlNnQ2RtZ3xBQ3Jtc0tucWtMVDQ3Z04ycGV6NFJDTTNjcjhVYnI0eElpU1J4c0FwS05HeS1XSGhnazQwMWRWd2JVNm1hVDNkUU9Ka2NVejJmSGh6S09nZU1TT2I4bG1UejFzYTUxVEFsSEd0dlVnZm9Vb29ocmV3aUo2MFEzRQ&q=https%3A%2F%2Fgithub.com%2Fgoogle%2FA2A%2Ftree%2Fmain%2Fdemo&v=mDcULe4GMyA",
+          "https://youtu.be/mDcULe4GMyA?si=CGmuyEqVVnjhNKgb",
+          "https://youtu.be/mDcULe4GMyA?si=GpxerbbbODQQ8GfB"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/ChatGPT 4o  3(1).txt",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/ChatGPT 4o  3.txt",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/loom 3(1).txt",
+        "urls": [
+          "https://chat.openai.com/settings"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/loom 3.txt",
+        "urls": [
+          "https://chat.openai.com/settings"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/loom2(1).txt",
+        "urls": [
+          "http://localhost",
+          "https://github.com/frdel/agent-zero",
+          "https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkd3SVRwNU1sZFlIQjB0TUFpR0dtNlNnQ2RtZ3xBQ3Jtc0tucWtMVDQ3Z04ycGV6NFJDTTNjcjhVYnI0eElpU1J4c0FwS05HeS1XSGhnazQwMWRWd2JVNm1hVDNkUU9Ka2NVejJmSGh6S09nZU1TT2I4bG1UejFzYTUxVEFsSEd0dlVnZm9Vb29ocmV3aUo2MFEzRQ&q=https%3A%2F%2Fgithub.com%2Fgoogle%2FA2A%2Ftree%2Fmain%2Fdemo&v=mDcULe4GMyA",
+          "https://youtu.be/mDcULe4GMyA?si=CGmuyEqVVnjhNKgb",
+          "https://youtu.be/mDcULe4GMyA?si=GpxerbbbODQQ8GfB"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/loom2.txt",
+        "urls": [
+          "http://localhost",
+          "https://github.com/frdel/agent-zero",
+          "https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbkd3SVRwNU1sZFlIQjB0TUFpR0dtNlNnQ2RtZ3xBQ3Jtc0tucWtMVDQ3Z04ycGV6NFJDTTNjcjhVYnI0eElpU1J4c0FwS05HeS1XSGhnazQwMWRWd2JVNm1hVDNkUU9Ka2NVejJmSGh6S09nZU1TT2I4bG1UejFzYTUxVEFsSEd0dlVnZm9Vb29ocmV3aUo2MFEzRQ&q=https%3A%2F%2Fgithub.com%2Fgoogle%2FA2A%2Ftree%2Fmain%2Fdemo&v=mDcULe4GMyA",
+          "https://youtu.be/mDcULe4GMyA?si=CGmuyEqVVnjhNKgb",
+          "https://youtu.be/mDcULe4GMyA?si=GpxerbbbODQQ8GfB"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/merge1(1).txt",
+        "urls": [
+          "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+          "http://va.truepic.com/ejbca/publicweb/status/ocsp0",
+          "https://drive.google.com/file/d/1LKV9rl9j_aCYAniu_CjT3DksG4RAamee/view?usp=sharing",
+          "https://drive.google.com/file/d/FILE_ID/view?usp=sharing"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/merge1.txt",
+        "urls": [
+          "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+          "http://va.truepic.com/ejbca/publicweb/status/ocsp0",
+          "https://drive.google.com/file/d/1LKV9rl9j_aCYAniu_CjT3DksG4RAamee/view?usp=sharing",
+          "https://drive.google.com/file/d/FILE_ID/view?usp=sharing"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 19(1).txt",
+        "urls": [
+          "http://10.1.1.1",
+          "http://192.168.1.1",
+          "https://account.live.com/activity",
+          "https://account.microsoft.com/security",
+          "https://agent.company.net/ping",
+          "https://aka.ms/PSWindows",
+          "https://appleid.apple.com",
+          "https://bitwarden.com/download",
+          "https://brave.com/download",
+          "https://budgetreport.com/wp-content/uploads/2018/09/71KMUWBI5BL._SL1500_.jpg",
+          "https://cdn.mos.cms.futurecdn.net/BhjVXZg2BaoBJuXh5kErXo-1200-80.jpg",
+          "https://digitogy.com/wp-content/uploads/2018/11/laptops.jpg",
+          "https://dlcdnwebimgs.asus.com/gain/32c2ddfe-6f1d-4a9e-93e1-efc4be573c0f/w800",
+          "https://fixthephoto.com/images/content/best-cheap-routers-top-3.png",
+          "https://github.com/password_reset",
+          "https://github.com/yourname/yourrepo.git",
+          "https://gumtreeau-res.cloudinary.com/image/private/t_%24_58/gumtree/061c2227-0c83-48b4-8197-e8b661c51575.png",
+          "https://i5.walmartimages.com/asr/d26e8151-6a5b-45c9-9823-30866b009c9d.3cf79fc4438e3ea1b11356806c28e646.png",
+          "https://itworldph.com/web/image/product.product/30730/image_1024/%5BCS-CP-9020302-NA%5D%20Corsair%20PSU%20650W%20Power%20Supply%20Unit%20RM650e%2080%2B%20Gold%20ATX%20Fully%20Modular%20%28CS-CP-9020302-NA%29?unique=026d3f2",
+          "https://myaccount.google.com/security"
+        ],
+        "hints": [
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 19.txt",
+        "urls": [
+          "http://10.1.1.1",
+          "http://192.168.1.1",
+          "https://account.live.com/activity",
+          "https://account.microsoft.com/security",
+          "https://agent.company.net/ping",
+          "https://aka.ms/PSWindows",
+          "https://appleid.apple.com",
+          "https://bitwarden.com/download",
+          "https://brave.com/download",
+          "https://budgetreport.com/wp-content/uploads/2018/09/71KMUWBI5BL._SL1500_.jpg",
+          "https://cdn.mos.cms.futurecdn.net/BhjVXZg2BaoBJuXh5kErXo-1200-80.jpg",
+          "https://digitogy.com/wp-content/uploads/2018/11/laptops.jpg",
+          "https://dlcdnwebimgs.asus.com/gain/32c2ddfe-6f1d-4a9e-93e1-efc4be573c0f/w800",
+          "https://fixthephoto.com/images/content/best-cheap-routers-top-3.png",
+          "https://github.com/password_reset",
+          "https://github.com/yourname/yourrepo.git",
+          "https://gumtreeau-res.cloudinary.com/image/private/t_%24_58/gumtree/061c2227-0c83-48b4-8197-e8b661c51575.png",
+          "https://i5.walmartimages.com/asr/d26e8151-6a5b-45c9-9823-30866b009c9d.3cf79fc4438e3ea1b11356806c28e646.png",
+          "https://itworldph.com/web/image/product.product/30730/image_1024/%5BCS-CP-9020302-NA%5D%20Corsair%20PSU%20650W%20Power%20Supply%20Unit%20RM650e%2080%2B%20Gold%20ATX%20Fully%20Modular%20%28CS-CP-9020302-NA%29?unique=026d3f2",
+          "https://myaccount.google.com/security"
+        ],
+        "hints": [
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 21(1).txt",
+        "urls": [
+          "https://github.com/Dave-Meloncelli/Its-Warm-by-the-Fire",
+          "https://signup.live.com"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 21.txt",
+        "urls": [
+          "https://github.com/Dave-Meloncelli/Its-Warm-by-the-Fire",
+          "https://signup.live.com"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 22(1).txt",
+        "urls": [
+          "https://admin.google.com",
+          "https://drive.google.com/drive/folders/1xJG7y8GugV1w4dvGjFxSmiAcZSKJVJkj",
+          "https://support.google.com/a/contact/recovery_form"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 22.txt",
+        "urls": [
+          "https://admin.google.com",
+          "https://drive.google.com/drive/folders/1xJG7y8GugV1w4dvGjFxSmiAcZSKJVJkj",
+          "https://support.google.com/a/contact/recovery_form"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 24(1).txt",
+        "urls": [
+          "https://farsight.org/posts/prime-memory-vault",
+          "https://www.cleanpng.com/png-circle-sphere-alchemy-area-point-mta-i-created-an-6348928/"
+        ],
+        "hints": [
+          "authorization",
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 24.txt",
+        "urls": [
+          "https://farsight.org/posts/prime-memory-vault",
+          "https://www.cleanpng.com/png-circle-sphere-alchemy-area-point-mta-i-created-an-6348928/"
+        ],
+        "hints": [
+          "authorization",
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 26(1).txt",
+        "urls": [
+          "https://discord.gg/shvFKeDw"
+        ],
+        "hints": [
+          "authorization",
+          "bearer"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 26.txt",
+        "urls": [
+          "https://discord.gg/shvFKeDw"
+        ],
+        "hints": [
+          "authorization",
+          "bearer"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 27(1).txt",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 27.txt",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 30(1).txt",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 30.txt",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 32(1).txt",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 32.txt",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/sl5(1).txt",
+        "urls": [
+          "https://bgr.com/wp-content/uploads/2023/05/gmail-google-account-privacy-security-checkup-passkeys-2.jpg?quality=82&strip=all",
+          "https://blog.trendmicro.com.tw/wp-content/uploads/2022/09/image-66.png",
+          "https://digitalinspiration.com/static/d26f22bad522316a78430c916076146a/drive-file-privacy-report.png",
+          "https://docs.runreveal.com/google-workspace-logs-1.png",
+          "https://drdriveaudit.com/assets/img/drdriveaudit-preview-2.jpg",
+          "https://filerev.com/wp-content/uploads/2024/04/Drive-Audit-Logs.jpg",
+          "https://files.codingninjas.in/article_images/google-workspace-audit-logs-1-1658067881.webp",
+          "https://gatlabs.com/knowledge/wp-content/uploads/2022/01/Screenshot-2022-01-21-at-17.21.55-1024x518.png",
+          "https://gcloud.devoteam.com/wp-content/uploads/sites/32/2022/12/Thirdpartyapps-1.png",
+          "https://i.ytimg.com/vi/7ZmJjJnsVH0/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/7ZmJjJnsVH0/maxresdefault.jpg?amp%3Brs=AOn4CLBJqTSNtNidJHu9R9Ucy9OP9WjJ3g&sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AG4BoAC4AOKAgwIABABGDIgQSh_MA8%3D",
+          "https://i.ytimg.com/vi/HYDqdahVydY/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/KORo_3PVQyo/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/L4HjN2ufrSI/maxresdefault.jpg?rs=AOn4CLBx4A3XvHHYoEhVN-n0SkxuipPevQ&sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8%3D",
+          "https://img.webnots.com/2022/03/Security-Section-in-Google-Account.png",
+          "https://lh3.googleusercontent.com/bGS2LCsWN7as5kH3hH1ztNcBWfskJ_Iw0a6moD7GtcA37yGf9doj0Wd1HEjBKVD_-_wTB0Xik2RYhp3BKkYV8e6mRnTdcBcAbphwwZE%3Dw620-l90-sg-c0xffffff-e30",
+          "https://media.licdn.com/dms/image/v2/D4E10AQGE4zAP4EyTRA/image-shrink_1280/image-shrink_1280/0/1706202076612?e=2147483647&t=B8b0SFDQJoNy2nMv-LVgQ-X2yiymZR3pnJpRfSPVWL0&v=beta",
+          "https://miro.medium.com/max/1400/1%2AqpYMmdRVYYr96ZnDAqxzmQ.png",
+          "https://myaccount.google.com/device-activity",
+          "https://myaccount.google.com/security"
+        ],
+        "hints": [
+          "authorization",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/sl5.txt",
+        "urls": [
+          "https://bgr.com/wp-content/uploads/2023/05/gmail-google-account-privacy-security-checkup-passkeys-2.jpg?quality=82&strip=all",
+          "https://blog.trendmicro.com.tw/wp-content/uploads/2022/09/image-66.png",
+          "https://digitalinspiration.com/static/d26f22bad522316a78430c916076146a/drive-file-privacy-report.png",
+          "https://docs.runreveal.com/google-workspace-logs-1.png",
+          "https://drdriveaudit.com/assets/img/drdriveaudit-preview-2.jpg",
+          "https://filerev.com/wp-content/uploads/2024/04/Drive-Audit-Logs.jpg",
+          "https://files.codingninjas.in/article_images/google-workspace-audit-logs-1-1658067881.webp",
+          "https://gatlabs.com/knowledge/wp-content/uploads/2022/01/Screenshot-2022-01-21-at-17.21.55-1024x518.png",
+          "https://gcloud.devoteam.com/wp-content/uploads/sites/32/2022/12/Thirdpartyapps-1.png",
+          "https://i.ytimg.com/vi/7ZmJjJnsVH0/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/7ZmJjJnsVH0/maxresdefault.jpg?amp%3Brs=AOn4CLBJqTSNtNidJHu9R9Ucy9OP9WjJ3g&sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AG4BoAC4AOKAgwIABABGDIgQSh_MA8%3D",
+          "https://i.ytimg.com/vi/HYDqdahVydY/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/KORo_3PVQyo/maxresdefault.jpg",
+          "https://i.ytimg.com/vi/L4HjN2ufrSI/maxresdefault.jpg?rs=AOn4CLBx4A3XvHHYoEhVN-n0SkxuipPevQ&sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGGUgZShlMA8%3D",
+          "https://img.webnots.com/2022/03/Security-Section-in-Google-Account.png",
+          "https://lh3.googleusercontent.com/bGS2LCsWN7as5kH3hH1ztNcBWfskJ_Iw0a6moD7GtcA37yGf9doj0Wd1HEjBKVD_-_wTB0Xik2RYhp3BKkYV8e6mRnTdcBcAbphwwZE%3Dw620-l90-sg-c0xffffff-e30",
+          "https://media.licdn.com/dms/image/v2/D4E10AQGE4zAP4EyTRA/image-shrink_1280/image-shrink_1280/0/1706202076612?e=2147483647&t=B8b0SFDQJoNy2nMv-LVgQ-X2yiymZR3pnJpRfSPVWL0&v=beta",
+          "https://miro.medium.com/max/1400/1%2AqpYMmdRVYYr96ZnDAqxzmQ.png",
+          "https://myaccount.google.com/device-activity",
+          "https://myaccount.google.com/security"
+        ],
+        "hints": [
+          "authorization",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/transcript from vault.txt",
+        "urls": [
+          "https://farsight.org/posts/prime-memory-vault"
+        ],
+        "hints": [
+          "authorization",
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/upgrade notes.txt",
+        "urls": [
+          "https://chatgpt.com/gpts"
+        ],
+        "hints": [
+          "authorization",
+          "token"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/Vault_Passport_Template_vX.4.2_FULL.md",
+        "urls": [],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_fusion_analysis/octospine_fusion_analysis.json",
+        "urls": [
+          "http://localhost",
+          "https://admin.g",
+          "https://admin.google.com",
+          "https://digitalinspiration.co",
+          "https://digitalinspiration.com/static/d26f22bad522316a78430c916076146a/drive-file-privacy-report.png",
+          "https://discord.gg/shvFKeDw",
+          "https://docs.runreveal.com/google-workspace-logs-1.png",
+          "https://drdriveaudit.com/assets/img/drdriveaudit-preview-2.jpg",
+          "https://drive.google.com/drive/folders/1xJG7y8GugV1w4dvGjFxSmiAcZSKJVJkj",
+          "https://drive.google.com/file/d/1LKV9rl9",
+          "https://farsight.org/posts/prim",
+          "https://farsight.org/posts/prime-",
+          "https://farsight.org/posts/prime-memory-vault",
+          "https://filerev.com/wp-content/upload",
+          "https://filerev.com/wp-content/uploads/2024/04/Dri",
+          "https://filerev.com/wp-content/uploads/2024/04/Drive-Audi",
+          "https://filerev.com/wp-content/uploads/2024/04/Drive-Audit-Logs.jpg",
+          "https://files.codingninj",
+          "https://files.codingninjas.in/article_images/google-workspace-audit-logs-1-1658067881.webp",
+          "https://gatlabs.com/knowledge/wp-content/uploads/2022/01/Screenshot-2022-01-21-at-17.21.55-1024x518.png"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_quick_output/octospine_quick_results.json",
+        "urls": [
+          "http://cv.iptc.org/newscodes/digitalsourcetype/trainedAlgorithmicMedia",
+          "http://localhost",
+          "https://admin.google.com",
+          "https://drive.google.com/drive/folders/1xJG7y8GugV1w4dvGjFxSmiAcZSKJVJkj",
+          "https://drive.google.com/file/d/1LKV9rl9j_aCYAniu_CjT3DksG4RAamee/view?usp=sharing",
+          "https://drive.google.com/file/d/FILE_ID/view?usp=sharing",
+          "https://signup.live.com",
+          "https://static.next-episode.net/tv-shows-images/huge/the-office-us.jpg",
+          "https://support.google.com/a/contact/recovery_form",
+          "https://www.facebook.com/share/r/1C5fzAE3Yz/?mibextid=wwXIfr"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_quick_output/octospine_quick_summary.md",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "docs/analysis/GITHUB_REPOSITORY_TOOLING_ANALYSIS.md",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "docs/analysis/PERSONA_EVOLUTION_ANALYSIS.md",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "docs/implementation/ecosystem-env-template.md",
+        "urls": [],
+        "hints": [
+          "api-key",
+          "api_key"
+        ]
+      },
+      {
+        "path": "docs/implementation/mcp-server-integration-strategy.md",
+        "urls": [
+          "http://localhost",
+          "https://github.com/agent0ai/agent-zero",
+          "https://github.com/crewAIInc/crewAI"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "docs/implementation/OPEN_SOURCE_IMPLEMENTATION_GUIDE.md",
+        "urls": [
+          "http://localhost",
+          "https://logseq.com/"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "docs/implementation/OPEN_SOURCE_IMPLEMENTATION_ROADMAP.md",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "docs/reference/EXTERNAL_INTEGRATIONS_IMPLEMENTATION.md",
+        "urls": [
+          "https://api.openai.com/v1",
+          "https://generativelanguage.googleapis.com/v1beta",
+          "https://github.com/user/repo"
+        ],
+        "hints": [
+          "api-key",
+          "api_key",
+          "token"
+        ]
+      },
+      {
+        "path": "docs/reference/INTEGRATION_AND_EVOLUTION_COMPLETE.md",
+        "urls": [
+          "https://makersuite.google.com/app/apikey"
+        ],
+        "hints": []
+      },
+      {
+        "path": "docs/reference/INTEGRATION_IMPLEMENTATION_COMPLETE.md",
+        "urls": [],
+        "hints": [
+          "api-key",
+          "api_key",
+          "token"
+        ]
+      },
+      {
+        "path": "docs/research/AI_AGENT_MEMORY_RESEARCH.md",
+        "urls": [
+          "http://localhost",
+          "https://github.com/chroma-core/chromadb",
+          "https://github.com/langchain-ai/langchain",
+          "https://github.com/qdrant/qdrant",
+          "https://github.com/run-llama/llama_index"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "docs/research/OPEN_SOURCE_ECOSYSTEM_SYNERGY_ANALYSIS.md",
+        "urls": [
+          "http://gitlab.example.com",
+          "http://localhost",
+          "https://api.opengamedata.com/v1/games",
+          "https://godotengine.org/",
+          "https://logseq.com/",
+          "https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh"
+        ],
+        "hints": []
+      },
+      {
+        "path": "docs/security/SECURITY_CONFIGURATION_GUIDE.md",
+        "urls": [
+          "https://grafana.com/",
+          "https://letsencrypt.org/",
+          "https://owasp.org/www-project-top-ten/",
+          "https://prometheus.io/",
+          "https://www.crowdsec.net/",
+          "https://www.elastic.co/",
+          "https://www.fail2ban.org/",
+          "https://www.iso.org/isoiec-27001-information-security.html",
+          "https://www.jaegertracing.io/",
+          "https://www.nist.gov/cyberframework",
+          "https://www.vaultproject.io/"
+        ],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "docs/system/changelog.md",
+        "urls": [
+          "https://keepachangelog.com/en/1.0.0/",
+          "https://semver.org/spec/v2.0.0.html"
+        ],
+        "hints": []
+      },
+      {
+        "path": "docs/system/COMPREHENSIVE_PRE_PUSH_AUDIT.md",
+        "urls": [],
+        "hints": [
+          "authorization",
+          "webhook"
+        ]
+      },
+      {
+        "path": "docs/system/DIRECTORY_AUDIT_AND_FIX_PLAN.md",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": []
+      },
+      {
+        "path": "docs/system/SYSTEM_DOCUMENTATION.md",
+        "urls": [],
+        "hints": [
+          "authorization",
+          "webhook"
+        ]
+      },
+      {
+        "path": "docs/system/SYSTEM_INTEGRITY_SOLUTION.md",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "docs/system/VERSION_CONTROL_AND_ICON_SYSTEM.md",
+        "urls": [
+          "https://keepachangelog.com/"
+        ],
+        "hints": []
+      },
+      {
+        "path": "docs/guides/getting-started/setup.md",
+        "urls": [],
+        "hints": [
+          "api_key"
+        ]
+      },
+      {
+        "path": "consciousness/evolution/constellation-binding-plan.md",
+        "urls": [],
+        "hints": [
+          "bearer"
+        ]
+      },
+      {
+        "path": "consciousness/personas/analysis/consciousness_persona_analysis/consciousness_persona_insights.json",
+        "urls": [
+          "http://localhost",
+          "https://admin.g",
+          "https://admin.google.com",
+          "https://discord.gg/shvFKeDw",
+          "https://drive.google.com/drive/folders/1xJG7y8GugV1w4dvGjFxSmiAcZSKJVJkj"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "consciousness/personas/analysis/consciousness_persona_analysis/consciousness_persona_results.json",
+        "urls": [
+          "http://localhost",
+          "https://admin.g",
+          "https://admin.google.com",
+          "https://discord.gg/shvFKeDw",
+          "https://drive.google.com/drive/folders/1xJG7y8GugV1w4dvGjFxSmiAcZSKJVJkj"
+        ],
+        "hints": [
+          "api_key",
+          "authorization",
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "consciousness/octospine/documentation/octospine-automation-matrix.md",
+        "urls": [],
+        "hints": [
+          "webhook"
+        ]
+      },
+      {
+        "path": "backend/app/main.py",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "authorization",
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "backend/app/middleware.py",
+        "urls": [],
+        "hints": [
+          "authorization",
+          "bearer",
+          "token"
+        ]
+      },
+      {
+        "path": "backend/app/models.py",
+        "urls": [],
+        "hints": [
+          "api_key",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "backend/app/schemas.py",
+        "urls": [],
+        "hints": [
+          "bearer",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": "backend/app/security.py",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": "backend/tests/test_health.py",
+        "urls": [
+          "http://test"
+        ],
+        "hints": []
+      },
+      {
+        "path": "backend/app/migrations/versions/002_simple_create.py",
+        "urls": [],
+        "hints": [
+          "api_key",
+          "token",
+          "webhook"
+        ]
+      },
+      {
+        "path": ".github/workflows/analytics.yml",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": []
+      },
+      {
+        "path": ".github/workflows/ci-cd.yml",
+        "urls": [
+          "http://localhost"
+        ],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": ".github/workflows/security.yml",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      },
+      {
+        "path": ".github/workflows/sonar.yml",
+        "urls": [],
+        "hints": [
+          "token"
+        ]
+      }
+    ],
+    "timestamp": "2025-08-09T13:23:06.855313"
+  },
+  "timestamp": "2025-08-09T13:23:06.860257"
+}

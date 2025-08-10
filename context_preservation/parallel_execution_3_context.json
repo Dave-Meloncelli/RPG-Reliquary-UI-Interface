@@ -1,0 +1,15 @@
+{
+  "frame_id": "parallel_execution",
+  "stage": 3,
+  "input_data": {},
+  "parameters": {
+    "timeout": 600
+  },
+  "result": {
+    "success": true,
+    "parallel_execution_complete": true,
+    "message": "No frames to execute",
+    "timestamp": "2025-08-09T20:00:25.844701"
+  },
+  "timestamp": "2025-08-09T20:00:25.844859"
+}

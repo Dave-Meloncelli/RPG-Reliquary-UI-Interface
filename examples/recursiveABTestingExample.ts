@@ -64,7 +64,7 @@ export class RecursiveABTestingExample {
     // Run A/B test cycle
     console.log('⚡ EXECUTING A/B TEST CYCLE:');
     const results = await this.testingService.runABTestCycle(problem);
-    
+
     results.forEach(result => {
       console.log(`   ${result.variant.type.toUpperCase()}:`);
       console.log(`     Success Rate: ${result.successRate}%`);
@@ -78,7 +78,7 @@ export class RecursiveABTestingExample {
     // Analyze results
     console.log('📊 ANALYZING RESULTS:');
     const analysis = this.testingService.analyzeResults(results);
-    
+
     console.log(`   WINNER: ${analysis.comparison.winner.toUpperCase()}`);
     console.log(`   Confidence: ${analysis.comparison.confidence}%`);
     console.log('');
@@ -137,7 +137,7 @@ export class RecursiveABTestingExample {
 
     // Test different response approaches
     const variants = this.testingService.generatePromptVariants(problem);
-    
+
     variants.forEach(variant => {
       const bias = this.testingService.analyzeResponseBias(problem, { variant });
       console.log(`   ${variant.type.toUpperCase()} APPROACH:`);
@@ -184,7 +184,7 @@ export class RecursiveABTestingExample {
     console.log('');
 
     const techStacks = this.testingService.generateTechStackRecommendations(problem);
-    
+
     techStacks.forEach(tech => {
       console.log(`   ${tech.approach.toUpperCase()} TECH STACK:`);
       console.log(`     Recommendations: ${tech.recommendations.join(', ')}`);

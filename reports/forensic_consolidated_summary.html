@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Forensic Consolidated Summary</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; color: #111827; }
+    h1 { font-size: 22px; margin-bottom: 4px; }
+    h2 { font-size: 16px; margin-top: 24px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #e5e7eb; padding: 6px 8px; text-align: left; font-size: 13px; }
+    th { background: #f9fafb; }
+    .kpi { display: inline-block; margin-right: 16px; padding: 8px 10px; background: #f3f4f6; border-radius: 6px; }
+  </style>
+  </head>
+  <body>
+    <h1>Forensic Consolidated Summary</h1>
+    <div style="color:#6b7280">Generated 2025-08-09T15:01:49.088251</div>
+
+    <h2>Key Metrics</h2>
+    <div class="kpi">Files: <b>969</b></div>
+    <div class="kpi">Endpoints Findings: <b>283</b></div>
+    <div class="kpi">Dependency Nodes: <b>290</b></div>
+    <div class="kpi">Planned Moves: <b>1</b></div>
+
+    <h2>Sensitive Hint Density</h2>
+    <table>
+      <thead><tr><th>Hint</th><th>Count</th><th>Density</th></tr></thead>
+      <tbody>
+        <tr><td>token</td><td>148</td><td><div style="height:10px;background:#4f46e5;width:100.0%;border-radius:3px"></div></td></tr><tr><td>webhook</td><td>81</td><td><div style="height:10px;background:#4f46e5;width:54.7%;border-radius:3px"></div></td></tr><tr><td>api_key</td><td>73</td><td><div style="height:10px;background:#4f46e5;width:49.3%;border-radius:3px"></div></td></tr><tr><td>bearer</td><td>67</td><td><div style="height:10px;background:#4f46e5;width:45.3%;border-radius:3px"></div></td></tr><tr><td>authorization</td><td>64</td><td><div style="height:10px;background:#4f46e5;width:43.2%;border-radius:3px"></div></td></tr><tr><td>api-key</td><td>23</td><td><div style="height:10px;background:#4f46e5;width:15.5%;border-radius:3px"></div></td></tr><tr><td>x-api-key</td><td>8</td><td><div style="height:10px;background:#4f46e5;width:5.4%;border-radius:3px"></div></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Ranked Recommendations</h2>
+    <table>
+      <thead><tr><th>Priority</th><th>Effect</th><th>Title</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td>high</td><td>repo_hygiene</td><td>Write synthesis reports into reports/ to prevent root regeneration</td><td>Change Synthesis Analysis output path to reports/</td></tr><tr><td>high</td><td>security</td><td>Run deep secrets scan and enforce .gitignore for artifacts</td><td>Integrate a dedicated secrets scanner and redact or move sensitive files</td></tr><tr><td>medium</td><td>ops_visibility</td><td>Add offline link map and optional online link validation</td><td>Generate URL manifest; validate reachability when network is permitted</td></tr><tr><td>medium</td><td>architecture</td><td>Visualize import/dependency graph</td><td>Produce SVG graph to surface hotspots and cycles</td></tr><tr><td>medium</td><td>quality_gate</td><td>Add minimal CI (lint-only) and commit message enforcement</td><td>Enable GitHub Actions lint workflow and commitlint</td></tr><tr><td>low</td><td>performance</td><td>Tune caching for large scans</td><td>Enable intelligent caching for file discovery and endpoint scans</td></tr>
+      </tbody>
+    </table>
+
+  </body>
+</html>

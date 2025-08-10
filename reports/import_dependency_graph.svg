@@ -1,0 +1,584 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200">
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#94a3b8" /></marker></defs>
+<rect width="100%" height="100%" fill="#ffffff" />
+<rect x="20" y="82" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="100" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">eological_retrieval.py</text>
+<rect x="240" y="82" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="100" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">aeological_recovery.py</text>
+<rect x="460" y="82" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="100" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ne_chunked_recovery.py</text>
+<rect x="680" y="82" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="100" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ine_fusion_analysis.py</text>
+<rect x="900" y="82" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="100" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ine_fusion_analyzer.py</text>
+<rect x="1120" y="82" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="100" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">pine_quick_recovery.py</text>
+<rect x="20" y="202" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="220" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">eclamation_pipeline.py</text>
+<rect x="240" y="202" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="220" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">run_fusion_analysis.py</text>
+<rect x="460" y="202" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="220" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ocumentation_system.ts</text>
+<rect x="680" y="202" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="220" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">orts/enhanced_types.ts</text>
+<rect x="900" y="202" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="220" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">orts/env_validation.ts</text>
+<rect x="1120" y="202" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="220" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">_boundary_component.ts</text>
+<rect x="20" y="322" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="340" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">orts/tech_silo_apps.ts</text>
+<rect x="240" y="322" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="340" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">_silos_architecture.ts</text>
+<rect x="460" y="322" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="340" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">orts/tooltip_system.ts</text>
+<rect x="680" y="322" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="340" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">Imports/vite_config.ts</text>
+<rect x="900" y="322" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="340" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">onas/PersonaDetail.tsx</text>
+<rect x="1120" y="322" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="340" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">rsonaFusionChamber.tsx</text>
+<rect x="20" y="442" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="460" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">rsonas/PersonaList.tsx</text>
+<rect x="240" y="442" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="460" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">a2a/main.py</text>
+<rect x="460" y="442" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="460" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">a2a/registry/main.py</text>
+<rect x="680" y="442" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="460" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">rted/postcss.config.js</text>
+<rect x="900" y="442" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="460" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">sorted/simple-audit.js</text>
+<rect x="1120" y="442" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="460" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">nsorted/simple-test.js</text>
+<rect x="20" y="562" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="580" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ted/tailwind.config.js</text>
+<rect x="240" y="562" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="580" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/test-knowledge-hub.js</text>
+<rect x="460" y="562" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="580" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/unsorted/test-node.js</text>
+<rect x="680" y="562" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="580" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">d/test-recursive-ab.js</text>
+<rect x="900" y="562" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="580" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">nomous-framework-v2.py</text>
+<rect x="1120" y="562" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="580" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">utonomous-framework.py</text>
+<rect x="20" y="682" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="700" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ystem-meta-analysis.py</text>
+<rect x="240" y="682" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="700" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">utonomous-system-v1.py</text>
+<rect x="460" y="682" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="700" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">utonomous-system-v2.py</text>
+<rect x="680" y="682" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="700" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">utonomous-system-v3.py</text>
+<rect x="900" y="682" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="700" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">utonomous-system-v4.py</text>
+<rect x="1120" y="682" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="700" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">utonomous-system-v5.py</text>
+<rect x="20" y="802" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="820" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ackend/app/__init__.py</text>
+<rect x="240" y="802" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="820" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">backend/app/crud.py</text>
+<rect x="460" y="802" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="820" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ackend/app/database.py</text>
+<rect x="680" y="802" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="820" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">backend/app/main.py</text>
+<rect x="900" y="802" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="820" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">kend/app/middleware.py</text>
+<rect x="1120" y="802" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="820" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/app/migrations/env.py</text>
+<rect x="20" y="922" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="940" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/002_simple_create.py</text>
+<rect x="240" y="922" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="940" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">backend/app/models.py</text>
+<rect x="460" y="922" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="940" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">backend/app/schemas.py</text>
+<rect x="680" y="922" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="940" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ackend/app/security.py</text>
+<rect x="900" y="922" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="940" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">pp/template_handler.py</text>
+<rect x="1120" y="922" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="940" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">pp/websocket_server.py</text>
+<rect x="20" y="1042" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="1060" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">backend/check_db.py</text>
+<rect x="240" y="1042" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="1060" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">backend/server.js</text>
+<rect x="460" y="1042" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="1060" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">backend/test_models.py</text>
+<rect x="680" y="1042" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="1060" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">d/tests/test_health.py</text>
+<rect x="900" y="1042" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="1060" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">cket_client_example.js</text>
+<rect x="1120" y="1042" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="1060" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">cket_implementation.py</text>
+<rect x="20" y="1162" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="1180" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">eological_retrieval.py</text>
+<rect x="240" y="1162" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="1180" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">aeological_recovery.py</text>
+<rect x="460" y="1162" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="1180" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ne_chunked_recovery.py</text>
+<rect x="680" y="1162" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="1180" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ine_fusion_analysis.py</text>
+<rect x="900" y="1162" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="1180" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ine_fusion_analyzer.py</text>
+<rect x="1120" y="1162" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="1180" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">pine_quick_recovery.py</text>
+<rect x="20" y="1282" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="1300" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">eclamation_pipeline.py</text>
+<rect x="240" y="1282" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="1300" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">run_fusion_analysis.py</text>
+<rect x="460" y="1282" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="1300" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">g/commitlint.config.js</text>
+<rect x="680" y="1282" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="1300" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">te-optimized.config.ts</text>
+<rect x="900" y="1282" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="1300" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">config/vite.config.ts</text>
+<rect x="1120" y="1282" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="1300" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">onfig/vitest.config.ts</text>
+<rect x="20" y="1402" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="1420" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">crewai/app.py</text>
+<rect x="240" y="1402" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="1420" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">iveABTestingExample.ts</text>
+<rect x="460" y="1402" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="1420" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">rnal/generate-index.py</text>
+<rect x="680" y="1402" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="1420" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/acquisitionSchema.ts</text>
+<rect x="900" y="1402" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="1420" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">schemas/arktype.ts</text>
+<rect x="1120" y="1402" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="1420" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">schemas/codexSchema.ts</text>
+<rect x="20" y="1522" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="1540" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">emas/playbookSchema.ts</text>
+<rect x="240" y="1522" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="1540" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">pts/all-in-analysis.js</text>
+<rect x="460" y="1522" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="1540" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">pts/all-in-analysis.py</text>
+<rect x="680" y="1522" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="1540" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ts/backup-bootstrap.py</text>
+<rect x="900" y="1522" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="1540" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">scripts/backup.py</text>
+<rect x="1120" y="1522" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="1540" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">scripts/ci-gate.js</text>
+<rect x="20" y="1642" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="1660" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">comprehensive-audit.js</text>
+<rect x="240" y="1642" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="1660" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ontext-intelligence.py</text>
+<rect x="460" y="1642" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="1660" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">pts/frame-optimizer.py</text>
+<rect x="680" y="1642" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="1660" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">n-recognition-frame.py</text>
+<rect x="900" y="1642" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="1660" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">tem-discovery-frame.py</text>
+<rect x="1120" y="1642" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="1660" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ree-organizer-frame.py</text>
+<rect x="20" y="1762" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="1780" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">uman-approval-frame.py</text>
+<rect x="240" y="1762" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="1780" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">endency-graph-frame.py</text>
+<rect x="460" y="1762" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="1780" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">-optimization-frame.py</text>
+<rect x="680" y="1762" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="1780" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">dex-registrar-frame.py</text>
+<rect x="900" y="1762" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="1780" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">igent-caching-frame.py</text>
+<rect x="1120" y="1762" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="1780" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ge-hub-update-frame.py</text>
+<rect x="20" y="1882" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="1900" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">es/log-tailer-frame.py</text>
+<rect x="240" y="1882" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="1900" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">meta-analysis-frame.py</text>
+<rect x="460" y="1882" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="1900" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">n-coordinator-frame.py</text>
+<rect x="680" y="1882" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="1900" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">tive-analysis-frame.py</text>
+<rect x="900" y="1882" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="1900" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/self-healing-frame.py</text>
+<rect x="1120" y="1882" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="1900" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">oint-analyzer-frame.py</text>
+<rect x="20" y="2002" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="2020" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ramework-validation.js</text>
+<rect x="240" y="2002" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="2020" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">nt-failure-response.js</text>
+<rect x="460" y="2002" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="2020" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/js/dependency-vuln.js</text>
+<rect x="680" y="2002" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="2020" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">-failure-diagnostic.js</text>
+<rect x="900" y="2002" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="2020" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">owledge-hub-updater.js</text>
+<rect x="1120" y="2002" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="2020" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">rvability-bootstrap.js</text>
+<rect x="20" y="2122" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="2140" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ipts/js/remediation.js</text>
+<rect x="240" y="2122" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="2140" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">pts/js/sbom-license.js</text>
+<rect x="460" y="2122" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="2140" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">pts/js/secrets-scan.js</text>
+<rect x="680" y="2122" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="2140" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">pts/js/system-audit.js</text>
+<rect x="900" y="2122" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="2140" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">g-systems-discovery.py</text>
+<rect x="1120" y="2122" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="2140" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">tion-implementation.py</text>
+<rect x="20" y="2242" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="2260" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">lidate-app-registry.js</text>
+<rect x="240" y="2242" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="2260" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">lidate-architecture.js</text>
+<rect x="460" y="2242" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="2260" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ts/validate-imports.js</text>
+<rect x="680" y="2242" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="2260" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ser-controller/main.py</text>
+<rect x="900" y="2242" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="2260" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ces/mcp-server/main.py</text>
+<rect x="1120" y="2242" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="2260" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ration-service/main.py</text>
+<rect x="20" y="2362" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="2380" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">iveABTestingService.ts</text>
+<rect x="240" y="2362" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="2380" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ps/AcquisitionsApp.tsx</text>
+<rect x="460" y="2362" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="2380" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/AegisDashboardApp.tsx</text>
+<rect x="680" y="2362" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="2380" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ps/AgentNetworkApp.tsx</text>
+<rect x="900" y="2362" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="2380" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/AutomationHubApp.tsx</text>
+<rect x="1120" y="2362" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="2380" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">src/apps/BackupApp.tsx</text>
+<rect x="20" y="2482" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="2500" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/BatchIngesterApp.tsx</text>
+<rect x="240" y="2482" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="2500" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/apps/BookSalesApp.tsx</text>
+<rect x="460" y="2482" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="2500" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">c/apps/CodebaseApp.tsx</text>
+<rect x="680" y="2482" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="2500" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">src/apps/CodexApp.tsx</text>
+<rect x="900" y="2482" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="2500" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/CompanionChatApp.tsx</text>
+<rect x="1120" y="2482" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="2500" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">currentAgentHubApp.tsx</text>
+<rect x="20" y="2602" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="2620" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ousnessWorkflowApp.tsx</text>
+<rect x="240" y="2602" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="2620" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ps/ControlPanelApp.tsx</text>
+<rect x="460" y="2602" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="2620" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/CouncilChamberApp.tsx</text>
+<rect x="680" y="2602" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="2620" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">rc/apps/CuratorApp.tsx</text>
+<rect x="900" y="2602" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="2620" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">pps/DiagnosticsApp.tsx</text>
+<rect x="1120" y="2602" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="2620" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">pps/ErduMonitorApp.tsx</text>
+<rect x="20" y="2722" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="2740" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/apps/ForensicsApp.tsx</text>
+<rect x="240" y="2722" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="2740" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/apps/HierarchyApp.tsx</text>
+<rect x="460" y="2722" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="2740" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/ImageGeneratorApp.tsx</text>
+<rect x="680" y="2722" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="2740" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/InfrastructureApp.tsx</text>
+<rect x="900" y="2722" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="2740" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">gestionPipelineApp.tsx</text>
+<rect x="1120" y="2722" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="2740" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">src/apps/LoomApp.tsx</text>
+<rect x="20" y="2842" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="2860" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">rc/apps/NotepadApp.tsx</text>
+<rect x="240" y="2842" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="2860" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">pps/ObservatoryApp.tsx</text>
+<rect x="460" y="2842" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="2860" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">erationsConsoleApp.tsx</text>
+<rect x="680" y="2842" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="2860" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ps/OrchestratorApp.tsx</text>
+<rect x="900" y="2842" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="2860" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/PersonaViewerApp.tsx</text>
+<rect x="1120" y="2842" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="2860" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">c/apps/PlaybookApp.tsx</text>
+<rect x="20" y="2962" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="2980" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">RPGCommunityHubApp.tsx</text>
+<rect x="240" y="2962" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="2980" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/SocialMediaHubApp.tsx</text>
+<rect x="460" y="2962" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="2980" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/apps/SymposiumApp.tsx</text>
+<rect x="680" y="2962" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="2980" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ps/SystemEditorApp.tsx</text>
+<rect x="900" y="2962" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="2980" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/TaskReviewHubApp.tsx</text>
+<rect x="1120" y="2962" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="2980" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ps/TechnomancerApp.tsx</text>
+<rect x="20" y="3082" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="3100" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">c/apps/TerminalApp.tsx</text>
+<rect x="240" y="3082" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="3100" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/TradeInPortalApp.tsx</text>
+<rect x="460" y="3082" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="3100" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/VaultExplorerApp.tsx</text>
+<rect x="680" y="3082" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="3100" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/XPCharacterHubApp.tsx</text>
+<rect x="900" y="3082" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="3100" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">src/components/App.tsx</text>
+<rect x="1120" y="3082" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="3100" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">components/Desktop.tsx</text>
+<rect x="20" y="3202" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="3220" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">rc/components/Dock.tsx</text>
+<rect x="240" y="3202" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="3220" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/ErduIncidentList.tsx</text>
+<rect x="460" y="3202" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="3220" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ents/ErrorBoundary.tsx</text>
+<rect x="680" y="3202" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="3220" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">InstallationWizard.tsx</text>
+<rect x="900" y="3202" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="3220" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ponents/LoginModal.tsx</text>
+<rect x="1120" y="3202" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="3220" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">PasswordResetModal.tsx</text>
+<rect x="20" y="3322" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="3340" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/PersonaViewerApp.tsx</text>
+<rect x="240" y="3322" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="3340" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/components/Window.tsx</text>
+<rect x="460" y="3322" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="3340" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">tatusSummaryWidget.tsx</text>
+<rect x="680" y="3322" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="3340" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">d/KeyMetricsWidget.tsx</text>
+<rect x="900" y="3322" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="3340" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">SystemStatusWidget.tsx</text>
+<rect x="1120" y="3322" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="3340" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">oard/WidgetFactory.tsx</text>
+<rect x="20" y="3442" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="3460" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">oard/WidgetWrapper.tsx</text>
+<rect x="240" y="3442" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="3460" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/editor/EditorPane.tsx</text>
+<rect x="460" y="3442" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="3460" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ditor/FileExplorer.tsx</text>
+<rect x="680" y="3442" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="3460" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">itor/MonacoWrapper.tsx</text>
+<rect x="900" y="3442" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="3460" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">c/components/icons.tsx</text>
+<rect x="1120" y="3442" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="3460" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">sona/PersonaDetail.tsx</text>
+<rect x="20" y="3562" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="3580" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ersona/PersonaList.tsx</text>
+<rect x="240" y="3562" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="3580" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">nents/personaIcons.tsx</text>
+<rect x="460" y="3562" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="3580" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">onstants/constants.tsx</text>
+<rect x="680" y="3562" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="3580" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">src/constants/index.ts</text>
+<rect x="900" y="3562" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="3580" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">text/WindowContext.tsx</text>
+<rect x="1120" y="3562" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="3580" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">src/data/BaseData.ts</text>
+<rect x="20" y="3682" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="3700" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">src/data/LoreData.ts</text>
+<rect x="240" y="3682" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="3700" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/data/agentBaseData.ts</text>
+<rect x="460" y="3682" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="3700" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">data/fileSystemData.ts</text>
+<rect x="680" y="3682" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="3700" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ata/personaLoreData.ts</text>
+<rect x="900" y="3682" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="3700" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">iveABTestingExample.ts</text>
+<rect x="1120" y="3682" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="3700" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">src/index.tsx</text>
+<rect x="20" y="3802" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="3820" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">y/ComponentRegistry.ts</text>
+<rect x="240" y="3802" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="3820" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">IntegrationRegistry.ts</text>
+<rect x="460" y="3802" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="3820" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">try/PersonaRegistry.ts</text>
+<rect x="680" y="3802" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="3820" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">try/ServiceRegistry.ts</text>
+<rect x="900" y="3802" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="3820" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">y/TechStackRegistry.ts</text>
+<rect x="1120" y="3802" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="3820" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/acquisitionService.ts</text>
+<rect x="20" y="3922" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="3940" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/services/agentData.ts</text>
+<rect x="240" y="3922" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="3940" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">agentNetworkService.ts</text>
+<rect x="460" y="3922" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="3940" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">piBuildAgentService.ts</text>
+<rect x="680" y="3922" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="3940" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">aIntegrationService.ts</text>
+<rect x="900" y="3922" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="3940" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ervices/authService.ts</text>
+<rect x="1120" y="3922" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="3940" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">vices/backupService.ts</text>
+<rect x="20" y="4042" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="4060" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ervices/chatService.ts</text>
+<rect x="240" y="4042" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="4060" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ices/circuitBreaker.ts</text>
+<rect x="460" y="4042" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="4060" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ces/codebaseService.ts</text>
+<rect x="680" y="4042" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="4060" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">rvices/codexService.ts</text>
+<rect x="900" y="4042" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="4060" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">currentAgentService.ts</text>
+<rect x="1120" y="4042" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="4060" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">nessWorkflowService.ts</text>
+<rect x="20" y="4162" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="4180" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">entIngestionService.ts</text>
+<rect x="240" y="4162" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="4180" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">controlPanelService.ts</text>
+<rect x="460" y="4162" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="4180" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ices/councilService.ts</text>
+<rect x="680" y="4162" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="4180" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ices/curatorService.ts</text>
+<rect x="900" y="4162" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="4180" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">es/dashboardService.ts</text>
+<rect x="1120" y="4162" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="4180" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/diagnosticsService.ts</text>
+<rect x="20" y="4282" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="4300" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ervices/erduService.ts</text>
+<rect x="240" y="4282" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="4300" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">c/services/eventBus.ts</text>
+<rect x="460" y="4282" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="4300" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/fileSystemService.ts</text>
+<rect x="680" y="4282" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="4300" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">rvices/geminiClient.ts</text>
+<rect x="900" y="4282" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="4300" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">vices/geminiService.ts</text>
+<rect x="1120" y="4282" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="4300" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ogleAIStudioService.ts</text>
+<rect x="20" y="4402" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="4420" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ogleVertexAIService.ts</text>
+<rect x="240" y="4402" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="4420" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">es/hierarchyService.ts</text>
+<rect x="460" y="4402" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="4420" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">frastructureService.ts</text>
+<rect x="680" y="4402" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="4420" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">es/ingestionService.ts</text>
+<rect x="900" y="4402" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="4420" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">owledgeGraphService.ts</text>
+<rect x="1120" y="4402" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="4420" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ervices/loomService.ts</text>
+<rect x="20" y="4522" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="4540" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">nIntegrationService.ts</text>
+<rect x="240" y="4522" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="4540" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">services/n8nService.ts</text>
+<rect x="460" y="4522" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="4540" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/observatoryService.ts</text>
+<rect x="680" y="4522" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="4540" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">services/ocrService.ts</text>
+<rect x="900" y="4522" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="4540" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/openAICodexService.ts</text>
+<rect x="1120" y="4522" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="4540" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">es/operationService.ts</text>
+<rect x="20" y="4642" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="4660" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">orchestratorService.ts</text>
+<rect x="240" y="4642" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="4660" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">sonaSecurityService.ts</text>
+<rect x="460" y="4642" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="4660" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ices/personaService.ts</text>
+<rect x="680" y="4642" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="4660" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ces/playbookService.ts</text>
+<rect x="900" y="4642" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="4660" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">iveABTestingService.ts</text>
+<rect x="1120" y="4642" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="4660" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/rpgDatabaseService.ts</text>
+<rect x="20" y="4762" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="4780" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">vices/searchService.ts</text>
+<rect x="240" y="4762" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="4780" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">OptimizationService.ts</text>
+<rect x="460" y="4762" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="4780" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">es/symposiumService.ts</text>
+<rect x="680" y="4762" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="4780" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">es/taskQueueService.ts</text>
+<rect x="900" y="4762" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="4780" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">technomancerService.ts</text>
+<rect x="1120" y="4762" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="4780" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">fficStrategyService.ts</text>
+<rect x="20" y="4882" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="4900" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/services/xpService.ts</text>
+<rect x="240" y="4882" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="4900" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/recursiveABTesting.ts</text>
+<rect x="460" y="4882" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="4900" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">src/types/types.ts</text>
+<rect x="680" y="4882" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="4900" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">src/types/xpTypes.ts</text>
+<rect x="900" y="4882" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="4900" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">tils/env-validation.ts</text>
+<rect x="1120" y="4882" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="4900" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/backend/test_main.py</text>
+<rect x="20" y="5002" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="5020" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/frontend/App.test.tsx</text>
+<rect x="240" y="5002" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="5020" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">tests/setup.ts</text>
+<rect x="460" y="5002" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="5020" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">mous-system-manager.py</text>
+<rect x="680" y="5002" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="5020" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/backlog_synthesis.py</text>
+<rect x="900" y="5002" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="5020" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ehensive-repo-audit.py</text>
+<rect x="1120" y="5002" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="5020" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s/context_retention.py</text>
+<rect x="20" y="5122" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="5140" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">s-persona-extractor.py</text>
+<rect x="240" y="5122" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="5140" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">fix_framework_issue.py</text>
+<rect x="460" y="5122" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="5140" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">tools/index_folder.py</text>
+<rect x="680" y="5122" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="5140" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/run_filetree_apply.py</text>
+<rect x="900" y="5122" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="5140" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">tools/safe_mover.py</text>
+<rect x="1120" y="5122" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="5140" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ple-autonomous-test.py</text>
+<rect x="20" y="5242" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="5260" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">tools/test-all-in.py</text>
+<rect x="240" y="5242" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="5260" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">rk-failure-handling.py</text>
+<rect x="460" y="5242" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="5260" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">st-framework-simple.py</text>
+<rect x="680" y="5242" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="5260" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ools/test-js-bridge.py</text>
+<rect x="900" y="5242" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="5260" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">st-synthesis-simple.py</text>
+<rect x="1120" y="5242" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="5260" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">t_minimal_framework.py</text>
+<rect x="20" y="5362" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="5380" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">p/file-tree-cleanup.py</text>
+<rect x="240" y="5362" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="5380" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">p/file_tree_cleanup.py</text>
+<rect x="460" y="5362" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="5380" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ibe-coder-interface.py</text>
+<rect x="680" y="5362" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="5380" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">omprehensive-ts-fix.py</text>
+<rect x="900" y="5362" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="5380" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">al-typescript-fixes.py</text>
+<rect x="1120" y="5362" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="5380" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ced-smart-delegator.py</text>
+<rect x="20" y="5482" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="5500" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">e/environment-fixer.py</text>
+<rect x="240" y="5482" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="5500" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ement_restructuring.py</text>
+<rect x="460" y="5482" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="5500" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">plementation-engine.py</text>
+<rect x="680" y="5482" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="5500" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">t-diagnostic-repair.py</text>
+<rect x="900" y="5482" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="5500" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">-language-delegator.py</text>
+<rect x="1120" y="5482" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="5500" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">nce/quick-build-fix.py</text>
+<rect x="20" y="5602" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="5620" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ce/quick-syntax-fix.py</text>
+<rect x="240" y="5602" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="5620" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ce/simple-delegator.py</text>
+<rect x="460" y="5602" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="5620" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">h-agentic-oversight.py</text>
+<rect x="680" y="5602" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="5620" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">nce/smart-delegator.py</text>
+<rect x="900" y="5602" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="5620" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">rt-typescript-fixer.py</text>
+<rect x="1120" y="5602" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="5620" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ntenance/syntax-fix.py</text>
+<rect x="20" y="5722" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="5740" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">atic-error-resolver.py</text>
+<rect x="240" y="5722" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="5740" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ech-stack-delegator.py</text>
+<rect x="460" y="5722" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="540" y="5740" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">escript-error-fixer.py</text>
+<rect x="680" y="5722" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="760" y="5740" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ntinuance-protocols.py</text>
+<rect x="900" y="5722" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="980" y="5740" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ght-research-engine.py</text>
+<rect x="1120" y="5722" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="1200" y="5740" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">ion/session-manager.py</text>
+<rect x="20" y="5842" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="100" y="5860" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">/recursiveABTesting.ts</text>
+<rect x="240" y="5842" rx="6" ry="6" width="160" height="28" fill="#eef2ff" stroke="#4f46e5" stroke-width="1" />
+<text x="320" y="5860" text-anchor="middle" font-size="10" fill="#111827" font-family="Segoe UI, Roboto, sans-serif">vite.config.ts</text>
+</svg>

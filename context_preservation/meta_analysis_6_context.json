@@ -1,0 +1,88 @@
+{
+  "frame_id": "meta_analysis",
+  "stage": 6,
+  "input_data": {},
+  "parameters": {
+    "timeout": 300
+  },
+  "result": {
+    "success": true,
+    "meta_analysis_complete": true,
+    "execution_analysis": {
+      "execution_statistics": {
+        "total_executions": 4,
+        "successful_executions": 4,
+        "success_rate": 1.0,
+        "avg_duration": 0,
+        "max_duration": 0,
+        "min_duration": 0
+      },
+      "scaffold_metrics": {
+        "unknown": {
+          "execution_count": 4,
+          "success_rate": 1.0,
+          "avg_duration": 0.0,
+          "avg_frames_executed": 0.0
+        }
+      },
+      "trend_analysis": {
+        "overall_trend": "stable",
+        "recent_performance": 1.0,
+        "historical_performance": 1.0
+      },
+      "performance_insights": [
+        "Excellent performance in unknown scaffold - consider replicating patterns"
+      ]
+    },
+    "failure_analysis": {
+      "message": "No failures detected in execution history"
+    },
+    "optimization_recommendations": [
+      {
+        "category": "intelligence",
+        "priority": "medium",
+        "recommendation": "Implement predictive analysis",
+        "rationale": "Historical data analysis can prevent failures",
+        "expected_impact": "Reduce failure rate by 30%"
+      },
+      {
+        "category": "intelligence",
+        "priority": "medium",
+        "recommendation": "Enhance pattern recognition",
+        "rationale": "Better pattern recognition improves decision making",
+        "expected_impact": "Improve success rate by 10%"
+      },
+      {
+        "category": "monitoring",
+        "priority": "medium",
+        "recommendation": "Implement real-time monitoring",
+        "rationale": "Real-time monitoring enables proactive intervention",
+        "expected_impact": "Reduce manual intervention by 60%"
+      }
+    ],
+    "meta_insights": [
+      {
+        "insight": "Framework success rate: 100.0%",
+        "type": "performance_metric",
+        "confidence": 0.9
+      },
+      {
+        "insight": "Average execution time: 0.0 seconds",
+        "type": "performance_metric",
+        "confidence": 0.9
+      },
+      {
+        "insight": "Performance trend: stable",
+        "type": "trend_analysis",
+        "confidence": 0.8
+      }
+    ],
+    "analysis_metadata": {
+      "executions_analyzed": 4,
+      "analysis_timestamp": "2025-08-09T13:23:08.130637",
+      "analysis_duration": 0
+    },
+    "timestamp": "2025-08-09T13:23:08.130642"
+  },
+  "timestamp": "2025-08-09T13:23:08.132877"
+}

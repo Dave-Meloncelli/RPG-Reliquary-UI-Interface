@@ -1,0 +1,30 @@
+[
+  {
+    "id": "AI-0001",
+    "title": "No automated backup strategy",
+    "description": "\n**Issue**: No automated backup strategy\n**Category**: backup\n**Impact**: Data loss in case of failure\n**Recommendation**: Implement automated backup with testing\n\n**Technical Details**:\n- Type: missing_backup_strategy\n- Severity: critical\n- Auto-fixable: Yes\n- Requires permission: No\n        ",
+    "priority": "critical",
+    "effort": "low",
+    "impact": "Data loss in case of failure",
+    "category": "backup",
+    "status": "pending",
+    "created_at": "2025-08-10T11:06:26.554295",
+    "auto_fixable": true,
+    "requires_permission": false,
+    "explanation": "\n**What is this?**\nA backup strategy is a systematic approach to creating copies of important data and files.\n\n**Why is it critical?**\nWithout backups, you risk losing all your work if something goes wrong with your system or files.\n\n**What will be installed/created?**\n- A backup script (backup.py) that automatically copies important files\n- A backups/ directory to store the copies\n- A scheduling system to run backups regularly\n\n**Is it safe?**\nYes, this only creates copies of your files and doesn't modify your original work.\n            "
+  },
+  {
+    "id": "AI-0001",
+    "title": "Weak authentication mechanisms",
+    "description": "\n**Issue**: Weak authentication mechanisms\n**Category**: security\n**Impact**: Unauthorized access\n**Recommendation**: Implement strong authentication (OAuth2, JWT)\n\n**Technical Details**:\n- Type: weak_auth\n- Severity: critical\n- Auto-fixable: No\n- Requires permission: No\n        ",
+    "priority": "critical",
+    "effort": "medium",
+    "impact": "Unauthorized access",
+    "category": "security",
+    "status": "pending",
+    "created_at": "2025-08-10T11:06:26.554312",
+    "auto_fixable": false,
+    "requires_permission": false,
+    "explanation": "\n**What is this?**\nStrong authentication ensures only authorized users can access your system.\n\n**Why is it critical?**\nWeak authentication can allow unauthorized access to your data and system.\n\n**What will be installed/created?**\n- OAuth2/JWT authentication packages\n- Secure authentication endpoints\n- Token-based session management\n\n**Is it safe?**\nYes, this enhances security without breaking existing functionality.\n            "
+  }
+]

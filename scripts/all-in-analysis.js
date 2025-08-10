@@ -66,7 +66,7 @@ function analyzeFileStructure() {
     function scanDirectory(dir, relativePath = '') {
         try {
             const items = fs.readdirSync(dir);
-            
+
             for (const item of items) {
                 const fullPath = path.join(dir, item);
                 const relativeItemPath = path.join(relativePath, item);
@@ -147,7 +147,7 @@ function analyzeCodeQuality() {
     };
 
     // Analyze file sizes and complexity indicators
-    const files = fs.readdirSync('.').filter(f => 
+    const files = fs.readdirSync('.').filter(f =>
         f.endsWith('.py') || f.endsWith('.js') || f.endsWith('.ts')
     );
 
@@ -155,7 +155,7 @@ function analyzeCodeQuality() {
         try {
             const content = fs.readFileSync(file, 'utf8');
             const lines = content.split('\n').length;
-            
+
             if (lines > 1000) {
                 analysis.complexity.high.push(file);
             } else if (lines > 500) {
@@ -352,7 +352,7 @@ function calculatePriorityScore(item) {
 
 function generateRecommendations(gaps, risks, opportunities, synergies) {
     const allItems = [...gaps, ...risks, ...opportunities, ...synergies];
-    
+
     // Calculate priority scores
     allItems.forEach(item => {
         item.priorityScore = calculatePriorityScore(item);
@@ -405,7 +405,7 @@ export const allInAnalysis = async (context = {}) => {
         // Save detailed report
         const reportsDir = 'reports';
         if (!fs.existsSync(reportsDir)) fs.mkdirSync(reportsDir, { recursive: true });
-        
+
         const reportPath = path.join(reportsDir, `all_in_analysis_${Date.now()}.json`);
         const detailedReport = {
             analysis_timestamp: new Date().toISOString(),
@@ -448,7 +448,7 @@ export const allInAnalysis = async (context = {}) => {
             console.log(`Estimated effort: ${summary.estimated_effort_hours} hours`);
             console.log(`Risk score: ${summary.risk_score.toFixed(2)}/5`);
             console.log(`Opportunity score: ${summary.opportunity_score.toFixed(2)}/5`);
-            
+
             if (recommendations.immediate.length > 0) {
                 console.log('\n🚨 Immediate Actions:');
                 recommendations.immediate.slice(0, 5).forEach((item, i) => {

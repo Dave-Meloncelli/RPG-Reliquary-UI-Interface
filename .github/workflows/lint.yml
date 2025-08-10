@@ -1,0 +1,53 @@
+name: Lint
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Node deps
+        run: npm ci
+
+      - name: Run lint (non-blocking)
+        run: npm run lint || true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Python env check (non-blocking)
+        run: |
+          python -V
+          pip -V || true
+
+      - name: Validate JSON reports (rigid)
+        run: python tools/validate_json_reports.py
+
+      - name: High-confidence secrets scan (rigid)
+        run: python tools/scan_secrets_strict.py
+
+      - name: Upload reports (flexible)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: forensic-reports
+          path: |
+            reports/*.json
+            reports/*.html
+            reports/*.svg
+
+

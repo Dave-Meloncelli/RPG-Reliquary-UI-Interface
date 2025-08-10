@@ -678,6 +678,81 @@ class FrameRegistry:
             rollback_plan='No rollback needed - read-only',
             context_preservation=True
         )
+
+        # Register Filetree Organizer frame
+        self.frames['filetree_organizer'] = Frame(
+            id='filetree_organizer',
+            name='Filetree Organizer',
+            description='Scans repository root and safely organizes stray files into canonical folders',
+            file_path='scripts/frames/filetree-organizer-frame.py',
+            type=FrameType.PROCESS,
+            entry_point='run_filetree_organizer',
+            dependencies=['python'],
+            parameters={'timeout': 180, 'dry_run': True},
+            success_criteria={'filetree_organizer_complete': True},
+            rollback_plan='Non-destructive moves with timestamped renames',
+            context_preservation=True
+        )
+
+        # Register Filesystem Discovery frame
+        self.frames['filesystem_discovery'] = Frame(
+            id='filesystem_discovery',
+            name='Filesystem Discovery',
+            description='Inventories repository files with metadata',
+            file_path='scripts/frames/filesystem-discovery-frame.py',
+            type=FrameType.ANALYSIS,
+            entry_point='run_filesystem_discovery',
+            dependencies=['python'],
+            parameters={'timeout': 300},
+            success_criteria={'filesystem_discovery_complete': True},
+            rollback_plan='No rollback needed - read-only',
+            context_preservation=True
+        )
+
+        # Register Webhook/Endpoint Analyzer frame
+        self.frames['webhook_endpoint_analyzer'] = Frame(
+            id='webhook_endpoint_analyzer',
+            name='Webhook & Endpoint Analyzer',
+            description='Scans repository for endpoints/webhooks and auth token patterns',
+            file_path='scripts/frames/webhook-endpoint-analyzer-frame.py',
+            type=FrameType.ANALYSIS,
+            entry_point='run_webhook_endpoint_analyzer',
+            dependencies=['python'],
+            parameters={'timeout': 300},
+            success_criteria={'webhook_endpoint_analysis_complete': True},
+            rollback_plan='No rollback needed - read-only',
+            context_preservation=True
+        )
+
+        # Register Import/Dependency Graph frame
+        self.frames['import_dependency_graph'] = Frame(
+            id='import_dependency_graph',
+            name='Import & Dependency Graph',
+            description='Constructs a simple import/require graph for Python and JS/TS files',
+            file_path='scripts/frames/import-dependency-graph-frame.py',
+            type=FrameType.ANALYSIS,
+            entry_point='run_import_dependency_graph',
+            dependencies=['python'],
+            parameters={'timeout': 300},
+            success_criteria={'import_dependency_graph_complete': True},
+            rollback_plan='No rollback needed - read-only',
+            context_preservation=True
+        )
+
+        # Register Index Registrar frame
+        self.frames['index_registrar'] = Frame(
+            id='index_registrar',
+            name='Index Registrar',
+            description='Consolidates per-folder indexes and writes a repo manifest',
+            file_path='scripts/frames/index-registrar-frame.py',
+            type=FrameType.PROCESS,
+            entry_point='run_index_registrar',
+            dependencies=['python'],
+            parameters={'timeout': 120},
+            success_criteria={'index_registrar_complete': True},
+            rollback_plan='No rollback needed',
+            context_preservation=True
+        )
     
     def _load_scaffolds(self):
         """Load predefined scaffolds including task-specific ones"""
@@ -836,6 +911,28 @@ class FrameRegistry:
             context_preservation=True
         )
 
+        # Forensic Repository Recovery Scaffold (NEW)
+        self.scaffolds['forensic_recovery'] = Scaffold(
+            id='forensic_recovery',
+            name='Forensic Repository Recovery',
+            description='Deep discovery, provenance, indexing, and remediation across the repository',
+            stages={
+                1: [self.frames['filesystem_discovery']],
+                2: [self.frames['webhook_endpoint_analyzer'], self.frames['import_dependency_graph']],
+                3: [self.frames['synthesis_analysis']],
+                4: [self.frames['filetree_organizer']],
+                5: [],
+                6: [self.frames['meta_analysis']],
+                7: [self.frames['index_registrar']],
+                8: [self.frames['human_approval']],
+                9: [self.frames['knowledge_hub_update']],
+                10: [self.frames['external_failure_diagnostic']]
+            },
+            dependencies=['python', 'node'],
+            success_criteria={'filesystem_discovery_complete': True, 'index_registrar_complete': True},
+            context_preservation=True
+        )
+
         # Comprehensive All-In Analysis Scaffold
         self.scaffolds['all_in_analysis'] = Scaffold(
             id='all_in_analysis',
@@ -858,6 +955,46 @@ class FrameRegistry:
             context_preservation=True
         )
 
+        # Ensure minimum mandatory frames are present across all scaffolds
+        self._ensure_minimum_scaffold_frames()
+
+    def _ensure_minimum_scaffold_frames(self) -> None:
+        """Guarantee mandatory frames exist in every scaffold at standard stages.
+
+        Minimum set by stage:
+          4 (IMPLEMENT): risk_mitigation
+          6 (FINAL_AUDIT): improvement_optimization
+          7 (META_AUDIT): meta_analysis
+          8 (APPROVAL): human_approval
+          9 (UPDATE_REGISTERS): knowledge_hub_update
+          10 (PUSH_GITHUB): external_failure_diagnostic
+        """
+        mandatory = {
+            4: ['risk_mitigation'],
+            6: ['improvement_optimization'],
+            7: ['meta_analysis'],
+            8: ['human_approval'],
+            9: ['knowledge_hub_update'],
+            10: ['external_failure_diagnostic'],
+        }
+
+        def add_if_missing(stage_frames, frame_obj):
+            if not stage_frames:
+                return [frame_obj]
+            if all(getattr(f, 'id', None) != frame_obj.id for f in stage_frames):
+                stage_frames.append(frame_obj)
+            return stage_frames
+
+        for scaffold in self.scaffolds.values():
+            for stage_num, frame_ids in mandatory.items():
+                stage_list = scaffold.stages.get(stage_num, [])
+                for fid in frame_ids:
+                    frame_obj = self.frames.get(fid)
+                    if frame_obj is None:
+                        continue
+                    stage_list = add_if_missing(stage_list, frame_obj)
+                scaffold.stages[stage_num] = stage_list
+
 class FrameExecutor:
     """Enhanced frame executor with context preservation"""
     
@@ -878,6 +1015,16 @@ class FrameExecutor:
             print(f"   📂 Using preserved context: {len(context.preserved_context)} items")
         
         try:
+            # Enforce immutable approval gate for critical frames when continuance is active
+            immutable_required = {
+                'human_approval': True,
+            }
+            af_continuance = os.environ.get('AF_CONTINUANCE', '0') == '1'
+            if af_continuance and immutable_required.get(context.frame.id):
+                # Require explicit override token to run approval frame under continuance
+                if os.environ.get('AF_ALLOW_APPROVAL_UNDER_CONTINUANCE', '0') != '1':
+                    raise Exception("Human Approval frame blocked under continuance without explicit override (AF_ALLOW_APPROVAL_UNDER_CONTINUANCE=1)")
+
             # Load the frame module
             module = self._load_frame_module(context.frame)
             
@@ -1168,13 +1315,30 @@ class FrameExecutor:
             if callable(entry_point):
                 # Pass context if the function accepts it
                 try:
-                    return entry_point(context=context)
+                    # Convert ExecutionContext to a lightweight dict to maximize compatibility
+                    ctx_dict = self._context_to_dict(context)
+                    return entry_point(context=ctx_dict)
                 except TypeError:
                     return entry_point()
             else:
                 return entry_point
         else:
             raise Exception(f"Entry point '{context.frame.entry_point}' not found in module")
+
+    def _context_to_dict(self, ec: ExecutionContext) -> Dict[str, Any]:
+        """Produce a compact, token-efficient mapping for frames expecting a dict context"""
+        try:
+            return {
+                'stage': ec.stage.name,
+                'frame_id': ec.frame.id,
+                'frame_name': ec.frame.name,
+                'parameters': ec.parameters,
+                'input_data': ec.input_data,
+                'previous_results': ec.previous_results,
+                'preserved_context': ec.preserved_context or {},
+            }
+        except Exception:
+            return {}
     
     def _validate_success_criteria(self, result: Dict[str, Any], criteria: Dict[str, Any]) -> bool:
         """Validate that the result meets success criteria"""
@@ -1486,6 +1650,22 @@ class AutonomousFramework:
             'preserved_context': preserved_context,
             'start_time': datetime.now().isoformat()
         }
+
+        # Continuance banner
+        if os.environ.get('AF_CONTINUANCE', '0') == '1':
+            print("🟢 CONTINUANCE MODE ENABLED: proceeding with minimal prompts; all decisions will be logged.")
+            if os.environ.get('AF_ALLOW_APPROVAL_UNDER_CONTINUANCE') == '1':
+                msg = {
+                    'event': 'continuance_override',
+                    'type': 'allow_approval_under_continuance',
+                    'timestamp': datetime.now().isoformat(),
+                    'actor': 'framework',
+                    'note': 'Human-approval frame allowed under continuance for this run via CLI flag'
+                }
+                print(f"🔐 Approval override active: {msg}")
+                Path('reports').mkdir(exist_ok=True)
+                with open('reports/continuance_overrides.log.jsonl', 'a', encoding='utf-8') as f:
+                    f.write(json.dumps(msg) + "\n")
         
         try:
             # Execute each stage (now 9 stages)
@@ -1525,9 +1705,15 @@ class AutonomousFramework:
             
             # Preserve final context
             self.context_manager.save_context(scaffold_id, self.current_context)
+
+            # Write compact context digest for future runs (big-picture without heavy payload)
+            self._write_context_digest(scaffold)
             
             # Generate final report
             final_report = self._generate_final_report(scaffold)
+
+            # Mandatory frames audit
+            self._write_mandatory_frames_audit(scaffold)
             
             print("\n" + "=" * 80)
             print("🎉 SCAFFOLD EXECUTION COMPLETE")
@@ -1609,6 +1795,36 @@ class AutonomousFramework:
             'results': stage_results,
             'stage_failed': stage_failed
         }
+
+    def _write_mandatory_frames_audit(self, scaffold: Scaffold) -> None:
+        """Emit a per-scaffold audit confirming mandatory frames presence and order"""
+        mandatory = {
+            4: ['risk_mitigation'],
+            6: ['improvement_optimization'],
+            7: ['meta_analysis'],
+            8: ['human_approval'],
+            9: ['knowledge_hub_update'],
+            10: ['external_failure_diagnostic'],
+        }
+        report = {
+            'scaffold_id': scaffold.id,
+            'timestamp': datetime.now().isoformat(),
+            'mandatory': mandatory,
+            'compliance': {},
+        }
+        for stage_num, req_ids in mandatory.items():
+            present_ids = [f.id for f in scaffold.stages.get(stage_num, [])]
+            missing = [fid for fid in req_ids if fid not in present_ids]
+            report['compliance'][str(stage_num)] = {
+                'present': present_ids,
+                'missing': missing,
+                'ok': len(missing) == 0
+            }
+        Path('reports').mkdir(exist_ok=True)
+        out = Path('reports') / f"mandatory_frames_audit_{scaffold.id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+        with out.open('w', encoding='utf-8') as f:
+            json.dump(report, f, indent=2)
+        print(f"🛡️  Mandatory frames audit saved: {out}")
     
     def _execute_meta_audit(self, scaffold: Scaffold) -> Dict[str, Any]:
         """Execute meta-audit to analyze framework execution itself"""
@@ -1721,6 +1937,22 @@ class AutonomousFramework:
         if stage_result.get('status') == 'no_frames':
             return True
         return stage_result.get('successful_frames', 0) > 0 and stage_result.get('failed_frames', 0) == 0
+
+    def _context_to_dict(self, ec: ExecutionContext) -> Dict[str, Any]:
+        """Produce a compact, token-efficient mapping for frames expecting a dict context"""
+        try:
+            return {
+                'stage': ec.stage.name,
+                'frame_id': ec.frame.id,
+                'frame_name': ec.frame.name,
+                'parameters': ec.parameters,
+                'input_data': ec.input_data,
+                'previous_results': ec.previous_results,
+                'preserved_context': ec.preserved_context or {},
+                'scaffold_id': self.current_context.get('scaffold_id') if isinstance(self.current_context, dict) else None,
+            }
+        except Exception:
+            return {}
     
     def _retry_from_stage_2(self, scaffold: Scaffold, input_data: Dict[str, Any]) -> Dict[str, Any]:
         """Retry execution from stage 2 with different strategy"""
@@ -1825,48 +2057,74 @@ class AutonomousFramework:
             'additional_failures': [],
             'recommendations': []
         }
-        
-        stderr = commit_result.stderr.lower()
-        
-        # Check if this is a pre-commit hook failure
-        if 'husky' in stderr or 'lint-staged' in stderr or 'pre-commit' in stderr:
-            analysis['failure_type'] = 'pre_commit_hook'
-            analysis['recommendations'].extend([
-                "Pre-commit hooks failed - this is likely due to linting/formatting issues",
-                "Check the specific lint-staged commands that failed",
-                "Review package.json lint-staged configuration",
-                "Consider running lint-staged commands manually to identify issues"
-            ])
-            
-            # Try to identify specific failed commands from stderr
-            failed_commands = []
-            if 'eslint' in stderr:
-                failed_commands.append('eslint --fix')
-            if 'prettier' in stderr:
-                failed_commands.append('prettier --write')
-            if 'npm run' in stderr:
-                # Extract npm run commands
-                npm_commands = re.findall(r'npm run ([a-zA-Z0-9-]+)', stderr)
-                failed_commands.extend([f'npm run {cmd}' for cmd in npm_commands])
-            
-            if failed_commands:
-                analysis['failed_commands'] = failed_commands
-                analysis['recommendations'].append(f"Failed commands: {', '.join(failed_commands)}")
-        
-        # Check for other common git commit issues
-        elif 'nothing to commit' in stderr:
-            analysis['failure_type'] = 'no_changes'
-            analysis['recommendations'].append("No changes to commit - this is normal if no files were modified")
-        
-        elif 'author identity' in stderr:
-            analysis['failure_type'] = 'git_config'
-            analysis['recommendations'].extend([
-                "Git author identity not configured",
-                "Run: git config --global user.name 'Your Name'",
-                "Run: git config --global user.email 'your.email@example.com'"
-            ])
-        
-        return analysis
+
+        try:
+            stderr = (commit_result.stderr or '').lower()
+
+            # Check if this is a pre-commit hook failure
+            if 'husky' in stderr or 'lint-staged' in stderr or 'pre-commit' in stderr:
+                analysis['failure_type'] = 'pre_commit_hook'
+                analysis['recommendations'].extend([
+                    "Pre-commit hooks failed - this is likely due to linting/formatting issues",
+                    "Check the specific lint-staged commands that failed",
+                    "Review package.json lint-staged configuration",
+                    "Consider running lint-staged commands manually to identify issues"
+                ])
+
+                # Try to identify specific failed commands from stderr
+                failed_commands = []
+                if 'eslint' in stderr:
+                    failed_commands.append('eslint --fix')
+                if 'prettier' in stderr:
+                    failed_commands.append('prettier --write')
+                if 'npm run' in stderr:
+                    # Extract npm run commands
+                    npm_commands = re.findall(r'npm run ([a-zA-Z0-9-]+)', stderr)
+                    failed_commands.extend([f'npm run {cmd}' for cmd in npm_commands])
+
+                if failed_commands:
+                    analysis['failed_commands'] = failed_commands
+                    analysis['recommendations'].append(f"Failed commands: {', '.join(failed_commands)}")
+
+            # Check for other common git commit issues
+            elif 'nothing to commit' in stderr:
+                analysis['failure_type'] = 'no_changes'
+                analysis['recommendations'].append("No changes to commit - this is normal if no files were modified")
+
+            elif 'author identity' in stderr:
+                analysis['failure_type'] = 'git_config'
+                analysis['recommendations'].extend([
+                    "Git author identity not configured",
+                    "Run: git config --global user.name 'Your Name'",
+                    "Run: git config --global user.email 'your.email@example.com'"
+                ])
+        finally:
+            return analysis
+
+    def _write_context_digest(self, scaffold: Scaffold) -> None:
+        """Write a small, token-efficient digest of the run for future context loads"""
+        try:
+            digest = {
+                'scaffold_id': scaffold.id,
+                'ended_at': datetime.now().isoformat(),
+                'summary': {
+                    'successful_stages': len([log for log in self.execution_log if self._check_stage_success(log['result'])]),
+                    'failed_stages': len([log for log in self.execution_log if not self._check_stage_success(log['result'])]),
+                    'total_frames_executed': sum(log['result'].get('frames_executed', 0) for log in self.execution_log),
+                },
+                'artifacts': {
+                    'manifest': 'internal/repo.manifest.json',
+                    'indexes_dir': 'internal/indexes/',
+                    'last_report': f"reports/scaffold_execution_v2_{scaffold.id}_<timestamp>.json"
+                }
+            }
+            Path('context_preservation').mkdir(exist_ok=True)
+            out = Path('context_preservation') / f"{scaffold.id}_digest.json"
+            with out.open('w', encoding='utf-8') as f:
+                json.dump(digest, f, indent=2)
+            print(f"🧭 Context digest written: {out}")
+        except Exception:
+            pass
     
     def _run_diagnostic_analysis(self, external_failures: List[ExternalCommandResult]) -> Dict[str, Any]:
         """Run comprehensive diagnostic analysis of external failures"""
@@ -2253,6 +2511,7 @@ def main():
     args = sys.argv[1:]
     scaffold_id = None
     input_data = {}
+    allow_approval_under_continuance = False
     if '--scaffold' in args:
         idx = args.index('--scaffold')
         if idx + 1 < len(args):
@@ -2264,14 +2523,18 @@ def main():
                 input_data = json.loads(args[idx + 1])
             except Exception:
                 input_data = {}
+    if '--allow-approval-under-continuance' in args:
+        allow_approval_under_continuance = True
     if scaffold_id:
+        if allow_approval_under_continuance:
+            os.environ['AF_ALLOW_APPROVAL_UNDER_CONTINUANCE'] = '1'
         
         print(f"\n🚀 Executing scaffold: {scaffold_id}")
         result = framework.execute_scaffold(scaffold_id, input_data)
         print(f"✅ Execution complete: {result['status']}")
     else:
         print("\n💡 Usage:")
-        print("python autonomous-framework-v2.py --scaffold <id> [--input '<json>']")
+        print("python autonomous-framework-v2.py --scaffold <id> [--input '<json>'] [--allow-approval-under-continuance]")
         print("\nExamples:")
         print("python autonomous-framework-v2.py --scaffold websocket_implementation")
         print("python autonomous-framework-v2.py --scaffold full_system_analysis")

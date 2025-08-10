@@ -33,7 +33,13 @@ def list_recent_reports(directory: str, since_epoch: float, max_files: int = 10,
         except Exception:
             continue
     candidates.sort(key=lambda t: t[0])
-    return [p for _, p in candidates][-max_files:]
+    files = [p for _, p in candidates][-max_files:]
+    # Exclude known invalid report filenames to avoid parse noise
+    exclude_names = {
+        'smart_delegator_report.json',
+        'deep_pattern_recognition_1754661236.json',
+    }
+    return [p for p in files if p.name not in exclude_names]
 
 
 def run_deep_pattern_recognition_for(files: List[Path], timeout_sec: int = 120) -> Dict[str, Any]:

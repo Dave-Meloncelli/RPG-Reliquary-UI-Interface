@@ -1,30 +1,65 @@
 {
-  "timestamp": "2025-08-08T13:01:05.369Z",
+  "timestamp": "2025-08-10T03:06:26.480Z",
   "summary": {
-    "totalFiles": 9,
+    "totalFiles": 146,
     "templates": 0,
     "endpoints": 0,
     "tools": 0,
-    "documentation": 1,
-    "connections": 5,
-    "dependencies": 0,
-    "missing": 0,
-    "recommendations": 9
+    "documentation": 20,
+    "connections": 108,
+    "dependencies": 110,
+    "missing": 1,
+    "recommendations": 113
   },
   "details": {
     "files": {
-      "app.log": {
-        "path": "app.log",
-        "name": "app.log",
-        "extension": ".log",
-        "size": 1087,
-        "modified": "2025-08-08T04:04:31.884Z",
+      "node_modules\\.bin\\semver": {
+        "path": "node_modules\\.bin\\semver",
+        "name": "semver",
+        "extension": "",
+        "size": 389,
+        "modified": "2025-08-09T04:17:43.480Z",
         "category": "General",
-        "description": "test/liveness \\\"HTTP/1.1 200 OK\\\"\", \"component\": \"httpx\", \"requestId\": null}",
+        "description": "!/bin/sh",
         "dependencies": [],
         "connections": [
-          "API: /liveness",
-          "API: /readiness"
+          "$basedir/../semver/bin/semver.js",
+          "$basedir/../semver/bin/semver.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\.bin\\semver.cmd": {
+        "path": "node_modules\\.bin\\semver.cmd",
+        "name": "semver.cmd",
+        "extension": ".cmd",
+        "size": 325,
+        "modified": "2025-08-09T04:17:43.480Z",
+        "category": "General",
+        "description": "_undefined_# 2>NUL || title %COMSPEC% & \"%_prog%\"  \"%dp0%\\..\\semver\\bin\\semver.js\" %*",
+        "dependencies": [],
+        "connections": [
+          "%dp0%\\..\\semver\\bin\\semver.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\.bin\\semver.ps1": {
+        "path": "node_modules\\.bin\\semver.ps1",
+        "name": "semver.ps1",
+        "extension": ".ps1",
+        "size": 805,
+        "modified": "2025-08-09T04:17:43.480Z",
+        "category": "General",
+        "description": "!/usr/bin/env pwsh",
+        "dependencies": [],
+        "connections": [
+          "$basedir/../semver/bin/semver.js",
+          "$basedir/../semver/bin/semver.js",
+          "$basedir/../semver/bin/semver.js",
+          "$basedir/../semver/bin/semver.js"
         ],
         "templateInfo": null,
         "endpointInfo": null,
@@ -34,12 +69,2392 @@
         "path": "node_modules\\.package-lock.json",
         "name": ".package-lock.json",
         "extension": ".json",
-        "size": 125,
-        "modified": "2025-08-08T10:19:40.299Z",
+        "size": 103489,
+        "modified": "2025-08-09T04:22:27.030Z",
+        "category": "General",
+        "description": "registry.npmjs.org/@babel/code-frame/-/code-frame-7.27.1.tgz\",",
+        "dependencies": [],
+        "connections": [
+          "cli.js",
+          "bin/eslint.js",
+          "bin.js",
+          "bin/js-yaml.js",
+          "bin.js",
+          "bin/lint-staged.js",
+          "bin/pidtree.js",
+          "bin/semver.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\balanced-match\\.github\\FUNDING.yml": {
+        "path": "node_modules\\balanced-match\\.github\\FUNDING.yml",
+        "name": "FUNDING.yml",
+        "extension": ".yml",
+        "size": 53,
+        "modified": "2025-08-09T04:17:42.096Z",
         "category": "General",
         "description": "No description found",
         "dependencies": [],
         "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\balanced-match\\index.js": {
+        "path": "node_modules\\balanced-match\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 1219,
+        "modified": "2025-08-09T04:17:41.695Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\balanced-match\\LICENSE.md": {
+        "path": "node_modules\\balanced-match\\LICENSE.md",
+        "name": "LICENSE.md",
+        "extension": ".md",
+        "size": 1096,
+        "modified": "2025-08-09T04:17:41.888Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\balanced-match\\package.json": {
+        "path": "node_modules\\balanced-match\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 1069,
+        "modified": "2025-08-09T04:17:41.808Z",
+        "category": "General",
+        "description": "github.com/juliangruber/balanced-match.git\"",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "tape test/test.js",
+          "matcha test/bench.js",
+          "test/*.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\balanced-match\\README.md": {
+        "path": "node_modules\\balanced-match\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 3502,
+        "modified": "2025-08-09T04:17:41.988Z",
+        "category": "General",
+        "description": "secure.travis-ci.org/juliangruber/balanced-match.svg)](http://travis-ci.org/juliangruber/balanced-match)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\brace-expansion\\index.js": {
+        "path": "node_modules\\brace-expansion\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 4797,
+        "modified": "2025-08-09T04:17:41.809Z",
+        "category": "General",
+        "description": "Basically just str.split(\",\"), but handling cases",
+        "dependencies": [
+          "concat-map",
+          "balanced-match"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\brace-expansion\\LICENSE": {
+        "path": "node_modules\\brace-expansion\\LICENSE",
+        "name": "LICENSE",
+        "extension": "",
+        "size": 1096,
+        "modified": "2025-08-09T04:17:41.696Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\brace-expansion\\package.json": {
+        "path": "node_modules\\brace-expansion\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 1156,
+        "modified": "2025-08-09T04:17:41.888Z",
+        "category": "General",
+        "description": "github.com/juliangruber/brace-expansion.git\"",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "tape test/*.js",
+          "matcha test/perf/bench.js",
+          "test/*.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\brace-expansion\\README.md": {
+        "path": "node_modules\\brace-expansion\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 4058,
+        "modified": "2025-08-09T04:17:41.988Z",
+        "category": "General",
+        "description": "www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html),",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\braces\\index.js": {
+        "path": "node_modules\\braces\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 4380,
+        "modified": "2025-08-09T04:17:42.099Z",
+        "category": "General",
+        "description": "=> ['(a|b|c)']",
+        "dependencies": [
+          "./lib/stringify",
+          "./lib/compile",
+          "./lib/expand",
+          "./lib/parse",
+          "braces",
+          "braces",
+          "braces",
+          "braces",
+          "braces"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\braces\\lib\\compile.js": {
+        "path": "node_modules\\braces\\lib\\compile.js",
+        "name": "compile.js",
+        "extension": ".js",
+        "size": 1501,
+        "modified": "2025-08-09T04:17:41.829Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "fill-range",
+          "./utils"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\braces\\lib\\constants.js": {
+        "path": "node_modules\\braces\\lib\\constants.js",
+        "name": "constants.js",
+        "extension": ".js",
+        "size": 1589,
+        "modified": "2025-08-09T04:17:41.919Z",
+        "category": "General",
+        "description": "Digits",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\braces\\lib\\expand.js": {
+        "path": "node_modules\\braces\\lib\\expand.js",
+        "name": "expand.js",
+        "extension": ".js",
+        "size": 2797,
+        "modified": "2025-08-09T04:17:42.017Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "fill-range",
+          "./stringify",
+          "./utils"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\braces\\lib\\parse.js": {
+        "path": "node_modules\\braces\\lib\\parse.js",
+        "name": "parse.js",
+        "extension": ".js",
+        "size": 6899,
+        "modified": "2025-08-09T04:17:42.180Z",
+        "category": "General",
+        "description": "Mark imbalanced braces and brackets as invalid",
+        "dependencies": [
+          "./stringify",
+          "./constants"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\braces\\lib\\stringify.js": {
+        "path": "node_modules\\braces\\lib\\stringify.js",
+        "name": "stringify.js",
+        "extension": ".js",
+        "size": 708,
+        "modified": "2025-08-09T04:17:42.228Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./utils"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\braces\\lib\\utils.js": {
+        "path": "node_modules\\braces\\lib\\utils.js",
+        "name": "utils.js",
+        "extension": ".js",
+        "size": 2518,
+        "modified": "2025-08-09T04:17:42.266Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\braces\\LICENSE": {
+        "path": "node_modules\\braces\\LICENSE",
+        "name": "LICENSE",
+        "extension": "",
+        "size": 1091,
+        "modified": "2025-08-09T04:17:41.696Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\braces\\package.json": {
+        "path": "node_modules\\braces\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 1647,
+        "modified": "2025-08-09T04:17:42.298Z",
+        "category": "General",
+        "description": "github.com/micromatch/braces\",",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "index.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\braces\\README.md": {
+        "path": "node_modules\\braces\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 21505,
+        "modified": "2025-08-09T04:17:42.336Z",
+        "category": "General",
+        "description": "img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W8YFZ425KND68) [![NPM version](https://img.shields.io/npm/v/braces.svg?style=flat)](https://www.npmjs.com/package/braces) [![NPM monthly downloads](https://img.shields.io/npm/dm/braces.svg?style=flat)](https://npmjs.org/package/braces) [![NPM total downloads](https://img.shields.io/npm/dt/braces.svg?style=flat)](https://npmjs.org/package/braces) [![Linux Build Status](https://img.shields.io/travis/micromatch/braces.svg?style=flat&label=Travis)](https://travis-ci.org/micromatch/braces)",
+        "dependencies": [],
+        "connections": [
+          "a/{foo,bar,baz}/*.js",
+          "a/(foo|bar|baz)/*.js",
+          "a/{foo,bar,baz}/*.js",
+          "a/foo/*.js",
+          "a/bar/*.js",
+          "a/baz/*.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\concat-map\\.travis.yml": {
+        "path": "node_modules\\concat-map\\.travis.yml",
+        "name": ".travis.yml",
+        "extension": ".yml",
+        "size": 43,
+        "modified": "2025-08-09T04:17:41.988Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\concat-map\\example\\map.js": {
+        "path": "node_modules\\concat-map\\example\\map.js",
+        "name": "map.js",
+        "extension": ".js",
+        "size": 171,
+        "modified": "2025-08-09T04:17:42.163Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "../"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\concat-map\\index.js": {
+        "path": "node_modules\\concat-map\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 345,
+        "modified": "2025-08-09T04:17:41.888Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\concat-map\\LICENSE": {
+        "path": "node_modules\\concat-map\\LICENSE",
+        "name": "LICENSE",
+        "extension": "",
+        "size": 1073,
+        "modified": "2025-08-09T04:17:41.809Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\concat-map\\package.json": {
+        "path": "node_modules\\concat-map\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 989,
+        "modified": "2025-08-09T04:17:41.696Z",
+        "category": "General",
+        "description": "github.com/substack/node-concat-map.git\"",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "tape test/*.js",
+          "test/*.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\concat-map\\README.markdown": {
+        "path": "node_modules\\concat-map\\README.markdown",
+        "name": "README.markdown",
+        "extension": ".markdown",
+        "size": 1165,
+        "modified": "2025-08-09T04:17:42.074Z",
+        "category": "General",
+        "description": "ci.testling.com/substack/node-concat-map.png)](http://ci.testling.com/substack/node-concat-map)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\concat-map\\test\\map.js": {
+        "path": "node_modules\\concat-map\\test\\map.js",
+        "name": "map.js",
+        "extension": ".js",
+        "size": 1075,
+        "modified": "2025-08-09T04:17:42.227Z",
+        "category": "Test",
+        "description": "No description found",
+        "dependencies": [
+          "../",
+          "tape"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\debug\\LICENSE": {
+        "path": "node_modules\\debug\\LICENSE",
+        "name": "LICENSE",
+        "extension": "",
+        "size": 1139,
+        "modified": "2025-08-09T04:17:41.704Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\debug\\package.json": {
+        "path": "node_modules\\debug\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 1479,
+        "modified": "2025-08-09T04:17:42.171Z",
+        "category": "General",
+        "description": "github.com/debug-js/debug.git\"",
+        "dependencies": [],
+        "connections": [
+          "README.md",
+          "mocha test.js test.node.js",
+          "./src/index.js",
+          "./src/browser.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\debug\\README.md": {
+        "path": "node_modules\\debug\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 22115,
+        "modified": "2025-08-09T04:17:42.231Z",
+        "category": "General",
+        "description": "opencollective.com/debug/backers/badge.svg)](#backers)",
+        "dependencies": [],
+        "connections": [
+          ";node app.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\debug\\src\\browser.js": {
+        "path": "node_modules\\debug\\src\\browser.js",
+        "name": "browser.js",
+        "extension": ".js",
+        "size": 6103,
+        "modified": "2025-08-09T04:17:41.835Z",
+        "category": "General",
+        "description": "eslint-disable-next-line complexity",
+        "dependencies": [
+          "./common"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\debug\\src\\index.js": {
+        "path": "node_modules\\debug\\src\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 314,
+        "modified": "2025-08-09T04:17:42.023Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./browser.js",
+          "./node.js"
+        ],
+        "connections": [
+          "./browser.js",
+          "./node.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\debug\\src\\node.js": {
+        "path": "node_modules\\debug\\src\\node.js",
+        "name": "node.js",
+        "extension": ".js",
+        "size": 4728,
+        "modified": "2025-08-09T04:17:42.105Z",
+        "category": "General",
+        "description": "Optional dependency (as in, doesn't need to be installed, NOT like optionalDependencies in package.json)",
+        "dependencies": [
+          "tty",
+          "util",
+          "supports-color",
+          "./common"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\fill-range\\index.js": {
+        "path": "node_modules\\fill-range\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 6406,
+        "modified": "2025-08-09T04:17:41.809Z",
+        "category": "General",
+        "description": "github.com/jonschlinkert/fill-range>",
+        "dependencies": [
+          "util",
+          "to-regex-range"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\fill-range\\LICENSE": {
+        "path": "node_modules\\fill-range\\LICENSE",
+        "name": "LICENSE",
+        "extension": "",
+        "size": 1091,
+        "modified": "2025-08-09T04:17:41.696Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\fill-range\\package.json": {
+        "path": "node_modules\\fill-range\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 1760,
+        "modified": "2025-08-09T04:17:41.889Z",
+        "category": "General",
+        "description": "github.com/jonschlinkert/fill-range\",",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "index.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\fill-range\\README.md": {
+        "path": "node_modules\\fill-range\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 7486,
+        "modified": "2025-08-09T04:17:42.015Z",
+        "category": "General",
+        "description": "img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W8YFZ425KND68) [![NPM version](https://img.shields.io/npm/v/fill-range.svg?style=flat)](https://www.npmjs.com/package/fill-range) [![NPM monthly downloads](https://img.shields.io/npm/dm/fill-range.svg?style=flat)](https://npmjs.org/package/fill-range) [![NPM total downloads](https://img.shields.io/npm/dt/fill-range.svg?style=flat)](https://npmjs.org/package/fill-range) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/fill-range.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/fill-range)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\glob-parent\\index.js": {
+        "path": "node_modules\\glob-parent\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 1614,
+        "modified": "2025-08-09T04:17:41.815Z",
+        "category": "General",
+        "description": "flip windows path separators",
+        "dependencies": [
+          "is-glob",
+          "path",
+          "os"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\glob-parent\\LICENSE": {
+        "path": "node_modules\\glob-parent\\LICENSE",
+        "name": "LICENSE",
+        "extension": "",
+        "size": 857,
+        "modified": "2025-08-09T04:17:41.703Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\glob-parent\\package.json": {
+        "path": "node_modules\\glob-parent\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 1050,
+        "modified": "2025-08-09T04:17:41.899Z",
+        "category": "General",
+        "description": "gulpjs.com/)\",",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "index.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\glob-parent\\README.md": {
+        "path": "node_modules\\glob-parent\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 4198,
+        "modified": "2025-08-09T04:17:41.999Z",
+        "category": "General",
+        "description": "gulpjs.com\">",
+        "dependencies": [],
+        "connections": [
+          "path/to/*.js",
+          "/root/path/to/*.js",
+          "/*.js",
+          "*.js",
+          "**/*.js",
+          "path/foo/bar.js",
+          "API: /root/path/to"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\has-flag\\index.js": {
+        "path": "node_modules\\has-flag\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 330,
+        "modified": "2025-08-09T04:17:41.884Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\has-flag\\license": {
+        "path": "node_modules\\has-flag\\license",
+        "name": "license",
+        "extension": "",
+        "size": 1109,
+        "modified": "2025-08-09T04:17:41.983Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\has-flag\\package.json": {
+        "path": "node_modules\\has-flag\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 696,
+        "modified": "2025-08-09T04:17:41.693Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "index.d.ts"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\has-flag\\readme.md": {
+        "path": "node_modules\\has-flag\\readme.md",
+        "name": "readme.md",
+        "extension": ".md",
+        "size": 1600,
+        "modified": "2025-08-09T04:17:42.072Z",
+        "category": "Documentation",
+        "description": "travis-ci.org/sindresorhus/has-flag.svg?branch=master)](https://travis-ci.org/sindresorhus/has-flag)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-extglob\\index.js": {
+        "path": "node_modules\\is-extglob\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 441,
+        "modified": "2025-08-09T04:17:41.996Z",
+        "category": "General",
+        "description": "github.com/jonschlinkert/is-extglob>",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-extglob\\LICENSE": {
+        "path": "node_modules\\is-extglob\\LICENSE",
+        "name": "LICENSE",
+        "extension": "",
+        "size": 1087,
+        "modified": "2025-08-09T04:17:41.894Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-extglob\\package.json": {
+        "path": "node_modules\\is-extglob\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 1220,
+        "modified": "2025-08-09T04:17:41.699Z",
+        "category": "General",
+        "description": "github.com/jonschlinkert/is-extglob\",",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "index.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-extglob\\README.md": {
+        "path": "node_modules\\is-extglob\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 3469,
+        "modified": "2025-08-09T04:17:41.813Z",
+        "category": "General",
+        "description": "img.shields.io/npm/v/is-extglob.svg?style=flat)](https://www.npmjs.com/package/is-extglob) [![NPM downloads](https://img.shields.io/npm/dm/is-extglob.svg?style=flat)](https://npmjs.org/package/is-extglob) [![Build Status](https://img.shields.io/travis/jonschlinkert/is-extglob.svg?style=flat)](https://travis-ci.org/jonschlinkert/is-extglob)",
+        "dependencies": [],
+        "connections": [
+          "foo.js",
+          "!foo.js",
+          "*.js",
+          "**/abc.js",
+          "abc/*.js",
+          "abc/(aaa|bbb).js",
+          "abc/[a-z].js",
+          "abc/{a,b}.js",
+          "abc/?.js",
+          "abc.js",
+          "abc/def/ghi.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-glob\\index.js": {
+        "path": "node_modules\\is-glob\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 3628,
+        "modified": "2025-08-09T04:17:41.815Z",
+        "category": "General",
+        "description": "github.com/jonschlinkert/is-glob>",
+        "dependencies": [
+          "is-extglob"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-glob\\LICENSE": {
+        "path": "node_modules\\is-glob\\LICENSE",
+        "name": "LICENSE",
+        "extension": "",
+        "size": 1088,
+        "modified": "2025-08-09T04:17:41.702Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-glob\\package.json": {
+        "path": "node_modules\\is-glob\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 1748,
+        "modified": "2025-08-09T04:17:41.898Z",
+        "category": "General",
+        "description": "github.com/micromatch/is-glob\",",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "index.js",
+          "mocha && node benchmark.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-glob\\README.md": {
+        "path": "node_modules\\is-glob\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 7145,
+        "modified": "2025-08-09T04:17:42.023Z",
+        "category": "General",
+        "description": "img.shields.io/npm/v/is-glob.svg?style=flat)](https://www.npmjs.com/package/is-glob) [![NPM monthly downloads](https://img.shields.io/npm/dm/is-glob.svg?style=flat)](https://npmjs.org/package/is-glob) [![NPM total downloads](https://img.shields.io/npm/dt/is-glob.svg?style=flat)](https://npmjs.org/package/is-glob) [![Build Status](https://img.shields.io/github/workflow/status/micromatch/is-glob/dev)](https://github.com/micromatch/is-glob/actions)",
+        "dependencies": [],
+        "connections": [
+          "!foo.js",
+          "*.js",
+          "**/abc.js",
+          "abc/*.js",
+          "abc/(aaa|bbb).js",
+          "abc/[a-z].js",
+          "abc/{a,b}.js",
+          "abc/@(a).js",
+          "abc/!(a).js",
+          "abc/+(a).js",
+          "abc/*(a).js",
+          "abc/?(a).js",
+          "abc/\\\\@(a).js",
+          "abc/\\\\!(a).js",
+          "abc/\\\\+(a).js",
+          "abc/\\\\*(a).js",
+          "abc/\\\\?(a).js",
+          "\\\\!foo.js",
+          "\\\\*.js",
+          "\\\\*\\\\*/abc.js",
+          "abc/\\\\*.js",
+          "abc/\\\\(aaa|bbb).js",
+          "abc/\\\\[a-z].js",
+          "abc/\\\\{a,b}.js",
+          "abc.js",
+          "abc/def/ghi.js",
+          "foo.js",
+          "abc/@.js",
+          "abc/+.js",
+          "abc/?.js",
+          "**/*.js",
+          "foo.js",
+          "!foo.js",
+          "*.js",
+          "**/abc.js",
+          "abc/*.js",
+          "abc/(aaa|bbb).js",
+          "abc/[a-z].js",
+          "abc/{a,b}.js",
+          "abc/@(a).js",
+          "abc/!(a).js",
+          "abc/+(a).js",
+          "abc/*(a).js",
+          "abc/?(a).js",
+          "\\\\!foo.js",
+          "\\\\*.js",
+          "\\\\*\\\\*/abc.js",
+          "abc/\\\\*.js",
+          "abc/\\\\(aaa|bbb).js",
+          "abc/\\\\[a-z].js",
+          "abc/\\\\{a,b}.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-number\\index.js": {
+        "path": "node_modules\\is-number\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 411,
+        "modified": "2025-08-09T04:17:41.806Z",
+        "category": "General",
+        "description": "github.com/jonschlinkert/is-number>",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-number\\LICENSE": {
+        "path": "node_modules\\is-number\\LICENSE",
+        "name": "LICENSE",
+        "extension": "",
+        "size": 1091,
+        "modified": "2025-08-09T04:17:41.886Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-number\\package.json": {
+        "path": "node_modules\\is-number\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 1599,
+        "modified": "2025-08-09T04:17:41.694Z",
+        "category": "General",
+        "description": "github.com/jonschlinkert/is-number\",",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "index.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-number\\README.md": {
+        "path": "node_modules\\is-number\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 6514,
+        "modified": "2025-08-09T04:17:41.985Z",
+        "category": "General",
+        "description": "img.shields.io/npm/v/is-number.svg?style=flat)](https://www.npmjs.com/package/is-number) [![NPM monthly downloads](https://img.shields.io/npm/dm/is-number.svg?style=flat)](https://npmjs.org/package/is-number) [![NPM total downloads](https://img.shields.io/npm/dt/is-number.svg?style=flat)](https://npmjs.org/package/is-number) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/is-number.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/is-number)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\minimatch\\LICENSE": {
+        "path": "node_modules\\minimatch\\LICENSE",
+        "name": "LICENSE",
+        "extension": "",
+        "size": 765,
+        "modified": "2025-08-09T04:17:41.702Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\minimatch\\minimatch.js": {
+        "path": "node_modules\\minimatch\\minimatch.js",
+        "name": "minimatch.js",
+        "extension": ".js",
+        "size": 26266,
+        "modified": "2025-08-09T04:17:41.833Z",
+        "category": "General",
+        "description": "any single thing other than /",
+        "dependencies": [
+          "path",
+          "brace-expansion"
+        ],
+        "connections": [
+          "API: /a/b"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\minimatch\\package.json": {
+        "path": "node_modules\\minimatch\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 700,
+        "modified": "2025-08-09T04:17:41.931Z",
+        "category": "General",
+        "description": "blog.izs.me)\",",
+        "dependencies": [],
+        "connections": [
+          "minimatch.js",
+          "minimatch.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\minimatch\\README.md": {
+        "path": "node_modules\\minimatch\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 7171,
+        "modified": "2025-08-09T04:17:42.041Z",
+        "category": "General",
+        "description": "travis-ci.org/isaacs/minimatch.svg?branch=master)](http://travis-ci.org/isaacs/minimatch)",
+        "dependencies": [],
+        "connections": [
+          "*.js",
+          "*.js",
+          "*.js",
+          "API: /xyz/123/acb",
+          "API: /xyz/acb/123",
+          "API: /a/b",
+          "API: /a/b",
+          "API: /x/y/z"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\ms\\index.js": {
+        "path": "node_modules\\ms\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 3024,
+        "modified": "2025-08-09T04:17:41.701Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\ms\\license.md": {
+        "path": "node_modules\\ms\\license.md",
+        "name": "license.md",
+        "extension": ".md",
+        "size": 1079,
+        "modified": "2025-08-09T04:17:41.896Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\ms\\package.json": {
+        "path": "node_modules\\ms\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 732,
+        "modified": "2025-08-09T04:17:41.813Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "mocha tests.js",
+          "*.js",
+          "expect.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\ms\\readme.md": {
+        "path": "node_modules\\ms\\readme.md",
+        "name": "readme.md",
+        "extension": ".md",
+        "size": 1886,
+        "modified": "2025-08-09T04:17:41.997Z",
+        "category": "Documentation",
+        "description": "github.com/vercel/ms/workflows/CI/badge.svg)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\picomatch\\CHANGELOG.md": {
+        "path": "node_modules\\picomatch\\CHANGELOG.md",
+        "name": "CHANGELOG.md",
+        "extension": ".md",
+        "size": 6203,
+        "modified": "2025-08-09T04:17:42.321Z",
+        "category": "General",
+        "description": "keepachangelog.com/en/1.0.0/)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\picomatch\\index.js": {
+        "path": "node_modules\\picomatch\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 60,
+        "modified": "2025-08-09T04:17:41.919Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./lib/picomatch"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\picomatch\\lib\\constants.js": {
+        "path": "node_modules\\picomatch\\lib\\constants.js",
+        "name": "constants.js",
+        "extension": ".js",
+        "size": 4448,
+        "modified": "2025-08-09T04:17:41.830Z",
+        "category": "General",
+        "description": "regular expressions",
+        "dependencies": [
+          "path"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\picomatch\\lib\\parse.js": {
+        "path": "node_modules\\picomatch\\lib\\parse.js",
+        "name": "parse.js",
+        "extension": ".js",
+        "size": 27763,
+        "modified": "2025-08-09T04:17:42.056Z",
+        "category": "General",
+        "description": "create constants based on platform, for windows or posix",
+        "dependencies": [
+          "./constants",
+          "./utils"
+        ],
+        "connections": [
+          ".ts",
+          "/!(*.d).ts",
+          ".ts",
+          "**/!(*.d).ts"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\picomatch\\lib\\picomatch.js": {
+        "path": "node_modules\\picomatch\\lib\\picomatch.js",
+        "name": "picomatch.js",
+        "extension": ".js",
+        "size": 9956,
+        "modified": "2025-08-09T04:17:42.132Z",
+        "category": "General",
+        "description": "picomatch(glob[, options]);",
+        "dependencies": [
+          "path",
+          "./scan",
+          "./parse",
+          "./utils",
+          "./constants",
+          "picomatch",
+          "picomatch",
+          "picomatch",
+          "picomatch",
+          "picomatch",
+          "picomatch",
+          "picomatch",
+          "picomatch"
+        ],
+        "connections": [
+          "foo/bar.js",
+          "*.js",
+          "!./foo/*.js",
+          "!./foo/*.js",
+          "*.js",
+          "*.js",
+          "*.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\picomatch\\lib\\scan.js": {
+        "path": "node_modules\\picomatch\\lib\\scan.js",
+        "name": "scan.js",
+        "extension": ".js",
+        "size": 9189,
+        "modified": "2025-08-09T04:17:42.207Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./utils",
+          "./constants",
+          "picomatch"
+        ],
+        "connections": [
+          "foo/bar/*.js",
+          "foo/bar/*.js",
+          "*.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\picomatch\\lib\\utils.js": {
+        "path": "node_modules\\picomatch\\lib\\utils.js",
+        "name": "utils.js",
+        "extension": ".js",
+        "size": 1885,
+        "modified": "2025-08-09T04:17:42.248Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "path",
+          "./constants"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\picomatch\\LICENSE": {
+        "path": "node_modules\\picomatch\\LICENSE",
+        "name": "LICENSE",
+        "extension": "",
+        "size": 1091,
+        "modified": "2025-08-09T04:17:41.696Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\picomatch\\package.json": {
+        "path": "node_modules\\picomatch\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 1912,
+        "modified": "2025-08-09T04:17:42.284Z",
+        "category": "General",
+        "description": "github.com/micromatch/picomatch\",",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "index.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\picomatch\\README.md": {
+        "path": "node_modules\\picomatch\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 27445,
+        "modified": "2025-08-09T04:17:42.348Z",
+        "category": "General",
+        "description": "npmjs.org/package/picomatch\">",
+        "dependencies": [],
+        "connections": [
+          "*.js",
+          "a.js",
+          "a.md",
+          "a/b.js",
+          "foo/bar.js",
+          "*.js",
+          "!./foo/*.js",
+          "!./foo/*.js",
+          "*.js",
+          "*.js",
+          "*.js",
+          "!./foo/*.js",
+          "!./foo/*.js",
+          "*.js",
+          "*.js",
+          "*.js",
+          "foo/*.js",
+          "./foo/bar.js",
+          "API: /xyz/123/acb",
+          "API: /xyz/acb/123"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\bin\\semver.js": {
+        "path": "node_modules\\semver\\bin\\semver.js",
+        "name": "semver.js",
+        "extension": ".js",
+        "size": 4739,
+        "modified": "2025-08-09T04:17:42.643Z",
+        "category": "General",
+        "description": "Standalone semver comparison program.",
+        "dependencies": [
+          "../package.json",
+          "../",
+          "../internal/parse-options"
+        ],
+        "connections": [
+          "../package.json"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\classes\\comparator.js": {
+        "path": "node_modules\\semver\\classes\\comparator.js",
+        "name": "comparator.js",
+        "extension": ".js",
+        "size": 3631,
+        "modified": "2025-08-09T04:17:42.187Z",
+        "category": "General",
+        "description": "hoisted class for cyclic dependency",
+        "dependencies": [
+          "../internal/parse-options",
+          "../internal/re",
+          "../functions/cmp",
+          "../internal/debug",
+          "./semver",
+          "./range"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\classes\\index.js": {
+        "path": "node_modules\\semver\\classes\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 143,
+        "modified": "2025-08-09T04:17:42.468Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./semver.js",
+          "./range.js",
+          "./comparator.js"
+        ],
+        "connections": [
+          "./semver.js",
+          "./range.js",
+          "./comparator.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\classes\\range.js": {
+        "path": "node_modules\\semver\\classes\\range.js",
+        "name": "range.js",
+        "extension": ".js",
+        "size": 14938,
+        "modified": "2025-08-09T04:17:42.604Z",
+        "category": "General",
+        "description": "hoisted class for cyclic dependency",
+        "dependencies": [
+          "../internal/lrucache",
+          "../internal/parse-options",
+          "./comparator",
+          "../internal/debug",
+          "./semver",
+          "../internal/re",
+          "../internal/constants"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\classes\\semver.js": {
+        "path": "node_modules\\semver\\classes\\semver.js",
+        "name": "semver.js",
+        "extension": ".js",
+        "size": 9297,
+        "modified": "2025-08-09T04:17:42.648Z",
+        "category": "General",
+        "description": "this isn't actually relevant for versions, but keep it so that we",
+        "dependencies": [
+          "../internal/debug",
+          "../internal/constants",
+          "../internal/re",
+          "../internal/parse-options",
+          "../internal/identifiers"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\clean.js": {
+        "path": "node_modules\\semver\\functions\\clean.js",
+        "name": "clean.js",
+        "extension": ".js",
+        "size": 205,
+        "modified": "2025-08-09T04:17:41.933Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./parse"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\cmp.js": {
+        "path": "node_modules\\semver\\functions\\cmp.js",
+        "name": "cmp.js",
+        "extension": ".js",
+        "size": 961,
+        "modified": "2025-08-09T04:17:42.025Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./eq",
+          "./neq",
+          "./gt",
+          "./gte",
+          "./lt",
+          "./lte"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\coerce.js": {
+        "path": "node_modules\\semver\\functions\\coerce.js",
+        "name": "coerce.js",
+        "extension": ".js",
+        "size": 2004,
+        "modified": "2025-08-09T04:17:42.106Z",
+        "category": "General",
+        "description": "Find the right-most coercible string that does not share",
+        "dependencies": [
+          "../classes/semver",
+          "./parse",
+          "../internal/re"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\compare-build.js": {
+        "path": "node_modules\\semver\\functions\\compare-build.js",
+        "name": "compare-build.js",
+        "extension": ".js",
+        "size": 281,
+        "modified": "2025-08-09T04:17:42.233Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "../classes/semver"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\compare-loose.js": {
+        "path": "node_modules\\semver\\functions\\compare-loose.js",
+        "name": "compare-loose.js",
+        "extension": ".js",
+        "size": 132,
+        "modified": "2025-08-09T04:17:42.269Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./compare"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\compare.js": {
+        "path": "node_modules\\semver\\functions\\compare.js",
+        "name": "compare.js",
+        "extension": ".js",
+        "size": 170,
+        "modified": "2025-08-09T04:17:42.300Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "../classes/semver"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\diff.js": {
+        "path": "node_modules\\semver\\functions\\diff.js",
+        "name": "diff.js",
+        "extension": ".js",
+        "size": 1421,
+        "modified": "2025-08-09T04:17:42.373Z",
+        "category": "General",
+        "description": "Going from prerelease -> no prerelease requires some special casing",
+        "dependencies": [
+          "./parse.js"
+        ],
+        "connections": [
+          "./parse.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\eq.js": {
+        "path": "node_modules\\semver\\functions\\eq.js",
+        "name": "eq.js",
+        "extension": ".js",
+        "size": 126,
+        "modified": "2025-08-09T04:17:42.391Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./compare"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\gt.js": {
+        "path": "node_modules\\semver\\functions\\gt.js",
+        "name": "gt.js",
+        "extension": ".js",
+        "size": 124,
+        "modified": "2025-08-09T04:17:42.407Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./compare"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\gte.js": {
+        "path": "node_modules\\semver\\functions\\gte.js",
+        "name": "gte.js",
+        "extension": ".js",
+        "size": 127,
+        "modified": "2025-08-09T04:17:42.421Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./compare"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\inc.js": {
+        "path": "node_modules\\semver\\functions\\inc.js",
+        "name": "inc.js",
+        "extension": ".js",
+        "size": 478,
+        "modified": "2025-08-09T04:17:42.460Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "../classes/semver"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\lt.js": {
+        "path": "node_modules\\semver\\functions\\lt.js",
+        "name": "lt.js",
+        "extension": ".js",
+        "size": 124,
+        "modified": "2025-08-09T04:17:42.503Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./compare"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\lte.js": {
+        "path": "node_modules\\semver\\functions\\lte.js",
+        "name": "lte.js",
+        "extension": ".js",
+        "size": 127,
+        "modified": "2025-08-09T04:17:42.512Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./compare"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\major.js": {
+        "path": "node_modules\\semver\\functions\\major.js",
+        "name": "major.js",
+        "extension": ".js",
+        "size": 136,
+        "modified": "2025-08-09T04:17:42.527Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "../classes/semver"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\minor.js": {
+        "path": "node_modules\\semver\\functions\\minor.js",
+        "name": "minor.js",
+        "extension": ".js",
+        "size": 136,
+        "modified": "2025-08-09T04:17:42.552Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "../classes/semver"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\neq.js": {
+        "path": "node_modules\\semver\\functions\\neq.js",
+        "name": "neq.js",
+        "extension": ".js",
+        "size": 128,
+        "modified": "2025-08-09T04:17:42.558Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./compare"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\parse.js": {
+        "path": "node_modules\\semver\\functions\\parse.js",
+        "name": "parse.js",
+        "extension": ".js",
+        "size": 331,
+        "modified": "2025-08-09T04:17:42.574Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "../classes/semver"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\patch.js": {
+        "path": "node_modules\\semver\\functions\\patch.js",
+        "name": "patch.js",
+        "extension": ".js",
+        "size": 136,
+        "modified": "2025-08-09T04:17:42.581Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "../classes/semver"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\prerelease.js": {
+        "path": "node_modules\\semver\\functions\\prerelease.js",
+        "name": "prerelease.js",
+        "extension": ".js",
+        "size": 234,
+        "modified": "2025-08-09T04:17:42.596Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./parse"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\rcompare.js": {
+        "path": "node_modules\\semver\\functions\\rcompare.js",
+        "name": "rcompare.js",
+        "extension": ".js",
+        "size": 132,
+        "modified": "2025-08-09T04:17:42.609Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./compare"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\rsort.js": {
+        "path": "node_modules\\semver\\functions\\rsort.js",
+        "name": "rsort.js",
+        "extension": ".js",
+        "size": 163,
+        "modified": "2025-08-09T04:17:42.624Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./compare-build"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\satisfies.js": {
+        "path": "node_modules\\semver\\functions\\satisfies.js",
+        "name": "satisfies.js",
+        "extension": ".js",
+        "size": 247,
+        "modified": "2025-08-09T04:17:42.634Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "../classes/range"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\sort.js": {
+        "path": "node_modules\\semver\\functions\\sort.js",
+        "name": "sort.js",
+        "extension": ".js",
+        "size": 161,
+        "modified": "2025-08-09T04:17:42.659Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./compare-build"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\functions\\valid.js": {
+        "path": "node_modules\\semver\\functions\\valid.js",
+        "name": "valid.js",
+        "extension": ".js",
+        "size": 176,
+        "modified": "2025-08-09T04:17:42.672Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "./parse"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\index.js": {
+        "path": "node_modules\\semver\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 2630,
+        "modified": "2025-08-09T04:17:42.477Z",
+        "category": "General",
+        "description": "just pre-load all the stuff that index.js lazily exports",
+        "dependencies": [
+          "./internal/re",
+          "./internal/constants",
+          "./classes/semver",
+          "./internal/identifiers",
+          "./functions/parse",
+          "./functions/valid",
+          "./functions/clean",
+          "./functions/inc",
+          "./functions/diff",
+          "./functions/major",
+          "./functions/minor",
+          "./functions/patch",
+          "./functions/prerelease",
+          "./functions/compare",
+          "./functions/rcompare",
+          "./functions/compare-loose",
+          "./functions/compare-build",
+          "./functions/sort",
+          "./functions/rsort",
+          "./functions/gt",
+          "./functions/lt",
+          "./functions/eq",
+          "./functions/neq",
+          "./functions/gte",
+          "./functions/lte",
+          "./functions/cmp",
+          "./functions/coerce",
+          "./classes/comparator",
+          "./classes/range",
+          "./functions/satisfies",
+          "./ranges/to-comparators",
+          "./ranges/max-satisfying",
+          "./ranges/min-satisfying",
+          "./ranges/min-version",
+          "./ranges/valid",
+          "./ranges/outside",
+          "./ranges/gtr",
+          "./ranges/ltr",
+          "./ranges/intersects",
+          "./ranges/simplify",
+          "./ranges/subset"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\internal\\constants.js": {
+        "path": "node_modules\\semver\\internal\\constants.js",
+        "name": "constants.js",
+        "extension": ".js",
+        "size": 873,
+        "modified": "2025-08-09T04:17:42.333Z",
+        "category": "General",
+        "description": "Note: this is the semver.org version of the spec that it implements",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\internal\\debug.js": {
+        "path": "node_modules\\semver\\internal\\debug.js",
+        "name": "debug.js",
+        "extension": ".js",
+        "size": 240,
+        "modified": "2025-08-09T04:17:42.354Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\internal\\identifiers.js": {
+        "path": "node_modules\\semver\\internal\\identifiers.js",
+        "name": "identifiers.js",
+        "extension": ".js",
+        "size": 424,
+        "modified": "2025-08-09T04:17:42.449Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\internal\\lrucache.js": {
+        "path": "node_modules\\semver\\internal\\lrucache.js",
+        "name": "lrucache.js",
+        "extension": ".js",
+        "size": 802,
+        "modified": "2025-08-09T04:17:42.495Z",
+        "category": "General",
+        "description": "Remove the key from the map and add it to the end",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\internal\\parse-options.js": {
+        "path": "node_modules\\semver\\internal\\parse-options.js",
+        "name": "parse-options.js",
+        "extension": ".js",
+        "size": 338,
+        "modified": "2025-08-09T04:17:42.569Z",
+        "category": "General",
+        "description": "parse out just the options we care about",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\internal\\re.js": {
+        "path": "node_modules\\semver\\internal\\re.js",
+        "name": "re.js",
+        "extension": ".js",
+        "size": 8141,
+        "modified": "2025-08-09T04:17:42.615Z",
+        "category": "General",
+        "description": "The actual regexps go on exports.re",
+        "dependencies": [
+          "./constants",
+          "./debug"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\LICENSE": {
+        "path": "node_modules\\semver\\LICENSE",
+        "name": "LICENSE",
+        "extension": "",
+        "size": 765,
+        "modified": "2025-08-09T04:17:41.706Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\package.json": {
+        "path": "node_modules\\semver\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 1663,
+        "modified": "2025-08-09T04:17:42.681Z",
+        "category": "General",
+        "description": "github.com/npm/node-semver.git\"",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "bin/semver.js",
+          "index.js",
+          "preload.js",
+          "map.js",
+          "index.js",
+          "preload.js",
+          "/index.js",
+          "/preload.js",
+          "API: /classes/",
+          "API: /functions/",
+          "API: /internal/",
+          "API: /ranges/",
+          "API: /benchmarks"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\preload.js": {
+        "path": "node_modules\\semver\\preload.js",
+        "name": "preload.js",
+        "extension": ".js",
+        "size": 83,
+        "modified": "2025-08-09T04:17:42.588Z",
+        "category": "General",
+        "description": "XXX remove in v8 or beyond",
+        "dependencies": [
+          "./index.js"
+        ],
+        "connections": [
+          "./index.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\range.bnf": {
+        "path": "node_modules\\semver\\range.bnf",
+        "name": "range.bnf",
+        "extension": ".bnf",
+        "size": 619,
+        "modified": "2025-08-09T04:17:41.819Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\ranges\\gtr.js": {
+        "path": "node_modules\\semver\\ranges\\gtr.js",
+        "name": "gtr.js",
+        "extension": ".js",
+        "size": 231,
+        "modified": "2025-08-09T04:17:42.436Z",
+        "category": "General",
+        "description": "Determine if version is greater than all the versions possible in the range.",
+        "dependencies": [
+          "./outside"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\ranges\\intersects.js": {
+        "path": "node_modules\\semver\\ranges\\intersects.js",
+        "name": "intersects.js",
+        "extension": ".js",
+        "size": 224,
+        "modified": "2025-08-09T04:17:42.486Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [
+          "../classes/range"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\ranges\\ltr.js": {
+        "path": "node_modules\\semver\\ranges\\ltr.js",
+        "name": "ltr.js",
+        "extension": ".js",
+        "size": 227,
+        "modified": "2025-08-09T04:17:42.519Z",
+        "category": "General",
+        "description": "Determine if version is less than all the versions possible in the range",
+        "dependencies": [
+          "./outside"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\ranges\\max-satisfying.js": {
+        "path": "node_modules\\semver\\ranges\\max-satisfying.js",
+        "name": "max-satisfying.js",
+        "extension": ".js",
+        "size": 593,
+        "modified": "2025-08-09T04:17:42.533Z",
+        "category": "General",
+        "description": "satisfies(v, range, options)",
+        "dependencies": [
+          "../classes/semver",
+          "../classes/range"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\ranges\\min-satisfying.js": {
+        "path": "node_modules\\semver\\ranges\\min-satisfying.js",
+        "name": "min-satisfying.js",
+        "extension": ".js",
+        "size": 591,
+        "modified": "2025-08-09T04:17:42.540Z",
+        "category": "General",
+        "description": "satisfies(v, range, options)",
+        "dependencies": [
+          "../classes/semver",
+          "../classes/range"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\ranges\\min-version.js": {
+        "path": "node_modules\\semver\\ranges\\min-version.js",
+        "name": "min-version.js",
+        "extension": ".js",
+        "size": 1514,
+        "modified": "2025-08-09T04:17:42.547Z",
+        "category": "General",
+        "description": "Clone to avoid manipulating the comparator's semver object.",
+        "dependencies": [
+          "../classes/semver",
+          "../classes/range",
+          "../functions/gt"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\ranges\\outside.js": {
+        "path": "node_modules\\semver\\ranges\\outside.js",
+        "name": "outside.js",
+        "extension": ".js",
+        "size": 2204,
+        "modified": "2025-08-09T04:17:42.563Z",
+        "category": "General",
+        "description": "If it satisfies the range it is not outside",
+        "dependencies": [
+          "../classes/semver",
+          "../classes/comparator",
+          "../classes/range",
+          "../functions/satisfies",
+          "../functions/gt",
+          "../functions/lt",
+          "../functions/lte",
+          "../functions/gte"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\ranges\\simplify.js": {
+        "path": "node_modules\\semver\\ranges\\simplify.js",
+        "name": "simplify.js",
+        "extension": ".js",
+        "size": 1355,
+        "modified": "2025-08-09T04:17:42.654Z",
+        "category": "General",
+        "description": "given a set of versions and a range, create a \"simplified\" range",
+        "dependencies": [
+          "../functions/satisfies.js",
+          "../functions/compare.js"
+        ],
+        "connections": [
+          "../functions/satisfies.js",
+          "../functions/compare.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\ranges\\subset.js": {
+        "path": "node_modules\\semver\\ranges\\subset.js",
+        "name": "subset.js",
+        "extension": ".js",
+        "size": 7524,
+        "modified": "2025-08-09T04:17:42.664Z",
+        "category": "General",
+        "description": "Complex range `r1 || r2 || ...` is a subset of `R1 || R2 || ...` iff:",
+        "dependencies": [
+          "../classes/range.js",
+          "../classes/comparator.js",
+          "../functions/satisfies.js",
+          "../functions/compare.js"
+        ],
+        "connections": [
+          "../classes/range.js",
+          "../classes/comparator.js",
+          "../functions/satisfies.js",
+          "../functions/compare.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\ranges\\to-comparators.js": {
+        "path": "node_modules\\semver\\ranges\\to-comparators.js",
+        "name": "to-comparators.js",
+        "extension": ".js",
+        "size": 282,
+        "modified": "2025-08-09T04:17:42.669Z",
+        "category": "General",
+        "description": "Mostly just for testing and legacy API reasons",
+        "dependencies": [
+          "../classes/range"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\ranges\\valid.js": {
+        "path": "node_modules\\semver\\ranges\\valid.js",
+        "name": "valid.js",
+        "extension": ".js",
+        "size": 326,
+        "modified": "2025-08-09T04:17:42.676Z",
+        "category": "General",
+        "description": "Return '*' instead of '' so that truthiness works.",
+        "dependencies": [
+          "../classes/range"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\README.md": {
+        "path": "node_modules\\semver\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 24763,
+        "modified": "2025-08-09T04:17:42.686Z",
+        "category": "General",
+        "description": "'1.2.3'",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\supports-color\\browser.js": {
+        "path": "node_modules\\supports-color\\browser.js",
+        "name": "browser.js",
+        "extension": ".js",
+        "size": 67,
+        "modified": "2025-08-09T04:17:41.805Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\supports-color\\index.js": {
+        "path": "node_modules\\supports-color\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 2748,
+        "modified": "2025-08-09T04:17:41.885Z",
+        "category": "General",
+        "description": "Windows 10 build 10586 is the first Windows release that supports 256 colors.",
+        "dependencies": [
+          "os",
+          "tty",
+          "has-flag"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\supports-color\\license": {
+        "path": "node_modules\\supports-color\\license",
+        "name": "license",
+        "extension": "",
+        "size": 1109,
+        "modified": "2025-08-09T04:17:41.693Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\supports-color\\package.json": {
+        "path": "node_modules\\supports-color\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 817,
+        "modified": "2025-08-09T04:17:41.982Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "browser.js",
+          "browser.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\supports-color\\readme.md": {
+        "path": "node_modules\\supports-color\\readme.md",
+        "name": "readme.md",
+        "extension": ".md",
+        "size": 2294,
+        "modified": "2025-08-09T04:17:42.071Z",
+        "category": "Documentation",
+        "description": "travis-ci.org/chalk/supports-color.svg?branch=master)](https://travis-ci.org/chalk/supports-color)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\to-regex-range\\index.js": {
+        "path": "node_modules\\to-regex-range\\index.js",
+        "name": "index.js",
+        "extension": ".js",
+        "size": 6481,
+        "modified": "2025-08-09T04:17:41.809Z",
+        "category": "General",
+        "description": "github.com/micromatch/to-regex-range>",
+        "dependencies": [
+          "is-number"
+        ],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\to-regex-range\\LICENSE": {
+        "path": "node_modules\\to-regex-range\\LICENSE",
+        "name": "LICENSE",
+        "extension": "",
+        "size": 1091,
+        "modified": "2025-08-09T04:17:41.889Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\to-regex-range\\package.json": {
+        "path": "node_modules\\to-regex-range\\package.json",
+        "name": "package.json",
+        "extension": ".json",
+        "size": 1782,
+        "modified": "2025-08-09T04:17:41.696Z",
+        "category": "General",
+        "description": "github.com/micromatch/to-regex-range\",",
+        "dependencies": [],
+        "connections": [
+          "index.js",
+          "index.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\to-regex-range\\README.md": {
+        "path": "node_modules\\to-regex-range\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 13585,
+        "modified": "2025-08-09T04:17:42.015Z",
+        "category": "General",
+        "description": "img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W8YFZ425KND68) [![NPM version](https://img.shields.io/npm/v/to-regex-range.svg?style=flat)](https://www.npmjs.com/package/to-regex-range) [![NPM monthly downloads](https://img.shields.io/npm/dm/to-regex-range.svg?style=flat)](https://npmjs.org/package/to-regex-range) [![NPM total downloads](https://img.shields.io/npm/dt/to-regex-range.svg?style=flat)](https://npmjs.org/package/to-regex-range) [![Linux Build Status](https://img.shields.io/travis/micromatch/to-regex-range.svg?style=flat&label=Travis)](https://travis-ci.org/micromatch/to-regex-range)",
+        "dependencies": [],
+        "connections": [
+          "API: /1/"
+        ],
         "templateInfo": null,
         "endpointInfo": null,
         "toolInfo": null
@@ -48,12 +2463,21 @@
         "path": "package-lock.json",
         "name": "package-lock.json",
         "extension": ".json",
-        "size": 182,
-        "modified": "2025-08-08T10:19:40.298Z",
+        "size": 103798,
+        "modified": "2025-08-09T04:22:27.007Z",
         "category": "General",
-        "description": "No description found",
+        "description": "registry.npmjs.org/@babel/code-frame/-/code-frame-7.27.1.tgz\",",
         "dependencies": [],
-        "connections": [],
+        "connections": [
+          "cli.js",
+          "bin/eslint.js",
+          "bin.js",
+          "bin/js-yaml.js",
+          "bin.js",
+          "bin/lint-staged.js",
+          "bin/pidtree.js",
+          "bin/semver.js"
+        ],
         "templateInfo": null,
         "endpointInfo": null,
         "toolInfo": null
@@ -62,14 +2486,15 @@
         "path": "package.json",
         "name": "package.json",
         "extension": ".json",
-        "size": 189,
-        "modified": "2025-08-08T03:56:16.606Z",
+        "size": 734,
+        "modified": "2025-08-09T05:12:50.086Z",
         "category": "General",
         "description": "No description found",
         "dependencies": [],
         "connections": [
           "node scripts/ci-gate.js",
-          "node scripts/remediation.js"
+          "node scripts/remediation.js",
+          "*.py"
         ],
         "templateInfo": null,
         "endpointInfo": null,
@@ -79,8 +2504,8 @@
         "path": "examples\\recursiveABTestingExample.ts",
         "name": "recursiveABTestingExample.ts",
         "extension": ".ts",
-        "size": 10065,
-        "modified": "2025-08-08T03:20:11.819Z",
+        "size": 10049,
+        "modified": "2025-08-09T05:12:50.248Z",
         "category": "General",
         "description": "Define a test problem",
         "dependencies": [],
@@ -93,8 +2518,8 @@
         "path": "services\\recursiveABTestingService.ts",
         "name": "recursiveABTestingService.ts",
         "extension": ".ts",
-        "size": 16420,
-        "modified": "2025-08-08T03:20:12.041Z",
+        "size": 16416,
+        "modified": "2025-08-09T05:12:50.248Z",
         "category": "Service",
         "description": "Private helper methods",
         "dependencies": [],
@@ -108,7 +2533,7 @@
         "name": "recursiveABTesting.ts",
         "extension": ".ts",
         "size": 6662,
-        "modified": "2025-08-08T03:20:12.192Z",
+        "modified": "2025-08-09T05:12:50.235Z",
         "category": "General",
         "description": "0-100",
         "dependencies": [],
@@ -122,7 +2547,7 @@
         "name": "README.md",
         "extension": ".md",
         "size": 26758,
-        "modified": "2025-08-08T03:20:11.701Z",
+        "modified": "2025-08-09T05:12:50.084Z",
         "category": "General",
         "description": "img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
         "dependencies": [],
@@ -149,11 +2574,427 @@
       }
     },
     "connections": {
-      "API: /liveness": [
-        "app.log"
+      "$basedir/../semver/bin/semver.js": [
+        "node_modules\\.bin\\semver",
+        "node_modules\\.bin\\semver",
+        "node_modules\\.bin\\semver.ps1",
+        "node_modules\\.bin\\semver.ps1",
+        "node_modules\\.bin\\semver.ps1",
+        "node_modules\\.bin\\semver.ps1"
       ],
-      "API: /readiness": [
-        "app.log"
+      "%dp0%\\..\\semver\\bin\\semver.js": [
+        "node_modules\\.bin\\semver.cmd"
+      ],
+      "cli.js": [
+        "node_modules\\.package-lock.json",
+        "package-lock.json"
+      ],
+      "bin/eslint.js": [
+        "node_modules\\.package-lock.json",
+        "package-lock.json"
+      ],
+      "bin.js": [
+        "node_modules\\.package-lock.json",
+        "node_modules\\.package-lock.json",
+        "package-lock.json",
+        "package-lock.json"
+      ],
+      "bin/js-yaml.js": [
+        "node_modules\\.package-lock.json",
+        "package-lock.json"
+      ],
+      "bin/lint-staged.js": [
+        "node_modules\\.package-lock.json",
+        "package-lock.json"
+      ],
+      "bin/pidtree.js": [
+        "node_modules\\.package-lock.json",
+        "package-lock.json"
+      ],
+      "bin/semver.js": [
+        "node_modules\\.package-lock.json",
+        "node_modules\\semver\\package.json",
+        "package-lock.json"
+      ],
+      "index.js": [
+        "node_modules\\balanced-match\\package.json",
+        "node_modules\\brace-expansion\\package.json",
+        "node_modules\\braces\\package.json",
+        "node_modules\\braces\\package.json",
+        "node_modules\\concat-map\\package.json",
+        "node_modules\\fill-range\\package.json",
+        "node_modules\\fill-range\\package.json",
+        "node_modules\\glob-parent\\package.json",
+        "node_modules\\glob-parent\\package.json",
+        "node_modules\\has-flag\\package.json",
+        "node_modules\\is-extglob\\package.json",
+        "node_modules\\is-extglob\\package.json",
+        "node_modules\\is-glob\\package.json",
+        "node_modules\\is-glob\\package.json",
+        "node_modules\\is-number\\package.json",
+        "node_modules\\is-number\\package.json",
+        "node_modules\\ms\\package.json",
+        "node_modules\\picomatch\\package.json",
+        "node_modules\\picomatch\\package.json",
+        "node_modules\\semver\\package.json",
+        "node_modules\\semver\\package.json",
+        "node_modules\\semver\\package.json",
+        "node_modules\\supports-color\\package.json",
+        "node_modules\\to-regex-range\\package.json",
+        "node_modules\\to-regex-range\\package.json"
+      ],
+      "tape test/test.js": [
+        "node_modules\\balanced-match\\package.json"
+      ],
+      "matcha test/bench.js": [
+        "node_modules\\balanced-match\\package.json"
+      ],
+      "test/*.js": [
+        "node_modules\\balanced-match\\package.json",
+        "node_modules\\brace-expansion\\package.json",
+        "node_modules\\concat-map\\package.json"
+      ],
+      "tape test/*.js": [
+        "node_modules\\brace-expansion\\package.json",
+        "node_modules\\concat-map\\package.json"
+      ],
+      "matcha test/perf/bench.js": [
+        "node_modules\\brace-expansion\\package.json"
+      ],
+      "a/{foo,bar,baz}/*.js": [
+        "node_modules\\braces\\README.md",
+        "node_modules\\braces\\README.md"
+      ],
+      "a/(foo|bar|baz)/*.js": [
+        "node_modules\\braces\\README.md"
+      ],
+      "a/foo/*.js": [
+        "node_modules\\braces\\README.md"
+      ],
+      "a/bar/*.js": [
+        "node_modules\\braces\\README.md"
+      ],
+      "a/baz/*.js": [
+        "node_modules\\braces\\README.md"
+      ],
+      "README.md": [
+        "node_modules\\debug\\package.json"
+      ],
+      "mocha test.js test.node.js": [
+        "node_modules\\debug\\package.json"
+      ],
+      "./src/index.js": [
+        "node_modules\\debug\\package.json"
+      ],
+      "./src/browser.js": [
+        "node_modules\\debug\\package.json"
+      ],
+      ";node app.js": [
+        "node_modules\\debug\\README.md"
+      ],
+      "./browser.js": [
+        "node_modules\\debug\\src\\index.js"
+      ],
+      "./node.js": [
+        "node_modules\\debug\\src\\index.js"
+      ],
+      "path/to/*.js": [
+        "node_modules\\glob-parent\\README.md"
+      ],
+      "/root/path/to/*.js": [
+        "node_modules\\glob-parent\\README.md"
+      ],
+      "/*.js": [
+        "node_modules\\glob-parent\\README.md"
+      ],
+      "*.js": [
+        "node_modules\\glob-parent\\README.md",
+        "node_modules\\is-extglob\\README.md",
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\minimatch\\README.md",
+        "node_modules\\minimatch\\README.md",
+        "node_modules\\minimatch\\README.md",
+        "node_modules\\ms\\package.json",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\scan.js",
+        "node_modules\\picomatch\\README.md",
+        "node_modules\\picomatch\\README.md",
+        "node_modules\\picomatch\\README.md",
+        "node_modules\\picomatch\\README.md",
+        "node_modules\\picomatch\\README.md",
+        "node_modules\\picomatch\\README.md",
+        "node_modules\\picomatch\\README.md",
+        "node_modules\\picomatch\\README.md"
+      ],
+      "**/*.js": [
+        "node_modules\\glob-parent\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "path/foo/bar.js": [
+        "node_modules\\glob-parent\\README.md"
+      ],
+      "API: /root/path/to": [
+        "node_modules\\glob-parent\\README.md"
+      ],
+      "index.d.ts": [
+        "node_modules\\has-flag\\package.json"
+      ],
+      "foo.js": [
+        "node_modules\\is-extglob\\README.md",
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "!foo.js": [
+        "node_modules\\is-extglob\\README.md",
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "**/abc.js": [
+        "node_modules\\is-extglob\\README.md",
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/*.js": [
+        "node_modules\\is-extglob\\README.md",
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/(aaa|bbb).js": [
+        "node_modules\\is-extglob\\README.md",
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/[a-z].js": [
+        "node_modules\\is-extglob\\README.md",
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/{a,b}.js": [
+        "node_modules\\is-extglob\\README.md",
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/?.js": [
+        "node_modules\\is-extglob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc.js": [
+        "node_modules\\is-extglob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/def/ghi.js": [
+        "node_modules\\is-extglob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "mocha && node benchmark.js": [
+        "node_modules\\is-glob\\package.json"
+      ],
+      "abc/@(a).js": [
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/!(a).js": [
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/+(a).js": [
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/*(a).js": [
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/?(a).js": [
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/\\\\@(a).js": [
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/\\\\!(a).js": [
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/\\\\+(a).js": [
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/\\\\*(a).js": [
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/\\\\?(a).js": [
+        "node_modules\\is-glob\\README.md"
+      ],
+      "\\\\!foo.js": [
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "\\\\*.js": [
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "\\\\*\\\\*/abc.js": [
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/\\\\*.js": [
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/\\\\(aaa|bbb).js": [
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/\\\\[a-z].js": [
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/\\\\{a,b}.js": [
+        "node_modules\\is-glob\\README.md",
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/@.js": [
+        "node_modules\\is-glob\\README.md"
+      ],
+      "abc/+.js": [
+        "node_modules\\is-glob\\README.md"
+      ],
+      "API: /a/b": [
+        "node_modules\\minimatch\\minimatch.js",
+        "node_modules\\minimatch\\README.md",
+        "node_modules\\minimatch\\README.md"
+      ],
+      "minimatch.js": [
+        "node_modules\\minimatch\\package.json",
+        "node_modules\\minimatch\\package.json"
+      ],
+      "API: /xyz/123/acb": [
+        "node_modules\\minimatch\\README.md",
+        "node_modules\\picomatch\\README.md"
+      ],
+      "API: /xyz/acb/123": [
+        "node_modules\\minimatch\\README.md",
+        "node_modules\\picomatch\\README.md"
+      ],
+      "API: /x/y/z": [
+        "node_modules\\minimatch\\README.md"
+      ],
+      "mocha tests.js": [
+        "node_modules\\ms\\package.json"
+      ],
+      "expect.js": [
+        "node_modules\\ms\\package.json"
+      ],
+      ".ts": [
+        "node_modules\\picomatch\\lib\\parse.js",
+        "node_modules\\picomatch\\lib\\parse.js"
+      ],
+      "/!(*.d).ts": [
+        "node_modules\\picomatch\\lib\\parse.js"
+      ],
+      "**/!(*.d).ts": [
+        "node_modules\\picomatch\\lib\\parse.js"
+      ],
+      "foo/bar.js": [
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\README.md"
+      ],
+      "!./foo/*.js": [
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\README.md",
+        "node_modules\\picomatch\\README.md",
+        "node_modules\\picomatch\\README.md",
+        "node_modules\\picomatch\\README.md"
+      ],
+      "foo/bar/*.js": [
+        "node_modules\\picomatch\\lib\\scan.js",
+        "node_modules\\picomatch\\lib\\scan.js"
+      ],
+      "a.js": [
+        "node_modules\\picomatch\\README.md"
+      ],
+      "a.md": [
+        "node_modules\\picomatch\\README.md"
+      ],
+      "a/b.js": [
+        "node_modules\\picomatch\\README.md"
+      ],
+      "foo/*.js": [
+        "node_modules\\picomatch\\README.md"
+      ],
+      "./foo/bar.js": [
+        "node_modules\\picomatch\\README.md"
+      ],
+      "../package.json": [
+        "node_modules\\semver\\bin\\semver.js"
+      ],
+      "./semver.js": [
+        "node_modules\\semver\\classes\\index.js"
+      ],
+      "./range.js": [
+        "node_modules\\semver\\classes\\index.js"
+      ],
+      "./comparator.js": [
+        "node_modules\\semver\\classes\\index.js"
+      ],
+      "./parse.js": [
+        "node_modules\\semver\\functions\\diff.js"
+      ],
+      "preload.js": [
+        "node_modules\\semver\\package.json",
+        "node_modules\\semver\\package.json"
+      ],
+      "map.js": [
+        "node_modules\\semver\\package.json"
+      ],
+      "/index.js": [
+        "node_modules\\semver\\package.json"
+      ],
+      "/preload.js": [
+        "node_modules\\semver\\package.json"
+      ],
+      "API: /classes/": [
+        "node_modules\\semver\\package.json"
+      ],
+      "API: /functions/": [
+        "node_modules\\semver\\package.json"
+      ],
+      "API: /internal/": [
+        "node_modules\\semver\\package.json"
+      ],
+      "API: /ranges/": [
+        "node_modules\\semver\\package.json"
+      ],
+      "API: /benchmarks": [
+        "node_modules\\semver\\package.json"
+      ],
+      "./index.js": [
+        "node_modules\\semver\\preload.js"
+      ],
+      "../functions/satisfies.js": [
+        "node_modules\\semver\\ranges\\simplify.js",
+        "node_modules\\semver\\ranges\\subset.js"
+      ],
+      "../functions/compare.js": [
+        "node_modules\\semver\\ranges\\simplify.js",
+        "node_modules\\semver\\ranges\\subset.js"
+      ],
+      "../classes/range.js": [
+        "node_modules\\semver\\ranges\\subset.js"
+      ],
+      "../classes/comparator.js": [
+        "node_modules\\semver\\ranges\\subset.js"
+      ],
+      "browser.js": [
+        "node_modules\\supports-color\\package.json",
+        "node_modules\\supports-color\\package.json"
+      ],
+      "API: /1/": [
+        "node_modules\\to-regex-range\\README.md"
       ],
       "node scripts/ci-gate.js": [
         "package.json"
@@ -161,21 +3002,812 @@
       "node scripts/remediation.js": [
         "package.json"
       ],
+      "*.py": [
+        "package.json"
+      ],
       "API: /api": [
         "vite.config.ts"
       ]
     },
-    "dependencies": {},
+    "dependencies": {
+      "concat-map": [
+        "node_modules\\brace-expansion\\index.js"
+      ],
+      "balanced-match": [
+        "node_modules\\brace-expansion\\index.js"
+      ],
+      "./lib/stringify": [
+        "node_modules\\braces\\index.js"
+      ],
+      "./lib/compile": [
+        "node_modules\\braces\\index.js"
+      ],
+      "./lib/expand": [
+        "node_modules\\braces\\index.js"
+      ],
+      "./lib/parse": [
+        "node_modules\\braces\\index.js"
+      ],
+      "braces": [
+        "node_modules\\braces\\index.js",
+        "node_modules\\braces\\index.js",
+        "node_modules\\braces\\index.js",
+        "node_modules\\braces\\index.js",
+        "node_modules\\braces\\index.js"
+      ],
+      "fill-range": [
+        "node_modules\\braces\\lib\\compile.js",
+        "node_modules\\braces\\lib\\expand.js"
+      ],
+      "./utils": [
+        "node_modules\\braces\\lib\\compile.js",
+        "node_modules\\braces\\lib\\expand.js",
+        "node_modules\\braces\\lib\\stringify.js",
+        "node_modules\\picomatch\\lib\\parse.js",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\scan.js"
+      ],
+      "./stringify": [
+        "node_modules\\braces\\lib\\expand.js",
+        "node_modules\\braces\\lib\\parse.js"
+      ],
+      "./constants": [
+        "node_modules\\braces\\lib\\parse.js",
+        "node_modules\\picomatch\\lib\\parse.js",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\scan.js",
+        "node_modules\\picomatch\\lib\\utils.js",
+        "node_modules\\semver\\internal\\re.js"
+      ],
+      "../": [
+        "node_modules\\concat-map\\example\\map.js",
+        "node_modules\\concat-map\\test\\map.js",
+        "node_modules\\semver\\bin\\semver.js"
+      ],
+      "tape": [
+        "node_modules\\concat-map\\test\\map.js"
+      ],
+      "./common": [
+        "node_modules\\debug\\src\\browser.js",
+        "node_modules\\debug\\src\\node.js"
+      ],
+      "./browser.js": [
+        "node_modules\\debug\\src\\index.js"
+      ],
+      "./node.js": [
+        "node_modules\\debug\\src\\index.js"
+      ],
+      "tty": [
+        "node_modules\\debug\\src\\node.js",
+        "node_modules\\supports-color\\index.js"
+      ],
+      "util": [
+        "node_modules\\debug\\src\\node.js",
+        "node_modules\\fill-range\\index.js"
+      ],
+      "supports-color": [
+        "node_modules\\debug\\src\\node.js"
+      ],
+      "to-regex-range": [
+        "node_modules\\fill-range\\index.js"
+      ],
+      "is-glob": [
+        "node_modules\\glob-parent\\index.js"
+      ],
+      "path": [
+        "node_modules\\glob-parent\\index.js",
+        "node_modules\\minimatch\\minimatch.js",
+        "node_modules\\picomatch\\lib\\constants.js",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\utils.js"
+      ],
+      "os": [
+        "node_modules\\glob-parent\\index.js",
+        "node_modules\\supports-color\\index.js"
+      ],
+      "is-extglob": [
+        "node_modules\\is-glob\\index.js"
+      ],
+      "brace-expansion": [
+        "node_modules\\minimatch\\minimatch.js"
+      ],
+      "./lib/picomatch": [
+        "node_modules\\picomatch\\index.js"
+      ],
+      "./scan": [
+        "node_modules\\picomatch\\lib\\picomatch.js"
+      ],
+      "./parse": [
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\semver\\functions\\clean.js",
+        "node_modules\\semver\\functions\\coerce.js",
+        "node_modules\\semver\\functions\\prerelease.js",
+        "node_modules\\semver\\functions\\valid.js"
+      ],
+      "picomatch": [
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\picomatch.js",
+        "node_modules\\picomatch\\lib\\scan.js"
+      ],
+      "../package.json": [
+        "node_modules\\semver\\bin\\semver.js"
+      ],
+      "../internal/parse-options": [
+        "node_modules\\semver\\bin\\semver.js",
+        "node_modules\\semver\\classes\\comparator.js",
+        "node_modules\\semver\\classes\\range.js",
+        "node_modules\\semver\\classes\\semver.js"
+      ],
+      "../internal/re": [
+        "node_modules\\semver\\classes\\comparator.js",
+        "node_modules\\semver\\classes\\range.js",
+        "node_modules\\semver\\classes\\semver.js",
+        "node_modules\\semver\\functions\\coerce.js"
+      ],
+      "../functions/cmp": [
+        "node_modules\\semver\\classes\\comparator.js"
+      ],
+      "../internal/debug": [
+        "node_modules\\semver\\classes\\comparator.js",
+        "node_modules\\semver\\classes\\range.js",
+        "node_modules\\semver\\classes\\semver.js"
+      ],
+      "./semver": [
+        "node_modules\\semver\\classes\\comparator.js",
+        "node_modules\\semver\\classes\\range.js"
+      ],
+      "./range": [
+        "node_modules\\semver\\classes\\comparator.js"
+      ],
+      "./semver.js": [
+        "node_modules\\semver\\classes\\index.js"
+      ],
+      "./range.js": [
+        "node_modules\\semver\\classes\\index.js"
+      ],
+      "./comparator.js": [
+        "node_modules\\semver\\classes\\index.js"
+      ],
+      "../internal/lrucache": [
+        "node_modules\\semver\\classes\\range.js"
+      ],
+      "./comparator": [
+        "node_modules\\semver\\classes\\range.js"
+      ],
+      "../internal/constants": [
+        "node_modules\\semver\\classes\\range.js",
+        "node_modules\\semver\\classes\\semver.js"
+      ],
+      "../internal/identifiers": [
+        "node_modules\\semver\\classes\\semver.js"
+      ],
+      "./eq": [
+        "node_modules\\semver\\functions\\cmp.js"
+      ],
+      "./neq": [
+        "node_modules\\semver\\functions\\cmp.js"
+      ],
+      "./gt": [
+        "node_modules\\semver\\functions\\cmp.js"
+      ],
+      "./gte": [
+        "node_modules\\semver\\functions\\cmp.js"
+      ],
+      "./lt": [
+        "node_modules\\semver\\functions\\cmp.js"
+      ],
+      "./lte": [
+        "node_modules\\semver\\functions\\cmp.js"
+      ],
+      "../classes/semver": [
+        "node_modules\\semver\\functions\\coerce.js",
+        "node_modules\\semver\\functions\\compare-build.js",
+        "node_modules\\semver\\functions\\compare.js",
+        "node_modules\\semver\\functions\\inc.js",
+        "node_modules\\semver\\functions\\major.js",
+        "node_modules\\semver\\functions\\minor.js",
+        "node_modules\\semver\\functions\\parse.js",
+        "node_modules\\semver\\functions\\patch.js",
+        "node_modules\\semver\\ranges\\max-satisfying.js",
+        "node_modules\\semver\\ranges\\min-satisfying.js",
+        "node_modules\\semver\\ranges\\min-version.js",
+        "node_modules\\semver\\ranges\\outside.js"
+      ],
+      "./compare": [
+        "node_modules\\semver\\functions\\compare-loose.js",
+        "node_modules\\semver\\functions\\eq.js",
+        "node_modules\\semver\\functions\\gt.js",
+        "node_modules\\semver\\functions\\gte.js",
+        "node_modules\\semver\\functions\\lt.js",
+        "node_modules\\semver\\functions\\lte.js",
+        "node_modules\\semver\\functions\\neq.js",
+        "node_modules\\semver\\functions\\rcompare.js"
+      ],
+      "./parse.js": [
+        "node_modules\\semver\\functions\\diff.js"
+      ],
+      "./compare-build": [
+        "node_modules\\semver\\functions\\rsort.js",
+        "node_modules\\semver\\functions\\sort.js"
+      ],
+      "../classes/range": [
+        "node_modules\\semver\\functions\\satisfies.js",
+        "node_modules\\semver\\ranges\\intersects.js",
+        "node_modules\\semver\\ranges\\max-satisfying.js",
+        "node_modules\\semver\\ranges\\min-satisfying.js",
+        "node_modules\\semver\\ranges\\min-version.js",
+        "node_modules\\semver\\ranges\\outside.js",
+        "node_modules\\semver\\ranges\\to-comparators.js",
+        "node_modules\\semver\\ranges\\valid.js"
+      ],
+      "./internal/re": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./internal/constants": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./classes/semver": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./internal/identifiers": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/parse": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/valid": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/clean": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/inc": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/diff": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/major": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/minor": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/patch": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/prerelease": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/compare": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/rcompare": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/compare-loose": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/compare-build": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/sort": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/rsort": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/gt": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/lt": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/eq": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/neq": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/gte": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/lte": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/cmp": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/coerce": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./classes/comparator": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./classes/range": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./functions/satisfies": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./ranges/to-comparators": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./ranges/max-satisfying": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./ranges/min-satisfying": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./ranges/min-version": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./ranges/valid": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./ranges/outside": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./ranges/gtr": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./ranges/ltr": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./ranges/intersects": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./ranges/simplify": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./ranges/subset": [
+        "node_modules\\semver\\index.js"
+      ],
+      "./debug": [
+        "node_modules\\semver\\internal\\re.js"
+      ],
+      "./index.js": [
+        "node_modules\\semver\\preload.js"
+      ],
+      "./outside": [
+        "node_modules\\semver\\ranges\\gtr.js",
+        "node_modules\\semver\\ranges\\ltr.js"
+      ],
+      "../functions/gt": [
+        "node_modules\\semver\\ranges\\min-version.js",
+        "node_modules\\semver\\ranges\\outside.js"
+      ],
+      "../classes/comparator": [
+        "node_modules\\semver\\ranges\\outside.js"
+      ],
+      "../functions/satisfies": [
+        "node_modules\\semver\\ranges\\outside.js"
+      ],
+      "../functions/lt": [
+        "node_modules\\semver\\ranges\\outside.js"
+      ],
+      "../functions/lte": [
+        "node_modules\\semver\\ranges\\outside.js"
+      ],
+      "../functions/gte": [
+        "node_modules\\semver\\ranges\\outside.js"
+      ],
+      "../functions/satisfies.js": [
+        "node_modules\\semver\\ranges\\simplify.js",
+        "node_modules\\semver\\ranges\\subset.js"
+      ],
+      "../functions/compare.js": [
+        "node_modules\\semver\\ranges\\simplify.js",
+        "node_modules\\semver\\ranges\\subset.js"
+      ],
+      "../classes/range.js": [
+        "node_modules\\semver\\ranges\\subset.js"
+      ],
+      "../classes/comparator.js": [
+        "node_modules\\semver\\ranges\\subset.js"
+      ],
+      "has-flag": [
+        "node_modules\\supports-color\\index.js"
+      ],
+      "is-number": [
+        "node_modules\\to-regex-range\\index.js"
+      ]
+    },
     "templates": {},
     "endpoints": {},
     "tools": {},
     "documentation": {
+      "node_modules\\balanced-match\\LICENSE.md": {
+        "path": "node_modules\\balanced-match\\LICENSE.md",
+        "name": "LICENSE.md",
+        "extension": ".md",
+        "size": 1096,
+        "modified": "2025-08-09T04:17:41.888Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\balanced-match\\README.md": {
+        "path": "node_modules\\balanced-match\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 3502,
+        "modified": "2025-08-09T04:17:41.988Z",
+        "category": "General",
+        "description": "secure.travis-ci.org/juliangruber/balanced-match.svg)](http://travis-ci.org/juliangruber/balanced-match)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\brace-expansion\\README.md": {
+        "path": "node_modules\\brace-expansion\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 4058,
+        "modified": "2025-08-09T04:17:41.988Z",
+        "category": "General",
+        "description": "www.gnu.org/software/bash/manual/html_node/Brace-Expansion.html),",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\braces\\README.md": {
+        "path": "node_modules\\braces\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 21505,
+        "modified": "2025-08-09T04:17:42.336Z",
+        "category": "General",
+        "description": "img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W8YFZ425KND68) [![NPM version](https://img.shields.io/npm/v/braces.svg?style=flat)](https://www.npmjs.com/package/braces) [![NPM monthly downloads](https://img.shields.io/npm/dm/braces.svg?style=flat)](https://npmjs.org/package/braces) [![NPM total downloads](https://img.shields.io/npm/dt/braces.svg?style=flat)](https://npmjs.org/package/braces) [![Linux Build Status](https://img.shields.io/travis/micromatch/braces.svg?style=flat&label=Travis)](https://travis-ci.org/micromatch/braces)",
+        "dependencies": [],
+        "connections": [
+          "a/{foo,bar,baz}/*.js",
+          "a/(foo|bar|baz)/*.js",
+          "a/{foo,bar,baz}/*.js",
+          "a/foo/*.js",
+          "a/bar/*.js",
+          "a/baz/*.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\debug\\README.md": {
+        "path": "node_modules\\debug\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 22115,
+        "modified": "2025-08-09T04:17:42.231Z",
+        "category": "General",
+        "description": "opencollective.com/debug/backers/badge.svg)](#backers)",
+        "dependencies": [],
+        "connections": [
+          ";node app.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\fill-range\\README.md": {
+        "path": "node_modules\\fill-range\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 7486,
+        "modified": "2025-08-09T04:17:42.015Z",
+        "category": "General",
+        "description": "img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W8YFZ425KND68) [![NPM version](https://img.shields.io/npm/v/fill-range.svg?style=flat)](https://www.npmjs.com/package/fill-range) [![NPM monthly downloads](https://img.shields.io/npm/dm/fill-range.svg?style=flat)](https://npmjs.org/package/fill-range) [![NPM total downloads](https://img.shields.io/npm/dt/fill-range.svg?style=flat)](https://npmjs.org/package/fill-range) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/fill-range.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/fill-range)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\glob-parent\\README.md": {
+        "path": "node_modules\\glob-parent\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 4198,
+        "modified": "2025-08-09T04:17:41.999Z",
+        "category": "General",
+        "description": "gulpjs.com\">",
+        "dependencies": [],
+        "connections": [
+          "path/to/*.js",
+          "/root/path/to/*.js",
+          "/*.js",
+          "*.js",
+          "**/*.js",
+          "path/foo/bar.js",
+          "API: /root/path/to"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\has-flag\\readme.md": {
+        "path": "node_modules\\has-flag\\readme.md",
+        "name": "readme.md",
+        "extension": ".md",
+        "size": 1600,
+        "modified": "2025-08-09T04:17:42.072Z",
+        "category": "Documentation",
+        "description": "travis-ci.org/sindresorhus/has-flag.svg?branch=master)](https://travis-ci.org/sindresorhus/has-flag)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-extglob\\README.md": {
+        "path": "node_modules\\is-extglob\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 3469,
+        "modified": "2025-08-09T04:17:41.813Z",
+        "category": "General",
+        "description": "img.shields.io/npm/v/is-extglob.svg?style=flat)](https://www.npmjs.com/package/is-extglob) [![NPM downloads](https://img.shields.io/npm/dm/is-extglob.svg?style=flat)](https://npmjs.org/package/is-extglob) [![Build Status](https://img.shields.io/travis/jonschlinkert/is-extglob.svg?style=flat)](https://travis-ci.org/jonschlinkert/is-extglob)",
+        "dependencies": [],
+        "connections": [
+          "foo.js",
+          "!foo.js",
+          "*.js",
+          "**/abc.js",
+          "abc/*.js",
+          "abc/(aaa|bbb).js",
+          "abc/[a-z].js",
+          "abc/{a,b}.js",
+          "abc/?.js",
+          "abc.js",
+          "abc/def/ghi.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-glob\\README.md": {
+        "path": "node_modules\\is-glob\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 7145,
+        "modified": "2025-08-09T04:17:42.023Z",
+        "category": "General",
+        "description": "img.shields.io/npm/v/is-glob.svg?style=flat)](https://www.npmjs.com/package/is-glob) [![NPM monthly downloads](https://img.shields.io/npm/dm/is-glob.svg?style=flat)](https://npmjs.org/package/is-glob) [![NPM total downloads](https://img.shields.io/npm/dt/is-glob.svg?style=flat)](https://npmjs.org/package/is-glob) [![Build Status](https://img.shields.io/github/workflow/status/micromatch/is-glob/dev)](https://github.com/micromatch/is-glob/actions)",
+        "dependencies": [],
+        "connections": [
+          "!foo.js",
+          "*.js",
+          "**/abc.js",
+          "abc/*.js",
+          "abc/(aaa|bbb).js",
+          "abc/[a-z].js",
+          "abc/{a,b}.js",
+          "abc/@(a).js",
+          "abc/!(a).js",
+          "abc/+(a).js",
+          "abc/*(a).js",
+          "abc/?(a).js",
+          "abc/\\\\@(a).js",
+          "abc/\\\\!(a).js",
+          "abc/\\\\+(a).js",
+          "abc/\\\\*(a).js",
+          "abc/\\\\?(a).js",
+          "\\\\!foo.js",
+          "\\\\*.js",
+          "\\\\*\\\\*/abc.js",
+          "abc/\\\\*.js",
+          "abc/\\\\(aaa|bbb).js",
+          "abc/\\\\[a-z].js",
+          "abc/\\\\{a,b}.js",
+          "abc.js",
+          "abc/def/ghi.js",
+          "foo.js",
+          "abc/@.js",
+          "abc/+.js",
+          "abc/?.js",
+          "**/*.js",
+          "foo.js",
+          "!foo.js",
+          "*.js",
+          "**/abc.js",
+          "abc/*.js",
+          "abc/(aaa|bbb).js",
+          "abc/[a-z].js",
+          "abc/{a,b}.js",
+          "abc/@(a).js",
+          "abc/!(a).js",
+          "abc/+(a).js",
+          "abc/*(a).js",
+          "abc/?(a).js",
+          "\\\\!foo.js",
+          "\\\\*.js",
+          "\\\\*\\\\*/abc.js",
+          "abc/\\\\*.js",
+          "abc/\\\\(aaa|bbb).js",
+          "abc/\\\\[a-z].js",
+          "abc/\\\\{a,b}.js"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\is-number\\README.md": {
+        "path": "node_modules\\is-number\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 6514,
+        "modified": "2025-08-09T04:17:41.985Z",
+        "category": "General",
+        "description": "img.shields.io/npm/v/is-number.svg?style=flat)](https://www.npmjs.com/package/is-number) [![NPM monthly downloads](https://img.shields.io/npm/dm/is-number.svg?style=flat)](https://npmjs.org/package/is-number) [![NPM total downloads](https://img.shields.io/npm/dt/is-number.svg?style=flat)](https://npmjs.org/package/is-number) [![Linux Build Status](https://img.shields.io/travis/jonschlinkert/is-number.svg?style=flat&label=Travis)](https://travis-ci.org/jonschlinkert/is-number)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\minimatch\\README.md": {
+        "path": "node_modules\\minimatch\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 7171,
+        "modified": "2025-08-09T04:17:42.041Z",
+        "category": "General",
+        "description": "travis-ci.org/isaacs/minimatch.svg?branch=master)](http://travis-ci.org/isaacs/minimatch)",
+        "dependencies": [],
+        "connections": [
+          "*.js",
+          "*.js",
+          "*.js",
+          "API: /xyz/123/acb",
+          "API: /xyz/acb/123",
+          "API: /a/b",
+          "API: /a/b",
+          "API: /x/y/z"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\ms\\license.md": {
+        "path": "node_modules\\ms\\license.md",
+        "name": "license.md",
+        "extension": ".md",
+        "size": 1079,
+        "modified": "2025-08-09T04:17:41.896Z",
+        "category": "General",
+        "description": "No description found",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\ms\\readme.md": {
+        "path": "node_modules\\ms\\readme.md",
+        "name": "readme.md",
+        "extension": ".md",
+        "size": 1886,
+        "modified": "2025-08-09T04:17:41.997Z",
+        "category": "Documentation",
+        "description": "github.com/vercel/ms/workflows/CI/badge.svg)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\picomatch\\CHANGELOG.md": {
+        "path": "node_modules\\picomatch\\CHANGELOG.md",
+        "name": "CHANGELOG.md",
+        "extension": ".md",
+        "size": 6203,
+        "modified": "2025-08-09T04:17:42.321Z",
+        "category": "General",
+        "description": "keepachangelog.com/en/1.0.0/)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\picomatch\\README.md": {
+        "path": "node_modules\\picomatch\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 27445,
+        "modified": "2025-08-09T04:17:42.348Z",
+        "category": "General",
+        "description": "npmjs.org/package/picomatch\">",
+        "dependencies": [],
+        "connections": [
+          "*.js",
+          "a.js",
+          "a.md",
+          "a/b.js",
+          "foo/bar.js",
+          "*.js",
+          "!./foo/*.js",
+          "!./foo/*.js",
+          "*.js",
+          "*.js",
+          "*.js",
+          "!./foo/*.js",
+          "!./foo/*.js",
+          "*.js",
+          "*.js",
+          "*.js",
+          "foo/*.js",
+          "./foo/bar.js",
+          "API: /xyz/123/acb",
+          "API: /xyz/acb/123"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\semver\\README.md": {
+        "path": "node_modules\\semver\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 24763,
+        "modified": "2025-08-09T04:17:42.686Z",
+        "category": "General",
+        "description": "'1.2.3'",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\supports-color\\readme.md": {
+        "path": "node_modules\\supports-color\\readme.md",
+        "name": "readme.md",
+        "extension": ".md",
+        "size": 2294,
+        "modified": "2025-08-09T04:17:42.071Z",
+        "category": "Documentation",
+        "description": "travis-ci.org/chalk/supports-color.svg?branch=master)](https://travis-ci.org/chalk/supports-color)",
+        "dependencies": [],
+        "connections": [],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
+      "node_modules\\to-regex-range\\README.md": {
+        "path": "node_modules\\to-regex-range\\README.md",
+        "name": "README.md",
+        "extension": ".md",
+        "size": 13585,
+        "modified": "2025-08-09T04:17:42.015Z",
+        "category": "General",
+        "description": "img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W8YFZ425KND68) [![NPM version](https://img.shields.io/npm/v/to-regex-range.svg?style=flat)](https://www.npmjs.com/package/to-regex-range) [![NPM monthly downloads](https://img.shields.io/npm/dm/to-regex-range.svg?style=flat)](https://npmjs.org/package/to-regex-range) [![NPM total downloads](https://img.shields.io/npm/dt/to-regex-range.svg?style=flat)](https://npmjs.org/package/to-regex-range) [![Linux Build Status](https://img.shields.io/travis/micromatch/to-regex-range.svg?style=flat&label=Travis)](https://travis-ci.org/micromatch/to-regex-range)",
+        "dependencies": [],
+        "connections": [
+          "API: /1/"
+        ],
+        "templateInfo": null,
+        "endpointInfo": null,
+        "toolInfo": null
+      },
       "README.md": {
         "path": "README.md",
         "name": "README.md",
         "extension": ".md",
         "size": 26758,
-        "modified": "2025-08-08T03:20:11.701Z",
+        "modified": "2025-08-09T05:12:50.084Z",
         "category": "General",
         "description": "img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
         "dependencies": [],
@@ -185,16 +3817,228 @@
         "toolInfo": null
       }
     },
-    "missing": {},
+    "missing": {
+      "knowledgeHub": "KNOWLEDGE_HUB.md does not exist"
+    },
     "recommendations": [
       {
         "type": "orphaned_file",
-        "file": "node_modules\\.package-lock.json",
+        "file": "node_modules\\balanced-match\\.github\\FUNDING.yml",
         "message": "File has no connections or dependencies - consider removal or documentation"
       },
       {
         "type": "orphaned_file",
-        "file": "package-lock.json",
+        "file": "node_modules\\balanced-match\\index.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\balanced-match\\LICENSE.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\balanced-match\\README.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\brace-expansion\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\brace-expansion\\README.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\braces\\lib\\constants.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\braces\\lib\\utils.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\braces\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\concat-map\\.travis.yml",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\concat-map\\index.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\concat-map\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\concat-map\\README.markdown",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\debug\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\fill-range\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\fill-range\\README.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\glob-parent\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\has-flag\\index.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\has-flag\\license",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\has-flag\\readme.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\is-extglob\\index.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\is-extglob\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\is-glob\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\is-number\\index.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\is-number\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\is-number\\README.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\minimatch\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\ms\\index.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\ms\\license.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\ms\\readme.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\picomatch\\CHANGELOG.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\picomatch\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\internal\\constants.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\internal\\debug.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\internal\\identifiers.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\internal\\lrucache.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\internal\\parse-options.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\range.bnf",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\README.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\supports-color\\browser.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\supports-color\\license",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\supports-color\\readme.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\to-regex-range\\LICENSE",
         "message": "File has no connections or dependencies - consider removal or documentation"
       },
       {
@@ -219,12 +4063,322 @@
       },
       {
         "type": "missing_documentation",
-        "file": "node_modules\\.package-lock.json",
+        "file": "node_modules\\balanced-match\\.github\\FUNDING.yml",
         "message": "File lacks description - add documentation"
       },
       {
         "type": "missing_documentation",
-        "file": "package-lock.json",
+        "file": "node_modules\\balanced-match\\index.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\balanced-match\\LICENSE.md",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\brace-expansion\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\braces\\lib\\compile.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\braces\\lib\\expand.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\braces\\lib\\stringify.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\braces\\lib\\utils.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\braces\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\concat-map\\.travis.yml",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\concat-map\\example\\map.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\concat-map\\index.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\concat-map\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\concat-map\\test\\map.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\debug\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\debug\\src\\index.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\fill-range\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\glob-parent\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\has-flag\\index.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\has-flag\\license",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\has-flag\\package.json",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\is-extglob\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\is-glob\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\is-number\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\minimatch\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\ms\\index.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\ms\\license.md",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\ms\\package.json",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\picomatch\\index.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\picomatch\\lib\\scan.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\picomatch\\lib\\utils.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\picomatch\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\classes\\index.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\clean.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\cmp.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\compare-build.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\compare-loose.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\compare.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\eq.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\gt.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\gte.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\inc.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\lt.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\lte.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\major.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\minor.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\neq.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\parse.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\patch.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\prerelease.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\rcompare.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\rsort.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\satisfies.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\sort.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\valid.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\internal\\debug.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\internal\\identifiers.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\range.bnf",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\ranges\\intersects.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\supports-color\\browser.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\supports-color\\license",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\supports-color\\package.json",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\to-regex-range\\LICENSE",
         "message": "File lacks description - add documentation"
       },
       {
@@ -235,18 +4389,230 @@
     ]
   },
   "knowledgeHubStatus": {
-    "exists": true,
-    "completeness": "100.00",
-    "missingItems": {},
+    "exists": false,
+    "completeness": "99.32",
+    "missingItems": {
+      "knowledgeHub": "KNOWLEDGE_HUB.md does not exist"
+    },
     "recommendations": [
       {
         "type": "orphaned_file",
-        "file": "node_modules\\.package-lock.json",
+        "file": "node_modules\\balanced-match\\.github\\FUNDING.yml",
         "message": "File has no connections or dependencies - consider removal or documentation"
       },
       {
         "type": "orphaned_file",
-        "file": "package-lock.json",
+        "file": "node_modules\\balanced-match\\index.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\balanced-match\\LICENSE.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\balanced-match\\README.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\brace-expansion\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\brace-expansion\\README.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\braces\\lib\\constants.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\braces\\lib\\utils.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\braces\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\concat-map\\.travis.yml",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\concat-map\\index.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\concat-map\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\concat-map\\README.markdown",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\debug\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\fill-range\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\fill-range\\README.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\glob-parent\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\has-flag\\index.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\has-flag\\license",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\has-flag\\readme.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\is-extglob\\index.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\is-extglob\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\is-glob\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\is-number\\index.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\is-number\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\is-number\\README.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\minimatch\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\ms\\index.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\ms\\license.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\ms\\readme.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\picomatch\\CHANGELOG.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\picomatch\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\internal\\constants.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\internal\\debug.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\internal\\identifiers.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\internal\\lrucache.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\internal\\parse-options.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\LICENSE",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\range.bnf",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\semver\\README.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\supports-color\\browser.js",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\supports-color\\license",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\supports-color\\readme.md",
+        "message": "File has no connections or dependencies - consider removal or documentation"
+      },
+      {
+        "type": "orphaned_file",
+        "file": "node_modules\\to-regex-range\\LICENSE",
         "message": "File has no connections or dependencies - consider removal or documentation"
       },
       {
@@ -271,12 +4637,322 @@
       },
       {
         "type": "missing_documentation",
-        "file": "node_modules\\.package-lock.json",
+        "file": "node_modules\\balanced-match\\.github\\FUNDING.yml",
         "message": "File lacks description - add documentation"
       },
       {
         "type": "missing_documentation",
-        "file": "package-lock.json",
+        "file": "node_modules\\balanced-match\\index.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\balanced-match\\LICENSE.md",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\brace-expansion\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\braces\\lib\\compile.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\braces\\lib\\expand.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\braces\\lib\\stringify.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\braces\\lib\\utils.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\braces\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\concat-map\\.travis.yml",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\concat-map\\example\\map.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\concat-map\\index.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\concat-map\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\concat-map\\test\\map.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\debug\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\debug\\src\\index.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\fill-range\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\glob-parent\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\has-flag\\index.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\has-flag\\license",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\has-flag\\package.json",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\is-extglob\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\is-glob\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\is-number\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\minimatch\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\ms\\index.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\ms\\license.md",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\ms\\package.json",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\picomatch\\index.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\picomatch\\lib\\scan.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\picomatch\\lib\\utils.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\picomatch\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\classes\\index.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\clean.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\cmp.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\compare-build.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\compare-loose.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\compare.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\eq.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\gt.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\gte.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\inc.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\lt.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\lte.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\major.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\minor.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\neq.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\parse.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\patch.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\prerelease.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\rcompare.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\rsort.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\satisfies.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\sort.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\functions\\valid.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\internal\\debug.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\internal\\identifiers.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\LICENSE",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\range.bnf",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\semver\\ranges\\intersects.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\supports-color\\browser.js",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\supports-color\\license",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\supports-color\\package.json",
+        "message": "File lacks description - add documentation"
+      },
+      {
+        "type": "missing_documentation",
+        "file": "node_modules\\to-regex-range\\LICENSE",
         "message": "File lacks description - add documentation"
       },
       {

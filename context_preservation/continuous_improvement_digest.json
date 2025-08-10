@@ -1,0 +1,14 @@
+{
+  "scaffold_id": "continuous_improvement",
+  "ended_at": "2025-08-09T20:02:25.668265",
+  "summary": {
+    "successful_stages": 9,
+    "failed_stages": 1,
+    "total_frames_executed": 11
+  },
+  "artifacts": {
+    "manifest": "internal/repo.manifest.json",
+    "indexes_dir": "internal/indexes/",
+    "last_report": "reports/scaffold_execution_v2_continuous_improvement_<timestamp>.json"
+  }
+}

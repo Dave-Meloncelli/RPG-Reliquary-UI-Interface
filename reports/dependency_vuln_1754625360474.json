@@ -1,5 +1,0 @@
-{
-  "ok": false,
-  "vulnerabilities": {},
-  "error": "Command failed: npm audit --json"
-}

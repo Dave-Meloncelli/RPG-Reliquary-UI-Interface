@@ -9,10 +9,10 @@
   "result": {
     "analysis_complete": true,
     "critical_risks_mitigated": true,
-    "mitigated_risks": 0,
-    "action_items_created": 14,
-    "results_path": "reports\\risk_mitigation_20250808_210105.json",
-    "backlog_path": "backlog\\backlog_items_20250808_210105.json"
+    "mitigated_risks": 2,
+    "action_items_created": 2,
+    "results_path": "reports\\risk_mitigation_20250810_110626.json",
+    "backlog_path": "backlog\\backlog_items_20250810_110626.json"
   },
-  "timestamp": "2025-08-08T21:01:05.424658"
+  "timestamp": "2025-08-10T11:06:26.557219"
 }

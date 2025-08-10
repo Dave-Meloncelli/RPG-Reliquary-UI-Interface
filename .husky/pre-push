@@ -1,0 +1,43 @@
+#!/usr/bin/env sh
+
+echo "🔒 Running pre-push checks..."
+
+# 1) Validate JSON reports (rigid)
+python tools/validate_json_reports.py || {
+  echo "❌ JSON validation failed. Fix reports/indexes before pushing."
+  exit 1
+}
+
+# 2) Strict secrets scan (rigid)
+python tools/scan_secrets_strict.py || {
+  echo "❌ High-confidence secrets detected. Remove/redact before pushing."
+  exit 1
+}
+
+# 3) Ensure a recent, passing Mandatory Frames Audit exists
+python - <<'PY'
+import glob, json, os, sys, time
+files = glob.glob('reports/mandatory_frames_audit_*.json')
+if not files:
+    print('❌ No mandatory frames audit found in reports/. Run the framework scaffold before pushing.')
+    sys.exit(1)
+latest = max(files, key=os.path.getmtime)
+with open(latest, 'r', encoding='utf-8') as f:
+    data = json.load(f)
+ok = all(entry.get('ok') for entry in data.get('compliance', {}).values())
+age_seconds = time.time() - os.path.getmtime(latest)
+if not ok:
+    print(f"❌ Mandatory frames audit not OK: {latest}")
+    sys.exit(1)
+if age_seconds > 24*3600:
+    print(f"❌ Mandatory frames audit is stale (>24h): {latest}. Re-run the framework before pushing.")
+    sys.exit(1)
+print(f"✅ Mandatory frames audit OK: {latest}")
+PY
+status=$?
+if [ $status -ne 0 ]; then
+  exit $status
+fi
+
+echo "✅ Pre-push checks passed"
+

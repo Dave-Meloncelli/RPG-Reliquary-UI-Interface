@@ -1,0 +1,1824 @@
+{
+  "frame_id": "import_dependency_graph",
+  "stage": 2,
+  "input_data": {},
+  "parameters": {
+    "timeout": 300
+  },
+  "result": {
+    "success": true,
+    "import_dependency_graph_complete": true,
+    "graph": {
+      "autonomous-framework-v2.py": [
+        "dataclasses",
+        "datetime",
+        "enum",
+        "importlib.util",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "shutil",
+        "subprocess",
+        "sys",
+        "time",
+        "traceback",
+        "typing"
+      ],
+      "autonomous-framework.py": [
+        "dataclasses",
+        "datetime",
+        "enum",
+        "importlib.util",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time",
+        "traceback",
+        "typing"
+      ],
+      "autonomous-system-meta-analysis.py": [
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "typing"
+      ],
+      "autonomous-system-v1.py": [
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "sys"
+      ],
+      "autonomous-system-v2.py": [
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "subprocess",
+        "sys"
+      ],
+      "autonomous-system-v3.py": [
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "subprocess",
+        "sys",
+        "time",
+        "typing"
+      ],
+      "autonomous-system-v4.py": [
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "subprocess",
+        "sys",
+        "time",
+        "typing",
+        "webbrowser"
+      ],
+      "autonomous-system-v5.py": [
+        "dataclasses",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "shutil",
+        "subprocess",
+        "sys",
+        "time",
+        "typing",
+        "webbrowser"
+      ],
+      "vite.config.ts": [
+        "@vitejs/plugin-react",
+        "path",
+        "vite"
+      ],
+      "a2a/main.py": [
+        "asyncio",
+        "contextlib",
+        "datetime",
+        "fastapi",
+        "fastapi.middleware.cors",
+        "fastapi.responses",
+        "json",
+        "logging",
+        "os",
+        "typing",
+        "uuid",
+        "uvicorn"
+      ],
+      "backend/check_db.py": [
+        "app.database",
+        "sqlalchemy"
+      ],
+      "backend/server.js": [
+        "cors",
+        "express",
+        "path"
+      ],
+      "backend/test_models.py": [
+        "app",
+        "app.database",
+        "app.models",
+        "app.schemas",
+        "datetime",
+        "os",
+        "sys"
+      ],
+      "backend/websocket_client_example.js": [],
+      "backend/websocket_implementation.py": [
+        "asyncio",
+        "datetime",
+        "fastapi",
+        "fastapi.middleware.cors",
+        "json",
+        "logging",
+        "pathlib",
+        "typing",
+        "uvicorn"
+      ],
+      "captured_content/captured_archaeological_retrieval.py": [
+        "argparse",
+        "hashlib",
+        "json",
+        "mimetypes",
+        "os",
+        "re",
+        "typing",
+        "zipfile"
+      ],
+      "captured_content/captured_octospine_archaeological_recovery.py": [
+        "argparse",
+        "collections",
+        "datetime",
+        "hashlib",
+        "json",
+        "logging",
+        "mimetypes",
+        "os",
+        "pathlib",
+        "re",
+        "tempfile",
+        "typing",
+        "zipfile"
+      ],
+      "captured_content/captured_octospine_chunked_recovery.py": [
+        "collections",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re"
+      ],
+      "captured_content/captured_octospine_fusion_analysis.py": [
+        "collections",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "typing"
+      ],
+      "captured_content/captured_octospine_fusion_analyzer.py": [
+        "collections",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "typing"
+      ],
+      "captured_content/captured_octospine_quick_recovery.py": [
+        "collections",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re"
+      ],
+      "captured_content/captured_reclamation_pipeline.py": [
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "shutil",
+        "typing",
+        "zipfile"
+      ],
+      "captured_content/captured_run_fusion_analysis.py": [
+        "argparse",
+        "datetime",
+        "json",
+        "logging",
+        "octospine_fusion_analyzer",
+        "pathlib"
+      ],
+      "config/commitlint.config.js": [],
+      "config/vite-optimized.config.ts": [
+        "@vitejs/plugin-react",
+        "path",
+        "vite"
+      ],
+      "config/vite.config.ts": [
+        "@vitejs/plugin-react",
+        "path",
+        "vite"
+      ],
+      "config/vitest.config.ts": [
+        "@vitejs/plugin-react",
+        "path",
+        "vitest/config"
+      ],
+      "crewai/app.py": [
+        "asyncio",
+        "datetime",
+        "fastapi",
+        "fastapi.responses",
+        "json",
+        "logging",
+        "os",
+        "streamlit",
+        "typing",
+        "uvicorn"
+      ],
+      "examples/recursiveABTestingExample.ts": [
+        "../services/recursiveABTestingService",
+        "../types/recursiveABTesting"
+      ],
+      "Imports/documentation_system.ts": [
+        "../components/ui/Tooltip",
+        "react"
+      ],
+      "Imports/enhanced_types.ts": [
+        "react"
+      ],
+      "Imports/env_validation.ts": [],
+      "Imports/error_boundary_component.ts": [
+        "react"
+      ],
+      "Imports/tech_silos_architecture.ts": [
+        "events"
+      ],
+      "Imports/tech_silo_apps.ts": [
+        "../components/ui/Tooltip",
+        "../services/techSilos/TechSiloManager",
+        "react"
+      ],
+      "Imports/tooltip_system.ts": [
+        "react",
+        "react-dom"
+      ],
+      "Imports/vite_config.ts": [
+        "@vitejs/plugin-react",
+        "path",
+        "vite"
+      ],
+      "internal/generate-index.py": [
+        "importlib.util",
+        "json",
+        "pathlib"
+      ],
+      "Personas/PersonaDetail.tsx": [
+        "../../types",
+        "react"
+      ],
+      "Personas/PersonaFusionChamber.tsx": [
+        "../components/icons",
+        "../types",
+        "react"
+      ],
+      "Personas/PersonaList.tsx": [
+        "../../types",
+        "react"
+      ],
+      "schemas/acquisitionSchema.ts": [
+        "./arktype"
+      ],
+      "schemas/arktype.ts": [
+        "arktype"
+      ],
+      "schemas/codexSchema.ts": [
+        "./arktype"
+      ],
+      "schemas/playbookSchema.ts": [
+        "./arktype"
+      ],
+      "scripts/all-in-analysis.js": [
+        "child_process",
+        "fs",
+        "path"
+      ],
+      "scripts/all-in-analysis.py": [
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time",
+        "typing"
+      ],
+      "scripts/backup-bootstrap.py": [
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "shutil"
+      ],
+      "scripts/backup.py": [
+        "datetime",
+        "os",
+        "pathlib",
+        "shutil"
+      ],
+      "scripts/ci-gate.js": [
+        "./dependency-vuln.js",
+        "./secrets-scan.js",
+        "process"
+      ],
+      "scripts/comprehensive-audit.js": [
+        "child_process",
+        "fs",
+        "path"
+      ],
+      "scripts/context-intelligence.py": [
+        "json",
+        "os",
+        "pathlib",
+        "typing"
+      ],
+      "scripts/frame-optimizer.py": [
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "typing"
+      ],
+      "scripts/framework-validation.js": [],
+      "scripts/intelligent-failure-response.js": [
+        "fs",
+        "path"
+      ],
+      "scripts/pre-existing-systems-discovery.py": [
+        "datetime",
+        "glob",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "typing"
+      ],
+      "scripts/system-integration-implementation.py": [
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "shutil",
+        "subprocess",
+        "typing"
+      ],
+      "scripts/validate-app-registry.js": [
+        "fs",
+        "path"
+      ],
+      "scripts/validate-architecture.js": [
+        "fs",
+        "path"
+      ],
+      "scripts/validate-imports.js": [
+        "fs",
+        "path"
+      ],
+      "services/recursiveABTestingService.ts": [
+        "../types/recursiveABTesting"
+      ],
+      "src/index.tsx": [
+        "./components/App",
+        "./components/ErrorBoundary",
+        "./utils/env-validation",
+        "react",
+        "react-dom/client"
+      ],
+      "tests/setup.ts": [
+        "vitest"
+      ],
+      "tools/autonomous-system-manager.py": [
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "platform",
+        "shutil",
+        "subprocess",
+        "sys",
+        "typing",
+        "urllib.request",
+        "zipfile"
+      ],
+      "tools/backlog_synthesis.py": [
+        "datetime",
+        "json",
+        "pathlib"
+      ],
+      "tools/comprehensive-repo-audit.py": [
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "typing"
+      ],
+      "tools/context_retention.py": [
+        "datetime",
+        "json",
+        "os",
+        "pathlib"
+      ],
+      "tools/fix_framework_issue.py": [
+        "re"
+      ],
+      "tools/index_folder.py": [
+        "json",
+        "pathlib",
+        "sys"
+      ],
+      "tools/run_filetree_apply.py": [
+        "importlib.util",
+        "json",
+        "pathlib"
+      ],
+      "tools/safe_mover.py": [
+        "pathlib",
+        "shutil"
+      ],
+      "tools/simple-autonomous-test.py": [
+        "json",
+        "os",
+        "pathlib",
+        "platform",
+        "subprocess",
+        "sys"
+      ],
+      "tools/test-all-in.py": [
+        "os",
+        "scripts.all_in_analysis",
+        "sys"
+      ],
+      "tools/test-framework-failure-handling.py": [
+        "importlib.util",
+        "json",
+        "pathlib",
+        "sys"
+      ],
+      "tools/test-framework-simple.py": [
+        "os",
+        "pathlib",
+        "sys"
+      ],
+      "tools/test-js-bridge.py": [
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "tempfile",
+        "urllib.parse"
+      ],
+      "tools/test-synthesis-simple.py": [
+        "importlib.util",
+        "sys"
+      ],
+      "tools/test_minimal_framework.py": [
+        "os",
+        "sys"
+      ],
+      "types/recursiveABTesting.ts": [],
+      "tools/utilities/cleanup/file-tree-cleanup.py": [
+        "collections",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "shutil"
+      ],
+      "tools/utilities/cleanup/file_tree_cleanup.py": [
+        "collections",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "shutil"
+      ],
+      "tools/utilities/interface/vibe-coder-interface.py": [
+        "dataclasses",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "threading",
+        "time",
+        "typing"
+      ],
+      "tools/utilities/maintenance/comprehensive-ts-fix.py": [
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "typing"
+      ],
+      "tools/utilities/maintenance/critical-typescript-fixes.py": [
+        "os",
+        "pathlib",
+        "re"
+      ],
+      "tools/utilities/maintenance/enhanced-smart-delegator.py": [
+        "dataclasses",
+        "datetime",
+        "enum",
+        "json",
+        "logging",
+        "os",
+        "re",
+        "subprocess",
+        "time",
+        "typing"
+      ],
+      "tools/utilities/maintenance/environment-fixer.py": [
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "platform",
+        "subprocess",
+        "sys",
+        "typing"
+      ],
+      "tools/utilities/maintenance/implementation-engine.py": [
+        "base64",
+        "datetime",
+        "hashlib",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "platform",
+        "requests",
+        "shutil",
+        "subprocess",
+        "sys",
+        "tarfile",
+        "typing",
+        "zipfile"
+      ],
+      "tools/utilities/maintenance/implement_restructuring.py": [
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "shutil"
+      ],
+      "tools/utilities/maintenance/intelligent-diagnostic-repair.py": [
+        "dataclasses",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "subprocess",
+        "typing"
+      ],
+      "tools/utilities/maintenance/multi-language-delegator.py": [
+        "aiohttp",
+        "asyncio",
+        "dataclasses",
+        "datetime",
+        "enum",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "shutil",
+        "subprocess",
+        "toml",
+        "typing",
+        "xml.etree.ElementTree",
+        "yaml"
+      ],
+      "tools/utilities/maintenance/quick-build-fix.py": [
+        "pathlib",
+        "re"
+      ],
+      "tools/utilities/maintenance/quick-syntax-fix.py": [
+        "os",
+        "re"
+      ],
+      "tools/utilities/maintenance/simple-delegator.py": [
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "subprocess",
+        "typing"
+      ],
+      "tools/utilities/maintenance/smart-delegator-with-agentic-oversight.py": [
+        "aiohttp",
+        "asyncio",
+        "dataclasses",
+        "datetime",
+        "enum",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "subprocess",
+        "typing",
+        "uuid"
+      ],
+      "tools/utilities/maintenance/smart-delegator.py": [
+        "asyncio",
+        "dataclasses",
+        "datetime",
+        "enum",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "typing",
+        "uuid"
+      ],
+      "tools/utilities/maintenance/smart-typescript-fixer.py": [
+        "datetime",
+        "importlib.util",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "pkg_resources",
+        "re",
+        "shutil",
+        "subprocess",
+        "typing"
+      ],
+      "tools/utilities/maintenance/syntax-fix.py": [
+        "logging",
+        "pathlib",
+        "re",
+        "typing"
+      ],
+      "tools/utilities/maintenance/systematic-error-resolver.py": [
+        "os",
+        "pathlib",
+        "re",
+        "typing"
+      ],
+      "tools/utilities/maintenance/tech-stack-delegator.py": [
+        "aiohttp",
+        "asyncio",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "shutil",
+        "subprocess",
+        "typing"
+      ],
+      "tools/utilities/maintenance/typescript-error-fixer.py": [
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "subprocess",
+        "typing"
+      ],
+      "tools/utilities/protocols/continuance-protocols.py": [
+        "dataclasses",
+        "datetime",
+        "enum",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "time",
+        "typing"
+      ],
+      "tools/utilities/research/playwright-research-engine.py": [
+        "aiohttp",
+        "asyncio",
+        "datetime",
+        "json",
+        "logging",
+        "playwright.async_api",
+        "re",
+        "typing"
+      ],
+      "tools/utilities/session/session-manager.py": [
+        "dataclasses",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "threading",
+        "time",
+        "typing"
+      ],
+      "tools/extraction/persona-extraction/consciousness-persona-extractor.py": [
+        "collections",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "typing"
+      ],
+      "tests/backend/test_main.py": [
+        "app.database",
+        "app.main",
+        "app.models",
+        "fastapi.testclient",
+        "os",
+        "pytest",
+        "sqlalchemy",
+        "sqlalchemy.orm",
+        "sqlalchemy.pool",
+        "sys"
+      ],
+      "tests/frontend/App.test.tsx": [
+        "../../src/components/App",
+        "../../src/services/authService",
+        "../../src/services/eventBus",
+        "@testing-library/react",
+        "react",
+        "vitest"
+      ],
+      "src/apps/AcquisitionsApp.tsx": [
+        "../services/acquisitionService",
+        "../types",
+        "react"
+      ],
+      "src/apps/AegisDashboardApp.tsx": [
+        "../components/dashboard/WidgetFactory",
+        "../components/dashboard/WidgetWrapper",
+        "../services/dashboardService",
+        "../types",
+        "react"
+      ],
+      "src/apps/AgentNetworkApp.tsx": [
+        "../services/agentData",
+        "../services/agentNetworkService",
+        "../services/controlPanelService",
+        "../types",
+        "react"
+      ],
+      "src/apps/AutomationHubApp.tsx": [
+        "../services/n8nService",
+        "../types",
+        "react"
+      ],
+      "src/apps/BackupApp.tsx": [
+        "../services/backupService",
+        "../types",
+        "react"
+      ],
+      "src/apps/BatchIngesterApp.tsx": [
+        "../services/acquisitionService",
+        "../types",
+        "react"
+      ],
+      "src/apps/BookSalesApp.tsx": [
+        "../services/contentIngestionService",
+        "../services/eventBus",
+        "../services/seoOptimizationService",
+        "react"
+      ],
+      "src/apps/CodebaseApp.tsx": [
+        "../services/codebaseService",
+        "../types",
+        "react"
+      ],
+      "src/apps/CodexApp.tsx": [
+        "../services/codexService",
+        "../types",
+        "react"
+      ],
+      "src/apps/CompanionChatApp.tsx": [
+        "../services/chatService",
+        "../services/personaService",
+        "../types",
+        "react"
+      ],
+      "src/apps/ConcurrentAgentHubApp.tsx": [
+        "../services/agentData",
+        "../services/concurrentAgentService",
+        "../types/types",
+        "react"
+      ],
+      "src/apps/ConsciousnessWorkflowApp.tsx": [
+        "../services/consciousnessWorkflowService",
+        "react"
+      ],
+      "src/apps/ControlPanelApp.tsx": [
+        "../services/agentData",
+        "../services/controlPanelService",
+        "../types",
+        "react"
+      ],
+      "src/apps/CouncilChamberApp.tsx": [
+        "../services/councilService",
+        "../types",
+        "react"
+      ],
+      "src/apps/CuratorApp.tsx": [
+        "../services/curatorService",
+        "../services/n8nService",
+        "../types",
+        "react"
+      ],
+      "src/apps/DiagnosticsApp.tsx": [
+        "../services/agentData",
+        "../services/diagnosticsService",
+        "../types",
+        "react"
+      ],
+      "src/apps/ErduMonitorApp.tsx": [
+        "../services/erduService",
+        "../types",
+        "react"
+      ],
+      "src/apps/ForensicsApp.tsx": [
+        "react"
+      ],
+      "src/apps/HierarchyApp.tsx": [
+        "../services/hierarchyService",
+        "../types",
+        "react"
+      ],
+      "src/apps/ImageGeneratorApp.tsx": [
+        "../services/geminiService",
+        "react"
+      ],
+      "src/apps/InfrastructureApp.tsx": [
+        "../services/infrastructureService",
+        "../types",
+        "react"
+      ],
+      "src/apps/IngestionPipelineApp.tsx": [
+        "../services/ingestionService",
+        "../types",
+        "react"
+      ],
+      "src/apps/LoomApp.tsx": [
+        "../services/loomService",
+        "../types",
+        "react"
+      ],
+      "src/apps/NotepadApp.tsx": [
+        "react"
+      ],
+      "src/apps/ObservatoryApp.tsx": [
+        "../services/observatoryService",
+        "../types",
+        "react"
+      ],
+      "src/apps/OperationsConsoleApp.tsx": [
+        "../services/operationService",
+        "../services/playbookService",
+        "../types",
+        "react"
+      ],
+      "src/apps/OrchestratorApp.tsx": [
+        "../services/controlPanelService",
+        "../services/orchestratorService",
+        "../types",
+        "react"
+      ],
+      "src/apps/PersonaViewerApp.tsx": [
+        "../components/persona/PersonaDetail",
+        "../components/persona/PersonaList",
+        "../services/personaService",
+        "../types",
+        "react"
+      ],
+      "src/apps/PlaybookApp.tsx": [
+        "../services/playbookService",
+        "../types",
+        "react"
+      ],
+      "src/apps/RPGCommunityHubApp.tsx": [
+        "react"
+      ],
+      "src/apps/SocialMediaHubApp.tsx": [
+        "react"
+      ],
+      "src/apps/SymposiumApp.tsx": [
+        "../services/agentData",
+        "../services/symposiumService",
+        "../types",
+        "react"
+      ],
+      "src/apps/SystemEditorApp.tsx": [
+        "../components/editor/EditorPane",
+        "../components/editor/FileExplorer",
+        "../services/fileSystemService",
+        "react"
+      ],
+      "src/apps/TaskReviewHubApp.tsx": [
+        "../constants",
+        "../context/WindowContext",
+        "../services/taskQueueService",
+        "../types",
+        "react"
+      ],
+      "src/apps/TechnomancerApp.tsx": [
+        "../services/technomancerService",
+        "../types",
+        "react"
+      ],
+      "src/apps/TerminalApp.tsx": [
+        "../services/geminiService",
+        "react"
+      ],
+      "src/apps/TradeInPortalApp.tsx": [
+        "react"
+      ],
+      "src/apps/VaultExplorerApp.tsx": [
+        "../components/icons",
+        "../services/searchService",
+        "../types",
+        "react"
+      ],
+      "src/apps/XPCharacterHubApp.tsx": [
+        "../services/xpService",
+        "../types/xpTypes",
+        "react"
+      ],
+      "src/components/App.tsx": [
+        "../constants",
+        "../context/WindowContext",
+        "../services/authService",
+        "../services/eventBus",
+        "./Desktop",
+        "./Dock",
+        "./ErrorBoundary",
+        "./LoginModal",
+        "react"
+      ],
+      "src/components/Desktop.tsx": [
+        "../context/WindowContext",
+        "./Window",
+        "react"
+      ],
+      "src/components/Dock.tsx": [
+        "../constants",
+        "../context/WindowContext",
+        "react"
+      ],
+      "src/components/ErduIncidentList.tsx": [
+        "../components/icons",
+        "../types",
+        "react"
+      ],
+      "src/components/ErrorBoundary.tsx": [
+        "react"
+      ],
+      "src/components/icons.tsx": [
+        "react"
+      ],
+      "src/components/InstallationWizard.tsx": [
+        "react"
+      ],
+      "src/components/LoginModal.tsx": [
+        "../services/authService",
+        "../services/eventBus",
+        "react"
+      ],
+      "src/components/PasswordResetModal.tsx": [
+        "react"
+      ],
+      "src/components/personaIcons.tsx": [
+        "react"
+      ],
+      "src/components/PersonaViewerApp.tsx": [
+        "../services/personaService",
+        "../types",
+        "./persona/PersonaDetail",
+        "./persona/PersonaList",
+        "react"
+      ],
+      "src/components/Window.tsx": [
+        "./ErrorBoundary",
+        "react"
+      ],
+      "src/constants/constants.tsx": [
+        "../apps/AcquisitionsApp",
+        "../apps/AegisDashboardApp",
+        "../apps/AgentNetworkApp",
+        "../apps/AutomationHubApp",
+        "../apps/BackupApp",
+        "../apps/BatchIngesterApp",
+        "../apps/BookSalesApp",
+        "../apps/CodebaseApp",
+        "../apps/CodexApp",
+        "../apps/CompanionChatApp",
+        "../apps/ConcurrentAgentHubApp",
+        "../apps/ConsciousnessWorkflowApp",
+        "../apps/ControlPanelApp",
+        "../apps/CouncilChamberApp",
+        "../apps/CuratorApp",
+        "../apps/DiagnosticsApp",
+        "../apps/ErduMonitorApp",
+        "../apps/ForensicsApp",
+        "../apps/HierarchyApp",
+        "../apps/ImageGeneratorApp",
+        "../apps/InfrastructureApp",
+        "../apps/IngestionPipelineApp",
+        "../apps/LoomApp",
+        "../apps/NotepadApp",
+        "../apps/ObservatoryApp",
+        "../apps/OperationsConsoleApp",
+        "../apps/OrchestratorApp",
+        "../apps/PersonaViewerApp",
+        "../apps/PlaybookApp",
+        "../apps/RPGCommunityHubApp",
+        "../apps/SocialMediaHubApp",
+        "../apps/SymposiumApp",
+        "../apps/SystemEditorApp",
+        "../apps/TaskReviewHubApp",
+        "../apps/TechnomancerApp",
+        "../apps/TerminalApp",
+        "../apps/TradeInPortalApp",
+        "../apps/VaultExplorerApp",
+        "../apps/XPCharacterHubApp",
+        "../components/icons",
+        "react"
+      ],
+      "src/constants/index.ts": [],
+      "src/context/WindowContext.tsx": [
+        "../constants",
+        "../types",
+        "react"
+      ],
+      "src/data/agentBaseData.ts": [],
+      "src/data/BaseData.ts": [],
+      "src/data/fileSystemData.ts": [
+        "./Desktop",
+        "./Dock",
+        "./components/App",
+        "@vitejs/plugin-react",
+        "react",
+        "react-dom/client",
+        "vite"
+      ],
+      "src/data/LoreData.ts": [],
+      "src/data/personaLoreData.ts": [],
+      "src/examples/recursiveABTestingExample.ts": [
+        "../services/recursiveABTestingService",
+        "../types/recursiveABTesting"
+      ],
+      "src/registry/ComponentRegistry.ts": [],
+      "src/registry/IntegrationRegistry.ts": [],
+      "src/registry/PersonaRegistry.ts": [],
+      "src/registry/ServiceRegistry.ts": [],
+      "src/registry/TechStackRegistry.ts": [],
+      "src/services/acquisitionService.ts": [
+        "../../schemas/acquisitionSchema",
+        "../types/types",
+        "./personaService",
+        "./taskQueueService",
+        "@google/genai"
+      ],
+      "src/services/agentData.ts": [
+        "../components/icons",
+        "../types/types"
+      ],
+      "src/services/agentNetworkService.ts": [
+        "../types/types",
+        "./controlPanelService"
+      ],
+      "src/services/apiBuildAgentService.ts": [
+        "./eventBus"
+      ],
+      "src/services/ashrakaIntegrationService.ts": [
+        "./eventBus"
+      ],
+      "src/services/authService.ts": [
+        "./eventBus"
+      ],
+      "src/services/backupService.ts": [
+        "../types/types"
+      ],
+      "src/services/chatService.ts": [
+        "../types/types",
+        "./personaService",
+        "@google/genai"
+      ],
+      "src/services/circuitBreaker.ts": [],
+      "src/services/codebaseService.ts": [
+        "../types/types"
+      ],
+      "src/services/codexService.ts": [
+        "../types/types",
+        "./loomService"
+      ],
+      "src/services/concurrentAgentService.ts": [
+        "../types/types",
+        "./agentData",
+        "./orchestratorService"
+      ],
+      "src/services/consciousnessWorkflowService.ts": [
+        "arktype"
+      ],
+      "src/services/contentIngestionService.ts": [
+        "./eventBus"
+      ],
+      "src/services/controlPanelService.ts": [
+        "../types/types",
+        "./agentData",
+        "./orchestratorService"
+      ],
+      "src/services/councilService.ts": [
+        "../types/types",
+        "./codexService",
+        "./geminiClient"
+      ],
+      "src/services/curatorService.ts": [
+        "../types/types",
+        "./taskQueueService"
+      ],
+      "src/services/dashboardService.ts": [
+        "../types"
+      ],
+      "src/services/diagnosticsService.ts": [
+        "../types/types",
+        "./agentData",
+        "./orchestratorService"
+      ],
+      "src/services/erduService.ts": [
+        "../types/types",
+        "./geminiClient"
+      ],
+      "src/services/eventBus.ts": [
+        "../types/types"
+      ],
+      "src/services/fileSystemService.ts": [
+        "../data/fileSystemData"
+      ],
+      "src/services/geminiClient.ts": [
+        "../types",
+        "@google/genai"
+      ],
+      "src/services/geminiService.ts": [
+        "./geminiClient"
+      ],
+      "src/services/googleAIStudioService.ts": [
+        "./eventBus"
+      ],
+      "src/services/googleVertexAIService.ts": [
+        "./eventBus"
+      ],
+      "src/services/hierarchyService.ts": [
+        "../components/icons",
+        "../types/types",
+        "./agentData"
+      ],
+      "src/services/infrastructureService.ts": [
+        "../types/types"
+      ],
+      "src/services/ingestionService.ts": [
+        "../types/types",
+        "./geminiClient"
+      ],
+      "src/services/knowledgeGraphService.ts": [
+        "../types/types"
+      ],
+      "src/services/loomService.ts": [
+        "../../schemas/codexSchema",
+        "../../schemas/playbookSchema",
+        "../types/types"
+      ],
+      "src/services/n8nIntegrationService.ts": [
+        "./eventBus"
+      ],
+      "src/services/n8nService.ts": [
+        "../types/types"
+      ],
+      "src/services/observatoryService.ts": [
+        "../types/types",
+        "./agentData",
+        "./orchestratorService"
+      ],
+      "src/services/ocrService.ts": [
+        "./eventBus"
+      ],
+      "src/services/openAICodexService.ts": [
+        "./eventBus"
+      ],
+      "src/services/operationService.ts": [
+        "../types/types",
+        "./geminiClient",
+        "./personaService",
+        "./playbookService"
+      ],
+      "src/services/orchestratorService.ts": [
+        "../types/types"
+      ],
+      "src/services/personaSecurityService.ts": [
+        "../components/personaIcons"
+      ],
+      "src/services/personaService.ts": [
+        "../types/types",
+        "./agentData"
+      ],
+      "src/services/playbookService.ts": [
+        "../types/types",
+        "./loomService"
+      ],
+      "src/services/recursiveABTestingService.ts": [
+        "../types/recursiveABTesting"
+      ],
+      "src/services/rpgDatabaseService.ts": [
+        "./eventBus"
+      ],
+      "src/services/searchService.ts": [
+        "../types/types",
+        "./loomService",
+        "./personaService"
+      ],
+      "src/services/seoOptimizationService.ts": [
+        "./eventBus"
+      ],
+      "src/services/symposiumService.ts": [
+        "../types/types",
+        "./geminiClient"
+      ],
+      "src/services/taskQueueService.ts": [
+        "../types/types",
+        "./eventBus"
+      ],
+      "src/services/technomancerService.ts": [
+        "../types/types"
+      ],
+      "src/services/trafficStrategyService.ts": [
+        "./eventBus"
+      ],
+      "src/services/xpService.ts": [
+        "../types/xpTypes"
+      ],
+      "src/types/recursiveABTesting.ts": [],
+      "src/types/types.ts": [
+        "react"
+      ],
+      "src/types/xpTypes.ts": [
+        "arktype"
+      ],
+      "src/utils/env-validation.ts": [
+        "react"
+      ],
+      "src/components/dashboard/AgentStatusSummaryWidget.tsx": [
+        "../../services/controlPanelService",
+        "react"
+      ],
+      "src/components/dashboard/KeyMetricsWidget.tsx": [
+        "../../services/observatoryService",
+        "../../types",
+        "react"
+      ],
+      "src/components/dashboard/SystemStatusWidget.tsx": [
+        "../../services/erduService",
+        "../../types",
+        "react"
+      ],
+      "src/components/dashboard/WidgetFactory.tsx": [
+        "../../types",
+        "./AgentStatusSummaryWidget",
+        "./KeyMetricsWidget",
+        "./SystemStatusWidget",
+        "react"
+      ],
+      "src/components/dashboard/WidgetWrapper.tsx": [
+        "react"
+      ],
+      "src/components/editor/EditorPane.tsx": [
+        "../../apps/SystemEditorApp",
+        "./MonacoWrapper",
+        "react"
+      ],
+      "src/components/editor/FileExplorer.tsx": [
+        "../../data/fileSystemData",
+        "react"
+      ],
+      "src/components/editor/MonacoWrapper.tsx": [
+        "monaco-editor",
+        "react"
+      ],
+      "src/components/persona/PersonaDetail.tsx": [
+        "../../types",
+        "react"
+      ],
+      "src/components/persona/PersonaList.tsx": [
+        "../../types",
+        "react"
+      ],
+      "services/browser-controller/main.py": [
+        "PIL",
+        "asyncio",
+        "base64",
+        "contextlib",
+        "fastapi",
+        "fastapi.middleware.cors",
+        "io",
+        "json",
+        "logging",
+        "os",
+        "playwright.async_api",
+        "pydantic",
+        "redis.asyncio",
+        "time",
+        "typing",
+        "uvicorn"
+      ],
+      "services/mcp-server/main.py": [
+        "aiohttp",
+        "asyncio",
+        "contextlib",
+        "dataclasses",
+        "datetime",
+        "enum",
+        "fastapi",
+        "fastapi.middleware.cors",
+        "fastapi.responses",
+        "json",
+        "logging",
+        "os",
+        "prometheus_client",
+        "pydantic",
+        "redis.asyncio",
+        "time",
+        "typing",
+        "uvicorn"
+      ],
+      "services/orchestration-service/main.py": [
+        "aiohttp",
+        "asyncio",
+        "contextlib",
+        "dataclasses",
+        "datetime",
+        "enum",
+        "fastapi",
+        "fastapi.middleware.cors",
+        "fastapi.responses",
+        "json",
+        "logging",
+        "os",
+        "prometheus_client",
+        "pydantic",
+        "redis.asyncio",
+        "time",
+        "typing",
+        "uvicorn"
+      ],
+      "scripts/frames/deep-pattern-recognition-frame.py": [
+        "collections",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "sys",
+        "traceback",
+        "typing"
+      ],
+      "scripts/frames/filesystem-discovery-frame.py": [
+        "datetime",
+        "json",
+        "pathlib",
+        "typing"
+      ],
+      "scripts/frames/filetree-organizer-frame.py": [
+        "datetime",
+        "json",
+        "pathlib",
+        "shutil",
+        "typing"
+      ],
+      "scripts/frames/human-approval-frame.py": [
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "sys",
+        "traceback",
+        "typing"
+      ],
+      "scripts/frames/import-dependency-graph-frame.py": [
+        "datetime",
+        "json",
+        "pathlib",
+        "re",
+        "typing"
+      ],
+      "scripts/frames/improvement-optimization-frame.py": [
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "traceback",
+        "typing"
+      ],
+      "scripts/frames/index-registrar-frame.py": [
+        "datetime",
+        "json",
+        "pathlib",
+        "typing"
+      ],
+      "scripts/frames/intelligent-caching-frame.py": [
+        "collections",
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "shutil",
+        "sys",
+        "time",
+        "traceback",
+        "typing"
+      ],
+      "scripts/frames/knowledge-hub-update-frame.py": [
+        "datetime",
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "sys",
+        "traceback",
+        "typing"
+      ],
+      "scripts/frames/log-tailer-frame.py": [
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time",
+        "traceback",
+        "typing"
+      ],
+      "scripts/frames/meta-analysis-frame.py": [
+        "collections",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "sys",
+        "traceback",
+        "typing"
+      ],
+      "scripts/frames/parallel-execution-coordinator-frame.py": [
+        "concurrent.futures",
+        "dataclasses",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "queue",
+        "sys",
+        "threading",
+        "time",
+        "traceback",
+        "typing"
+      ],
+      "scripts/frames/predictive-analysis-frame.py": [
+        "collections",
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "statistics",
+        "sys",
+        "traceback",
+        "typing"
+      ],
+      "scripts/frames/self-healing-frame.py": [
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "subprocess",
+        "sys",
+        "time",
+        "traceback",
+        "typing"
+      ],
+      "scripts/frames/webhook-endpoint-analyzer-frame.py": [
+        "datetime",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "typing"
+      ],
+      "scripts/js/dependency-vuln.js": [
+        "child_process",
+        "fs"
+      ],
+      "scripts/js/external-failure-diagnostic.js": [
+        "fs",
+        "path",
+        "url"
+      ],
+      "scripts/js/knowledge-hub-updater.js": [
+        "child_process",
+        "fs",
+        "path"
+      ],
+      "scripts/js/observability-bootstrap.js": [
+        "fs",
+        "path"
+      ],
+      "scripts/js/remediation.js": [
+        "fs",
+        "path"
+      ],
+      "scripts/js/sbom-license.js": [
+        "fs",
+        "path"
+      ],
+      "scripts/js/secrets-scan.js": [
+        "fs",
+        "path"
+      ],
+      "scripts/js/system-audit.js": [
+        "child_process",
+        "fs",
+        "path"
+      ],
+      "Imports/Archeological Reclamation/archaeological_retrieval.py": [
+        "argparse",
+        "hashlib",
+        "json",
+        "mimetypes",
+        "os",
+        "re",
+        "typing",
+        "zipfile"
+      ],
+      "Imports/Archeological Reclamation/octospine_archaeological_recovery.py": [
+        "argparse",
+        "collections",
+        "datetime",
+        "hashlib",
+        "json",
+        "logging",
+        "mimetypes",
+        "os",
+        "pathlib",
+        "re",
+        "tempfile",
+        "typing",
+        "zipfile"
+      ],
+      "Imports/Archeological Reclamation/octospine_chunked_recovery.py": [
+        "collections",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re"
+      ],
+      "Imports/Archeological Reclamation/octospine_fusion_analysis.py": [
+        "collections",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "typing"
+      ],
+      "Imports/Archeological Reclamation/octospine_fusion_analyzer.py": [
+        "collections",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re",
+        "typing"
+      ],
+      "Imports/Archeological Reclamation/octospine_quick_recovery.py": [
+        "collections",
+        "datetime",
+        "json",
+        "logging",
+        "os",
+        "pathlib",
+        "re"
+      ],
+      "Imports/Archeological Reclamation/reclamation_pipeline.py": [
+        "hashlib",
+        "json",
+        "os",
+        "pathlib",
+        "re",
+        "shutil",
+        "typing",
+        "zipfile"
+      ],
+      "Imports/Archeological Reclamation/run_fusion_analysis.py": [
+        "argparse",
+        "datetime",
+        "json",
+        "logging",
+        "octospine_fusion_analyzer",
+        "pathlib"
+      ],
+      "backend/app/crud.py": [
+        ".",
+        ".database",
+        "datetime",
+        "json",
+        "sqlalchemy",
+        "sqlalchemy.orm",
+        "typing"
+      ],
+      "backend/app/database.py": [
+        "logging",
+        "os",
+        "sqlalchemy",
+        "sqlalchemy.ext.declarative",
+        "sqlalchemy.orm",
+        "sqlalchemy.pool"
+      ],
+      "backend/app/main.py": [
+        ".middleware",
+        ".template_handler",
+        "contextlib",
+        "datetime",
+        "dotenv",
+        "fastapi",
+        "fastapi.middleware.cors",
+        "fastapi.responses",
+        "fastapi.security",
+        "json",
+        "jwt",
+        "logging",
+        "os",
+        "pydantic",
+        "redis",
+        "sqlalchemy",
+        "sqlalchemy.exc",
+        "sqlalchemy.ext.declarative",
+        "sqlalchemy.orm",
+        "time",
+        "typing"
+      ],
+      "backend/app/middleware.py": [
+        ".security",
+        "contextvars",
+        "fastapi",
+        "fastapi.responses",
+        "logging",
+        "starlette.middleware.base",
+        "time",
+        "typing",
+        "uuid"
+      ],
+      "backend/app/models.py": [
+        "datetime",
+        "enum",
+        "sqlalchemy",
+        "sqlalchemy.ext.declarative",
+        "sqlalchemy.orm"
+      ],
+      "backend/app/schemas.py": [
+        "datetime",
+        "enum",
+        "pydantic",
+        "typing"
+      ],
+      "backend/app/security.py": [
+        "bcrypt",
+        "datetime",
+        "fastapi",
+        "jwt",
+        "logging",
+        "pydantic",
+        "re",
+        "secrets",
+        "string",
+        "typing"
+      ],
+      "backend/app/template_handler.py": [
+        "datetime",
+        "enum",
+        "json",
+        "logging",
+        "pydantic",
+        "re",
+        "typing"
+      ],
+      "backend/app/websocket_server.py": [
+        "asyncio",
+        "fastapi",
+        "fastapi.middleware.cors",
+        "json",
+        "logging",
+        "typing",
+        "uvicorn"
+      ],
+      "backend/app/__init__.py": [],
+      "backend/tests/test_health.py": [
+        "backend.app.main",
+        "httpx",
+        "os",
+        "pytest",
+        "sys"
+      ],
+      "backend/app/migrations/env.py": [
+        "alembic",
+        "app.database",
+        "app.models",
+        "logging.config",
+        "os",
+        "sqlalchemy",
+        "sys"
+      ],
+      "backend/app/migrations/versions/002_simple_create.py": [
+        "alembic",
+        "sqlalchemy",
+        "sqlalchemy.dialects"
+      ],
+      "archive/unsorted/postcss.config.js": [],
+      "archive/unsorted/simple-audit.js": [
+        "fs",
+        "path"
+      ],
+      "archive/unsorted/simple-test.js": [],
+      "archive/unsorted/tailwind.config.js": [],
+      "archive/unsorted/test-knowledge-hub.js": [
+        "fs",
+        "path"
+      ],
+      "archive/unsorted/test-node.js": [
+        "fs",
+        "path"
+      ],
+      "archive/unsorted/test-recursive-ab.js": [],
+      "a2a/registry/main.py": [
+        "asyncio",
+        "datetime",
+        "fastapi",
+        "fastapi.middleware.cors",
+        "fastapi.responses",
+        "json",
+        "logging",
+        "os",
+        "pydantic",
+        "typing",
+        "uuid",
+        "uvicorn"
+      ]
+    },
+    "nodes": 290,
+    "timestamp": "2025-08-09T13:23:07.891360"
+  },
+  "timestamp": "2025-08-09T13:23:07.894724"
+}

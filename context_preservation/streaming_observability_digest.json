@@ -1,0 +1,14 @@
+{
+  "scaffold_id": "streaming_observability",
+  "ended_at": "2025-08-09T14:48:29.528447",
+  "summary": {
+    "successful_stages": 9,
+    "failed_stages": 1,
+    "total_frames_executed": 8
+  },
+  "artifacts": {
+    "manifest": "internal/repo.manifest.json",
+    "indexes_dir": "internal/indexes/",
+    "last_report": "reports/scaffold_execution_v2_streaming_observability_<timestamp>.json"
+  }
+}

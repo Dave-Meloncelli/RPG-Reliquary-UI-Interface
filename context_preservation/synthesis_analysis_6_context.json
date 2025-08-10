@@ -7,11 +7,11 @@
   },
   "result": {
     "synthesis_complete": true,
-    "synergies_found": true,
-    "risks_identified": false,
-    "opportunities_found": true,
+    "synergies_found": false,
+    "risks_identified": true,
+    "opportunities_found": false,
     "analysis_successful": true,
-    "timestamp": "2025-08-08T18:31:59.763318"
+    "timestamp": "2025-08-10T11:06:26.561613"
   },
-  "timestamp": "2025-08-08T18:31:59.763754"
+  "timestamp": "2025-08-10T11:06:26.561796"
 }

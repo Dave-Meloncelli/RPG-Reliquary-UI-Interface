@@ -2,16 +2,16 @@
   "frame_id": "human_approval",
   "stage": 8,
   "input_data": {},
-  "parameters": {},
+  "parameters": {
+    "timeout": 300
+  },
   "result": {
     "success": true,
-    "remediation_generated": true,
-    "plan_path": "reports\\remediation_plan_1754658065568.json",
-    "summary": "Generated remediation plan with 2 actions",
-    "context": {
-      "actions_count": 2,
-      "commands_count": 0
-    }
+    "human_approval_complete": true,
+    "pending_approvals": 0,
+    "auto_approved": 0,
+    "requires_human_approval": 0,
+    "timestamp": "2025-08-09T20:02:25.559444"
   },
-  "timestamp": "2025-08-08T21:01:05.585015"
+  "timestamp": "2025-08-09T20:02:25.559701"
 }

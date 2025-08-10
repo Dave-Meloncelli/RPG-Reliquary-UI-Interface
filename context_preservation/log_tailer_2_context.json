@@ -1,0 +1,27 @@
+{
+  "frame_id": "log_tailer",
+  "stage": 2,
+  "input_data": {},
+  "parameters": {
+    "timeout": 180
+  },
+  "result": {
+    "success": true,
+    "log_tailer_complete": true,
+    "reports_dir": "reports",
+    "total_files_processed": 0,
+    "dpr_runs": [
+      {
+        "files_processed": 0,
+        "result": {
+          "success": true,
+          "deep_pattern_recognition_complete": false,
+          "message": "No new files"
+        }
+      }
+    ],
+    "started_at": "2025-08-09T14:46:03.055749",
+    "ended_at": "2025-08-09T14:46:03.068068"
+  },
+  "timestamp": "2025-08-09T14:46:03.069353"
+}

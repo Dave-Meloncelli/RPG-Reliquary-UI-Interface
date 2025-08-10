@@ -1,0 +1,59 @@
+{
+  "frame_id": "deep_pattern_recognition",
+  "stage": 7,
+  "input_data": {},
+  "parameters": {
+    "timeout": 600
+  },
+  "result": {
+    "success": true,
+    "deep_pattern_recognition_complete": true,
+    "pattern_summary": {
+      "cognitive_patterns_count": 10,
+      "decision_patterns_count": 11,
+      "success_failure_patterns_count": 125,
+      "learning_patterns_count": 57,
+      "meta_patterns_count": 1
+    },
+    "lessons_learned": [
+      {
+        "lesson": "Systematic problem-solving is more effective than ad-hoc approaches",
+        "evidence": "9 systematic vs 1 adaptive approaches",
+        "recommendation": "Continue systematic approach, enhance adaptive capabilities"
+      },
+      {
+        "lesson": "Explicit risk assessment improves decision quality",
+        "evidence": "29 risk assessments performed",
+        "recommendation": "Institutionalize risk assessment in decision processes"
+      },
+      {
+        "lesson": "Adaptation is key to system evolution",
+        "evidence": "62 adaptation events",
+        "recommendation": "Increase adaptation frequency and effectiveness"
+      },
+      {
+        "lesson": "Systematic approaches lead to higher success rates",
+        "evidence": "125 success indicators",
+        "recommendation": "Document and replicate successful patterns"
+      }
+    ],
+    "insights_summary": {
+      "total_patterns_identified": 30,
+      "cognitive_insights": 10,
+      "decision_insights": 11,
+      "learning_insights": 57,
+      "success_insights": 125,
+      "meta_insights": 1
+    },
+    "analysis_metadata": {
+      "logs_analyzed": 155,
+      "time_range": {
+        "start": "2025-08-08T13:01:05.369Z",
+        "end": "2025-08-09T20:00:50.141350"
+      },
+      "pattern_categories": 5
+    },
+    "timestamp": "2025-08-09T20:02:25.271243"
+  },
+  "timestamp": "2025-08-09T20:02:25.473787"
+}

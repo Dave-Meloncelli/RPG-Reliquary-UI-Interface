@@ -421,11 +421,14 @@ def run_final_synthesis(context=None):
         # Generate synthesis report
         synthesis_report = analyzer.generate_synthesis_report()
         
-        # Save synthesis report
+        # Save synthesis report (redirect to reports/)
         try:
-            with open('autonomous_synthesis_report.json', 'w') as f:
+            reports_dir = Path('reports')
+            reports_dir.mkdir(exist_ok=True)
+            out_path = reports_dir / 'autonomous_synthesis_report.json'
+            with out_path.open('w', encoding='utf-8') as f:
                 json.dump(synthesis_report, f, indent=2)
-            print(f"\n📄 Synthesis report saved: autonomous_synthesis_report.json")
+            print(f"\n📄 Synthesis report saved: {out_path}")
         except Exception as e:
             print(f"❌ Could not save synthesis report: {e}")
         

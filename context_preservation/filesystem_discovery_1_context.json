@@ -1,0 +1,5831 @@
+{
+  "frame_id": "filesystem_discovery",
+  "stage": 1,
+  "input_data": {},
+  "parameters": {
+    "timeout": 300
+  },
+  "result": {
+    "success": true,
+    "filesystem_discovery_complete": true,
+    "files_count": 969,
+    "files": [
+      {
+        "path": ".gitignore",
+        "size_bytes": 255,
+        "modified": "2025-08-09T12:04:33.939895",
+        "suffix": ""
+      },
+      {
+        "path": "autonomous-framework-v2.py",
+        "size_bytes": 110670,
+        "modified": "2025-08-09T13:21:00.937673",
+        "suffix": ".py"
+      },
+      {
+        "path": "autonomous-framework.py",
+        "size_bytes": 25318,
+        "modified": "2025-08-09T13:12:50.078003",
+        "suffix": ".py"
+      },
+      {
+        "path": "autonomous-system-meta-analysis.py",
+        "size_bytes": 3811,
+        "modified": "2025-08-09T13:12:50.078003",
+        "suffix": ".py"
+      },
+      {
+        "path": "autonomous-system-v1.py",
+        "size_bytes": 6476,
+        "modified": "2025-08-09T13:12:50.006222",
+        "suffix": ".py"
+      },
+      {
+        "path": "autonomous-system-v2.py",
+        "size_bytes": 11929,
+        "modified": "2025-08-09T13:12:50.007220",
+        "suffix": ".py"
+      },
+      {
+        "path": "autonomous-system-v3.py",
+        "size_bytes": 22078,
+        "modified": "2025-08-09T13:12:50.009734",
+        "suffix": ".py"
+      },
+      {
+        "path": "autonomous-system-v4.py",
+        "size_bytes": 24100,
+        "modified": "2025-08-09T13:12:50.016250",
+        "suffix": ".py"
+      },
+      {
+        "path": "autonomous-system-v5.py",
+        "size_bytes": 28911,
+        "modified": "2025-08-09T13:12:50.041799",
+        "suffix": ".py"
+      },
+      {
+        "path": "index.html",
+        "size_bytes": 378,
+        "modified": "2025-08-04T11:57:06",
+        "suffix": ".html"
+      },
+      {
+        "path": "LICENSE",
+        "size_bytes": 1089,
+        "modified": "2025-07-28T14:04:50",
+        "suffix": ""
+      },
+      {
+        "path": "package-lock.json",
+        "size_bytes": 103798,
+        "modified": "2025-08-09T12:22:27.006770",
+        "suffix": ".json"
+      },
+      {
+        "path": "package.json",
+        "size_bytes": 734,
+        "modified": "2025-08-09T13:12:50.086003",
+        "suffix": ".json"
+      },
+      {
+        "path": "README.md",
+        "size_bytes": 26758,
+        "modified": "2025-08-09T13:12:50.084005",
+        "suffix": ".md"
+      },
+      {
+        "path": "tsconfig.json",
+        "size_bytes": 1255,
+        "modified": "2025-08-08T11:20:12.189207",
+        "suffix": ".json"
+      },
+      {
+        "path": "vite.config.ts",
+        "size_bytes": 2001,
+        "modified": "2025-08-08T11:20:12.200423",
+        "suffix": ".ts"
+      },
+      {
+        "path": ".github/dependabot.yml",
+        "size_bytes": 1833,
+        "modified": "2025-08-05T12:50:29.779493",
+        "suffix": ".yml"
+      },
+      {
+        "path": ".vscode/extensions.json",
+        "size_bytes": 138,
+        "modified": "2025-08-07T15:28:46.410667",
+        "suffix": ".json"
+      },
+      {
+        "path": ".vscode/settings.json",
+        "size_bytes": 541,
+        "modified": "2025-08-05T13:36:31.386781",
+        "suffix": ".json"
+      },
+      {
+        "path": "a2a/Dockerfile",
+        "size_bytes": 1193,
+        "modified": "2025-08-02T17:23:00",
+        "suffix": ""
+      },
+      {
+        "path": "a2a/main.py",
+        "size_bytes": 9305,
+        "modified": "2025-08-02T17:36:36",
+        "suffix": ".py"
+      },
+      {
+        "path": "a2a/requirements.txt",
+        "size_bytes": 1267,
+        "modified": "2025-08-02T17:54:46",
+        "suffix": ".txt"
+      },
+      {
+        "path": "backend/alembic.ini",
+        "size_bytes": 3295,
+        "modified": "2025-08-09T13:12:50.085006",
+        "suffix": ".ini"
+      },
+      {
+        "path": "backend/app.db",
+        "size_bytes": 184320,
+        "modified": "2025-08-08T17:51:13.399548",
+        "suffix": ".db"
+      },
+      {
+        "path": "backend/app.log",
+        "size_bytes": 1191,
+        "modified": "2025-08-07T12:29:15.917118",
+        "suffix": ".log"
+      },
+      {
+        "path": "backend/check_db.py",
+        "size_bytes": 1249,
+        "modified": "2025-08-09T13:12:50.084005",
+        "suffix": ".py"
+      },
+      {
+        "path": "backend/Dockerfile",
+        "size_bytes": 1639,
+        "modified": "2025-08-02T17:06:14",
+        "suffix": ""
+      },
+      {
+        "path": "backend/package-lock.json",
+        "size_bytes": 51977,
+        "modified": "2025-08-08T11:20:11.743930",
+        "suffix": ".json"
+      },
+      {
+        "path": "backend/package.json",
+        "size_bytes": 605,
+        "modified": "2025-08-08T11:20:11.744930",
+        "suffix": ".json"
+      },
+      {
+        "path": "backend/pyproject.toml",
+        "size_bytes": 2114,
+        "modified": "2025-08-02T16:45:12",
+        "suffix": ".toml"
+      },
+      {
+        "path": "backend/requirements.txt",
+        "size_bytes": 483,
+        "modified": "2025-08-09T13:12:50.079004",
+        "suffix": ".txt"
+      },
+      {
+        "path": "backend/server.js",
+        "size_bytes": 4369,
+        "modified": "2025-08-08T11:20:11.748065",
+        "suffix": ".js"
+      },
+      {
+        "path": "backend/test_models.py",
+        "size_bytes": 7706,
+        "modified": "2025-08-09T13:12:50.084005",
+        "suffix": ".py"
+      },
+      {
+        "path": "backend/websocket_client_example.js",
+        "size_bytes": 2429,
+        "modified": "2025-08-08T16:10:32.247801",
+        "suffix": ".js"
+      },
+      {
+        "path": "backend/websocket_implementation.py",
+        "size_bytes": 16254,
+        "modified": "2025-08-09T13:12:50.078003",
+        "suffix": ".py"
+      },
+      {
+        "path": "backlog/backlog_items_20250808_111513.json",
+        "size_bytes": 15969,
+        "modified": "2025-08-08T11:20:11.752577",
+        "suffix": ".json"
+      },
+      {
+        "path": "backlog/backlog_items_20250808_111954.json",
+        "size_bytes": 15969,
+        "modified": "2025-08-08T11:20:11.754578",
+        "suffix": ".json"
+      },
+      {
+        "path": "backlog/backlog_items_20250808_112518.json",
+        "size_bytes": 15969,
+        "modified": "2025-08-08T11:25:18.615950",
+        "suffix": ".json"
+      },
+      {
+        "path": "backlog/backlog_items_20250808_113112.json",
+        "size_bytes": 15969,
+        "modified": "2025-08-08T11:31:12.986026",
+        "suffix": ".json"
+      },
+      {
+        "path": "backlog/backlog_items_20250808_113711.json",
+        "size_bytes": 15969,
+        "modified": "2025-08-08T11:37:11.261449",
+        "suffix": ".json"
+      },
+      {
+        "path": "backlog/backlog_items_20250808_114354.json",
+        "size_bytes": 15969,
+        "modified": "2025-08-08T11:43:54.385929",
+        "suffix": ".json"
+      },
+      {
+        "path": "backlog/backlog_items_20250808_124245.json",
+        "size_bytes": 15969,
+        "modified": "2025-08-08T12:42:45.639003",
+        "suffix": ".json"
+      },
+      {
+        "path": "backlog/backlog_items_20250808_181349.json",
+        "size_bytes": 15969,
+        "modified": "2025-08-08T18:13:49.585791",
+        "suffix": ".json"
+      },
+      {
+        "path": "backlog/backlog_items_20250808_181941.json",
+        "size_bytes": 15969,
+        "modified": "2025-08-08T18:19:41.002642",
+        "suffix": ".json"
+      },
+      {
+        "path": "backlog/backlog_items_20250808_182539.json",
+        "size_bytes": 15969,
+        "modified": "2025-08-08T18:25:39.336668",
+        "suffix": ".json"
+      },
+      {
+        "path": "backlog/backlog_items_20250808_183159.json",
+        "size_bytes": 15969,
+        "modified": "2025-08-08T18:31:59.751991",
+        "suffix": ".json"
+      },
+      {
+        "path": "backlog/backlog_items_20250808_210105.json",
+        "size_bytes": 15969,
+        "modified": "2025-08-08T21:01:05.423377",
+        "suffix": ".json"
+      },
+      {
+        "path": "backlog/synthesis_backlog.index.json",
+        "size_bytes": 2152,
+        "modified": "2025-08-09T12:53:46.091159",
+        "suffix": ".json"
+      },
+      {
+        "path": "backlog/synthesis_report_20250809_125346.json",
+        "size_bytes": 4217,
+        "modified": "2025-08-09T12:53:46.089644",
+        "suffix": ".json"
+      },
+      {
+        "path": "backups/README.md",
+        "size_bytes": 267,
+        "modified": "2025-08-08T12:42:45.648514",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_archaeological_retrieval.py",
+        "size_bytes": 9265,
+        "modified": "2025-08-05T11:18:06.880519",
+        "suffix": ".py"
+      },
+      {
+        "path": "captured_content/captured_artifact_antman_scribe.md",
+        "size_bytes": 2047,
+        "modified": "2025-08-05T11:18:06.916808",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_artifact_constellation_binding_plan 2025-06-04 13_52_32.md",
+        "size_bytes": 2476,
+        "modified": "2025-08-05T11:18:06.935004",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_artifact_constellation_binding_plan.md",
+        "size_bytes": 2476,
+        "modified": "2025-08-05T11:18:06.937004",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_AZ1(1).txt",
+        "size_bytes": 31683,
+        "modified": "2025-08-05T11:18:06.958754",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_AZ1.txt",
+        "size_bytes": 31683,
+        "modified": "2025-08-05T11:18:06.979779",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_az2(1).txt",
+        "size_bytes": 6575,
+        "modified": "2025-08-05T11:18:06.999904",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_az2.txt",
+        "size_bytes": 6575,
+        "modified": "2025-08-05T11:18:07.003933",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_AZ300 - SME Debug & Error Resolution Agent conv.txt",
+        "size_bytes": 99879,
+        "modified": "2025-08-05T11:18:06.607473",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_AZ300 - SME Debug & Error Resolution Agent_extracted.txt",
+        "size_bytes": 239504,
+        "modified": "2025-08-05T11:18:06.695188",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_AZ400 - Code Archaeologist & Feature Discovery Agent_extracted.txt",
+        "size_bytes": 76770,
+        "modified": "2025-08-05T11:18:06.746199",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_ChatGPT 4o  2(1).txt",
+        "size_bytes": 402792,
+        "modified": "2025-08-05T11:18:07.042483",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_ChatGPT 4o  2.txt",
+        "size_bytes": 402792,
+        "modified": "2025-08-05T11:18:07.080123",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_ChatGPT 4o  3(1).txt",
+        "size_bytes": 36889,
+        "modified": "2025-08-05T11:18:07.101147",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_ChatGPT 4o  3.txt",
+        "size_bytes": 36889,
+        "modified": "2025-08-05T11:18:07.121682",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_compass_artifact_wf-46b2e5f6-60a3-4c46-949a-52fe35c52b3d_text_markdown.md",
+        "size_bytes": 17663,
+        "modified": "2025-08-05T11:18:06.751708",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_cross_platform_traffic_strategy.md",
+        "size_bytes": 13863,
+        "modified": "2025-08-05T11:18:06.754217",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_Deep Research - FTC LNSU-1.txt",
+        "size_bytes": 59619,
+        "modified": "2025-08-05T11:18:06.759223",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_ERDU-AOX Spiral_ Complete Gap Analysis & Fusion Strategy.pdf",
+        "size_bytes": 691715,
+        "modified": "2025-08-05T11:18:06.822644",
+        "suffix": ".pdf"
+      },
+      {
+        "path": "captured_content/captured_ERDU-AOX Spiral_ Complete Gap Analysis & Fusion Strategy_extracted.txt",
+        "size_bytes": 44343,
+        "modified": "2025-08-05T11:18:06.828672",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_erdu-aox-inventory-improvement.txt",
+        "size_bytes": 26912,
+        "modified": "2025-08-05T11:18:06.831677",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_erdu_aox_optimization_analysis (1).md",
+        "size_bytes": 19892,
+        "modified": "2025-08-05T11:18:06.834679",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_erdu_spiral_audit (1).md",
+        "size_bytes": 10219,
+        "modified": "2025-08-05T11:18:06.837191",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_improved-hybrid-ai-toolstack.md",
+        "size_bytes": 43902,
+        "modified": "2025-08-05T11:18:06.842189",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_Ingestor.txt",
+        "size_bytes": 10446,
+        "modified": "2025-08-05T11:18:06.883521",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_INVOCATION.txt",
+        "size_bytes": 15892,
+        "modified": "2025-08-05T11:18:07.143193",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_issue_checklist.md",
+        "size_bytes": 4988,
+        "modified": "2025-08-05T11:18:06.844189",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_loom 3(1).txt",
+        "size_bytes": 245162,
+        "modified": "2025-08-05T11:18:07.180096",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_loom 3.txt",
+        "size_bytes": 245162,
+        "modified": "2025-08-05T11:18:07.212389",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_loom2(1).txt",
+        "size_bytes": 403262,
+        "modified": "2025-08-05T11:18:07.252944",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_loom2.txt",
+        "size_bytes": 403262,
+        "modified": "2025-08-05T11:18:07.290763",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_merge1(1).txt",
+        "size_bytes": 497055,
+        "modified": "2025-08-05T11:18:07.330670",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_merge1.txt",
+        "size_bytes": 497055,
+        "modified": "2025-08-05T11:18:07.369499",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_multi_agent_backend_analysis.md",
+        "size_bytes": 18314,
+        "modified": "2025-08-05T11:18:06.847435",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_n8n_crewai_automation (1).md",
+        "size_bytes": 19407,
+        "modified": "2025-08-05T11:18:06.849436",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_n8n_integration_guide.md",
+        "size_bytes": 16815,
+        "modified": "2025-08-05T11:18:06.851950",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_new 19(1).txt",
+        "size_bytes": 415869,
+        "modified": "2025-08-05T11:18:07.447594",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 19.txt",
+        "size_bytes": 415869,
+        "modified": "2025-08-05T11:18:07.492135",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 21(1).txt",
+        "size_bytes": 221318,
+        "modified": "2025-08-05T11:18:07.526124",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 21.txt",
+        "size_bytes": 221318,
+        "modified": "2025-08-05T11:18:07.557706",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 22(1).txt",
+        "size_bytes": 25396,
+        "modified": "2025-08-05T11:18:07.575825",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 22.txt",
+        "size_bytes": 25396,
+        "modified": "2025-08-05T11:18:07.595508",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 23(1).txt",
+        "size_bytes": 20060,
+        "modified": "2025-08-05T11:18:07.618119",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 23.txt",
+        "size_bytes": 20060,
+        "modified": "2025-08-05T11:18:07.641906",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 24(1).txt",
+        "size_bytes": 227384,
+        "modified": "2025-08-05T11:18:07.676801",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 24.txt",
+        "size_bytes": 227384,
+        "modified": "2025-08-05T11:18:07.713768",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 26(1).txt",
+        "size_bytes": 35610,
+        "modified": "2025-08-05T11:18:07.736212",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 26.txt",
+        "size_bytes": 35610,
+        "modified": "2025-08-05T11:18:07.759383",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 27(1).txt",
+        "size_bytes": 5459,
+        "modified": "2025-08-05T11:18:07.782183",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 27.txt",
+        "size_bytes": 5459,
+        "modified": "2025-08-05T11:18:07.788792",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 30(1).txt",
+        "size_bytes": 11412,
+        "modified": "2025-08-05T11:18:07.809571",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 30.txt",
+        "size_bytes": 11412,
+        "modified": "2025-08-05T11:18:07.833821",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 32(1).txt",
+        "size_bytes": 54431,
+        "modified": "2025-08-05T11:18:07.854854",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_new 32.txt",
+        "size_bytes": 54431,
+        "modified": "2025-08-05T11:18:07.877492",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_OCR & Aquisitions pipeline.txt",
+        "size_bytes": 16063,
+        "modified": "2025-08-05T11:18:06.854946",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_octospine_archaeological_recovery.py",
+        "size_bytes": 23843,
+        "modified": "2025-08-05T11:18:06.885520",
+        "suffix": ".py"
+      },
+      {
+        "path": "captured_content/captured_octospine_chunked_recovery.py",
+        "size_bytes": 13140,
+        "modified": "2025-08-05T11:18:06.886519",
+        "suffix": ".py"
+      },
+      {
+        "path": "captured_content/captured_octospine_chunked_results.json",
+        "size_bytes": 0,
+        "modified": "2025-08-05T12:46:27.991175",
+        "suffix": ".json"
+      },
+      {
+        "path": "captured_content/captured_octospine_chunked_summary.md",
+        "size_bytes": 996,
+        "modified": "2025-08-05T11:18:08.771622",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_octospine_fusion_analysis.json",
+        "size_bytes": 4938723,
+        "modified": "2025-08-05T11:18:08.389818",
+        "suffix": ".json"
+      },
+      {
+        "path": "captured_content/captured_octospine_fusion_analysis.py",
+        "size_bytes": 31710,
+        "modified": "2025-08-05T11:18:06.890036",
+        "suffix": ".py"
+      },
+      {
+        "path": "captured_content/captured_octospine_fusion_analyzer.cpython-313.pyc",
+        "size_bytes": 22876,
+        "modified": "2025-08-05T11:18:08.777138",
+        "suffix": ".pyc"
+      },
+      {
+        "path": "captured_content/captured_octospine_fusion_analyzer.py",
+        "size_bytes": 24102,
+        "modified": "2025-08-05T11:18:06.891030",
+        "suffix": ".py"
+      },
+      {
+        "path": "captured_content/captured_octospine_fusion_report.md",
+        "size_bytes": 3593,
+        "modified": "2025-08-05T11:18:08.405556",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_octospine_quick_recovery.py",
+        "size_bytes": 8869,
+        "modified": "2025-08-05T11:18:06.892528",
+        "suffix": ".py"
+      },
+      {
+        "path": "captured_content/captured_octospine_quick_results.json",
+        "size_bytes": 3223849,
+        "modified": "2025-08-05T11:18:08.585637",
+        "suffix": ".json"
+      },
+      {
+        "path": "captured_content/captured_octospine_quick_summary.md",
+        "size_bytes": 88196,
+        "modified": "2025-08-05T11:18:08.611852",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_reclamation_pipeline.py",
+        "size_bytes": 6905,
+        "modified": "2025-08-05T11:18:06.894523",
+        "suffix": ".py"
+      },
+      {
+        "path": "captured_content/captured_run_fusion_analysis.py",
+        "size_bytes": 8623,
+        "modified": "2025-08-05T11:18:06.896529",
+        "suffix": ".py"
+      },
+      {
+        "path": "captured_content/captured_sl5(1).txt",
+        "size_bytes": 289965,
+        "modified": "2025-08-05T11:18:07.924631",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_sl5.txt",
+        "size_bytes": 289965,
+        "modified": "2025-08-05T11:18:07.975779",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_solo_dev_ai_workflow.md",
+        "size_bytes": 9981,
+        "modified": "2025-08-05T11:18:06.857460",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_stage2_erdu_system_deep_dive (1).md",
+        "size_bytes": 45058,
+        "modified": "2025-08-05T11:18:06.862970",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_stage2_erdu_system_deep_dive.md",
+        "size_bytes": 45058,
+        "modified": "2025-08-05T11:18:06.866970",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_symbolic_environment_manifest.md",
+        "size_bytes": 598,
+        "modified": "2025-08-05T11:18:07.996330",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_to Wingman from Claude with Love.txt",
+        "size_bytes": 34871,
+        "modified": "2025-08-05T11:18:06.872011",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_transcript from vault.txt",
+        "size_bytes": 155937,
+        "modified": "2025-08-05T11:18:08.030975",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_Universal Activity Logging Manifest_extracted.txt",
+        "size_bytes": 1984,
+        "modified": "2025-08-05T11:18:06.876010",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_upgrade notes.txt",
+        "size_bytes": 281558,
+        "modified": "2025-08-05T11:18:08.071189",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_Vault_Passport_Template_vX.4.2_FULL.md",
+        "size_bytes": 7098,
+        "modified": "2025-08-05T11:18:08.094364",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_Vault_Passport_Template_vX.4.2_PART2.md",
+        "size_bytes": 3572,
+        "modified": "2025-08-05T11:18:08.117863",
+        "suffix": ".md"
+      },
+      {
+        "path": "captured_content/captured_Vault_Recovery_Summary_InterVault.txt",
+        "size_bytes": 2305,
+        "modified": "2025-08-05T11:18:08.137457",
+        "suffix": ".txt"
+      },
+      {
+        "path": "captured_content/captured_\ud83c\udfaf Summary of Complete Solution.txt",
+        "size_bytes": 2589,
+        "modified": "2025-08-05T11:18:06.878521",
+        "suffix": ".txt"
+      },
+      {
+        "path": "config/.eslintrc-enhanced.json",
+        "size_bytes": 565,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/.eslintrc.json",
+        "size_bytes": 2701,
+        "modified": "2025-08-02T16:43:08",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/.prettierrc",
+        "size_bytes": 402,
+        "modified": "2025-08-02T16:44:10",
+        "suffix": ""
+      },
+      {
+        "path": "config/audit-report.json",
+        "size_bytes": 2945,
+        "modified": "2025-08-04T15:18:38.656457",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/build-cache-config.json",
+        "size_bytes": 239,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/build-optimization-config.json",
+        "size_bytes": 1664,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/bundle-splitting-config.json",
+        "size_bytes": 203,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/cache-config.json",
+        "size_bytes": 178,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/commitlint.config.js",
+        "size_bytes": 727,
+        "modified": "2025-08-02T16:44:44",
+        "suffix": ".js"
+      },
+      {
+        "path": "config/compression-config.json",
+        "size_bytes": 115,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/critical-path-monitoring.json",
+        "size_bytes": 138,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/docker-compose-enhanced.yml",
+        "size_bytes": 12279,
+        "modified": "2025-08-08T11:20:11.759095",
+        "suffix": ".yml"
+      },
+      {
+        "path": "config/docker-compose.yml",
+        "size_bytes": 11727,
+        "modified": "2025-08-08T11:20:11.761096",
+        "suffix": ".yml"
+      },
+      {
+        "path": "config/Dockerfile.frontend",
+        "size_bytes": 1214,
+        "modified": "2025-08-02T16:45:28",
+        "suffix": ".frontend"
+      },
+      {
+        "path": "config/env.example",
+        "size_bytes": 3801,
+        "modified": "2025-08-02T17:08:50",
+        "suffix": ".example"
+      },
+      {
+        "path": "config/env.template",
+        "size_bytes": 3985,
+        "modified": "2025-08-08T11:20:11.763093",
+        "suffix": ".template"
+      },
+      {
+        "path": "config/file_tree_cleanup_report.json",
+        "size_bytes": 18874919,
+        "modified": "2025-08-05T11:18:17.941748",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/file_tree_restructuring_report.json",
+        "size_bytes": 4148,
+        "modified": "2025-08-05T11:21:17.086416",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/framework-integration-registry.json",
+        "size_bytes": 246,
+        "modified": "2025-08-08T18:31:59.700775",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/framework.json",
+        "size_bytes": 253,
+        "modified": "2025-08-09T13:12:50.197347",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/lazy-loading-config.json",
+        "size_bytes": 132,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/metadata.json",
+        "size_bytes": 230,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/nginx.conf",
+        "size_bytes": 4389,
+        "modified": "2025-08-02T16:45:48",
+        "suffix": ".conf"
+      },
+      {
+        "path": "config/package-pinned.json",
+        "size_bytes": 3664,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/performance-monitoring.json",
+        "size_bytes": 235,
+        "modified": "2025-08-05T12:46:26.895211",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/persona-workflows.json",
+        "size_bytes": 0,
+        "modified": "2025-08-05T12:46:27.042213",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/pre-commit-config.json",
+        "size_bytes": 521,
+        "modified": "2025-08-04T15:43:05.431102",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/role-based-configs.json",
+        "size_bytes": 169,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/specialized-checks.json",
+        "size_bytes": 2144,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/tech_stack_database.json",
+        "size_bytes": 18302,
+        "modified": "2025-08-08T11:20:11.764094",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/testing-config.json",
+        "size_bytes": 287,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/tree-shaking-config.json",
+        "size_bytes": 119,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/tsconfig-strict.json",
+        "size_bytes": 268,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/vite-optimized.config.ts",
+        "size_bytes": 1695,
+        "modified": "2025-08-03T15:09:22",
+        "suffix": ".ts"
+      },
+      {
+        "path": "config/vite.config.ts",
+        "size_bytes": 1695,
+        "modified": "2025-08-03T14:15:54",
+        "suffix": ".ts"
+      },
+      {
+        "path": "config/vitest.config.ts",
+        "size_bytes": 614,
+        "modified": "2025-08-02T16:34:48",
+        "suffix": ".ts"
+      },
+      {
+        "path": "consciousness/CONSCIOUSNESS_PERSONA_DEVELOPMENT_GUIDE.md",
+        "size_bytes": 11421,
+        "modified": "2025-08-05T10:44:04.262220",
+        "suffix": ".md"
+      },
+      {
+        "path": "consciousness/CONTINUANCE_LOG.md",
+        "size_bytes": 9363,
+        "modified": "2025-08-05T12:10:20.913006",
+        "suffix": ".md"
+      },
+      {
+        "path": "consciousness/NAVIGATION.md",
+        "size_bytes": 1443,
+        "modified": "2025-08-05T11:51:19.744027",
+        "suffix": ".md"
+      },
+      {
+        "path": "context_preservation/backup_bootstrap_4_context.json",
+        "size_bytes": 404,
+        "modified": "2025-08-08T18:19:41.007642",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/continuous_improvement_context.json",
+        "size_bytes": 60302,
+        "modified": "2025-08-08T21:01:05.984014",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/dependency_vuln_2_context.json",
+        "size_bytes": 315,
+        "modified": "2025-08-08T18:19:40.336471",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/enhanced_analysis_2_context.json",
+        "size_bytes": 496,
+        "modified": "2025-08-08T18:19:35.390862",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/external_failure_diagnostic_10_context.json",
+        "size_bytes": 630,
+        "modified": "2025-08-09T13:20:17.346994",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/external_failure_diagnostic_9_context.json",
+        "size_bytes": 629,
+        "modified": "2025-08-08T11:43:56.058542",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/filesystem_discovery_1_context.json",
+        "size_bytes": 177303,
+        "modified": "2025-08-09T13:20:13.177387",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/filetree_organizer_4_context.json",
+        "size_bytes": 1320,
+        "modified": "2025-08-09T13:20:17.128312",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/forensic_recovery_context.json",
+        "size_bytes": 878799,
+        "modified": "2025-08-09T13:20:17.400601",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/forensic_recovery_digest.json",
+        "size_bytes": 395,
+        "modified": "2025-08-09T13:20:17.402601",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/frame_optimizer_2_context.json",
+        "size_bytes": 372,
+        "modified": "2025-08-08T18:19:40.341977",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/full_system_analysis_context.json",
+        "size_bytes": 293356,
+        "modified": "2025-08-08T18:19:43.010702",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/health_readiness_4_context.json",
+        "size_bytes": 328,
+        "modified": "2025-08-08T18:19:41.594354",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/human_approval_8_context.json",
+        "size_bytes": 380,
+        "modified": "2025-08-09T13:20:17.167639",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/import_dependency_graph_2_context.json",
+        "size_bytes": 44071,
+        "modified": "2025-08-09T13:20:17.037779",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/improvement_optimization_1_context.json",
+        "size_bytes": 4507,
+        "modified": "2025-08-08T21:01:04.728565",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/improvement_optimization_6_context.json",
+        "size_bytes": 4507,
+        "modified": "2025-08-08T21:01:05.427891",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/index_registrar_7_context.json",
+        "size_bytes": 343,
+        "modified": "2025-08-09T13:20:17.162065",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/knowledge_hub_update_8_context.json",
+        "size_bytes": 15656,
+        "modified": "2025-08-08T11:43:55.940063",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/knowledge_hub_update_9_context.json",
+        "size_bytes": 579,
+        "modified": "2025-08-09T13:20:17.192340",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/meta_analysis_6_context.json",
+        "size_bytes": 2620,
+        "modified": "2025-08-09T13:20:17.133303",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/meta_analysis_7_context.json",
+        "size_bytes": 1369,
+        "modified": "2025-08-08T21:01:05.453145",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/observability_bootstrap_4_context.json",
+        "size_bytes": 377,
+        "modified": "2025-08-08T18:19:41.693590",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/powershell_diagnostic_10_context.json",
+        "size_bytes": 485,
+        "modified": "2025-08-08T18:19:42.994565",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/powershell_diagnostic_9_context.json",
+        "size_bytes": 484,
+        "modified": "2025-08-08T11:43:56.677035",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/pre_existing_systems_discovery_1_context.json",
+        "size_bytes": 29535,
+        "modified": "2025-08-08T18:31:58.586476",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/quick_assessment_context.json",
+        "size_bytes": 277891,
+        "modified": "2025-08-08T15:27:39.052605",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/risk_mitigation_4_context.json",
+        "size_bytes": 488,
+        "modified": "2025-08-08T21:01:05.424379",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/sbom_license_2_context.json",
+        "size_bytes": 520,
+        "modified": "2025-08-08T18:19:35.541306",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/sbom_license_6_context.json",
+        "size_bytes": 520,
+        "modified": "2025-08-08T18:19:41.807484",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/secrets_scan_2_context.json",
+        "size_bytes": 331,
+        "modified": "2025-08-08T18:19:36.629917",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/synthesis_analysis_1_context.json",
+        "size_bytes": 406,
+        "modified": "2025-08-08T18:19:35.377344",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/synthesis_analysis_2_context.json",
+        "size_bytes": 406,
+        "modified": "2025-08-08T21:01:04.820209",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/synthesis_analysis_3_context.json",
+        "size_bytes": 407,
+        "modified": "2025-08-09T13:20:17.117640",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/synthesis_analysis_6_context.json",
+        "size_bytes": 406,
+        "modified": "2025-08-08T18:31:59.763524",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/system_audit_2_context.json",
+        "size_bytes": 1502,
+        "modified": "2025-08-08T15:27:37.983773",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/system_audit_3_context.json",
+        "size_bytes": 7629,
+        "modified": "2025-08-08T21:01:05.402223",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/system_integration_context.json",
+        "size_bytes": 431764,
+        "modified": "2025-08-08T18:32:00.505571",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/system_integration_implementation_4_context.json",
+        "size_bytes": 2069,
+        "modified": "2025-08-08T18:31:59.723504",
+        "suffix": ".json"
+      },
+      {
+        "path": "context_preservation/webhook_endpoint_analyzer_2_context.json",
+        "size_bytes": 95904,
+        "modified": "2025-08-09T13:20:16.059175",
+        "suffix": ".json"
+      },
+      {
+        "path": "crewai/app.py",
+        "size_bytes": 7186,
+        "modified": "2025-08-02T17:35:48",
+        "suffix": ".py"
+      },
+      {
+        "path": "crewai/Dockerfile",
+        "size_bytes": 1024,
+        "modified": "2025-08-02T17:22:34",
+        "suffix": ""
+      },
+      {
+        "path": "crewai/requirements.txt",
+        "size_bytes": 1666,
+        "modified": "2025-08-02T17:54:34",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Daves_NewTest/fix.txt",
+        "size_bytes": 8352,
+        "modified": "2025-08-08T21:05:21.869003",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Daves_NewTest/Handover.md",
+        "size_bytes": 8775,
+        "modified": "2025-08-08T21:05:21.869003",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/AI_NAVIGATION_GUIDE.md",
+        "size_bytes": 7763,
+        "modified": "2025-08-05T12:27:50.418349",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/analysis.md",
+        "size_bytes": 8579,
+        "modified": "2025-08-03T14:15:54",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/AUTOMATION_ANALYSIS.md",
+        "size_bytes": 9591,
+        "modified": "2025-08-08T11:20:11.668827",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/AUTONOMOUS_FRAMEWORK_ANALYSIS_AND_IMPROVEMENTS.md",
+        "size_bytes": 17057,
+        "modified": "2025-08-08T11:20:11.670828",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/AUTONOMOUS_FRAMEWORK_COMPLETION_REPORT.md",
+        "size_bytes": 8493,
+        "modified": "2025-08-08T11:20:11.671826",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/AUTONOMOUS_FRAMEWORK_IMPROVEMENT_PLAN.md",
+        "size_bytes": 6372,
+        "modified": "2025-08-08T15:24:28.245467",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/AUTONOMOUS_SYSTEM_CAPABILITIES.md",
+        "size_bytes": 7934,
+        "modified": "2025-08-08T11:20:11.673331",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/AUTONOMOUS_SYSTEM_ITERATIVE_DEVELOPMENT.md",
+        "size_bytes": 8782,
+        "modified": "2025-08-08T11:20:11.675338",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/A_B_TEST_FINAL_COMPARISON.md",
+        "size_bytes": 11247,
+        "modified": "2025-08-08T11:20:11.677339",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/backlog.md",
+        "size_bytes": 9573,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/BACKLOG_MANAGEMENT.md",
+        "size_bytes": 7498,
+        "modified": "2025-08-08T16:12:10.816630",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/COMPREHENSIVE_AUDIT_ANALYSIS.md",
+        "size_bytes": 9955,
+        "modified": "2025-08-08T11:20:11.680338",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/COMPREHENSIVE_A_B_TEST_ANALYSIS.md",
+        "size_bytes": 8471,
+        "modified": "2025-08-08T21:05:21.851978",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/COMPREHENSIVE_SYSTEM_AUDIT_REPORT.md",
+        "size_bytes": 15203,
+        "modified": "2025-08-08T11:20:11.685810",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/FILE_ORGANIZATION_COMPLETION_SUMMARY.md",
+        "size_bytes": 4177,
+        "modified": "2025-08-05T12:06:02.616930",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/FINAL_SYNTHESIS_ANALYSIS.md",
+        "size_bytes": 9171,
+        "modified": "2025-08-08T11:20:11.686810",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/INSTALLATION_GUIDE.md",
+        "size_bytes": 5768,
+        "modified": "2025-08-08T11:20:11.688809",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/INTELLIGENT_FAILURE_RESPONSE_SYSTEM.md",
+        "size_bytes": 8540,
+        "modified": "2025-08-08T15:35:00.428699",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/KNOWLEDGE_HUB.md",
+        "size_bytes": 10577,
+        "modified": "2025-08-08T21:01:05.870864",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/KNOWN_FAULTS_FIXES.md",
+        "size_bytes": 6498,
+        "modified": "2025-08-08T11:20:11.695996",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/MANUAL_SYSTEM_AUDIT_SUMMARY.md",
+        "size_bytes": 6524,
+        "modified": "2025-08-08T11:20:11.697996",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/MANUAL_VS_DELEGATOR_ANALYSIS.md",
+        "size_bytes": 7019,
+        "modified": "2025-08-08T21:05:21.849970",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/NAVIGATION.md",
+        "size_bytes": 1019,
+        "modified": "2025-08-05T11:51:19.745026",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/PRE_PUSH_AUDIT_REPORT.md",
+        "size_bytes": 5840,
+        "modified": "2025-08-05T12:10:20.934331",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/READINESS_REGISTER.md",
+        "size_bytes": 2708,
+        "modified": "2025-08-08T12:38:09.678252",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/RECURSIVE_AB_TESTING_SYSTEM.md",
+        "size_bytes": 11557,
+        "modified": "2025-08-08T11:20:11.702674",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/SMART_DELEGATOR_BACKEND_ANALYSIS.md",
+        "size_bytes": 5122,
+        "modified": "2025-08-08T11:20:11.705188",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/SMART_DELEGATOR_INTEGRATION_SUMMARY.md",
+        "size_bytes": 8734,
+        "modified": "2025-08-08T11:20:11.707188",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/SYSTEM_AUDIT_REPORT.md",
+        "size_bytes": 1525,
+        "modified": "2025-08-08T21:01:05.389105",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/TYPESCRIPT_ERROR_RESOLUTION_SUMMARY.md",
+        "size_bytes": 5806,
+        "modified": "2025-08-08T11:20:11.711225",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/TYPESCRIPT_FIX_REPORT.md",
+        "size_bytes": 1166,
+        "modified": "2025-08-08T11:20:11.713223",
+        "suffix": ".md"
+      },
+      {
+        "path": "examples/recursiveABTestingExample.ts",
+        "size_bytes": 10049,
+        "modified": "2025-08-09T13:12:50.247709",
+        "suffix": ".ts"
+      },
+      {
+        "path": "Imports/ai_augmented_team_strategy.md",
+        "size_bytes": 11385,
+        "modified": "2025-08-03T09:11:50",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/AZ300 - SME Debug & Error Resolution Agent conv.txt",
+        "size_bytes": 99879,
+        "modified": "2025-08-05T08:52:45.566246",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/AZ300 - SME Debug & Error Resolution Agent.pdf",
+        "size_bytes": 2600163,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".pdf"
+      },
+      {
+        "path": "Imports/AZ300 - SME Debug & Error Resolution Agent_extracted.txt",
+        "size_bytes": 239504,
+        "modified": "2025-08-05T08:51:17.874061",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/AZ300.md",
+        "size_bytes": 0,
+        "modified": "2025-08-05T08:55:57.533591",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/AZ400 - Code Archaeologist & Feature Discovery Agent.pdf",
+        "size_bytes": 1123661,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".pdf"
+      },
+      {
+        "path": "Imports/AZ400 - Code Archaeologist & Feature Discovery Agent_extracted.txt",
+        "size_bytes": 76770,
+        "modified": "2025-08-05T08:51:20.323678",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/budget_tech_stack_recommendations.md",
+        "size_bytes": 10706,
+        "modified": "2025-08-03T09:02:28",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/compass_artifact_wf-46b2e5f6-60a3-4c46-949a-52fe35c52b3d_text_markdown.md",
+        "size_bytes": 17459,
+        "modified": "2025-08-03T08:39:20",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/compass_artifact_wf-e1e4e65f-80bd-4ef3-bc3c-a114a511081c_text_markdown.md",
+        "size_bytes": 13663,
+        "modified": "2025-08-03T08:51:32",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/cross_platform_traffic_strategy.md",
+        "size_bytes": 13487,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/Deep Research - FTC LNSU-1.txt",
+        "size_bytes": 59619,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/documentation_system.ts",
+        "size_bytes": 15679,
+        "modified": "2025-08-02T18:12:48",
+        "suffix": ".ts"
+      },
+      {
+        "path": "Imports/enhanced_types.ts",
+        "size_bytes": 3363,
+        "modified": "2025-08-02T18:03:38",
+        "suffix": ".ts"
+      },
+      {
+        "path": "Imports/env_example.sh",
+        "size_bytes": 304,
+        "modified": "2025-08-02T18:04:00",
+        "suffix": ".sh"
+      },
+      {
+        "path": "Imports/env_validation.ts",
+        "size_bytes": 2858,
+        "modified": "2025-08-02T18:03:06",
+        "suffix": ".ts"
+      },
+      {
+        "path": "Imports/ERDU-AOX Spiral_ Complete Gap Analysis & Fusion Strategy.pdf",
+        "size_bytes": 767512,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".pdf"
+      },
+      {
+        "path": "Imports/ERDU-AOX Spiral_ Complete Gap Analysis & Fusion Strategy_extracted.txt",
+        "size_bytes": 44343,
+        "modified": "2025-08-05T08:51:21.829793",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/erdu-aox-inventory-improvement.txt",
+        "size_bytes": 26364,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/erdu_aox_optimization_analysis (1).md",
+        "size_bytes": 19416,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/erdu_spiral_audit (1).md",
+        "size_bytes": 9946,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/error_boundary_component.ts",
+        "size_bytes": 2643,
+        "modified": "2025-08-02T18:03:44",
+        "suffix": ".ts"
+      },
+      {
+        "path": "Imports/fix 2.txt",
+        "size_bytes": 8502,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/fix 3.txt",
+        "size_bytes": 14923,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/fix.txt",
+        "size_bytes": 8350,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/hrm-transcript.txt",
+        "size_bytes": 10432,
+        "modified": "2025-08-08T21:05:21.850979",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/implementation_guide.md",
+        "size_bytes": 13224,
+        "modified": "2025-08-02T18:12:38",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/improved-hybrid-ai-toolstack.md",
+        "size_bytes": 42237,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/issue_checklist.md",
+        "size_bytes": 4866,
+        "modified": "2025-08-02T18:02:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/multi_agent_backend_analysis.md",
+        "size_bytes": 17701,
+        "modified": "2025-08-03T12:41:22",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/n8n_crewai_automation (1).md",
+        "size_bytes": 18753,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/n8n_integration_guide.md",
+        "size_bytes": 16320,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/OCR & Aquisitions pipeline.txt",
+        "size_bytes": 16063,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/package_json_recommendations.json",
+        "size_bytes": 1052,
+        "modified": "2025-08-02T18:04:12",
+        "suffix": ".json"
+      },
+      {
+        "path": "Imports/repository_audit_report.md",
+        "size_bytes": 10802,
+        "modified": "2025-08-03T08:49:42",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/solo_dev_ai_workflow.md",
+        "size_bytes": 9641,
+        "modified": "2025-08-03T10:59:56",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/stage2_erdu_system_deep_dive (1).md",
+        "size_bytes": 44059,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/stage2_erdu_system_deep_dive.md",
+        "size_bytes": 44059,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/tech_silos_architecture.ts",
+        "size_bytes": 11619,
+        "modified": "2025-08-02T18:13:06",
+        "suffix": ".ts"
+      },
+      {
+        "path": "Imports/tech_silo_apps.ts",
+        "size_bytes": 11635,
+        "modified": "2025-08-02T18:12:56",
+        "suffix": ".ts"
+      },
+      {
+        "path": "Imports/to Wingman from Claude with Love.txt",
+        "size_bytes": 34871,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/tooltip_system.ts",
+        "size_bytes": 7585,
+        "modified": "2025-08-02T18:13:14",
+        "suffix": ".ts"
+      },
+      {
+        "path": "Imports/tsconfig_improvements.json",
+        "size_bytes": 851,
+        "modified": "2025-08-02T18:04:22",
+        "suffix": ".json"
+      },
+      {
+        "path": "Imports/tttdr-mlestar-aef.txt",
+        "size_bytes": 11500,
+        "modified": "2025-08-08T21:05:21.851978",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Universal Activity Logging Manifest.pdf",
+        "size_bytes": 41058,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".pdf"
+      },
+      {
+        "path": "Imports/Universal Activity Logging Manifest_extracted.txt",
+        "size_bytes": 1984,
+        "modified": "2025-08-05T08:51:21.921803",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/vite_config.ts",
+        "size_bytes": 1173,
+        "modified": "2025-08-02T18:03:28",
+        "suffix": ".ts"
+      },
+      {
+        "path": "Imports/yofo.txt",
+        "size_bytes": 10463,
+        "modified": "2025-08-08T21:05:21.851978",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/\ud83c\udfaf Summary of Complete Solution.txt",
+        "size_bytes": 2527,
+        "modified": "2025-08-03T11:18:04",
+        "suffix": ".txt"
+      },
+      {
+        "path": "installer/AgentZeroInstaller.iss",
+        "size_bytes": 16224,
+        "modified": "2025-08-02T17:53:18",
+        "suffix": ".iss"
+      },
+      {
+        "path": "installer/build-installer.bat",
+        "size_bytes": 1428,
+        "modified": "2025-08-02T17:53:34",
+        "suffix": ".bat"
+      },
+      {
+        "path": "installer/README.md",
+        "size_bytes": 7189,
+        "modified": "2025-08-02T17:54:18",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/architectural_mandates.md",
+        "size_bytes": 908,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/code_style_guide.md",
+        "size_bytes": 816,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/CONTINUANCE.md",
+        "size_bytes": 943,
+        "modified": "2025-08-09T13:12:50.085006",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/Delegator.md",
+        "size_bytes": 2992,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/Dispatcher.md",
+        "size_bytes": 3115,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/Forge.md",
+        "size_bytes": 2134,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/frames.index.json",
+        "size_bytes": 8220,
+        "modified": "2025-08-09T12:07:56.191173",
+        "suffix": ".json"
+      },
+      {
+        "path": "internal/FRAMEWORK.md",
+        "size_bytes": 2719,
+        "modified": "2025-08-09T13:12:50.085006",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/generate-index.py",
+        "size_bytes": 1037,
+        "modified": "2025-08-09T13:12:50.085006",
+        "suffix": ".py"
+      },
+      {
+        "path": "internal/Glitch.md",
+        "size_bytes": 1376,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/Known-faults-fixes.md",
+        "size_bytes": 58982,
+        "modified": "2025-08-08T11:20:11.828362",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/manifest.md",
+        "size_bytes": 451,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/ORCHESTRATOR.md",
+        "size_bytes": 447,
+        "modified": "2025-08-09T13:12:50.085006",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/plan_of_record.md",
+        "size_bytes": 454,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/prompt.md",
+        "size_bytes": 4048,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/README.md",
+        "size_bytes": 460,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/Reliquarian.md",
+        "size_bytes": 1321,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/repo.manifest.json",
+        "size_bytes": 987721,
+        "modified": "2025-08-09T13:20:17.160061",
+        "suffix": ".json"
+      },
+      {
+        "path": "internal/scaffolds.index.json",
+        "size_bytes": 2398,
+        "modified": "2025-08-09T12:07:56.192172",
+        "suffix": ".json"
+      },
+      {
+        "path": "internal/SCENARIOS.md",
+        "size_bytes": 878,
+        "modified": "2025-08-09T13:12:50.085006",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/schemas.md",
+        "size_bytes": 2843,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "internal/sentinel_protocol.md",
+        "size_bytes": 2333,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "knowledge_hub/knowledge_index.json",
+        "size_bytes": 2105,
+        "modified": "2025-08-09T13:20:17.190356",
+        "suffix": ".json"
+      },
+      {
+        "path": "logs/app.log",
+        "size_bytes": 1087,
+        "modified": "2025-08-08T12:04:31.884167",
+        "suffix": ".log"
+      },
+      {
+        "path": "logs/autonomous-system.log",
+        "size_bytes": 117,
+        "modified": "2025-08-07T15:43:05.001394",
+        "suffix": ".log"
+      },
+      {
+        "path": "monitoring/alerts.yml",
+        "size_bytes": 9491,
+        "modified": "2025-08-02T17:38:50",
+        "suffix": ".yml"
+      },
+      {
+        "path": "monitoring/prometheus.yml",
+        "size_bytes": 2986,
+        "modified": "2025-08-02T17:38:04",
+        "suffix": ".yml"
+      },
+      {
+        "path": "OCTOSPINE/README.md",
+        "size_bytes": 9456,
+        "modified": "2025-08-04T16:09:05.621701",
+        "suffix": ".md"
+      },
+      {
+        "path": "parallel_execution/execution_history.json",
+        "size_bytes": 860,
+        "modified": "2025-08-08T22:22:28.804872",
+        "suffix": ".json"
+      },
+      {
+        "path": "Personas/aeon_indexwell_enrichment.md",
+        "size_bytes": 3610,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/architect_persona_enrichment.md",
+        "size_bytes": 3290,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/archivist_persona_enrichment.md",
+        "size_bytes": 3330,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/broodmother_arachnet_analysis.md",
+        "size_bytes": 3127,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/cartographer_persona_enrichment.md",
+        "size_bytes": 3340,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/codex_persona_enrichment.md",
+        "size_bytes": 4163,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/companion_persona_scroll (3).md",
+        "size_bytes": 4446,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/consolidated Addendum document that.txt",
+        "size_bytes": 19483,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Personas/Expert-Level AI Agent Schema.txt",
+        "size_bytes": 40875,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Personas/ghost_persona_enrichment.md",
+        "size_bytes": 3208,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/joyn_persona_enrichment.md",
+        "size_bytes": 3074,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/kairos_persona_enrichment.md",
+        "size_bytes": 2703,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/machine_spirit_enrichment (1).md",
+        "size_bytes": 3211,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/machine_spirit_enrichment.md",
+        "size_bytes": 3211,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/major_payne_enrichment.md",
+        "size_bytes": 3430,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/nya_persona_enrichment.md",
+        "size_bytes": 3884,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/PersonaDetail.tsx",
+        "size_bytes": 1311,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "Personas/PersonaFusionChamber.tsx",
+        "size_bytes": 6456,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "Personas/PersonaList.tsx",
+        "size_bytes": 1108,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "Personas/piney_persona_enrichment.md",
+        "size_bytes": 2939,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/Sidekick Agent Assignment.pdf",
+        "size_bytes": 69267,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".pdf"
+      },
+      {
+        "path": "Personas/Spindle Rpg Branch.pdf",
+        "size_bytes": 37620,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".pdf"
+      },
+      {
+        "path": "Personas/steel_core_enrichment.md",
+        "size_bytes": 3316,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/Template Passport Suite.pdf",
+        "size_bytes": 33841,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".pdf"
+      },
+      {
+        "path": "Personas/the_weaver_enrichment.md",
+        "size_bytes": 3908,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/tinker_hexbolt_enrichment.md",
+        "size_bytes": 3328,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/tourist_primer_scrolls.md",
+        "size_bytes": 2592,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "Personas/vault_upgrade_tourist_companion_for_build_unit (1).md",
+        "size_bytes": 8264,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "predictive_analysis/predictions.json",
+        "size_bytes": 459,
+        "modified": "2025-08-08T22:26:23.963292",
+        "suffix": ".json"
+      },
+      {
+        "path": "public/index.html",
+        "size_bytes": 975,
+        "modified": "2025-08-03T14:15:54",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/.lintstagedrc.json",
+        "size_bytes": 146,
+        "modified": "2025-08-09T12:13:28.532724",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/all_in_analysis_1754639307.json",
+        "size_bytes": 434535,
+        "modified": "2025-08-08T15:48:27.864005",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/all_in_analysis_1754640090.json",
+        "size_bytes": 434693,
+        "modified": "2025-08-08T16:01:30.493127",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/autonomous_synthesis_report.json",
+        "size_bytes": 1180,
+        "modified": "2025-08-09T13:20:17.116641",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/deep_pattern_recognition_1754658765.json",
+        "size_bytes": 132343652,
+        "modified": "2025-08-08T21:12:45.996208",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/deep_pattern_recognition_1754660971.json",
+        "size_bytes": 1426305072,
+        "modified": "2025-08-08T21:49:40.159659",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/deep_pattern_recognition_1754661236.json",
+        "size_bytes": 7015379911,
+        "modified": "2025-08-08T21:54:45.581731",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/deep_pattern_recognition_1754661614.json",
+        "size_bytes": 1640,
+        "modified": "2025-08-08T22:00:14.751226",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/deep_pattern_recognition_1754661654.json",
+        "size_bytes": 1373,
+        "modified": "2025-08-08T22:00:54.482793",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/deep_pattern_recognition_1754661770.json",
+        "size_bytes": 1624,
+        "modified": "2025-08-08T22:02:50.447259",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/dependency_vuln_1754628555894.json",
+        "size_bytes": 152,
+        "modified": "2025-08-08T12:49:15.895657",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/dependency_vuln_1754647975721.json",
+        "size_bytes": 152,
+        "modified": "2025-08-08T18:12:55.722160",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/dependency_vuln_1754648028848.json",
+        "size_bytes": 152,
+        "modified": "2025-08-08T18:13:48.849418",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/dependency_vuln_1754648380320.json",
+        "size_bytes": 152,
+        "modified": "2025-08-08T18:19:40.321304",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/filesystem_discovery_1754714312.json",
+        "size_bytes": 184035,
+        "modified": "2025-08-09T12:38:32.449633",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/filesystem_discovery_1754716440.json",
+        "size_bytes": 163164,
+        "modified": "2025-08-09T13:14:00.705285",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/filesystem_discovery_1754716813.json",
+        "size_bytes": 165569,
+        "modified": "2025-08-09T13:20:13.166210",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/filetree_organizer_1754713661.json",
+        "size_bytes": 11804,
+        "modified": "2025-08-09T12:27:41.752661",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/filetree_organizer_1754715472.json",
+        "size_bytes": 11646,
+        "modified": "2025-08-09T12:57:52.191862",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/filetree_organizer_1754716450.json",
+        "size_bytes": 1058,
+        "modified": "2025-08-09T13:14:10.525034",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/filetree_organizer_1754716817.json",
+        "size_bytes": 1058,
+        "modified": "2025-08-09T13:20:17.127299",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/filetree_organizer_1754716970.json",
+        "size_bytes": 1059,
+        "modified": "2025-08-09T13:22:50.046534",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/framework_analysis_and_action_plan_20250808.json",
+        "size_bytes": 21817,
+        "modified": "2025-08-09T13:12:50.123080",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/framework_failure_v2_20250808_181255.json",
+        "size_bytes": 211674,
+        "modified": "2025-08-08T18:12:55.768547",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/framework_failure_v2_20250809_131011.json",
+        "size_bytes": 141487,
+        "modified": "2025-08-09T13:10:11.994479",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/framework_failure_v2_20250809_131123.json",
+        "size_bytes": 10301,
+        "modified": "2025-08-09T13:11:23.497846",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/framework_failure_v2_20250809_131410.json",
+        "size_bytes": 850094,
+        "modified": "2025-08-09T13:14:10.852206",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/human_approval_1754662544.json",
+        "size_bytes": 1648,
+        "modified": "2025-08-08T22:15:44.069107",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/import_dependency_graph_1754714569.json",
+        "size_bytes": 39756,
+        "modified": "2025-08-09T12:42:49.504900",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/import_dependency_graph_1754714943.json",
+        "size_bytes": 39769,
+        "modified": "2025-08-09T12:49:03.809005",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/import_dependency_graph_1754716211.json",
+        "size_bytes": 40256,
+        "modified": "2025-08-09T13:10:11.529555",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/import_dependency_graph_1754716450.json",
+        "size_bytes": 40256,
+        "modified": "2025-08-09T13:14:10.428155",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/import_dependency_graph_1754716817.json",
+        "size_bytes": 40256,
+        "modified": "2025-08-09T13:20:17.034694",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/improvement_optimization_1754658059.json",
+        "size_bytes": 8483,
+        "modified": "2025-08-08T21:00:59.489889",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/improvement_optimization_1754658064.json",
+        "size_bytes": 4097,
+        "modified": "2025-08-08T21:01:04.727562",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/improvement_optimization_1754658065.json",
+        "size_bytes": 4097,
+        "modified": "2025-08-08T21:01:05.426886",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/intelligent_caching_1754663314.json",
+        "size_bytes": 370,
+        "modified": "2025-08-08T22:28:34.266696",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/knowledge-hub-update-report.json",
+        "size_bytes": 189,
+        "modified": "2025-08-08T21:01:05.873871",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/knowledge_hub_update_1754662534.json",
+        "size_bytes": 425,
+        "modified": "2025-08-08T22:15:34.002655",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/knowledge_hub_update_1754662948.json",
+        "size_bytes": 365,
+        "modified": "2025-08-08T22:22:28.803282",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/knowledge_hub_update_1754716450.json",
+        "size_bytes": 365,
+        "modified": "2025-08-09T13:14:10.591111",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/knowledge_hub_update_1754716817.json",
+        "size_bytes": 365,
+        "modified": "2025-08-09T13:20:17.191340",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/log_tailer_1754711354.json",
+        "size_bytes": 415,
+        "modified": "2025-08-09T11:49:14.898617",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_1754662539.json",
+        "size_bytes": 2287,
+        "modified": "2025-08-08T22:15:39.278704",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_1754662948.json",
+        "size_bytes": 2287,
+        "modified": "2025-08-08T22:22:28.790230",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_1754716211.json",
+        "size_bytes": 2287,
+        "modified": "2025-08-09T13:10:11.756766",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_1754716450.json",
+        "size_bytes": 2287,
+        "modified": "2025-08-09T13:14:10.529035",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_1754716817.json",
+        "size_bytes": 2287,
+        "modified": "2025-08-09T13:20:17.132304",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_20250808_151708.json",
+        "size_bytes": 1090,
+        "modified": "2025-08-08T15:17:08.820329",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_20250808_151754.json",
+        "size_bytes": 1090,
+        "modified": "2025-08-08T15:17:54.786163",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_20250808_151940.json",
+        "size_bytes": 1091,
+        "modified": "2025-08-08T15:19:40.299601",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_20250808_152000.json",
+        "size_bytes": 1091,
+        "modified": "2025-08-08T15:20:00.652640",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_20250808_152738.json",
+        "size_bytes": 1091,
+        "modified": "2025-08-08T15:27:38.012004",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_20250808_181350.json",
+        "size_bytes": 1091,
+        "modified": "2025-08-08T18:13:50.648679",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_20250808_181941.json",
+        "size_bytes": 1091,
+        "modified": "2025-08-08T18:19:41.833280",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_20250808_182539.json",
+        "size_bytes": 1091,
+        "modified": "2025-08-08T18:25:39.380077",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_20250808_183159.json",
+        "size_bytes": 1091,
+        "modified": "2025-08-08T18:31:59.795278",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_20250808_210105.json",
+        "size_bytes": 1090,
+        "modified": "2025-08-08T21:01:05.452153",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_continuous_improvement_20250808_210105.json",
+        "size_bytes": 718,
+        "modified": "2025-08-08T21:01:05.453757",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_forensic_recovery_20250809_131011.json",
+        "size_bytes": 889,
+        "modified": "2025-08-09T13:10:11.891864",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_forensic_recovery_20250809_131123.json",
+        "size_bytes": 903,
+        "modified": "2025-08-09T13:11:23.460980",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_forensic_recovery_20250809_131410.json",
+        "size_bytes": 718,
+        "modified": "2025-08-09T13:14:10.562892",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_forensic_recovery_20250809_132017.json",
+        "size_bytes": 612,
+        "modified": "2025-08-09T13:20:17.163066",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_full_system_analysis_20250808_181350.json",
+        "size_bytes": 614,
+        "modified": "2025-08-08T18:13:50.651685",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_full_system_analysis_20250808_181941.json",
+        "size_bytes": 614,
+        "modified": "2025-08-08T18:19:41.835800",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_quick_assessment_20250808_151708.json",
+        "size_bytes": 612,
+        "modified": "2025-08-08T15:17:08.823332",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_quick_assessment_20250808_151754.json",
+        "size_bytes": 612,
+        "modified": "2025-08-08T15:17:54.788163",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_quick_assessment_20250808_151940.json",
+        "size_bytes": 612,
+        "modified": "2025-08-08T15:19:40.303116",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_quick_assessment_20250808_152000.json",
+        "size_bytes": 612,
+        "modified": "2025-08-08T15:20:00.654638",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_quick_assessment_20250808_152738.json",
+        "size_bytes": 612,
+        "modified": "2025-08-08T15:27:38.014998",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_system_integration_20250808_182539.json",
+        "size_bytes": 718,
+        "modified": "2025-08-08T18:25:39.384087",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/meta_analysis_system_integration_20250808_183159.json",
+        "size_bytes": 612,
+        "modified": "2025-08-08T18:31:59.798279",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/parallel_execution_1754662948.json",
+        "size_bytes": 4498,
+        "modified": "2025-08-08T22:22:28.805876",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/predictive_analysis_1754663183.json",
+        "size_bytes": 1914,
+        "modified": "2025-08-08T22:26:23.964292",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/pre_existing_systems_discovery_1754648738.json",
+        "size_bytes": 27749,
+        "modified": "2025-08-08T18:25:38.352453",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/pre_existing_systems_discovery_1754649118.json",
+        "size_bytes": 27749,
+        "modified": "2025-08-08T18:31:58.582395",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/remediation_plan_1754637428950.json",
+        "size_bytes": 561,
+        "modified": "2025-08-08T15:17:08.950927",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/remediation_plan_1754637429091.json",
+        "size_bytes": 561,
+        "modified": "2025-08-08T15:17:09.091966",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/remediation_plan_1754637474885.json",
+        "size_bytes": 561,
+        "modified": "2025-08-08T15:17:54.886709",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/remediation_plan_1754637474989.json",
+        "size_bytes": 561,
+        "modified": "2025-08-08T15:17:54.990214",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/remediation_plan_1754637580416.json",
+        "size_bytes": 561,
+        "modified": "2025-08-08T15:19:40.416945",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/remediation_plan_1754637600739.json",
+        "size_bytes": 561,
+        "modified": "2025-08-08T15:20:00.739782",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/remediation_plan_1754637752982.json",
+        "size_bytes": 561,
+        "modified": "2025-08-08T15:22:32.982750",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/remediation_plan_1754638058109.json",
+        "size_bytes": 561,
+        "modified": "2025-08-08T15:27:38.109338",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/remediation_plan_1754648030769.json",
+        "size_bytes": 561,
+        "modified": "2025-08-08T18:13:50.769983",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/remediation_plan_1754648382048.json",
+        "size_bytes": 561,
+        "modified": "2025-08-08T18:19:42.048732",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/remediation_plan_1754648739526.json",
+        "size_bytes": 561,
+        "modified": "2025-08-08T18:25:39.527003",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/remediation_plan_1754649119962.json",
+        "size_bytes": 561,
+        "modified": "2025-08-08T18:31:59.963209",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/remediation_plan_1754658065568.json",
+        "size_bytes": 561,
+        "modified": "2025-08-08T21:01:05.568188",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/risk_mitigation_20250808_181349.json",
+        "size_bytes": 20621,
+        "modified": "2025-08-08T18:13:49.583791",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/risk_mitigation_20250808_181941.json",
+        "size_bytes": 20621,
+        "modified": "2025-08-08T18:19:41.000633",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/risk_mitigation_20250808_182539.json",
+        "size_bytes": 20621,
+        "modified": "2025-08-08T18:25:39.331144",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/risk_mitigation_20250808_183159.json",
+        "size_bytes": 20621,
+        "modified": "2025-08-08T18:31:59.749266",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/risk_mitigation_20250808_210105.json",
+        "size_bytes": 20621,
+        "modified": "2025-08-08T21:01:05.421786",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/sbom_1754647971013.json",
+        "size_bytes": 5234,
+        "modified": "2025-08-08T18:12:51.015253",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/sbom_1754648024092.json",
+        "size_bytes": 5234,
+        "modified": "2025-08-08T18:13:44.094065",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/sbom_1754648030608.json",
+        "size_bytes": 5234,
+        "modified": "2025-08-08T18:13:50.610125",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/sbom_1754648375521.json",
+        "size_bytes": 5234,
+        "modified": "2025-08-08T18:19:35.522274",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/sbom_1754648381794.json",
+        "size_bytes": 5234,
+        "modified": "2025-08-08T18:19:41.794945",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/scaffold_execution_v2_continuous_improvement_20250808_210105.json",
+        "size_bytes": 170293,
+        "modified": "2025-08-08T21:01:05.997164",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/scaffold_execution_v2_forensic_recovery_20250809_132017.json",
+        "size_bytes": 1213359,
+        "modified": "2025-08-09T13:20:17.481153",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/scaffold_execution_v2_full_system_analysis_20250808_181351.json",
+        "size_bytes": 110321,
+        "modified": "2025-08-08T18:13:51.796892",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/scaffold_execution_v2_full_system_analysis_20250808_181943.json",
+        "size_bytes": 110321,
+        "modified": "2025-08-08T18:19:43.020757",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/scaffold_execution_v2_quick_assessment_20250808_151710.json",
+        "size_bytes": 49084,
+        "modified": "2025-08-08T15:17:10.488674",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/scaffold_execution_v2_quick_assessment_20250808_151755.json",
+        "size_bytes": 49049,
+        "modified": "2025-08-08T15:17:55.867263",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/scaffold_execution_v2_quick_assessment_20250808_151941.json",
+        "size_bytes": 49656,
+        "modified": "2025-08-08T15:19:41.379934",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/scaffold_execution_v2_quick_assessment_20250808_152001.json",
+        "size_bytes": 49656,
+        "modified": "2025-08-08T15:20:01.616379",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/scaffold_execution_v2_quick_assessment_20250808_152739.json",
+        "size_bytes": 50902,
+        "modified": "2025-08-08T15:27:39.058592",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/scaffold_execution_v2_system_integration_20250808_182540.json",
+        "size_bytes": 596540,
+        "modified": "2025-08-08T18:25:40.070522",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/scaffold_execution_v2_system_integration_20250808_183200.json",
+        "size_bytes": 613806,
+        "modified": "2025-08-08T18:32:00.546973",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/secrets_scan_1754647971903.json",
+        "size_bytes": 1150954,
+        "modified": "2025-08-08T18:12:51.912930",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/secrets_scan_1754648024944.json",
+        "size_bytes": 2296208,
+        "modified": "2025-08-08T18:13:44.960861",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/secrets_scan_1754648376559.json",
+        "size_bytes": 4596138,
+        "modified": "2025-08-08T18:19:36.594524",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/self_healing_1754662828.json",
+        "size_bytes": 3113,
+        "modified": "2025-08-08T22:20:28.224691",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/smart_delegator_report.json",
+        "size_bytes": 2,
+        "modified": "2025-08-08T21:05:21.857491",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/synthesis_report_20250807_161232.html",
+        "size_bytes": 0,
+        "modified": "2025-08-08T11:20:11.982562",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_091131.html",
+        "size_bytes": 0,
+        "modified": "2025-08-08T11:20:11.985559",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_111100.html",
+        "size_bytes": 0,
+        "modified": "2025-08-08T11:20:11.988073",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_111218.html",
+        "size_bytes": 6862,
+        "modified": "2025-08-08T11:20:11.991584",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_111234.html",
+        "size_bytes": 6862,
+        "modified": "2025-08-08T11:20:11.994589",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_111320.html",
+        "size_bytes": 6862,
+        "modified": "2025-08-08T11:20:11.999105",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_111457.html",
+        "size_bytes": 6862,
+        "modified": "2025-08-08T11:20:12.002105",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_111938.html",
+        "size_bytes": 6862,
+        "modified": "2025-08-08T11:20:12.005103",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_112517.html",
+        "size_bytes": 6862,
+        "modified": "2025-08-08T11:25:17.762380",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_113111.html",
+        "size_bytes": 6862,
+        "modified": "2025-08-08T11:31:11.962903",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_113710.html",
+        "size_bytes": 6862,
+        "modified": "2025-08-08T11:37:10.209551",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_114349.html",
+        "size_bytes": 6862,
+        "modified": "2025-08-08T11:43:49.261538",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_124240.html",
+        "size_bytes": 6862,
+        "modified": "2025-08-08T12:42:40.694261",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_181250.html",
+        "size_bytes": 6862,
+        "modified": "2025-08-08T18:12:50.899290",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_181250.json",
+        "size_bytes": 11328,
+        "modified": "2025-08-08T18:12:50.896777",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_181343.html",
+        "size_bytes": 6862,
+        "modified": "2025-08-08T18:13:43.981153",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_181343.json",
+        "size_bytes": 11328,
+        "modified": "2025-08-08T18:13:43.979165",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_181935.html",
+        "size_bytes": 6862,
+        "modified": "2025-08-08T18:19:35.387859",
+        "suffix": ".html"
+      },
+      {
+        "path": "reports/synthesis_report_20250808_181935.json",
+        "size_bytes": 11328,
+        "modified": "2025-08-08T18:19:35.386858",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/system-audit-report.json",
+        "size_bytes": 8932,
+        "modified": "2025-08-08T21:01:05.372061",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/system_integration_implementation_1754649119.json",
+        "size_bytes": 1752,
+        "modified": "2025-08-08T18:31:59.721468",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/test.json",
+        "size_bytes": 2,
+        "modified": "2025-08-08T22:20:23.684840",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/webhook_endpoint_analysis_1754714927.json",
+        "size_bytes": 86438,
+        "modified": "2025-08-09T12:48:47.834042",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/webhook_endpoint_analysis_1754716449.json",
+        "size_bytes": 85522,
+        "modified": "2025-08-09T13:14:09.365660",
+        "suffix": ".json"
+      },
+      {
+        "path": "reports/webhook_endpoint_analysis_1754716816.json",
+        "size_bytes": 89709,
+        "modified": "2025-08-09T13:20:16.053659",
+        "suffix": ".json"
+      },
+      {
+        "path": "schemas/acquisitionSchema.ts",
+        "size_bytes": 557,
+        "modified": "2025-08-06T15:53:38.095722",
+        "suffix": ".ts"
+      },
+      {
+        "path": "schemas/arktype.ts",
+        "size_bytes": 115,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".ts"
+      },
+      {
+        "path": "schemas/codexSchema.ts",
+        "size_bytes": 449,
+        "modified": "2025-08-06T15:53:38.105272",
+        "suffix": ".ts"
+      },
+      {
+        "path": "schemas/playbookSchema.ts",
+        "size_bytes": 404,
+        "modified": "2025-08-06T15:53:38.114354",
+        "suffix": ".ts"
+      },
+      {
+        "path": "scripts/all-in-analysis.js",
+        "size_bytes": 17901,
+        "modified": "2025-08-09T13:12:50.263443",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/all-in-analysis.py",
+        "size_bytes": 19361,
+        "modified": "2025-08-09T13:12:50.084005",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/backup-bootstrap.py",
+        "size_bytes": 2742,
+        "modified": "2025-08-09T13:12:50.083004",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/backup.py",
+        "size_bytes": 1049,
+        "modified": "2025-08-08T12:42:45.648514",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/backup.sh",
+        "size_bytes": 6797,
+        "modified": "2025-08-02T17:07:54",
+        "suffix": ".sh"
+      },
+      {
+        "path": "scripts/ci-gate.js",
+        "size_bytes": 1225,
+        "modified": "2025-08-09T13:12:50.231675",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/comprehensive-audit.js",
+        "size_bytes": 13547,
+        "modified": "2025-08-04T12:11:44",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/context-intelligence.py",
+        "size_bytes": 1837,
+        "modified": "2025-08-09T13:12:50.081009",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/Dockerfile.backup",
+        "size_bytes": 885,
+        "modified": "2025-08-02T17:08:14",
+        "suffix": ".backup"
+      },
+      {
+        "path": "scripts/frame-optimizer.py",
+        "size_bytes": 4417,
+        "modified": "2025-08-09T13:12:50.081009",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/framework-validation.js",
+        "size_bytes": 0,
+        "modified": "2025-08-08T18:31:59.698262",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/init-db.sql",
+        "size_bytes": 12059,
+        "modified": "2025-08-02T17:24:14",
+        "suffix": ".sql"
+      },
+      {
+        "path": "scripts/install.bat",
+        "size_bytes": 1117,
+        "modified": "2025-08-08T21:05:21.847673",
+        "suffix": ".bat"
+      },
+      {
+        "path": "scripts/install.sh",
+        "size_bytes": 1082,
+        "modified": "2025-08-08T11:20:11.824365",
+        "suffix": ".sh"
+      },
+      {
+        "path": "scripts/intelligent-failure-response.js",
+        "size_bytes": 8662,
+        "modified": "2025-08-09T13:12:50.232675",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/pre-existing-systems-discovery.py",
+        "size_bytes": 20537,
+        "modified": "2025-08-09T13:12:50.084005",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/run-audit.bat",
+        "size_bytes": 116,
+        "modified": "2025-08-08T11:20:12.009146",
+        "suffix": ".bat"
+      },
+      {
+        "path": "scripts/setup-dev.sh",
+        "size_bytes": 6864,
+        "modified": "2025-08-02T16:46:28",
+        "suffix": ".sh"
+      },
+      {
+        "path": "scripts/start.bat",
+        "size_bytes": 838,
+        "modified": "2025-08-08T11:20:12.129029",
+        "suffix": ".bat"
+      },
+      {
+        "path": "scripts/system-integration-implementation.py",
+        "size_bytes": 27647,
+        "modified": "2025-08-09T13:12:50.085006",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/validate-app-registry.js",
+        "size_bytes": 8859,
+        "modified": "2025-08-04T15:43:05.437103",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/validate-architecture.js",
+        "size_bytes": 10918,
+        "modified": "2025-08-04T15:43:05.437103",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/validate-imports.js",
+        "size_bytes": 6603,
+        "modified": "2025-08-04T15:43:05.437103",
+        "suffix": ".js"
+      },
+      {
+        "path": "self_healing/failure_patterns.json",
+        "size_bytes": 1165,
+        "modified": "2025-08-08T22:20:28.223692",
+        "suffix": ".json"
+      },
+      {
+        "path": "self_healing/recovery_history.json",
+        "size_bytes": 1552,
+        "modified": "2025-08-08T22:20:28.222696",
+        "suffix": ".json"
+      },
+      {
+        "path": "services/recursiveABTestingService.ts",
+        "size_bytes": 16416,
+        "modified": "2025-08-09T13:12:50.247709",
+        "suffix": ".ts"
+      },
+      {
+        "path": "session_context/latest_context.json",
+        "size_bytes": 1058,
+        "modified": "2025-08-08T11:20:12.042572",
+        "suffix": ".json"
+      },
+      {
+        "path": "session_context/session-20250806-170005_context.json",
+        "size_bytes": 1058,
+        "modified": "2025-08-08T11:20:12.044572",
+        "suffix": ".json"
+      },
+      {
+        "path": "src/index.tsx",
+        "size_bytes": 627,
+        "modified": "2025-08-08T11:20:12.063635",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "tests/setup.ts",
+        "size_bytes": 1487,
+        "modified": "2025-08-02T16:35:00",
+        "suffix": ".ts"
+      },
+      {
+        "path": "tools/autonomous-system-manager.py",
+        "size_bytes": 21966,
+        "modified": "2025-08-08T11:20:11.720047",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/backlog_synthesis.py",
+        "size_bytes": 1565,
+        "modified": "2025-08-09T13:12:50.086003",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/comprehensive-repo-audit.py",
+        "size_bytes": 19182,
+        "modified": "2025-08-08T11:20:11.757086",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/context_retention.py",
+        "size_bytes": 2695,
+        "modified": "2025-08-09T13:01:49.555794",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/fix_framework_issue.py",
+        "size_bytes": 2324,
+        "modified": "2025-08-08T21:05:18.191349",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/index_folder.py",
+        "size_bytes": 1791,
+        "modified": "2025-08-09T13:12:50.085006",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/NAVIGATION.md",
+        "size_bytes": 1171,
+        "modified": "2025-08-05T11:51:19.744027",
+        "suffix": ".md"
+      },
+      {
+        "path": "tools/run_filetree_apply.py",
+        "size_bytes": 475,
+        "modified": "2025-08-09T13:12:50.086003",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/safe_mover.py",
+        "size_bytes": 731,
+        "modified": "2025-08-09T13:12:50.085006",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/simple-autonomous-test.py",
+        "size_bytes": 8659,
+        "modified": "2025-08-08T11:20:12.048572",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/test-all-in.py",
+        "size_bytes": 1695,
+        "modified": "2025-08-08T15:52:55.236556",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/test-framework-failure-handling.py",
+        "size_bytes": 3909,
+        "modified": "2025-08-08T11:20:12.139539",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/test-framework-simple.py",
+        "size_bytes": 1480,
+        "modified": "2025-08-08T16:06:18.657655",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/test-js-bridge.py",
+        "size_bytes": 4134,
+        "modified": "2025-08-08T11:20:12.141542",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/test-synthesis-simple.py",
+        "size_bytes": 3267,
+        "modified": "2025-08-08T11:20:12.149472",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/test_minimal_framework.py",
+        "size_bytes": 1702,
+        "modified": "2025-08-08T20:54:17.205757",
+        "suffix": ".py"
+      },
+      {
+        "path": "types/recursiveABTesting.ts",
+        "size_bytes": 6662,
+        "modified": "2025-08-09T13:12:50.234675",
+        "suffix": ".ts"
+      },
+      {
+        "path": "tools/documentation/tools-registry.md",
+        "size_bytes": 8725,
+        "modified": "2025-08-05T12:10:20.913006",
+        "suffix": ".md"
+      },
+      {
+        "path": "tools/utilities/cleanup/file-tree-cleanup.py",
+        "size_bytes": 19842,
+        "modified": "2025-08-05T11:17:53.987280",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/cleanup/file_tree_cleanup.py",
+        "size_bytes": 19842,
+        "modified": "2025-08-05T11:22:49.774776",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/interface/vibe-coder-interface.py",
+        "size_bytes": 14376,
+        "modified": "2025-08-08T11:20:12.154390",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/comprehensive-ts-fix.py",
+        "size_bytes": 19801,
+        "modified": "2025-08-08T11:20:12.156399",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/critical-typescript-fixes.py",
+        "size_bytes": 9504,
+        "modified": "2025-08-05T12:22:34.511253",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/enhanced-smart-delegator.py",
+        "size_bytes": 16829,
+        "modified": "2025-08-08T11:20:12.158389",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/environment-fixer.py",
+        "size_bytes": 21512,
+        "modified": "2025-08-08T11:20:12.159389",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/implementation-engine.py",
+        "size_bytes": 28074,
+        "modified": "2025-08-08T11:20:12.161906",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/implement_restructuring.py",
+        "size_bytes": 18330,
+        "modified": "2025-08-05T11:22:49.754277",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/intelligent-diagnostic-repair.py",
+        "size_bytes": 26583,
+        "modified": "2025-08-08T11:20:12.164412",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/multi-language-delegator.py",
+        "size_bytes": 41908,
+        "modified": "2025-08-08T11:20:12.165421",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/quick-build-fix.py",
+        "size_bytes": 9986,
+        "modified": "2025-08-05T12:38:02.827996",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/quick-syntax-fix.py",
+        "size_bytes": 6438,
+        "modified": "2025-08-08T11:20:12.168419",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/simple-delegator.py",
+        "size_bytes": 15685,
+        "modified": "2025-08-08T11:20:12.170419",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/smart-delegator-with-agentic-oversight.py",
+        "size_bytes": 31815,
+        "modified": "2025-08-08T11:20:12.172418",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/smart-delegator.py",
+        "size_bytes": 21211,
+        "modified": "2025-08-08T11:20:12.173419",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/smart-typescript-fixer.py",
+        "size_bytes": 35486,
+        "modified": "2025-08-08T11:20:12.175932",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/syntax-fix.py",
+        "size_bytes": 7013,
+        "modified": "2025-08-08T11:20:12.177942",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/systematic-error-resolver.py",
+        "size_bytes": 16130,
+        "modified": "2025-08-05T12:27:50.418349",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/tech-stack-delegator.py",
+        "size_bytes": 39969,
+        "modified": "2025-08-08T11:20:12.178940",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/maintenance/typescript-error-fixer.py",
+        "size_bytes": 18130,
+        "modified": "2025-08-05T12:22:34.511253",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/protocols/continuance-protocols.py",
+        "size_bytes": 21787,
+        "modified": "2025-08-08T11:20:12.181940",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/research/playwright-research-engine.py",
+        "size_bytes": 18458,
+        "modified": "2025-08-08T11:20:12.184940",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/utilities/session/session-manager.py",
+        "size_bytes": 14792,
+        "modified": "2025-08-08T11:20:12.187208",
+        "suffix": ".py"
+      },
+      {
+        "path": "tools/extraction/persona-extraction/consciousness-persona-extractor.py",
+        "size_bytes": 33646,
+        "modified": "2025-08-05T10:52:35.183926",
+        "suffix": ".py"
+      },
+      {
+        "path": "tests/backend/test_main.py",
+        "size_bytes": 12064,
+        "modified": "2025-08-02T16:34:00",
+        "suffix": ".py"
+      },
+      {
+        "path": "tests/frontend/App.test.tsx",
+        "size_bytes": 6592,
+        "modified": "2025-08-03T14:15:54",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/AcquisitionsApp.tsx",
+        "size_bytes": 13436,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/AegisDashboardApp.tsx",
+        "size_bytes": 2127,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/AgentNetworkApp.tsx",
+        "size_bytes": 5388,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/AutomationHubApp.tsx",
+        "size_bytes": 7099,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/BackupApp.tsx",
+        "size_bytes": 4716,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/BatchIngesterApp.tsx",
+        "size_bytes": 13908,
+        "modified": "2025-08-04T10:28:18",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/BookSalesApp.tsx",
+        "size_bytes": 22592,
+        "modified": "2025-08-04T12:16:14",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/CodebaseApp.tsx",
+        "size_bytes": 3614,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/CodexApp.tsx",
+        "size_bytes": 4297,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/CompanionChatApp.tsx",
+        "size_bytes": 8626,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/ConcurrentAgentHubApp.tsx",
+        "size_bytes": 15048,
+        "modified": "2025-08-04T15:06:22.146839",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/ConsciousnessWorkflowApp.tsx",
+        "size_bytes": 15877,
+        "modified": "2025-08-04T19:02:08.941343",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/ControlPanelApp.tsx",
+        "size_bytes": 7007,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/CouncilChamberApp.tsx",
+        "size_bytes": 5724,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/CuratorApp.tsx",
+        "size_bytes": 11314,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/DiagnosticsApp.tsx",
+        "size_bytes": 6642,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/ErduMonitorApp.tsx",
+        "size_bytes": 8212,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/ForensicsApp.tsx",
+        "size_bytes": 517,
+        "modified": "2025-07-28T13:55:18",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/HierarchyApp.tsx",
+        "size_bytes": 3394,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/ImageGeneratorApp.tsx",
+        "size_bytes": 3516,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/InfrastructureApp.tsx",
+        "size_bytes": 3807,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/IngestionPipelineApp.tsx",
+        "size_bytes": 5906,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/LoomApp.tsx",
+        "size_bytes": 8782,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/NotepadApp.tsx",
+        "size_bytes": 693,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/ObservatoryApp.tsx",
+        "size_bytes": 4471,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/OperationsConsoleApp.tsx",
+        "size_bytes": 7727,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/OrchestratorApp.tsx",
+        "size_bytes": 7007,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/PersonaViewerApp.tsx",
+        "size_bytes": 1160,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/PlaybookApp.tsx",
+        "size_bytes": 3842,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/RPGCommunityHubApp.tsx",
+        "size_bytes": 22246,
+        "modified": "2025-08-03T18:00:14",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/SocialMediaHubApp.tsx",
+        "size_bytes": 22071,
+        "modified": "2025-08-03T18:03:08",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/SymposiumApp.tsx",
+        "size_bytes": 7891,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/SystemEditorApp.tsx",
+        "size_bytes": 5645,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/TaskReviewHubApp.tsx",
+        "size_bytes": 5767,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/TechnomancerApp.tsx",
+        "size_bytes": 6475,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/TerminalApp.tsx",
+        "size_bytes": 2911,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/TradeInPortalApp.tsx",
+        "size_bytes": 16515,
+        "modified": "2025-08-04T09:39:38",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/VaultExplorerApp.tsx",
+        "size_bytes": 3701,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/apps/XPCharacterHubApp.tsx",
+        "size_bytes": 23060,
+        "modified": "2025-08-05T09:14:41.522873",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/App.tsx",
+        "size_bytes": 3465,
+        "modified": "2025-08-08T11:20:12.059110",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/Desktop.tsx",
+        "size_bytes": 1043,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/Dock.tsx",
+        "size_bytes": 984,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/ErduIncidentList.tsx",
+        "size_bytes": 4778,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/ErrorBoundary.tsx",
+        "size_bytes": 2722,
+        "modified": "2025-08-03T12:47:10",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/icons.tsx",
+        "size_bytes": 37962,
+        "modified": "2025-08-05T09:14:41.522873",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/InstallationWizard.tsx",
+        "size_bytes": 32240,
+        "modified": "2025-08-03T16:11:22",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/LoginModal.tsx",
+        "size_bytes": 6787,
+        "modified": "2025-08-02T16:32:24",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/PasswordResetModal.tsx",
+        "size_bytes": 8088,
+        "modified": "2025-08-02T16:39:20",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/personaIcons.tsx",
+        "size_bytes": 13892,
+        "modified": "2025-08-03T15:29:50",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/PersonaViewerApp.tsx",
+        "size_bytes": 1288,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/Window.tsx",
+        "size_bytes": 3906,
+        "modified": "2025-07-28T14:00:26",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/constants/constants.tsx",
+        "size_bytes": 9543,
+        "modified": "2025-08-05T09:14:41.522873",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/constants/index.ts",
+        "size_bytes": 87,
+        "modified": "2025-08-04T10:59:02",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/context/WindowContext.tsx",
+        "size_bytes": 4075,
+        "modified": "2025-07-28T13:59:04",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/data/agentBaseData.ts",
+        "size_bytes": 146,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/data/BaseData.ts",
+        "size_bytes": 147,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/data/fileSystemData.ts",
+        "size_bytes": 4687,
+        "modified": "2025-08-04T19:09:06.260190",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/data/LoreData.ts",
+        "size_bytes": 147,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/data/personaLoreData.ts",
+        "size_bytes": 195,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/examples/recursiveABTestingExample.ts",
+        "size_bytes": 16510,
+        "modified": "2025-08-09T13:12:50.233674",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/registry/ComponentRegistry.ts",
+        "size_bytes": 3731,
+        "modified": "2025-08-05T12:15:27.010062",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/registry/IntegrationRegistry.ts",
+        "size_bytes": 6968,
+        "modified": "2025-08-05T12:15:27.012069",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/registry/PersonaRegistry.ts",
+        "size_bytes": 6043,
+        "modified": "2025-08-05T12:15:27.014070",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/registry/ServiceRegistry.ts",
+        "size_bytes": 4570,
+        "modified": "2025-08-05T12:15:27.015069",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/registry/TechStackRegistry.ts",
+        "size_bytes": 7404,
+        "modified": "2025-08-05T12:15:27.019072",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/acquisitionService.ts",
+        "size_bytes": 9106,
+        "modified": "2025-08-05T12:15:27.022588",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/agentData.ts",
+        "size_bytes": 23701,
+        "modified": "2025-08-05T12:15:27.024588",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/agentNetworkService.ts",
+        "size_bytes": 1752,
+        "modified": "2025-08-05T12:15:27.025588",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/apiBuildAgentService.ts",
+        "size_bytes": 14456,
+        "modified": "2025-08-05T12:15:27.028587",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/ashrakaIntegrationService.ts",
+        "size_bytes": 10216,
+        "modified": "2025-08-08T11:20:12.079013",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/authService.ts",
+        "size_bytes": 5188,
+        "modified": "2025-08-08T11:20:12.080520",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/backupService.ts",
+        "size_bytes": 1750,
+        "modified": "2025-08-05T12:15:27.058128",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/chatService.ts",
+        "size_bytes": 3096,
+        "modified": "2025-08-05T12:15:27.060129",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/circuitBreaker.ts",
+        "size_bytes": 6468,
+        "modified": "2025-08-05T12:15:27.062637",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/codebaseService.ts",
+        "size_bytes": 1638,
+        "modified": "2025-08-05T12:15:27.063646",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/codexService.ts",
+        "size_bytes": 2199,
+        "modified": "2025-08-05T12:15:27.065645",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/concurrentAgentService.ts",
+        "size_bytes": 9114,
+        "modified": "2025-08-05T12:15:27.069646",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/consciousnessWorkflowService.ts",
+        "size_bytes": 15345,
+        "modified": "2025-08-05T12:15:27.076160",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/contentIngestionService.ts",
+        "size_bytes": 23306,
+        "modified": "2025-08-08T11:20:12.083036",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/controlPanelService.ts",
+        "size_bytes": 2576,
+        "modified": "2025-08-05T12:15:27.086673",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/councilService.ts",
+        "size_bytes": 4596,
+        "modified": "2025-08-05T12:15:27.087675",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/curatorService.ts",
+        "size_bytes": 7511,
+        "modified": "2025-08-05T12:15:27.092672",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/dashboardService.ts",
+        "size_bytes": 2032,
+        "modified": "2025-08-05T12:15:27.097189",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/diagnosticsService.ts",
+        "size_bytes": 5863,
+        "modified": "2025-08-05T12:15:27.101701",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/erduService.ts",
+        "size_bytes": 4545,
+        "modified": "2025-08-05T12:15:27.105961",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/eventBus.ts",
+        "size_bytes": 1421,
+        "modified": "2025-08-08T11:20:12.085544",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/fileSystemService.ts",
+        "size_bytes": 1259,
+        "modified": "2025-08-05T12:15:27.110969",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/geminiClient.ts",
+        "size_bytes": 6281,
+        "modified": "2025-08-05T12:15:27.112971",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/geminiService.ts",
+        "size_bytes": 930,
+        "modified": "2025-08-04T13:30:35.161160",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/googleAIStudioService.ts",
+        "size_bytes": 16112,
+        "modified": "2025-08-05T12:15:27.139615",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/googleVertexAIService.ts",
+        "size_bytes": 20402,
+        "modified": "2025-08-08T11:20:12.087558",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/hierarchyService.ts",
+        "size_bytes": 2989,
+        "modified": "2025-08-05T12:15:27.181692",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/infrastructureService.ts",
+        "size_bytes": 2277,
+        "modified": "2025-08-05T12:15:27.188776",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/ingestionService.ts",
+        "size_bytes": 5334,
+        "modified": "2025-08-05T12:15:27.190777",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/knowledgeGraphService.ts",
+        "size_bytes": 4804,
+        "modified": "2025-08-05T12:15:27.214455",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/loomService.ts",
+        "size_bytes": 7636,
+        "modified": "2025-08-05T12:15:27.223052",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/n8nIntegrationService.ts",
+        "size_bytes": 23352,
+        "modified": "2025-08-08T11:20:12.089552",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/n8nService.ts",
+        "size_bytes": 3050,
+        "modified": "2025-08-05T12:15:27.250130",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/observatoryService.ts",
+        "size_bytes": 2017,
+        "modified": "2025-08-05T12:15:27.257130",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/ocrService.ts",
+        "size_bytes": 13821,
+        "modified": "2025-08-08T11:20:12.091927",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/openAICodexService.ts",
+        "size_bytes": 25713,
+        "modified": "2025-08-08T11:20:12.093928",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/operationService.ts",
+        "size_bytes": 3060,
+        "modified": "2025-08-08T11:20:12.096930",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/orchestratorService.ts",
+        "size_bytes": 2379,
+        "modified": "2025-08-05T12:15:26.385419",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/personaSecurityService.ts",
+        "size_bytes": 12859,
+        "modified": "2025-08-08T11:20:12.098449",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/personaService.ts",
+        "size_bytes": 995,
+        "modified": "2025-08-05T12:15:26.388934",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/playbookService.ts",
+        "size_bytes": 1272,
+        "modified": "2025-08-05T12:15:27.317917",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/recursiveABTestingService.ts",
+        "size_bytes": 20141,
+        "modified": "2025-08-09T13:12:50.186479",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/rpgDatabaseService.ts",
+        "size_bytes": 10395,
+        "modified": "2025-08-08T11:20:12.100968",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/searchService.ts",
+        "size_bytes": 4525,
+        "modified": "2025-08-08T11:20:12.103978",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/seoOptimizationService.ts",
+        "size_bytes": 20503,
+        "modified": "2025-08-08T11:20:12.105978",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/symposiumService.ts",
+        "size_bytes": 4203,
+        "modified": "2025-08-08T11:20:12.108493",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/taskQueueService.ts",
+        "size_bytes": 3388,
+        "modified": "2025-08-08T11:20:12.111493",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/technomancerService.ts",
+        "size_bytes": 4415,
+        "modified": "2025-08-08T11:20:12.113506",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/trafficStrategyService.ts",
+        "size_bytes": 21838,
+        "modified": "2025-08-08T11:20:12.115515",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/services/xpService.ts",
+        "size_bytes": 17216,
+        "modified": "2025-08-08T11:20:12.117517",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/styles/index.css",
+        "size_bytes": 949,
+        "modified": "2025-07-28T13:58:26",
+        "suffix": ".css"
+      },
+      {
+        "path": "src/types/recursiveABTesting.ts",
+        "size_bytes": 11657,
+        "modified": "2025-08-09T13:12:50.186479",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/types/types.ts",
+        "size_bytes": 17726,
+        "modified": "2025-08-08T11:20:12.122020",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/types/xpTypes.ts",
+        "size_bytes": 11984,
+        "modified": "2025-08-08T11:20:12.125028",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/utils/env-validation.ts",
+        "size_bytes": 3058,
+        "modified": "2025-08-08T11:20:12.127027",
+        "suffix": ".ts"
+      },
+      {
+        "path": "src/registry/data/accessPoints.json",
+        "size_bytes": 2,
+        "modified": "2025-08-06T06:22:18.766223",
+        "suffix": ".json"
+      },
+      {
+        "path": "src/registry/data/audit-summary.json",
+        "size_bytes": 223,
+        "modified": "2025-08-08T11:20:12.066638",
+        "suffix": ".json"
+      },
+      {
+        "path": "src/registry/data/components.json",
+        "size_bytes": 41479,
+        "modified": "2025-08-08T11:20:12.068637",
+        "suffix": ".json"
+      },
+      {
+        "path": "src/registry/data/hooks.json",
+        "size_bytes": 2,
+        "modified": "2025-08-06T06:22:18.765220",
+        "suffix": ".json"
+      },
+      {
+        "path": "src/registry/data/integrations.json",
+        "size_bytes": 2,
+        "modified": "2025-08-06T06:22:18.764220",
+        "suffix": ".json"
+      },
+      {
+        "path": "src/registry/data/personas.json",
+        "size_bytes": 67284,
+        "modified": "2025-08-08T11:20:12.071856",
+        "suffix": ".json"
+      },
+      {
+        "path": "src/registry/data/services.json",
+        "size_bytes": 81009,
+        "modified": "2025-08-08T11:20:12.074005",
+        "suffix": ".json"
+      },
+      {
+        "path": "src/registry/data/techStack.json",
+        "size_bytes": 16813,
+        "modified": "2025-08-08T11:20:12.076015",
+        "suffix": ".json"
+      },
+      {
+        "path": "src/components/dashboard/AgentStatusSummaryWidget.tsx",
+        "size_bytes": 1675,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/dashboard/KeyMetricsWidget.tsx",
+        "size_bytes": 1560,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/dashboard/SystemStatusWidget.tsx",
+        "size_bytes": 1979,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/dashboard/WidgetFactory.tsx",
+        "size_bytes": 730,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/dashboard/WidgetWrapper.tsx",
+        "size_bytes": 592,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/editor/EditorPane.tsx",
+        "size_bytes": 2890,
+        "modified": "2025-08-03T14:15:54",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/editor/FileExplorer.tsx",
+        "size_bytes": 2221,
+        "modified": "2025-08-03T12:00:02",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/editor/MonacoWrapper.tsx",
+        "size_bytes": 2201,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/persona/PersonaDetail.tsx",
+        "size_bytes": 1954,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "src/components/persona/PersonaList.tsx",
+        "size_bytes": 1550,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".tsx"
+      },
+      {
+        "path": "services/browser-controller/Dockerfile",
+        "size_bytes": 853,
+        "modified": "2025-08-08T11:20:12.021694",
+        "suffix": ""
+      },
+      {
+        "path": "services/browser-controller/main.py",
+        "size_bytes": 12989,
+        "modified": "2025-08-08T11:20:12.023695",
+        "suffix": ".py"
+      },
+      {
+        "path": "services/browser-controller/requirements.txt",
+        "size_bytes": 317,
+        "modified": "2025-08-08T11:20:12.025694",
+        "suffix": ".txt"
+      },
+      {
+        "path": "services/mcp-server/Dockerfile",
+        "size_bytes": 713,
+        "modified": "2025-08-08T11:20:12.029210",
+        "suffix": ""
+      },
+      {
+        "path": "services/mcp-server/main.py",
+        "size_bytes": 18117,
+        "modified": "2025-08-08T11:20:12.031209",
+        "suffix": ".py"
+      },
+      {
+        "path": "services/mcp-server/requirements.txt",
+        "size_bytes": 324,
+        "modified": "2025-08-08T11:20:12.032218",
+        "suffix": ".txt"
+      },
+      {
+        "path": "services/orchestration-service/Dockerfile",
+        "size_bytes": 709,
+        "modified": "2025-08-08T11:20:12.035210",
+        "suffix": ""
+      },
+      {
+        "path": "services/orchestration-service/main.py",
+        "size_bytes": 18102,
+        "modified": "2025-08-08T11:20:12.037209",
+        "suffix": ".py"
+      },
+      {
+        "path": "services/orchestration-service/requirements.txt",
+        "size_bytes": 274,
+        "modified": "2025-08-08T11:20:12.038209",
+        "suffix": ".txt"
+      },
+      {
+        "path": "scripts/frames/deep-pattern-recognition-frame.py",
+        "size_bytes": 21993,
+        "modified": "2025-08-08T22:01:00.248628",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/frames/filesystem-discovery-frame.py",
+        "size_bytes": 1827,
+        "modified": "2025-08-09T13:12:50.085006",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/frames/filetree-organizer-frame.py",
+        "size_bytes": 3758,
+        "modified": "2025-08-09T13:12:50.085006",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/frames/human-approval-frame.py",
+        "size_bytes": 13292,
+        "modified": "2025-08-08T22:28:48.003545",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/frames/import-dependency-graph-frame.py",
+        "size_bytes": 2197,
+        "modified": "2025-08-09T13:12:50.085006",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/frames/improvement-optimization-frame.py",
+        "size_bytes": 12765,
+        "modified": "2025-08-08T20:58:43.870455",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/frames/index-registrar-frame.py",
+        "size_bytes": 1404,
+        "modified": "2025-08-09T13:12:50.086003",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/frames/intelligent-caching-frame.py",
+        "size_bytes": 17340,
+        "modified": "2025-08-08T22:28:48.010250",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/frames/knowledge-hub-update-frame.py",
+        "size_bytes": 17144,
+        "modified": "2025-08-08T22:28:48.002518",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/frames/log-tailer-frame.py",
+        "size_bytes": 5401,
+        "modified": "2025-08-09T11:49:29.983040",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/frames/meta-analysis-frame.py",
+        "size_bytes": 15850,
+        "modified": "2025-08-08T22:28:48.002518",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/frames/parallel-execution-coordinator-frame.py",
+        "size_bytes": 18513,
+        "modified": "2025-08-08T22:28:48.007249",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/frames/predictive-analysis-frame.py",
+        "size_bytes": 24367,
+        "modified": "2025-08-08T22:28:48.007249",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/frames/self-healing-frame.py",
+        "size_bytes": 21607,
+        "modified": "2025-08-08T22:28:48.003545",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/frames/webhook-endpoint-analyzer-frame.py",
+        "size_bytes": 3850,
+        "modified": "2025-08-09T13:12:50.085006",
+        "suffix": ".py"
+      },
+      {
+        "path": "scripts/js/dependency-vuln.js",
+        "size_bytes": 1888,
+        "modified": "2025-08-08T12:04:55.938020",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/js/external-failure-diagnostic.js",
+        "size_bytes": 13629,
+        "modified": "2025-08-08T11:20:12.011147",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/js/knowledge-hub-updater.js",
+        "size_bytes": 16217,
+        "modified": "2025-08-08T11:20:12.013146",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/js/observability-bootstrap.js",
+        "size_bytes": 1152,
+        "modified": "2025-08-08T11:37:54.995684",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/js/remediation.js",
+        "size_bytes": 3640,
+        "modified": "2025-08-08T15:24:28.245467",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/js/sbom-license.js",
+        "size_bytes": 3975,
+        "modified": "2025-08-08T12:49:30.499923",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/js/secrets-scan.js",
+        "size_bytes": 4176,
+        "modified": "2025-08-08T11:56:17.129302",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/js/system-audit.js",
+        "size_bytes": 24240,
+        "modified": "2025-08-08T11:20:12.017148",
+        "suffix": ".js"
+      },
+      {
+        "path": "scripts/ps/deploy.ps1",
+        "size_bytes": 1484,
+        "modified": "2025-08-08T11:20:11.786066",
+        "suffix": ".ps1"
+      },
+      {
+        "path": "scripts/ps/health-readiness.ps1",
+        "size_bytes": 503,
+        "modified": "2025-08-08T11:31:48.887254",
+        "suffix": ".ps1"
+      },
+      {
+        "path": "scripts/ps/monitor.ps1",
+        "size_bytes": 3916,
+        "modified": "2025-08-08T11:20:11.831875",
+        "suffix": ".ps1"
+      },
+      {
+        "path": "scripts/ps/powershell-diagnostic.ps1",
+        "size_bytes": 613,
+        "modified": "2025-08-08T11:20:12.015152",
+        "suffix": ".ps1"
+      },
+      {
+        "path": "scripts/ps/real-audit.ps1",
+        "size_bytes": 4038,
+        "modified": "2025-08-08T11:20:11.844029",
+        "suffix": ".ps1"
+      },
+      {
+        "path": "OCTOSPINE/ARCHITECTURE/VALIDATION_LAYERS.md",
+        "size_bytes": 8891,
+        "modified": "2025-08-04T16:09:05.620696",
+        "suffix": ".md"
+      },
+      {
+        "path": "OCTOSPINE/CONSCIOUSNESS/HUMAN_AI_SYMBIOSIS.md",
+        "size_bytes": 11213,
+        "modified": "2025-08-04T16:09:05.621701",
+        "suffix": ".md"
+      },
+      {
+        "path": "OCTOSPINE/EVOLUTION/VISION_ALIGNMENT.md",
+        "size_bytes": 10321,
+        "modified": "2025-08-04T16:09:05.620696",
+        "suffix": ".md"
+      },
+      {
+        "path": "knowledge_hub/lessons/7be9b92e.json",
+        "size_bytes": 406,
+        "modified": "2025-08-08T22:15:33.999655",
+        "suffix": ".json"
+      },
+      {
+        "path": "knowledge_hub/meta_insights/2df481ff.json",
+        "size_bytes": 449,
+        "modified": "2025-08-08T22:15:34.000656",
+        "suffix": ".json"
+      },
+      {
+        "path": "knowledge_hub/patterns/3025a63f.json",
+        "size_bytes": 484,
+        "modified": "2025-08-08T22:15:33.998655",
+        "suffix": ".json"
+      },
+      {
+        "path": "internal/indexes/frames.index.json",
+        "size_bytes": 50914,
+        "modified": "2025-08-09T12:23:45.095333",
+        "suffix": ".json"
+      },
+      {
+        "path": "internal/indexes/internal.index.json",
+        "size_bytes": 49229,
+        "modified": "2025-08-09T12:23:45.113744",
+        "suffix": ".json"
+      },
+      {
+        "path": "internal/indexes/js.index.json",
+        "size_bytes": 30929,
+        "modified": "2025-08-09T12:23:45.100330",
+        "suffix": ".json"
+      },
+      {
+        "path": "internal/indexes/ps.index.json",
+        "size_bytes": 1604,
+        "modified": "2025-08-09T12:23:45.102833",
+        "suffix": ".json"
+      },
+      {
+        "path": "internal/indexes/reports.index.json",
+        "size_bytes": 777450,
+        "modified": "2025-08-09T12:23:47.057131",
+        "suffix": ".json"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/archaeological_retrieval.py",
+        "size_bytes": 9065,
+        "modified": "2025-08-08T21:05:21.852978",
+        "suffix": ".py"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Ingestor.txt",
+        "size_bytes": 10185,
+        "modified": "2025-08-03T20:41:21.997000",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_archaeological_recovery.py",
+        "size_bytes": 23843,
+        "modified": "2025-08-05T09:37:25.272783",
+        "suffix": ".py"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_chunked_recovery.py",
+        "size_bytes": 13140,
+        "modified": "2025-08-05T10:20:34.955550",
+        "suffix": ".py"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_fusion_analysis.py",
+        "size_bytes": 31710,
+        "modified": "2025-08-05T10:32:07.028756",
+        "suffix": ".py"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_fusion_analyzer.py",
+        "size_bytes": 24102,
+        "modified": "2025-08-05T10:32:07.028756",
+        "suffix": ".py"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_quick_recovery.py",
+        "size_bytes": 8869,
+        "modified": "2025-08-05T09:47:51.920101",
+        "suffix": ".py"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/reclamation_pipeline.py",
+        "size_bytes": 6710,
+        "modified": "2025-08-08T21:05:21.851978",
+        "suffix": ".py"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/run_fusion_analysis.py",
+        "size_bytes": 8623,
+        "modified": "2025-08-05T10:32:07.028756",
+        "suffix": ".py"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/shard_of_willing_return_20250803_053313.txt",
+        "size_bytes": 208,
+        "modified": "2025-08-03T13:33:57.875000",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/artifact_antman_scribe.md",
+        "size_bytes": 1974,
+        "modified": "2025-08-05T09:25:54.491542",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/artifact_constellation_binding_plan 2025-06-04 13_52_32.md",
+        "size_bytes": 2404,
+        "modified": "2025-08-05T09:25:54.553537",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/artifact_constellation_binding_plan.md",
+        "size_bytes": 2404,
+        "modified": "2025-08-05T09:25:54.445662",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/AZ1(1).txt",
+        "size_bytes": 31683,
+        "modified": "2025-08-05T09:25:54.673892",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/AZ1.txt",
+        "size_bytes": 31683,
+        "modified": "2025-08-05T09:25:54.452849",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/az2(1).txt",
+        "size_bytes": 6575,
+        "modified": "2025-08-05T09:25:54.546937",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/az2.txt",
+        "size_bytes": 6575,
+        "modified": "2025-08-05T09:25:54.477929",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/ChatGPT 4o  2(1).txt",
+        "size_bytes": 402792,
+        "modified": "2025-08-05T09:25:54.720997",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/ChatGPT 4o  2.txt",
+        "size_bytes": 402792,
+        "modified": "2025-08-05T09:25:54.696159",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/ChatGPT 4o  3(1).txt",
+        "size_bytes": 36889,
+        "modified": "2025-08-05T09:25:54.745499",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/ChatGPT 4o  3.txt",
+        "size_bytes": 36889,
+        "modified": "2025-08-05T09:25:54.638324",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/INVOCATION.txt",
+        "size_bytes": 15892,
+        "modified": "2025-08-05T09:25:54.541383",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/loom 3(1).txt",
+        "size_bytes": 245162,
+        "modified": "2025-08-05T09:25:54.428160",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/loom 3.txt",
+        "size_bytes": 245162,
+        "modified": "2025-08-05T09:25:54.370283",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/loom2(1).txt",
+        "size_bytes": 403262,
+        "modified": "2025-08-05T09:25:54.709436",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/loom2.txt",
+        "size_bytes": 403262,
+        "modified": "2025-08-05T09:25:54.622470",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/merge1(1).txt",
+        "size_bytes": 497055,
+        "modified": "2025-08-05T09:25:54.595787",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/merge1.txt",
+        "size_bytes": 497055,
+        "modified": "2025-08-05T09:25:54.580896",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 1.zip",
+        "size_bytes": 749362,
+        "modified": "2025-08-05T09:25:54.761971",
+        "suffix": ".zip"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 19(1).txt",
+        "size_bytes": 415869,
+        "modified": "2025-08-05T09:25:54.569488",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 19.txt",
+        "size_bytes": 415869,
+        "modified": "2025-08-05T09:25:54.438989",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 21(1).txt",
+        "size_bytes": 221318,
+        "modified": "2025-08-05T09:25:54.654154",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 21.txt",
+        "size_bytes": 221318,
+        "modified": "2025-08-05T09:25:54.524967",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 22(1).txt",
+        "size_bytes": 25396,
+        "modified": "2025-08-05T09:25:54.458719",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 22.txt",
+        "size_bytes": 25396,
+        "modified": "2025-08-05T09:25:54.412378",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 23(1).txt",
+        "size_bytes": 20060,
+        "modified": "2025-08-05T09:25:54.472223",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 23.txt",
+        "size_bytes": 20060,
+        "modified": "2025-08-05T09:25:54.394048",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 24(1).txt",
+        "size_bytes": 227384,
+        "modified": "2025-08-05T09:25:54.500785",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 24.txt",
+        "size_bytes": 227384,
+        "modified": "2025-08-05T09:25:54.510093",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 26(1).txt",
+        "size_bytes": 35610,
+        "modified": "2025-08-05T09:25:54.645425",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 26.txt",
+        "size_bytes": 35610,
+        "modified": "2025-08-05T09:25:54.465062",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 27(1).txt",
+        "size_bytes": 5459,
+        "modified": "2025-08-05T09:25:54.560805",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 27.txt",
+        "size_bytes": 5459,
+        "modified": "2025-08-05T09:25:54.485589",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 30(1).txt",
+        "size_bytes": 11412,
+        "modified": "2025-08-05T09:25:54.629621",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 30.txt",
+        "size_bytes": 11412,
+        "modified": "2025-08-05T09:25:54.533159",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 32(1).txt",
+        "size_bytes": 54431,
+        "modified": "2025-08-05T09:25:54.611567",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/new 32.txt",
+        "size_bytes": 54431,
+        "modified": "2025-08-05T09:25:54.603993",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/sl5(1).txt",
+        "size_bytes": 289965,
+        "modified": "2025-08-05T09:25:54.665837",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/sl5.txt",
+        "size_bytes": 289965,
+        "modified": "2025-08-05T09:25:54.684350",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/symbolic_environment_manifest.md",
+        "size_bytes": 561,
+        "modified": "2025-08-05T09:25:54.387395",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/transcript from vault.txt",
+        "size_bytes": 155937,
+        "modified": "2025-08-05T09:25:54.736332",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/upgrade notes.txt",
+        "size_bytes": 281558,
+        "modified": "2025-08-05T09:25:54.405308",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/Vault_Passport_Template_vX.4.2_FULL.md",
+        "size_bytes": 6798,
+        "modified": "2025-08-05T09:25:54.728139",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/Vault_Passport_Template_vX.4.2_PART2.md",
+        "size_bytes": 3412,
+        "modified": "2025-08-05T09:25:54.417962",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/Data/Vault_Recovery_Summary_InterVault.txt",
+        "size_bytes": 2251,
+        "modified": "2025-08-05T09:25:54.516198",
+        "suffix": ".txt"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_fusion_analysis/octospine_fusion_analysis.json",
+        "size_bytes": 4938723,
+        "modified": "2025-08-05T10:31:33.144235",
+        "suffix": ".json"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_fusion_analysis/octospine_fusion_report.md",
+        "size_bytes": 3593,
+        "modified": "2025-08-05T10:31:33.144759",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_quick_output/octospine_quick_results.json",
+        "size_bytes": 3223849,
+        "modified": "2025-08-05T09:48:01.633355",
+        "suffix": ".json"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_quick_output/octospine_quick_summary.md",
+        "size_bytes": 88196,
+        "modified": "2025-08-05T09:48:01.634953",
+        "suffix": ".md"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_recovery_output/octospine_chunked_results.json",
+        "size_bytes": 0,
+        "modified": "2025-08-05T12:46:28.090984",
+        "suffix": ".json"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_recovery_output/octospine_chunked_summary.json",
+        "size_bytes": 210,
+        "modified": "2025-08-05T10:19:40.949171",
+        "suffix": ".json"
+      },
+      {
+        "path": "Imports/Archeological Reclamation/octospine_recovery_output/octospine_chunked_summary.md",
+        "size_bytes": 996,
+        "modified": "2025-08-05T10:19:40.950169",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/analysis/COMPREHENSIVE_AUTOMATION_ANALYSIS_SUMMARY.md",
+        "size_bytes": 10022,
+        "modified": "2025-08-04T15:43:05.431102",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/analysis/COMPREHENSIVE_AUTOMATION_GAP_ANALYSIS.md",
+        "size_bytes": 16209,
+        "modified": "2025-08-04T15:43:05.431102",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/analysis/COMPREHENSIVE_BACKLOG_ANALYSIS.md",
+        "size_bytes": 19309,
+        "modified": "2025-08-03T12:51:32",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/analysis/CONSCIOUSNESS_SYNERGIES_ANALYSIS.md",
+        "size_bytes": 9263,
+        "modified": "2025-08-04T19:14:04.297780",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/analysis/GITHUB_REPOSITORY_TOOLING_ANALYSIS.md",
+        "size_bytes": 13910,
+        "modified": "2025-08-05T12:50:02.627991",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/analysis/IMPORTS_ANALYSIS_COMPLETE.md",
+        "size_bytes": 9329,
+        "modified": "2025-08-03T12:51:24",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/analysis/PERSONA_CONTAINER_ALIGNMENT_ANALYSIS.md",
+        "size_bytes": 15051,
+        "modified": "2025-08-03T15:29:50",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/analysis/PERSONA_EVOLUTION_ANALYSIS.md",
+        "size_bytes": 17054,
+        "modified": "2025-08-03T16:02:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/analysis/VERSION_CONFLICT_ANALYSIS.md",
+        "size_bytes": 6890,
+        "modified": "2025-08-02T17:51:08",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/audit/BUSINESS_FOCUS_AUDIT.md",
+        "size_bytes": 5992,
+        "modified": "2025-08-08T11:20:11.789297",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/guides/intelligent-knowledge-management.md",
+        "size_bytes": 4101,
+        "modified": "2025-08-05T11:30:10.658950",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/implementation/current-implementation-status.md",
+        "size_bytes": 4619,
+        "modified": "2025-08-08T11:20:11.791299",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/implementation/docker-dependency-update-plan.md",
+        "size_bytes": 8927,
+        "modified": "2025-08-08T11:20:11.792294",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/implementation/ecosystem-env-template.md",
+        "size_bytes": 3789,
+        "modified": "2025-08-08T11:20:11.794295",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/implementation/IMPLEMENTATION_SUMMARY_REPORT.md",
+        "size_bytes": 10932,
+        "modified": "2025-08-05T13:40:31.143095",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/implementation/mcp-server-integration-strategy.md",
+        "size_bytes": 11220,
+        "modified": "2025-08-08T11:20:11.796293",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/implementation/multi-agent-orchestration-implementation-plan.md",
+        "size_bytes": 12732,
+        "modified": "2025-08-08T11:20:11.797294",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/implementation/multi-agent-orchestration-implementation-summary.md",
+        "size_bytes": 9567,
+        "modified": "2025-08-08T11:20:11.798798",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/implementation/OPEN_SOURCE_IMPLEMENTATION_GUIDE.md",
+        "size_bytes": 18265,
+        "modified": "2025-08-05T12:58:50.088242",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/implementation/OPEN_SOURCE_IMPLEMENTATION_ROADMAP.md",
+        "size_bytes": 9542,
+        "modified": "2025-08-05T13:38:09.514027",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/protocols/FOCUS_MANAGEMENT_PROTOCOL.md",
+        "size_bytes": 7918,
+        "modified": "2025-08-08T11:20:11.801318",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/ABUNDANCE_SANCTUARY_ROADMAP.md",
+        "size_bytes": 8175,
+        "modified": "2025-08-03T17:13:24",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/AGENT_HANDOFF_CONTEXT.md",
+        "size_bytes": 6147,
+        "modified": "2025-08-04T09:36:36",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/AUTOMATED_AUDIT_IMPLEMENTATION_SUMMARY.md",
+        "size_bytes": 10831,
+        "modified": "2025-08-03T14:24:10",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/BACKLOG_MANAGEMENT.md",
+        "size_bytes": 6881,
+        "modified": "2025-08-08T11:20:11.803326",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/BOOK_SALES_OPTIMIZATION_COMPLETE.md",
+        "size_bytes": 8424,
+        "modified": "2025-08-03T17:33:00",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/BUILD_OPTIMIZATION_STRATEGY.md",
+        "size_bytes": 8031,
+        "modified": "2025-08-03T15:01:16",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/CENTRAL_INDEX_IMPLEMENTATION_SUMMARY.md",
+        "size_bytes": 11515,
+        "modified": "2025-08-09T13:12:50.081009",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/COMPREHENSIVE_FILE_TREE_CLEANUP_SUMMARY.md",
+        "size_bytes": 11513,
+        "modified": "2025-08-05T11:22:49.754277",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/EXTERNAL_INTEGRATIONS_IMPLEMENTATION.md",
+        "size_bytes": 17050,
+        "modified": "2025-08-03T15:49:54",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/FILE_TREE_CLEANUP_SUMMARY.md",
+        "size_bytes": 691,
+        "modified": "2025-08-05T11:18:17.946260",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/FILE_TREE_RESTRUCTURING_PLAN.md",
+        "size_bytes": 10971,
+        "modified": "2025-08-05T11:22:49.740691",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/FILE_TREE_RESTRUCTURING_SUMMARY.md",
+        "size_bytes": 1359,
+        "modified": "2025-08-05T11:21:17.087416",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/FINAL_COMPLETE_DELIVERABLE.md",
+        "size_bytes": 9322,
+        "modified": "2025-08-03T12:35:52",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/FINAL_DELIVERABLE_SUMMARY.md",
+        "size_bytes": 12713,
+        "modified": "2025-08-04T09:36:36",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/FOUNDATION_FIX_PLAN.md",
+        "size_bytes": 3525,
+        "modified": "2025-08-04T08:14:04",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/HANDOFF_COMPLETE_SUMMARY.md",
+        "size_bytes": 6821,
+        "modified": "2025-08-04T09:36:36",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/IMMEDIATE_STEPS_COMPLETION_SUMMARY.md",
+        "size_bytes": 5373,
+        "modified": "2025-08-05T11:51:19.747025",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/INTEGRATION_AND_EVOLUTION_COMPLETE.md",
+        "size_bytes": 12388,
+        "modified": "2025-08-03T16:05:56",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/INTEGRATION_IMPLEMENTATION_COMPLETE.md",
+        "size_bytes": 13189,
+        "modified": "2025-08-03T15:49:54",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/NEXT_STEPS_SUMMARY.md",
+        "size_bytes": 5881,
+        "modified": "2025-08-05T11:30:10.659949",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/OPTIMIZATION_FRAMEWORK_SUMMARY.md",
+        "size_bytes": 0,
+        "modified": "2025-08-05T12:46:27.495985",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/OPTIMIZATION_IMPLEMENTATION_COMPLETE.md",
+        "size_bytes": 12413,
+        "modified": "2025-08-03T15:10:48",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/reference/TECH_STACK_REGISTRY.md",
+        "size_bytes": 11067,
+        "modified": "2025-08-09T13:12:50.081009",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/research/AI_AGENT_MEMORY_IMPLEMENTATION_SUMMARY.md",
+        "size_bytes": 7380,
+        "modified": "2025-08-05T12:42:26.516223",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/research/AI_AGENT_MEMORY_RESEARCH.md",
+        "size_bytes": 16595,
+        "modified": "2025-08-05T12:42:26.494693",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/research/OPEN_SOURCE_ECOSYSTEM_SYNERGY_ANALYSIS.md",
+        "size_bytes": 15585,
+        "modified": "2025-08-05T12:58:50.097262",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/research/TECHNOLOGY_INTEGRATION_ANALYSIS.md",
+        "size_bytes": 8477,
+        "modified": "2025-08-08T11:20:11.809845",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/security/SECURITY_CONFIGURATION_GUIDE.md",
+        "size_bytes": 10508,
+        "modified": "2025-08-08T11:20:11.811844",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/AUDIT_REPORT.md",
+        "size_bytes": 2736,
+        "modified": "2025-08-04T15:18:38.678510",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/AUTOMATED_TASKS.md",
+        "size_bytes": 4645,
+        "modified": "2025-08-05T12:38:02.829996",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/backlog-management.md",
+        "size_bytes": 7787,
+        "modified": "2025-08-05T11:15:20.303977",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/CENTRAL_INDEX_SYSTEM.md",
+        "size_bytes": 18288,
+        "modified": "2025-08-03T14:26:18",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/changelog.md",
+        "size_bytes": 4214,
+        "modified": "2025-08-05T09:14:41.522873",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/COMPREHENSIVE_PRE_PUSH_AUDIT.md",
+        "size_bytes": 11240,
+        "modified": "2025-08-03T14:17:28",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/CRITICAL_AUDIT_FINDINGS.md",
+        "size_bytes": 8080,
+        "modified": "2025-08-03T12:55:38",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/DIRECTORY_AUDIT_AND_FIX_PLAN.md",
+        "size_bytes": 8792,
+        "modified": "2025-08-03T09:19:06",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/FRAMEWORK_INTEGRATION_GUIDE.md",
+        "size_bytes": 896,
+        "modified": "2025-08-08T18:31:59.701776",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/GITHUB_PUSH_STRATEGY_FRAMEWORK.md",
+        "size_bytes": 8613,
+        "modified": "2025-08-03T14:13:58",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/ICON_SYSTEM_SYNERGY_ASSESSMENT.md",
+        "size_bytes": 9813,
+        "modified": "2025-08-03T15:29:50",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/INTEGRATION_STATUS.md",
+        "size_bytes": 0,
+        "modified": "2025-08-08T18:31:59.702775",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/POST_COMMIT_AUDIT_FRAMEWORK.md",
+        "size_bytes": 13536,
+        "modified": "2025-08-03T14:20:10",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/SYSTEM_AUDIT_AND_ALIGNMENT.md",
+        "size_bytes": 8565,
+        "modified": "2025-08-03T17:48:04",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/SYSTEM_DOCUMENTATION.md",
+        "size_bytes": 15967,
+        "modified": "2025-08-03T12:25:22",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/SYSTEM_INTEGRITY_SOLUTION.md",
+        "size_bytes": 9988,
+        "modified": "2025-08-04T15:19:42.602150",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/TECH_STACK_SILO.md",
+        "size_bytes": 16262,
+        "modified": "2025-08-08T11:20:11.813845",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/system/VERSION_CONTROL_AND_ICON_SYSTEM.md",
+        "size_bytes": 12404,
+        "modified": "2025-08-03T15:23:44",
+        "suffix": ".md"
+      },
+      {
+        "path": "docs/guides/getting-started/setup.md",
+        "size_bytes": 2635,
+        "modified": "2025-07-28T14:00:42",
+        "suffix": ".md"
+      },
+      {
+        "path": "consciousness/evolution/constellation-binding-plan.md",
+        "size_bytes": 4008,
+        "modified": "2025-08-05T11:51:19.742025",
+        "suffix": ".md"
+      },
+      {
+        "path": "consciousness/evolution/symbolic-environment-manifest.md",
+        "size_bytes": 3703,
+        "modified": "2025-08-05T11:51:19.744027",
+        "suffix": ".md"
+      },
+      {
+        "path": "consciousness/evolution/universal-activity-logging.md",
+        "size_bytes": 3329,
+        "modified": "2025-08-05T11:30:10.656950",
+        "suffix": ".md"
+      },
+      {
+        "path": "consciousness/personas/antman-scribe-pattern.md",
+        "size_bytes": 4373,
+        "modified": "2025-08-05T11:51:19.742025",
+        "suffix": ".md"
+      },
+      {
+        "path": "consciousness/rituals/documentation/ritual-practices.md",
+        "size_bytes": 10319,
+        "modified": "2025-08-05T11:10:19.270935",
+        "suffix": ".md"
+      },
+      {
+        "path": "consciousness/personas/guides/consciousness-persona-development-guide-enhanced.md",
+        "size_bytes": 16146,
+        "modified": "2025-08-05T11:14:46.336949",
+        "suffix": ".md"
+      },
+      {
+        "path": "consciousness/personas/analysis/consciousness_persona_analysis/consciousness_persona_insights.json",
+        "size_bytes": 2779245,
+        "modified": "2025-08-05T10:42:37.953581",
+        "suffix": ".json"
+      },
+      {
+        "path": "consciousness/personas/analysis/consciousness_persona_analysis/consciousness_persona_results.json",
+        "size_bytes": 2048344,
+        "modified": "2025-08-05T10:42:37.884114",
+        "suffix": ".json"
+      },
+      {
+        "path": "consciousness/personas/analysis/consciousness_persona_analysis/consciousness_persona_summary.json",
+        "size_bytes": 287,
+        "modified": "2025-08-05T10:42:37.954587",
+        "suffix": ".json"
+      },
+      {
+        "path": "consciousness/personas/analysis/consciousness_persona_analysis/consciousness_persona_summary.md",
+        "size_bytes": 1292,
+        "modified": "2025-08-05T10:42:37.956591",
+        "suffix": ".md"
+      },
+      {
+        "path": "consciousness/octospine/documentation/octospine-automation-matrix.md",
+        "size_bytes": 9943,
+        "modified": "2025-08-04T19:09:06.247100",
+        "suffix": ".md"
+      },
+      {
+        "path": "consciousness/evolution/tracking/ceremonial-achievement-log.md",
+        "size_bytes": 8751,
+        "modified": "2025-08-05T11:10:19.271934",
+        "suffix": ".md"
+      },
+      {
+        "path": "config/observability/logging.json",
+        "size_bytes": 138,
+        "modified": "2025-08-08T18:19:41.679080",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/security/secrets-allowlist.json",
+        "size_bytes": 404,
+        "modified": "2025-08-09T13:12:50.089526",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/security/spdx-exceptions.json",
+        "size_bytes": 46,
+        "modified": "2025-08-09T13:12:50.086003",
+        "suffix": ".json"
+      },
+      {
+        "path": "config/security/spdx-policy.json",
+        "size_bytes": 188,
+        "modified": "2025-08-09T13:12:50.086003",
+        "suffix": ".json"
+      },
+      {
+        "path": "backend/app/crud.py",
+        "size_bytes": 22533,
+        "modified": "2025-08-09T13:12:50.084005",
+        "suffix": ".py"
+      },
+      {
+        "path": "backend/app/database.py",
+        "size_bytes": 2461,
+        "modified": "2025-08-02T17:37:48",
+        "suffix": ".py"
+      },
+      {
+        "path": "backend/app/main.py",
+        "size_bytes": 24506,
+        "modified": "2025-08-09T13:12:50.005221",
+        "suffix": ".py"
+      },
+      {
+        "path": "backend/app/middleware.py",
+        "size_bytes": 7229,
+        "modified": "2025-08-09T13:12:50.081009",
+        "suffix": ".py"
+      },
+      {
+        "path": "backend/app/models.py",
+        "size_bytes": 13297,
+        "modified": "2025-08-09T13:12:50.084005",
+        "suffix": ".py"
+      },
+      {
+        "path": "backend/app/schemas.py",
+        "size_bytes": 13686,
+        "modified": "2025-08-09T13:12:50.084005",
+        "suffix": ".py"
+      },
+      {
+        "path": "backend/app/security.py",
+        "size_bytes": 8562,
+        "modified": "2025-08-02T16:38:12",
+        "suffix": ".py"
+      },
+      {
+        "path": "backend/app/template_handler.py",
+        "size_bytes": 15212,
+        "modified": "2025-08-09T13:12:50.005221",
+        "suffix": ".py"
+      },
+      {
+        "path": "backend/app/websocket_server.py",
+        "size_bytes": 5618,
+        "modified": "2025-08-08T16:10:32.246807",
+        "suffix": ".py"
+      },
+      {
+        "path": "backend/app/__init__.py",
+        "size_bytes": 0,
+        "modified": "2025-07-28T05:50:52",
+        "suffix": ".py"
+      },
+      {
+        "path": "backend/health/health.txt",
+        "size_bytes": 7,
+        "modified": "2025-08-08T18:19:41.529199",
+        "suffix": ".txt"
+      },
+      {
+        "path": "backend/tests/test_health.py",
+        "size_bytes": 883,
+        "modified": "2025-08-09T13:12:50.082004",
+        "suffix": ".py"
+      },
+      {
+        "path": "backend/app/migrations/env.py",
+        "size_bytes": 2550,
+        "modified": "2025-08-02T17:06:28",
+        "suffix": ".py"
+      },
+      {
+        "path": "backend/app/migrations/versions/002_simple_create.py",
+        "size_bytes": 19410,
+        "modified": "2025-08-09T13:12:50.084005",
+        "suffix": ".py"
+      },
+      {
+        "path": "archive/scripts-cjs/audit-backlog.cjs",
+        "size_bytes": 7169,
+        "modified": "2025-08-03T14:56:58",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/audit-config.cjs",
+        "size_bytes": 6523,
+        "modified": "2025-08-03T14:56:58",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/audit-docs.cjs",
+        "size_bytes": 4798,
+        "modified": "2025-08-03T14:20:50",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/build-optimizer.cjs",
+        "size_bytes": 18664,
+        "modified": "2025-08-03T15:10:48",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/changelog-manager.cjs",
+        "size_bytes": 13284,
+        "modified": "2025-08-04T15:16:15.171902",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/comprehensive-audit.cjs",
+        "size_bytes": 17161,
+        "modified": "2025-08-03T14:41:16",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/generate-changelog.cjs",
+        "size_bytes": 6680,
+        "modified": "2025-08-03T15:17:54",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/generate-index.cjs",
+        "size_bytes": 12943,
+        "modified": "2025-08-03T14:28:38",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/generate-report.cjs",
+        "size_bytes": 8684,
+        "modified": "2025-08-03T14:21:30",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/implement-optimizations.cjs",
+        "size_bytes": 20917,
+        "modified": "2025-08-03T15:10:48",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/rollback.cjs",
+        "size_bytes": 11746,
+        "modified": "2025-08-03T15:19:02",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/system-audit.cjs",
+        "size_bytes": 17761,
+        "modified": "2025-08-04T15:13:24.942459",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/test-app-registry.cjs",
+        "size_bytes": 1281,
+        "modified": "2025-08-04T15:43:05.431102",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/validate-app-registry.cjs",
+        "size_bytes": 9876,
+        "modified": "2025-08-04T15:43:05.431102",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/validate-architecture.cjs",
+        "size_bytes": 10918,
+        "modified": "2025-08-04T15:36:25.775486",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/validate-imports.cjs",
+        "size_bytes": 6603,
+        "modified": "2025-08-04T15:35:32.451069",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/scripts-cjs/webhook-manager.cjs",
+        "size_bytes": 11088,
+        "modified": "2025-08-04T15:14:26.928823",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/unsorted/.commitlintrc.cjs",
+        "size_bytes": 68,
+        "modified": "2025-08-09T12:19:33.385128",
+        "suffix": ".cjs"
+      },
+      {
+        "path": "archive/unsorted/.cursorrules",
+        "size_bytes": 777,
+        "modified": "2025-08-05T13:36:48.879599",
+        "suffix": ""
+      },
+      {
+        "path": "archive/unsorted/.env",
+        "size_bytes": 3753,
+        "modified": "2025-08-07T11:46:56.523500",
+        "suffix": ""
+      },
+      {
+        "path": "archive/unsorted/.env.backup",
+        "size_bytes": 3804,
+        "modified": "2025-08-03T14:48:18",
+        "suffix": ".backup"
+      },
+      {
+        "path": "archive/unsorted/.env.local",
+        "size_bytes": 3804,
+        "modified": "2025-08-03T14:49:18",
+        "suffix": ".local"
+      },
+      {
+        "path": "archive/unsorted/.secretsignore",
+        "size_bytes": 119,
+        "modified": "2025-08-08T11:56:16.143508",
+        "suffix": ""
+      },
+      {
+        "path": "archive/unsorted/context",
+        "size_bytes": 51271,
+        "modified": "2025-08-08T21:05:21.847673",
+        "suffix": ""
+      },
+      {
+        "path": "archive/unsorted/postcss.config.js",
+        "size_bytes": 97,
+        "modified": "2025-08-08T11:20:11.842032",
+        "suffix": ".js"
+      },
+      {
+        "path": "archive/unsorted/simple-audit.js",
+        "size_bytes": 2931,
+        "modified": "2025-08-08T11:20:12.046571",
+        "suffix": ".js"
+      },
+      {
+        "path": "archive/unsorted/simple-test.js",
+        "size_bytes": 2367,
+        "modified": "2025-08-08T11:20:12.050089",
+        "suffix": ".js"
+      },
+      {
+        "path": "archive/unsorted/simple_tech_stack_analysis.txt",
+        "size_bytes": 744,
+        "modified": "2025-08-08T11:20:12.054605",
+        "suffix": ".txt"
+      },
+      {
+        "path": "archive/unsorted/tailwind.config.js",
+        "size_bytes": 626,
+        "modified": "2025-08-08T11:20:12.138539",
+        "suffix": ".js"
+      },
+      {
+        "path": "archive/unsorted/test-knowledge-hub.js",
+        "size_bytes": 2903,
+        "modified": "2025-08-08T11:20:12.144058",
+        "suffix": ".js"
+      },
+      {
+        "path": "archive/unsorted/test-node.js",
+        "size_bytes": 878,
+        "modified": "2025-08-08T11:20:12.145057",
+        "suffix": ".js"
+      },
+      {
+        "path": "archive/unsorted/test-recursive-ab.js",
+        "size_bytes": 19667,
+        "modified": "2025-08-08T11:20:12.147472",
+        "suffix": ".js"
+      },
+      {
+        "path": "approvals/approved/approval_1754662544.json",
+        "size_bytes": 1142,
+        "modified": "2025-08-08T22:15:44.067108",
+        "suffix": ".json"
+      },
+      {
+        "path": "a2a/registry/main.py",
+        "size_bytes": 9745,
+        "modified": "2025-08-02T17:37:32",
+        "suffix": ".py"
+      },
+      {
+        "path": ".github/workflows/analytics.yml",
+        "size_bytes": 5860,
+        "modified": "2025-08-05T13:32:13.632126",
+        "suffix": ".yml"
+      },
+      {
+        "path": ".github/workflows/ci-cd.yml",
+        "size_bytes": 4110,
+        "modified": "2025-08-08T18:31:59.682751",
+        "suffix": ".yml"
+      },
+      {
+        "path": ".github/workflows/ci-gate.yml",
+        "size_bytes": 949,
+        "modified": "2025-08-09T13:12:50.084005",
+        "suffix": ".yml"
+      },
+      {
+        "path": ".github/workflows/ci.yml",
+        "size_bytes": 8143,
+        "modified": "2025-08-08T18:31:59.685756",
+        "suffix": ".yml"
+      },
+      {
+        "path": ".github/workflows/codeql.yml",
+        "size_bytes": 1170,
+        "modified": "2025-08-08T18:31:59.687750",
+        "suffix": ".yml"
+      },
+      {
+        "path": ".github/workflows/dependency-review.yml",
+        "size_bytes": 594,
+        "modified": "2025-08-08T18:31:59.689260",
+        "suffix": ".yml"
+      },
+      {
+        "path": ".github/workflows/framework-integration.yml",
+        "size_bytes": 1048,
+        "modified": "2025-08-08T18:31:59.680751",
+        "suffix": ".yml"
+      },
+      {
+        "path": ".github/workflows/post-commit-audit.yml",
+        "size_bytes": 2740,
+        "modified": "2025-08-03T14:20:22",
+        "suffix": ".yml"
+      },
+      {
+        "path": ".github/workflows/security.yml",
+        "size_bytes": 4268,
+        "modified": "2025-08-08T18:31:59.691260",
+        "suffix": ".yml"
+      },
+      {
+        "path": ".github/workflows/sonar.yml",
+        "size_bytes": 2036,
+        "modified": "2025-08-08T18:31:59.692259",
+        "suffix": ".yml"
+      }
+    ],
+    "timestamp": "2025-08-09T13:22:55.307056"
+  },
+  "timestamp": "2025-08-09T13:22:55.315272"
+}

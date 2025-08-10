@@ -226,7 +226,7 @@ export class RecursiveABTestingService {
   private async executeVariant(problem: Problem, variant: PromptVariant, techStack: TechStackRecommendation): Promise<TestResult> {
     // Simulate execution of each variant
     const actualBias = this.analyzeResponseBias(problem, { variant, techStack });
-    
+
     return {
       id: `${variant.id}-result`,
       problem,

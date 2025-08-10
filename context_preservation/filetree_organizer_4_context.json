@@ -1,0 +1,40 @@
+{
+  "frame_id": "filetree_organizer",
+  "stage": 4,
+  "input_data": {},
+  "parameters": {
+    "timeout": 180,
+    "dry_run": true
+  },
+  "result": {
+    "success": true,
+    "filetree_organizer_complete": true,
+    "dry_run": true,
+    "planned_moves": [
+      {
+        "from": "C:\\az-interface\\autonomous_synthesis_report.json",
+        "to": "C:\\az-interface\\reports\\autonomous_synthesis_report_1754716988.json"
+      }
+    ],
+    "skipped": [
+      "C:\\az-interface\\.gitignore",
+      "C:\\az-interface\\autonomous-framework-v2.py",
+      "C:\\az-interface\\autonomous-framework.py",
+      "C:\\az-interface\\autonomous-system-meta-analysis.py",
+      "C:\\az-interface\\autonomous-system-v1.py",
+      "C:\\az-interface\\autonomous-system-v2.py",
+      "C:\\az-interface\\autonomous-system-v3.py",
+      "C:\\az-interface\\autonomous-system-v4.py",
+      "C:\\az-interface\\autonomous-system-v5.py",
+      "C:\\az-interface\\index.html",
+      "C:\\az-interface\\LICENSE",
+      "C:\\az-interface\\package-lock.json",
+      "C:\\az-interface\\package.json",
+      "C:\\az-interface\\README.md",
+      "C:\\az-interface\\tsconfig.json",
+      "C:\\az-interface\\vite.config.ts"
+    ],
+    "timestamp": "2025-08-09T13:23:08.124845"
+  },
+  "timestamp": "2025-08-09T13:23:08.126464"
+}

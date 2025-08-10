@@ -11,15 +11,15 @@
     "audit_complete": true,
     "hub_validated": true,
     "summary": {
-      "totalFiles": 9,
+      "totalFiles": 146,
       "templates": 0,
       "endpoints": 0,
       "tools": 0,
       "documentation": 0,
-      "connections": 5,
-      "dependencies": 0,
-      "missing": 0,
-      "recommendations": 9
+      "connections": 108,
+      "dependencies": 110,
+      "missing": 1,
+      "recommendations": 113
     },
     "context": {
       "input_data": {},
@@ -41,11 +41,11 @@
               "success": true,
               "result": {
                 "synthesis_complete": true,
-                "synergies_found": true,
-                "risks_identified": false,
-                "opportunities_found": true,
+                "synergies_found": false,
+                "risks_identified": true,
+                "opportunities_found": false,
                 "analysis_successful": true,
-                "timestamp": "2025-08-08T15:27:37.353820"
+                "timestamp": "2025-08-10T11:06:26.001743"
               }
             }
           ],
@@ -55,5 +55,5 @@
       "entry_point": "performFullAudit"
     }
   },
-  "timestamp": "2025-08-08T15:27:37.983225"
+  "timestamp": "2025-08-10T11:06:26.541261"
 }

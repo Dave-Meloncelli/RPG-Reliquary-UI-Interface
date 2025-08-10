@@ -1,0 +1,84 @@
+{
+  "frame_id": "predictive_analysis",
+  "stage": 2,
+  "input_data": {},
+  "parameters": {
+    "timeout": 300
+  },
+  "result": {
+    "success": true,
+    "predictive_analysis_complete": true,
+    "pattern_analysis": {
+      "unknown": {
+        "execution_count": 7,
+        "success_rate": {
+          "current": 1.0,
+          "trend": "stable",
+          "prediction": 1.0
+        },
+        "duration": {
+          "average": 0,
+          "trend": "stable",
+          "volatility": 0,
+          "prediction": 300
+        },
+        "frame_count": {
+          "average": 0,
+          "trend": "stable",
+          "prediction": 1
+        },
+        "failure_patterns": {
+          "failure_rate": 0.0,
+          "common_failure_types": [],
+          "failure_timing": "none"
+        },
+        "risk_assessment": {
+          "risk_score": 0.0,
+          "risk_level": "minimal",
+          "risk_factors": [],
+          "recommendations": []
+        }
+      }
+    },
+    "predictions": [
+      {
+        "scaffold_id": "unknown",
+        "prediction_type": "execution_prediction",
+        "predicted_success_rate": 1.0,
+        "predicted_duration": 300,
+        "predicted_frame_count": 1,
+        "risk_assessment": {
+          "risk_score": 0.0,
+          "risk_level": "minimal",
+          "risk_factors": [],
+          "recommendations": []
+        },
+        "confidence": 0.8,
+        "prediction_horizon": "next_execution",
+        "created_at": "2025-08-09T20:00:25.663474"
+      }
+    ],
+    "insights": [
+      {
+        "scaffold_id": "unknown",
+        "insight": "Success rate: 100.0%, Risk level: minimal",
+        "type": "performance_insight",
+        "confidence": 1.0
+      }
+    ],
+    "overall_metrics": {
+      "total_executions": 7,
+      "successful_executions": 7,
+      "overall_success_rate": 1.0,
+      "scaffolds_analyzed": 1,
+      "predictions_generated": 1
+    },
+    "analysis_metadata": {
+      "analysis_timestamp": "2025-08-09T20:00:25.664031",
+      "executions_analyzed": 7,
+      "prediction_horizon": "next_execution"
+    },
+    "timestamp": "2025-08-09T20:00:25.664035"
+  },
+  "timestamp": "2025-08-09T20:00:25.665516"
+}

@@ -1,0 +1,14 @@
+{
+  "scaffold_id": "forensic_recovery",
+  "ended_at": "2025-08-09T13:23:08.619444",
+  "summary": {
+    "successful_stages": 9,
+    "failed_stages": 1,
+    "total_frames_executed": 9
+  },
+  "artifacts": {
+    "manifest": "internal/repo.manifest.json",
+    "indexes_dir": "internal/indexes/",
+    "last_report": "reports/scaffold_execution_v2_forensic_recovery_<timestamp>.json"
+  }
+}
