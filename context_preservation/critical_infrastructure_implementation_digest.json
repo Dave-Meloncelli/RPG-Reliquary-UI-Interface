@@ -1,0 +1,14 @@
+{
+  "scaffold_id": "critical_infrastructure_implementation",
+  "ended_at": "2025-08-10T11:46:42.839659",
+  "summary": {
+    "successful_stages": 7,
+    "failed_stages": 3,
+    "total_frames_executed": 14
+  },
+  "artifacts": {
+    "manifest": "internal/repo.manifest.json",
+    "indexes_dir": "internal/indexes/",
+    "last_report": "reports/scaffold_execution_v2_critical_infrastructure_implementation_<timestamp>.json"
+  }
+}

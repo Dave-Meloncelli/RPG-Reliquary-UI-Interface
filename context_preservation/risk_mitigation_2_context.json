@@ -1,6 +1,6 @@
 {
   "frame_id": "risk_mitigation",
-  "stage": 4,
+  "stage": 2,
   "input_data": {},
   "parameters": {
     "auto_fix": true,
@@ -11,8 +11,8 @@
     "critical_risks_mitigated": true,
     "mitigated_risks": 2,
     "action_items_created": 2,
-    "results_path": "reports\\risk_mitigation_20250810_114642.json",
-    "backlog_path": "backlog\\backlog_items_20250810_114642.json"
+    "results_path": "reports\\risk_mitigation_20250810_114557.json",
+    "backlog_path": "backlog\\backlog_items_20250810_114557.json"
   },
-  "timestamp": "2025-08-10T11:46:42.207984"
+  "timestamp": "2025-08-10T11:45:57.731048"
 }

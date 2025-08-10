@@ -194,7 +194,7 @@ class CrossAgentCommunicationProtocol:
                 "compression_enabled": self.config["compression_enabled"]
             },
             correlation_id=correlation_id,
-            expires_at=(datetime.now().timestamp() + self.config["message_timeout"]).isoformat()
+            expires_at=datetime.fromtimestamp(datetime.now().timestamp() + self.config["message_timeout"]).isoformat()
         )
         
         # Add to recipient's queue

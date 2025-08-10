@@ -458,6 +458,7 @@ def main():
     return {
         "success": True,
         "dashboard_created": True,
+        "monitoring_active": True,
         "report_file": str(report_file),
         "summary": dashboard_data["summary"]
     }

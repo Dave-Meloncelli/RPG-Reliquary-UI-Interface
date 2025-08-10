@@ -1,0 +1,10 @@
+{
+  "heartbeat_interval": 30,
+  "message_timeout": 300,
+  "max_queue_size": 1000,
+  "retry_attempts": 3,
+  "protocol_version": "1.0",
+  "encryption_enabled": false,
+  "compression_enabled": true,
+  "message_retention_hours": 24
+}

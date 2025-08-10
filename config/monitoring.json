@@ -1,0 +1,16 @@
+{
+  "monitoring_interval": 5,
+  "metrics_retention_hours": 24,
+  "alert_thresholds": {
+    "cpu_percent": 80,
+    "memory_percent": 85,
+    "disk_usage_percent": 90
+  },
+  "systems_to_monitor": [
+    "crewai",
+    "n8n",
+    "agent_zero",
+    "playwright",
+    "framework"
+  ]
+}

@@ -492,12 +492,13 @@ def main():
     print(f"✅ Resource Allocation Engine Frame completed")
     print(f"📄 Report saved: {report_file}")
     
-    return {
-        "success": True,
-        "engine_implemented": True,
-        "report_file": str(report_file),
-        "summary": engine_data["summary"]
-    }
+            return {
+            "success": True,
+            "engine_implemented": True,
+            "allocation_active": True,
+            "report_file": str(report_file),
+            "summary": engine_data["summary"]
+        }
 
 if __name__ == "__main__":
     result = main()
