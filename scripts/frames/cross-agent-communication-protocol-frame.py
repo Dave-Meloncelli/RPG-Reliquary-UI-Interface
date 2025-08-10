@@ -338,12 +338,24 @@ class CrossAgentCommunicationProtocol:
             elif agent_info.status == "offline":
                 agent_info.status = "online"
     
+    def _convert_enum_to_string(self, obj):
+        """Convert enum objects to strings for JSON serialization"""
+        if isinstance(obj, dict):
+            return {k: self._convert_enum_to_string(v) for k, v in obj.items()}
+        elif isinstance(obj, list):
+            return [self._convert_enum_to_string(item) for item in obj]
+        elif hasattr(obj, 'value'):  # Enum objects
+            return obj.value
+        else:
+            return obj
+
     def _save_communication_state(self):
         """Save current communication state to file"""
+        # Convert enums to strings for JSON serialization
         communication_state = {
             "timestamp": datetime.now().isoformat(),
-            "agents": {k: asdict(v) for k, v in self.agents.items()},
-            "message_history": [asdict(msg) for msg in self.message_history[-100:]],  # Last 100 messages
+            "agents": {k: self._convert_enum_to_string(asdict(v)) for k, v in self.agents.items()},
+            "message_history": [self._convert_enum_to_string(asdict(msg)) for msg in self.message_history[-100:]],  # Last 100 messages
             "summary": self._generate_summary()
         }
         
@@ -377,8 +389,8 @@ class CrossAgentCommunicationProtocol:
         return {
             "timestamp": datetime.now().isoformat(),
             "summary": self._generate_summary(),
-            "agents": {k: asdict(v) for k, v in self.agents.items()},
-            "recent_messages": [asdict(msg) for msg in self.message_history[-20:]]
+            "agents": {k: self._convert_enum_to_string(asdict(v)) for k, v in self.agents.items()},
+            "recent_messages": [self._convert_enum_to_string(asdict(msg)) for msg in self.message_history[-20:]]
         }
 
 def main():

@@ -1,0 +1,27 @@
+{
+  "frame_id": "real_time_monitoring_dashboard",
+  "stage": 4,
+  "input_data": {},
+  "parameters": {
+    "timeout": 300
+  },
+  "result": {
+    "success": true,
+    "dashboard_created": true,
+    "monitoring_active": true,
+    "report_file": "reports\\real_time_monitoring_dashboard_1754799149.json",
+    "summary": {
+      "total_agents": 36,
+      "running_agents": 26,
+      "agent_uptime_percent": 72.22222222222221,
+      "total_workflows": 5,
+      "active_workflows": 5,
+      "workflow_activity_percent": 100.0,
+      "current_cpu_percent": 9.9,
+      "current_memory_percent": 35.7,
+      "current_disk_percent": 80.54989374088193,
+      "active_alerts": 0
+    }
+  },
+  "timestamp": "2025-08-10T12:12:31.299484"
+}
