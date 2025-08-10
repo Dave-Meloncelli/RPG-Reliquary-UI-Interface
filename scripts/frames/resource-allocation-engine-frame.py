@@ -404,12 +404,23 @@ class ResourceAllocationEngine:
     
     def _save_engine_state(self):
         """Save current engine state to file"""
+        # Convert enums to strings for JSON serialization
+        def convert_enum_to_string(obj):
+            if isinstance(obj, dict):
+                return {k: convert_enum_to_string(v) for k, v in obj.items()}
+            elif isinstance(obj, list):
+                return [convert_enum_to_string(item) for item in obj]
+            elif hasattr(obj, 'value'):  # Enum objects
+                return obj.value
+            else:
+                return obj
+        
         engine_state = {
             "timestamp": datetime.now().isoformat(),
             "system_resources": asdict(self.system_resources) if self.system_resources else None,
-            "active_allocations": {k: asdict(v) for k, v in self.active_allocations.items()},
-            "pending_requests": {k: asdict(v) for k, v in self.resource_requests.items()},
-            "allocation_history": [asdict(alloc) for alloc in self.allocation_history[-50:]],  # Last 50
+            "active_allocations": {k: convert_enum_to_string(asdict(v)) for k, v in self.active_allocations.items()},
+            "pending_requests": {k: convert_enum_to_string(asdict(v)) for k, v in self.resource_requests.items()},
+            "allocation_history": [convert_enum_to_string(asdict(alloc)) for alloc in self.allocation_history[-50:]],  # Last 50
             "summary": self._generate_summary()
         }
         
@@ -444,12 +455,23 @@ class ResourceAllocationEngine:
     
     def get_engine_data(self) -> Dict[str, Any]:
         """Get current engine data"""
+        # Convert enums to strings for JSON serialization
+        def convert_enum_to_string(obj):
+            if isinstance(obj, dict):
+                return {k: convert_enum_to_string(v) for k, v in obj.items()}
+            elif isinstance(obj, list):
+                return [convert_enum_to_string(item) for item in obj]
+            elif hasattr(obj, 'value'):  # Enum objects
+                return obj.value
+            else:
+                return obj
+        
         return {
             "timestamp": datetime.now().isoformat(),
             "summary": self._generate_summary(),
             "system_resources": asdict(self.system_resources) if self.system_resources else None,
-            "active_allocations": {k: asdict(v) for k, v in self.active_allocations.items()},
-            "pending_requests": {k: asdict(v) for k, v in self.resource_requests.items()}
+            "active_allocations": {k: convert_enum_to_string(asdict(v)) for k, v in self.active_allocations.items()},
+            "pending_requests": {k: convert_enum_to_string(asdict(v)) for k, v in self.resource_requests.items()}
         }
 
 def main():
