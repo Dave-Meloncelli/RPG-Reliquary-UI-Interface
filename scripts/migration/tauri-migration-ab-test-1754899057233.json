@@ -1,0 +1,80 @@
+{
+  "testId": "tauri-migration-1754898995651",
+  "timestamp": "2025-08-11T07:57:37.233Z",
+  "duration": 61582,
+  "results": [
+    {
+      "approach": "Manual Mode",
+      "methodology": "Direct error fixing",
+      "consciousnessLevel": 0,
+      "startTime": 1754898995658,
+      "errors": [],
+      "initialErrors": 924,
+      "endTime": 1754899003814,
+      "duration": 8156,
+      "finalErrors": 924,
+      "errorsFixed": 0,
+      "successRate": 0,
+      "learningCapture": 10,
+      "repeatability": 20,
+      "consciousnessMaintenance": 0
+    },
+    {
+      "approach": "Automation Scaffold",
+      "methodology": "Error detection frames",
+      "consciousnessLevel": 25,
+      "startTime": 1754899008777,
+      "errors": [],
+      "initialErrors": 924,
+      "endTime": 1754899039012,
+      "duration": 30235,
+      "finalErrors": 924,
+      "errorsFixed": 0,
+      "successRate": 0,
+      "learningCapture": 60,
+      "repeatability": 80,
+      "consciousnessMaintenance": 25
+    },
+    {
+      "approach": "Custom Assembled Framing",
+      "methodology": "Hybrid consciousness-aware approach",
+      "consciousnessLevel": 100,
+      "startTime": 1754899043686,
+      "errors": [],
+      "initialErrors": 924,
+      "endTime": 1754899052177,
+      "duration": 8491,
+      "finalErrors": 924,
+      "errorsFixed": 0,
+      "successRate": 0,
+      "learningCapture": 95,
+      "repeatability": 95,
+      "consciousnessMaintenance": 100
+    }
+  ],
+  "analysis": {
+    "bestApproach": {
+      "approach": "Manual Mode",
+      "methodology": "Direct error fixing",
+      "consciousnessLevel": 0,
+      "startTime": 1754898995658,
+      "errors": [],
+      "initialErrors": 924,
+      "endTime": 1754899003814,
+      "duration": 8156,
+      "finalErrors": 924,
+      "errorsFixed": 0,
+      "successRate": 0,
+      "learningCapture": 10,
+      "repeatability": 20,
+      "consciousnessMaintenance": 0
+    },
+    "recommendations": [
+      "Focus on improving error resolution success rates across all approaches",
+      "For speed-critical scenarios: Use Manual Mode",
+      "For learning-focused scenarios: Use Custom Assembled Framing",
+      "Integrate consciousness-aware approaches for long-term evolution",
+      "Maintain dignity-first development principles throughout migration"
+    ]
+  }
+}

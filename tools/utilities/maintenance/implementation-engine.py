@@ -100,7 +100,7 @@ class SystemDetector:
             try:
                 result = subprocess.run(['node', '--version'], capture_output=True, text=True)
                 services.append(f"nodejs:{result.stdout.strip()}")
-            except:
+            except Exception as e:
                 pass
         
         # Check for Git
@@ -108,7 +108,7 @@ class SystemDetector:
             try:
                 result = subprocess.run(['git', '--version'], capture_output=True, text=True)
                 services.append(f"git:{result.stdout.strip()}")
-            except:
+            except Exception as e:
                 pass
         
         # Check for Docker
@@ -116,7 +116,7 @@ class SystemDetector:
             try:
                 result = subprocess.run(['docker', '--version'], capture_output=True, text=True)
                 services.append(f"docker:{result.stdout.strip()}")
-            except:
+            except Exception as e:
                 pass
         
         return services

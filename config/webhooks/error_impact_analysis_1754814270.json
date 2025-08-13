@@ -1,0 +1,24 @@
+{
+  "triggered": true,
+  "webhook_name": "error_impact_analysis",
+  "url": "http://localhost:8000/webhooks/error-impact",
+  "method": "POST",
+  "payload": {
+    "impact_analysis": {
+      "before_errors": 573,
+      "after_errors": 1769,
+      "error_change": 1196,
+      "error_increase_percentage": 208.7260034904014,
+      "improvement": false,
+      "significant_worsening": true
+    },
+    "rollback_needed": true,
+    "context": {
+      "session_id": "test_session",
+      "user_id": "test_user",
+      "project": "az-interface"
+    },
+    "timestamp": "2025-08-10T16:24:30.995598"
+  },
+  "timestamp": "2025-08-10T16:24:30.995604"
+}

@@ -1,9 +1,9 @@
-import { eventBus } from './eventBus';
+import { eventBus } from "./eventBus";
 
 export interface VertexAIModel {
   id: string;
   name: string;
-  type: 'text' | 'image' | 'code' | 'multimodal' | 'custom';
+  type: "text" | "image" | "code" | "multimodal" | "custom";
   capabilities: string[];
   maxTokens: number;
   temperature: number;
@@ -11,7 +11,7 @@ export interface VertexAIModel {
   topK: number;
   isCustom: boolean;
   trainingData?: string[];
-  deploymentStatus: 'deployed' | 'training' | 'failed' | 'pending';
+  deploymentStatus: "deployed" | "training" | "failed" | "pending";
 }
 
 export interface VertexAIRequest {
@@ -28,7 +28,7 @@ export interface VertexAIRequest {
   context?: {
     systemPrompt?: string;
     conversationHistory?: Array<{
-      role: 'user' | 'assistant';
+      role: "user" | "assistant";
       content: string;
     }>;
     fileContext?: string;
@@ -46,10 +46,10 @@ export interface VertexAIResponse {
     responseTokens: number;
     totalTokens: number;
   };
-  finishReason: 'stop' | 'length' | 'safety' | 'recitation';
+  finishReason: "stop" | "length" | "safety" | "recitation";
   safetyRatings?: Array<{
     category: string;
-    probability: 'low' | 'medium' | 'high';
+    probability: "low" | "medium" | "high";
   }>;
   metadata?: Record<string, any>;
   timestamp: string;
@@ -81,7 +81,7 @@ export interface CustomModelConfig {
 export interface TrainingJob {
   id: string;
   modelConfigId: string;
-  status: 'pending' | 'training' | 'completed' | 'failed';
+  status: "pending" | "training" | "completed" | "failed";
   startTime: string;
   endTime?: string;
   duration?: number;
@@ -110,7 +110,7 @@ export interface ABTestConfig {
   metrics: string[];
   startTime: string;
   endTime?: string;
-  status: 'active' | 'paused' | 'completed';
+  status: "active" | "paused" | "completed";
   results?: {
     winner?: string;
     confidence: number;
@@ -137,8 +137,8 @@ export class GoogleVertexAIService {
   private eventBus: any;
   private apiKey?: string;
   private projectId?: string;
-  private location: string = 'us-central1';
-  private baseUrl: string = 'https://us-central1-aiplatform.googleapis.com/v1';
+  private location: string = "us-central1";
+  private baseUrl: string = "https://us-central1-aiplatform.googleapis.com/v1";
   private isConnected: boolean = false;
   private availableModels: Map<string, VertexAIModel> = new Map();
   private customModels: Map<string, CustomModelConfig> = new Map();
@@ -148,8 +148,6 @@ export class GoogleVertexAIService {
   private generationHistory: Map<string, VertexAIResponse> = new Map();
 
   constructor(eventBus: any, apiKey?: string, projectId?: string) {
-    const recommendations: recommendations = this.generateRecommendations(score: score, opportunities);
-    
     this.eventBus = eventBus;
     this.apiKey = apiKey;
     this.projectId = projectId;
@@ -162,56 +160,56 @@ export class GoogleVertexAIService {
   private initializeModels(): void {
     const models: VertexAIModel[] = [
       {
-        id: 'text-bison',
-        name: 'Text Bison',
-        type: 'text',
-        capabilities: ['text-generation', 'conversation', 'summarization'],
+        id: "text-bison",
+        name: "Text Bison",
+        type: "text",
+        capabilities: ["text-generation", "conversation", "summarization"],
         maxTokens: 8192,
         temperature: 0.7,
         topP: 0.95,
         topK: 40,
         isCustom: false,
-        deploymentStatus: 'deployed'
+        deploymentStatus: "deployed",
       },
       {
-        id: 'chat-bison',
-        name: 'Chat Bison',
-        type: 'text',
-        capabilities: ['conversation', 'code-generation', 'reasoning'],
+        id: "chat-bison",
+        name: "Chat Bison",
+        type: "text",
+        capabilities: ["conversation", "code-generation", "reasoning"],
         maxTokens: 4096,
         temperature: 0.7,
         topP: 0.95,
         topK: 40,
         isCustom: false,
-        deploymentStatus: 'deployed'
+        deploymentStatus: "deployed",
       },
       {
-        id: 'code-bison',
-        name: 'Code Bison',
-        type: 'code',
-        capabilities: ['code-generation', 'code-completion', 'code-review'],
+        id: "code-bison",
+        name: "Code Bison",
+        type: "code",
+        capabilities: ["code-generation", "code-completion", "code-review"],
         maxTokens: 2048,
         temperature: 0.3,
         topP: 0.95,
         topK: 40,
         isCustom: false,
-        deploymentStatus: 'deployed'
+        deploymentStatus: "deployed",
       },
       {
-        id: 'imagen',
-        name: 'Imagen',
-        type: 'image',
-        capabilities: ['image-generation', 'image-editing'],
+        id: "imagen",
+        name: "Imagen",
+        type: "image",
+        capabilities: ["image-generation", "image-editing"],
         maxTokens: 4096,
         temperature: 0.8,
         topP: 0.95,
         topK: 40,
         isCustom: false,
-        deploymentStatus: 'deployed'
-      }
+        deploymentStatus: "deployed",
+      },
     ];
 
-    models.forEach(model => {
+    models.forEach((model) => {
       this.availableModels.set(model.id, model);
     });
   }
@@ -223,11 +221,11 @@ export class GoogleVertexAIService {
     this.apiKey = apiKey;
     this.projectId = projectId;
     this.isConnected = !!(apiKey && projectId);
-    
-    this.eventBus.emit('vertex-ai:credentials-set', {
+
+    this.eventBus.emit("vertex-ai:credentials-set", {
       timestamp: new Date().toISOString(),
       hasCredentials: this.isConnected,
-      projectId
+      projectId,
     });
   }
 
@@ -236,30 +234,30 @@ export class GoogleVertexAIService {
    */
   async testConnection(): Promise<boolean> {
     if (!this.apiKey || !this.projectId) {
-      throw new Error('API key and project ID not set');
+      throw new Error("API key and project ID not set");
     }
 
     try {
       const response = await fetch(
-        `${this.baseUrl}/projects/${this.projectId}/locations/${this.location}/models?key=${this.apiKey}`
+        `${this.baseUrl}/projects/${this.projectId}/locations/${this.location}/models?key=${this.apiKey}`,
       );
-      
+
       this.isConnected = response.ok;
-      
-      this.eventBus.emit('vertex-ai:connection-tested', {
+
+      this.eventBus.emit("vertex-ai:connection-tested", {
         timestamp: new Date().toISOString(),
         connected: this.isConnected,
-        status: response.status
+        status: response.status,
       });
 
       return this.isConnected;
     } catch (error) {
       this.isConnected = false;
-      console.error('Failed to connect to Vertex AI:', error);
-      
-      this.eventBus.emit('vertex-ai:connection-failed', {
+      console.error("Failed to connect to Vertex AI:", error);
+
+      this.eventBus.emit("vertex-ai:connection-failed", {
         timestamp: new Date().toISOString(),
-        error: error instanceof Error ? error.message : 'Unknown error'
+        error: error instanceof Error ? error.message : "Unknown error",
       });
 
       return false;
@@ -283,22 +281,25 @@ export class GoogleVertexAIService {
   /**
    * Create custom model configuration
    */
-  async createCustomModel(config: Omit<CustomModelConfig, 'id'>): Promise<string> {
+  async createCustomModel(
+    config: Omit<CustomModelConfig, "id">,
+  ): Promise<string> {
     if (!this.isConnected || !this.apiKey || !this.projectId) {
-      throw new Error('Not connected to Vertex AI');
+      throw new Error("Not connected to Vertex AI");
     }
 
+    const id = `custom-model-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
     const customModel: CustomModelConfig = {
       ...config,
-      id
+      id,
     };
 
     this.customModels.set(id, customModel);
-    
-    this.eventBus.emit('vertex-ai:custom-model-created', {
+
+    this.eventBus.emit("vertex-ai:custom-model-created", {
       timestamp: new Date().toISOString(),
       modelId: id,
-      config: customModel
+      config: customModel,
     });
 
     return id;
@@ -308,34 +309,37 @@ export class GoogleVertexAIService {
    * Start training job for custom model
    */
   async startTraining(modelConfigId: string): Promise<string> {
+    const config = this.customModels.get(modelConfigId);
     if (!config) {
       throw new Error(`Custom model configuration ${modelConfigId} not found`);
     }
 
+    const jobId = `training-job-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    const now = new Date().toISOString();
 
     const trainingJob: TrainingJob = {
       id: jobId,
       modelConfigId,
-      status: 'pending',
+      status: "pending",
       startTime: now,
       progress: 0,
       metrics: {
         loss: 0,
         accuracy: 0,
         validationLoss: 0,
-        validationAccuracy: 0
+        validationAccuracy: 0,
       },
       logs: [],
-      errors: []
+      errors: [],
     };
 
     this.trainingJobs.set(jobId, trainingJob);
 
-    this.eventBus.emit('vertex-ai:training-started', {
+    this.eventBus.emit("vertex-ai:training-started", {
       timestamp: new Date().toISOString(),
       jobId,
       modelConfigId,
-      config
+      config,
     });
 
     // Simulate training process
@@ -348,119 +352,136 @@ export class GoogleVertexAIService {
    * Simulate training process
    */
   private async simulateTraining(jobId: string): Promise<void> {
+    const job = this.trainingJobs.get(jobId);
     if (!job) return;
 
-    job.status = 'training';
+    job.status = "training";
     this.trainingJobs.set(jobId, job);
 
     // Simulate training progress
     for (let epoch = 1; epoch <= 10; epoch++) {
-      await new Promise(resolve => setTimeout(resolve, 2000)); // 2 seconds per epoch
-      
+      await new Promise((resolve) => setTimeout(resolve, 2000)); // 2 seconds per epoch
+
       job.progress = (epoch / 10) * 100;
-      job.metrics.loss = Math.max(0.1, 2 - (epoch * 0.15));
-      job.metrics.accuracy = Math.min(0.95, 0.3 + (epoch * 0.06));
-      job.metrics.validationLoss = Math.max(0.1, 2.2 - (epoch * 0.14));
-      job.metrics.validationAccuracy = Math.min(0.93, 0.25 + (epoch * 0.065));
-      
-      job.logs.push(`Epoch ${epoch}/10 - Loss: ${job.metrics.loss.toFixed(4)}, Accuracy: ${(job.metrics.accuracy * 100).toFixed(2)}%`);
-      
+      job.metrics.loss = Math.max(0.1, 2 - epoch * 0.15);
+      job.metrics.accuracy = Math.min(0.95, 0.3 + epoch * 0.06);
+      job.metrics.validationLoss = Math.max(0.1, 2.2 - epoch * 0.14);
+      job.metrics.validationAccuracy = Math.min(0.93, 0.25 + epoch * 0.065);
+
+      job.logs.push(
+        `Epoch ${epoch}/10 - Loss: ${job.metrics.loss.toFixed(4)}, Accuracy: ${(job.metrics.accuracy * 100).toFixed(2)}%`,
+      );
+
       this.trainingJobs.set(jobId, job);
-      
-      this.eventBus.emit('vertex-ai:training-progress', {
+
+      this.eventBus.emit("vertex-ai:training-progress", {
         timestamp: new Date().toISOString(),
         jobId,
         progress: job.progress,
-        metrics: job.metrics
+        metrics: job.metrics,
       });
     }
 
-    job.status = 'completed';
+    job.status = "completed";
     job.endTime = new Date().toISOString();
-    job.duration = new Date(job.endTime).getTime() - new Date(job.startTime).getTime();
-    
+    job.duration =
+      new Date(job.endTime).getTime() - new Date(job.startTime).getTime();
+
     this.trainingJobs.set(jobId, job);
 
     // Add trained model to available models
-    if (config) {
+    const modelConfig = this.customModels.get(job.modelConfigId);
+    if (modelConfig) {
       const trainedModel: VertexAIModel = {
         id: `trained_${job.modelConfigId}`,
-        name: config.name,
-        type: 'custom',
-        capabilities: ['text-generation', 'custom-training'],
+        name: modelConfig.name,
+        type: "custom",
+        capabilities: ["text-generation", "custom-training"],
         maxTokens: 4096,
         temperature: 0.7,
         topP: 0.95,
         topK: 40,
         isCustom: true,
-        trainingData: config.trainingData.map(item => item.input),
-        deploymentStatus: 'deployed'
+        trainingData: modelConfig.trainingData.map((item: any) => item.input),
+        deploymentStatus: "deployed",
       };
 
       this.availableModels.set(trainedModel.id, trainedModel);
     }
 
-    this.eventBus.emit('vertex-ai:training-completed', {
+    this.eventBus.emit("vertex-ai:training-completed", {
       timestamp: new Date().toISOString(),
       jobId,
       modelId: `trained_${job.modelConfigId}`,
-      duration: job.duration
+      duration: job.duration,
     });
   }
 
   /**
    * Generate text using Vertex AI
    */
-  async generateText(request: Omit<VertexAIRequest, 'id'>): Promise<VertexAIResponse> {
+  async generateText(
+    request: Omit<VertexAIRequest, "id">,
+  ): Promise<VertexAIResponse> {
     if (!this.isConnected || !this.apiKey || !this.projectId) {
-      throw new Error('Not connected to Vertex AI');
+      throw new Error("Not connected to Vertex AI");
     }
 
+    const model = this.availableModels.get(request.modelId);
     if (!model) {
       throw new Error(`Model ${request.modelId} not found`);
     }
 
+    const requestId = `request_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const fullRequest: VertexAIRequest = {
       ...request,
-      id: requestId
+      id: requestId,
     };
 
     try {
       // Prepare request payload for Vertex AI
       const payload = {
-        instances: [{
-          prompt: request.prompt,
-          ...(request.context?.systemPrompt && { systemPrompt: request.context.systemPrompt })
-        }],
+        instances: [
+          {
+            prompt: request.prompt,
+            ...(request.context?.systemPrompt && {
+              systemPrompt: request.context.systemPrompt,
+            }),
+          },
+        ],
         parameters: {
           temperature: request.parameters.temperature ?? model.temperature,
           topP: request.parameters.topP ?? model.topP,
           topK: request.parameters.topK ?? model.topK,
           maxOutputTokens: request.parameters.maxTokens ?? model.maxTokens,
-          stopSequences: request.parameters.stopSequences
-        }
+          stopSequences: request.parameters.stopSequences,
+        },
       };
 
       const response = await fetch(
         `${this.baseUrl}/projects/${this.projectId}/locations/${this.location}/publishers/google/models/${request.modelId}:predict?key=${this.apiKey}`,
         {
-          method: 'POST',
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(payload)
-        }
+          body: JSON.stringify(payload),
+        },
       );
 
       if (!response.ok) {
-        throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+        throw new Error(
+          `API request failed: ${response.status} ${response.statusText}`,
+        );
       }
 
-      
+      const data = await response.json();
+      const content = data.predictions?.[0]?.candidates?.[0]?.content || "";
+
       const usage = data.metadata?.tokenMetadata || {
         inputTokenCount: 0,
         outputTokenCount: 0,
-        totalTokenCount: 0
+        totalTokenCount: 0,
       };
 
       const generationResponse: VertexAIResponse = {
@@ -470,36 +491,39 @@ export class GoogleVertexAIService {
         usage: {
           promptTokens: usage.inputTokenCount || 0,
           responseTokens: usage.outputTokenCount || 0,
-          totalTokens: usage.totalTokenCount || 0
+          totalTokens: usage.totalTokenCount || 0,
         },
-        finishReason: data.predictions?.[0]?.candidates?.[0]?.finishReason || 'stop',
-        safetyRatings: data.predictions?.[0]?.candidates?.[0]?.safetyRatings?.map((rating: any) => ({
-          category: rating.category,
-          probability: rating.probability
-        })),
+        finishReason:
+          data.predictions?.[0]?.candidates?.[0]?.finishReason || "stop",
+        safetyRatings:
+          data.predictions?.[0]?.candidates?.[0]?.safetyRatings?.map(
+            (rating: any) => ({
+              category: rating.category,
+              probability: rating.probability,
+            }),
+          ),
         metadata: request.metadata,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
 
       this.generationHistory.set(generationResponse.id, generationResponse);
 
-      this.eventBus.emit('vertex-ai:text-generated', {
+      this.eventBus.emit("vertex-ai:text-generated", {
         timestamp: new Date().toISOString(),
         requestId,
         responseId: generationResponse.id,
         modelId: request.modelId,
         contentLength: content.length,
-        usage: generationResponse.usage
+        usage: generationResponse.usage,
       });
 
       return generationResponse;
-
     } catch (error) {
-      this.eventBus.emit('vertex-ai:generation-failed', {
+      this.eventBus.emit("vertex-ai:generation-failed", {
         timestamp: new Date().toISOString(),
         requestId,
         modelId: request.modelId,
-        error: error instanceof Error ? error.message : 'Unknown error'
+        error: error instanceof Error ? error.message : "Unknown error",
       });
 
       throw error;
@@ -509,22 +533,26 @@ export class GoogleVertexAIService {
   /**
    * Create A/B test configuration
    */
-  async createABTest(config: Omit<ABTestConfig, 'id' | 'startTime' | 'status'>): Promise<string> {
-    
+  async createABTest(
+    config: Omit<ABTestConfig, "id" | "startTime" | "status">,
+  ): Promise<string> {
+    const id = `abtest-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    const now = new Date().toISOString();
+
     const abTest: ABTestConfig = {
       ...config,
       id,
       startTime: now,
-      status: 'active'
+      status: "active",
     };
 
     this.abTests.set(id, abTest);
     this.abTestResults.set(id, []);
-    
-    this.eventBus.emit('vertex-ai:abtest-created', {
+
+    this.eventBus.emit("vertex-ai:abtest-created", {
       timestamp: new Date().toISOString(),
       testId: id,
-      config: abTest
+      config: abTest,
     });
 
     return id;
@@ -533,12 +561,19 @@ export class GoogleVertexAIService {
   /**
    * Generate text with A/B testing
    */
-  async generateTextWithABTest(testId: string, request: Omit<VertexAIRequest, 'id'>): Promise<ABTestResult> {
-    if (!abTest || abTest.status !== 'active') {
+  async generateTextWithABTest(
+    testId: string,
+    request: Omit<VertexAIRequest, "id">,
+  ): Promise<ABTestResult> {
+    const abTest = this.abTests.get(testId);
+    if (!abTest || abTest.status !== "active") {
       throw new Error(`A/B test ${testId} not found or not active`);
     }
 
     // Select variant based on traffic percentage
+    const random = Math.random() * 100;
+    let cumulativePercentage = 0;
+    let selectedVariant = abTest.variants[0]; // Default to first variant
 
     for (const variant of abTest.variants) {
       cumulativePercentage += variant.trafficPercentage;
@@ -548,12 +583,14 @@ export class GoogleVertexAIService {
       }
     }
 
+    const startTime = Date.now();
     // Generate text with selected variant
     const response = await this.generateText({
       ...request,
       modelId: selectedVariant.modelId,
-      parameters: { ...request.parameters, ...selectedVariant.parameters }
+      parameters: { ...request.parameters, ...selectedVariant.parameters },
     });
+    const endTime = Date.now();
 
     // Create A/B test result
     const result: ABTestResult = {
@@ -566,18 +603,18 @@ export class GoogleVertexAIService {
         responseTime: endTime - startTime,
         errorRate: 0,
         userSatisfaction: Math.random() * 5, // Simulated user satisfaction
-        conversionRate: Math.random() * 0.1 // Simulated conversion rate
+        conversionRate: Math.random() * 0.1, // Simulated conversion rate
       },
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     };
 
     this.abTestResults.get(testId)?.push(result);
 
-    this.eventBus.emit('vertex-ai:abtest-result', {
+    this.eventBus.emit("vertex-ai:abtest-result", {
       timestamp: new Date().toISOString(),
       testId,
       variantId: selectedVariant.id,
-      result
+      result,
     });
 
     return result;
@@ -590,42 +627,75 @@ export class GoogleVertexAIService {
     winner?: string;
     confidence: number;
     metrics: Record<string, any>;
-    recommendations: recommendations: string[];
+    recommendations: string[];
   }> {
+    const abTest = this.abTests.get(testId);
+    const results = this.abTestResults.get(testId) || [];
 
     if (!abTest || results.length === 0) {
       throw new Error(`No results found for A/B test ${testId}`);
     }
 
     // Group results by variant
-    abTest.variants.forEach(variant => {
-      variantResults.set(variant.id, results.filter(r => r.variantId === variant.id));
+    const variantResultsMap = new Map<string, ABTestResult[]>();
+    abTest.variants.forEach((variant) => {
+      variantResultsMap.set(
+        variant.id,
+        results.filter((r) => r.variantId === variant.id),
+      );
     });
 
     // Calculate metrics for each variant
-    const variantMetrics = new Map<string, {
-      avgResponseTime: number;
-      avgUserSatisfaction: number;
-      avgConversionRate: number;
-      errorRate: number;
-      totalRequests: number;
-    }>();
+    const variantMetrics = new Map<
+      string,
+      {
+        avgResponseTime: number;
+        avgUserSatisfaction: number;
+        avgConversionRate: number;
+        errorRate: number;
+        totalRequests: number;
+      }
+    >();
 
-    for (const [variantId, variantResults] of variantResults) {
+    for (const [variantId, variantResults] of variantResultsMap) {
       if (variantResults.length === 0) continue;
 
+      const avgResponseTime =
+        variantResults.reduce(
+          (sum: number, r: ABTestResult) => sum + r.metrics.responseTime,
+          0,
+        ) / variantResults.length;
+      const avgUserSatisfaction =
+        variantResults.reduce(
+          (sum: number, r: ABTestResult) =>
+            sum + (r.metrics.userSatisfaction || 0),
+          0,
+        ) / variantResults.length;
+      const avgConversionRate =
+        variantResults.reduce(
+          (sum: number, r: ABTestResult) =>
+            sum + (r.metrics.conversionRate || 0),
+          0,
+        ) / variantResults.length;
+      const errorRate =
+        variantResults.reduce(
+          (sum: number, r: ABTestResult) => sum + r.metrics.errorRate,
+          0,
+        ) / variantResults.length;
+      const totalRequests = variantResults.length;
 
       variantMetrics.set(variantId, {
         avgResponseTime,
         avgUserSatisfaction,
         avgConversionRate,
         errorRate,
-        totalRequests
+        totalRequests,
       });
     }
 
     // Determine winner based on primary metric (user satisfaction)
     let winner: string | undefined;
+    let highestSatisfaction = 0;
 
     for (const [variantId, metrics] of variantMetrics) {
       if (metrics.avgUserSatisfaction > highestSatisfaction) {
@@ -635,25 +705,33 @@ export class GoogleVertexAIService {
     }
 
     // Calculate confidence (simplified)
+    const confidence = Math.min(0.95, results.length / 100);
 
-    // Generate recommendations: recommendations
-    const recommendations: recommendations: string[] = [];
+    // Generate recommendations
+    const recommendations: string[] = [];
     if (winner) {
+      const winnerMetrics = variantMetrics.get(winner);
       if (winnerMetrics) {
-        recommendations: recommendations.push(`Variant ${winner} shows the best user satisfaction (${winnerMetrics.avgUserSatisfaction.toFixed(2)})`);
-        recommendations: recommendations.push(`Consider increasing traffic allocation to the winning variant`);
+        recommendations.push(
+          `Variant ${winner} shows the best user satisfaction (${winnerMetrics.avgUserSatisfaction.toFixed(2)})`,
+        );
+        recommendations.push(
+          `Consider increasing traffic allocation to the winning variant`,
+        );
       }
     }
 
     if (results.length < 100) {
-      recommendations: recommendations.push('Collect more data for higher confidence in results');
+      recommendations.push(
+        "Collect more data for higher confidence in results",
+      );
     }
 
     const analysis = {
       winner,
       confidence,
       metrics: Object.fromEntries(variantMetrics),
-      recommendations: recommendations
+      recommendations,
     };
 
     // Update A/B test with results
@@ -662,10 +740,10 @@ export class GoogleVertexAIService {
       this.abTests.set(testId, abTest);
     }
 
-    this.eventBus.emit('vertex-ai:abtest-analyzed', {
+    this.eventBus.emit("vertex-ai:abtest-analyzed", {
       timestamp: new Date().toISOString(),
       testId,
-      analysis
+      analysis,
     });
 
     return analysis;
@@ -682,8 +760,10 @@ export class GoogleVertexAIService {
    * Get all training jobs
    */
   getAllTrainingJobs(): TrainingJob[] {
-    return Array.from(this.trainingJobs.values())
-      .sort((a, b) => new Date(b.startTime).getTime() - new Date(a.startTime).getTime());
+    return Array.from(this.trainingJobs.values()).sort(
+      (a, b) =>
+        new Date(b.startTime).getTime() - new Date(a.startTime).getTime(),
+    );
   }
 
   /**
@@ -697,8 +777,10 @@ export class GoogleVertexAIService {
    * Get all A/B tests
    */
   getAllABTests(): ABTestConfig[] {
-    return Array.from(this.abTests.values())
-      .sort((a, b) => new Date(b.startTime).getTime() - new Date(a.startTime).getTime());
+    return Array.from(this.abTests.values()).sort(
+      (a, b) =>
+        new Date(b.startTime).getTime() - new Date(a.startTime).getTime(),
+    );
   }
 
   /**
@@ -713,7 +795,11 @@ export class GoogleVertexAIService {
    */
   getGenerationHistory(limit: number = 50): VertexAIResponse[] {
     return Array.from(this.generationHistory.values())
-      .sort((a, b) => new Date(b.timestamp || Date.now()).getTime() - new Date(a.timestamp || Date.now()).getTime())
+      .sort(
+        (a, b) =>
+          new Date(b.timestamp || Date.now()).getTime() -
+          new Date(a.timestamp || Date.now()).getTime(),
+      )
       .slice(0, limit);
   }
 
@@ -736,7 +822,7 @@ export class GoogleVertexAIService {
       customModels: this.customModels.size,
       trainingJobs: this.trainingJobs.size,
       abTests: this.abTests.size,
-      totalGenerations: this.generationHistory.size
+      totalGenerations: this.generationHistory.size,
     };
   }
-} 
+}

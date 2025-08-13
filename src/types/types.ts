@@ -1,7 +1,6 @@
+// Core type definitions for the az-interface system
 
-
-import { ReactNode, ComponentType } from 'react';
-
+// Window Management Types
 export interface WindowState {
   id: string;
   title: string;
@@ -69,6 +68,7 @@ export type AppCategory =
   | 'communication'
   | 'monitoring';
 
+// API and System Types
 export interface APIResponse<T = any> {
   success: boolean;
   data?: T;
@@ -138,6 +138,89 @@ export interface AppError extends Error {
   context?: string;
 }
 
+export interface ApiError {
+  message: string;
+  code?: string | number;
+  details?: any;
+  timestamp?: string;
+}
+
+export interface AsyncState<T> {
+  data: T | null;
+  loading: boolean;
+  error: ApiError | null;
+}
+
+// Auth Types
+export interface AuthUser {
+  id: string;
+  username: string;
+  email: string;
+  isActive: boolean;
+  isAdmin: boolean;
+  createdAt?: string;
+  lastLogin?: string;
+}
+
+export interface LoginCredentials {
+  username: string;
+  password: string;
+}
+
+export interface AuthToken {
+  access_token: string;
+  token_type: string;
+  expires_in: number;
+  refresh_token?: string;
+}
+
+export interface AuthState {
+  user: AuthUser | null;
+  token: string | null;
+  isAuthenticated: boolean;
+  isLoading: boolean;
+  error: string | null;
+}
+
+// Autonomous System Types
+export interface AutonomousErrorReport {
+  timestamp: string;
+  error: {
+    message: string;
+    stack?: string;
+    name: string;
+  };
+  componentStack?: string;
+  context: {
+    userAgent: string;
+    url: string;
+    userId: string;
+  };
+  severity: 'low' | 'medium' | 'high' | 'critical';
+  source: string;
+}
+
+export interface AutonomousFrame {
+  id: string;
+  name: string;
+  type: 'critical' | 'non-critical';
+  status: 'active' | 'inactive' | 'error' | 'recovering';
+  dependencies?: string[];
+  retryCount: number;
+  maxRetries: number;
+  lastExecution?: string;
+  errorHistory: AutonomousErrorReport[];
+}
+
+export interface ScaffoldConfig {
+  frameId: string;
+  scaffoldType: 'error_handling' | 'retry_logic' | 'fallback' | 'recovery';
+  parameters: Record<string, any>;
+  enabled: boolean;
+  priority: number;
+}
+
+// Health and Monitoring Types
 export interface BackendHealthResponse {
   status: 'healthy' | 'unhealthy';
   timestamp: string;
@@ -146,7 +229,7 @@ export interface BackendHealthResponse {
   services?: Record<string, boolean>;
 }
 
-// Utility Types
+// UI Types
 export type Theme = 'dark' | 'light' | 'auto';
 export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export type Status = 'idle' | 'loading' | 'success' | 'error';
@@ -160,6 +243,7 @@ declare global {
     readonly VITE_DEBUG_MODE: string;
     readonly VITE_ENABLE_ANALYTICS: string;
     readonly VITE_ENABLE_ERROR_REPORTING: string;
+    readonly DEV: boolean;
   }
 
   interface ImportMeta {
@@ -167,7 +251,7 @@ declare global {
   }
 }
 
-// Agent and Persona Types
+// Agent Types
 export interface AgentProfile {
   id: string;
   name: string;
@@ -188,7 +272,7 @@ export interface Agent {
   id: string;
   name: string;
   type: string;
-  status: string;
+  status: "detected" | "investigating" | "mitigating" | "resolved";
   capabilities: string[];
 }
 
@@ -214,7 +298,7 @@ export interface SymposiumMessage {
   references?: string[];
 }
 
-// Ingestion and Operation Types
+// Operation Types
 export interface OperationStep {
   id?: string;
   name: string;
@@ -240,6 +324,7 @@ export interface OperationProgress {
   steps?: OperationStep[];
 }
 
+// Ingestion Types
 export interface IngestionReport {
   id: string;
   status: 'success' | 'failed' | 'partial';
@@ -291,7 +376,6 @@ export interface IncidentResponseProgress {
   status: 'detected' | 'investigating' | 'mitigating' | 'resolved';
   severity: 'low' | 'medium' | 'high' | 'critical';
   assignedAgent?: string;
-  timeline: IncidentEvent[];
 }
 
 export interface IncidentEvent {
@@ -438,20 +522,38 @@ export interface BackupLogEntry {
 
 // Control Panel Types
 export interface ControlPanelState {
-  isOpen: boolean;
-  activeTab: string;
-  systemStatus: SystemStatus;
-  recentEvents: EventBusEvent[];
-  quickActions: QuickAction[];
+  apiKeys: {
+    google: { name: string; key: string };
+    openai: { name: string; key: string };
+    chutes: { name: string; key: string };
+  };
+  orchestrator: {
+    monthlyBudget: number;
+    providerEnabled: Record<string, boolean>;
+  };
+  agentMasterStatus: Record<string, 'Online' | 'Dormant'>;
+  aiAutonomy?: {
+    agentAutonomyLevels: Record<string, AutonomyLevel>;
+    permissionScopes: Record<string, PermissionScope>;
+  };
 }
 
-export interface QuickAction {
-  id: string;
-  name: string;
-  description: string;
-  icon: string;
-  action: () => void;
+export type AutonomyLevel = 'restricted' | 'supervised' | 'autonomous' | 'enhanced';
+
+export interface PermissionScope {
+  enabled: boolean;
+  level: PermissionLevel;
 }
+
+export type PermissionLevel =
+  | 'none'
+  | 'read_only'
+  | 'filtered'
+  | 'sandboxed'
+  | 'monitored'
+  | 'restricted'
+  | 'read_write'
+  | 'full';
 
 // Chat Types
 export interface ChatMessage {
@@ -778,4 +880,57 @@ export interface AgentRelationship {
   strength: number;
   trust: number;
   lastInteraction: Date;
+}
+
+// Additional type definitions
+export interface QuickAction {
+  id: string;
+  name: string;
+  description: string;
+  action: () => void;
+}
+
+export interface CuratedBook {
+  id: string;
+  title: string;
+  author: string;
+  type: 'book';
+}
+
+export interface BackupStatus {
+  id: string;
+  status: 'pending' | 'running' | 'completed' | 'failed';
+  timestamp: Date;
+}
+
+export type TaskStatus = 'pending' | 'running' | 'completed' | 'failed';
+
+export interface ErduIncident {
+  id: string;
+  severity: 'low' | 'medium' | 'high' | 'critical';
+  status: 'open' | 'investigating' | 'resolved';
+}
+
+export type IncidentSeverity = 'low' | 'medium' | 'high' | 'critical';
+
+  id: string;
+  type: string;
+  content: any;
+}
+
+  id: string;
+  status: "detected" | "investigating" | "mitigating" | "resolved";
+  progress: number;
+}
+
+  id: string;
+  name: string;
+  type: string;
+  capabilities: string[];
+}
+
+export interface LLMProvider {
+  name: string;
+  model: string;
+  apiKey?: string;
 }

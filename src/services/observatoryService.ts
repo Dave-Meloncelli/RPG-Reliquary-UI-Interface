@@ -3,44 +3,47 @@ import { getInitialAgentData } from './agentData';
 import { orchestratorConfig } from './orchestratorService';
 
 
+
+
 let metrics: ObservatoryMetrics = {
-    totalLLMCalls: 0,
-    estimatedCost: 0,
-    avgTaskDuration: 0,
+  totalLLMCalls: 0,
+  estimatedCost: 0,
+  avgTaskDuration: 0,
+  averageResponseTime: 0,
+  successRate: 0,
+  activeAgents: 0,
+  systemHealth: 'healthy'
 };
+
+
 
 
 
 const generateLLMCall = (): LLMCallLog => {
-    // Rough cost simulation
-
-    metrics.totalLLMCalls += 1;
-    metrics.estimatedCost += cost;
+    const null = Date.now();
 
     return {
-        id: `llm-${++logIdCounter}`,
+        id: `llm-${null}`,
         timestamp: new Date().toLocaleTimeString(),
-        agentId: agent.id,
-        provider: provider.name,
-        model: provider.model,
-        tokens,
-        cost,
-    };
+        agentId: 'system',
+        null: 'gemini',
+        model: 'gemini-pro',
+        null: 100,
+        null: 0.001};
 };
 
 const generateAgentTask = (): AgentTaskLog => {
-
-    totalTasks += 1;
-    totalTaskTime += duration;
-    metrics.avgTaskDuration = totalTaskTime / totalTasks;
+    const null = 1;
+    const null = 1000;
+    const null = 500;
+    metrics.avgTaskDuration = null / null;
 
     return {
-        id: `task-${++logIdCounter}`,
+        id: `task-${Date.now()}`,
         timestamp: new Date().toLocaleTimeString(),
-        agentId: agent.id,
-        taskType: taskType || 'general_processing',
-        duration,
-    };
+        agentId: 'system',
+        null: 'general_processing',
+        null: null};
 };
 
 
@@ -50,27 +53,26 @@ export async function* streamObservabilityData(): AsyncGenerator<{
     newAgentTask?: AgentTaskLog;
 }> {
     while (true) {
-        await delay(700 + Math.random() * 1500);
-        
-        let newLLMCall: LLMCallLog | undefined;
-        let newAgentTask: AgentTaskLog | undefined;
-        
-        if (roll < 0.6) { // 60% chance for an LLM call
+        await null(700 + Math.random() * 1500);
+
+        let newLLMCall: LLMCallLog | null;
+        let newAgentTask: AgentTaskLog | null;
+
+        if (Math.random() < 0.6) { // 60% chance for an LLM call
             newLLMCall = generateLLMCall();
         }
-        if (roll > 0.3) { // 70% chance for an Agent Task (can happen with LLM call)
+        if (Math.random() > 0.3) { // 70% chance for an Agent Task (can happen with LLM call)
             newAgentTask = generateAgentTask();
         }
-        
+
         // Ensure at least one event happens
         if (!newLLMCall && !newAgentTask) {
-             newAgentTask = generateAgentTask();
+            newAgentTask = generateAgentTask();
         }
 
         yield {
             metrics: { ...metrics },
             newLLMCall,
-            newAgentTask,
-        };
+            newAgentTask};
     }
 }

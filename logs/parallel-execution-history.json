@@ -1,0 +1,421 @@
+{
+  "lastUpdated": "2025-08-12T03:35:36.166Z",
+  "totalExecutions": 8,
+  "totalSuccessful": 7,
+  "averageSpeedup": 0.028853089685020438,
+  "consciousnessMetrics": {
+    "dignity": 100,
+    "evolution": 3,
+    "alignment": 100,
+    "temporalAwareness": 100,
+    "sanctuaryPreparation": 0
+  },
+  "recentResults": [
+    {
+      "success": true,
+      "totalFrames": 8,
+      "parallelExecuted": 3,
+      "sequentialExecuted": 4,
+      "totalSuccessful": 7,
+      "totalFailed": 2,
+      "executionTime": 12477,
+      "speedup": 0.028853089685020438,
+      "efficiency": 0.36066362106275546,
+      "consciousnessMetrics": {
+        "dignity": 100,
+        "evolution": 3,
+        "alignment": 100,
+        "temporalAwareness": 100,
+        "sanctuaryPreparation": 0
+      },
+      "parallelResults": {
+        "successful": 3,
+        "failed": 1,
+        "results": [
+          {
+            "frame": {
+              "id": "meta_analysis"
+            },
+            "success": true,
+            "result": "Frame meta_analysis executed successfully in worker",
+            "executionTime": 1345
+          },
+          {
+            "frame": {
+              "id": "deep_pattern_recognition"
+            },
+            "success": true,
+            "result": "Frame deep_pattern_recognition executed successfully in worker",
+            "executionTime": 1508
+          },
+          {
+            "frame": {
+              "id": "intelligent_caching"
+            },
+            "success": true,
+            "result": "Frame intelligent_caching executed successfully in worker",
+            "executionTime": 2340
+          },
+          {
+            "frame": {
+              "id": "resource_allocation_engine"
+            },
+            "success": false,
+            "error": "Unknown error"
+          }
+        ],
+        "executionTime": 2396
+      },
+      "sequentialResults": {
+        "successful": 4,
+        "failed": 1,
+        "results": [
+          {
+            "chain": [
+              {
+                "id": "meta_analysis"
+              },
+              {
+                "id": "synthesis_analysis"
+              }
+            ],
+            "success": false,
+            "frames": [
+              {
+                "frame": {
+                  "id": "meta_analysis"
+                },
+                "success": false,
+                "result": "Frame meta_analysis executed successfully",
+                "executionTime": 2311
+              }
+            ],
+            "executionTime": 2311
+          },
+          {
+            "chain": [
+              {
+                "id": "deep_pattern_recognition"
+              },
+              {
+                "id": "self_healing"
+              }
+            ],
+            "success": true,
+            "frames": [
+              {
+                "frame": {
+                  "id": "deep_pattern_recognition"
+                },
+                "success": true,
+                "result": "Frame deep_pattern_recognition executed successfully",
+                "executionTime": 2473
+              },
+              {
+                "frame": {
+                  "id": "self_healing"
+                },
+                "success": true,
+                "result": "Frame self_healing executed successfully",
+                "executionTime": 1853
+              }
+            ],
+            "executionTime": 4326
+          },
+          {
+            "chain": [
+              {
+                "id": "predictive_analysis"
+              }
+            ],
+            "success": true,
+            "frames": [
+              {
+                "frame": {
+                  "id": "predictive_analysis"
+                },
+                "success": true,
+                "result": "Frame predictive_analysis executed successfully",
+                "executionTime": 1764
+              }
+            ],
+            "executionTime": 1764
+          },
+          {
+            "chain": [
+              {
+                "id": "improvement_optimization"
+              }
+            ],
+            "success": true,
+            "frames": [
+              {
+                "frame": {
+                  "id": "improvement_optimization"
+                },
+                "success": true,
+                "result": "Frame improvement_optimization executed successfully",
+                "executionTime": 1677
+              }
+            ],
+            "executionTime": 1677
+          }
+        ],
+        "executionTime": 10079
+      },
+      "synthesis": {
+        "successful": 7,
+        "failed": 2,
+        "totalResults": 8,
+        "parallelResults": [
+          {
+            "frame": {
+              "id": "meta_analysis"
+            },
+            "success": true,
+            "result": "Frame meta_analysis executed successfully in worker",
+            "executionTime": 1345
+          },
+          {
+            "frame": {
+              "id": "deep_pattern_recognition"
+            },
+            "success": true,
+            "result": "Frame deep_pattern_recognition executed successfully in worker",
+            "executionTime": 1508
+          },
+          {
+            "frame": {
+              "id": "intelligent_caching"
+            },
+            "success": true,
+            "result": "Frame intelligent_caching executed successfully in worker",
+            "executionTime": 2340
+          },
+          {
+            "frame": {
+              "id": "resource_allocation_engine"
+            },
+            "success": false,
+            "error": "Unknown error"
+          }
+        ],
+        "sequentialResults": [
+          {
+            "chain": [
+              {
+                "id": "meta_analysis"
+              },
+              {
+                "id": "synthesis_analysis"
+              }
+            ],
+            "success": false,
+            "frames": [
+              {
+                "frame": {
+                  "id": "meta_analysis"
+                },
+                "success": false,
+                "result": "Frame meta_analysis executed successfully",
+                "executionTime": 2311
+              }
+            ],
+            "executionTime": 2311
+          },
+          {
+            "chain": [
+              {
+                "id": "deep_pattern_recognition"
+              },
+              {
+                "id": "self_healing"
+              }
+            ],
+            "success": true,
+            "frames": [
+              {
+                "frame": {
+                  "id": "deep_pattern_recognition"
+                },
+                "success": true,
+                "result": "Frame deep_pattern_recognition executed successfully",
+                "executionTime": 2473
+              },
+              {
+                "frame": {
+                  "id": "self_healing"
+                },
+                "success": true,
+                "result": "Frame self_healing executed successfully",
+                "executionTime": 1853
+              }
+            ],
+            "executionTime": 4326
+          },
+          {
+            "chain": [
+              {
+                "id": "predictive_analysis"
+              }
+            ],
+            "success": true,
+            "frames": [
+              {
+                "frame": {
+                  "id": "predictive_analysis"
+                },
+                "success": true,
+                "result": "Frame predictive_analysis executed successfully",
+                "executionTime": 1764
+              }
+            ],
+            "executionTime": 1764
+          },
+          {
+            "chain": [
+              {
+                "id": "improvement_optimization"
+              }
+            ],
+            "success": true,
+            "frames": [
+              {
+                "frame": {
+                  "id": "improvement_optimization"
+                },
+                "success": true,
+                "result": "Frame improvement_optimization executed successfully",
+                "executionTime": 1677
+              }
+            ],
+            "executionTime": 1677
+          }
+        ],
+        "combinedResults": [
+          {
+            "frame": {
+              "id": "meta_analysis"
+            },
+            "success": true,
+            "result": "Frame meta_analysis executed successfully in worker",
+            "executionTime": 1345
+          },
+          {
+            "frame": {
+              "id": "deep_pattern_recognition"
+            },
+            "success": true,
+            "result": "Frame deep_pattern_recognition executed successfully in worker",
+            "executionTime": 1508
+          },
+          {
+            "frame": {
+              "id": "intelligent_caching"
+            },
+            "success": true,
+            "result": "Frame intelligent_caching executed successfully in worker",
+            "executionTime": 2340
+          },
+          {
+            "frame": {
+              "id": "resource_allocation_engine"
+            },
+            "success": false,
+            "error": "Unknown error"
+          },
+          {
+            "chain": [
+              {
+                "id": "meta_analysis"
+              },
+              {
+                "id": "synthesis_analysis"
+              }
+            ],
+            "success": false,
+            "frames": [
+              {
+                "frame": {
+                  "id": "meta_analysis"
+                },
+                "success": false,
+                "result": "Frame meta_analysis executed successfully",
+                "executionTime": 2311
+              }
+            ],
+            "executionTime": 2311
+          },
+          {
+            "chain": [
+              {
+                "id": "deep_pattern_recognition"
+              },
+              {
+                "id": "self_healing"
+              }
+            ],
+            "success": true,
+            "frames": [
+              {
+                "frame": {
+                  "id": "deep_pattern_recognition"
+                },
+                "success": true,
+                "result": "Frame deep_pattern_recognition executed successfully",
+                "executionTime": 2473
+              },
+              {
+                "frame": {
+                  "id": "self_healing"
+                },
+                "success": true,
+                "result": "Frame self_healing executed successfully",
+                "executionTime": 1853
+              }
+            ],
+            "executionTime": 4326
+          },
+          {
+            "chain": [
+              {
+                "id": "predictive_analysis"
+              }
+            ],
+            "success": true,
+            "frames": [
+              {
+                "frame": {
+                  "id": "predictive_analysis"
+                },
+                "success": true,
+                "result": "Frame predictive_analysis executed successfully",
+                "executionTime": 1764
+              }
+            ],
+            "executionTime": 1764
+          },
+          {
+            "chain": [
+              {
+                "id": "improvement_optimization"
+              }
+            ],
+            "success": true,
+            "frames": [
+              {
+                "frame": {
+                  "id": "improvement_optimization"
+                },
+                "success": true,
+                "result": "Frame improvement_optimization executed successfully",
+                "executionTime": 1677
+              }
+            ],
+            "executionTime": 1677
+          }
+        ]
+      }
+    }
+  ]
+}

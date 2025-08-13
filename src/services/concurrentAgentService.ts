@@ -1,297 +1,294 @@
-import type { AgentProfile, TaskItem, TaskPriority, TaskSource } from "../types/types";
-import { getInitialAgentData } from './agentData';
-import { orchestratorConfig } from './orchestratorService';
+/**
+ * Concurrent Agent Service
+ *
+ * Clean implementation for concurrent agent task management
+ */
 
 export interface ConcurrentTask {
   id: string;
+  type: string;
+  priority: number;
+  status: "pending" | "running" | "completed" | "failed";
   agentId: string;
-  taskType: string;
-  description: string;
-  priority: TaskPriority;
-  status: 'pending' | 'running' | 'completed' | 'failed';
-  startTime?: Date;
-  endTime?: Date;
+  estimatedDuration: number;
   result?: any;
   error?: string;
-  dependencies?: string[];
-  estimatedDuration: number; // in milliseconds
+  createdAt: Date;
+  startedAt?: Date;
+  completedAt?: Date;
 }
 
 export interface AgentWorkload {
   agentId: string;
-  currentTasks: ConcurrentTask[];
-  maxConcurrentTasks: number;
-  currentLoad: number; // 0-1 scale
-  capabilities: string[];
-  preferredTaskTypes: string[];
+  currentTasks: number;
+  maxConcurrent: number;
+  averageTaskTime: number;
+  lastActivity: Date;
 }
 
-export interface ConcurrentAgentConfig {
-  maxGlobalConcurrency: number;
-  maxPerAgentConcurrency: number;
-  taskQueueSize: number;
-  enableLoadBalancing: boolean;
-  enableTaskPrioritization: boolean;
-  enableDependencyResolution: boolean;
-}
-
-class ConcurrentAgentService {
+export class ConcurrentAgentService {
   private tasks: Map<string, ConcurrentTask> = new Map();
-  private agentWorkloads: Map<string, AgentWorkload> = new Map();
-  private taskQueue: ConcurrentTask[] = [];
   private runningTasks: Set<string> = new Set();
-  private config: ConcurrentAgentConfig;
-  private agents: AgentProfile[];
+  private maxConcurrentTasks: number = 5;
+  private taskQueue: string[] = [];
 
-  constructor(config: Partial<ConcurrentAgentConfig> = {}) {
-    this.config = {
-      maxGlobalConcurrency: 10,
-      maxPerAgentConcurrency: 3,
-      taskQueueSize: 100,
-      enableLoadBalancing: true,
-      enableTaskPrioritization: true,
-      enableDependencyResolution: true,
-      ...config
-    };
-    
-    this.agents = getInitialAgentData();
-    this.initializeAgentWorkloads();
+  constructor(maxConcurrent: number = 5) {
+    this.maxConcurrentTasks = maxConcurrent;
   }
 
-  private initializeAgentWorkloads() {
-    this.agents.forEach(agent => {
-      this.agentWorkloads.set(agent.id, {
-        agentId: agent.id,
-        currentTasks: [],
-        maxConcurrentTasks: this.config.maxPerAgentConcurrency,
-        currentLoad: 0,
-        capabilities: agent.capabilities,
-        preferredTaskTypes: this.getPreferredTaskTypes(agent)
-      });
-    });
-  }
+  /**
+   * Add a new task to the queue
+   */
+  async addTask(
+    task: Omit<ConcurrentTask, "id" | "status" | "createdAt">,
+  ): Promise<string> {
+    const taskId = `task-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
-  private getPreferredTaskTypes(agent: AgentProfile): string[] {
-    // Map agent capabilities to task types
-    const capabilityToTaskMap: Record<string, string[]> = {
-      'Data Analysis': ['data_analysis', 'pattern_recognition', 'predictive_modeling'],
-      'Content Creation': ['content_generation', 'writing', 'editing'],
-      'System Monitoring': ['monitoring', 'diagnostics', 'forensics'],
-      'Decision Making': ['decision_analysis', 'strategy', 'planning'],
-      'Communication': ['communication', 'coordination', 'facilitation'],
-      'Technical': ['technical_analysis', 'infrastructure', 'development']
-    };
-
-    return agent.capabilities.flatMap(cap => capabilityToTaskMap[cap] || []);
-  }
-
-  public async submitTask(task: Omit<ConcurrentTask, 'id' | 'status'>): Promise<string> {
-    const fullTask: ConcurrentTask = {
+    const newTask: ConcurrentTask = {
       ...task,
       id: taskId,
-      status: 'pending'
+      status: "pending",
+      createdAt: new Date(),
     };
 
-    this.tasks.set(taskId, fullTask);
-    this.taskQueue.push(fullTask);
-    
-    // Sort queue by priority if enabled
-    if (this.config.enableTaskPrioritization) {
-      this.sortTaskQueue();
-    }
+    this.tasks.set(taskId, newTask);
+    this.taskQueue.push(taskId);
 
-    // Try to start the task immediately
-    this.processTaskQueue();
-    
+    this.log(`Task added: ${taskId} (${task.type})`, "info");
+    this.processQueue();
+
     return taskId;
   }
 
-  private sortTaskQueue() {
-    this.taskQueue.sort((a, b) => {
-      if (priorityDiff !== 0) return priorityDiff;
-      return (a.startTime?.getTime() || 0) - (b.startTime?.getTime() || 0);
-    });
-  }
-
-  private async processTaskQueue() {
-    while (this.taskQueue.length > 0 && this.runningTasks.size < this.config.maxGlobalConcurrency) {
-      if (!task) break;
-
-      // Check dependencies
-      if (this.config.enableDependencyResolution && task.dependencies) {
-        const unmetDependencies = task.dependencies.filter(depId => {
-          return !depTask || depTask.status !== 'completed';
-        });
-        
-        if (unmetDependencies.length > 0) {
-          // Put task back in queue
-          this.taskQueue.unshift(task);
-          break;
-        }
+  /**
+   * Process the task queue
+   */
+  private async processQueue(): Promise<void> {
+    while (
+      this.runningTasks.size < this.maxConcurrentTasks &&
+      this.taskQueue.length > 0
+    ) {
+      const taskId = this.taskQueue.shift();
+      if (taskId) {
+        await this.startTask(taskId);
       }
-
-      // Find best agent for the task
-      if (!bestAgent) {
-        // No suitable agent available, put task back in queue
-        this.taskQueue.unshift(task);
-        break;
-      }
-
-      // Start the task
-      await this.startTask(task, bestAgent);
     }
   }
 
-  private findBestAgentForTask(task: ConcurrentTask): AgentWorkload | null {
-    const availableAgents = Array.from(this.agentWorkloads.values())
-      .filter(workload => workload.currentTasks.length < workload.maxConcurrentTasks);
+  /**
+   * Start a task
+   */
+  private async startTask(taskId: string): Promise<void> {
+    const task = this.tasks.get(taskId);
+    if (!task || task.status !== "pending") return;
 
-    if (availableAgents.length === 0) return null;
+    task.status = "running";
+    task.startedAt = new Date();
+    this.runningTasks.add(taskId);
 
-    // Score agents based on capabilities and current load
-    const scoredAgents = availableAgents.map(agent => {
-      
-      // Capability match
-      if (capabilityMatch) score += 10;
-      
-      // Load balancing
-      if (this.config.enableLoadBalancing) {
-        score += (1 - agent.currentLoad) * 5;
-      }
-      
-      // Current workload
-      score += (agent.maxConcurrentTasks - agent.currentTasks.length) * 2;
-      
-      return { agent, score };
-    });
+    this.log(`Task started: ${taskId}`, "info");
 
-    // Return the best scoring agent
-    scoredAgents.sort((a, b) => b.score - a.score);
-    return scoredAgents[0]?.agent || null;
-  }
-
-  private async startTask(task: ConcurrentTask, agent: AgentWorkload) {
-    task.status = 'running';
-    task.startTime = new Date();
-    this.runningTasks.add(task.id);
-    
-    // Update agent workload
-    agent.currentTasks.push(task);
-    agent.currentLoad = agent.currentTasks.length / agent.maxConcurrentTasks;
-    
     // Execute the task
-    this.executeTask(task, agent).finally(() => {
-      this.completeTask(task, agent);
-    });
+    this.executeTask(task)
+      .then(() => {
+        this.completeTask(taskId);
+      })
+      .catch((error) => {
+        this.failTask(taskId, error.message);
+      });
   }
 
-  private async executeTask(task: ConcurrentTask, agent: AgentWorkload) {
-    try {
-      // Simulate task execution based on task type
-      
-      task.status = 'completed';
-      task.result = result;
-      task.endTime = new Date();
-      
-    } catch (error) {
-      task.status = 'failed';
-      task.error = error instanceof Error ? error.message : 'Unknown error';
-      task.endTime = new Date();
-    }
-  }
-
-  private async executeTaskByType(task: ConcurrentTask, agent: AgentWorkload): Promise<any> {
-    // Simulate different task types
+  /**
+   * Execute a task
+   */
+  private async executeTask(task: ConcurrentTask): Promise<any> {
     const executionTime = Math.min(task.estimatedDuration, 5000); // Cap at 5 seconds for demo
-    
-    await new Promise(resolve => setTimeout(resolve, executionTime));
-    
-    switch (task.taskType) {
-      case 'data_analysis':
-        return { analysis: 'Data analysis completed', insights: ['Insight 1', 'Insight 2'] };
-      case 'content_generation':
-        return { content: 'Generated content', wordCount: 150 };
-      case 'monitoring':
-        return { status: 'System monitored', alerts: [] };
-      case 'decision_analysis':
-        return { decision: 'Decision made', confidence: 0.85 };
+
+    await new Promise((resolve) => setTimeout(resolve, executionTime));
+
+    // Simulate task execution based on type
+    switch (task.type) {
+      case "data_analysis":
+        return {
+          analysis: "Sample analysis result",
+          insights: ["Insight 1", "Insight 2"],
+        };
+
+      case "content_generation":
+        return { content: "Generated content sample", wordCount: 150 };
+
+      case "monitoring":
+        return { status: "healthy", alerts: [] };
+
+      case "decision_analysis":
+        return { decision: "proceed", confidence: 0.85 };
+
       default:
-        return { result: 'Task completed successfully' };
+        return { result: "Task completed successfully" };
     }
   }
 
-  private completeTask(task: ConcurrentTask, agent: AgentWorkload) {
-    this.runningTasks.delete(task.id);
-    
-    // Update agent workload
-    if (taskIndex !== -1) {
-      agent.currentTasks.splice(taskIndex, 1);
-      agent.currentLoad = agent.currentTasks.length / agent.maxConcurrentTasks;
-    }
-    
-    // Process next tasks in queue
-    this.processTaskQueue();
+  /**
+   * Complete a task
+   */
+  private completeTask(taskId: string): void {
+    const task = this.tasks.get(taskId);
+    if (!task) return;
+
+    task.status = "completed";
+    task.completedAt = new Date();
+    this.runningTasks.delete(taskId);
+
+    this.log(`Task completed: ${taskId}`, "success");
+    this.processQueue();
   }
 
+  /**
+   * Fail a task
+   */
+  private failTask(taskId: string, error: string): void {
+    const task = this.tasks.get(taskId);
+    if (!task) return;
+
+    task.status = "failed";
+    task.error = error;
+    task.completedAt = new Date();
+    this.runningTasks.delete(taskId);
+
+    this.log(`Task failed: ${taskId} - ${error}`, "error");
+    this.processQueue();
+  }
+
+  /**
+   * Get task status
+   */
   public getTaskStatus(taskId: string): ConcurrentTask | null {
     return this.tasks.get(taskId) || null;
   }
 
+  /**
+   * Get all tasks
+   */
   public getAllTasks(): ConcurrentTask[] {
     return Array.from(this.tasks.values());
   }
 
+  /**
+   * Get agent workloads
+   */
   public getAgentWorkloads(): AgentWorkload[] {
-    return Array.from(this.agentWorkloads.values());
+    const workloads = new Map<string, AgentWorkload>();
+
+    for (const task of this.tasks.values()) {
+      if (!workloads.has(task.agentId)) {
+        workloads.set(task.agentId, {
+          agentId: task.agentId,
+          currentTasks: 0,
+          maxConcurrent: 3,
+          averageTaskTime: 0,
+          lastActivity: task.createdAt,
+        });
+      }
+
+      const workload = workloads.get(task.agentId)!;
+      if (task.status === "running") {
+        workload.currentTasks++;
+      }
+
+      if (task.completedAt && task.startedAt) {
+        const taskTime = task.completedAt.getTime() - task.startedAt.getTime();
+        workload.averageTaskTime = (workload.averageTaskTime + taskTime) / 2;
+      }
+
+      if (task.startedAt && task.startedAt > workload.lastActivity) {
+        workload.lastActivity = task.startedAt;
+      }
+    }
+
+    return Array.from(workloads.values());
   }
 
+  /**
+   * Get system status
+   */
   public getSystemStatus() {
+    const totalTasks = this.tasks.size;
+    const runningTasks = this.runningTasks.size;
+    const pendingTasks = this.taskQueue.length;
+    const completedTasks = Array.from(this.tasks.values()).filter(
+      (t) => t.status === "completed",
+    ).length;
+    const failedTasks = Array.from(this.tasks.values()).filter(
+      (t) => t.status === "failed",
+    ).length;
+
     return {
-      totalTasks: this.tasks.size,
-      runningTasks: this.runningTasks.size,
-      queuedTasks: this.taskQueue.length,
-      maxConcurrency: this.config.maxGlobalConcurrency,
-      agentWorkloads: this.getAgentWorkloads()
+      totalTasks,
+      runningTasks,
+      pendingTasks,
+      completedTasks,
+      failedTasks,
+      maxConcurrent: this.maxConcurrentTasks,
+      utilization: (runningTasks / this.maxConcurrentTasks) * 100,
     };
   }
 
+  /**
+   * Cancel a task
+   */
   public cancelTask(taskId: string): boolean {
-    if (!task || task.status !== 'pending') return false;
-    
+    const task = this.tasks.get(taskId);
+    if (!task || task.status !== "pending") return false;
+
+    // Remove from queue
+    const queueIndex = this.taskQueue.indexOf(taskId);
     if (queueIndex !== -1) {
       this.taskQueue.splice(queueIndex, 1);
-      this.tasks.delete(taskId);
-      return true;
     }
-    
-    return false;
+
+    task.status = "failed";
+    task.error = "Task cancelled";
+    task.completedAt = new Date();
+
+    this.log(`Task cancelled: ${taskId}`, "warning");
+    return true;
+  }
+
+  /**
+   * Clear completed tasks
+   */
+  public clearCompletedTasks(): number {
+    let clearedCount = 0;
+
+    for (const [taskId, task] of this.tasks.entries()) {
+      if (task.status === "completed" || task.status === "failed") {
+        this.tasks.delete(taskId);
+        clearedCount++;
+      }
+    }
+
+    this.log(`Cleared ${clearedCount} completed/failed tasks`, "info");
+    return clearedCount;
+  }
+
+  private log(message: string, level: string): void {
+    console.log(`[ConcurrentAgentService] ${level.toUpperCase()}: ${message}`);
   }
 }
 
-// Singleton instance
 export const concurrentAgentService = new ConcurrentAgentService();
 
-// Example usage functions
-export const submitConcurrentTask = async (
-  agentId: string,
-  taskType: string,
-  description: string,
-  priority: TaskPriority = 'Medium',
-  estimatedDuration: number = 3000
-): Promise<string> => {
-  return concurrentAgentService.submitTask({
-    agentId,
-    taskType,
-    description,
-    priority,
-    estimatedDuration
-  });
+// Standalone function exports for backward compatibility
+export const submitConcurrentTask = (
+  task: Omit<ConcurrentTask, "id" | "status" | "createdAt">,
+) => {
+  return concurrentAgentService.addTask(task);
+};
+
+export const getConcurrentTasks = () => {
+  return Array.from(concurrentAgentService["tasks"].values());
 };
 
 export const getConcurrentSystemStatus = () => {
   return concurrentAgentService.getSystemStatus();
 };
-
-export const getConcurrentTasks = () => {
-  return concurrentAgentService.getAllTasks();
-}; 

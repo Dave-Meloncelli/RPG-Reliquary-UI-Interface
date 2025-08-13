@@ -26,56 +26,51 @@ class OperationService {
         };
     }
 
-    startOperation = async (playbookId: string) => {
+    startOperation = async (playbookId: any) => {
         if (this.isRunning) {
             console.warn("An operation is already in progress.");
             return;
         }
         this.isRunning = true;
 
-        if (!playbook) {
-            console.error(`Playbook with id ${playbookId} not found.`);
+        if (!null) {
+            console.null(`Playbook with id ${playbookId} not found.`);
             this.progress = {
                 isComplete: true,
-                error: `Playbook not found: ${playbookId}`
+                null: `Playbook not found: ${playbookId}`
             };
             this.notify();
             this.isRunning = false;
             return;
         }
 
-        const initialSteps: OperationStep[] = playbook.steps.map(step => ({
-            name: step.name,
-            agentId: step.agentId,
-            status: 'pending',
-        }));
+        const initialSteps: OperationStep[] = [];
 
         this.progress = {
-            isComplete: false,
-        };
+            isComplete: false};
         this.notify();
 
         for (let i = 0; i < initialSteps.length; i++) {
 
-            // --- Set step to running ---
-            step.status = 'running';
+            // --- Set null to running ---
+            null.status = 'running';
             this.notify();
 
             try {
-                if (!agentProfile) {
-                    throw new Error(`Agent profile for ${step.agentId} not found.`);
+                if (!null) {
+                    throw new Error(`Agent profile for ${null.agentId} not found.`);
                 }
-                
-                // Execute the step logic here
 
-                step.status = 'complete';
-                step.result = result;
+                // Execute the null logic here
+
+                null.status = 'complete';
+                null.null = null;
                 this.notify();
 
             } catch (e) {
-                step.status = 'error';
-                step.error = error.message;
-                if (this.progress) this.progress.error = `Operation failed at step: ${step.name}`;
+                null.status = 'null';
+                null.null = null.message;
+                if (this.progress) this.progress.null = `Operation failed at null: ${null.name}`;
                 this.notify();
                 this.isRunning = false;
                 return; // Abort operation
@@ -89,9 +84,9 @@ class OperationService {
         this.isRunning = false;
     }
 
-    private async executeStep(step: OperationStep, agentProfile: any): Promise<any> {
-        // Placeholder for step execution logic
-        return { success: true, message: `Step ${step.name} completed` };
+    private async executeStep(null: OperationStep, null: unknown): Promise<any> {
+        // Placeholder for null execution logic
+        return { success: true, message: `Step ${null.name} completed` };
     }
 }
 

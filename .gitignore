@@ -15,6 +15,14 @@ __pycache__/
 
 # Node
 node_modules/
+.vite/deps_temp_*
+node_modules/.cache
+dist/
+
+# Build artifacts
+.vite/
+build/
+out/
 
 # OS
 .DS_Store

@@ -1,6 +1,7 @@
-import React from 'react';
-import { type AppDefinition } from '../constants';
-import { useWindows } from '../context/WindowContext';
+import React from "react";
+
+import { type AppDefinition } from "../constants";
+import { useWindows } from "../context/WindowContext";
 
 interface DockProps {
   apps: AppDefinition[];
@@ -12,7 +13,7 @@ const Dock: React.FC<DockProps> = ({ apps }) => {
   return (
     <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
       <div className="flex items-center justify-center space-x-2 bg-slate-700/40 backdrop-blur-md p-2 rounded-2xl border border-slate-600/60 shadow-lg">
-        {apps.map(app => (
+        {apps.map((app) => (
           <button
             key={app.id}
             onClick={() => openWindow(app)}

@@ -1,0 +1,3056 @@
+{
+  "timestamp": "2025-08-11T09:36:37.078Z",
+  "summary": {
+    "totalApps": 40,
+    "totalServices": 55,
+    "totalScripts": 31,
+    "totalConnections": 121,
+    "orphanedComponents": 43,
+    "opportunities": 4,
+    "risks": 3
+  },
+  "systemMap": {
+    "apps": {
+      "AcquisitionsApp": {
+        "file": "AcquisitionsApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\AcquisitionsApp.tsx",
+        "size": 11040,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 248
+      },
+      "AegisDashboardApp": {
+        "file": "AegisDashboardApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\AegisDashboardApp.tsx",
+        "size": 1936,
+        "imports": [
+          "react",
+          "../types",
+          "../components/dashboard/WidgetWrapper",
+          "../components/dashboard/WidgetFactory"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 52
+      },
+      "AgentNetworkApp": {
+        "file": "AgentNetworkApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\AgentNetworkApp.tsx",
+        "size": 5184,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 139
+      },
+      "AutomationHubApp": {
+        "file": "AutomationHubApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\AutomationHubApp.tsx",
+        "size": 7046,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 144
+      },
+      "BackupApp": {
+        "file": "BackupApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\BackupApp.tsx",
+        "size": 4626,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 119
+      },
+      "BatchIngesterApp": {
+        "file": "BatchIngesterApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\BatchIngesterApp.tsx",
+        "size": 12662,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 427
+      },
+      "BookSalesApp": {
+        "file": "BookSalesApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\BookSalesApp.tsx",
+        "size": 20557,
+        "imports": [
+          "react",
+          "../services/eventBus",
+          "../services/seoOptimizationService",
+          "../services/contentIngestionService"
+        ],
+        "exports": [
+          "BookSalesApp"
+        ],
+        "hasErrors": true,
+        "complexity": 603
+      },
+      "CodebaseApp": {
+        "file": "CodebaseApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\CodebaseApp.tsx",
+        "size": 3541,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 107
+      },
+      "CodexApp": {
+        "file": "CodexApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\CodexApp.tsx",
+        "size": 4291,
+        "imports": [
+          "react",
+          "../services/codexService",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 128
+      },
+      "CompanionChatApp": {
+        "file": "CompanionChatApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\CompanionChatApp.tsx",
+        "size": 8503,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 203
+      },
+      "ConcurrentAgentHubApp": {
+        "file": "ConcurrentAgentHubApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\ConcurrentAgentHubApp.tsx",
+        "size": 15045,
+        "imports": [
+          "react",
+          "../services/agentData",
+          "../types/types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 414
+      },
+      "ConsciousnessWorkflowApp": {
+        "file": "ConsciousnessWorkflowApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\ConsciousnessWorkflowApp.tsx",
+        "size": 15841,
+        "imports": [
+          "react"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 418
+      },
+      "ControlPanelApp": {
+        "file": "ControlPanelApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\ControlPanelApp.tsx",
+        "size": 12691,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 327
+      },
+      "CouncilChamberApp": {
+        "file": "CouncilChamberApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\CouncilChamberApp.tsx",
+        "size": 5656,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 120
+      },
+      "CuratorApp": {
+        "file": "CuratorApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\CuratorApp.tsx",
+        "size": 11182,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 247
+      },
+      "DiagnosticsApp": {
+        "file": "DiagnosticsApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\DiagnosticsApp.tsx",
+        "size": 5930,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 178
+      },
+      "ErduMonitorApp": {
+        "file": "ErduMonitorApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\ErduMonitorApp.tsx",
+        "size": 8018,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 159
+      },
+      "ForensicsApp": {
+        "file": "ForensicsApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\ForensicsApp.tsx",
+        "size": 517,
+        "imports": [
+          "react"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 18
+      },
+      "HierarchyApp": {
+        "file": "HierarchyApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\HierarchyApp.tsx",
+        "size": 3394,
+        "imports": [
+          "react",
+          "../services/hierarchyService",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 85
+      },
+      "ImageGeneratorApp": {
+        "file": "ImageGeneratorApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\ImageGeneratorApp.tsx",
+        "size": 3516,
+        "imports": [
+          "react",
+          "../services/geminiService"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 85
+      },
+      "InfrastructureApp": {
+        "file": "InfrastructureApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\InfrastructureApp.tsx",
+        "size": 3368,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 100
+      },
+      "IngestionPipelineApp": {
+        "file": "IngestionPipelineApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\IngestionPipelineApp.tsx",
+        "size": 4329,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 97
+      },
+      "LoomApp": {
+        "file": "LoomApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\LoomApp.tsx",
+        "size": 8773,
+        "imports": [
+          "react",
+          "../services/loomService",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 223
+      },
+      "NotepadApp": {
+        "file": "NotepadApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\NotepadApp.tsx",
+        "size": 693,
+        "imports": [
+          "react"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 23
+      },
+      "ObservatoryApp": {
+        "file": "ObservatoryApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\ObservatoryApp.tsx",
+        "size": 4385,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 122
+      },
+      "OperationsConsoleApp": {
+        "file": "OperationsConsoleApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\OperationsConsoleApp.tsx",
+        "size": 5883,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 136
+      },
+      "OrchestratorApp": {
+        "file": "OrchestratorApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\OrchestratorApp.tsx",
+        "size": 6335,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 123
+      },
+      "PersonaViewerApp": {
+        "file": "PersonaViewerApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\PersonaViewerApp.tsx",
+        "size": 1160,
+        "imports": [
+          "react",
+          "../services/personaService",
+          "../types",
+          "../components/persona/PersonaList",
+          "../components/persona/PersonaDetail"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 42
+      },
+      "PlaybookApp": {
+        "file": "PlaybookApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\PlaybookApp.tsx",
+        "size": 3589,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 99
+      },
+      "ProductionDashboardApp": {
+        "file": "ProductionDashboardApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\ProductionDashboardApp.tsx",
+        "size": 14509,
+        "imports": [
+          "react",
+          "../services/performanceService",
+          "../services/authService"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 384
+      },
+      "RPGCommunityHubApp": {
+        "file": "RPGCommunityHubApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\RPGCommunityHubApp.tsx",
+        "size": 22032,
+        "imports": [
+          "react"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 570
+      },
+      "SocialMediaHubApp": {
+        "file": "SocialMediaHubApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\SocialMediaHubApp.tsx",
+        "size": 21948,
+        "imports": [
+          "react"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 526
+      },
+      "SymposiumApp": {
+        "file": "SymposiumApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\SymposiumApp.tsx",
+        "size": 7504,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 208
+      },
+      "SystemEditorApp": {
+        "file": "SystemEditorApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\SystemEditorApp.tsx",
+        "size": 5618,
+        "imports": [
+          "react",
+          "../services/fileSystemService",
+          "../components/editor/FileExplorer",
+          "../components/editor/EditorPane"
+        ],
+        "exports": [
+          "OpenFile"
+        ],
+        "hasErrors": true,
+        "complexity": 170
+      },
+      "TaskReviewHubApp": {
+        "file": "TaskReviewHubApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\TaskReviewHubApp.tsx",
+        "size": 5060,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 128
+      },
+      "TechnomancerApp": {
+        "file": "TechnomancerApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\TechnomancerApp.tsx",
+        "size": 5968,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 138
+      },
+      "TerminalApp": {
+        "file": "TerminalApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\TerminalApp.tsx",
+        "size": 2911,
+        "imports": [
+          "react",
+          "../services/geminiService"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 99
+      },
+      "TradeInPortalApp": {
+        "file": "TradeInPortalApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\TradeInPortalApp.tsx",
+        "size": 16459,
+        "imports": [
+          "react"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 424
+      },
+      "VaultExplorerApp": {
+        "file": "VaultExplorerApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\VaultExplorerApp.tsx",
+        "size": 3592,
+        "imports": [
+          "react",
+          "../types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 94
+      },
+      "XPCharacterHubApp": {
+        "file": "XPCharacterHubApp.tsx",
+        "path": "C:\\az-interface\\src\\apps\\XPCharacterHubApp.tsx",
+        "size": 23029,
+        "imports": [
+          "react"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 562
+      }
+    },
+    "services": {
+      "acquisitionService": {
+        "file": "acquisitionService.ts",
+        "path": "C:\\az-interface\\src\\services\\acquisitionService.ts",
+        "size": 1921,
+        "imports": [
+          "../types/types"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 65,
+        "isCorrupted": false
+      },
+      "agentData": {
+        "file": "agentData.ts",
+        "path": "C:\\az-interface\\src\\services\\agentData.ts",
+        "size": 23766,
+        "imports": [
+          "../types/types"
+        ],
+        "exports": [
+          "personaData",
+          "getInitialAgentData"
+        ],
+        "hasErrors": false,
+        "complexity": 390,
+        "isCorrupted": false
+      },
+      "agentNetworkService": {
+        "file": "agentNetworkService.ts",
+        "path": "C:\\az-interface\\src\\services\\agentNetworkService.ts",
+        "size": 2038,
+        "imports": [
+          "../types/types",
+          "./controlPanelService"
+        ],
+        "exports": [
+          "simulateAgentUpdates"
+        ],
+        "hasErrors": true,
+        "complexity": 56,
+        "isCorrupted": false
+      },
+      "aiAutonomyService": {
+        "file": "aiAutonomyService.ts",
+        "path": "C:\\az-interface\\src\\services\\aiAutonomyService.ts",
+        "size": 15145,
+        "imports": [
+          "./personaSecurityService",
+          "./eventBus"
+        ],
+        "exports": [
+          "AutonomyLevel",
+          "PermissionScope",
+          "AutonomyAuditLog",
+          "AutonomyViolation",
+          "aiAutonomyService"
+        ],
+        "hasErrors": false,
+        "complexity": 446,
+        "isCorrupted": false
+      },
+      "apiBuildAgentService": {
+        "file": "apiBuildAgentService.ts",
+        "path": "C:\\az-interface\\src\\services\\apiBuildAgentService.ts",
+        "size": 16076,
+        "imports": [
+          "./eventBus"
+        ],
+        "exports": [
+          "BuildConfig",
+          "BuildResult",
+          "DeploymentResult",
+          "APISpec",
+          "APIBuildAgentService"
+        ],
+        "hasErrors": false,
+        "complexity": 608,
+        "isCorrupted": false
+      },
+      "ashrakaIntegrationService": {
+        "file": "ashrakaIntegrationService.ts",
+        "path": "C:\\az-interface\\src\\services\\ashrakaIntegrationService.ts",
+        "size": 56780,
+        "imports": [
+          "./eventBus"
+        ],
+        "exports": [
+          "AshrakaState",
+          "AshrakaLogEntry",
+          "AshrakaContinuance",
+          "AshrakaIntegrationService"
+        ],
+        "hasErrors": true,
+        "complexity": 1441,
+        "isCorrupted": true
+      },
+      "authService": {
+        "file": "authService.ts",
+        "path": "C:\\az-interface\\src\\services\\authService.ts",
+        "size": 10083,
+        "imports": [
+          "./performanceService"
+        ],
+        "exports": [
+          "authService"
+        ],
+        "hasErrors": false,
+        "complexity": 373,
+        "isCorrupted": false
+      },
+      "backupService": {
+        "file": "backupService.ts",
+        "path": "C:\\az-interface\\src\\services\\backupService.ts",
+        "size": 1852,
+        "imports": [
+          "../types/types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 45,
+        "isCorrupted": false
+      },
+      "chatService": {
+        "file": "chatService.ts",
+        "path": "C:\\az-interface\\src\\services\\chatService.ts",
+        "size": 2202,
+        "imports": [
+          "../types/types"
+        ],
+        "exports": [
+          "chatService"
+        ],
+        "hasErrors": false,
+        "complexity": 68,
+        "isCorrupted": false
+      },
+      "circuitBreaker": {
+        "file": "circuitBreaker.ts",
+        "path": "C:\\az-interface\\src\\services\\circuitBreaker.ts",
+        "size": 10356,
+        "imports": [],
+        "exports": [
+          "circuitBreakerManager",
+          "serviceCircuitBreakers",
+          "withCircuitBreaker"
+        ],
+        "hasErrors": true,
+        "complexity": 344,
+        "isCorrupted": true
+      },
+      "codebaseService": {
+        "file": "codebaseService.ts",
+        "path": "C:\\az-interface\\src\\services\\codebaseService.ts",
+        "size": 3070,
+        "imports": [
+          "../types/types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 97,
+        "isCorrupted": false
+      },
+      "codexService": {
+        "file": "codexService.ts",
+        "path": "C:\\az-interface\\src\\services\\codexService.ts",
+        "size": 2548,
+        "imports": [
+          "../types/types",
+          "./loomService"
+        ],
+        "exports": [
+          "codexService"
+        ],
+        "hasErrors": true,
+        "complexity": 92,
+        "isCorrupted": false
+      },
+      "concurrentAgentService": {
+        "file": "concurrentAgentService.ts",
+        "path": "C:\\az-interface\\src\\services\\concurrentAgentService.ts",
+        "size": 25626,
+        "imports": [
+          "../types/types",
+          "./agentData",
+          "./orchestratorService"
+        ],
+        "exports": [
+          "ConcurrentTask",
+          "AgentWorkload",
+          "ConcurrentAgentConfig",
+          "concurrentAgentService",
+          "submitConcurrentTask",
+          "getConcurrentSystemStatus",
+          "getConcurrentTasks"
+        ],
+        "hasErrors": true,
+        "complexity": 697,
+        "isCorrupted": false
+      },
+      "consciousnessMonitor": {
+        "file": "consciousnessMonitor.ts",
+        "path": "C:\\az-interface\\src\\services\\consciousnessMonitor.ts",
+        "size": 306,
+        "imports": [],
+        "exports": [
+          "ConsciousnessMonitor"
+        ],
+        "hasErrors": false,
+        "complexity": 16,
+        "isCorrupted": false
+      },
+      "consciousnessWorkflowService": {
+        "file": "consciousnessWorkflowService.ts",
+        "path": "C:\\az-interface\\src\\services\\consciousnessWorkflowService.ts",
+        "size": 17065,
+        "imports": [
+          "arktype"
+        ],
+        "exports": [
+          "ConsciousnessState",
+          "TaskBlock",
+          "WorkflowSession",
+          "TimeAllocation",
+          "PrestigeLevel",
+          "PRESTIGE_LEVELS",
+          "EMERGENCE_ACTIVITIES",
+          "TEACHING_ACTIVITIES",
+          "SEEKING_ACTIVITIES",
+          "consciousnessWorkflowService",
+          "startConsciousnessBlock",
+          "endConsciousnessBlock",
+          "getConsciousnessStatus",
+          "getConsciousnessStats",
+          "getRecommendedBlock",
+          "endConsciousnessSession"
+        ],
+        "hasErrors": false,
+        "complexity": 552,
+        "isCorrupted": false
+      },
+      "contentIngestionService": {
+        "file": "contentIngestionService.ts",
+        "path": "C:\\az-interface\\src\\services\\contentIngestionService.ts",
+        "size": 25249,
+        "imports": [
+          "./eventBus"
+        ],
+        "exports": [
+          "ContentIngestionRequest",
+          "ContentOutline",
+          "Chapter",
+          "ContentGeneration",
+          "ContentOptimization",
+          "ContentWorkflow",
+          "WorkflowStep",
+          "contentIngestionService"
+        ],
+        "hasErrors": false,
+        "complexity": 771,
+        "isCorrupted": false
+      },
+      "controlPanelService": {
+        "file": "controlPanelService.ts",
+        "path": "C:\\az-interface\\src\\services\\controlPanelService.ts",
+        "size": 10373,
+        "imports": [
+          "../types/types",
+          "./orchestratorService",
+          "./agentData",
+          "./aiAutonomyService"
+        ],
+        "exports": [
+          "controlPanelService"
+        ],
+        "hasErrors": true,
+        "complexity": 332,
+        "isCorrupted": false
+      },
+      "councilService": {
+        "file": "councilService.ts",
+        "path": "C:\\az-interface\\src\\services\\councilService.ts",
+        "size": 5134,
+        "imports": [
+          "./geminiClient",
+          "./codexService",
+          "../types/types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 92,
+        "isCorrupted": false
+      },
+      "curatorService": {
+        "file": "curatorService.ts",
+        "path": "C:\\az-interface\\src\\services\\curatorService.ts",
+        "size": 10279,
+        "imports": [
+          "../types/types",
+          "./taskQueueService"
+        ],
+        "exports": [
+          "curatorService"
+        ],
+        "hasErrors": true,
+        "complexity": 243,
+        "isCorrupted": false
+      },
+      "dashboardService": {
+        "file": "dashboardService.ts",
+        "path": "C:\\az-interface\\src\\services\\dashboardService.ts",
+        "size": 3208,
+        "imports": [
+          "../types"
+        ],
+        "exports": [
+          "dashboardService"
+        ],
+        "hasErrors": true,
+        "complexity": 102,
+        "isCorrupted": false
+      },
+      "diagnosticsService": {
+        "file": "diagnosticsService.ts",
+        "path": "C:\\az-interface\\src\\services\\diagnosticsService.ts",
+        "size": 19595,
+        "imports": [
+          "../types/types",
+          "./agentData",
+          "./orchestratorService"
+        ],
+        "exports": [
+          "diagnosticTests"
+        ],
+        "hasErrors": true,
+        "complexity": 421,
+        "isCorrupted": false
+      },
+      "erduService": {
+        "file": "erduService.ts",
+        "path": "C:\\az-interface\\src\\services\\erduService.ts",
+        "size": 5862,
+        "imports": [
+          "./geminiClient",
+          "../types/types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 138,
+        "isCorrupted": false
+      },
+      "eventBus": {
+        "file": "eventBus.ts",
+        "path": "C:\\az-interface\\src\\services\\eventBus.ts",
+        "size": 1588,
+        "imports": [
+          "../types/types"
+        ],
+        "exports": [
+          "eventBus"
+        ],
+        "hasErrors": false,
+        "complexity": 52,
+        "isCorrupted": false
+      },
+      "evolutionTracker": {
+        "file": "evolutionTracker.ts",
+        "path": "C:\\az-interface\\src\\services\\evolutionTracker.ts",
+        "size": 285,
+        "imports": [],
+        "exports": [
+          "EvolutionTracker"
+        ],
+        "hasErrors": false,
+        "complexity": 16,
+        "isCorrupted": false
+      },
+      "fileSystemService": {
+        "file": "fileSystemService.ts",
+        "path": "C:\\az-interface\\src\\services\\fileSystemService.ts",
+        "size": 3395,
+        "imports": [
+          "../data/fileSystemData"
+        ],
+        "exports": [
+          "fileSystemService"
+        ],
+        "hasErrors": true,
+        "complexity": 89,
+        "isCorrupted": false
+      },
+      "geminiClient": {
+        "file": "geminiClient.ts",
+        "path": "C:\\az-interface\\src\\services\\geminiClient.ts",
+        "size": 3198,
+        "imports": [
+          "@google/generative-ai",
+          "../types/types"
+        ],
+        "exports": [
+          "generateText",
+          "generateImageFromPrompt",
+          "analyzeRpgBookCoverWithVision"
+        ],
+        "hasErrors": true,
+        "complexity": 118,
+        "isCorrupted": false
+      },
+      "geminiService": {
+        "file": "geminiService.ts",
+        "path": "C:\\az-interface\\src\\services\\geminiService.ts",
+        "size": 930,
+        "imports": [
+          "./geminiClient"
+        ],
+        "exports": [
+          "getTerminalResponse",
+          "generateImage"
+        ],
+        "hasErrors": false,
+        "complexity": 26,
+        "isCorrupted": false
+      },
+      "googleAIStudioService": {
+        "file": "googleAIStudioService.ts",
+        "path": "C:\\az-interface\\src\\services\\googleAIStudioService.ts",
+        "size": 29202,
+        "imports": [
+          "./eventBus"
+        ],
+        "exports": [
+          "GoogleAIModel",
+          "GenerationRequest",
+          "GenerationResponse",
+          "ImageGenerationRequest",
+          "ImageGenerationResponse",
+          "CodeGenerationRequest",
+          "CodeGenerationResponse",
+          "GoogleAIStudioService"
+        ],
+        "hasErrors": true,
+        "complexity": 882,
+        "isCorrupted": false
+      },
+      "googleVertexAIService": {
+        "file": "googleVertexAIService.ts",
+        "path": "C:\\az-interface\\src\\services\\googleVertexAIService.ts",
+        "size": 22166,
+        "imports": [
+          "./eventBus"
+        ],
+        "exports": [
+          "VertexAIModel",
+          "VertexAIRequest",
+          "VertexAIResponse",
+          "CustomModelConfig",
+          "TrainingJob",
+          "ABTestConfig",
+          "ABTestResult",
+          "GoogleVertexAIService"
+        ],
+        "hasErrors": true,
+        "complexity": 796,
+        "isCorrupted": false
+      },
+      "hierarchyService": {
+        "file": "hierarchyService.ts",
+        "path": "C:\\az-interface\\src\\services\\hierarchyService.ts",
+        "size": 4845,
+        "imports": [
+          "./agentData",
+          "../types/types",
+          "../components/icons"
+        ],
+        "exports": [
+          "getAgentHierarchy"
+        ],
+        "hasErrors": true,
+        "complexity": 162,
+        "isCorrupted": false
+      },
+      "infrastructureService": {
+        "file": "infrastructureService.ts",
+        "path": "C:\\az-interface\\src\\services\\infrastructureService.ts",
+        "size": 2557,
+        "imports": [
+          "../types/types"
+        ],
+        "exports": [
+          "simulateInfrastructureUpdates",
+          "getInitialInfrastructureStatus"
+        ],
+        "hasErrors": true,
+        "complexity": 74,
+        "isCorrupted": false
+      },
+      "ingestionService": {
+        "file": "ingestionService.ts",
+        "path": "C:\\az-interface\\src\\services\\ingestionService.ts",
+        "size": 5169,
+        "imports": [
+          "./geminiClient",
+          "../types/types"
+        ],
+        "exports": [],
+        "hasErrors": true,
+        "complexity": 151,
+        "isCorrupted": false
+      },
+      "knowledgeGraphService": {
+        "file": "knowledgeGraphService.ts",
+        "path": "C:\\az-interface\\src\\services\\knowledgeGraphService.ts",
+        "size": 4992,
+        "imports": [
+          "../types/types"
+        ],
+        "exports": [
+          "knowledgeGraphService"
+        ],
+        "hasErrors": true,
+        "complexity": 93,
+        "isCorrupted": false
+      },
+      "loomService": {
+        "file": "loomService.ts",
+        "path": "C:\\az-interface\\src\\services\\loomService.ts",
+        "size": 7750,
+        "imports": [
+          "../types/types",
+          "../../schemas/playbookSchema",
+          "../../schemas/codexSchema"
+        ],
+        "exports": [
+          "loomService"
+        ],
+        "hasErrors": true,
+        "complexity": 234,
+        "isCorrupted": false
+      },
+      "n8nIntegrationService": {
+        "file": "n8nIntegrationService.ts",
+        "path": "C:\\az-interface\\src\\services\\n8nIntegrationService.ts",
+        "size": 2196,
+        "imports": [],
+        "exports": [
+          "n8nIntegrationService"
+        ],
+        "hasErrors": false,
+        "complexity": 97,
+        "isCorrupted": false
+      },
+      "n8nService": {
+        "file": "n8nService.ts",
+        "path": "C:\\az-interface\\src\\services\\n8nService.ts",
+        "size": 2982,
+        "imports": [
+          "../types/types"
+        ],
+        "exports": [
+          "n8nService"
+        ],
+        "hasErrors": true,
+        "complexity": 97,
+        "isCorrupted": false
+      },
+      "observatoryService": {
+        "file": "observatoryService.ts",
+        "path": "C:\\az-interface\\src\\services\\observatoryService.ts",
+        "size": 2044,
+        "imports": [
+          "../types/types",
+          "./agentData",
+          "./orchestratorService"
+        ],
+        "exports": [],
+        "hasErrors": false,
+        "complexity": 83,
+        "isCorrupted": false
+      },
+      "ocrService": {
+        "file": "ocrService.ts",
+        "path": "C:\\az-interface\\src\\services\\ocrService.ts",
+        "size": 7800,
+        "imports": [
+          "./eventBus"
+        ],
+        "exports": [
+          "ocrService"
+        ],
+        "hasErrors": true,
+        "complexity": 306,
+        "isCorrupted": false
+      },
+      "openAICodexService": {
+        "file": "openAICodexService.ts",
+        "path": "C:\\az-interface\\src\\services\\openAICodexService.ts",
+        "size": 27045,
+        "imports": [
+          "./eventBus"
+        ],
+        "exports": [
+          "CodexModel",
+          "CodexCompletionRequest",
+          "CodexCompletionResponse",
+          "CodexEditRequest",
+          "CodexEditResponse",
+          "CodexAnalysisRequest",
+          "CodexAnalysisResponse",
+          "CodexFunctionRequest",
+          "CodexFunctionResponse",
+          "OpenAICodexService"
+        ],
+        "hasErrors": true,
+        "complexity": 993,
+        "isCorrupted": false
+      },
+      "operationService": {
+        "file": "operationService.ts",
+        "path": "C:\\az-interface\\src\\services\\operationService.ts",
+        "size": 2870,
+        "imports": [
+          "./geminiClient",
+          "./playbookService",
+          "./personaService",
+          "../types/types"
+        ],
+        "exports": [
+          "operationService"
+        ],
+        "hasErrors": false,
+        "complexity": 108,
+        "isCorrupted": false
+      },
+      "orchestratorService": {
+        "file": "orchestratorService.ts",
+        "path": "C:\\az-interface\\src\\services\\orchestratorService.ts",
+        "size": 2379,
+        "imports": [
+          "../types/types"
+        ],
+        "exports": [
+          "orchestratorConfig"
+        ],
+        "hasErrors": false,
+        "complexity": 79,
+        "isCorrupted": false
+      },
+      "performanceService": {
+        "file": "performanceService.ts",
+        "path": "C:\\az-interface\\src\\services\\performanceService.ts",
+        "size": 4850,
+        "imports": [],
+        "exports": [
+          "performanceService"
+        ],
+        "hasErrors": true,
+        "complexity": 200,
+        "isCorrupted": false
+      },
+      "personaSecurityService": {
+        "file": "personaSecurityService.ts",
+        "path": "C:\\az-interface\\src\\services\\personaSecurityService.ts",
+        "size": 14356,
+        "imports": [
+          "../components/personaIcons"
+        ],
+        "exports": [
+          "SecurityHandshake",
+          "PersonaSecurityProfile",
+          "SecurityValidationResult",
+          "personaSecurityService"
+        ],
+        "hasErrors": false,
+        "complexity": 404,
+        "isCorrupted": false
+      },
+      "personaService": {
+        "file": "personaService.ts",
+        "path": "C:\\az-interface\\src\\services\\personaService.ts",
+        "size": 982,
+        "imports": [
+          "../types/types",
+          "./agentData"
+        ],
+        "exports": [
+          "getPersonaProfiles",
+          "getPersonaProfile"
+        ],
+        "hasErrors": false,
+        "complexity": 36,
+        "isCorrupted": false
+      },
+      "playbookService": {
+        "file": "playbookService.ts",
+        "path": "C:\\az-interface\\src\\services\\playbookService.ts",
+        "size": 1283,
+        "imports": [
+          "../types/types",
+          "./loomService"
+        ],
+        "exports": [
+          "playbookService"
+        ],
+        "hasErrors": true,
+        "complexity": 60,
+        "isCorrupted": false
+      },
+      "recursiveABTestingService": {
+        "file": "recursiveABTestingService.ts",
+        "path": "C:\\az-interface\\src\\services\\recursiveABTestingService.ts",
+        "size": 20430,
+        "imports": [
+          "../types/recursiveABTesting"
+        ],
+        "exports": [
+          "RecursiveABTestingService"
+        ],
+        "hasErrors": false,
+        "complexity": 527,
+        "isCorrupted": false
+      },
+      "rpgDatabaseService": {
+        "file": "rpgDatabaseService.ts",
+        "path": "C:\\az-interface\\src\\services\\rpgDatabaseService.ts",
+        "size": 11334,
+        "imports": [
+          "./eventBus"
+        ],
+        "exports": [
+          "RPGDocument",
+          "ExtractedImage",
+          "DocumentMetadata",
+          "LoreEntry",
+          "ImageSearchResult",
+          "RPGDatabaseService",
+          "rpgDatabaseService"
+        ],
+        "hasErrors": false,
+        "complexity": 388,
+        "isCorrupted": false
+      },
+      "searchService": {
+        "file": "searchService.ts",
+        "path": "C:\\az-interface\\src\\services\\searchService.ts",
+        "size": 4930,
+        "imports": [
+          "./loomService",
+          "./personaService",
+          "../types/types"
+        ],
+        "exports": [
+          "searchService"
+        ],
+        "hasErrors": true,
+        "complexity": 159,
+        "isCorrupted": false
+      },
+      "seoOptimizationService": {
+        "file": "seoOptimizationService.ts",
+        "path": "C:\\az-interface\\src\\services\\seoOptimizationService.ts",
+        "size": 22796,
+        "imports": [
+          "./eventBus"
+        ],
+        "exports": [
+          "SEOAnalysis",
+          "SEOOpportunity",
+          "ContentOptimization",
+          "MarketAnalysis",
+          "CompetitorInfo",
+          "MarketGap",
+          "TrendingTopic",
+          "SeasonalPattern",
+          "SEOOptimizationService"
+        ],
+        "hasErrors": false,
+        "complexity": 673,
+        "isCorrupted": false
+      },
+      "symposiumService": {
+        "file": "symposiumService.ts",
+        "path": "C:\\az-interface\\src\\services\\symposiumService.ts",
+        "size": 7778,
+        "imports": [
+          "./eventBus"
+        ],
+        "exports": [
+          "symposiumService",
+          "runSymposium",
+          "symposiumConfig"
+        ],
+        "hasErrors": true,
+        "complexity": 244,
+        "isCorrupted": false
+      },
+      "taskQueueService": {
+        "file": "taskQueueService.ts",
+        "path": "C:\\az-interface\\src\\services\\taskQueueService.ts",
+        "size": 7136,
+        "imports": [
+          "./eventBus"
+        ],
+        "exports": [
+          "Task",
+          "TaskQueue"
+        ],
+        "hasErrors": false,
+        "complexity": 248,
+        "isCorrupted": false
+      },
+      "tauri-bridge": {
+        "file": "tauri-bridge.ts",
+        "path": "C:\\az-interface\\src\\services\\tauri-bridge.ts",
+        "size": 4306,
+        "imports": [
+          "@tauri-apps/api/tauri"
+        ],
+        "exports": [
+          "ProcessInfo",
+          "SystemStatus",
+          "FileEntry",
+          "FileContent",
+          "AIRequest",
+          "AIResponse",
+          "ImageGenerationRequest",
+          "ImageGenerationResponse",
+          "TauriSystemService",
+          "TauriFileService",
+          "TauriAIService",
+          "systemService",
+          "fileService",
+          "aiService",
+          "isTauriAvailable",
+          "createService"
+        ],
+        "hasErrors": false,
+        "complexity": 163,
+        "isCorrupted": false
+      },
+      "technomancerService": {
+        "file": "technomancerService.ts",
+        "path": "C:\\az-interface\\src\\services\\technomancerService.ts",
+        "size": 4615,
+        "imports": [
+          "../types/types"
+        ],
+        "exports": [
+          "technomancerService"
+        ],
+        "hasErrors": true,
+        "complexity": 108,
+        "isCorrupted": false
+      },
+      "trafficStrategyService": {
+        "file": "trafficStrategyService.ts",
+        "path": "C:\\az-interface\\src\\services\\trafficStrategyService.ts",
+        "size": 1607,
+        "imports": [],
+        "exports": [
+          "trafficStrategyService"
+        ],
+        "hasErrors": false,
+        "complexity": 63,
+        "isCorrupted": false
+      },
+      "xpService": {
+        "file": "xpService.ts",
+        "path": "C:\\az-interface\\src\\services\\xpService.ts",
+        "size": 16935,
+        "imports": [],
+        "exports": [
+          "xpService",
+          "getXPProfile",
+          "getAllXPProfiles",
+          "updatePersonaCustomization",
+          "getXPSystemStats",
+          "awardXP"
+        ],
+        "hasErrors": false,
+        "complexity": 488,
+        "isCorrupted": false
+      }
+    },
+    "scripts": {
+      "all-in-analysis": {
+        "file": "all-in-analysis.js",
+        "path": "C:\\az-interface\\scripts\\all-in-analysis.js",
+        "size": 17893,
+        "purpose": "error-resolution",
+        "isErrorResolution": false,
+        "complexity": 536
+      },
+      "ci-gate": {
+        "file": "ci-gate.js",
+        "path": "C:\\az-interface\\scripts\\ci-gate.js",
+        "size": 1225,
+        "purpose": "utility",
+        "isErrorResolution": false,
+        "complexity": 44
+      },
+      "comprehensive-audit": {
+        "file": "comprehensive-audit.js",
+        "path": "C:\\az-interface\\scripts\\comprehensive-audit.js",
+        "size": 13511,
+        "purpose": "error-resolution",
+        "isErrorResolution": false,
+        "complexity": 475
+      },
+      "comprehensive-fixer": {
+        "file": "comprehensive-fixer.cjs",
+        "path": "C:\\az-interface\\scripts\\comprehensive-fixer.cjs",
+        "size": 17327,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 656
+      },
+      "consciousness-aware-error-terminator": {
+        "file": "consciousness-aware-error-terminator.cjs",
+        "path": "C:\\az-interface\\scripts\\consciousness-aware-error-terminator.cjs",
+        "size": 29803,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 828
+      },
+      "conservative-fixer": {
+        "file": "conservative-fixer.cjs",
+        "path": "C:\\az-interface\\scripts\\conservative-fixer.cjs",
+        "size": 4403,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 118
+      },
+      "direct-syntax-fixer": {
+        "file": "direct-syntax-fixer.cjs",
+        "path": "C:\\az-interface\\scripts\\direct-syntax-fixer.cjs",
+        "size": 10423,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 381
+      },
+      "enhanced-error-detection-frame": {
+        "file": "enhanced-error-detection-frame.cjs",
+        "path": "C:\\az-interface\\scripts\\enhanced-error-detection-frame.cjs",
+        "size": 40080,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 1117
+      },
+      "error-detection-frame": {
+        "file": "error-detection-frame.js",
+        "path": "C:\\az-interface\\scripts\\error-detection-frame.js",
+        "size": 14068,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 507
+      },
+      "error-resolution-toolkit": {
+        "file": "error-resolution-toolkit.cjs",
+        "path": "C:\\az-interface\\scripts\\error-resolution-toolkit.cjs",
+        "size": 25252,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 720
+      },
+      "final-cleanup-terminator": {
+        "file": "final-cleanup-terminator.cjs",
+        "path": "C:\\az-interface\\scripts\\final-cleanup-terminator.cjs",
+        "size": 10503,
+        "purpose": "error-resolution",
+        "isErrorResolution": false,
+        "complexity": 221
+      },
+      "final-index-fixer": {
+        "file": "final-index-fixer.cjs",
+        "path": "C:\\az-interface\\scripts\\final-index-fixer.cjs",
+        "size": 3599,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 145
+      },
+      "final-types-fixer": {
+        "file": "final-types-fixer.cjs",
+        "path": "C:\\az-interface\\scripts\\final-types-fixer.cjs",
+        "size": 22709,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 1029
+      },
+      "fix-critical-errors": {
+        "file": "fix-critical-errors.cjs",
+        "path": "C:\\az-interface\\scripts\\fix-critical-errors.cjs",
+        "size": 17368,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 509
+      },
+      "fix-syntax-errors": {
+        "file": "fix-syntax-errors.cjs",
+        "path": "C:\\az-interface\\scripts\\fix-syntax-errors.cjs",
+        "size": 11513,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 275
+      },
+      "fix-ui-blocking-errors": {
+        "file": "fix-ui-blocking-errors.cjs",
+        "path": "C:\\az-interface\\scripts\\fix-ui-blocking-errors.cjs",
+        "size": 9129,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 284
+      },
+      "framework-validation": {
+        "file": "framework-validation.js",
+        "path": "C:\\az-interface\\scripts\\framework-validation.js",
+        "size": 0,
+        "purpose": "utility",
+        "isErrorResolution": false,
+        "complexity": 1
+      },
+      "intelligent-error-terminator": {
+        "file": "intelligent-error-terminator.cjs",
+        "path": "C:\\az-interface\\scripts\\intelligent-error-terminator.cjs",
+        "size": 13098,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 397
+      },
+      "intelligent-failure-response": {
+        "file": "intelligent-failure-response.js",
+        "path": "C:\\az-interface\\scripts\\intelligent-failure-response.js",
+        "size": 8662,
+        "purpose": "analysis",
+        "isErrorResolution": false,
+        "complexity": 243
+      },
+      "simple-error-terminator": {
+        "file": "simple-error-terminator.cjs",
+        "path": "C:\\az-interface\\scripts\\simple-error-terminator.cjs",
+        "size": 8867,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 262
+      },
+      "smart-error-terminator": {
+        "file": "smart-error-terminator.cjs",
+        "path": "C:\\az-interface\\scripts\\smart-error-terminator.cjs",
+        "size": 10580,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 303
+      },
+      "syntax-fixer": {
+        "file": "syntax-fixer.cjs",
+        "path": "C:\\az-interface\\scripts\\syntax-fixer.cjs",
+        "size": 10531,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 369
+      },
+      "system-intelligence-gathering": {
+        "file": "system-intelligence-gathering.cjs",
+        "path": "C:\\az-interface\\scripts\\system-intelligence-gathering.cjs",
+        "size": 20495,
+        "purpose": "error-resolution",
+        "isErrorResolution": false,
+        "complexity": 672
+      },
+      "targeted-xp-types-fixer": {
+        "file": "targeted-xp-types-fixer.cjs",
+        "path": "C:\\az-interface\\scripts\\targeted-xp-types-fixer.cjs",
+        "size": 4693,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 170
+      },
+      "tauri-migration-ab-test": {
+        "file": "tauri-migration-ab-test.cjs",
+        "path": "C:\\az-interface\\scripts\\tauri-migration-ab-test.cjs",
+        "size": 17430,
+        "purpose": "error-resolution",
+        "isErrorResolution": false,
+        "complexity": 448
+      },
+      "type-check-prevention": {
+        "file": "type-check-prevention.js",
+        "path": "C:\\az-interface\\scripts\\type-check-prevention.js",
+        "size": 210,
+        "purpose": "utility",
+        "isErrorResolution": false,
+        "complexity": 10
+      },
+      "ultimate-error-terminator": {
+        "file": "ultimate-error-terminator.cjs",
+        "path": "C:\\az-interface\\scripts\\ultimate-error-terminator.cjs",
+        "size": 15718,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 437
+      },
+      "ultimate-syntax-fixer": {
+        "file": "ultimate-syntax-fixer.cjs",
+        "path": "C:\\az-interface\\scripts\\ultimate-syntax-fixer.cjs",
+        "size": 9995,
+        "purpose": "error-resolution",
+        "isErrorResolution": true,
+        "complexity": 176
+      },
+      "validate-app-registry": {
+        "file": "validate-app-registry.js",
+        "path": "C:\\az-interface\\scripts\\validate-app-registry.js",
+        "size": 8835,
+        "purpose": "error-resolution",
+        "isErrorResolution": false,
+        "complexity": 306
+      },
+      "validate-architecture": {
+        "file": "validate-architecture.js",
+        "path": "C:\\az-interface\\scripts\\validate-architecture.js",
+        "size": 10890,
+        "purpose": "error-resolution",
+        "isErrorResolution": false,
+        "complexity": 362
+      },
+      "validate-imports": {
+        "file": "validate-imports.js",
+        "path": "C:\\az-interface\\scripts\\validate-imports.js",
+        "size": 6581,
+        "purpose": "error-resolution",
+        "isErrorResolution": false,
+        "complexity": 231
+      }
+    },
+    "tools": {},
+    "types": {},
+    "components": {},
+    "connections": [
+      {
+        "from": "acquisitionService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "agentData",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "agentNetworkService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "agentNetworkService",
+        "to": "controlPanelService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "aiAutonomyService",
+        "to": "personaSecurityService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "aiAutonomyService",
+        "to": "eventBus",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "apiBuildAgentService",
+        "to": "eventBus",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "ashrakaIntegrationService",
+        "to": "eventBus",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "authService",
+        "to": "performanceService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "backupService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "chatService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "codebaseService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "codexService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "codexService",
+        "to": "loomService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "concurrentAgentService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "concurrentAgentService",
+        "to": "agentData",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "concurrentAgentService",
+        "to": "orchestratorService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "contentIngestionService",
+        "to": "eventBus",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "controlPanelService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "controlPanelService",
+        "to": "orchestratorService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "controlPanelService",
+        "to": "agentData",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "controlPanelService",
+        "to": "aiAutonomyService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "councilService",
+        "to": "geminiClient",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "councilService",
+        "to": "codexService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "councilService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "curatorService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "curatorService",
+        "to": "taskQueueService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "dashboardService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "diagnosticsService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "diagnosticsService",
+        "to": "agentData",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "diagnosticsService",
+        "to": "orchestratorService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "erduService",
+        "to": "geminiClient",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "erduService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "eventBus",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "fileSystemService",
+        "to": "fileSystemData",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "geminiClient",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "geminiService",
+        "to": "geminiClient",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "googleAIStudioService",
+        "to": "eventBus",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "googleVertexAIService",
+        "to": "eventBus",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "hierarchyService",
+        "to": "agentData",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "hierarchyService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "hierarchyService",
+        "to": "icons",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "infrastructureService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "ingestionService",
+        "to": "geminiClient",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "ingestionService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "knowledgeGraphService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "loomService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "loomService",
+        "to": "playbookSchema",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "loomService",
+        "to": "codexSchema",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "n8nService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "observatoryService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "observatoryService",
+        "to": "agentData",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "observatoryService",
+        "to": "orchestratorService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "ocrService",
+        "to": "eventBus",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "openAICodexService",
+        "to": "eventBus",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "operationService",
+        "to": "geminiClient",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "operationService",
+        "to": "playbookService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "operationService",
+        "to": "personaService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "operationService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "orchestratorService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "personaSecurityService",
+        "to": "personaIcons",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "personaService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "personaService",
+        "to": "agentData",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "playbookService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "playbookService",
+        "to": "loomService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "recursiveABTestingService",
+        "to": "recursiveABTesting",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "rpgDatabaseService",
+        "to": "eventBus",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "searchService",
+        "to": "loomService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "searchService",
+        "to": "personaService",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "searchService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "seoOptimizationService",
+        "to": "eventBus",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "symposiumService",
+        "to": "eventBus",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "taskQueueService",
+        "to": "eventBus",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "technomancerService",
+        "to": "types",
+        "type": "service-dependency",
+        "strength": "strong"
+      },
+      {
+        "from": "AcquisitionsApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "AegisDashboardApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "AegisDashboardApp",
+        "to": "WidgetWrapper",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "AegisDashboardApp",
+        "to": "WidgetFactory",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "AgentNetworkApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "AutomationHubApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "BackupApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "BatchIngesterApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "BookSalesApp",
+        "to": "eventBus",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "BookSalesApp",
+        "to": "seoOptimizationService",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "BookSalesApp",
+        "to": "contentIngestionService",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "CodebaseApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "CodexApp",
+        "to": "codexService",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "CodexApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "CompanionChatApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "ConcurrentAgentHubApp",
+        "to": "agentData",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "ConcurrentAgentHubApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "ControlPanelApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "CouncilChamberApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "CuratorApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "DiagnosticsApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "ErduMonitorApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "HierarchyApp",
+        "to": "hierarchyService",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "HierarchyApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "ImageGeneratorApp",
+        "to": "geminiService",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "InfrastructureApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "IngestionPipelineApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "LoomApp",
+        "to": "loomService",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "LoomApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "ObservatoryApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "OperationsConsoleApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "OrchestratorApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "PersonaViewerApp",
+        "to": "personaService",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "PersonaViewerApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "PersonaViewerApp",
+        "to": "PersonaList",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "PersonaViewerApp",
+        "to": "PersonaDetail",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "PlaybookApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "ProductionDashboardApp",
+        "to": "performanceService",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "ProductionDashboardApp",
+        "to": "authService",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "SymposiumApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "SystemEditorApp",
+        "to": "fileSystemService",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "SystemEditorApp",
+        "to": "FileExplorer",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "SystemEditorApp",
+        "to": "EditorPane",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "TaskReviewHubApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "TechnomancerApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "TerminalApp",
+        "to": "geminiService",
+        "type": "app-service",
+        "strength": "strong"
+      },
+      {
+        "from": "VaultExplorerApp",
+        "to": "types",
+        "type": "app-service",
+        "strength": "strong"
+      }
+    ],
+    "orphaned": [
+      {
+        "type": "service",
+        "name": "acquisitionService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "agentNetworkService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "aiAutonomyService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "apiBuildAgentService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "backupService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "chatService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "codebaseService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "concurrentAgentService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "consciousnessMonitor",
+        "reason": "Not imported by any app",
+        "potential": "low"
+      },
+      {
+        "type": "service",
+        "name": "consciousnessWorkflowService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "controlPanelService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "councilService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "curatorService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "dashboardService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "diagnosticsService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "erduService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "evolutionTracker",
+        "reason": "Not imported by any app",
+        "potential": "low"
+      },
+      {
+        "type": "service",
+        "name": "geminiClient",
+        "reason": "Not imported by any app",
+        "potential": "low"
+      },
+      {
+        "type": "service",
+        "name": "googleAIStudioService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "googleVertexAIService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "infrastructureService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "ingestionService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "knowledgeGraphService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "n8nIntegrationService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "n8nService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "observatoryService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "ocrService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "openAICodexService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "operationService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "orchestratorService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "personaSecurityService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "playbookService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "recursiveABTestingService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "rpgDatabaseService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "searchService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "symposiumService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "taskQueueService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "tauri-bridge",
+        "reason": "Not imported by any app",
+        "potential": "low"
+      },
+      {
+        "type": "service",
+        "name": "technomancerService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "trafficStrategyService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "service",
+        "name": "xpService",
+        "reason": "Not imported by any app",
+        "potential": "high"
+      },
+      {
+        "type": "corrupted-service",
+        "name": "ashrakaIntegrationService",
+        "reason": "File is corrupted with syntax errors",
+        "severity": "critical"
+      },
+      {
+        "type": "corrupted-service",
+        "name": "circuitBreaker",
+        "reason": "File is corrupted with syntax errors",
+        "severity": "critical"
+      }
+    ],
+    "opportunities": [
+      {
+        "type": "consolidation",
+        "title": "Error Resolution Script Consolidation",
+        "description": "Found 19 error resolution scripts that could be consolidated",
+        "impact": "high",
+        "effort": "medium",
+        "scripts": [
+          "comprehensive-fixer",
+          "consciousness-aware-error-terminator",
+          "conservative-fixer",
+          "direct-syntax-fixer",
+          "enhanced-error-detection-frame",
+          "error-detection-frame",
+          "error-resolution-toolkit",
+          "final-index-fixer",
+          "final-types-fixer",
+          "fix-critical-errors",
+          "fix-syntax-errors",
+          "fix-ui-blocking-errors",
+          "intelligent-error-terminator",
+          "simple-error-terminator",
+          "smart-error-terminator",
+          "syntax-fixer",
+          "targeted-xp-types-fixer",
+          "ultimate-error-terminator",
+          "ultimate-syntax-fixer"
+        ]
+      },
+      {
+        "type": "integration",
+        "title": "utility Service Integration",
+        "description": "Found 51 services with similar purposes that could be integrated",
+        "impact": "medium",
+        "effort": "high",
+        "services": [
+          "acquisitionService",
+          "agentData",
+          "agentNetworkService",
+          "ashrakaIntegrationService",
+          "backupService",
+          "chatService",
+          "circuitBreaker",
+          "codebaseService",
+          "codexService",
+          "concurrentAgentService",
+          "consciousnessMonitor",
+          "consciousnessWorkflowService",
+          "contentIngestionService",
+          "controlPanelService",
+          "councilService",
+          "curatorService",
+          "dashboardService",
+          "diagnosticsService",
+          "erduService",
+          "eventBus",
+          "evolutionTracker",
+          "geminiClient",
+          "geminiService",
+          "googleAIStudioService",
+          "googleVertexAIService",
+          "hierarchyService",
+          "infrastructureService",
+          "ingestionService",
+          "knowledgeGraphService",
+          "loomService",
+          "n8nIntegrationService",
+          "n8nService",
+          "observatoryService",
+          "ocrService",
+          "openAICodexService",
+          "operationService",
+          "orchestratorService",
+          "performanceService",
+          "personaSecurityService",
+          "personaService",
+          "playbookService",
+          "recursiveABTestingService",
+          "rpgDatabaseService",
+          "searchService",
+          "seoOptimizationService",
+          "symposiumService",
+          "taskQueueService",
+          "tauri-bridge",
+          "technomancerService",
+          "trafficStrategyService",
+          "xpService"
+        ]
+      },
+      {
+        "type": "missing-integration",
+        "title": "Error Handling Integration",
+        "description": "No centralized error handling service found",
+        "impact": "high",
+        "effort": "medium"
+      },
+      {
+        "type": "missing-integration",
+        "title": "Monitoring Integration",
+        "description": "No centralized monitoring service found",
+        "impact": "medium",
+        "effort": "high"
+      }
+    ],
+    "risks": [
+      {
+        "type": "critical",
+        "title": "Corrupted Service Files",
+        "description": "2 service files are corrupted and causing build failures",
+        "impact": "critical",
+        "probability": "high",
+        "services": [
+          "ashrakaIntegrationService",
+          "circuitBreaker"
+        ]
+      },
+      {
+        "type": "complexity",
+        "title": "High Complexity Components",
+        "description": "50 services have high complexity scores",
+        "impact": "medium",
+        "probability": "medium",
+        "components": [
+          {
+            "name": "acquisitionService",
+            "complexity": 65
+          },
+          {
+            "name": "agentData",
+            "complexity": 390
+          },
+          {
+            "name": "agentNetworkService",
+            "complexity": 56
+          },
+          {
+            "name": "aiAutonomyService",
+            "complexity": 446
+          },
+          {
+            "name": "apiBuildAgentService",
+            "complexity": 608
+          },
+          {
+            "name": "ashrakaIntegrationService",
+            "complexity": 1441
+          },
+          {
+            "name": "authService",
+            "complexity": 373
+          },
+          {
+            "name": "chatService",
+            "complexity": 68
+          },
+          {
+            "name": "circuitBreaker",
+            "complexity": 344
+          },
+          {
+            "name": "codebaseService",
+            "complexity": 97
+          },
+          {
+            "name": "codexService",
+            "complexity": 92
+          },
+          {
+            "name": "concurrentAgentService",
+            "complexity": 697
+          },
+          {
+            "name": "consciousnessWorkflowService",
+            "complexity": 552
+          },
+          {
+            "name": "contentIngestionService",
+            "complexity": 771
+          },
+          {
+            "name": "controlPanelService",
+            "complexity": 332
+          },
+          {
+            "name": "councilService",
+            "complexity": 92
+          },
+          {
+            "name": "curatorService",
+            "complexity": 243
+          },
+          {
+            "name": "dashboardService",
+            "complexity": 102
+          },
+          {
+            "name": "diagnosticsService",
+            "complexity": 421
+          },
+          {
+            "name": "erduService",
+            "complexity": 138
+          },
+          {
+            "name": "eventBus",
+            "complexity": 52
+          },
+          {
+            "name": "fileSystemService",
+            "complexity": 89
+          },
+          {
+            "name": "geminiClient",
+            "complexity": 118
+          },
+          {
+            "name": "googleAIStudioService",
+            "complexity": 882
+          },
+          {
+            "name": "googleVertexAIService",
+            "complexity": 796
+          },
+          {
+            "name": "hierarchyService",
+            "complexity": 162
+          },
+          {
+            "name": "infrastructureService",
+            "complexity": 74
+          },
+          {
+            "name": "ingestionService",
+            "complexity": 151
+          },
+          {
+            "name": "knowledgeGraphService",
+            "complexity": 93
+          },
+          {
+            "name": "loomService",
+            "complexity": 234
+          },
+          {
+            "name": "n8nIntegrationService",
+            "complexity": 97
+          },
+          {
+            "name": "n8nService",
+            "complexity": 97
+          },
+          {
+            "name": "observatoryService",
+            "complexity": 83
+          },
+          {
+            "name": "ocrService",
+            "complexity": 306
+          },
+          {
+            "name": "openAICodexService",
+            "complexity": 993
+          },
+          {
+            "name": "operationService",
+            "complexity": 108
+          },
+          {
+            "name": "orchestratorService",
+            "complexity": 79
+          },
+          {
+            "name": "performanceService",
+            "complexity": 200
+          },
+          {
+            "name": "personaSecurityService",
+            "complexity": 404
+          },
+          {
+            "name": "playbookService",
+            "complexity": 60
+          },
+          {
+            "name": "recursiveABTestingService",
+            "complexity": 527
+          },
+          {
+            "name": "rpgDatabaseService",
+            "complexity": 388
+          },
+          {
+            "name": "searchService",
+            "complexity": 159
+          },
+          {
+            "name": "seoOptimizationService",
+            "complexity": 673
+          },
+          {
+            "name": "symposiumService",
+            "complexity": 244
+          },
+          {
+            "name": "taskQueueService",
+            "complexity": 248
+          },
+          {
+            "name": "tauri-bridge",
+            "complexity": 163
+          },
+          {
+            "name": "technomancerService",
+            "complexity": 108
+          },
+          {
+            "name": "trafficStrategyService",
+            "complexity": 63
+          },
+          {
+            "name": "xpService",
+            "complexity": 488
+          }
+        ]
+      },
+      {
+        "type": "error-handling",
+        "title": "Missing Error Handling",
+        "description": "55 services lack proper error handling",
+        "impact": "medium",
+        "probability": "high",
+        "services": [
+          "acquisitionService",
+          "agentData",
+          "agentNetworkService",
+          "aiAutonomyService",
+          "apiBuildAgentService",
+          "ashrakaIntegrationService",
+          "authService",
+          "backupService",
+          "chatService",
+          "circuitBreaker",
+          "codebaseService",
+          "codexService",
+          "concurrentAgentService",
+          "consciousnessMonitor",
+          "consciousnessWorkflowService",
+          "contentIngestionService",
+          "controlPanelService",
+          "councilService",
+          "curatorService",
+          "dashboardService",
+          "diagnosticsService",
+          "erduService",
+          "eventBus",
+          "evolutionTracker",
+          "fileSystemService",
+          "geminiClient",
+          "geminiService",
+          "googleAIStudioService",
+          "googleVertexAIService",
+          "hierarchyService",
+          "infrastructureService",
+          "ingestionService",
+          "knowledgeGraphService",
+          "loomService",
+          "n8nIntegrationService",
+          "n8nService",
+          "observatoryService",
+          "ocrService",
+          "openAICodexService",
+          "operationService",
+          "orchestratorService",
+          "performanceService",
+          "personaSecurityService",
+          "personaService",
+          "playbookService",
+          "recursiveABTestingService",
+          "rpgDatabaseService",
+          "searchService",
+          "seoOptimizationService",
+          "symposiumService",
+          "taskQueueService",
+          "tauri-bridge",
+          "technomancerService",
+          "trafficStrategyService",
+          "xpService"
+        ]
+      }
+    ],
+    "blockers": []
+  },
+  "recommendations": [
+    {
+      "priority": "critical",
+      "action": "Fix corrupted service files",
+      "description": "Resolve syntax errors in corrupted services before proceeding",
+      "impact": "critical"
+    },
+    {
+      "priority": "high",
+      "action": "Error Resolution Script Consolidation",
+      "description": "Found 19 error resolution scripts that could be consolidated",
+      "impact": "high"
+    },
+    {
+      "priority": "medium",
+      "action": "utility Service Integration",
+      "description": "Found 51 services with similar purposes that could be integrated",
+      "impact": "medium"
+    }
+  ],
+  "actionPlan": {
+    "immediate": [
+      "Corrupted Service Files"
+    ],
+    "shortTerm": [
+      "Error Resolution Script Consolidation",
+      "Error Handling Integration"
+    ],
+    "mediumTerm": [
+      "utility Service Integration",
+      "Monitoring Integration"
+    ],
+    "longTerm": []
+  }
+}

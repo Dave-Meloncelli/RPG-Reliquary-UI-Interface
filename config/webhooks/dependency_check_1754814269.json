@@ -1,0 +1,26 @@
+{
+  "triggered": true,
+  "webhook_name": "dependency_check",
+  "url": "http://localhost:8000/webhooks/dependency-check",
+  "method": "POST",
+  "payload": {
+    "health_result": {
+      "all_healthy": false,
+      "installed_deps": [],
+      "missing_deps": [
+        "react",
+        "vite",
+        "@vitejs/plugin-react",
+        "arktype"
+      ],
+      "total_required": 4
+    },
+    "context": {
+      "session_id": "test_session",
+      "user_id": "test_user",
+      "project": "az-interface"
+    },
+    "timestamp": "2025-08-10T16:24:29.422309"
+  },
+  "timestamp": "2025-08-10T16:24:29.422318"
+}

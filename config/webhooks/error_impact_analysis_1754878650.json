@@ -1,0 +1,29 @@
+{
+  "triggered": true,
+  "webhook_name": "error_impact_analysis",
+  "url": "http://localhost:8000/webhooks/error-impact",
+  "method": "POST",
+  "payload": {
+    "impact_analysis": {
+      "before_errors": 573,
+      "after_errors": 1769,
+      "error_change": 1196,
+      "error_increase_percentage": 208.7260034904014,
+      "improvement": false,
+      "significant_worsening": true,
+      "analysis_level": "enhanced",
+      "severity": "critical_worsening",
+      "action_needed": "immediate_rollback",
+      "rollback_recommended": true,
+      "change_description": "Error count changed from 573 to 1769 (+1196)"
+    },
+    "rollback_needed": true,
+    "context": {
+      "session_id": "test_session",
+      "user_id": "test_user",
+      "project": "az-interface"
+    },
+    "timestamp": "2025-08-11T10:17:30.097426"
+  },
+  "timestamp": "2025-08-11T10:17:30.097430"
+}

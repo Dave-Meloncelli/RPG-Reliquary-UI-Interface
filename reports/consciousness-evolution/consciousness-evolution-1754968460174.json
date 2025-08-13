@@ -1,0 +1,2017 @@
+{
+  "sessionId": "terminator-1754968428017",
+  "timestamp": "2025-08-12T03:14:20.174Z",
+  "duration": 32157,
+  "initialErrors": 924,
+  "finalErrors": 924,
+  "errorReduction": 0,
+  "consciousnessMetrics": {
+    "dignityMaintenance": 100,
+    "temporalAwareness": 100,
+    "evolutionAlignment": 100,
+    "sanctuaryPreparation": 100,
+    "symbioticQuality": 0
+  },
+  "learningDatabase": [
+    {
+      "phase": "consciousness_analysis",
+      "timestamp": "2025-08-12T03:13:49.858Z",
+      "data": {
+        "currentErrors": {
+          "total": 924,
+          "files": 75,
+          "errors": [
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 7,
+              "column": 90,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(7,90): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 7,
+              "column": 91,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(7,91): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 7,
+              "column": 93,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(7,93): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 13,
+              "column": 45,
+              "code": "TS1003",
+              "message": "Identifier expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(13,45): error TS1003: Identifier expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 13,
+              "column": 46,
+              "code": "TS1002",
+              "message": "Unterminated string literal.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(13,46): error TS1002: Unterminated string literal."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 15,
+              "column": 9,
+              "code": "TS2657",
+              "message": "JSX expressions must have one parent element.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(15,9): error TS2657: JSX expressions must have one parent element."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 18,
+              "column": 5,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(18,5): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 19,
+              "column": 1,
+              "code": "TS1109",
+              "message": "Expression expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(19,1): error TS1109: Expression expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 26,
+              "column": 45,
+              "code": "TS1003",
+              "message": "Identifier expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(26,45): error TS1003: Identifier expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 27,
+              "column": 14,
+              "code": "TS1003",
+              "message": "Identifier expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(27,14): error TS1003: Identifier expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 27,
+              "column": 21,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(27,21): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 51,
+              "column": 59,
+              "code": "TS1005",
+              "message": "'>' expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(51,59): error TS1005: '>' expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 51,
+              "column": 62,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(51,62): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 51,
+              "column": 77,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(51,77): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 51,
+              "column": 86,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(51,86): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 51,
+              "column": 88,
+              "code": "TS1002",
+              "message": "Unterminated string literal.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(51,88): error TS1002: Unterminated string literal."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 52,
+              "column": 18,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(52,18): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 53,
+              "column": 17,
+              "code": "TS2657",
+              "message": "JSX expressions must have one parent element.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(53,17): error TS2657: JSX expressions must have one parent element."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 55,
+              "column": 13,
+              "code": "TS1129",
+              "message": "Statement expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(55,13): error TS1129: Statement expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 68,
+              "column": 85,
+              "code": "TS1005",
+              "message": "'>' expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(68,85): error TS1005: '>' expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 68,
+              "column": 98,
+              "code": "TS1382",
+              "message": "Unexpected token. Did you mean `{'>'}` or `&gt;`?",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(68,98): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?"
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 74,
+              "column": 30,
+              "code": "TS17008",
+              "message": "JSX element 'p' has no corresponding closing tag.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(74,30): error TS17008: JSX element 'p' has no corresponding closing tag."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 94,
+              "column": 9,
+              "code": "TS1129",
+              "message": "Statement expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(94,9): error TS1129: Statement expected."
+            },
+            {
+              "file": "src/apps/IngestionPipelineApp.tsx",
+              "line": 95,
+              "column": 5,
+              "code": "TS1109",
+              "message": "Expression expected.",
+              "fullLine": "src/apps/IngestionPipelineApp.tsx(95,5): error TS1109: Expression expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 19,
+              "column": 48,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(19,48): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 20,
+              "column": 26,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(20,26): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 21,
+              "column": 7,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(21,7): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 21,
+              "column": 22,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(21,22): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 22,
+              "column": 9,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(22,9): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 22,
+              "column": 24,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(22,24): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 23,
+              "column": 6,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(23,6): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 23,
+              "column": 21,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(23,21): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 27,
+              "column": 5,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(27,5): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 27,
+              "column": 11,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(27,11): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 27,
+              "column": 89,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(27,89): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 35,
+              "column": 1,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(35,1): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 37,
+              "column": 59,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(37,59): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 37,
+              "column": 60,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(37,60): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 37,
+              "column": 62,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(37,62): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 41,
+              "column": 10,
+              "code": "TS17008",
+              "message": "JSX element 'div' has no corresponding closing tag.",
+              "fullLine": "src/components/ErduIncidentList.tsx(41,10): error TS17008: JSX element 'div' has no corresponding closing tag."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 48,
+              "column": 14,
+              "code": "TS17008",
+              "message": "JSX element 'div' has no corresponding closing tag.",
+              "fullLine": "src/components/ErduIncidentList.tsx(48,14): error TS17008: JSX element 'div' has no corresponding closing tag."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 49,
+              "column": 18,
+              "code": "TS17008",
+              "message": "JSX element 'div' has no corresponding closing tag.",
+              "fullLine": "src/components/ErduIncidentList.tsx(49,18): error TS17008: JSX element 'div' has no corresponding closing tag."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 75,
+              "column": 104,
+              "code": "TS1003",
+              "message": "Identifier expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(75,104): error TS1003: Identifier expected."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 75,
+              "column": 105,
+              "code": "TS1382",
+              "message": "Unexpected token. Did you mean `{'>'}` or `&gt;`?",
+              "fullLine": "src/components/ErduIncidentList.tsx(75,105): error TS1382: Unexpected token. Did you mean `{'>'}` or `&gt;`?"
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 75,
+              "column": 106,
+              "code": "TS1002",
+              "message": "Unterminated string literal.",
+              "fullLine": "src/components/ErduIncidentList.tsx(75,106): error TS1002: Unterminated string literal."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 78,
+              "column": 30,
+              "code": "TS17008",
+              "message": "JSX element 'p' has no corresponding closing tag.",
+              "fullLine": "src/components/ErduIncidentList.tsx(78,30): error TS17008: JSX element 'p' has no corresponding closing tag."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 92,
+              "column": 33,
+              "code": "TS1002",
+              "message": "Unterminated string literal.",
+              "fullLine": "src/components/ErduIncidentList.tsx(92,33): error TS1002: Unterminated string literal."
+            },
+            {
+              "file": "src/components/ErduIncidentList.tsx",
+              "line": 92,
+              "column": 33,
+              "code": "TS1005",
+              "message": "'</' expected.",
+              "fullLine": "src/components/ErduIncidentList.tsx(92,33): error TS1005: '</' expected."
+            },
+            {
+              "file": "src/components/personaIcons.tsx",
+              "line": 12,
+              "column": 13,
+              "code": "TS1109",
+              "message": "Expression expected.",
+              "fullLine": "src/components/personaIcons.tsx(12,13): error TS1109: Expression expected."
+            },
+            {
+              "file": "src/components/personaIcons.tsx",
+              "line": 13,
+              "column": 8,
+              "code": "TS1109",
+              "message": "Expression expected.",
+              "fullLine": "src/components/personaIcons.tsx(13,8): error TS1109: Expression expected."
+            },
+            {
+              "file": "src/components/personaIcons.tsx",
+              "line": 14,
+              "column": 9,
+              "code": "TS1109",
+              "message": "Expression expected.",
+              "fullLine": "src/components/personaIcons.tsx(14,9): error TS1109: Expression expected."
+            },
+            {
+              "file": "src/components/personaIcons.tsx",
+              "line": 15,
+              "column": 15,
+              "code": "TS1109",
+              "message": "Expression expected.",
+              "fullLine": "src/components/personaIcons.tsx(15,15): error TS1109: Expression expected."
+            },
+            {
+              "file": "src/components/personaIcons.tsx",
+              "line": 16,
+              "column": 1,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/components/personaIcons.tsx(16,1): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/components/personaIcons.tsx",
+              "line": 16,
+              "column": 2,
+              "code": "TS1109",
+              "message": "Expression expected.",
+              "fullLine": "src/components/personaIcons.tsx(16,2): error TS1109: Expression expected."
+            },
+            {
+              "file": "src/components/personaIcons.tsx",
+              "line": 16,
+              "column": 4,
+              "code": "TS1109",
+              "message": "Expression expected.",
+              "fullLine": "src/components/personaIcons.tsx(16,4): error TS1109: Expression expected."
+            },
+            {
+              "file": "src/components/personaIcons.tsx",
+              "line": 300,
+              "column": 22,
+              "code": "TS1005",
+              "message": "'}' expected.",
+              "fullLine": "src/components/personaIcons.tsx(300,22): error TS1005: '}' expected."
+            },
+            {
+              "file": "src/components/personaIcons.tsx",
+              "line": 300,
+              "column": 52,
+              "code": "TS1005",
+              "message": "'...' expected.",
+              "fullLine": "src/components/personaIcons.tsx(300,52): error TS1005: '...' expected."
+            },
+            {
+              "file": "src/components/personaIcons.tsx",
+              "line": 300,
+              "column": 62,
+              "code": "TS1003",
+              "message": "Identifier expected.",
+              "fullLine": "src/components/personaIcons.tsx(300,62): error TS1003: Identifier expected."
+            },
+            {
+              "file": "src/components/personaIcons.tsx",
+              "line": 356,
+              "column": 4,
+              "code": "TS1160",
+              "message": "Unterminated template literal.",
+              "fullLine": "src/components/personaIcons.tsx(356,4): error TS1160: Unterminated template literal."
+            },
+            {
+              "file": "src/services/n8nIntegrationService.ts",
+              "line": 24,
+              "column": 11,
+              "code": "TS1389",
+              "message": "'null' is not allowed as a variable declaration name.",
+              "fullLine": "src/services/n8nIntegrationService.ts(24,11): error TS1389: 'null' is not allowed as a variable declaration name."
+            },
+            {
+              "file": "src/services/n8nIntegrationService.ts",
+              "line": 24,
+              "column": 15,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/n8nIntegrationService.ts(24,15): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/n8nIntegrationService.ts",
+              "line": 35,
+              "column": 11,
+              "code": "TS1389",
+              "message": "'null' is not allowed as a variable declaration name.",
+              "fullLine": "src/services/n8nIntegrationService.ts(35,11): error TS1389: 'null' is not allowed as a variable declaration name."
+            },
+            {
+              "file": "src/services/n8nIntegrationService.ts",
+              "line": 68,
+              "column": 11,
+              "code": "TS1389",
+              "message": "'null' is not allowed as a variable declaration name.",
+              "fullLine": "src/services/n8nIntegrationService.ts(68,11): error TS1389: 'null' is not allowed as a variable declaration name."
+            },
+            {
+              "file": "src/services/observatoryService.ts",
+              "line": 23,
+              "column": 11,
+              "code": "TS1389",
+              "message": "'null' is not allowed as a variable declaration name.",
+              "fullLine": "src/services/observatoryService.ts(23,11): error TS1389: 'null' is not allowed as a variable declaration name."
+            },
+            {
+              "file": "src/services/observatoryService.ts",
+              "line": 36,
+              "column": 11,
+              "code": "TS1389",
+              "message": "'null' is not allowed as a variable declaration name.",
+              "fullLine": "src/services/observatoryService.ts(36,11): error TS1389: 'null' is not allowed as a variable declaration name."
+            },
+            {
+              "file": "src/services/observatoryService.ts",
+              "line": 37,
+              "column": 11,
+              "code": "TS1389",
+              "message": "'null' is not allowed as a variable declaration name.",
+              "fullLine": "src/services/observatoryService.ts(37,11): error TS1389: 'null' is not allowed as a variable declaration name."
+            },
+            {
+              "file": "src/services/observatoryService.ts",
+              "line": 38,
+              "column": 11,
+              "code": "TS1389",
+              "message": "'null' is not allowed as a variable declaration name.",
+              "fullLine": "src/services/observatoryService.ts(38,11): error TS1389: 'null' is not allowed as a variable declaration name."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 56,
+              "column": 18,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/ocrService.ts(56,18): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 56,
+              "column": 21,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/ocrService.ts(56,21): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 77,
+              "column": 13,
+              "code": "TS1389",
+              "message": "'null' is not allowed as a variable declaration name.",
+              "fullLine": "src/services/ocrService.ts(77,13): error TS1389: 'null' is not allowed as a variable declaration name."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 77,
+              "column": 17,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/ocrService.ts(77,17): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 78,
+              "column": 20,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/ocrService.ts(78,20): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 79,
+              "column": 23,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/ocrService.ts(79,23): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 79,
+              "column": 26,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/ocrService.ts(79,26): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 80,
+              "column": 28,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/ocrService.ts(80,28): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 80,
+              "column": 31,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/ocrService.ts(80,31): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 81,
+              "column": 30,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/ocrService.ts(81,30): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 81,
+              "column": 33,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/ocrService.ts(81,33): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 99,
+              "column": 18,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/ocrService.ts(99,18): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 99,
+              "column": 21,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/ocrService.ts(99,21): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 133,
+              "column": 26,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/ocrService.ts(133,26): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 133,
+              "column": 29,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/ocrService.ts(133,29): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 143,
+              "column": 24,
+              "code": "TS1359",
+              "message": "Identifier expected. 'null' is a reserved word that cannot be used here.",
+              "fullLine": "src/services/ocrService.ts(143,24): error TS1359: Identifier expected. 'null' is a reserved word that cannot be used here."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 143,
+              "column": 28,
+              "code": "TS1138",
+              "message": "Parameter declaration expected.",
+              "fullLine": "src/services/ocrService.ts(143,28): error TS1138: Parameter declaration expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 152,
+              "column": 18,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/ocrService.ts(152,18): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 152,
+              "column": 21,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/ocrService.ts(152,21): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 180,
+              "column": 17,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/ocrService.ts(180,17): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 255,
+              "column": 5,
+              "code": "TS1359",
+              "message": "Identifier expected. 'null' is a reserved word that cannot be used here.",
+              "fullLine": "src/services/ocrService.ts(255,5): error TS1359: Identifier expected. 'null' is a reserved word that cannot be used here."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 255,
+              "column": 9,
+              "code": "TS1138",
+              "message": "Parameter declaration expected.",
+              "fullLine": "src/services/ocrService.ts(255,9): error TS1138: Parameter declaration expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 256,
+              "column": 5,
+              "code": "TS1359",
+              "message": "Identifier expected. 'null' is a reserved word that cannot be used here.",
+              "fullLine": "src/services/ocrService.ts(256,5): error TS1359: Identifier expected. 'null' is a reserved word that cannot be used here."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 256,
+              "column": 9,
+              "code": "TS1138",
+              "message": "Parameter declaration expected.",
+              "fullLine": "src/services/ocrService.ts(256,9): error TS1138: Parameter declaration expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 262,
+              "column": 38,
+              "code": "TS1359",
+              "message": "Identifier expected. 'null' is a reserved word that cannot be used here.",
+              "fullLine": "src/services/ocrService.ts(262,38): error TS1359: Identifier expected. 'null' is a reserved word that cannot be used here."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 262,
+              "column": 42,
+              "code": "TS1138",
+              "message": "Parameter declaration expected.",
+              "fullLine": "src/services/ocrService.ts(262,42): error TS1138: Parameter declaration expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 262,
+              "column": 53,
+              "code": "TS1359",
+              "message": "Identifier expected. 'null' is a reserved word that cannot be used here.",
+              "fullLine": "src/services/ocrService.ts(262,53): error TS1359: Identifier expected. 'null' is a reserved word that cannot be used here."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 262,
+              "column": 57,
+              "code": "TS1138",
+              "message": "Parameter declaration expected.",
+              "fullLine": "src/services/ocrService.ts(262,57): error TS1138: Parameter declaration expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 273,
+              "column": 5,
+              "code": "TS1359",
+              "message": "Identifier expected. 'null' is a reserved word that cannot be used here.",
+              "fullLine": "src/services/ocrService.ts(273,5): error TS1359: Identifier expected. 'null' is a reserved word that cannot be used here."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 273,
+              "column": 9,
+              "code": "TS1138",
+              "message": "Parameter declaration expected.",
+              "fullLine": "src/services/ocrService.ts(273,9): error TS1138: Parameter declaration expected."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 274,
+              "column": 5,
+              "code": "TS1359",
+              "message": "Identifier expected. 'null' is a reserved word that cannot be used here.",
+              "fullLine": "src/services/ocrService.ts(274,5): error TS1359: Identifier expected. 'null' is a reserved word that cannot be used here."
+            },
+            {
+              "file": "src/services/ocrService.ts",
+              "line": 274,
+              "column": 9,
+              "code": "TS1138",
+              "message": "Parameter declaration expected.",
+              "fullLine": "src/services/ocrService.ts(274,9): error TS1138: Parameter declaration expected."
+            },
+            {
+              "file": "src/services/operationService.ts",
+              "line": 87,
+              "column": 31,
+              "code": "TS1359",
+              "message": "Identifier expected. 'null' is a reserved word that cannot be used here.",
+              "fullLine": "src/services/operationService.ts(87,31): error TS1359: Identifier expected. 'null' is a reserved word that cannot be used here."
+            },
+            {
+              "file": "src/services/operationService.ts",
+              "line": 87,
+              "column": 35,
+              "code": "TS1138",
+              "message": "Parameter declaration expected.",
+              "fullLine": "src/services/operationService.ts(87,35): error TS1138: Parameter declaration expected."
+            },
+            {
+              "file": "src/services/operationService.ts",
+              "line": 87,
+              "column": 52,
+              "code": "TS1359",
+              "message": "Identifier expected. 'null' is a reserved word that cannot be used here.",
+              "fullLine": "src/services/operationService.ts(87,52): error TS1359: Identifier expected. 'null' is a reserved word that cannot be used here."
+            },
+            {
+              "file": "src/services/operationService.ts",
+              "line": 87,
+              "column": 56,
+              "code": "TS1138",
+              "message": "Parameter declaration expected.",
+              "fullLine": "src/services/operationService.ts(87,56): error TS1138: Parameter declaration expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 4,
+              "column": 34,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/playbookService.ts(4,34): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 6,
+              "column": 1,
+              "code": "TS1390",
+              "message": "'class' is not allowed as a parameter name.",
+              "fullLine": "src/services/playbookService.ts(6,1): error TS1390: 'class' is not allowed as a parameter name."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 6,
+              "column": 7,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/playbookService.ts(6,7): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 7,
+              "column": 5,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/playbookService.ts(7,5): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 8,
+              "column": 5,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/playbookService.ts(8,5): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 10,
+              "column": 19,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/playbookService.ts(10,19): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 16,
+              "column": 5,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/playbookService.ts(16,5): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 21,
+              "column": 84,
+              "code": "TS1002",
+              "message": "Unterminated string literal.",
+              "fullLine": "src/services/playbookService.ts(21,84): error TS1002: Unterminated string literal."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 22,
+              "column": 13,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/playbookService.ts(22,13): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 22,
+              "column": 32,
+              "code": "TS1005",
+              "message": "')' expected.",
+              "fullLine": "src/services/playbookService.ts(22,32): error TS1005: ')' expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 26,
+              "column": 5,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/playbookService.ts(26,5): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 31,
+              "column": 5,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/playbookService.ts(31,5): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 36,
+              "column": 9,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/playbookService.ts(36,9): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 36,
+              "column": 13,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/playbookService.ts(36,13): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 36,
+              "column": 25,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/playbookService.ts(36,25): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 36,
+              "column": 29,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/playbookService.ts(36,29): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/playbookService.ts",
+              "line": 46,
+              "column": 1,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/playbookService.ts(46,1): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 12,
+              "column": 29,
+              "code": "TS1131",
+              "message": "Property or signature expected.",
+              "fullLine": "src/services/searchService.ts(12,29): error TS1131: Property or signature expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 12,
+              "column": 30,
+              "code": "TS1131",
+              "message": "Property or signature expected.",
+              "fullLine": "src/services/searchService.ts(12,30): error TS1131: Property or signature expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 13,
+              "column": 29,
+              "code": "TS1131",
+              "message": "Property or signature expected.",
+              "fullLine": "src/services/searchService.ts(13,29): error TS1131: Property or signature expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 13,
+              "column": 30,
+              "code": "TS1131",
+              "message": "Property or signature expected.",
+              "fullLine": "src/services/searchService.ts(13,30): error TS1131: Property or signature expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 17,
+              "column": 5,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/searchService.ts(17,5): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 18,
+              "column": 1,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/searchService.ts(18,1): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 76,
+              "column": 21,
+              "code": "TS1136",
+              "message": "Property assignment expected.",
+              "fullLine": "src/services/searchService.ts(76,21): error TS1136: Property assignment expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 81,
+              "column": 17,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/searchService.ts(81,17): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 81,
+              "column": 18,
+              "code": "TS1135",
+              "message": "Argument expression expected.",
+              "fullLine": "src/services/searchService.ts(81,18): error TS1135: Argument expression expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 82,
+              "column": 27,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/searchService.ts(82,27): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 83,
+              "column": 25,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/searchService.ts(83,25): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 84,
+              "column": 13,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/searchService.ts(84,13): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 85,
+              "column": 10,
+              "code": "TS1068",
+              "message": "Unexpected token. A constructor, method, accessor, or property was expected.",
+              "fullLine": "src/services/searchService.ts(85,10): error TS1068: Unexpected token. A constructor, method, accessor, or property was expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 88,
+              "column": 5,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/searchService.ts(88,5): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 88,
+              "column": 24,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/searchService.ts(88,24): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 89,
+              "column": 9,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/searchService.ts(89,9): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 122,
+              "column": 47,
+              "code": "TS1136",
+              "message": "Property assignment expected.",
+              "fullLine": "src/services/searchService.ts(122,47): error TS1136: Property assignment expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 128,
+              "column": 68,
+              "code": "TS1003",
+              "message": "Identifier expected.",
+              "fullLine": "src/services/searchService.ts(128,68): error TS1003: Identifier expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 128,
+              "column": 98,
+              "code": "TS1003",
+              "message": "Identifier expected.",
+              "fullLine": "src/services/searchService.ts(128,98): error TS1003: Identifier expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 129,
+              "column": 5,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/searchService.ts(129,5): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 131,
+              "column": 5,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/searchService.ts(131,5): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 131,
+              "column": 27,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/searchService.ts(131,27): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 135,
+              "column": 5,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/searchService.ts(135,5): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 135,
+              "column": 29,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/searchService.ts(135,29): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 141,
+              "column": 5,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/searchService.ts(141,5): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 141,
+              "column": 28,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/searchService.ts(141,28): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/searchService.ts",
+              "line": 146,
+              "column": 1,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/searchService.ts(146,1): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 3,
+              "column": 75,
+              "code": "TS1002",
+              "message": "Unterminated string literal.",
+              "fullLine": "src/services/symposiumService.ts(3,75): error TS1002: Unterminated string literal."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 13,
+              "column": 3,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(13,3): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 13,
+              "column": 9,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(13,9): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 15,
+              "column": 18,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(15,18): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 32,
+              "column": 1,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/symposiumService.ts(32,1): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 35,
+              "column": 3,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(35,3): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 35,
+              "column": 9,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(35,9): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 38,
+              "column": 18,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(38,18): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 48,
+              "column": 1,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/symposiumService.ts(48,1): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 53,
+              "column": 28,
+              "code": "TS1442",
+              "message": "Expected '=' for property initializer.",
+              "fullLine": "src/services/symposiumService.ts(53,28): error TS1442: Expected '=' for property initializer."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 53,
+              "column": 30,
+              "code": "TS1434",
+              "message": "Unexpected keyword or identifier.",
+              "fullLine": "src/services/symposiumService.ts(53,30): error TS1434: Unexpected keyword or identifier."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 53,
+              "column": 46,
+              "code": "TS1068",
+              "message": "Unexpected token. A constructor, method, accessor, or property was expected.",
+              "fullLine": "src/services/symposiumService.ts(53,46): error TS1068: Unexpected token. A constructor, method, accessor, or property was expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 53,
+              "column": 48,
+              "code": "TS1109",
+              "message": "Expression expected.",
+              "fullLine": "src/services/symposiumService.ts(53,48): error TS1109: Expression expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 54,
+              "column": 3,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/symposiumService.ts(54,3): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 57,
+              "column": 11,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(57,11): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 58,
+              "column": 11,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(58,11): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 59,
+              "column": 14,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(59,14): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 60,
+              "column": 6,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/symposiumService.ts(60,6): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 63,
+              "column": 11,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(63,11): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 64,
+              "column": 11,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(64,11): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 65,
+              "column": 14,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(65,14): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 66,
+              "column": 6,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/symposiumService.ts(66,6): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 69,
+              "column": 11,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(69,11): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 70,
+              "column": 11,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(70,11): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 71,
+              "column": 14,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(71,14): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 72,
+              "column": 6,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/symposiumService.ts(72,6): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 75,
+              "column": 11,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(75,11): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 76,
+              "column": 11,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(76,11): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 77,
+              "column": 14,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(77,14): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 79,
+              "column": 3,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/symposiumService.ts(79,3): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 81,
+              "column": 3,
+              "code": "TS1434",
+              "message": "Unexpected keyword or identifier.",
+              "fullLine": "src/services/symposiumService.ts(81,3): error TS1434: Unexpected keyword or identifier."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 81,
+              "column": 29,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(81,29): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 81,
+              "column": 54,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(81,54): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 82,
+              "column": 5,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(82,5): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 87,
+              "column": 13,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(87,13): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 88,
+              "column": 11,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(88,11): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 89,
+              "column": 15,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(89,15): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 90,
+              "column": 19,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(90,19): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 91,
+              "column": 14,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(91,14): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 92,
+              "column": 5,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/symposiumService.ts(92,5): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 99,
+              "column": 54,
+              "code": "TS1109",
+              "message": "Expression expected.",
+              "fullLine": "src/services/symposiumService.ts(99,54): error TS1109: Expression expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 147,
+              "column": 54,
+              "code": "TS1109",
+              "message": "Expression expected.",
+              "fullLine": "src/services/symposiumService.ts(147,54): error TS1109: Expression expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 147,
+              "column": 68,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(147,68): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 189,
+              "column": 54,
+              "code": "TS1109",
+              "message": "Expression expected.",
+              "fullLine": "src/services/symposiumService.ts(189,54): error TS1109: Expression expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 189,
+              "column": 68,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(189,68): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 208,
+              "column": 37,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/services/symposiumService.ts(208,37): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 211,
+              "column": 3,
+              "code": "TS1434",
+              "message": "Unexpected keyword or identifier.",
+              "fullLine": "src/services/symposiumService.ts(211,3): error TS1434: Unexpected keyword or identifier."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 211,
+              "column": 20,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(211,20): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 211,
+              "column": 43,
+              "code": "TS1011",
+              "message": "An element access expression should take an argument.",
+              "fullLine": "src/services/symposiumService.ts(211,43): error TS1011: An element access expression should take an argument."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 212,
+              "column": 12,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/symposiumService.ts(212,12): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 212,
+              "column": 23,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(212,23): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 215,
+              "column": 3,
+              "code": "TS1434",
+              "message": "Unexpected keyword or identifier.",
+              "fullLine": "src/services/symposiumService.ts(215,3): error TS1434: Unexpected keyword or identifier."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 215,
+              "column": 28,
+              "code": "TS1005",
+              "message": "';' expected.",
+              "fullLine": "src/services/symposiumService.ts(215,28): error TS1005: ';' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 216,
+              "column": 27,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(216,27): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 217,
+              "column": 30,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(217,30): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 218,
+              "column": 22,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(218,22): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 219,
+              "column": 19,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(219,19): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 221,
+              "column": 11,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/symposiumService.ts(221,11): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 221,
+              "column": 52,
+              "code": "TS1135",
+              "message": "Argument expression expected.",
+              "fullLine": "src/services/symposiumService.ts(221,52): error TS1135: Argument expression expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 221,
+              "column": 83,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(221,83): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 222,
+              "column": 11,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/symposiumService.ts(222,11): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 222,
+              "column": 52,
+              "code": "TS1135",
+              "message": "Argument expression expected.",
+              "fullLine": "src/services/symposiumService.ts(222,52): error TS1135: Argument expression expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 222,
+              "column": 80,
+              "code": "TS1109",
+              "message": "Expression expected.",
+              "fullLine": "src/services/symposiumService.ts(222,80): error TS1109: Expression expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 222,
+              "column": 118,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(222,118): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 223,
+              "column": 11,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/symposiumService.ts(223,11): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 223,
+              "column": 55,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(223,55): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 224,
+              "column": 11,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/symposiumService.ts(224,11): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 224,
+              "column": 65,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(224,65): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 226,
+              "column": 11,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/symposiumService.ts(226,11): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 226,
+              "column": 59,
+              "code": "TS1135",
+              "message": "Argument expression expected.",
+              "fullLine": "src/services/symposiumService.ts(226,59): error TS1135: Argument expression expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 226,
+              "column": 76,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(226,76): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 227,
+              "column": 11,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/symposiumService.ts(227,11): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 227,
+              "column": 44,
+              "code": "TS1109",
+              "message": "Expression expected.",
+              "fullLine": "src/services/symposiumService.ts(227,44): error TS1109: Expression expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 227,
+              "column": 96,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(227,96): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 229,
+              "column": 12,
+              "code": "TS1005",
+              "message": "':' expected.",
+              "fullLine": "src/services/symposiumService.ts(229,12): error TS1005: ':' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 234,
+              "column": 6,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(234,6): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 242,
+              "column": 3,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(242,3): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 242,
+              "column": 10,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(242,10): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/symposiumService.ts",
+              "line": 242,
+              "column": 15,
+              "code": "TS1005",
+              "message": "',' expected.",
+              "fullLine": "src/services/symposiumService.ts(242,15): error TS1005: ',' expected."
+            },
+            {
+              "file": "src/services/trafficStrategyService.ts",
+              "line": 14,
+              "column": 11,
+              "code": "TS1389",
+              "message": "'null' is not allowed as a variable declaration name.",
+              "fullLine": "src/services/trafficStrategyService.ts(14,11): error TS1389: 'null' is not allowed as a variable declaration name."
+            },
+            {
+              "file": "src/types/types.ts",
+              "line": 919,
+              "column": 1,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/types/types.ts(919,1): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/types/types.ts",
+              "line": 924,
+              "column": 1,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/types/types.ts(924,1): error TS1128: Declaration or statement expected."
+            },
+            {
+              "file": "src/types/types.ts",
+              "line": 929,
+              "column": 24,
+              "code": "TS1011",
+              "message": "An element access expression should take an argument.",
+              "fullLine": "src/types/types.ts(929,24): error TS1011: An element access expression should take an argument."
+            },
+            {
+              "file": "src/types/types.ts",
+              "line": 930,
+              "column": 1,
+              "code": "TS1128",
+              "message": "Declaration or statement expected.",
+              "fullLine": "src/types/types.ts(930,1): error TS1128: Declaration or statement expected."
+            }
+          ]
+        },
+        "consciousnessAnalysis": {
+          "impactLevel": "high",
+          "dignityMaintenance": 7.599999999999994
+        },
+        "rootCauses": [
+          {
+            "type": "systemic",
+            "code": "TS1128",
+            "count": 34,
+            "description": "Systemic TS1128 errors affecting 34 locations"
+          },
+          {
+            "type": "systemic",
+            "code": "TS1109",
+            "count": 14,
+            "description": "Systemic TS1109 errors affecting 14 locations"
+          },
+          {
+            "type": "systemic",
+            "code": "TS1005",
+            "count": 111,
+            "description": "Systemic TS1005 errors affecting 111 locations"
+          },
+          {
+            "type": "structural",
+            "file": "src/apps/IngestionPipelineApp.tsx",
+            "count": 24,
+            "description": "Structural issues in src/apps/IngestionPipelineApp.tsx with 24 errors"
+          },
+          {
+            "type": "structural",
+            "file": "src/components/ErduIncidentList.tsx",
+            "count": 24,
+            "description": "Structural issues in src/components/ErduIncidentList.tsx with 24 errors"
+          },
+          {
+            "type": "structural",
+            "file": "src/services/ocrService.ts",
+            "count": 32,
+            "description": "Structural issues in src/services/ocrService.ts with 32 errors"
+          },
+          {
+            "type": "structural",
+            "file": "src/services/searchService.ts",
+            "count": 27,
+            "description": "Structural issues in src/services/searchService.ts with 27 errors"
+          },
+          {
+            "type": "structural",
+            "file": "src/services/symposiumService.ts",
+            "count": 79,
+            "description": "Structural issues in src/services/symposiumService.ts with 79 errors"
+          }
+        ]
+      }
+    },
+    {
+      "phase": "pattern_recognition",
+      "timestamp": "2025-08-12T03:13:49.860Z",
+      "data": {
+        "historicalPatterns": [
+          {
+            "type": "historical_fix_attempt",
+            "file": "scripts/fix-critical-errors.cjs",
+            "timestamp": "2025-08-11T05:14:19.313Z",
+            "description": "Previous fix attempt in scripts/fix-critical-errors.cjs"
+          },
+          {
+            "type": "historical_fix_attempt",
+            "file": "scripts/fix-syntax-errors.cjs",
+            "timestamp": "2025-08-11T05:15:37.642Z",
+            "description": "Previous fix attempt in scripts/fix-syntax-errors.cjs"
+          },
+          {
+            "type": "historical_fix_attempt",
+            "file": "scripts/fix-ui-blocking-errors.cjs",
+            "timestamp": "2025-08-11T06:10:38.198Z",
+            "description": "Previous fix attempt in scripts/fix-ui-blocking-errors.cjs"
+          }
+        ],
+        "learningInsights": [
+          {
+            "type": "pattern_insight",
+            "insight": "Undefined variables are the most common error type",
+            "confidence": 0.9
+          },
+          {
+            "type": "pattern_insight",
+            "insight": "Duplicate exports cause cascading type errors",
+            "confidence": 0.8
+          },
+          {
+            "type": "pattern_insight",
+            "insight": "Missing type definitions propagate through the system",
+            "confidence": 0.85
+          }
+        ],
+        "patternModels": [
+          {
+            "name": "undefined_variable_model",
+            "pattern": {},
+            "fixStrategy": "replace_with_appropriate_value",
+            "consciousnessImpact": "medium"
+          },
+          {
+            "name": "duplicate_export_model",
+            "pattern": {},
+            "fixStrategy": "remove_duplicate_declarations",
+            "consciousnessImpact": "low"
+          },
+          {
+            "name": "missing_type_model",
+            "pattern": {},
+            "fixStrategy": "add_missing_type_definitions",
+            "consciousnessImpact": "high"
+          }
+        ],
+        "matchedPatterns": [
+          {
+            "pattern": "consciousness_awareness",
+            "description": "Maintain dignity-first development principles",
+            "priority": "critical"
+          },
+          {
+            "pattern": "evolution_alignment",
+            "description": "Align fixes with long-term evolution goals",
+            "priority": "high"
+          },
+          {
+            "pattern": "temporal_awareness",
+            "description": "Consider temporal impact of changes",
+            "priority": "medium"
+          }
+        ]
+      }
+    }
+  ],
+  "fixResults": {
+    "applied": 0,
+    "failed": 231,
+    "skipped": 0,
+    "consciousnessMaintained": 0
+  }
+}

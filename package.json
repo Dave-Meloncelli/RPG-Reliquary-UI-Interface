@@ -6,18 +6,54 @@
     "ci:gate": "node scripts/ci-gate.js",
     "remediate": "node scripts/remediation.js",
     "prepare": "husky install",
-    "lint": "echo skip",
-    "format": "echo skip",
-    "typecheck": "echo skip",
-    "test": "echo skip"
+    "lint": "eslint src --ext .ts,.tsx --max-warnings 0",
+    "lint:fix": "eslint src --ext .ts,.tsx --fix",
+    "format": "prettier --write src/**/*.{ts,tsx,js,jsx,json,css,md}",
+    "format:check": "prettier --check src/**/*.{ts,tsx,js,jsx,json,css,md}",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage",
+    "build": "vite build",
+    "dev": "vite",
+    "preview": "vite preview",
+    "clean": "rimraf dist .vite node_modules/.cache",
+    "dev-manager": "tsx scripts/autonomous-dev-manager.ts",
+    "dev-manager:run": "tsx scripts/autonomous-dev-manager.ts run",
+    "dev-manager:health": "tsx scripts/autonomous-dev-manager.ts health",
+    "emergency-fix": "npm run clean && npm install && npm run build",
+    "type-check": "tsc --noEmit",
+    "audit-apps": "tsx scripts/audit-applications.ts",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "tauri:build": "tauri build",
+    "tauri:build:debug": "tauri build --debug"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
+    "@eslint/js": "^9.33.0",
+    "@tauri-apps/cli": "^2.7.1",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@typescript-eslint/eslint-plugin": "^8.20.0",
+    "@typescript-eslint/parser": "^8.20.0",
+    "@vitest/ui": "^2.1.8",
     "eslint": "^9.7.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.1.0",
     "husky": "^9.0.11",
+    "jsdom": "^25.0.1",
     "lint-staged": "^16.1.5",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3",
+    "vitest": "^2.1.8"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,md,css,scss,html}": [
@@ -26,5 +62,17 @@
     "*.py": [
       "python -c \"print('ok')\""
     ]
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@tauri-apps/api": "^2.7.0",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^5.0.0",
+    "arktype": "^2.1.20",
+    "lucide-react": "^0.539.0",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "vite": "^7.1.1"
   }
 }

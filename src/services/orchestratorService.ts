@@ -1,10 +1,9 @@
-
 import type { OrchestratorConfig } from "../types/types";
 
 export const orchestratorConfig: OrchestratorConfig = {
   // Provider priority order - determines fallback sequence
   priority: ["ollama", "chutes", "openai", "google"],
-  
+
   providers: {
     ollama: {
       name: "Ollama",
@@ -16,17 +15,17 @@ export const orchestratorConfig: OrchestratorConfig = {
       // The previous value of 30000ms was too aggressive for localhost connections under load.
       timeout: 90000,
       capabilities: ["general", "fast", "private"],
-      apiKey: "N/A"
+      apiKey: "N/A",
     },
     chutes: {
       name: "Chutes.ai",
       enabled: true,
-      baseUrl: "https://api.chutes.ai/v1/completions", 
+      baseUrl: "https://api.chutes.ai/v1/completions",
       apiKey: "**********", // Masked
       model: "llama2-70b",
       maxRetries: 3,
       timeout: 60000,
-      capabilities: ["complex", "cost-effective"]
+      capabilities: ["complex", "cost-effective"],
     },
     openai: {
       name: "OpenAI",
@@ -36,7 +35,7 @@ export const orchestratorConfig: OrchestratorConfig = {
       model: "gpt-4-turbo-preview",
       maxRetries: 3,
       timeout: 90000,
-      capabilities: ["premium", "analysis", "creative"]
+      capabilities: ["premium", "analysis", "creative"],
     },
     google: {
       name: "Google Gemini",
@@ -46,10 +45,10 @@ export const orchestratorConfig: OrchestratorConfig = {
       model: "gemini-pro",
       maxRetries: 3,
       timeout: 60000,
-      capabilities: ["multimodal", "vision", "search"]
-    }
+      capabilities: ["multimodal", "vision", "search"],
+    },
   },
-  
+
   // Specialized routing for agent types
   agentPreferences: {
     "agent-az86": { preferred: ["google", "ollama"] },
@@ -57,22 +56,22 @@ export const orchestratorConfig: OrchestratorConfig = {
     "agent-az82": { preferred: ["openai", "chutes"] },
     "agent-kairos": { preferred: ["openai", "google"] },
     "agent-sophia": { preferred: ["openai", "google"] },
-    "agent-jordan": { preferred: ["openai", "ollama"] }
+    "agent-jordan": { preferred: ["openai", "ollama"] },
   },
-  
+
   fallbackStrategy: {
     enableFallback: true,
     fallbackOnError: true,
     fallbackOnTimeout: true,
     fallbackOnLowConfidence: true,
-    confidenceThreshold: 0.7
+    confidenceThreshold: 0.7,
   },
-  
+
   costOptimization: {
     trackCosts: true,
-    monthlyBudget: 100,  // USD
+    monthlyBudget: 100, // USD
     preferLocalModels: true,
     cacheResponses: true,
-    cacheTTL: 3600  // 1 hour
-  }
+    cacheTTL: 3600, // 1 hour
+  },
 };

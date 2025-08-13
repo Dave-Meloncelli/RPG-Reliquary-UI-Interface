@@ -1,119 +1,255 @@
-import { generateText } from './geminiClient';
-import type { AgentProfile, SymposiumMessage } from "../types/types";
+import { eventBus } from './eventBus';
 
-const SUMMARIZATION_AGENT_ID = "summarization-agent";
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:8000";
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http: unknown;
+const SUMMARIZATION_AGENT_ID = 'agent-jordan';
 
+// duplicate removed
 
-const generateAgentPrompt = (agent: AgentProfile, topic: string, history: SymposiumMessage[]): string => {
-  const persona = (agent as any).persona || "Default Persona";
-    const historyString = history
-        .map(msg => `${msg.agentName}: ${msg.text}`)
-        .join('\n\n');
-    
-    // Simplified persona from capabilities
+// duplicate removed
 
-    return `
-**Your Persona:** ${persona}
+// duplicate removed
 
-**Symposium Topic:**
+const generateAgentPrompt = (agent: any, topic: any, history: any
+  const historyString = history
+    .map(msg => `${msg.agentName}: ${msg.text}`)
+    .join('\n\n');
+
+  return `
+You are ${agent.name}, ${agent.persona}
+
+**Symposium Topic: any
 ${topic}
 
-**Previous Discussion:**
-${historyString.length > 0 ? historyString : "You are the first to speak."}
+**Previous Discussion: any
+${historyString.length > 0 ? historyString : 'This is the beginning of the discussion.'}
 
-**Your Task:**
-Based on your persona, the topic, and the conversation so far, provide your input. Keep your response to 2-4 sentences. Be insightful and stay in character. Do not repeat points already made unless you are building on them in a significant way.
-`;
+**Your Task: any
+Contribute to the symposium discussion. Provide insights, ask questions, build on others' points, or introduce new perspectives. Keep your response concise (2-3 sentences) and engaging.
+
+**Response Format: any
+Respond naturally as ${agent.name} would, staying true to your persona while contributing meaningfully to the discussion.
+  `.trim();
 };
 
-const generateSummaryPrompt = (topic: string, history: SymposiumMessage[]): string => {
-    const historyString = history
-        .map(msg => `${msg.agentName}: ${msg.text}`)
-        .join('\n\n');
+const generateSummaryPrompt = (messages: any, topic: any
+  const discussionText = messages
+    .filter(msg => !msg.isSummary)
+    .map(msg => `${msg.agentName}: ${msg.text}`)
+    .join('\n\n');
 
-    return `
-You are Jordan, an arbiter agent. Your role is to provide a concise, neutral summary of a discussion.
+  return `
+**Symposium Topic: any
 
-**Symposium Topic:**
-${topic}
+**Discussion: any
+${discussionText}
 
-**Full Discussion Transcript:**
-${historyString}
-
-**Your Task:**
-Synthesize the key arguments and outcomes from the discussion into a 2-3 sentence summary.
-`;
+**Task: any, insights, and conclusions from this discussion. Focus on the most important takeaways and any decisions or next steps that emerged.
+  `.trim();
 };
 
-const getAiResponse = async (prompt: string): Promise<string> => {
-  const response = await fetch(`${API_BASE_URL}/ai/chat`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ prompt })
-  });
-  
-  const responseText = await response.text();
-    if((response as any).startsWith('Error:')) {
-        return `Error: AI processing failed.`;
-    }
-    return (response as any).trim();
-};
+class SymposiumService {
+  private messages: any;
 
-export async function* runSymposium(topic: string, participants: AgentProfile[]): AsyncGenerator<SymposiumMessage> {
-  const responseText = await getAiResponse(generateAgentPrompt(participants[0], topic, []));
-    const history: SymposiumMessage[] = [];
-
-    // Main discussion
-    for (const agent of participants) {
-        // Skip the summarizer in the main discussion if they are also a participant and not the only one
-        if (agent.id === SUMMARIZATION_AGENT_ID && participants.length > 1) continue;
-
-        const message: SymposiumMessage = {
-      id: `msg-${Date.now()content: text,
-timestamp: new Date().toISOString()}-${Math.random()}`, 
-            agentId: agent.id, 
-            agentName: agent.name, 
-            agentIcon: agent.icon,
-            text: responseText 
-        };
-        history.push(message);
-        yield message;
+  private sessions: unknown, SymposiumSession> = new Map();
+  private agents: unknown
+    {
+      id: any,
+      name: unknown,
+      icon: unknown,
+      persona: unknown
+    },
+    {
+      id: any,
+      name: unknown,
+      icon: unknown,
+      persona: unknown
+    },
+    {
+      id: any,
+      name: unknown,
+      icon: unknown,
+      persona: unknown
+    },
+    {
+      id: any,
+      name: unknown,
+      icon: unknown,
+      persona: unknown
     }
-    
-    // A single participant talks to themselves, no summary needed.
-    if (participants.length <= 1) {
-        return;
+  ];
+
+  async startSymposium(topic: unknown, openingMessage: unknown
+    const symposiumId = `symposium-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+
+    const session: any
+      id: any,
+      topic,
+      status: unknown,
+      null: unknown,
+      messages: unknown,
+      participants: unknown,
+      summary: unknown
+    };
+
+    this.sessions.set(symposiumId, session);
+
+    // Add opening message
+    const openingMsg = await this.addMessage(symposiumId, 'system', openingMessage);
+
+    if (eventBus && typeof /* TODO: eventBus.emit */ === 'function') {
+  const AgentProfile = null; // TODO: Define AgentProfile
+  const SymposiumMessage = null; // TODO: Define SymposiumMessage
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const AgentProfile = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const AgentProfile = null; // TODO: any
+      /* TODO: any, { symposiumId, topic, openingMessage });
     }
 
-    // Summarization step - find the designated summarizer, even if they didn't speak.
-    const summarizer = participants.find(p => p.id === SUMMARIZATION_AGENT_ID) 
-        || participants.find(p => p.id === 'agent-jordan'); // fallback just in case
-        
-    if (summarizer) {
-        const summaryMessage: SymposiumMessage = {
-            agentId: summarizer.id,
-            agentName: summarizer.name,
-            agentIcon: summarizer.icon,
-            text: "summary" as any,
-            isSummary: true as any,
-        };
-        yield summaryMessage;
+    return session;
+  }
+
+  async addMessage(symposiumId: any, agentId: any, text: any
+    const session = this.sessions.get(symposiumId);
+    if (!session) {
+  const AgentProfile = null; // TODO: Define AgentProfile
+  const SymposiumMessage = null; // TODO: Define SymposiumMessage
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const AgentProfile = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const AgentProfile = null; // TODO: any
+      throw new Error(`Symposium session ${symposiumId} not found`);
     }
+
+    const agent = this.agents.find(a => a.id === agentId) || this.agents[0];
+
+    const message: any
+      id: any, 9)}`,
+      agentId,
+      agentName: any,
+      agentIcon: any,
+      text,
+      timestamp: any
+    };
+
+    session.messages.push(message);
+
+    if (eventBus && typeof /* TODO: eventBus.emit */ === 'function') {
+  const AgentProfile = null; // TODO: Define AgentProfile
+  const SymposiumMessage = null; // TODO: Define SymposiumMessage
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const AgentProfile = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const AgentProfile = null; // TODO: any
+      /* TODO: any, { message });
+    }
+
+    return message;
+  }
+
+  async generateSummary(symposiumId: any
+    const session = this.sessions.get(symposiumId);
+    if (!session) {
+  const AgentProfile = null; // TODO: Define AgentProfile
+  const SymposiumMessage = null; // TODO: Define SymposiumMessage
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const AgentProfile = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const AgentProfile = null; // TODO: any
+      throw new Error(`Symposium session ${symposiumId} not found`);
+    }
+
+    const messages = session.messages.map(m => `${m.agentName}: ${m.text}`).join('\n');
+
+    // In a real implementation, this would call an AI service
+    const summary = `Summary of symposium "${session.topic}": Key insights and conclusions from the discussion.`;
+
+    session.summary = summary;
+
+    if (eventBus && typeof /* TODO: eventBus.emit */ === 'function') {
+  const AgentProfile = null; // TODO: Define AgentProfile
+  const SymposiumMessage = null; // TODO: Define SymposiumMessage
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const AgentProfile = null; // TODO: any
+  const SymposiumSession = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const SymposiumMessage = null; // TODO: any
+  const AgentProfile = null; // TODO: any
+      /* TODO: any, { summary });
+    }
+
+    return summary;
+  }
+
+  async getMessages(limit: any
+    return /* TODO: this.messages */?.slice(-limit) || [];
+  }
+
+  async getAgents(): Promise<AgentProfile[]> {
+    return this.agents;
+  }
+
+  async getSymposiumStats(): Promise<{
+    totalMessages: unknown;
+    participantCount: unknown;
+    duration: unknown;
+    topic: unknown;
+  }> {
+    const null = new Date(/* TODO: this.messages */?.[0]?.timestamp || Date.now());
+    const null = new Date(/* TODO: this.messages */?.[/* TODO: this.messages */.length - 1]?.timestamp || Date.now());
+    const durationMs = null.getTime() - null.getTime();
+    const durationMinutes = Math.round(durationMs / (1000 * 60));
+
+    const participants = new Set(/* TODO: this.messages */?.map((m: unknown;
+    const topic = /* TODO: this.messages */?.[0]?.text.match(/"(.*?)"/)?.[1] || 'Unknown Topic';
+
+    return {
+      totalMessages: any,
+      participantCount: any,
+      duration: any,
+      topic
+    };
+  }
 }
 
+export const symposiumService = new SymposiumService();
+
+// Export stub functions for compatibility
+export const runSymposium = async (topic: any, agents: any
+  console.warn('runSymposium is stubbed - implement when needed');
+  return {
+    id: any,
+    topic,
+    messages: any,
+    participants: any
+  };
+};
+
 export const symposiumConfig = {
-  maxParticipants: 6,
-  summarizationAgentId: SUMMARIZATION_AGENT_ID,
-  topicRouting: {
-    'rpg': ['agent-az85', 'agent-az82'],
-    'technical': ['agent-codex', 'agent-architect'],
-    'strategic': ['agent-kairos', 'agent-sophia'],
-    'book': ['agent-az86', 'agent-az81'],
-    'market': ['agent-az82', 'agent-az84'],
-    'security': ['agent-erdu', 'agent-architect'],
-    'rules': ['agent-jordan', 'agent-sophia'],
-    'law': ['agent-jordan', 'agent-sophia'],
-    'price': ['agent-az84', 'agent-az82'],
-  }
+  maxParticipants: any,
+  sessionDuration: any, // minutes
+  defaultTopic: any
 };

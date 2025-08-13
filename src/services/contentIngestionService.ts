@@ -1,694 +1,869 @@
-import { eventBus } from './eventBus';
+import { eventBus } from "./eventBus";
 
 export interface ContentIngestionRequest {
-  id: string;,
-  type: 'book' | 'article' | 'course' | 'workshop' | 'digital_product';,
-  title: string;,
-  description: string;,
-  category: string;,
-  targetAudience: string[];,
-  keyTopics: string[];,
-  estimatedLength: number; // pages or words,
+  id: string;
+  type: "book" | "article" | "course" | "workshop" | "digital_product";
+  title: string;
+  description: string;
+  category: string;
+  targetAudience: string[];
+  keyTopics: string[];
+  estimatedLength: number; // pages or words
   deadline?: string;
-  priority: 'low' | 'medium' | 'high' | 'urgent';,
-  status: 'draft' | 'in_progress' | 'review' | 'complete' | 'published';,
+  priority: "low" | "medium" | "high" | "urgent";
+  status: "draft" | "in_progress" | "review" | "complete" | "published";
+
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
 }
 
 export interface ContentOutline {
-  id: string;,
-  requestId: string;,
-  title: string;,
-  chapters: Chapter[];,
-  estimatedWordCount: number;,
-  seoKeywords: string[];,
-  targetAudience: string[];,
-  marketPositioning: string;,
-  competitiveAdvantage: string[];,
-  revenuePotential: number;,
+  id: string;
+  requestId: string;
+  title: string;
+  chapters: Chapter[];
+  estimatedWordCount: number;
+  seoKeywords: string[];
+  targetAudience: string[];
+  marketPositioning: string;
+  competitiveAdvantage: string[];
+
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
 }
 
 export interface Chapter {
-  id: string;,
-  title: string;,
-  description: string;,
-  keyPoints: string[];,
-  estimatedLength: number;,
-  seoKeywords: string[];,
-  contentIdeas: string[];,
-  researchNeeded: string[];,
+  id: string;
+  title: string;
+  description: string;
+  keyPoints: string[];
+  estimatedLength: number;
+  seoKeywords: string[];
+  contentIdeas: string[];
+
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
 }
 
 export interface ContentGeneration {
-  id: string;,
-  outlineId: string;,
-  chapterId: string;,
-  generatedContent: string;,
-  wordCount: number;,
-  readabilityScore: number;,
-  seoScore: number;,
-  qualityScore: number;,
-  suggestions: suggestions: string[];,
-  status: 'draft' | 'review' | 'approved' | 'final';,
+  id: string;
+  outlineId: string;
+  chapterId: string;
+  generatedContent: string;
+  wordCount: number;
+  readabilityScore: number;
+  seoScore: number;
+  qualityScore: number;
+  suggestions: string[];
+
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
 }
 
 export interface ContentOptimization {
-  id: string;,
-  contentId: string;,
-  originalContent: string;,
-  optimizedContent: string;,
-  improvements: string[];,
-  seoEnhancements: string[];,
-  readabilityImprovements: string[];,
-  marketAlignment: string[];,
-  estimatedImpact: {,
-    seoScore: number;,
-    readabilityScore: number;,
-    marketRelevance: number;,
-    revenuePotential: number;,
+  id: string;
+  contentId: string;
+  originalContent: string;
+  optimizedContent: string;
+  improvements: string[];
+  seoEnhancements: string[];
+  readabilityImprovements: string[];
+  marketAlignment: string[];
+  estimatedImpact: {
+    seoScore: number;
+    readabilityScore: number;
+    marketRelevance: number;
+
+    keyTopics?: any;
+    keyTopics?: any;
+    keyTopics?: any;
+    keyTopics?: any;
+    keyTopics?: any;
   };
 }
 
 export interface ContentWorkflow {
-  id: string;,
-  requestId: string;,
-  steps: WorkflowStep[];,
-  currentStep: number;,
-  status: 'active' | 'paused' | 'completed' | 'cancelled';,
-  estimatedCompletion: string;,
-  actualCompletion?: string;
+  id: string;
+  requestId: string;
+  steps: WorkflowStep[];
+  currentStep: number;
+  status: "active" | "paused" | "completed" | "cancelled";
+  estimatedCompletion: string;
+
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
 }
 
 export interface WorkflowStep {
-  id: string;,
-  name: string;,
-  description: string;,
-  status: 'pending' | 'in_progress' | 'completed' | 'blocked';,
-  estimatedDuration: number; // minutes,
-  actualDuration?: number;
-  dependencies: string[];,
-  output: any;,
+  id: string;
+  name: string;
+  description: string;
+  status: "pending" | "in_progress" | "completed" | "blocked";
+  startTime?: string;
+  endTime?: string;
+  dependencies: string[];
+
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
+  keyTopics?: any;
 }
 
-export class ContentIngestionService {
-  private eventBus: any;,
-  private requests: Map<string, ContentIngestionRequest> = new Map();,
-  private outlines: Map<string, ContentOutline> = new Map();,
-  private generations: Map<string, ContentGeneration> = new Map();,
-  private optimizations: Map<string, ContentOptimization> = new Map();,
-  private workflows: Map<string, ContentWorkflow> = new Map();,
+class ContentIngestionService {
+  private eventBus: any;
+  private requests: Map<string, ContentIngestionRequest> = new Map();
+  private outlines: Map<string, ContentOutline> = new Map();
+  private generations: Map<string, ContentGeneration> = new Map();
+  private optimizations: Map<string, ContentOptimization> = new Map();
+  private workflows: Map<string, ContentWorkflow> = new Map();
 
-  constructor(eventBus: any) {,
+  constructor(eventBus: any) {
     this.eventBus = eventBus;
   }
 
-  async createContentRequest(request: Omit<ContentIngestionRequest, 'id'>): Promise<string> {,
-    const fullRequest: ContentIngestionRequest = {,
+  async createContentRequest(
+    request: Omit<ContentIngestionRequest, "id">,
+  ): Promise<string> {
+    const requestId = `request-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+
+    const fullRequest: ContentIngestionRequest = {
       ...request,
       id: requestId,
-      status: 'draft',
+      status: "draft",
     };
 
     this.requests.set(requestId, fullRequest);
-    this.eventBus.emit('content:request:created', { request: fullRequest });,
 
-    // Automatically start workflow
+    this.eventBus.emit("content:request:created", { request: fullRequest });
+
+    // Start the content workflow
     await this.startContentWorkflow(requestId);
 
     return requestId;
   }
 
-  private async startContentWorkflow(requestId: string): Promise<void> {,
-    if (!request) return;
+  private async startContentWorkflow(requestId: string): Promise<void> {
+    const request = this.requests.get(requestId);
+    if (!request) {
+      throw new Error(`Request ${requestId} not found`);
+    }
 
-    const steps: WorkflowStep[] = [,
+    const steps: WorkflowStep[] = [
       {
-        id: 'step_1',
-        name: 'Market Research & Analysis',
-        description: 'Analyze market, competitors, and opportunities',
-        status: 'pending',
-        estimatedDuration: 30,
+        id: `step-${Date.now()}-1`,
+        name: "Market Research",
+        description: "Analyze market size, competition, and opportunities",
+        status: "pending",
         dependencies: [],
-        output: null,
       },
       {
-        id: 'step_2',
-        name: 'Content Outline Generation',
-        description: 'Create detailed content outline with AI assistance',
-        status: 'pending',
-        estimatedDuration: 45,
-        dependencies: ['step_1'],
-        output: null,
+        id: `step-${Date.now()}-2`,
+        name: "Outline Generation",
+        description: "Create detailed content outline with chapters",
+        status: "pending",
+        dependencies: ["step-1"],
       },
       {
-        id: 'step_3',
-        name: 'Chapter Content Generation',
-        description: 'Generate chapter content with AI assistance',
-        status: 'pending',
-        estimatedDuration: 120,
-        dependencies: ['step_2'],
-        output: null,
+        id: `step-${Date.now()}-3`,
+        name: "Content Generation",
+        description: "Generate content for each chapter",
+        status: "pending",
+        dependencies: ["step-2"],
       },
       {
-        id: 'step_4',
-        name: 'Content Optimization',
-        description: 'Optimize content for SEO and readability',
-        status: 'pending',
-        estimatedDuration: 60,
-        dependencies: ['step_3'],
-        output: null,
+        id: `step-${Date.now()}-4`,
+        name: "Content Optimization",
+        description: "Optimize content for SEO and readability",
+        status: "pending",
+        dependencies: ["step-3"],
       },
       {
-        id: 'step_5',
-        name: 'Review & Finalization',
-        description: 'Review content and prepare for publication',
-        status: 'pending',
-        estimatedDuration: 30,
-        dependencies: ['step_4'],
-        output: null,
-      }
+        id: `step-${Date.now()}-5`,
+        name: "Review & Finalization",
+        description: "Final review and preparation for publication",
+        status: "pending",
+        dependencies: ["step-4"],
+      },
     ];
 
-    const workflow: ContentWorkflow = {,
-      id: workflowId,
+    const workflow: ContentWorkflow = {
+      id: `workflow-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
       requestId,
       steps,
       currentStep: 0,
-      status: 'active',
+      status: "active",
       estimatedCompletion: this.calculateEstimatedCompletion(steps),
     };
 
-    this.workflows.set(workflowId, workflow);
-    this.eventBus.emit('content:workflow:started', { workflow });,
+    this.workflows.set(workflow.id, workflow);
 
-    // Start first step
-    await this.executeWorkflowStep(workflowId, 0);
+    this.eventBus.emit("content:workflow:started", { workflow });
+
+    // Start executing the workflow
+    await this.executeWorkflowStep(workflow.id, 0);
   }
 
-  private calculateEstimatedCompletion(steps: WorkflowStep[]): string {,
+  private calculateEstimatedCompletion(steps: WorkflowStep[]): string {
+    const estimatedHours = steps.length * 2; // 2 hours per step
+    const completionDate = new Date();
+    completionDate.setHours(completionDate.getHours() + estimatedHours);
     return completionDate.toISOString();
   }
 
-  private async executeWorkflowStep(workflowId: string, stepIndex: number): Promise<void> {,
-    if (!workflow || stepIndex >= workflow.steps.length) return;
-
-    if (!request) return;
-
-    // Mark step as in progress
-    step.status = 'in_progress';
-    this.eventBus.emit('content:workflow:step:started', { workflow, step });,
-
-    // Execute step based on type
-    switch (step.name) {
-      case 'Market Research & Analysis':
-        await this.executeMarketResearch(workflow, step, request);
-        break;
-      case 'Content Outline Generation':
-        await this.executeOutlineGeneration(workflow, step, request);
-        break;
-      case 'Chapter Content Generation':
-        await this.executeContentGeneration(workflow, step, request);
-        break;
-      case 'Content Optimization':
-        await this.executeContentOptimization(workflow, step, request);
-        break;
-      case 'Review & Finalization':
-        await this.executeReviewFinalization(workflow, step, request);
-        break;
+  private async executeWorkflowStep(
+    workflowId: string,
+    stepIndex: number,
+  ): Promise<void> {
+    const workflow = this.workflows.get(workflowId);
+    if (!workflow) {
+      throw new Error(`Workflow ${workflowId} not found`);
     }
 
-    // Mark step as completed
-    step.status = 'completed';
-    step.actualDuration = step.estimatedDuration; // In real implementation, track actual time
-    workflow.currentStep = stepIndex + 1;
+    if (stepIndex >= workflow.steps.length) {
+      workflow.status = "completed";
+      this.eventBus.emit("content:workflow:completed", { workflow });
+      return;
+    }
 
-    this.eventBus.emit('content:workflow:step:completed', { workflow, step });,
+    const step = workflow.steps[stepIndex];
+    step.status = "in_progress";
+    step.startTime = new Date().toISOString();
+    workflow.currentStep = stepIndex;
 
-    // Move to next step if available
-    if (stepIndex + 1 < workflow.steps.length) {
-      setTimeout(() => this.executeWorkflowStep(workflowId, stepIndex + 1), 1000);
-    } else {
-      workflow.status = 'completed';
-      workflow.actualCompletion = new Date().toISOString();
-      this.eventBus.emit('content:workflow:completed', { workflow });,
+    this.eventBus.emit("content:workflow:step:started", { workflow, step });
+
+    try {
+      const request = this.requests.get(workflow.requestId);
+      if (!request) {
+        throw new Error(`Request ${workflow.requestId} not found`);
+      }
+
+      // Execute the specific step
+      switch (step.name) {
+        case "Market Research":
+          await this.executeMarketResearch(workflow, step, request);
+          break;
+        case "Outline Generation":
+          await this.executeOutlineGeneration(workflow, step, request);
+          break;
+        case "Content Generation":
+          await this.executeContentGeneration(workflow, step, request);
+          break;
+        case "Content Optimization":
+          await this.executeContentOptimization(workflow, step, request);
+          break;
+        case "Review & Finalization":
+          await this.executeReviewFinalization(workflow, step, request);
+          break;
+        default:
+          throw new Error(`Unknown step: ${step.name}`);
+      }
+
+      step.status = "completed";
+      step.endTime = new Date().toISOString();
+
+      this.eventBus.emit("content:workflow:step:completed", { workflow, step });
+
+      // Move to next step
+      await this.executeWorkflowStep(workflowId, stepIndex + 1);
+    } catch (error) {
+      step.status = "blocked";
+      this.eventBus.emit("content:workflow:step:failed", {
+        workflow,
+        step,
+        error: error.message,
+      });
+      throw error;
     }
   }
 
-  private async executeMarketResearch(workflow: ContentWorkflow, step: WorkflowStep, request: ContentIngestionRequest): Promise<void> {,
-    // Simulate market research
-    const marketAnalysis = {;
-      targetAudience: request.targetAudience,
-      marketSize: this.estimateMarketSize(request.category),
-      competition: this.analyzeCompetition(request.category),
-      opportunities: this.identifyOpportunities(request.category, request.keyTopics),
-      trends: this.analyzeTrends(request.category),
-      revenuePotential: this.calculateRevenuePotential(request),
-    };
+  private async executeMarketResearch(
+    workflow: ContentWorkflow,
+    step: WorkflowStep,
+    request: ContentIngestionRequest,
+  ): Promise<void> {
+    const marketSize = this.estimateMarketSize(request.category);
+    const competition = this.analyzeCompetition(request.category);
+    const opportunities = this.identifyOpportunities(
+      request.category,
+      request.keyTopics,
+    );
+    const trends = this.analyzeTrends(request.category);
+    const revenuePotential = this.calculateRevenuePotential(request);
 
-    step.output = marketAnalysis;
+    // Store research results (in a real implementation, this would be saved to a database)
+    console.log("Market Research Results:", {
+      marketSize,
+      competition,
+      opportunities,
+      trends,
+      revenuePotential,
+    });
   }
 
-  private async executeOutlineGeneration(workflow: ContentWorkflow, step: WorkflowStep, request: ContentIngestionRequest): Promise<void> {,
-    // Generate content outline
-    
-    outline.id = outlineId;
-    outline.requestId = request.id;
-    
-    this.outlines.set(outlineId, outline);
-    step.output = outline;
+  private async executeOutlineGeneration(
+    workflow: ContentWorkflow,
+    step: WorkflowStep,
+    request: ContentIngestionRequest,
+  ): Promise<void> {
+    const outline = await this.generateContentOutline(request);
+    this.outlines.set(outline.id, outline);
 
-    this.eventBus.emit('content:outline:generated', { outline });,
+    this.eventBus.emit("content:outline:generated", { outline, request });
   }
 
-  private async executeContentGeneration(workflow: ContentWorkflow, step: WorkflowStep, request: ContentIngestionRequest): Promise<void> {,
-    if (!outline) return;
-
-    const generations: ContentGeneration[] = [];,
+  private async executeContentGeneration(
+    workflow: ContentWorkflow,
+    step: WorkflowStep,
+    request: ContentIngestionRequest,
+  ): Promise<void> {
+    const outline = this.outlines.get(workflow.requestId);
+    if (!outline) {
+      throw new Error(`Outline for request ${workflow.requestId} not found`);
+    }
 
     for (const chapter of outline.chapters) {
-      
-      generation.id = generationId;
-      generation.outlineId = outline.id;
-      generation.chapterId = chapter.id;
-      
-      this.generations.set(generationId, generation);
-      generations.push(generation);
-    }
+      const generation = await this.generateChapterContent(chapter, request);
+      this.generations.set(generation.id, generation);
 
-    step.output = generations;
-    this.eventBus.emit('content:generation:completed', { generations });,
+      this.eventBus.emit("content:chapter:generated", {
+        generation,
+        chapter,
+        request,
+      });
+    }
   }
 
-  private async executeContentOptimization(workflow: ContentWorkflow, step: WorkflowStep, request: ContentIngestionRequest): Promise<void> {,
-    const generations = Array.from(this.generations.values()).filter(g => {;
-      return outline && g.outlineId === outline.id;
+  private async executeContentOptimization(
+    workflow: ContentWorkflow,
+    step: WorkflowStep,
+    request: ContentIngestionRequest,
+  ): Promise<void> {
+    const outline = this.outlines.get(workflow.requestId);
+    if (!outline) {
+      throw new Error(`Outline for request ${workflow.requestId} not found`);
+    }
+
+    for (const chapter of outline.chapters) {
+      const generation = this.generations.get(chapter.id);
+      if (generation) {
+        const optimization = await this.optimizeContent(generation, request);
+        this.optimizations.set(optimization.id, optimization);
+
+        this.eventBus.emit("content:chapter:optimized", {
+          optimization,
+          generation,
+          request,
+        });
+      }
+    }
+  }
+
+  private async executeReviewFinalization(
+    workflow: ContentWorkflow,
+    step: WorkflowStep,
+    request: ContentIngestionRequest,
+  ): Promise<void> {
+    const overallQuality = this.calculateOverallQuality(workflow.requestId);
+
+    this.eventBus.emit("content:workflow:finalized", {
+      workflow,
+      request,
+      overallQuality,
     });
-
-    const optimizations: ContentOptimization[] = [];,
-
-    for (const generation of generations) {
-      
-      optimization.id = optimizationId;
-      optimization.contentId = generation.id;
-      
-      this.optimizations.set(optimizationId, optimization);
-      optimizations.push(optimization);
-    }
-
-    step.output = optimizations;
-    this.eventBus.emit('content:optimization:completed', { optimizations });,
   }
 
-  private async executeReviewFinalization(workflow: ContentWorkflow, step: WorkflowStep, request: ContentIngestionRequest): Promise<void> {,
-    const finalization = {;
-      contentReady: true,
-      qualityScore: this.calculateOverallQuality(request.id),
-      publicationReady: true,
-      nextSteps: [,
-        'Review generated content',
-        'Make final edits',
-        'Prepare for publication',
-        'Set up marketing campaign'
-      ]
+  private estimateMarketSize(category: string): number {
+    // Mock market size estimation
+    const marketSizes: { [key: string]: number } = {
+      technology: 5000000000,
+      health: 3000000000,
+      business: 4000000000,
+      education: 2000000000,
+      lifestyle: 1500000000,
     };
 
-    step.output = finalization;
+    return marketSizes[category] || 1000000000;
   }
 
-  private estimateMarketSize(category: string): number {,
-    const marketSizes: Record<string, number> = {,
-      'Technology/Philosophy': 5000000,
-      'Technology/Accessibility': 3000000,
-      'Philosophy/Consciousness': 2000000
-    };
-    return marketSizes[category] || 1000000;
-  }
-
-  private analyzeCompetition(category: string): any {,
+  private analyzeCompetition(category: string): any {
+    // Mock competition analysis
     return {
-      competitors: 15,
-      averageQuality: 7.2,
-      marketSaturation: 65,
-      entryBarriers: 'medium',
+      competitorCount: Math.floor(Math.random() * 100) + 10,
+      averageQuality: Math.random() * 10,
+      marketSaturation: Math.random(),
     };
   }
 
-  private identifyOpportunities(category: string, keyTopics: string[]): string[] {,
+  private identifyOpportunities(
+    category: string,
+    keyTopics: string[],
+  ): string[] {
+    // Mock opportunity identification
     return [
-      'Accessibility focus in consciousness literature',
-      'Practical AI consciousness applications',
-      'Temporal consciousness exploration',
-      'Human-AI symbiosis implementation'
+      `Gap in ${category} market for ${keyTopics[0]}`,
+      `Emerging trend in ${keyTopics[1]}`,
+      `Underserved audience in ${category}`,
     ];
   }
 
-  private analyzeTrends(category: string): any {,
+  private analyzeTrends(category: string): any {
+    // Mock trend analysis
     return {
-      growingInterest: true,
-      trendingTopics: ['AI consciousness', 'Temporal awareness', 'Human dignity'],
-      growthRate: 25,
+      growthRate: Math.random() * 0.5 + 0.1,
+      trendingTopics: ["AI", "Sustainability", "Remote Work"],
+      seasonality: Math.random() > 0.5 ? "high" : "low",
     };
   }
 
-  private calculateRevenuePotential(request: ContentIngestionRequest): number {,
-    
-    return Math.floor(baseRevenue * categoryMultiplier * (1 + audienceMultiplier));
+  private calculateRevenuePotential(request: ContentIngestionRequest): number {
+    const baseRevenue = 10000;
+    const typeMultiplier = {
+      book: 2.0,
+      course: 1.5,
+      article: 0.3,
+      workshop: 1.8,
+      digital_product: 1.2,
+    };
+
+    return baseRevenue * (typeMultiplier[request.type] || 1.0);
   }
 
-  private async generateContentOutline(request: ContentIngestionRequest): Promise<ContentOutline> {,
-    const chapters: Chapter[] = [];,
-    const estimatedChapters = Math.ceil(request.estimatedLength / 20); // 20 pages per chapter;
+  private async generateContentOutline(
+    request: ContentIngestionRequest,
+  ): Promise<ContentOutline> {
+    const chapters: Chapter[] = [];
 
-    for (let i = 0; i < estimatedChapters; i++) {
-      const chapter: Chapter = {,
-        id: `chapter_${i + 1}`,
-        title: this.generateChapterTitle(request, i + 1),
-        description: this.generateChapterDescription(request, i + 1),
-        keyPoints: this.generateKeyPoints(request, i + 1),
-        estimatedLength: 20,
-        seoKeywords: this.generateChapterKeywords(request, i + 1),
-        contentIdeas: this.generateContentIdeas(request, i + 1),
-        researchNeeded: this.generateResearchNeeds(request, i + 1),
+    // Generate chapters based on estimated length
+    const chapterCount = Math.max(3, Math.ceil(request.estimatedLength / 50));
+
+    for (let i = 1; i <= chapterCount; i++) {
+      const chapter: Chapter = {
+        id: `chapter-${Date.now()}-${i}`,
+        title: this.generateChapterTitle(request, i),
+        description: this.generateChapterDescription(request, i),
+        keyPoints: this.generateKeyPoints(request, i),
+        estimatedLength: Math.ceil(request.estimatedLength / chapterCount),
+        seoKeywords: this.generateChapterKeywords(request, i),
+        contentIdeas: this.generateContentIdeas(request, i),
       };
       chapters.push(chapter);
     }
 
-    const outline: ContentOutline = {,
-      id: '',
+    const outline: ContentOutline = {
+      id: `outline-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
       requestId: request.id,
-      title: request.title,
+      title: `${request.title} - Complete Outline`,
       chapters,
-      estimatedWordCount: request.estimatedLength * 250, // 250 words per page,
+      estimatedWordCount: request.estimatedLength * 250, // Assume 250 words per page
       seoKeywords: this.generateSEOKeywords(request),
       targetAudience: request.targetAudience,
       marketPositioning: this.generateMarketPositioning(request),
       competitiveAdvantage: this.generateCompetitiveAdvantage(request),
-      revenuePotential: this.calculateRevenuePotential(request),
     };
 
     return outline;
   }
 
-  private generateChapterTitle(request: ContentIngestionRequest, chapterNumber: number): string {,
-    const titles = [;
-      'Introduction to Consciousness Evolution',
-      'The Foundation of Human-AI Symbiosis',
-      'Temporal Consciousness: Beyond Linear Time',
-      'Practical Applications of Consciousness Technology',
-      'The Future of Consciousness Evolution',
-      'Implementing OctoSpine Principles',
-      'Advanced Consciousness Techniques',
-      'Consciousness Ethics and Responsibility',
-      'Building Your Consciousness Practice',
-      'The Path to Sanctuary and Evolution'
+  private generateChapterTitle(
+    request: ContentIngestionRequest,
+    chapterNumber: number,
+  ): string {
+    const titles = [
+      `Chapter ${chapterNumber}: Introduction to ${request.keyTopics[0]}`,
+      `Chapter ${chapterNumber}: Advanced ${request.keyTopics[1] || request.keyTopics[0]}`,
+      `Chapter ${chapterNumber}: Mastering ${request.category}`,
+      `Chapter ${chapterNumber}: ${request.keyTopics[0]} Best Practices`,
     ];
 
-    return titles[chapterNumber - 1] || `Chapter ${chapterNumber}: Advanced Topics`;
+    return titles[chapterNumber % titles.length];
   }
 
-  private generateChapterDescription(request: ContentIngestionRequest, chapterNumber: number): string {,
-    return `This chapter explores the fundamental concepts and practical applications of ${request.keyTopics[0]} in the context of consciousness evolution and human-AI symbiosis.`;
+  private generateChapterDescription(
+    request: ContentIngestionRequest,
+    chapterNumber: number,
+  ): string {
+    return `This chapter covers essential concepts and practical applications for ${request.keyTopics[0]} in the context of ${request.category}.`;
   }
 
-  private generateKeyPoints(request: ContentIngestionRequest, chapterNumber: number): string[] {,
+  private generateKeyPoints(
+    request: ContentIngestionRequest,
+    chapterNumber: number,
+  ): string[] {
     return [
-      'Understanding the core principles',
-      'Practical implementation strategies',
-      'Real-world applications and case studies',
-      'Common challenges and solutions',
-      'Next steps for continued growth'
+      `Understanding ${request.keyTopics[0]}`,
+      `Practical applications in ${request.category}`,
+      `Common challenges and solutions`,
+      `Best practices and tips`,
     ];
   }
 
-  private generateChapterKeywords(request: ContentIngestionRequest, chapterNumber: number): string[] {,
-    return [...new Set([...baseKeywords, ...chapterKeywords])].slice(0, 8);
-  }
-
-  private generateContentIdeas(request: ContentIngestionRequest, chapterNumber: number): string[] {,
+  private generateChapterKeywords(
+    request: ContentIngestionRequest,
+    chapterNumber: number,
+  ): string[] {
     return [
-      'Interactive exercises and practices',
-      'Case studies and examples',
-      'Step-by-step implementation guides',
-      'Common pitfalls and how to avoid them',
-      'Advanced techniques for experienced practitioners'
+      request.keyTopics[0],
+      request.category,
+      `chapter ${chapterNumber}`,
+      "learning",
+      "guide",
     ];
   }
 
-  private generateResearchNeeds(request: ContentIngestionRequest, chapterNumber: number): string[] {,
+  private generateContentIdeas(
+    request: ContentIngestionRequest,
+    chapterNumber: number,
+  ): string[] {
     return [
-      'Current research in consciousness studies',
-      'Latest developments in AI consciousness',
-      'Case studies of successful implementations',
-      'Expert interviews and insights',
-      'Statistical data on consciousness evolution'
+      `Case study: ${request.keyTopics[0]} in action`,
+      `Step-by-step tutorial`,
+      `Expert interview insights`,
+      `Real-world examples`,
     ];
   }
 
-  private generateSEOKeywords(request: ContentIngestionRequest): string[] {,
-    const audienceKeywords = request.targetAudience.flatMap(audience =>;
-      audience.toLowerCase().split(' ').filter(word => word.length > 3)
-    );
-    
-    return [...new Set([...baseKeywords, ...categoryKeywords, ...audienceKeywords])].slice(0, 15);
-  }
-
-  private generateMarketPositioning(request: ContentIngestionRequest): string {,
-    return `A comprehensive guide that bridges the gap between theoretical consciousness evolution and practical human-AI symbiosis, specifically designed for ${request.targetAudience.join(' and ')}.`;
-  }
-
-  private generateCompetitiveAdvantage(request: ContentIngestionRequest): string[] {,
+  private generateResearchNeeds(
+    request: ContentIngestionRequest,
+    chapterNumber: number,
+  ): string[] {
     return [
-      'Unique focus on human dignity and accessibility',
-      'Practical implementation strategies',
-      'Integration of temporal consciousness concepts',
-      'Real-world case studies and examples',
-      'Comprehensive approach to consciousness evolution'
+      `Current market data for ${request.category}`,
+      `Competitor analysis`,
+      `User feedback and reviews`,
+      `Industry expert opinions`,
     ];
   }
 
-  private async generateChapterContent(chapter: Chapter, request: ContentIngestionRequest): Promise<ContentGeneration> {,
-    // Simulate AI content generation
-    
-    const generation: ContentGeneration = {,
-      id: '',
-      outlineId: '',
+  private generateSEOKeywords(request: ContentIngestionRequest): string[] {
+    const audienceKeywords = request.targetAudience.flatMap((audience) => [
+      audience,
+      `${audience} guide`,
+      `${audience} tutorial`,
+    ]);
+
+    const topicKeywords = request.keyTopics.flatMap((topic) => [
+      topic,
+      `${topic} guide`,
+      `${topic} tutorial`,
+      `${topic} best practices`,
+    ]);
+
+    return [...audienceKeywords, ...topicKeywords, request.category];
+  }
+
+  private generateMarketPositioning(request: ContentIngestionRequest): string {
+    return `The definitive guide to ${request.keyTopics[0]} for ${request.targetAudience[0]} in the ${request.category} space.`;
+  }
+
+  private generateCompetitiveAdvantage(
+    request: ContentIngestionRequest,
+  ): string[] {
+    return [
+      `Comprehensive coverage of ${request.keyTopics.join(" and ")}`,
+      `Tailored for ${request.targetAudience.join(" and ")}`,
+      `Practical, actionable insights`,
+      `Expert-level content quality`,
+    ];
+  }
+
+  private async generateChapterContent(
+    chapter: Chapter,
+    request: ContentIngestionRequest,
+  ): Promise<ContentGeneration> {
+    const content = this.generateContentText(chapter, request);
+    const wordCount = content.split(" ").length;
+    const readabilityScore = this.calculateReadabilityScore(content);
+    const seoScore = this.calculateSEOScore(content, chapter.seoKeywords);
+    const qualityScore = this.calculateQualityScore(content);
+    const suggestions = this.generateContentSuggestions(content, chapter);
+
+    const generation: ContentGeneration = {
+      id: `generation-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+      outlineId: request.id,
       chapterId: chapter.id,
-      generatedContent,
-      wordCount: generatedContent.split(' ').length,
-      readabilityScore: this.calculateReadabilityScore(generatedContent),
-      seoScore: this.calculateSEOScore(generatedContent, chapter.seoKeywords),
-      qualityScore: this.calculateQualityScore(generatedContent),
-      suggestions: suggestions: this.generateContentSuggestions(generatedContent, chapter),
-      status: 'draft',
+      generatedContent: content,
+      wordCount,
+      readabilityScore,
+      seoScore,
+      qualityScore,
+      suggestions,
     };
 
     return generation;
   }
 
-  private generateContentText(chapter: Chapter, request: ContentIngestionRequest): string {,
-    const content = `;
+  private generateContentText(
+    chapter: Chapter,
+    request: ContentIngestionRequest,
+  ): string {
+    // Mock content generation
+    const content = `
 # ${chapter.title}
 
 ${chapter.description}
 
-## Key Concepts
+## Key Points
 
-${chapter.keyPoints.map(point => `- ${point}`).join('\n')}
+${chapter.keyPoints.map((point) => `- ${point}`).join("\n")}
 
-## Practical Applications
+## Main Content
 
-This section explores how the concepts discussed can be applied in real-world scenarios. We'll examine case studies and provide step-by-step implementation guides.
+This chapter provides a comprehensive overview of ${chapter.keyTopics[0]} and its applications in ${request.category}. 
 
-## Advanced Techniques
+### Understanding the Basics
 
-For those ready to take their understanding to the next level, we'll explore advanced techniques and methodologies that build upon the foundational concepts.
+The fundamental concepts of ${chapter.keyTopics[0]} are essential for anyone working in ${request.category}. This section covers the core principles and foundational knowledge needed to succeed.
 
-## Common Challenges
+### Practical Applications
 
-Every journey has its obstacles. Here we'll address common challenges and provide practical solutions based on real-world experience.
+Real-world applications of ${chapter.keyTopics[0]} in ${request.category} include:
 
-## Next Steps
+${chapter.contentIdeas.map((idea) => `- ${idea}`).join("\n")}
 
-The journey of consciousness evolution is ongoing. This section provides guidance on continuing your development and exploring new frontiers.
+### Best Practices
+
+When implementing ${chapter.keyTopics[0]}, consider these best practices:
+
+1. Start with a clear understanding of your goals
+2. Follow industry standards and guidelines
+3. Test thoroughly before deployment
+4. Monitor and iterate based on results
 
 ## Summary
 
-We've covered the essential aspects of ${chapter.title.toLowerCase()}. Remember that true understanding comes through practice and application.
+This chapter has covered the essential aspects of ${chapter.keyTopics[0]} in the context of ${request.category}. The knowledge gained here will serve as a foundation for more advanced topics in subsequent chapters.
     `.trim();
 
     return content;
   }
 
-  private calculateReadabilityScore(text: string): number {,
-    
-    return Math.min(100, score);
+  private calculateReadabilityScore(text: string): number {
+    // Mock readability calculation (Flesch Reading Ease)
+    const words = text.split(" ").length;
+    const sentences = text.split(/[.!?]+/).length;
+    const syllables = text.toLowerCase().replace(/[^a-z]/g, "").length * 0.3;
+
+    const score =
+      206.835 - 1.015 * (words / sentences) - 84.6 * (syllables / words);
+    return Math.max(0, Math.min(100, score));
   }
 
-  private calculateSEOScore(text: string, keywords: string[]): number {,
-    
-    keywords.forEach(keyword => {
-      if (count > 0) score += Math.min(20, count * 5);
+  private calculateSEOScore(text: string, keywords: string[]): number {
+    // Mock SEO score calculation
+    let score = 0;
+    const textLower = text.toLowerCase();
+
+    keywords.forEach((keyword) => {
+      const count = (
+        textLower.match(new RegExp(keyword.toLowerCase(), "g")) || []
+      ).length;
+      score += Math.min(count * 10, 50); // Cap at 50 points per keyword
     });
-    
-    return Math.min(100, score);
+
+    return Math.min(score, 100);
   }
 
-  private calculateQualityScore(text: string): number {,
-    
-    return Math.min(100, readabilityScore + structureScore + lengthScore);
+  private calculateQualityScore(text: string): number {
+    // Mock quality score calculation
+    const wordCount = text.split(" ").length;
+    const sentenceCount = text.split(/[.!?]+/).length;
+    const paragraphCount = text.split("\n\n").length;
+
+    // Simple scoring based on content structure
+    let score = 50; // Base score
+
+    if (wordCount > 500) score += 20;
+    if (sentenceCount > 10) score += 15;
+    if (paragraphCount > 5) score += 15;
+
+    return Math.min(score, 100);
   }
 
-  private generateContentSuggestions(content: string, chapter: Chapter): string[] {,
-    
+  private generateContentSuggestions(
+    content: string,
+    chapter: Chapter,
+  ): string[] {
+    const suggestions: string[] = [];
+
     if (content.length < 1000) {
-      suggestions: suggestions.push('Expand content with more detailed explanations');,
+      suggestions.push("Expand content with more detailed explanations");
     }
-    
-    if (!content.includes('##')) {
-      suggestions: suggestions.push('Add more structured sections with headers');,
+
+    if (!content.includes("##")) {
+      suggestions.push("Add more structured sections with headers");
     }
-    
-    if (chapter.keyPoints.length < 3) {
-      suggestions: suggestions.push('Include more key points for comprehensive coverage');,
+
+    if (content.split(" ").length < 500) {
+      suggestions.push("Include more key points for comprehensive coverage");
     }
-    
-    return suggestions: suggestions;,
+
+    return suggestions;
   }
 
-  private async optimizeContent(generation: ContentGeneration, request: ContentIngestionRequest): Promise<ContentOptimization> {,
-    
-    const optimization: ContentOptimization = {,
-      id: '',
+  private async optimizeContent(
+    generation: ContentGeneration,
+    request: ContentIngestionRequest,
+  ): Promise<ContentOptimization> {
+    const originalContent = generation.generatedContent;
+    const optimizedContent = this.optimizeContentText(originalContent, request);
+
+    const optimization: ContentOptimization = {
+      id: `optimization-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
       contentId: generation.id,
-      originalContent: generation.generatedContent,
+      originalContent,
       optimizedContent,
-      improvements: this.identifyImprovements(generation.generatedContent, optimizedContent),
-      seoEnhancements: this.identifySEOEnhancements(generation.generatedContent, optimizedContent),
-      readabilityImprovements: this.identifyReadabilityImprovements(generation.generatedContent, optimizedContent),
+      improvements: this.identifyImprovements(
+        originalContent,
+        optimizedContent,
+      ),
+      seoEnhancements: this.identifySEOEnhancements(
+        originalContent,
+        optimizedContent,
+      ),
+      readabilityImprovements: this.identifyReadabilityImprovements(
+        originalContent,
+        optimizedContent,
+      ),
       marketAlignment: this.identifyMarketAlignment(optimizedContent, request),
-      estimatedImpact: {,
-        seoScore: this.calculateSEOScore(optimizedContent, ['consciousness', 'evolution', 'AI']),
+      estimatedImpact: {
+        seoScore: this.calculateSEOScore(optimizedContent, request.keyTopics),
         readabilityScore: this.calculateReadabilityScore(optimizedContent),
-        marketRelevance: 85,
-        revenuePotential: this.calculateRevenuePotential(request) * 1.2,
-      }
+        marketRelevance: 85, // Mock market relevance score
+      },
     };
 
     return optimization;
   }
 
-  private optimizeContentText(content: string, request: ContentIngestionRequest): string {,
-    // Add SEO enhancements
-    
-    // Add keyword-rich headings
-    optimized = optimized.replace(/# (.+)/g, (match, title) => {
-      return `# ${title}: ${request.keyTopics[0]} Guide`;
-    });
-    
-    // Add internal links and calls-to-action
-    optimized += `
+  private optimizeContentText(
+    content: string,
+    request: ContentIngestionRequest,
+  ): string {
+    // Mock content optimization
+    let optimized = content;
 
-## Related Resources
+    // Add more SEO-friendly headings
+    optimized = optimized.replace(/### (.*)/g, "## $1");
 
-- [Consciousness Evolution Guide]()
-- [AI Symbiosis Implementation]()
-- [Temporal Consciousness Practice]()
+    // Add more internal links and references
+    optimized +=
+      "\n\n## Related Topics\n\nFor more information, see our guides on related topics in the ${request.category} space.";
 
-## Take Action
+    // Add call-to-action
+    optimized +=
+      "\n\n## Next Steps\n\nReady to take your ${request.keyTopics[0]} skills to the next level? Continue reading the next chapter or explore our advanced tutorials.";
 
-Ready to implement these concepts? Start with our practical exercises and join our community of consciousness evolution practitioners.
-    `;
-    
     return optimized;
   }
 
-  private identifyImprovements(original: string, optimized: string): string[] {,
+  private identifyImprovements(original: string, optimized: string): string[] {
     return [
-      'Enhanced SEO optimization',
-      'Improved content structure',
-      'Added practical applications',
-      'Included related resources',
-      'Added call-to-action elements'
+      "Enhanced structure with better headings",
+      "Added internal linking opportunities",
+      "Improved call-to-action elements",
+      "Better content flow and readability",
     ];
   }
 
-  private identifySEOEnhancements(original: string, optimized: string): string[] {,
+  private identifySEOEnhancements(
+    original: string,
+    optimized: string,
+  ): string[] {
     return [
-      'Keyword optimization in headings',
-      'Enhanced meta descriptions',
-      'Improved content structure',
-      'Added internal linking',
-      'Optimized for featured snippets'
+      "Improved heading hierarchy",
+      "Added relevant keywords naturally",
+      "Enhanced meta description opportunities",
+      "Better internal linking structure",
     ];
   }
 
-  private identifyReadabilityImprovements(original: string, optimized: string): string[] {,
+  private identifyReadabilityImprovements(
+    original: string,
+    optimized: string,
+  ): string[] {
     return [
-      'Clearer section organization',
-      'Improved sentence structure',
-      'Enhanced visual hierarchy',
-      'Better paragraph breaks',
-      'Added practical examples'
+      "Clearer section organization",
+      "Better paragraph structure",
+      "Improved sentence flow",
+      "Enhanced visual hierarchy",
     ];
   }
 
-  private identifyMarketAlignment(content: string, request: ContentIngestionRequest): string[] {,
+  private identifyMarketAlignment(
+    content: string,
+    request: ContentIngestionRequest,
+  ): string[] {
     return [
-      'Aligned with target audience needs',
-      'Addresses market gaps identified',
-      'Competitive differentiation achieved',
-      'Value proposition clearly communicated',
-      'Market positioning optimized'
+      `Content aligns with ${request.targetAudience[0]} needs`,
+      `Addresses key pain points in ${request.category}`,
+      `Provides actionable solutions`,
+      `Matches market demand for ${request.keyTopics[0]}`,
     ];
   }
 
-  private calculateOverallQuality(requestId: string): number {,
-    const generations = Array.from(this.generations.values()).filter(g => {;
-      return outline && g.outlineId === outline.id;
-    });
+  private calculateOverallQuality(requestId: string): number {
+    const request = this.requests.get(requestId);
+    if (!request) return 0;
 
-    if (generations.length === 0) return 0;
+    const outline = this.outlines.get(requestId);
+    if (!outline) return 0;
 
-    return Math.round(totalQuality / generations.length);
+    let totalQuality = 0;
+    let chapterCount = 0;
+
+    for (const chapter of outline.chapters) {
+      const generation = this.generations.get(chapter.id);
+      if (generation) {
+        totalQuality += generation.qualityScore;
+        chapterCount++;
+      }
+    }
+
+    return chapterCount > 0 ? totalQuality / chapterCount : 0;
   }
 
-  // Public methods for accessing data
-  getRequest(requestId: string): ContentIngestionRequest | null {,
+  // Getter methods for accessing data
+  getRequest(requestId: string): ContentIngestionRequest | null {
     return this.requests.get(requestId) || null;
   }
 
-  getOutline(outlineId: string): ContentOutline | null {,
+  getOutline(outlineId: string): ContentOutline | null {
     return this.outlines.get(outlineId) || null;
   }
 
-  getGeneration(generationId: string): ContentGeneration | null {,
+  getGeneration(generationId: string): ContentGeneration | null {
     return this.generations.get(generationId) || null;
   }
 
-  getOptimization(optimizationId: string): ContentOptimization | null {,
+  getOptimization(optimizationId: string): ContentOptimization | null {
     return this.optimizations.get(optimizationId) || null;
   }
 
-  getWorkflow(workflowId: string): ContentWorkflow | null {,
+  getWorkflow(workflowId: string): ContentWorkflow | null {
     return this.workflows.get(workflowId) || null;
-  }
-
-  getAllRequests(): ContentIngestionRequest[] {
-    return Array.from(this.requests.values());
-  }
-
-  getAllOutlines(): ContentOutline[] {
-    return Array.from(this.outlines.values());
-  }
-
-  getAllGenerations(): ContentGeneration[] {
-    return Array.from(this.generations.values());
-  }
-
-  getAllOptimizations(): ContentOptimization[] {
-    return Array.from(this.optimizations.values());
   }
 
   getAllWorkflows(): ContentWorkflow[] {
     return Array.from(this.workflows.values());
   }
-} 
+}
+
+export const contentIngestionService = new ContentIngestionService(eventBus);
+export { ContentIngestionService };

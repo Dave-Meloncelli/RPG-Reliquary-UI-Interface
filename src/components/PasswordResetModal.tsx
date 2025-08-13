@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 interface PasswordResetModalProps {
   isOpen: boolean;
@@ -6,16 +6,16 @@ interface PasswordResetModalProps {
   onResetSuccess: () => void;
 }
 
-export const PasswordResetModal: React.FC<PasswordResetModalProps> = ({ 
-  isOpen, 
-  onClose, 
-  onResetSuccess 
+export const PasswordResetModal: React.FC<PasswordResetModalProps> = ({
+  isOpen,
+  onClose,
+  onResetSuccess,
 }) => {
-  const [step, setStep] = useState<'request' | 'confirm'>('request');
-  const [email, setEmail] = useState('');
-  const [token, setToken] = useState('');
-  const [newPassword, setNewPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [step, setStep] = useState<"request" | "confirm">("request");
+  const [email, setEmail] = useState("");
+  const [token, setToken] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
@@ -26,23 +26,25 @@ export const PasswordResetModal: React.FC<PasswordResetModalProps> = ({
     setError(null);
 
     try {
-      const response = await fetch('/api/auth/reset-password-request', {
-        method: 'POST',
+      const response = await fetch("/api/auth/reset-password-request", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ email }),
       });
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.detail || 'Failed to send reset email');
+        throw new Error(errorData.detail || "Failed to send reset email");
       }
 
-      setSuccess('Password reset email sent. Please check your inbox.');
-      setStep('confirm');
+      setSuccess("Password reset email sent. Please check your inbox.");
+      setStep("confirm");
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to send reset email');
+      setError(
+        err instanceof Error ? err.message : "Failed to send reset email",
+      );
     } finally {
       setIsLoading(false);
     }
@@ -54,56 +56,63 @@ export const PasswordResetModal: React.FC<PasswordResetModalProps> = ({
     setError(null);
 
     if (newPassword !== confirmPassword) {
-      setError('Passwords do not match');
+      setError("Passwords do not match");
       setIsLoading(false);
       return;
     }
 
     // Validate password strength
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/;
+    const passwordRegex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/;
     if (!passwordRegex.test(newPassword)) {
-      setError('Password must be at least 8 characters long and contain uppercase, lowercase, digit, and special character');
+      setError(
+        "Password must be at least 8 characters long and contain uppercase, lowercase, digit, and special character",
+      );
       setIsLoading(false);
       return;
     }
 
     try {
-      const response = await fetch('/api/auth/reset-password-confirm', {
-        method: 'POST',
+      const response = await fetch("/api/auth/reset-password-confirm", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ 
-          token, 
-          new_password: newPassword 
+        body: JSON.stringify({
+          token,
+          new_password: newPassword,
         }),
       });
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.detail || 'Failed to reset password');
+        throw new Error(errorData.detail || "Failed to reset password");
       }
 
-      setSuccess('Password reset successfully! You can now log in with your new password.');
+      setSuccess(
+        "Password reset successfully! You can now log in with your new password.",
+      );
       setTimeout(() => {
         onResetSuccess();
         onClose();
       }, 2000);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to reset password');
+      setError(err instanceof Error ? err.message : "Failed to reset password");
     } finally {
       setIsLoading(false);
     }
   };
 
   const validateForm = () => {
-    if (step === 'request') {
-      return email.trim() && email.includes('@');
+    if (step === "request") {
+      return email.trim() && email.includes("@");
     } else {
-      return token.trim() && 
-             newPassword.trim() && 
-             confirmPassword.trim() && 
-             newPassword === confirmPassword;
+      return (
+        token.trim() &&
+        newPassword.trim() &&
+        confirmPassword.trim() &&
+        newPassword === confirmPassword
+      );
     }
   };
 
@@ -114,7 +123,7 @@ export const PasswordResetModal: React.FC<PasswordResetModalProps> = ({
       <div className="bg-white rounded-lg p-8 w-full max-w-md">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-2xl font-bold text-gray-900">
-            {step === 'request' ? 'Reset Password' : 'Enter New Password'}
+            {step === "request" ? "Reset Password" : "Enter New Password"}
           </h2>
           <button
             onClick={onClose}
@@ -136,7 +145,7 @@ export const PasswordResetModal: React.FC<PasswordResetModalProps> = ({
           </div>
         )}
 
-        {step === 'request' ? (
+        {step === "request" ? (
           <form onSubmit={handleRequestReset} className="space-y-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -157,7 +166,7 @@ export const PasswordResetModal: React.FC<PasswordResetModalProps> = ({
               disabled={!validateForm() || isLoading}
               className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLoading ? 'Sending...' : 'Send Reset Email'}
+              {isLoading ? "Sending..." : "Send Reset Email"}
             </button>
           </form>
         ) : (
@@ -190,7 +199,8 @@ export const PasswordResetModal: React.FC<PasswordResetModalProps> = ({
                 required
               />
               <p className="text-xs text-gray-500 mt-1">
-                Must be at least 8 characters with uppercase, lowercase, digit, and special character
+                Must be at least 8 characters with uppercase, lowercase, digit,
+                and special character
               </p>
             </div>
 
@@ -213,7 +223,7 @@ export const PasswordResetModal: React.FC<PasswordResetModalProps> = ({
               disabled={!validateForm() || isLoading}
               className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {isLoading ? 'Resetting...' : 'Reset Password'}
+              {isLoading ? "Resetting..." : "Reset Password"}
             </button>
           </form>
         )}
@@ -221,16 +231,16 @@ export const PasswordResetModal: React.FC<PasswordResetModalProps> = ({
         <div className="mt-6 text-center">
           <button
             onClick={() => {
-              setStep('request');
+              setStep("request");
               setError(null);
               setSuccess(null);
             }}
             className="text-blue-600 hover:text-blue-800"
           >
-            {step === 'confirm' ? 'Back to email request' : 'Cancel'}
+            {step === "confirm" ? "Back to email request" : "Cancel"}
           </button>
         </div>
       </div>
     </div>
   );
-}; 
+};

@@ -1,0 +1,28 @@
+{
+  "triggered": true,
+  "webhook_name": "fix_validation",
+  "url": "http://localhost:8000/webhooks/fix-validation",
+  "method": "POST",
+  "payload": {
+    "safety_validation": {
+      "safe": true,
+      "risk_level": "low",
+      "fix_type": "syntax_fix",
+      "validation_method": "rule_based"
+    },
+    "impact_prediction": {
+      "predicted_improvement": true,
+      "confidence": 0.9,
+      "fix_type": "syntax_fix",
+      "prediction_method": "rule_based"
+    },
+    "should_proceed": true,
+    "context": {
+      "session_id": "test_session",
+      "user_id": "test_user",
+      "project": "az-interface"
+    },
+    "timestamp": "2025-08-11T09:54:29.082378"
+  },
+  "timestamp": "2025-08-11T09:54:29.082389"
+}

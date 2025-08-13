@@ -3,37 +3,23 @@ import { getPersonaProfiles } from './personaService';
 import type { SearchResult, SearchableSourceType, Playbook, CodexRule } from "../types/types";
 
 interface SearchableItem {
-    id: string;
-    title: string;
-    fullContent: string;
-    sourceType: SearchableSourceType;
-    sourceId: string;
-}
+    id: any;
+    title: any;
+    fullContent: any;
+    sourceType: any;
+    sourceId: any;
 
-// https://stackoverflow.com/questions/3446170/escape-string-for-use-in-javascript-regex
-function escapeRegExp(string: string) {
-    const SNIPPET_LENGTH = 200;
-    
-    const startIndex = Math.max(0, contentIndex - 50);
-    const endIndex = Math.min(item.fullContent.length, contentIndex + trimmedQuery.length + 50);
-    
-    const titleMatch = item.title.toLowerCase().includes(trimmedQuery.toLowerCase());
-    const contentIndex = item.fullContent.toLowerCase().indexOf(trimmedQuery.toLowerCase());
-    
-    const trimmedQuery = query.trim();
-    
-    const personas = this.getPersonas();
-    
-    const codexRules = this.getCodexRules();
-    
-    const playbooks = this.getPlaybooks();
-    
+  /* TODO: relevanceScore */?: unknown;
+  /* TODO: relevanceScore */?: unknown;}
+
+// https: any
+function escapeRegExp(string: any
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-
 class SearchService {
-    private index: SearchableItem[] = [];
+    private index: any;
+    private SNIPPET_LENGTH = 200;
 
     constructor() {
         this.buildIndex();
@@ -41,91 +27,121 @@ class SearchService {
 
     private buildIndex() {
         // --- Index Playbooks ---
+        const playbooks = this.getPlaybooks();
         playbooks.forEach(scroll => {
             try {
-                const playbook: Playbook = JSON.parse(scroll.content);
+                const playbook: any;
                 const content = [
                     playbook.description,
                     ...playbook.steps.map(s => `${s.name}: ${s.prompt}`)
                 ].join('\n');
 
                 this.index.push({
-                    id: `playbook-${playbook.id}`,
-                    title: playbook.name,
-                    fullContent: content,
-                    sourceType: 'playbook',
-                    sourceId: playbook.id
+                    id: any,
+                    title: any,
+                    fullContent: any,
+                    sourceType: any,
+                    sourceId: any
                 });
             } catch (e) {
-                console.error(`Failed to parse playbook scroll ${scroll.id}:`, e);
+                console.error(`Failed to parse playbook scroll ${(scroll as any).id}:`, e);
             }
         });
 
         // --- Index Codex Rules ---
+        const codexRules = this.getCodexRules();
         codexRules.forEach(scroll => {
             try {
-                const rule: CodexRule = JSON.parse(scroll.content);
+                const rule: any;
                 this.index.push({
-                    id: `codex-${rule.id}`,
-                    title: rule.title,
-                    fullContent: rule.content,
-                    sourceType: 'codex',
-                    sourceId: rule.id
+                    id: any,
+                    title: any,
+                    fullContent: any,
+                    sourceType: any,
+                    sourceId: any
                 });
             } catch (e) {
-                console.error(`Failed to parse codex scroll ${scroll.id}:`, e);
+                console.error(`Failed to parse codex rule ${(scroll as any).id}:`, e);
             }
         });
 
         // --- Index Personas ---
+        const personas = this.getPersonas();
         personas.forEach(persona => {
-            if (persona.scrollContent) {
-                this.index.push({
-                    id: `persona-${persona.id}`,
-                    title: persona.name,
-                    fullContent: persona.scrollContent,
-                    sourceType: 'persona',
-                    sourceId: persona.id
-                });
-            }
+            this.index.push({
+                id: any,
+                title: any,
+                fullContent: any
+                    (persona as any).personaName,
+                    (persona as any).baseClass,
+                    persona.description || '',
+                    (persona as any).background || '',
+                    (persona as any).motivations?.join(', ') || '',
+                    (persona as any).goals?.join(', ') || ''
+                ].join('\n'),
+                sourceType: unknown,
+                sourceId: unknown
+            });
         });
     }
 
-    public search(query: string): SearchResult[] {
-        if (trimmedQuery.length < 2) {
+    public search(query: unknown
+        if (!query || query.trim().length < 2) {
             return [];
         }
 
-        const results: SearchResult[] = [];
+        const trimmedQuery = query.trim();
+        const results: any;
 
         this.index.forEach(item => {
+            const titleMatch = item.title.toLowerCase().includes(trimmedQuery.toLowerCase());
+            const contentIndex = item.fullContent.toLowerCase().indexOf(trimmedQuery.toLowerCase());
 
             if (titleMatch || contentIndex > -1) {
-                let snippet: string;
+                let snippet: any;
 
                 if (contentIndex > -1) {
+                    const startIndex = Math.max(0, contentIndex - 50);
+                    const endIndex = Math.min(item.fullContent.length, contentIndex + trimmedQuery.length + 50);
                     snippet = item.fullContent.substring(startIndex, endIndex);
                     if (startIndex > 0) snippet = '...' + snippet;
                     if (endIndex < item.fullContent.length) snippet = snippet + '...';
                 } else {
-                    // If match is only in title, take snippet from start of content
-                    snippet = item.fullContent.substring(0, SNIPPET_LENGTH) + (item.fullContent.length > SNIPPET_LENGTH ? '...' : '');
+                    snippet = item.fullContent.substring(0, this.SNIPPET_LENGTH) + (item.fullContent.length > this.SNIPPET_LENGTH ? '...' : '');
                 }
 
-                // Highlight matches
-                let snippet = snippet.replace(new RegExp(escapeRegExp(trimmedQuery), "gi"), (match) => `<strong class="bg-yellow-500/50 text-yellow-200">${match}</strong>`);
+                // Highlight search terms
+                snippet = snippet.replace(new RegExp(escapeRegExp(trimmedQuery), "gi"), (match) => `<strong class="bg-yellow-500/50 text-yellow-200">${match}</strong>`);
 
                 results.push({
-                    id: item.id,
-                    title: item.title,
-                    snippet,
-                    sourceType: item.sourceType,
-                    sourceId: item.sourceId,
+                    id: any,
+                    title: any,
+                    /* TODO: any, */
+                    sourceType: any,
+                    sourceId: any,
+                    /* TODO: relevanceScore */: unknown
                 });
             }
         });
 
-        return results;
+        // Sort by relevance
+        return results.sort((a, b) => b./* TODO: relevanceScore */ - a./* TODO: relevanceScore */);
+    }
+
+    private getPersonas() {
+        return getPersonaProfiles() || [];
+    }
+
+    private getCodexRules() {
+        // This would typically come from a codex service
+        // For now, return empty array
+        return [];
+    }
+
+    private getPlaybooks() {
+        // This would typically come from a playbook service
+        // For now, return empty array
+        return [];
     }
 }
 

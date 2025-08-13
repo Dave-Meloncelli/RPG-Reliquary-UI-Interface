@@ -1,0 +1,22 @@
+{
+  "frame_id": "comprehensive_dependency_manager",
+  "stage": 4,
+  "input_data": {},
+  "parameters": {
+    "timeout": 600
+  },
+  "result": {
+    "success": true,
+    "dependency_manager_implemented": true,
+    "scan_completed": true,
+    "fixes_applied": true,
+    "updates_completed": true,
+    "report_file": "reports\\comprehensive_dependency_report_1754801647.json",
+    "summary": {
+      "total_vulnerabilities": 0,
+      "total_fixed": 0,
+      "total_updated": 18
+    }
+  },
+  "timestamp": "2025-08-10T12:54:07.351112"
+}

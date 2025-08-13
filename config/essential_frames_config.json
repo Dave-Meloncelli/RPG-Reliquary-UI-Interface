@@ -1,0 +1,82 @@
+{
+  "created_at": "2025-08-10T16:24:29.419330",
+  "last_updated": "2025-08-10T16:24:29.419363",
+  "essential_frames": {
+    "syntax_validation": {
+      "trigger": "before_typescript_compilation",
+      "enabled": true,
+      "priority": "critical",
+      "webhooks": [
+        "pre_compilation_validation"
+      ],
+      "timeout": 30
+    },
+    "dependency_health": {
+      "trigger": "session_start",
+      "enabled": true,
+      "priority": "critical",
+      "webhooks": [
+        "dependency_check",
+        "health_monitor"
+      ],
+      "timeout": 60
+    },
+    "pattern_recognition": {
+      "trigger": "after_automated_tool",
+      "enabled": true,
+      "priority": "high",
+      "webhooks": [
+        "error_impact_analysis",
+        "rollback_trigger"
+      ],
+      "timeout": 45
+    },
+    "continuance_guard": {
+      "trigger": "before_automated_fix",
+      "enabled": true,
+      "priority": "critical",
+      "webhooks": [
+        "fix_validation",
+        "impact_prediction"
+      ],
+      "timeout": 30
+    }
+  },
+  "webhooks": {
+    "pre_compilation_validation": {
+      "url": "http://localhost:8000/webhooks/pre-compilation",
+      "method": "POST",
+      "enabled": true
+    },
+    "dependency_check": {
+      "url": "http://localhost:8000/webhooks/dependency-check",
+      "method": "POST",
+      "enabled": true
+    },
+    "health_monitor": {
+      "url": "http://localhost:8000/webhooks/health-monitor",
+      "method": "POST",
+      "enabled": true
+    },
+    "error_impact_analysis": {
+      "url": "http://localhost:8000/webhooks/error-impact",
+      "method": "POST",
+      "enabled": true
+    },
+    "rollback_trigger": {
+      "url": "http://localhost:8000/webhooks/rollback",
+      "method": "POST",
+      "enabled": true
+    },
+    "fix_validation": {
+      "url": "http://localhost:8000/webhooks/fix-validation",
+      "method": "POST",
+      "enabled": true
+    },
+    "impact_prediction": {
+      "url": "http://localhost:8000/webhooks/impact-prediction",
+      "method": "POST",
+      "enabled": true
+    }
+  }
+}

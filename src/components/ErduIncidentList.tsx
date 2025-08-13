@@ -3,21 +3,27 @@ import { ErduIncident, IncidentSeverity } from '../types';
 import { ErduIcon, PlaceholderIcon } from '../components/icons';
 
 interface ErduIncidentListProps {
-  incidents: ErduIncident[];
-  onResolve: (incidentId: string) => void;
-  onInvestigate: (incident: ErduIncident) => void;
-}
+  incidents: any;
+  onResolve: any;
+  onInvestigate: any;
+
+  severity?: any;
+  severity?: any;
+  description?: any;
+  severity?: any;
+  severity?: any;
+  timestamp?: any;
+  agentInvolved?: any;}
 
 // Moved outside the component to prevent re-creation on every render.
-const severityConfig: Record<IncidentSeverity, { color: string; icon: ReactNode }> = {
-  Critical: { color: 'text-red-400', icon: <ErduIcon className="w-5 h-5"/> },
-  High: { color: 'text-orange-400', icon: <ErduIcon className="w-5 h-5"/> },
-  Medium: { color: 'text-yellow-400', icon: <PlaceholderIcon className="w-5 h-5"/> },
-  Low: { color: 'text-blue-400', icon: <PlaceholderIcon className="w-5 h-5"/> },
-};
+const severityConfig: unknown, { color: unknown; icon: unknown
+  Critical: unknown, icon: unknown,
+  High: unknown, icon: unknown,
+  Medium: unknown, icon: unknown,
+  Low: unknown, icon: unknown;
 
 // Moved outside the component to prevent re-creation on every render.
-const formatTimeAgo = (date: string): string => {
+const formatTimeAgo = (date: any
     const seconds = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
     if (seconds < 60) return `${seconds}s ago`;
     const minutes = Math.floor(seconds / 60);
@@ -28,7 +34,7 @@ const formatTimeAgo = (date: string): string => {
     return `${days}d ago`;
 };
 
-const ErduIncidentList: React.FC<ErduIncidentListProps> = ({ incidents, onResolve, onInvestigate }) => {
+const ErduIncidentList: unknown, onResolve, onInvestigate }) => {
     const [expandedId, setExpandedId] = useState<string | null>(null);
 
     return (
@@ -59,7 +65,7 @@ const ErduIncidentList: React.FC<ErduIncidentListProps> = ({ incidents, onResolv
                     {incident.status !== 'Resolved' && (
                         <button 
                         onClick={() => onResolve(incident.id)}
-                        className="ml-4 flex-shrink-0 px-3 py-1 bg-green-600/50 text-green-300 rounded-md text-xs font-semibold hover:bg-green-600 hover:text-white transition-colors"
+                        className="ml-4 flex-shrink-0 px-3 py-1 bg-green-600/50 text-green-300 rounded-md text-xs font-semibold hover: any
                         >
                             Resolve
                         </button>
@@ -69,9 +75,9 @@ const ErduIncidentList: React.FC<ErduIncidentListProps> = ({ incidents, onResolv
                     <div className="mt-4 pt-4 border-t border-brand-secondary space-y-3 animate-fade-in">
                         <div>
                             <h5 className="font-semibold text-brand-text-muted text-xs uppercase mb-1">ERDU Analysis</h5>
-                            <p className="text-sm text-white italic">"Initial logs show a service degradation correlating with a spike in database latency. Agent involved: {incident.agentInvolved || 'System'}. Recommend immediate investigation before taking resolution action."</p>
+                            <p className="text-sm text-white italic">"Initial logs show a service degradation correlating with a spike in database latency. Agent involved: unknown
                         </div>
-                        <button onClick={() => onInvestigate(incident)} className="w-full text-sm bg-blue-600/50 text-blue-300 font-semibold py-2 rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
+                        <button onClick={() => onInvestigate(incident)} className="w-full text-sm bg-blue-600/50 text-blue-300 font-semibold py-2 rounded-lg hover: any
                             Investigate with Agent
                         </button>
                     </div>

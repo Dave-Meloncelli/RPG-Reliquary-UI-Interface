@@ -1,0 +1,55 @@
+{
+  "errorPatterns": {
+    "structural:malformedObject": {
+      "count": 49,
+      "successfulFixes": 49,
+      "failedFixes": 0,
+      "averageResolutionTime": 0
+    },
+    "types:importError": {
+      "count": 52,
+      "successfulFixes": 52,
+      "failedFixes": 0,
+      "averageResolutionTime": 0
+    },
+    "types:missingType": {
+      "count": 48,
+      "successfulFixes": 48,
+      "failedFixes": 0,
+      "averageResolutionTime": 0
+    },
+    "types:missingProperty": {
+      "count": 187,
+      "successfulFixes": 187,
+      "failedFixes": 0,
+      "averageResolutionTime": 0
+    },
+    "unknown:unknown": {
+      "count": 2998,
+      "successfulFixes": 0,
+      "failedFixes": 2998,
+      "averageResolutionTime": 0
+    },
+    "types:typeMismatch": {
+      "count": 60,
+      "successfulFixes": 60,
+      "failedFixes": 0,
+      "averageResolutionTime": 0
+    },
+    "types:undefinedVariable": {
+      "count": 261,
+      "successfulFixes": 261,
+      "failedFixes": 0,
+      "averageResolutionTime": 0
+    }
+  },
+  "successfulFixes": {},
+  "failedFixes": {},
+  "filePatterns": {},
+  "statistics": {
+    "totalErrors": 3655,
+    "resolvedErrors": 657,
+    "failedResolutions": 2998,
+    "averageResolutionTime": 0
+  }
+}

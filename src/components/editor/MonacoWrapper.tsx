@@ -1,70 +1,39 @@
-
-import React, { useRef, useEffect, FC } from 'react';
-import * as monaco from 'monaco-editor';
-
-// Since we are using an import map with the ?worker suffix,
-// monaco-editor's ESM build will automatically handle the worker loading.
-// We just need to ensure the base path is configured if it's not at the root.
+import React, { useState } from "react";
 
 interface MonacoWrapperProps {
-    path: string;
-    defaultValue: string;
-    onChange?: (value: string) => void;
+  path: string;
+  defaultValue: string;
+  onChange?: (value: string) => void;
 }
 
-const getLanguageFromPath = (path: string): string => {
-    const extension = path.split('.').pop()?.toLowerCase();
-    switch (extension) {
-        case 'ts':
-        case 'tsx':
-            return 'typescript';
-        case 'js':
-        case 'jsx':
-            return 'javascript';
-        case 'json':
-            return 'json';
-        case 'html':
-            return 'html';
-        case 'css':
-            return 'css';
-        case 'md':
-            return 'markdown';
-        default:
-            return 'plaintext';
-    }
-};
+// Simple textarea stub for Monaco Editor
+const MonacoWrapper: React.FC<MonacoWrapperProps> = ({
+  path,
+  defaultValue,
+  onChange,
+}) => {
+  const [value, setValue] = useState(defaultValue);
 
-const MonacoWrapper: FC<MonacoWrapperProps> = ({ path, defaultValue, onChange }) => {
-    const editorRef = useRef<HTMLDivElement>(null);
-    const monacoInstanceRef = useRef<monaco.editor.IStandaloneCodeEditor | null>(null);
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const newValue = e.target.value;
+    setValue(newValue);
+    onChange?.(newValue);
+  };
 
-    useEffect(() => {
-        if (editorRef.current) {
-            monacoInstanceRef.current = monaco.editor.create(editorRef.current, {
-                value: defaultValue,
-                language: getLanguageFromPath(path),
-                theme: 'vs-dark',
-                automaticLayout: true,
-                readOnly: false, // For now, allow editing.
-                minimap: { enabled: true },
-                fontSize: 14,
-                wordWrap: 'on',
-            });
-            
-            monacoInstanceRef.current.onDidChangeModelContent(() => {
-                onChange?.(monacoInstanceRef.current?.getValue() || '');
-            });
-        }
-
-        return () => {
-            if (monacoInstanceRef.current) {
-                monacoInstanceRef.current.dispose();
-                monacoInstanceRef.current = null;
-            }
-        };
-    }, [path, defaultValue, onChange]);
-
-    return <div ref={editorRef} className="w-full h-full absolute" />;
+  return (
+    <div className="w-full h-full bg-gray-900 text-white p-2">
+      <div className="text-xs text-gray-400 mb-2">
+        Editing: {path} (Monaco Editor Stub)
+      </div>
+      <textarea
+        value={value}
+        onChange={handleChange}
+        className="w-full h-full bg-gray-800 text-white font-mono text-sm p-2 border-0 resize-none focus:outline-none"
+        style={{ fontFamily: "Consolas, Monaco, Courier New, monospace" }}
+        spellCheck={false}
+      />
+    </div>
+  );
 };
 
 export default MonacoWrapper;

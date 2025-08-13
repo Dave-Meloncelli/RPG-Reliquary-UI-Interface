@@ -1,9 +1,11 @@
 // components/PersonaViewerApp.tsx
-import React, { useState, useEffect } from 'react';
-import { getPersonaProfiles } from '../services/personaService';
-import { AgentProfile } from '../types';
-import PersonaList from './persona/PersonaList'; // Import the new PersonaList component
-import PersonaDetail from './persona/PersonaDetail'; // Import the new PersonaDetail component
+import React, { useState, useEffect } from "react";
+
+import { getPersonaProfiles } from "../services/personaService";
+import { AgentProfile } from "../types";
+
+import PersonaDetail from "./persona/PersonaDetail"; // Import the new PersonaDetail component
+import PersonaList from "./persona/PersonaList"; // Import the new PersonaList component
 
 const PersonaViewerApp: React.FC = () => {
   const [agents, setAgents] = useState<AgentProfile[]>([]);

@@ -186,6 +186,25 @@ class TemplateListResponse(BaseModel):
     total_count: int
     categories: List[str]
 
+# Autonomous System Models
+class AutonomousErrorReport(BaseModel):
+    timestamp: str
+    error: Dict[str, Any]
+    componentStack: Optional[str] = None
+    context: Dict[str, Any]
+    severity: str
+    source: str
+
+class AutonomousFrameRegistration(BaseModel):
+    frames: List[Dict[str, Any]]
+    source: str
+
+class AutonomousHealthResponse(BaseModel):
+    status: str
+    timestamp: str
+    frames: Dict[str, Any]
+    autonomous_active: bool
+
 # Utility functions
 def get_password_hash(password: str) -> str:
     import hashlib
@@ -722,6 +741,320 @@ async def get_template_details(
     except Exception as e:
         logger.error(f"Error getting template details: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Error getting template details: {str(e)}")
+
+# ============================================================================
+# AUTONOMOUS SYSTEM ENDPOINTS - Integration with AZ Interface Framework
+# ============================================================================
+
+# Global autonomous state
+autonomous_frames = {}
+autonomous_errors = []
+
+@app.post("/api/autonomous/error-report")
+async def report_autonomous_error(
+    error_report: AutonomousErrorReport,
+    request: Request
+):
+    """
+    Receive error reports from autonomous system components
+    """
+    try:
+        # Store error in memory (in production, use persistent storage)
+        error_data = error_report.dict()
+        error_data['received_at'] = datetime.utcnow().isoformat()
+        error_data['request_id'] = getattr(request.state, 'request_id', 'unknown')
+        
+        autonomous_errors.append(error_data)
+        
+        # Keep only last 100 errors to prevent memory bloat
+        if len(autonomous_errors) > 100:
+            autonomous_errors.pop(0)
+        
+        # Log error for monitoring
+        logger.error(
+            f"Autonomous error reported: {error_report.error.get('message', 'Unknown error')}",
+            extra={
+                'component': 'autonomous_system',
+                'source': error_report.source,
+                'severity': error_report.severity,
+                'timestamp': error_report.timestamp
+            }
+        )
+        
+        # Trigger self-healing if critical
+        if error_report.severity == 'critical':
+            await trigger_autonomous_healing(error_report)
+        
+        return {
+            "status": "received",
+            "timestamp": datetime.utcnow().isoformat(),
+            "error_id": len(autonomous_errors)
+        }
+        
+    except Exception as e:
+        logger.error(f"Failed to process autonomous error report: {e}")
+        raise HTTPException(status_code=500, detail="Failed to process error report")
+
+@app.post("/api/autonomous/frames/register")
+async def register_autonomous_frames(
+    frame_registration: AutonomousFrameRegistration,
+    request: Request
+):
+    """
+    Register autonomous frames for monitoring
+    """
+    try:
+        for frame in frame_registration.frames:
+            frame_id = frame.get('id')
+            if frame_id:
+                frame['registered_at'] = datetime.utcnow().isoformat()
+                frame['source'] = frame_registration.source
+                frame['request_id'] = getattr(request.state, 'request_id', 'unknown')
+                autonomous_frames[frame_id] = frame
+        
+        logger.info(
+            f"Autonomous frames registered from {frame_registration.source}: {len(frame_registration.frames)} frames",
+            extra={'component': 'autonomous_system'}
+        )
+        
+        return {
+            "status": "registered",
+            "frames_count": len(frame_registration.frames),
+            "timestamp": datetime.utcnow().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"Failed to register autonomous frames: {e}")
+        raise HTTPException(status_code=500, detail="Failed to register frames")
+
+@app.get("/api/autonomous/health", response_model=AutonomousHealthResponse)
+async def get_autonomous_health():
+    """
+    Get health status of autonomous system
+    """
+    try:
+        # Calculate health metrics
+        active_frames = sum(1 for f in autonomous_frames.values() if f.get('status') == 'active')
+        error_frames = sum(1 for f in autonomous_frames.values() if f.get('status') == 'error')
+        recent_errors = len([e for e in autonomous_errors if 
+            datetime.fromisoformat(e['received_at'].replace('Z', '+00:00')).timestamp() > 
+            (datetime.utcnow().timestamp() - 3600)  # Last hour
+        ])
+        
+        # Determine overall status
+        if error_frames > active_frames * 0.5:  # More than 50% frames in error
+            status = 'critical'
+        elif recent_errors > 10:  # More than 10 errors in last hour
+            status = 'degraded'
+        elif len(autonomous_frames) == 0:
+            status = 'inactive'
+        else:
+            status = 'healthy'
+        
+        return AutonomousHealthResponse(
+            status=status,
+            timestamp=datetime.utcnow().isoformat(),
+            frames={
+                'total': len(autonomous_frames),
+                'active': active_frames,
+                'error': error_frames,
+                'details': autonomous_frames
+            },
+            autonomous_active=len(autonomous_frames) > 0
+        )
+        
+    except Exception as e:
+        logger.error(f"Failed to get autonomous health: {e}")
+        return AutonomousHealthResponse(
+            status='error',
+            timestamp=datetime.utcnow().isoformat(),
+            frames={'error': str(e)},
+            autonomous_active=False
+        )
+
+@app.get("/api/autonomous/errors")
+async def get_autonomous_errors(
+    limit: int = 50,
+    severity: Optional[str] = None,
+    source: Optional[str] = None
+):
+    """
+    Get recent autonomous system errors
+    """
+    try:
+        filtered_errors = autonomous_errors
+        
+        # Filter by severity
+        if severity:
+            filtered_errors = [e for e in filtered_errors if e.get('severity') == severity]
+        
+        # Filter by source
+        if source:
+            filtered_errors = [e for e in filtered_errors if e.get('source') == source]
+        
+        # Sort by timestamp (most recent first) and limit
+        filtered_errors = sorted(
+            filtered_errors, 
+            key=lambda x: x.get('received_at', ''), 
+            reverse=True
+        )[:limit]
+        
+        return {
+            "errors": filtered_errors,
+            "total": len(filtered_errors),
+            "timestamp": datetime.utcnow().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"Failed to get autonomous errors: {e}")
+        raise HTTPException(status_code=500, detail="Failed to retrieve errors")
+
+@app.get("/api/autonomous/frames")
+async def get_autonomous_frames(
+    status: Optional[str] = None,
+    source: Optional[str] = None
+):
+    """
+    Get registered autonomous frames
+    """
+    try:
+        filtered_frames = autonomous_frames
+        
+        # Filter by status
+        if status:
+            filtered_frames = {k: v for k, v in filtered_frames.items() if v.get('status') == status}
+        
+        # Filter by source
+        if source:
+            filtered_frames = {k: v for k, v in filtered_frames.items() if v.get('source') == source}
+        
+        return {
+            "frames": filtered_frames,
+            "total": len(filtered_frames),
+            "timestamp": datetime.utcnow().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"Failed to get autonomous frames: {e}")
+        raise HTTPException(status_code=500, detail="Failed to retrieve frames")
+
+async def trigger_autonomous_healing(error_report: AutonomousErrorReport):
+    """
+    Trigger autonomous self-healing procedures for critical errors
+    """
+    try:
+        logger.info(
+            f"Triggering autonomous healing for critical error from {error_report.source}",
+            extra={'component': 'autonomous_healing'}
+        )
+        
+        # Implement healing strategies based on error type
+        error_type = error_report.error.get('name', 'unknown')
+        
+        healing_actions = {
+            'TypeError': 'type_validation_scaffold',
+            'NetworkError': 'connection_retry_scaffold',
+            'DatabaseError': 'database_recovery_scaffold',
+            'AuthenticationError': 'auth_refresh_scaffold',
+            'ValidationError': 'input_sanitization_scaffold'
+        }
+        
+        action = healing_actions.get(error_type, 'generic_error_scaffold')
+        
+        # Log healing action (in production, trigger actual healing procedures)
+        logger.info(
+            f"Autonomous healing action selected: {action}",
+            extra={
+                'component': 'autonomous_healing',
+                'action': action,
+                'error_type': error_type,
+                'severity': error_report.severity
+            }
+        )
+        
+        # Update frame status if applicable
+        source_parts = error_report.source.split('-')
+        if len(source_parts) > 1:
+            frame_id = source_parts[0]
+            if frame_id in autonomous_frames:
+                autonomous_frames[frame_id]['status'] = 'recovering'
+                autonomous_frames[frame_id]['healing_action'] = action
+                autonomous_frames[frame_id]['healing_triggered_at'] = datetime.utcnow().isoformat()
+        
+    except Exception as e:
+        logger.error(f"Failed to trigger autonomous healing: {e}")
+
+# Health check with detailed system metrics (enhanced version)
+@app.get("/health/detailed")
+async def detailed_health():
+    """Detailed health check with system metrics for autonomous monitoring"""
+    try:
+        import psutil
+        import sys
+        
+        # Database check
+        db_status = "healthy"
+        try:
+            db = SessionLocal()
+            db.execute(text("SELECT 1"))
+            db.close()
+        except Exception as e:
+            db_status = f"unhealthy: {str(e)}"
+
+        # Redis check  
+        redis_status = "healthy"
+        try:
+            redis_client.ping()
+        except Exception as e:
+            redis_status = f"unhealthy: {str(e)}"
+
+        # System metrics
+        system_metrics = {
+            "cpu_percent": psutil.cpu_percent(interval=1),
+            "memory_percent": psutil.virtual_memory().percent,
+            "disk_percent": psutil.disk_usage('/').percent if os.name != 'nt' else psutil.disk_usage('C:').percent,
+            "uptime": time.time() - psutil.boot_time()
+        }
+
+        # Autonomous system metrics
+        autonomous_metrics = {
+            "active_frames": len([f for f in autonomous_frames.values() if f.get('status') == 'active']),
+            "error_frames": len([f for f in autonomous_frames.values() if f.get('status') == 'error']),
+            "recent_errors": len([e for e in autonomous_errors if 
+                datetime.fromisoformat(e['received_at'].replace('Z', '+00:00')).timestamp() > 
+                (datetime.utcnow().timestamp() - 3600)
+            ]),
+            "total_frames": len(autonomous_frames)
+        }
+
+        health_data = {
+            "status": "healthy" if db_status == "healthy" else "degraded",
+            "timestamp": datetime.utcnow().isoformat(),
+            "version": "1.0.0",
+            "services": {
+                "database": db_status,
+                "redis": redis_status,
+            },
+            "system": system_metrics,
+            "autonomous": autonomous_metrics,
+            "environment": {
+                "python_version": f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}",
+                "platform": os.name
+            }
+        }
+
+        status_code = 200 if health_data["status"] == "healthy" else 503
+        return JSONResponse(status_code=status_code, content=health_data)
+        
+    except Exception as e:
+        return JSONResponse(
+            status_code=500,
+            content={
+                "status": "unhealthy",
+                "error": str(e),
+                "timestamp": datetime.utcnow().isoformat()
+            }
+        )
 
 if __name__ == "__main__":
     import uvicorn

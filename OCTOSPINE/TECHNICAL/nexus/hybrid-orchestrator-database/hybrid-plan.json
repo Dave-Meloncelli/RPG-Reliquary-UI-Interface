@@ -1,0 +1,368 @@
+{
+  "plan_id": "hybrid_plan_1755036757",
+  "title": "Hybrid Documentation Sprint + Tauri Migration Plan",
+  "description": "Comprehensive 6-week plan combining documentation sprint with Tauri migration",
+  "start_date": "2025-08-13T06:12:37.361195",
+  "end_date": "2025-09-24T06:12:37.361195",
+  "total_weeks": 6,
+  "tasks": [
+    {
+      "id": "DOC-001",
+      "title": "Security Vulnerability Fixes",
+      "description": "Fix high-severity lodash vulnerability and hardcoded credentials",
+      "week": 1,
+      "priority": "critical",
+      "status": "completed",
+      "dependencies": [],
+      "estimated_hours": 4.0,
+      "assigned_frame": "security-audit-frame",
+      "progress_percentage": 100.0,
+      "notes": "From security audit: lodash CVE-2021-23337, hardcoded credentials in database.ts",
+      "created_at": "",
+      "updated_at": "2025-08-13T06:12:42.516907"
+    },
+    {
+      "id": "DOC-002",
+      "title": "Critical Frame Documentation",
+      "description": "Document the 29 frames with blockers identified in comprehensive analysis",
+      "week": 1,
+      "priority": "critical",
+      "status": "completed",
+      "dependencies": [
+        "DOC-001"
+      ],
+      "estimated_hours": 16.0,
+      "assigned_frame": "comprehensive-frame-analyzer",
+      "progress_percentage": 100.0,
+      "notes": "Focus on frames with syntax errors and missing modules",
+      "created_at": "",
+      "updated_at": "2025-08-13T06:12:42.517496"
+    },
+    {
+      "id": "DOC-003",
+      "title": "OCTOSPINE Self-Documentation Framework",
+      "description": "Create automated documentation generation using OCTOSPINE itself",
+      "week": 1,
+      "priority": "high",
+      "status": "completed",
+      "dependencies": [
+        "DOC-002"
+      ],
+      "estimated_hours": 8.0,
+      "assigned_frame": "research-information-frame",
+      "progress_percentage": 100.0,
+      "notes": "Use OCTOSPINE to document OCTOSPINE - meta-documentation approach",
+      "created_at": "",
+      "updated_at": "2025-08-13T06:12:42.518233"
+    },
+    {
+      "id": "DOC-004",
+      "title": "Integration Documentation",
+      "description": "Document integration patterns and webhook configurations",
+      "week": 2,
+      "priority": "high",
+      "status": "completed",
+      "dependencies": [
+        "DOC-003"
+      ],
+      "estimated_hours": 12.0,
+      "assigned_frame": "frame-intelligence-system",
+      "progress_percentage": 100.0,
+      "notes": "Focus on 27.3% integrated frames and improve integration capabilities",
+      "created_at": "",
+      "updated_at": "2025-08-13T10:14:37.096832"
+    },
+    {
+      "id": "TAURI-001",
+      "title": "Tauri Project Assessment",
+      "description": "Analyze existing Tauri migration roadmap and current state",
+      "week": 2,
+      "priority": "high",
+      "status": "completed",
+      "dependencies": [],
+      "estimated_hours": 6.0,
+      "assigned_frame": "existence-check-frame",
+      "progress_percentage": 100.0,
+      "notes": "Review 486 Tauri-related files and 508-line roadmap",
+      "created_at": "",
+      "updated_at": "2025-08-13T10:14:37.097218"
+    },
+    {
+      "id": "TAURI-002",
+      "title": "Tauri Dependencies Setup",
+      "description": "Install and configure Tauri CLI and core dependencies",
+      "week": 2,
+      "priority": "medium",
+      "status": "completed",
+      "dependencies": [
+        "TAURI-001"
+      ],
+      "estimated_hours": 4.0,
+      "assigned_frame": "comprehensive-dependency-manager-frame",
+      "progress_percentage": 100.0,
+      "notes": "Setup @tauri-apps/cli and core Tauri packages",
+      "created_at": "",
+      "updated_at": "2025-08-13T10:14:37.097649"
+    },
+    {
+      "id": "TAURI-003",
+      "title": "Tauri Project Structure",
+      "description": "Create Tauri project structure alongside existing React code",
+      "week": 3,
+      "priority": "high",
+      "status": "completed",
+      "dependencies": [
+        "TAURI-002"
+      ],
+      "estimated_hours": 8.0,
+      "assigned_frame": "filetree-organizer-frame",
+      "progress_percentage": 100.0,
+      "notes": "Preserve 95%+ of existing React components and TypeScript types",
+      "created_at": "",
+      "updated_at": "2025-08-13T10:16:46.384627"
+    },
+    {
+      "id": "DOC-005",
+      "title": "Documentation Quality Assurance",
+      "description": "Review and validate all generated documentation",
+      "week": 3,
+      "priority": "medium",
+      "status": "completed",
+      "dependencies": [
+        "DOC-004"
+      ],
+      "estimated_hours": 8.0,
+      "assigned_frame": "meta-analysis-frame",
+      "progress_percentage": 100.0,
+      "notes": "Ensure documentation meets established frame minimums",
+      "created_at": "",
+      "updated_at": "2025-08-13T10:16:46.385101"
+    },
+    {
+      "id": "SYNC-001",
+      "title": "Documentation-Tauri Integration Planning",
+      "description": "Plan how documentation will support Tauri migration",
+      "week": 3,
+      "priority": "high",
+      "status": "completed",
+      "dependencies": [
+        "DOC-005",
+        "TAURI-003"
+      ],
+      "estimated_hours": 6.0,
+      "assigned_frame": "universal-task-orchestrator",
+      "progress_percentage": 100.0,
+      "notes": "Leverage documented system for smoother Tauri migration",
+      "created_at": "",
+      "updated_at": "2025-08-13T10:16:46.385479"
+    },
+    {
+      "id": "TAURI-004",
+      "title": "Tauri Permissions Configuration",
+      "description": "Configure Tauri permissions and security model",
+      "week": 4,
+      "priority": "high",
+      "status": "failed",
+      "dependencies": [
+        "TAURI-003"
+      ],
+      "estimated_hours": 6.0,
+      "assigned_frame": "security_audit_frame",
+      "progress_percentage": 0.0,
+      "notes": "Apply security best practices from documentation sprint",
+      "created_at": "",
+      "updated_at": "2025-08-13T12:24:13.392119"
+    },
+    {
+      "id": "TAURI-005",
+      "title": "React-Tauri Bridge Implementation",
+      "description": "Implement bridge between React frontend and Tauri backend",
+      "week": 4,
+      "priority": "high",
+      "status": "completed",
+      "dependencies": [
+        "TAURI-004"
+      ],
+      "estimated_hours": 12.0,
+      "assigned_frame": "cross-agent-communication-protocol-frame",
+      "progress_percentage": 100.0,
+      "notes": "Migrate API calls to native system calls via Tauri",
+      "created_at": "",
+      "updated_at": "2025-08-13T12:24:13.392484"
+    },
+    {
+      "id": "DOC-006",
+      "title": "Migration Documentation",
+      "description": "Document Tauri migration process and lessons learned",
+      "week": 4,
+      "priority": "medium",
+      "status": "failed",
+      "dependencies": [
+        "SYNC-001"
+      ],
+      "estimated_hours": 4.0,
+      "assigned_frame": "research_information_frame",
+      "progress_percentage": 0.0,
+      "notes": "Create migration guide for future reference",
+      "created_at": "",
+      "updated_at": "2025-08-13T12:24:13.392787"
+    },
+    {
+      "id": "TAURI-006",
+      "title": "System Integration Testing",
+      "description": "Test full system integration with Tauri backend",
+      "week": 5,
+      "priority": "critical",
+      "status": "completed",
+      "dependencies": [
+        "TAURI-005"
+      ],
+      "estimated_hours": 16.0,
+      "assigned_frame": "real-time-monitoring-dashboard-frame",
+      "progress_percentage": 100.0,
+      "notes": "Comprehensive testing of all system capabilities",
+      "created_at": "",
+      "updated_at": "2025-08-13T12:24:18.002236"
+    },
+    {
+      "id": "TAURI-007",
+      "title": "Performance Optimization",
+      "description": "Optimize performance and resolve any issues",
+      "week": 5,
+      "priority": "high",
+      "status": "completed",
+      "dependencies": [
+        "TAURI-006"
+      ],
+      "estimated_hours": 8.0,
+      "assigned_frame": "improvement-optimization-frame",
+      "progress_percentage": 100.0,
+      "notes": "Leverage native performance benefits of Tauri",
+      "created_at": "",
+      "updated_at": "2025-08-13T12:24:18.002823"
+    },
+    {
+      "id": "TAURI-008",
+      "title": "Final Migration and Deployment",
+      "description": "Complete migration and deploy production version",
+      "week": 6,
+      "priority": "critical",
+      "status": "completed",
+      "dependencies": [
+        "TAURI-007"
+      ],
+      "estimated_hours": 12.0,
+      "assigned_frame": "human-approval-frame",
+      "progress_percentage": 100.0,
+      "notes": "Final approval and deployment with full documentation",
+      "created_at": "",
+      "updated_at": "2025-08-13T12:24:22.705238"
+    },
+    {
+      "id": "DOC-007",
+      "title": "Final Documentation Review",
+      "description": "Complete documentation review and publish",
+      "week": 6,
+      "priority": "high",
+      "status": "completed",
+      "dependencies": [
+        "TAURI-008"
+      ],
+      "estimated_hours": 6.0,
+      "assigned_frame": "knowledge-hub-update-frame",
+      "progress_percentage": 100.0,
+      "notes": "Ensure all documentation is complete and accessible",
+      "created_at": "",
+      "updated_at": "2025-08-13T12:24:22.705672"
+    }
+  ],
+  "risks": [
+    {
+      "id": "RISK-001",
+      "title": "Documentation Sprint Scope Creep",
+      "description": "Risk of documentation sprint expanding beyond planned scope",
+      "severity": "HIGH",
+      "mitigation": "Strict prioritization of highest-risk frames first",
+      "week": 1
+    },
+    {
+      "id": "RISK-002",
+      "title": "Tauri Migration Complexity",
+      "description": "Risk of Tauri migration being more complex than anticipated",
+      "severity": "MEDIUM",
+      "mitigation": "Leverage existing 508-line roadmap and 486 Tauri files",
+      "week": 3
+    },
+    {
+      "id": "RISK-003",
+      "title": "Resource Contention",
+      "description": "Risk of documentation and migration tasks competing for resources",
+      "severity": "MEDIUM",
+      "mitigation": "Parallel execution with clear dependencies and OCTOSPINE orchestration",
+      "week": 2
+    },
+    {
+      "id": "RISK-004",
+      "title": "Security Vulnerabilities",
+      "description": "Risk of security issues during migration",
+      "severity": "HIGH",
+      "mitigation": "Address security issues in Week 1 documentation sprint",
+      "week": 1
+    }
+  ],
+  "synergies": [
+    {
+      "id": "SYNC-001",
+      "title": "Documentation-Guided Migration",
+      "description": "Use documented system understanding to guide Tauri migration",
+      "benefit": "Reduced migration risks and smoother transition",
+      "week": 3
+    },
+    {
+      "id": "SYNC-002",
+      "title": "Security-First Approach",
+      "description": "Address security issues in documentation sprint before migration",
+      "benefit": "Secure foundation for Tauri migration",
+      "week": 1
+    },
+    {
+      "id": "SYNC-003",
+      "title": "OCTOSPINE Self-Orchestration",
+      "description": "Use OCTOSPINE to manage both documentation and migration",
+      "benefit": "Automated coordination and progress tracking",
+      "week": 1
+    },
+    {
+      "id": "SYNC-004",
+      "title": "Knowledge Preservation",
+      "description": "Document migration process for future reference",
+      "benefit": "Reusable knowledge and improved future migrations",
+      "week": 4
+    }
+  ],
+  "progress": {
+    "overall_progress": 87.5,
+    "week_progress": {
+      "1": 100.0,
+      "2": 100.0,
+      "3": 100.0,
+      "4": 33.33333333333333,
+      "5": 100.0,
+      "6": 0.0,
+      "1": 100.0,
+      "2": 100.0,
+      "3": 100.0,
+      "4": 33.33333333333333,
+      "5": 100.0,
+      "6": 100.0
+    },
+    "documentation_progress": 85.71428571428571,
+    "tauri_progress": 87.5,
+    "tasks_completed": 14,
+    "tasks_total": 16,
+    "risks_mitigated": 0,
+    "synergies_realized": 0
+  },
+  "created_at": "2025-08-13T06:12:37.361195",
+  "updated_at": "2025-08-13T12:24:22.705702"
+}

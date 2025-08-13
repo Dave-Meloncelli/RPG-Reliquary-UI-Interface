@@ -123,7 +123,7 @@ class OctoSpineChunkedExtractor:
             with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
                 f.seek(max(0, position))
                 return f.read(self.overlap_size)
-        except:
+        except Exception as e:
             return ""
     
     def _extract_from_content(self, content: str, file_path: str, chunk_num: int = 0) -> dict:

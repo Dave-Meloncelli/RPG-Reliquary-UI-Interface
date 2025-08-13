@@ -1,0 +1,16 @@
+{
+  "scan_interval_hours": 6,
+  "auto_fix_enabled": true,
+  "auto_update_enabled": false,
+  "critical_threshold": 5,
+  "high_threshold": 10,
+  "moderate_threshold": 20,
+  "notification_channels": [
+    "console",
+    "file"
+  ],
+  "backup_enabled": true,
+  "rollback_enabled": true,
+  "security_scan_enabled": true,
+  "dependency_pinning": true
+}

@@ -1,9 +1,9 @@
-import { eventBus } from './eventBus';
+import { eventBus } from "./eventBus";
 
 export interface CodexModel {
   id: string;
   name: string;
-  type: 'code' | 'text' | 'edit';
+  type: "code" | "text" | "edit";
   capabilities: string[];
   maxTokens: number;
   temperature: number;
@@ -27,7 +27,7 @@ export interface CodexCompletionRequest {
   context?: {
     systemPrompt?: string;
     conversationHistory?: Array<{
-      role: 'user' | 'assistant';
+      role: "user" | "assistant";
       content: string;
     }>;
     fileContext?: string;
@@ -45,7 +45,7 @@ export interface CodexCompletionResponse {
     completionTokens: number;
     totalTokens: number;
   };
-  finishReason: 'stop' | 'length' | 'content_filter';
+  finishReason: "stop" | "length" | "content_filter";
   metadata?: Record<string, any>;
   timestamp: string;
 }
@@ -74,7 +74,7 @@ export interface CodexEditResponse {
   originalCode: string;
   editedCode: string;
   changes: Array<{
-    type: 'addition' | 'deletion' | 'modification';
+    type: "addition" | "deletion" | "modification";
     line?: number;
     content?: string;
     description: string;
@@ -91,7 +91,12 @@ export interface CodexAnalysisRequest {
   id: string;
   modelId: string;
   code: string;
-  analysisType: 'review' | 'optimization' | 'security' | 'documentation' | 'testing';
+  analysisType:
+    | "review"
+    | "optimization"
+    | "security"
+    | "documentation"
+    | "testing";
   parameters: {
     temperature?: number;
     maxTokens?: number;
@@ -112,13 +117,13 @@ export interface CodexAnalysisResponse {
   analysisType: string;
   summary: string;
   findings: Array<{
-    type: 'info' | 'warning' | 'error' | 'suggestion';
+    type: "info" | "warning" | "error" | "suggestion";
     message: string;
     line?: number;
-    severity: 'low' | 'medium' | 'high' | 'critical';
+    severity: "low" | "medium" | "high" | "critical";
     suggestion?: string;
   }>;
-  recommendations: recommendations: string[];
+  recommendations: string[];
   examples?: string[];
   usage: {
     promptTokens: number;
@@ -172,7 +177,7 @@ export interface CodexFunctionResponse {
 export class OpenAICodexService {
   private eventBus: any;
   private apiKey?: string;
-  private baseUrl: string = 'https://api.openai.com/v1';
+  private baseUrl: string = "https://api.openai.com/v1";
   private isConnected: boolean = false;
   private availableModels: Map<string, CodexModel> = new Map();
   private completionHistory: Map<string, CodexCompletionResponse> = new Map();
@@ -181,8 +186,6 @@ export class OpenAICodexService {
   private functionHistory: Map<string, CodexFunctionResponse> = new Map();
 
   constructor(eventBus: any, apiKey?: string) {
-    const recommendations: recommendations = this.generateRecommendations(score: score, opportunities);
-    
     this.eventBus = eventBus;
     this.apiKey = apiKey;
     this.initializeModels();
@@ -194,52 +197,52 @@ export class OpenAICodexService {
   private initializeModels(): void {
     const models: CodexModel[] = [
       {
-        id: 'gpt-4',
-        name: 'GPT-4',
-        type: 'text',
-        capabilities: ['text-generation', 'code-generation', 'analysis'],
+        id: "gpt-4",
+        name: "GPT-4",
+        type: "text",
+        capabilities: ["text-generation", "code-generation", "analysis"],
         maxTokens: 8192,
         temperature: 0.7,
         topP: 1.0,
         frequencyPenalty: 0.0,
-        presencePenalty: 0.0
+        presencePenalty: 0.0,
       },
       {
-        id: 'gpt-4-turbo',
-        name: 'GPT-4 Turbo',
-        type: 'text',
-        capabilities: ['text-generation', 'code-generation', 'analysis'],
+        id: "gpt-4-turbo",
+        name: "GPT-4 Turbo",
+        type: "text",
+        capabilities: ["text-generation", "code-generation", "analysis"],
         maxTokens: 128000,
         temperature: 0.7,
         topP: 1.0,
         frequencyPenalty: 0.0,
-        presencePenalty: 0.0
+        presencePenalty: 0.0,
       },
       {
-        id: 'gpt-3.5-turbo',
-        name: 'GPT-3.5 Turbo',
-        type: 'text',
-        capabilities: ['text-generation', 'code-generation'],
+        id: "gpt-3.5-turbo",
+        name: "GPT-3.5 Turbo",
+        type: "text",
+        capabilities: ["text-generation", "code-generation"],
         maxTokens: 4096,
         temperature: 0.7,
         topP: 1.0,
         frequencyPenalty: 0.0,
-        presencePenalty: 0.0
+        presencePenalty: 0.0,
       },
       {
-        id: 'code-davinci-002',
-        name: 'Code Davinci 002',
-        type: 'code',
-        capabilities: ['code-generation', 'code-completion', 'code-analysis'],
+        id: "code-davinci-002",
+        name: "Code Davinci 002",
+        type: "code",
+        capabilities: ["code-generation", "code-completion", "code-analysis"],
         maxTokens: 8000,
         temperature: 0.3,
         topP: 1.0,
         frequencyPenalty: 0.0,
-        presencePenalty: 0.0
-      }
+        presencePenalty: 0.0,
+      },
     ];
 
-    models.forEach(model => {
+    models.forEach((model) => {
       this.availableModels.set(model.id, model);
     });
   }
@@ -250,10 +253,10 @@ export class OpenAICodexService {
   setAPIKey(apiKey: string): void {
     this.apiKey = apiKey;
     this.isConnected = !!apiKey;
-    
-    this.eventBus.emit('openai-codex:api-key-set', {
+
+    this.eventBus.emit("openai-codex:api-key-set", {
       timestamp: new Date().toISOString(),
-      hasKey: !!apiKey
+      hasKey: !!apiKey,
     });
   }
 
@@ -262,33 +265,33 @@ export class OpenAICodexService {
    */
   async testConnection(): Promise<boolean> {
     if (!this.apiKey) {
-      throw new Error('API key not set');
+      throw new Error("API key not set");
     }
 
     try {
       const response = await fetch(`${this.baseUrl}/models`, {
         headers: {
-          'Authorization': `Bearer ${this.apiKey}`,
-          'Content-Type': 'application/json'
-        }
+          Authorization: `Bearer ${this.apiKey}`,
+          "Content-Type": "application/json",
+        },
       });
-      
+
       this.isConnected = response.ok;
-      
-      this.eventBus.emit('openai-codex:connection-tested', {
+
+      this.eventBus.emit("openai-codex:connection-tested", {
         timestamp: new Date().toISOString(),
         connected: this.isConnected,
-        status: response.status
+        status: response.status,
       });
 
       return this.isConnected;
     } catch (error) {
       this.isConnected = false;
-      console.error('Failed to connect to OpenAI API:', error);
-      
-      this.eventBus.emit('openai-codex:connection-failed', {
+      console.error("Failed to connect to OpenAI API:", error);
+
+      this.eventBus.emit("openai-codex:connection-failed", {
         timestamp: new Date().toISOString(),
-        error: error instanceof Error ? error.message : 'Unknown error'
+        error: error instanceof Error ? error.message : "Unknown error",
       });
 
       return false;
@@ -312,28 +315,35 @@ export class OpenAICodexService {
   /**
    * Generate code completion using OpenAI Codex
    */
-  async generateCompletion(request: Omit<CodexCompletionRequest, 'id'>): Promise<CodexCompletionResponse> {
+  async generateCompletion(
+    request: Omit<CodexCompletionRequest, "id">,
+  ): Promise<CodexCompletionResponse> {
     if (!this.isConnected || !this.apiKey) {
-      throw new Error('Not connected to OpenAI API');
+      throw new Error("Not connected to OpenAI API");
     }
 
+    const model = this.getModel(request.modelId);
     if (!model) {
       throw new Error(`Model ${request.modelId} not found`);
     }
 
+    const requestId = `completion_request_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const fullRequest: CodexCompletionRequest = {
       ...request,
-      id: requestId
+      id: requestId,
     };
 
     try {
       // Prepare messages for chat completion
-      const messages: Array<{ role: 'system' | 'user' | 'assistant'; content: string }> = [];
-      
+      const messages: Array<{
+        role: "system" | "user" | "assistant";
+        content: string;
+      }> = [];
+
       if (request.context?.systemPrompt) {
         messages.push({
-          role: 'system',
-          content: request.context.systemPrompt
+          role: "system",
+          content: request.context.systemPrompt,
         });
       }
 
@@ -343,13 +353,13 @@ export class OpenAICodexService {
 
       if (request.context?.fileContext) {
         messages.push({
-          role: 'user',
-          content: `File context:\n\`\`\`${request.context.language || 'text'}\n${request.context.fileContext}\n\`\`\`\n\nRequest: ${request.prompt}`
+          role: "user",
+          content: `File context:\n\`\`\`${request.context.language || "text"}\n${request.context.fileContext}\n\`\`\`\n\nRequest: ${request.prompt}`,
         });
       } else {
         messages.push({
-          role: 'user',
-          content: request.prompt
+          role: "user",
+          content: request.prompt,
         });
       }
 
@@ -359,29 +369,35 @@ export class OpenAICodexService {
         temperature: request.parameters.temperature ?? model.temperature,
         top_p: request.parameters.topP ?? model.topP,
         max_tokens: request.parameters.maxTokens ?? model.maxTokens,
-        frequency_penalty: request.parameters.frequencyPenalty ?? model.frequencyPenalty,
-        presence_penalty: request.parameters.presencePenalty ?? model.presencePenalty,
-        stop: request.parameters.stop
+        frequency_penalty:
+          request.parameters.frequencyPenalty ?? model.frequencyPenalty,
+        presence_penalty:
+          request.parameters.presencePenalty ?? model.presencePenalty,
+        stop: request.parameters.stop,
       };
 
       const response = await fetch(`${this.baseUrl}/chat/completions`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Authorization': `Bearer ${this.apiKey}`,
-          'Content-Type': 'application/json'
+          Authorization: `Bearer ${this.apiKey}`,
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
-        throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+        throw new Error(
+          `API request failed: ${response.status} ${response.statusText}`,
+        );
       }
 
-      
+      const data = await response.json();
+      const content = data.choices?.[0]?.message?.content || "";
+
       const usage = data.usage || {
         prompt_tokens: 0,
         completion_tokens: 0,
-        total_tokens: 0
+        total_tokens: 0,
       };
 
       const completionResponse: CodexCompletionResponse = {
@@ -391,32 +407,31 @@ export class OpenAICodexService {
         usage: {
           promptTokens: usage.prompt_tokens || 0,
           completionTokens: usage.completion_tokens || 0,
-          totalTokens: usage.total_tokens || 0
+          totalTokens: usage.total_tokens || 0,
         },
-        finishReason: data.choices?.[0]?.finish_reason || 'stop',
+        finishReason: data.choices?.[0]?.finish_reason || "stop",
         metadata: request.metadata,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
 
       this.completionHistory.set(completionResponse.id, completionResponse);
 
-      this.eventBus.emit('openai-codex:completion-generated', {
+      this.eventBus.emit("openai-codex:completion-generated", {
         timestamp: new Date().toISOString(),
         requestId,
         responseId: completionResponse.id,
         modelId: request.modelId,
         contentLength: content.length,
-        usage: completionResponse.usage
+        usage: completionResponse.usage,
       });
 
       return completionResponse;
-
     } catch (error) {
-      this.eventBus.emit('openai-codex:completion-failed', {
+      this.eventBus.emit("openai-codex:completion-failed", {
         timestamp: new Date().toISOString(),
         requestId,
         modelId: request.modelId,
-        error: error instanceof Error ? error.message : 'Unknown error'
+        error: error instanceof Error ? error.message : "Unknown error",
       });
 
       throw error;
@@ -426,44 +441,49 @@ export class OpenAICodexService {
   /**
    * Edit code using OpenAI Codex
    */
-  async editCode(request: Omit<CodexEditRequest, 'id'>): Promise<CodexEditResponse> {
+  async editCode(
+    request: Omit<CodexEditRequest, "id">,
+  ): Promise<CodexEditResponse> {
     if (!this.isConnected || !this.apiKey) {
-      throw new Error('Not connected to OpenAI API');
+      throw new Error("Not connected to OpenAI API");
     }
 
+    const requestId = `edit_request_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const fullRequest: CodexEditRequest = {
       ...request,
-      id: requestId
+      id: requestId,
     };
 
     try {
       // Prepare edit prompt
-      prompt += `Language: ${request.context?.language || 'text'}\n`;
+      let promptText = `Instruction: ${request.instruction}\n`;
+      promptText += `Language: ${request.context?.language || "text"}\n`;
       if (request.context?.framework) {
-        prompt += `Framework: ${request.context.framework}\n`;
+        promptText += `Framework: ${request.context.framework}\n`;
       }
-      prompt += `\nOriginal code:\n\`\`\`${request.context?.language || 'text'}\n${request.code}\n\`\`\``;
+      promptText += `\nOriginal code:\n\`\`\`${request.context?.language || "text"}\n${request.code}\n\`\`\``;
 
       const completionResponse = await this.generateCompletion({
         modelId: request.modelId,
-        prompt,
+        prompt: promptText,
         parameters: {
           temperature: request.parameters.temperature ?? 0.3,
-          maxTokens: request.parameters.maxTokens ?? 4000
+          maxTokens: request.parameters.maxTokens ?? 4000,
         },
         context: {
-          systemPrompt: 'You are a code editor. Provide only the edited code without explanations unless specifically requested.'
+          systemPrompt:
+            "You are a code editor. Provide only the edited code without explanations unless specifically requested.",
         },
         metadata: {
-          type: 'code-edit',
+          type: "code-edit",
           originalCode: request.code,
-          ...request.metadata
-        }
+          ...request.metadata,
+        },
       });
 
       // Extract edited code
-
-      // Simple diff analysis (in a real implementation, you'd use a proper diff library)
+      const editedCode = completionResponse.content;
+      const changes = this.analyzeCodeChanges(request.code, editedCode);
 
       const editResponse: CodexEditResponse = {
         id: `edit_response_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
@@ -472,28 +492,27 @@ export class OpenAICodexService {
         editedCode,
         changes,
         usage: completionResponse.usage,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
 
       this.editHistory.set(editResponse.id, editResponse);
 
-      this.eventBus.emit('openai-codex:code-edited', {
+      this.eventBus.emit("openai-codex:code-edited", {
         timestamp: new Date().toISOString(),
         requestId,
         responseId: editResponse.id,
         modelId: request.modelId,
         changesCount: changes.length,
-        usage: editResponse.usage
+        usage: editResponse.usage,
       });
 
       return editResponse;
-
     } catch (error) {
-      this.eventBus.emit('openai-codex:edit-failed', {
+      this.eventBus.emit("openai-codex:edit-failed", {
         timestamp: new Date().toISOString(),
         requestId,
         modelId: request.modelId,
-        error: error instanceof Error ? error.message : 'Unknown error'
+        error: error instanceof Error ? error.message : "Unknown error",
       });
 
       throw error;
@@ -503,52 +522,59 @@ export class OpenAICodexService {
   /**
    * Analyze code using OpenAI Codex
    */
-  async analyzeCode(request: Omit<CodexAnalysisRequest, 'id'>): Promise<CodexAnalysisResponse> {
+  async analyzeCode(
+    request: Omit<CodexAnalysisRequest, "id">,
+  ): Promise<CodexAnalysisResponse> {
     if (!this.isConnected || !this.apiKey) {
-      throw new Error('Not connected to OpenAI API');
+      throw new Error("Not connected to OpenAI API");
     }
 
+    const requestId = `analysis_request_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const fullRequest: CodexAnalysisRequest = {
       ...request,
-      id: requestId
+      id: requestId,
     };
 
     try {
       // Prepare analysis prompt
-      prompt += `Language: ${request.context?.language || 'text'}\n`;
+      let promptText = `Language: ${request.context?.language || "text"}\n`;
       if (request.context?.framework) {
-        prompt += `Framework: ${request.context.framework}\n`;
+        promptText += `Framework: ${request.context.framework}\n`;
       }
       if (request.context?.projectType) {
-        prompt += `Project Type: ${request.context.projectType}\n`;
+        promptText += `Project Type: ${request.context.projectType}\n`;
       }
-      prompt += `\nCode:\n\`\`\`${request.context?.language || 'text'}\n${request.code}\n\`\`\`\n\n`;
-      prompt += `Please provide a comprehensive ${request.analysisType} analysis including:\n`;
-      prompt += `- Summary of findings\n`;
-      prompt += `- Specific issues and their severity\n`;
-      prompt += `- Recommendations for improvement\n`;
+      promptText += `\nCode:\n\`\`\`${request.context?.language || "text"}\n${request.code}\n\`\`\`\n\n`;
+      promptText += `Please provide a comprehensive ${request.analysisType} analysis including:\n`;
+      promptText += `- Summary of findings\n`;
+      promptText += `- Specific issues and their severity\n`;
+      promptText += `- Recommendations for improvement\n`;
       if (request.parameters.includeExamples) {
-        prompt += `- Code examples where applicable\n`;
+        promptText += `- Code examples where applicable\n`;
       }
 
       const completionResponse = await this.generateCompletion({
         modelId: request.modelId,
-        prompt,
+        prompt: promptText,
         parameters: {
           temperature: request.parameters.temperature ?? 0.3,
-          maxTokens: request.parameters.maxTokens ?? 4000
+          maxTokens: request.parameters.maxTokens ?? 4000,
         },
         context: {
-          systemPrompt: `You are a code analyst specializing in ${request.analysisType}. Provide structured, actionable feedback.`
+          systemPrompt: `You are a code analyst specializing in ${request.analysisType}. Provide structured, actionable feedback.`,
         },
         metadata: {
-          type: 'code-analysis',
+          type: "code-analysis",
           analysisType: request.analysisType,
-          ...request.metadata
-        }
+          ...request.metadata,
+        },
       });
 
       // Parse analysis response
+      const analysis = this.parseAnalysisResponse(
+        completionResponse.content,
+        request.analysisType,
+      );
 
       const analysisResponse: CodexAnalysisResponse = {
         id: `analysis_response_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
@@ -556,33 +582,32 @@ export class OpenAICodexService {
         analysisType: request.analysisType,
         summary: analysis.summary,
         findings: analysis.findings,
-        recommendations: recommendations: analysis.recommendations: recommendations,
+        recommendations: analysis.recommendations,
         examples: analysis.examples,
         usage: completionResponse.usage,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
 
       this.analysisHistory.set(analysisResponse.id, analysisResponse);
 
-      this.eventBus.emit('openai-codex:code-analyzed', {
+      this.eventBus.emit("openai-codex:code-analyzed", {
         timestamp: new Date().toISOString(),
         requestId,
         responseId: analysisResponse.id,
         modelId: request.modelId,
         analysisType: request.analysisType,
         findingsCount: analysis.findings.length,
-        usage: analysisResponse.usage
+        usage: analysisResponse.usage,
       });
 
       return analysisResponse;
-
     } catch (error) {
-      this.eventBus.emit('openai-codex:analysis-failed', {
+      this.eventBus.emit("openai-codex:analysis-failed", {
         timestamp: new Date().toISOString(),
         requestId,
         modelId: request.modelId,
         analysisType: request.analysisType,
-        error: error instanceof Error ? error.message : 'Unknown error'
+        error: error instanceof Error ? error.message : "Unknown error",
       });
 
       throw error;
@@ -592,68 +617,80 @@ export class OpenAICodexService {
   /**
    * Generate function using OpenAI Codex
    */
-  async generateFunction(request: Omit<CodexFunctionRequest, 'id'>): Promise<CodexFunctionResponse> {
+  async generateFunction(
+    request: Omit<CodexFunctionRequest, "id">,
+  ): Promise<CodexFunctionResponse> {
     if (!this.isConnected || !this.apiKey) {
-      throw new Error('Not connected to OpenAI API');
+      throw new Error("Not connected to OpenAI API");
     }
 
+    const requestId = `function_request_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
     const fullRequest: CodexFunctionRequest = {
       ...request,
-      id: requestId
+      id: requestId,
     };
 
     try {
       // Prepare function generation prompt
-      prompt += `Language: ${request.language}\n`;
-      
+      let promptText = `Description: ${request.description}\n`;
+      promptText += `Language: ${request.language}\n`;
+
       if (request.context?.functionName) {
-        prompt += `Function name: ${request.context.functionName}\n`;
+        promptText += `Function name: ${request.context.functionName}\n`;
       }
-      
+
       if (request.context?.returnType) {
-        prompt += `Return type: ${request.context.returnType}\n`;
+        promptText += `Return type: ${request.context.returnType}\n`;
       }
-      
+
       if (request.context?.parameters?.length) {
-        prompt += `Parameters:\n${request.context.parameters.map(param => 
-          `- ${param.name}: ${param.type}${param.required ? ' (required)' : ' (optional)'} - ${param.description}`
-        ).join('\n')}\n`;
+        promptText += `Parameters:\n${request.context.parameters
+          .map(
+            (param) =>
+              `- ${param.name}: ${param.type}${param.required ? " (required)" : " (optional)"} - ${param.description}`,
+          )
+          .join("\n")}\n`;
       }
-      
+
       if (request.context?.framework) {
-        prompt += `Framework: ${request.context.framework}\n`;
+        promptText += `Framework: ${request.context.framework}\n`;
       }
-      
+
       if (request.context?.style) {
-        prompt += `Coding style: ${request.context.style}\n`;
+        promptText += `Coding style: ${request.context.style}\n`;
       }
 
       if (request.parameters.includeTests) {
-        prompt += '\nPlease include unit tests for the function.';
+        promptText += "\nPlease include unit tests for the function.";
       }
 
       if (request.parameters.includeDocumentation) {
-        prompt += '\nPlease include comprehensive documentation.';
+        promptText += "\nPlease include comprehensive documentation.";
       }
 
       const completionResponse = await this.generateCompletion({
         modelId: request.modelId,
-        prompt,
+        prompt: promptText,
         parameters: {
           temperature: request.parameters.temperature ?? 0.3,
-          maxTokens: request.parameters.maxTokens ?? 4000
+          maxTokens: request.parameters.maxTokens ?? 4000,
         },
         context: {
-          systemPrompt: 'You are a function generator. Provide clean, well-structured code with proper error handling.'
+          systemPrompt:
+            "You are a function generator. Provide clean, well-structured code with proper error handling.",
         },
         metadata: {
-          type: 'function-generation',
+          type: "function-generation",
           language: request.language,
-          ...request.metadata
-        }
+          ...request.metadata,
+        },
       });
 
       // Parse function response
+      const functionData = this.parseFunctionResponse(
+        completionResponse.content,
+        request.language,
+      );
 
       const functionResponse: CodexFunctionResponse = {
         id: `function_response_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
@@ -663,30 +700,29 @@ export class OpenAICodexService {
         documentation: functionData.documentation,
         tests: functionData.tests,
         usage: completionResponse.usage,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
       };
 
       this.functionHistory.set(functionResponse.id, functionResponse);
 
-      this.eventBus.emit('openai-codex:function-generated', {
+      this.eventBus.emit("openai-codex:function-generated", {
         timestamp: new Date().toISOString(),
         requestId,
         responseId: functionResponse.id,
         modelId: request.modelId,
         language: request.language,
         functionName: functionData.functionName,
-        usage: functionResponse.usage
+        usage: functionResponse.usage,
       });
 
       return functionResponse;
-
     } catch (error) {
-      this.eventBus.emit('openai-codex:function-generation-failed', {
+      this.eventBus.emit("openai-codex:function-generation-failed", {
         timestamp: new Date().toISOString(),
         requestId,
         modelId: request.modelId,
         language: request.language,
-        error: error instanceof Error ? error.message : 'Unknown error'
+        error: error instanceof Error ? error.message : "Unknown error",
       });
 
       throw error;
@@ -696,23 +732,30 @@ export class OpenAICodexService {
   /**
    * Analyze code changes (simple implementation)
    */
-  private analyzeCodeChanges(originalCode: string, editedCode: string): Array<{
-    type: 'addition' | 'deletion' | 'modification';
+  private analyzeCodeChanges(
+    originalCode: string,
+    editedCode: string,
+  ): Array<{
+    type: "addition" | "deletion" | "modification";
     line?: number;
     content?: string;
     description: string;
   }> {
     const changes: Array<{
-      type: 'addition' | 'deletion' | 'modification';
+      type: "addition" | "deletion" | "modification";
       line?: number;
       content?: string;
       description: string;
     }> = [];
 
+    const originalLines = originalCode.split("\n");
+    const editedLines = editedCode.split("\n");
+    const maxLines = Math.max(originalLines.length, editedLines.length);
+
     if (originalLines.length !== editedLines.length) {
       changes.push({
-        type: 'modification',
-        description: `Number of lines changed from ${originalLines.length} to ${editedLines.length}`
+        type: "modification",
+        description: `Number of lines changed from ${originalLines.length} to ${editedLines.length}`,
       });
     }
 
@@ -720,24 +763,24 @@ export class OpenAICodexService {
     for (let i = 0; i < maxLines; i++) {
       if (i >= originalLines.length) {
         changes.push({
-          type: 'addition',
+          type: "addition",
           line: i + 1,
           content: editedLines[i],
-          description: `Added line ${i + 1}`
+          description: `Added line ${i + 1}`,
         });
       } else if (i >= editedLines.length) {
         changes.push({
-          type: 'deletion',
+          type: "deletion",
           line: i + 1,
           content: originalLines[i],
-          description: `Deleted line ${i + 1}`
+          description: `Deleted line ${i + 1}`,
         });
       } else if (originalLines[i] !== editedLines[i]) {
         changes.push({
-          type: 'modification',
+          type: "modification",
           line: i + 1,
           content: editedLines[i],
-          description: `Modified line ${i + 1}`
+          description: `Modified line ${i + 1}`,
         });
       }
     }
@@ -748,41 +791,54 @@ export class OpenAICodexService {
   /**
    * Parse analysis response
    */
-  private parseAnalysisResponse(content: string, analysisType: string): {
+  private parseAnalysisResponse(
+    content: string,
+    analysisType: string,
+  ): {
     summary: string;
     findings: Array<{
-      type: 'info' | 'warning' | 'error' | 'suggestion';
+      type: "info" | "warning" | "error" | "suggestion";
       message: string;
       line?: number;
-      severity: 'low' | 'medium' | 'high' | 'critical';
+      severity: "low" | "medium" | "high" | "critical";
       suggestion?: string;
     }>;
-    recommendations: recommendations: string[];
+    recommendations: string[];
     examples?: string[];
   } {
     // Simple parsing - in a real implementation, you'd use more sophisticated parsing
     const findings: Array<{
-      type: 'info' | 'warning' | 'error' | 'suggestion';
+      type: "info" | "warning" | "error" | "suggestion";
       message: string;
       line?: number;
-      severity: 'low' | 'medium' | 'high' | 'critical';
+      severity: "low" | "medium" | "high" | "critical";
       suggestion?: string;
     }> = [];
-    const recommendations: recommendations: string[] = [];
+    const recommendations: string[] = [];
     const examples: string[] = [];
+    const lines = content.split("\n");
+    const summary = `Analysis of ${analysisType} completed`;
 
-    // Extract findings, recommendations: recommendations, and examples from the response
+    // Extract findings, recommendations, and examples from the response
     // This is a simplified parser - you'd want more robust parsing
     lines.forEach((line: string) => {
-      if (line.toLowerCase().includes('warning') || line.toLowerCase().includes('error')) {
+      if (
+        line.toLowerCase().includes("warning") ||
+        line.toLowerCase().includes("error")
+      ) {
         findings.push({
-          type: line.toLowerCase().includes('error') ? 'error' : 'warning',
+          type: line.toLowerCase().includes("error") ? "error" : "warning",
           message: line,
-          severity: line.toLowerCase().includes('critical') ? 'critical' : 'medium'
+          severity: line.toLowerCase().includes("critical")
+            ? "critical"
+            : "medium",
         });
-      } else if (line.toLowerCase().includes('recommend') || line.toLowerCase().includes('suggest')) {
-        recommendations: recommendations.push(line);
-      } else if (line.includes('```')) {
+      } else if (
+        line.toLowerCase().includes("recommend") ||
+        line.toLowerCase().includes("suggest")
+      ) {
+        recommendations.push(line);
+      } else if (line.includes("```")) {
         examples.push(line);
       }
     });
@@ -790,31 +846,40 @@ export class OpenAICodexService {
     return {
       summary,
       findings,
-      recommendations: recommendations,
-      examples: examples.length > 0 ? examples : undefined
+      recommendations,
+      examples: examples.length > 0 ? examples : undefined,
     };
   }
 
   /**
    * Parse function response
    */
-  private parseFunctionResponse(content: string, language: string): {
+  private parseFunctionResponse(
+    content: string,
+    language: string,
+  ): {
     functionName: string;
     code: string;
     documentation?: string;
     tests?: string;
   } {
     // Extract function name from code
+    const functionName = "generatedFunction";
 
     // Extract code blocks
+    const code = content;
 
     // Extract documentation and tests
+    const documentation = content.includes("/*")
+      ? content.split("/*")[1]?.split("*/")[0]
+      : undefined;
+    const tests = content.includes("test") ? content : undefined;
 
     return {
       functionName,
       code,
       documentation,
-      tests
+      tests,
     };
   }
 
@@ -823,7 +888,11 @@ export class OpenAICodexService {
    */
   getCompletionHistory(limit: number = 50): CodexCompletionResponse[] {
     return Array.from(this.completionHistory.values())
-      .sort((a, b) => new Date(b.timestamp || Date.now()).getTime() - new Date(a.timestamp || Date.now()).getTime())
+      .sort(
+        (a, b) =>
+          new Date(b.timestamp || Date.now()).getTime() -
+          new Date(a.timestamp || Date.now()).getTime(),
+      )
       .slice(0, limit);
   }
 
@@ -832,7 +901,11 @@ export class OpenAICodexService {
    */
   getEditHistory(limit: number = 20): CodexEditResponse[] {
     return Array.from(this.editHistory.values())
-      .sort((a, b) => new Date(b.timestamp || Date.now()).getTime() - new Date(a.timestamp || Date.now()).getTime())
+      .sort(
+        (a, b) =>
+          new Date(b.timestamp || Date.now()).getTime() -
+          new Date(a.timestamp || Date.now()).getTime(),
+      )
       .slice(0, limit);
   }
 
@@ -841,7 +914,11 @@ export class OpenAICodexService {
    */
   getAnalysisHistory(limit: number = 20): CodexAnalysisResponse[] {
     return Array.from(this.analysisHistory.values())
-      .sort((a, b) => new Date(b.timestamp || Date.now()).getTime() - new Date(a.timestamp || Date.now()).getTime())
+      .sort(
+        (a, b) =>
+          new Date(b.timestamp || Date.now()).getTime() -
+          new Date(a.timestamp || Date.now()).getTime(),
+      )
       .slice(0, limit);
   }
 
@@ -850,7 +927,11 @@ export class OpenAICodexService {
    */
   getFunctionHistory(limit: number = 20): CodexFunctionResponse[] {
     return Array.from(this.functionHistory.values())
-      .sort((a, b) => new Date(b.timestamp || Date.now()).getTime() - new Date(a.timestamp || Date.now()).getTime())
+      .sort(
+        (a, b) =>
+          new Date(b.timestamp || Date.now()).getTime() -
+          new Date(a.timestamp || Date.now()).getTime(),
+      )
       .slice(0, limit);
   }
 
@@ -873,7 +954,7 @@ export class OpenAICodexService {
       totalCompletions: this.completionHistory.size,
       totalEdits: this.editHistory.size,
       totalAnalyses: this.analysisHistory.size,
-      totalFunctions: this.functionHistory.size
+      totalFunctions: this.functionHistory.size,
     };
   }
-} 
+}

@@ -1,137 +1,300 @@
-import React, { useState, useEffect, type FC } from 'react';
-import { controlPanelService } from '../services/controlPanelService';
-import { getInitialAgentData } from '../services/agentData';
-import type { ControlPanelState, AgentProfile } from '../types';
+import React, { useState, useEffect, type FC } from "react";
 
-const TABS = ['Agents', 'Orchestrator', 'API Keys'];
+import type { ControlPanelState, AgentProfile } from "../types";
 
-const ControlPanelApp: React.FC = () => {
-    const [activeTab, setActiveTab] = useState(TABS[0]);
-    const [state, setState] = useState<ControlPanelState>(controlPanelService.getState());
-    const [agents] = useState<AgentProfile[]>(getInitialAgentData());
+const getAgentIcon = (iconName: any) => {
+  const iconMap: Record<string, React.ComponentType> = {
+    AgentIconCamera: AgentIconCamera,
+    AgentIconScale: AgentIconScale,
+    AgentIconChart: AgentIconChart,
+    AgentIconCrown: AgentIconCrown,
+    AgentIconBrain: AgentIconBrain,
+    AgentIconBook: AgentIconBook,
+    AgentIconShield: AgentIconShield,
+    AgentIconFingerprint: AgentIconFingerprint,
+    AgentIconDollar: AgentIconDollar,
+    AgentIconQuill: AgentIconQuill,
+    AgentIconRuler: AgentIconRuler,
+    AgentIconCurator: AgentIconCurator,
+    AgentIconZero: AgentIconZero,
+    AgentIconGhost: AgentIconGhost,
+    AgentIconNya: AgentIconNya,
+    AgentIconMajorPayne: AgentIconMajorPayne,
+    AgentIconSteelCore: AgentIconSteelCore,
+    AgentIconTheWeaver: AgentIconTheWeaver,
+    AgentIconTinkerHexbolt: AgentIconTinkerHexbolt,
+    AgentIconTheArchivist: AgentIconTheArchivist,
+    AgentIconAeonIndexwell: AgentIconAeonIndexwell,
+    AgentIconTheCartographer: AgentIconTheCartographer,
+    AgentIconTheTechnomancer: AgentIconTheTechnomancer,
+    AgentIconTheCurator: AgentIconTheCurator,
+    AgentIconTheCompanion: AgentIconTheCompanion,
+    AgentIconTheCouncil: AgentIconTheCouncil,
+    AgentIconTheHierarchy: AgentIconTheHierarchy,
+    AgentIconTheInfrastructure: AgentIconTheInfrastructure,
+    AgentIconTheObservatory: AgentIconTheObservatory,
+    AgentIconTheOperations: AgentIconTheOperations,
+    AgentIconTheOrchestrator: AgentIconTheOrchestrator,
+    AgentIconTheSymposium: AgentIconTheSymposium,
+    AgentIconTheTaskReview: AgentIconTheTaskReview,
+    AgentIconTheVaultExplorer: AgentIconTheVaultExplorer,
+  };
+  return iconMap[iconName] || AgentIconZero;
+};
 
-    useEffect(() => {
-        const unsubscribe = controlPanelService.subscribe(setState);
-        return unsubscribe;
-    }, []);
+const TABS = ["Agents", "Orchestrator", "AI Autonomy", "API Keys"];
 
-    const handleAgentStatusToggle = (agentId: string) => {
-        const currentStatus = state.agentMasterStatus[agentId];
-        const newStatus = currentStatus === 'Online' ? 'Dormant' : 'Online';
-        controlPanelService.setAgentMasterStatus(agentId, newStatus);
-    };
+const ControlPanelApp: FC = () => {
+  const [activeTab, setActiveTab] = useState(TABS[0]);
+  const [state, setState] = useState<ControlPanelState>(
+    controlPanelService.getState(),
+  );
+  const [agents] = useState<AgentProfile[]>(getInitialAgentData());
 
-    const handleBudgetChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const budget = parseInt(e.target.value, 10);
-        if (!isNaN(budget)) {
-            controlPanelService.updateOrchestratorBudget(budget);
-        }
-    };
-    
-    const handleProviderToggle = (providerKey: string) => {
-        const isEnabled = !state.orchestrator.providerEnabled[providerKey];
-        controlPanelService.setProviderEnabled(providerKey, isEnabled);
-    };
+  useEffect(() => {
+    const unsubscribe = controlPanelService.subscribe(setState);
+    return unsubscribe;
+  }, []);
 
-    return (
-        <div className="flex flex-col h-full bg-slate-900/80 text-slate-200 font-sans">
-            <div className="p-4 border-b border-slate-700/50">
-                <h2 className="text-lg font-bold text-white">Control Panel</h2>
-                <p className="text-sm text-slate-400">Manage core system configurations.</p>
+  const handleAgentStatusToggle = (agentId: any) => {
+    controlPanelService.toggleAgentStatus(agentId);
+  };
+
+  const handleBudgetChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const budget = parseFloat(e.target.value);
+    controlPanelService.updateBudget(budget);
+  };
+
+  const handleProviderToggle = (providerKey: any) => {
+    controlPanelService.toggleProvider(providerKey);
+  };
+
+  const handleAutonomyLevelChange = (agentId: any, level: any) => {
+    controlPanelService.updateAgentAutonomyLevel(agentId, level as any);
+  };
+
+  const handlePermissionScopeToggle = (scope: any, enabled: boolean) => {
+    controlPanelService.updatePermissionScope(scope, enabled);
+  };
+
+  const handlePermissionLevelChange = (scope: any, level: any) => {
+    controlPanelService.updatePermissionLevel(scope, level as any);
+  };
+
+  const renderAgentsTab = () => (
+    <div className="space-y-4">
+      <h3 className="text-lg font-semibold">Agent Status Management</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {agents.map((agent) => {
+          const IconComponent = getAgentIcon(agent.icon);
+          return (
+            <div key={agent.id} className="border rounded-lg p-4">
+              <div className="flex items-center space-x-3">
+                <IconComponent className="w-8 h-8" />
+                <div className="flex-1">
+                  <h4 className="font-medium">{agent.name}</h4>
+                  <p className="text-sm text-gray-500">{agent.role}</p>
+                </div>
+                <button
+                  onClick={() => handleAgentStatusToggle(agent.id)}
+                  className={`px-3 py-1 rounded text-sm ${
+                    state.agentMasterStatus[agent.id] === "Online"
+                      ? "bg-green-100 text-green-800"
+                      : "bg-gray-100 text-gray-800"
+                  }`}
+                >
+                  {state.agentMasterStatus[agent.id]}
+                </button>
+              </div>
             </div>
-            
-            <div className="flex border-b border-slate-700/50">
-                {TABS.map(tab => (
-                    <button
-                        key={tab}
-                        onClick={() => setActiveTab(tab)}
-                        className={`px-4 py-2 text-sm font-semibold transition-colors ${
-                            activeTab === tab 
-                            ? 'text-white bg-indigo-600' 
-                            : 'text-slate-400 hover:bg-slate-800'
-                        }`}
-                    >
-                        {tab}
-                    </button>
-                ))}
-            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 
-            <div className="flex-grow p-4 overflow-y-auto">
-                {activeTab === 'Agents' && (
-                    <div className="space-y-2">
-                        {agents.map(agent => (
-                             <div key={agent.id} className="flex items-center justify-between p-2 bg-slate-800/50 rounded-md">
-                                 <div className="flex items-center gap-3">
-                                     <div className="w-6 h-6 flex-shrink-0 bg-slate-700 rounded-md flex items-center justify-center text-white"><agent.icon /></div>
-                                     <p className="font-semibold">{agent.name}</p>
-                                 </div>
-                                 <button
-                                     onClick={() => handleAgentStatusToggle(agent.id)}
-                                     className={`px-3 py-1 text-xs font-bold rounded-full transition-colors ${
-                                         state.agentMasterStatus[agent.id] === 'Online' 
-                                         ? 'bg-green-500 hover:bg-green-600'
-                                         : 'bg-slate-600 hover:bg-slate-500'
-                                     }`}
-                                 >
-                                     {state.agentMasterStatus[agent.id]}
-                                 </button>
-                             </div>
-                        ))}
-                    </div>
-                )}
-                 {activeTab === 'Orchestrator' && (
-                     <div className="space-y-4">
-                        <div>
-                           <label htmlFor="budget" className="block text-sm font-bold text-indigo-300 mb-1">Monthly Budget ($)</label>
-                           <input
-                                type="range"
-                                id="budget"
-                                min="0"
-                                max="500"
-                                value={state.orchestrator.monthlyBudget}
-                                onChange={handleBudgetChange}
-                                className="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer"
-                            />
-                            <p className="text-center font-mono text-lg mt-1">${state.orchestrator.monthlyBudget}</p>
-                        </div>
-                        <div>
-                            <p className="text-sm font-bold text-indigo-300 mb-2">Provider Status</p>
-                            <div className="grid grid-cols-2 gap-2">
-                                {Object.entries(state.orchestrator.providerEnabled).map(([key, isEnabled]) => (
-                                    <button
-                                        key={key}
-                                        onClick={() => handleProviderToggle(key)}
-                                        className={`p-2 rounded-md text-left transition-colors ${isEnabled ? 'bg-green-500/20' : 'bg-red-500/20'}`}
-                                    >
-                                        <p className="font-bold capitalize">{key}</p>
-                                        <p className="text-xs">{isEnabled ? 'Enabled' : 'Disabled'}</p>
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                     </div>
-                 )}
-                 {activeTab === 'API Keys' && (
-                    <div className="space-y-3">
-                         {Object.values(state.apiKeys).map(apiKey => (
-                             <div key={apiKey.name}>
-                                <label className="block text-sm font-bold text-indigo-300 mb-1">{apiKey.name}</label>
-                                <div className="flex">
-                                <input
-                                    type="text"
-                                    readOnly
-                                    value={apiKey.key}
-                                    className="w-full p-2 bg-slate-800 border border-slate-600 rounded-l-md font-mono text-sm"
-                                />
-                                <button className="p-2 bg-slate-700 hover:bg-slate-600 border-y border-r border-slate-600 rounded-r-md text-xs">Update</button>
-                                </div>
-                             </div>
-                         ))}
-                     </div>
-                 )}
-            </div>
+  const renderOrchestratorTab = () => (
+    <div className="space-y-4">
+      <h3 className="text-lg font-semibold">Orchestrator Configuration</h3>
+      <div className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium mb-2">
+            Monthly Budget
+          </label>
+          <input
+            type="number"
+            value={state.orchestrator.monthlyBudget}
+            onChange={handleBudgetChange}
+            className="w-full px-3 py-2 border rounded-md"
+          />
         </div>
-    );
+        <div>
+          <label className="block text-sm font-medium mb-2">
+            Provider Status
+          </label>
+          <div className="space-y-2">
+            {Object.entries(state.orchestrator.providerEnabled).map(
+              ([key, enabled]) => (
+                <label key={key} className="flex items-center">
+                  <input
+                    type="checkbox"
+                    checked={enabled}
+                    onChange={() => handleProviderToggle(key)}
+                    className="mr-2"
+                  />
+                  {key}
+                </label>
+              ),
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderAIAutonomyTab = () => (
+    <div className="space-y-6">
+      <h3 className="text-lg font-semibold">AI Autonomy Management</h3>
+
+      {/* Agent Autonomy Levels */}
+      <div className="space-y-4">
+        <h4 className="font-medium">Agent Autonomy Levels</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {agents.map((agent) => (
+            <div key={agent.id} className="border rounded-lg p-4">
+              <div className="flex items-center space-x-3 mb-3">
+                {React.createElement(getAgentIcon(agent.icon), {
+                  className: "w-6 h-6",
+                })}
+                <div>
+                  <h5 className="font-medium">{agent.name}</h5>
+                  <p className="text-sm text-gray-500">{agent.role}</p>
+                </div>
+              </div>
+              <select
+                value={
+                  state.aiAutonomy?.agentAutonomyLevels[agent.id]?.level ||
+                  "supervised"
+                }
+                onChange={(e) =>
+                  handleAutonomyLevelChange(agent.id, e.target.value)
+                }
+                className="w-full px-3 py-2 border rounded-md text-sm"
+              >
+                <option value="restricted">Restricted</option>
+                <option value="supervised">Supervised</option>
+                <option value="autonomous">Autonomous</option>
+                <option value="enhanced">Enhanced</option>
+              </select>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Permission Scopes */}
+      <div className="space-y-4">
+        <h4 className="font-medium">Permission Scopes</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {Object.entries(state.aiAutonomy?.permissionScopes || {}).map(
+            ([scope, config]) => (
+              <div key={scope} className="border rounded-lg p-4">
+                <div className="flex items-center justify-between mb-3">
+                  <h5 className="font-medium capitalize">
+                    {scope.replace(/_/g, " ")}
+                  </h5>
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      checked={config.enabled}
+                      onChange={(e) =>
+                        handlePermissionScopeToggle(scope, e.target.checked)
+                      }
+                      className="mr-2"
+                    />
+                    Enabled
+                  </label>
+                </div>
+                <select
+                  value={config.level}
+                  onChange={(e) =>
+                    handlePermissionLevelChange(scope, e.target.value)
+                  }
+                  className="w-full px-3 py-2 border rounded-md text-sm"
+                  disabled={!config.enabled}
+                >
+                  <option value="none">None</option>
+                  <option value="read_only">Read Only</option>
+                  <option value="filtered">Filtered</option>
+                  <option value="sandboxed">Sandboxed</option>
+                  <option value="monitored">Monitored</option>
+                  <option value="restricted">Restricted</option>
+                  <option value="read_write">Read/Write</option>
+                  <option value="full">Full</option>
+                </select>
+              </div>
+            ),
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderAPIKeysTab = () => (
+    <div className="space-y-4">
+      <h3 className="text-lg font-semibold">API Key Management</h3>
+      <div className="space-y-4">
+        {Object.entries(state.apiKeys).map(([provider, config]) => (
+          <div key={provider} className="border rounded-lg p-4">
+            <h4 className="font-medium mb-2">{config.name}</h4>
+            <input
+              type="password"
+              value={config.key}
+              readOnly
+              className="w-full px-3 py-2 border rounded-md bg-gray-50"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="max-w-6xl mx-auto p-6">
+      <div className="mb-6">
+        <h1 className="text-2xl font-bold mb-2">Control Panel</h1>
+        <p className="text-gray-600">
+          Manage system configuration and agent settings
+        </p>
+      </div>
+
+      <div className="border rounded-lg">
+        <div className="border-b">
+          <nav className="flex space-x-8 px-6">
+            {TABS.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`py-4 px-1 border-b-2 font-medium text-sm ${
+                  activeTab === tab
+                    ? "border-blue-500 text-blue-600"
+                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </nav>
+        </div>
+
+        <div className="p-6">
+          {activeTab === "Agents" && renderAgentsTab()}
+          {activeTab === "Orchestrator" && renderOrchestratorTab()}
+          {activeTab === "AI Autonomy" && renderAIAutonomyTab()}
+          {activeTab === "API Keys" && renderAPIKeysTab()}
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default ControlPanelApp;

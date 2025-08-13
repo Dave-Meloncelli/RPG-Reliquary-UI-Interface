@@ -20,11 +20,12 @@ export default defineConfig({
     server: {
         port: 5173,
         host: true,
+        https: true, // Explicitly enable HTTPS
         proxy: {
             '/api': {
-                target: 'http://localhost:8000',
+                target: 'https://localhost:8000', // Use HTTPS for API proxy
                 changeOrigin: true,
-                secure: false,
+                secure: true, // Enable secure proxy
             },
         },
         headers: {
@@ -32,7 +33,7 @@ export default defineConfig({
             'X-Frame-Options': 'DENY',
             'X-XSS-Protection': '1; mode=block',
             'Referrer-Policy': 'strict-origin-when-cross-origin',
-            'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' http://localhost:* https://api.openai.com https://api.anthropic.com https://generativelanguage.googleapis.com;"
+            'Content-Security-Policy': "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://localhost:* https://api.openai.com https://api.anthropic.com https://generativelanguage.googleapis.com;"
         },
     },
 

@@ -268,21 +268,21 @@ class AutonomousSystemManager:
         try:
             urllib.request.urlopen('http://www.google.com', timeout=5)
             network_status['internet'] = True
-        except:
+        except Exception as e:
             pass
             
         # Check GitHub connectivity
         try:
             urllib.request.urlopen('https://github.com', timeout=5)
             network_status['github'] = True
-        except:
+        except Exception as e:
             pass
             
         # Check PyPI connectivity
         try:
             urllib.request.urlopen('https://pypi.org', timeout=5)
             network_status['pip'] = True
-        except:
+        except Exception as e:
             pass
             
         return {'network': network_status}

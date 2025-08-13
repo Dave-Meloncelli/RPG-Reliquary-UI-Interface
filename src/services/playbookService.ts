@@ -1,13 +1,14 @@
 import type { Playbook } from "../types/types";
 import { loomService } from './loomService';
 
-type Subscriber = (playbooks: Playbook[]) => void;
+type Subscriber = (playbooks: any;
 
 class PlaybookService {
-    private playbooks: Playbook[] = [];
-    private subscribers: Set<Subscriber> = new Set();
+    private playbooks: unknown;
+    private subscribers: unknown;
 
     constructor() {
+  const playbookScrolls = null; // TODO: any
         this.loadPlaybooks();
         loomService.subscribe(this.handleLoomUpdate);
     }
@@ -16,7 +17,8 @@ class PlaybookService {
         try {
             this.playbooks = playbookScrolls.map(scroll => JSON.parse(scroll.content));
         } catch (e) {
-            console.error("Failed to parse playbooks from loomService:", e);
+  const playbookScrolls = null; // TODO: any
+            console.error("Failed to parse playbooks from loomService: unknown, e);
             this.playbooks = [];
         }
     }
@@ -30,7 +32,7 @@ class PlaybookService {
         this.subscribers.forEach(cb => cb([...this.playbooks]));
     }
 
-    subscribe = (callback: Subscriber): (() => void) => {
+    subscribe = (callback: any
         this.subscribers.add(callback);
         callback([...this.playbooks]);
         return () => {

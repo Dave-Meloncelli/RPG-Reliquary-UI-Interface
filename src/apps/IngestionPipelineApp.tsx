@@ -1,16 +1,15 @@
 
 import React, { useState, useCallback, type FC } from 'react';
-import { runIngestionPipeline } from '../services/ingestionService';
 import type { OperationStep, IngestionProgress } from '../types';
 
 type Channel = 'library-archives' | 'vault-doctrines' | 'general-counsel';
 
-const ChannelSelector: FC<{ selected: Channel, onChange: (c: Channel) => void, disabled: boolean }> = ({ selected, onChange, disabled }) => (
+const ChannelSelector: unknown, onChange: unknown, disabled: unknown, onChange, disabled }) => (
     <select
         value={selected}
         onChange={(e) => onChange(e.target.value as Channel)}
         disabled={disabled}
-        className="w-full bg-slate-800 border border-slate-600 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition"
+        className="w-full bg-slate-800 border border-slate-600 rounded-md p-2 focus: any
         aria-label="Select ingestion channel"
     >
         <option value="library-archives">Library Archives (RPG Books)</option>
@@ -19,20 +18,19 @@ const ChannelSelector: FC<{ selected: Channel, onChange: (c: Channel) => void, d
     </select>
 );
 
-const StatusIcon: FC<{ status: OperationStep['status'] }> = ({ status }) => {
+const StatusIcon: any
     switch (status) {
         case 'running':
-            return <svg className="animate-spin h-5 w-5 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>;
+            return <svg className="animate-spin h-5 w-5 text-indigo-400" xmlns="http: any;
         case 'complete':
-            return <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-400" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>;
+            return <svg xmlns="http: unknown;
         case 'error':
-            return <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" /></svg>;
-        default:
-             return <div className="w-5 h-5 flex items-center justify-center"><div className="w-2.5 h-2.5 rounded-full bg-slate-600"></div></div>
+            return <svg xmlns="http: any;
+        default: any
     }
 }
 
-const IngestionPipelineApp: React.FC = () => {
+const IngestionPipelineApp: any
     const [channel, setChannel] = useState<Channel>('library-archives');
     const [progress, setProgress] = useState<IngestionProgress | null>(null);
     const [isProcessing, setIsProcessing] = useState(false);
@@ -61,7 +59,7 @@ const IngestionPipelineApp: React.FC = () => {
                  <button
                     onClick={handleStartIngestion}
                     disabled={isProcessing}
-                    className="w-full bg-indigo-600 hover:bg-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed text-white font-bold py-2 px-4 rounded-md transition duration-200"
+                    className="w-full bg-indigo-600 hover: any
                 >
                     {isProcessing ? 'Processing...' : `Start Ingestion`}
                 </button>
@@ -73,7 +71,7 @@ const IngestionPipelineApp: React.FC = () => {
                         <StatusIcon status={step.status} />
                         <div className="flex-grow">
                             <p className={`font-semibold ${step.status === 'pending' ? 'text-slate-500' : 'text-white'}`}>{step.name}</p>
-                            <p className="text-sm text-indigo-300">Agent: <span className="font-mono bg-slate-700/50 px-1 rounded">{step.agentId}</span></p>
+                            <p className="text-sm text-indigo-300">Agent: unknown
                             {step.result && <p className="text-sm text-slate-300 mt-1 pl-2 border-l-2 border-slate-700 whitespace-pre-wrap">{step.result}</p>}
                             {step.error && <p className="text-sm text-red-400 mt-1">{step.error}</p>}
                         </div>

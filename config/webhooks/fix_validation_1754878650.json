@@ -1,0 +1,44 @@
+{
+  "triggered": true,
+  "webhook_name": "fix_validation",
+  "url": "http://localhost:8000/webhooks/fix-validation",
+  "method": "POST",
+  "payload": {
+    "safety_validation": {
+      "safe": true,
+      "risk_level": "low",
+      "fix_type": "syntax_fix",
+      "description": "Syntax fixes are generally safe and reversible",
+      "confidence": 0.9,
+      "validation_method": "enhanced_rule_based",
+      "context_factors": {
+        "high_error_count": false,
+        "production_environment": false,
+        "critical_files": false,
+        "user_approved": false
+      }
+    },
+    "impact_prediction": {
+      "predicted_improvement": true,
+      "confidence": 0.9900000000000001,
+      "expected_error_reduction": 0.3,
+      "fix_type": "syntax_fix",
+      "description": "Syntax fixes typically reduce errors significantly",
+      "prediction_method": "enhanced_context_aware",
+      "context_factors": {
+        "high_error_count": false,
+        "low_error_count": true,
+        "production_environment": false,
+        "user_approved": false
+      }
+    },
+    "should_proceed": true,
+    "context": {
+      "session_id": "test_session",
+      "user_id": "test_user",
+      "project": "az-interface"
+    },
+    "timestamp": "2025-08-11T10:17:30.096089"
+  },
+  "timestamp": "2025-08-11T10:17:30.096098"
+}

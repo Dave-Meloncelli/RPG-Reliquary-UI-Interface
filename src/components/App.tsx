@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import Desktop from './Desktop';
-import Dock from './Dock';
-import ErrorBoundary from './ErrorBoundary';
-import { LoginModal } from './LoginModal';
-import { APPS } from '../constants';
-import { WindowProvider } from '../context/WindowContext';
-import { authService } from '../services/authService';
-import { eventBus } from '../services/eventBus';
+import React, { useState, useEffect } from "react";
+
+import { APPS } from "../constants";
+import { WindowProvider } from "../context/WindowContext";
+import { authService } from "../services/authService";
+import { eventBus } from "../services/eventBus";
+
+import Desktop from "./Desktop";
+import Dock from "./Dock";
+import ErrorBoundary from "./ErrorBoundary";
+import { LoginModal } from "./LoginModal";
 
 const App: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -34,12 +36,12 @@ const App: React.FC = () => {
     checkAuth();
 
     // Listen for auth events
-    const unsubscribeLogin = eventBus.subscribe('auth.login', () => {
+    const unsubscribeLogin = eventBus.subscribe("auth.login", () => {
       setIsAuthenticated(true);
       setShowLoginModal(false);
     });
 
-    const unsubscribeLogout = eventBus.subscribe('auth.logout', () => {
+    const unsubscribeLogout = eventBus.subscribe("auth.logout", () => {
       setIsAuthenticated(false);
       setShowLoginModal(true);
     });
@@ -97,7 +99,7 @@ const App: React.FC = () => {
               </div>
             </div>
           )}
-          
+
           <LoginModal
             isOpen={showLoginModal}
             onClose={() => setShowLoginModal(false)}

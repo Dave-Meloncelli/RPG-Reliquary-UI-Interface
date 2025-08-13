@@ -1,2 +1,2 @@
-export { APPS } from './constants';
-export type { AppDefinition } from './constants'; 
+export { APPS } from "./constants";
+export type { AppDefinition } from "./constants";

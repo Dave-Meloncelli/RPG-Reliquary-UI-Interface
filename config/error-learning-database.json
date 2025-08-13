@@ -1,0 +1,49 @@
+{
+  "errorPatterns": {},
+  "successfulFixes": {},
+  "failedFixes": {},
+  "toolEffectiveness": {
+    "2025-08-11T05:57:56.614Z": {
+      "totalErrors": 0,
+      "fixedErrors": 0,
+      "successRate": null,
+      "timestamp": "2025-08-11T05:57:56.614Z"
+    },
+    "2025-08-11T05:58:26.175Z": {
+      "totalErrors": 0,
+      "fixedErrors": 0,
+      "successRate": null,
+      "timestamp": "2025-08-11T05:58:26.175Z"
+    },
+    "2025-08-11T05:59:35.200Z": {
+      "totalErrors": 0,
+      "fixedErrors": 0,
+      "successRate": null,
+      "timestamp": "2025-08-11T05:59:35.200Z"
+    },
+    "2025-08-11T06:00:15.506Z": {
+      "totalErrors": 0,
+      "fixedErrors": 0,
+      "successRate": null,
+      "timestamp": "2025-08-11T06:00:15.506Z"
+    },
+    "2025-08-11T06:02:45.790Z": {
+      "totalErrors": 0,
+      "fixedErrors": 0,
+      "successRate": null,
+      "timestamp": "2025-08-11T06:02:45.790Z"
+    },
+    "2025-08-11T06:09:29.264Z": {
+      "totalErrors": 0,
+      "fixedErrors": 0,
+      "successRate": null,
+      "timestamp": "2025-08-11T06:09:29.264Z"
+    },
+    "2025-08-11T07:57:18.991Z": {
+      "totalErrors": 0,
+      "fixedErrors": 0,
+      "successRate": null,
+      "timestamp": "2025-08-11T07:57:18.991Z"
+    }
+  }
+}

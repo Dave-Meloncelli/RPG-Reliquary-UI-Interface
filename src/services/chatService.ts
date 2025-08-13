@@ -1,83 +1,67 @@
-import { GoogleGenAI, Chat } from "@google/genai";
-import { getPersonaProfile } from './personaService';
 import type { ChatMessage } from "../types/types";
 
 class ChatService {
-    private ai: GoogleGenAI | null;
-    private chatSessions: Map<string, Chat> = new Map();
-    private chatHistories: Map<string, ChatMessage[]> = new Map();
+  private chatHistories: Map<string, ChatMessage[]> = new Map();
 
-    constructor() {
-        if (!process.env.API_KEY) {
-            console.error("API_KEY environment variable not set for ChatService.");
-            this.ai = null; 
-            return;
-        }
-        this.ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  constructor() {
+    console.warn("ChatService is using stub implementation");
+  }
+
+  public getChatHistory(agentId: string): ChatMessage[] {
+    return this.chatHistories.get(agentId) || [];
+  }
+
+  public async *sendMessageStream(
+    agentId: string,
+    message: string,
+  ): AsyncGenerator<string, void, unknown> {
+    console.warn("sendMessageStream is stubbed - implement when needed");
+
+    const userMessage: ChatMessage = {
+      id: "msg-" + Date.now(),
+      sender: "user",
+      content: message,
+      timestamp: new Date(),
+      type: "text",
+    };
+
+    const currentHistory = this.chatHistories.get(agentId) || [];
+    this.chatHistories.set(agentId, [...currentHistory, userMessage]);
+
+    // Simulate typing delay
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    const responses = [
+      `Hello! I received your message: "${message}". This is a mock response.`,
+      `I'm an AI assistant (${agentId}) and currently using a stub implementation.`,
+      `Please configure the Gemini API key to enable full functionality.`,
+    ];
+
+    const response = responses[Math.floor(Math.random() * responses.length)];
+
+    // Simulate streaming response
+    const words = response.split(" ");
+    let fullResponse = "";
+
+    for (const word of words) {
+      fullResponse += (fullResponse ? " " : "") + word;
+      yield word + " ";
+      await new Promise((resolve) => setTimeout(resolve, 100));
     }
 
-    private async initializeChat(agentId: string): Promise<Chat | null> {
-        if (!this.ai) return null;
+    const agentMessage: ChatMessage = {
+      id: "msg-" + Date.now() + "-agent",
+      sender: agentId,
+      content: fullResponse.trim(),
+      timestamp: new Date(),
+      type: "text",
+    };
 
-        if (!profile) {
-            console.error(`Could not find profile for agent ${agentId}`);
-            return null;
-        }
-
-
-        const chat = this.ai.chats.create({
-            model: 'gemini-2.5-flash',
-            config: {
-                systemInstruction,
-            },
-        });
-
-        this.chatSessions.set(agentId, chat);
-        return chat;
-    }
-
-    public getChatHistory(agentId: string): ChatMessage[] {
-        return this.chatHistories.get(agentId) || [];
-    }
-
-    public async *sendMessageStream(agentId: string, message: string): AsyncGenerator<string, void, unknown> {
-        if (!this.ai) {
-            yield "Error: Chat service is not initialized. Please configure your API_KEY.";
-            return;
-        }
-        
-        // Add user message to history, which is now done in the component to show it instantly.
-        // We'll add it here too to ensure service-side history is complete.
-        const userMessage: ChatMessage = { sender: 'user', text: message, timestamp: new Date().toLocaleTimeString() };
-        this.chatHistories.set(agentId, [...currentHistory, userMessage]);
-
-        if (!chat) {
-            chat = await this.initializeChat(agentId);
-        }
-
-        if (!chat) {
-             yield "Error: Could not initialize chat session.";
-             return;
-        }
-
-        try {
-            for await (const chunk of responseStream) {
-                fullResponse += chunkText;
-                yield chunkText;
-            }
-
-            // After stream is done, add full agent response to history
-            const agentMessage: ChatMessage = { sender: 'agent', text: fullResponse, timestamp: new Date().toLocaleTimeString() };
-            this.chatHistories.set(agentId, [...this.getChatHistory(agentId), agentMessage]);
-
-        } catch (error) {
-            console.error(`Gemini API error for agent ${agentId}:`, error);
-            yield errorMessage;
-            const agentErrorMessage: ChatMessage = { sender: 'agent', text: errorMessage, timestamp: new Date().toLocaleTimeString() };
-            // Replace the placeholder user message with the error
-            this.chatHistories.set(agentId, [...historyWithoutUserMsg, agentErrorMessage]);
-        }
-    }
+    this.chatHistories.set(agentId, [
+      ...this.getChatHistory(agentId),
+      agentMessage,
+    ]);
+  }
 }
 
 export const chatService = new ChatService();

@@ -1,6 +1,6 @@
+import React, { useState, useRef, useEffect, type ReactNode } from "react";
 
-import React, { useState, useRef, useEffect, type ReactNode } from 'react';
-import ErrorBoundary from './ErrorBoundary';
+import ErrorBoundary from "./ErrorBoundary";
 
 interface WindowProps {
   id: string;
@@ -45,32 +45,38 @@ const Window: React.FC<WindowProps> = ({
     };
     e.preventDefault();
   };
-  
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-        if (!isDragging || !windowRef.current || isMaximized) return;
-        let newX = e.clientX - dragOffset.current.x;
-        let newY = e.clientY - dragOffset.current.y;
+      if (!isDragging || !windowRef.current || isMaximized) return;
+      let newX = e.clientX - dragOffset.current.x;
+      let newY = e.clientY - dragOffset.current.y;
 
-        // Constrain to viewport
-        newX = Math.max(0, Math.min(newX, window.innerWidth - windowRef.current.offsetWidth));
-        newY = Math.max(0, Math.min(newY, window.innerHeight - windowRef.current.offsetHeight));
+      // Constrain to viewport
+      newX = Math.max(
+        0,
+        Math.min(newX, window.innerWidth - windowRef.current.offsetWidth),
+      );
+      newY = Math.max(
+        0,
+        Math.min(newY, window.innerHeight - windowRef.current.offsetHeight),
+      );
 
-        onPositionChange(newX, newY);
+      onPositionChange(newX, newY);
     };
 
     const handleMouseUp = () => {
-        setIsDragging(false);
+      setIsDragging(false);
     };
 
     if (isDragging) {
-        window.addEventListener('mousemove', handleMouseMove);
-        window.addEventListener('mouseup', handleMouseUp);
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseup", handleMouseUp);
     }
 
     return () => {
-        window.removeEventListener('mousemove', handleMouseMove);
-        window.removeEventListener('mouseup', handleMouseUp);
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
     };
   }, [isDragging, onPositionChange, isMaximized]);
 
@@ -81,21 +87,22 @@ const Window: React.FC<WindowProps> = ({
     };
   }, []);
 
-  const windowStyle: React.CSSProperties = isMaximized ? {
-      left: '0px',
-      top: '0px',
-      width: '100%',
-      height: 'calc(100% - 6rem)', // Leave space for dock
-      zIndex,
-      transition: 'width 0.2s ease-in-out, height 0.2s ease-in-out',
-  } : {
-      left: `${initialPosition.x}px`,
-      top: `${initialPosition.y}px`,
-      width: `${initialSize.width}px`,
-      height: `${initialSize.height}px`,
-      zIndex,
-  };
-
+  const windowStyle: React.CSSProperties = isMaximized
+    ? {
+        left: "0px",
+        top: "0px",
+        width: "100%",
+        height: "calc(100% - 6rem)", // Leave space for dock
+        zIndex,
+        transition: "width 0.2s ease-in-out, height 0.2s ease-in-out",
+      }
+    : {
+        left: `${initialPosition.x}px`,
+        top: `${initialPosition.y}px`,
+        width: `${initialSize.width}px`,
+        height: `${initialSize.height}px`,
+        zIndex,
+      };
 
   return (
     <div
@@ -105,20 +112,29 @@ const Window: React.FC<WindowProps> = ({
       onMouseDown={onFocus}
     >
       <div
-        className={`h-8 bg-slate-900/70 rounded-t-lg flex items-center justify-between px-2 ${isMaximized ? 'cursor-default' : 'cursor-grab active:cursor-grabbing'}`}
+        className={`h-8 bg-slate-900/70 rounded-t-lg flex items-center justify-between px-2 ${isMaximized ? "cursor-default" : "cursor-grab active:cursor-grabbing"}`}
         onMouseDown={handleMouseDown}
       >
-        <span className="text-sm font-bold text-slate-300 select-none">{title}</span>
+        <span className="text-sm font-bold text-slate-300 select-none">
+          {title}
+        </span>
         <div className="flex items-center space-x-2">
-          <button onClick={onMinimize} className="w-4 h-4 rounded-full bg-yellow-500 hover:bg-yellow-400 focus:outline-none"></button>
-          <button onClick={onMaximize} className="w-4 h-4 rounded-full bg-green-500 hover:bg-green-400 focus:outline-none"></button>
-          <button onClick={onClose} className="w-4 h-4 rounded-full bg-red-500 hover:bg-red-400 focus:outline-none"></button>
+          <button
+            onClick={onMinimize}
+            className="w-4 h-4 rounded-full bg-yellow-500 hover:bg-yellow-400 focus:outline-none"
+          ></button>
+          <button
+            onClick={onMaximize}
+            className="w-4 h-4 rounded-full bg-green-500 hover:bg-green-400 focus:outline-none"
+          ></button>
+          <button
+            onClick={onClose}
+            className="w-4 h-4 rounded-full bg-red-500 hover:bg-red-400 focus:outline-none"
+          ></button>
         </div>
       </div>
       <div className="flex-grow overflow-hidden">
-        <ErrorBoundary>
-          {children}
-        </ErrorBoundary>
+        <ErrorBoundary>{children}</ErrorBoundary>
       </div>
     </div>
   );

@@ -1,0 +1,21 @@
+{
+  "triggered": true,
+  "webhook_name": "pre_compilation_validation",
+  "url": "http://localhost:8000/webhooks/pre-compilation",
+  "method": "POST",
+  "payload": {
+    "validation_result": {
+      "success": true,
+      "issues_found": [],
+      "files_checked": 130,
+      "patterns_checked": 4
+    },
+    "context": {
+      "session_id": "test_session",
+      "user_id": "test_user",
+      "project": "az-interface"
+    },
+    "timestamp": "2025-08-11T09:10:14.112889"
+  },
+  "timestamp": "2025-08-11T09:10:14.112902"
+}
